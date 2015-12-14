@@ -1,0 +1,136 @@
+<ion-view view-title="Custom Language">
+
+	<ion-nav-buttons side="primary">
+		<button
+		class="button button-icon ion-minus-circled"
+		ng-click="data.showDelete = !data.showDelete; data.showReorder = false;"></button>
+	</ion-nav-buttons>
+
+	<ion-nav-buttons side="secondary">
+		<button
+		class="button button-icon ion-navicon"
+		ng-click="data.showReorder = !data.showReorder; data.showDelete = false;"></button>
+	</ion-nav-buttons>
+
+	<!-- <div class="bar bar-subheader
+	item-input-inset bar-light">
+	<label class="item-input-wrapper">
+	<i class="icon ion-search placeholder-icon"></i>
+	<input type="search" ng-model="query" placeholder="Search">
+	</label>
+	</div> -->
+	<ion-content
+	class="">
+		<ion-refresher on-refresh="doRefresh()"></ion-refresher>
+
+		<div class="card padding has-subheader">
+			<table class="center">
+				<br>
+				<th>
+				<tr>
+					Replace each Alphabet
+				</tr></th>
+				<tr class="row">
+					<td class="col">A is
+					<input ng-model="customLanguage[0].equiv" type="textbox">
+					</td>
+					<td class="col">B is
+					<input ng-model="customLanguage[1].equiv" type="textbox">
+					</td>
+					<td class="col">C is
+					<input ng-model="customLanguage[2].equiv" type="textbox">
+					</td>
+					<td class="col">D is
+					<input ng-model="customLanguage[3].equiv" type="textbox">
+					</td>
+				</tr>
+
+				<tr class="row">
+					<td class="col">E is
+					<input ng-model="customLanguage[4].equiv" type="textbox">
+					</td>
+					<td class="col">F is
+					<input ng-model="customLanguage[5].equiv" type="textbox">
+					</td>
+					<td class="col">G is
+					<input ng-model="customLanguage[6].equiv" type="textbox">
+					</td>
+					<td class="col">H is
+					<input ng-model="customLanguage[7].equiv" type="textbox">
+					</td>
+				</tr>
+
+				<tr class="row">
+					<td class="col">I is
+					<input ng-model="customLanguage[8].equiv" type="textbox">
+					</td>
+					<td class="col">J is
+					<input ng-model="customLanguage[9].equiv" type="textbox">
+					</td>
+					<td class="col">K is
+					<input ng-model="customLanguage[10].equiv" type="textbox">
+					</td>
+					<td class="col">L is
+					<input ng-model="customLanguage[11].equiv" type="textbox">
+					</td>
+				</tr>
+
+				<tr class="row">
+					<td class="col">M is
+					<input ng-model="customLanguage[12].equiv" type="textbox">
+					</td>
+					<td class="col">N is
+					<input ng-model="customLanguage[13].equiv" type="textbox">
+					</td>
+					<td class="col">O is
+					<input ng-model="customLanguage[14].equiv" type="textbox">
+					</td>
+					<td class="col">P is
+					<input ng-model="customLanguage[15].equiv" type="textbox">
+					</td>
+				</tr>
+
+				<tr class="row">
+					<td class="col">Q is
+					<input ng-model="customLanguage[16].equiv" type="textbox">
+					</td>
+					<td class="col">R is
+					<input ng-model="customLanguage[17].equiv" type="textbox">
+					</td>
+					<td class="col">S is
+					<input ng-model="customLanguage[18].equiv" type="textbox">
+					</td>
+					<td class="col">T is
+					<input ng-model="customLanguage[19].equiv" type="textbox">
+					</td>
+				</tr>
+
+				<tr class="row">
+					<td class="col">U is
+					<input ng-model="customLanguage[20].equiv" type="textbox">
+					</td>
+					<td class="col">V is
+					<input ng-model="customLanguage[21].equiv" type="textbox">
+					</td>
+					<td class="col">W is
+					<input ng-model="customLanguage[22].equiv" type="textbox">
+					</td>
+					<td class="col">X is
+					<input ng-model="customLanguage[23].equiv" type="textbox">
+					</td>
+				</tr>
+
+				<tr class="row">
+					<td class="col">Y is
+					<input ng-model="customLanguage[24].equiv" type="textbox">
+					</td>
+					<td class="col">Z is
+					<input ng-model="customLanguage[25].equiv" type="textbox">
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+	</ion-content>
+</ion-view>

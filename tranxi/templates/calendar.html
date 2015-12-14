@@ -1,0 +1,168 @@
+<ion-view view-title="Tranxi">
+
+	<ion-content class=" padding" class="branding">
+
+		<p ng-hide="true">
+			Current Language Code:
+			<br>
+			{{changeLanguage()}}
+		</p>
+
+		<div class="card padding">
+			<br>
+			<textarea placeholder="Translation appears here" type="text" class="row translatedTextArea" 
+			style=" vertical-align: top;" data-autosize-on="true">
+				{{translated()}}
+			</textarea>
+		</div>
+
+		<div class="card padding">
+			<br>
+			<textarea placeholder="Type anything to translate" type="text" ng-model="str.input" class="row"> </textarea>
+		</div>
+
+		<div lass="card padding row">
+			<ul class="list">
+				<li class="item ">
+					<label > {{defaultLan()}}. </label>
+				</li>
+				<br>
+				<li>
+					<label class="checkbox row">
+						<input  ng-click="change()" type="checkbox" >
+						{{prompt}} </label>
+				</li>
+				<br>
+				<li  ng-click="mainModal = theTrue" >
+					<button class="button button-right button-royal" >
+						<i class="icon  ion-edit" ></i> Edit Custom Language
+					</button>
+
+				</li>
+			</ul>
+
+		</div>
+		<!-- <div class="share-links">
+			<div share-links="Facebook, Twitter, LinkedIn" share-title="{{customLanguage}}"></div>
+		</div> -->
+
+		<div class="modal"  ng-show="mainModal">
+			<ion-header-bar >
+				<h1 class="title">Enter custom language</h1>
+				<button class="button button-right button-royal" ng-click="mainModal = !theTrue">
+					Done
+				</button>
+			</ion-header-bar>
+			<div class="card padding has-subheader">
+				<table class="center">
+					<br>
+					<tr class="row">
+						<td class="col">
+						<input ng-model="customLanguage[0].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[1].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[2].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[3].equiv" type="textbox">
+						</td>
+					</tr>
+
+					<tr class="row">
+						<td class="col">
+						<input ng-model="customLanguage[4].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[5].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[6].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[7].equiv" type="textbox">
+						</td>
+					</tr>
+
+					<tr class="row">
+						<td class="col">
+						<input ng-model="customLanguage[8].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[9].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[10].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[11].equiv" type="textbox">
+						</td>
+					</tr>
+
+					<tr class="row">
+						<td class="col">
+						<input ng-model="customLanguage[12].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[13].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[14].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[15].equiv" type="textbox">
+						</td>
+					</tr>
+
+					<tr class="row">
+						<td class="col">
+						<input ng-model="customLanguage[16].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[17].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[18].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[19].equiv" type="textbox">
+						</td>
+					</tr>
+
+					<tr class="row">
+						<td class="col">
+						<input ng-model="customLanguage[20].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[21].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[22].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[23].equiv" type="textbox">
+						</td>
+					</tr>
+
+					<tr class="row">
+						<td class="col">
+						<input ng-model="customLanguage[24].equiv" type="textbox">
+						</td>
+						<td class="col">
+						<input ng-model="customLanguage[25].equiv" type="textbox">
+						</td>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+		<script>
+			autosize(document.querySelectorAll('textarea'));
+		</script>
+
+		<!-- TODO: Bug in text area if user types in translated field -->
+
+	</ion-content>
+</ion-view>
