@@ -1,0 +1,64 @@
+<section class="guestinfo uofs-section container-fluid">
+	<br />
+	<div class="back_div pull-left">
+		<a ng-href="#/home">&laquo; Home</a>
+	</div>
+	<div class="pull-right">
+		<a ng-href="#/live">Go Live &raquo;</a>
+	</div>
+	<h1 class="text-center uofs-page-title"><a>Add Guests</a></h1>
+	<br />
+	<div class="row dataFieldContainer center-block  text-center">
+		<textarea ng-model="dataField" placeholder="Enter the names or NSIDs of guests seperated with comma and click 'Add Guests'" 
+		class="dataField form-control" type="textarea" style="height: auto !important;"></textarea>
+	</div>
+	<div class=" populate_div pull-right" data-toggle="buttons">
+		<button ng-model="btnText" type="button"
+		class="btn btn-primary checkInBtn " ng-click="submitUserInput()">
+			{{listBtnText}}
+		</button>
+		<button ng-model="btnText" type="button"
+		class="btn btn-default btn-xs " ng-click="randomName()">
+			Generate Name
+		</button>
+		<button ng-model="btnText" type="button"
+		class="btn btn-default btn-xs" ng-click="clearField()">
+			Clear Field
+		</button>
+	</div>
+	<hr />
+	<div>
+		<!-- <p style="text-align: left;">
+		<button  ng-model="btnText" type="button" class="btn btn-default btn-xs"
+		ng-show="$storage.guestsList.length > 0 <= 0" ng-click="deleteStored()">
+		Remove All
+		</button>
+		</p>
+		<p ng-repeat="item in $storage.guestsList  | filter: guestInput | orderBy: guestOrder:direction" >
+		<a class="button " aria-hidden="true" style="text-align: left;"
+		ng-click="removeElement($storage.guestsList.length-$index-1)">  <i type="button" class="close pull-left" aria-hidden="true"
+		style="text-align: left; padding-right: 1%; ">&nbsp;&nbsp;{{item.icon}}</i></a>
+		{{item.name}}
+		<br />
+		<span style="padding-left: 3.5%;"></span> ID: {{item.id}}{{$index}}
+		</p> -->
+		<!-- {{submitUserInput()}} -->
+		<!-- <div ng-show=""> -->
+		<!-- {{$storage.x}} -->
+
+		<!-- {{guests.name}} -->
+		<!-- <p >{{dateString()}}</p> -->
+
+		<button ng-hide="true" ng-click="$storage.$reset({ })">
+			Clear localStorage
+		</button>
+	</div>
+	<div >
+		<h4 class="pull-left" >&#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
+	</div>
+	<div class="pull-right">
+		<h4><a class="" ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">&#926; View Guests &#926;</a></h4>
+	</div>
+</section>
+<footer class="uofs-footer cf" ng-include="'footer.html'"></footer>
+

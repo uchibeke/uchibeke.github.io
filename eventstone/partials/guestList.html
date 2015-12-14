@@ -1,0 +1,76 @@
+<section class="guestpage container-fluid uofs-section">
+	<br />
+	<div class="fullList "></div>
+	<div class="checkedIn "></div>
+	<div class="notCheckIn "></div>
+	<div class="checkInStats "></div>
+	<ul class="guestlist row " >
+		<div class="row">
+			<h1 class="text-center uofs-page-title"><a>Guest List</a></h1>
+			<br />
+			<form class="search  text-center form col-xs-12 col-md-10">
+				<input ng-model="guestSearch" placeholder="Search for a guest"
+				autofocus="autofocus" class="searchBar form-control" >
+			</form>
+			<!-- <div class="col-md-1 col-xs-0" ></div> -->
+			<p style="text-align: right; padding-top: 2%;" class="col-xs-12 col-md-2">
+				<button  ng-model="btnText" type="button" class="btn btn-default btn-xs"
+				ng-show="$storage.guestsList.length > 0 <= 0" ng-click="deleteStored()">
+					Remove All Guests
+				</button>
+			</p>
+		</div>
+		<br class="clearfix"/>
+		<div class="text-center">
+			<div class="col-xs-2 col-md-2">
+				<h3>S/N</h3>
+			</div>
+			<div class="col-xs-4 col-md-4">
+				<h3>Name</h3>
+			</div>
+			<div class="col-xs-3 col-md-3">
+				<h3>ID</h3>
+			</div>
+			<div class="col-xs-3 col-md-3">
+				<h3>Status</h3>
+			</div>
+		</div>
+		<li class="guest cf" ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction">
+			<a>
+			<div class="info">
+				<div class="row">
+					<div class="col-xs-2 col-md-2">
+						<a ng-click="removeElement($storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" >{{item.icon}}</i></a>
+						<span class=" text-center">{{$index+1}}</span>
+					</div>
+					<div class="col-xs-4 col-md-4">
+						<h4>{{item.name}}</h4>
+					</div>
+					<div class="col-xs-3 col-md-3">
+						{{item.id}}0{{$index+1}}
+					</div>
+					<div class="col-xs-3 col-md-3">
+						{{item.guestStatus}}
+					</div>
+				</div>
+			</div> </a>
+		</li>
+	</ul>
+	<div class="back_div" id="listBack">
+		<a ng-href="#/populate">&laquo; Back</a>
+	</div>
+	<div class="row">
+		<div class="row">
+			<form class="search  text-center form col-xs-12 col-md-10"></form>
+			<p style="text-align: right; padding-top: 2%;" class="col-xs-12 col-md-2">
+				<button  ng-model="btnText" type="button" class="btn btn-default btn-xs"
+				ng-show="$storage.guestsList.length > 0 <= 0" ng-click="deleteStored()">
+					Remove All Guests
+				</button>
+			</p>
+		</div>
+	</div>
+
+	<footer class="uofs-footer cf" ng-include="'footer.html'"></footer>
+</section>
+

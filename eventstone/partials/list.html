@@ -1,0 +1,36 @@
+<header class="">
+	<nav class="cf" ng-include="'partials/nav.html'"></nav>
+</header>
+<section class="guestpage container-fluid uofs-section">
+	<div class="back_div">
+		<a href="index.html">&laquo; Back</a>
+	</div>
+	<form class="search center-block row text-center form">
+		<h1 class="text-center uofs-page-title"><a>Guest sign in</a></h1>
+		<br class="clearfix"/>
+		<input ng-model="guestSearch" placeholder="Enter your name, NSID or other info to check-in"
+		autofocus="autofocus" class="searchBar form-control" >
+		<div ng-show="visualize()" class="alert alert-info alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+				&times;
+			</button>
+			<strong></strong> {{instruction}}...
+		</div>
+
+	</form>
+	<br />
+	<ul class="guestlist row" ng-hide="visualize()" >
+		<li class="guest cf" ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction">
+			<a>
+			<div class="info">
+				<h2>{{item.name}}</h2>
+				<h3>Guest ID: {{item.id}}0{{$index+1}}</h3>
+				<button ng-model="btnText" type="button"
+				class="btn btn-primary checkInBtn " ng-click="btnText = 'Checked-In'">
+					{{item.btnText}}
+				</button>
+			</div> </a>
+		</li>
+	</ul>
+</section>
+<footer class="uofs-footer cf" ng-include="'footer.html'"></footer>
