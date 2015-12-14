@@ -40,7 +40,7 @@
 			<div class="info">
 				<div class="row">
 					<div class="col-xs-2 col-md-2">
-						<a ng-click="removeElement($storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" >{{item.icon}}</i></a>
+						<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" >{{item.icon}}</i></a>
 						<span class=" text-center">{{$index+1}}</span>
 					</div>
 					<div class="col-xs-4 col-md-4">

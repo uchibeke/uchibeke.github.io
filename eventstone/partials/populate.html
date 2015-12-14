@@ -28,22 +28,6 @@
 	</div>
 	<hr />
 	<div>
-		<!-- <p style="text-align: left;">
-		<button  ng-model="btnText" type="button" class="btn btn-default btn-xs"
-		ng-show="$storage.guestsList.length > 0 <= 0" ng-click="deleteStored()">
-		Remove All
-		</button>
-		</p>
-		<p ng-repeat="item in $storage.guestsList  | filter: guestInput | orderBy: guestOrder:direction" >
-		<a class="button " aria-hidden="true" style="text-align: left;"
-		ng-click="removeElement($storage.guestsList.length-$index-1)">  <i type="button" class="close pull-left" aria-hidden="true"
-		style="text-align: left; padding-right: 1%; ">&nbsp;&nbsp;{{item.icon}}</i></a>
-		{{item.name}}
-		<br />
-		<span style="padding-left: 3.5%;"></span> ID: {{item.id}}{{$index}}
-		</p> -->
-		<!-- {{submitUserInput()}} -->
-		<!-- <div ng-show=""> -->
 		<!-- {{$storage.x}} -->
 		<!-- <p >{{dateString()}}</p> -->
 
@@ -52,7 +36,7 @@
 		</button>
 	</div>
 	<div >
-		<h4 class="pull-left" >&#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
+		<h4 class="pull-left" > &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
 	</div>
 	<div class="pull-right">
 		<h4><a class="" ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">&#926; View Guests &#926;</a></h4>
@@ -69,7 +53,7 @@
 					<div class="info">
 						<div class="row">
 							<div class="col-xs-3 col-md-3">
-								<a ng-click="removeElement($storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" >{{item.icon}}</i></a>
+								<a ng-click="removeElement($storage.backUpGuestList, $storage.backUpGuestList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" >{{item.icon}}</i></a>
 								<span class=" text-center">{{$index+1}}</span>
 							</div>
 							<div class="col-xs-5 col-md-5">
@@ -83,16 +67,14 @@
 				</li>
 			</ul>
 			<div class="col-xs-4 col-md-4">
-				<p>This is your guest list from the last time you removed all your guests. You will have two test guests if 
-					this is the first time you are using Eventstone.</p>
+				<p>
+					This is your guest list from the last time you removed removed all guests from Eventstone . You will have two test
+					guests if this is the first time you are using Eventstone.
+				</p>
 				<button type="button" class="btn btn-default btn-xs " ng-click="">
 					Restore Back Up
 				</button>
 			</div>
-			<!-- <p ng-repeat="item in $storage.backUpGuestList  | filter: guestInput | orderBy: guestOrder:direction" >
-			{{item.name}}
-			</p> -->
-
 		</div>
 	</div>
 </section>

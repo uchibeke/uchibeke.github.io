@@ -107,18 +107,18 @@ function($scope, $http, $localStorage) {
 			}
 		};
 
-		$scope.removeElement = function(idx) {
-			if ($scope.$storage.guestsList.length <= 2) {
+		$scope.removeElement = function(list, idx) {
+			if (list.length <= 2) {
 			} else {
-				if (idx > $scope.$storage.guestsList.length - 1) {
+				if (idx > list.length - 1) {
 				} else {
 					if (isNaN(idx)) {
 					} else {
-						delete $scope.$storage.guestsList[idx];
-						for (var i = idx; i < $scope.$storage.guestsList.length; i++) {
-							$scope.$storage.guestsList[i] = $scope.$storage.guestsList[i + 1];
+						delete list[idx];
+						for (var i = idx; i < list.length; i++) {
+							list[i] = list[i + 1];
 						}
-						$scope.$storage.guestsList.length = $scope.$storage.guestsList.length - 1;
+						list.length = list.length - 1;
 					}
 				}
 			}
