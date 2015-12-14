@@ -18,8 +18,15 @@ function($scope, $http, $localStorage) {
 			guestsList : $scope.guests
 		});
 
+		// Backup data from last time user cleared list
+		// $scope.$storage = $localStorage.$default({
+		// backUpGuestList : $scope.$storage.guestsList
+		// });
+		$scope.backUpGuestList = {};
+		// $scope.backUpGuestList = $scope.$storage.guestsList;
+
 		$scope.$storage.x = '';
-		
+
 		// List of all user events
 		$scope.visualize = function() {
 			var showGuest = true;
@@ -93,6 +100,8 @@ function($scope, $http, $localStorage) {
 
 		$scope.deleteStored = function() {
 			if (!(angular.equals($scope.$storage.guestsList, data))) {
+				$scope.$storage.backUpGuestList = {};
+				$scope.$storage.backUpGuestList = $scope.$storage.guestsList;
 				$scope.$storage.guestsList = {};
 				$scope.$storage.guestsList = data;
 			}
@@ -130,6 +139,17 @@ function($scope, $http, $localStorage) {
 				$scope.$storage.guestsList[x].guestStatus = 'Checked in ' + ds;
 			}
 		}
+		$scope.backUp = false;
+		$scope.backUpTxt = function () {
+			if ($scope.backUp) {
+				return 'Hide Back up';;
+			} else {
+				return 'Show Back up';
+			}
+		} 
+		$scope.backUpBtn = function() {
+			$scope.backUp = !$scope.backUp;
+		}
 	});
 }]);
 
@@ -156,4 +176,4 @@ function($scope, $http, $routeParams, $localStorage) {
 		}
 
 	});
-}]); 
+}]);
