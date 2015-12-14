@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Gradr: Fast, Friendly and Fluid Grade Calculator  and Estimator</title>
+		<link rel="stylesheet" href="css/style.css">
+		<meta name="description"
+		content="Gradr: Useful, Responsive, super fast and clean Grade Calculator and estimator built
+		with Javacript by Uchi, Computer Science Student.">
+		<meta name="author" content="Uchi Uchibeke">
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+		<meta name="viewport" content="initial-scale=1" />
+		<script src="lib/angular/angular.min.js"></script>
+		<script src="js/controllers.js"></script>
+
+	</head>
+	<body layout="column">
+
+		<div ng-app>
+
+			<div class="navbar-fixed ">
+				<nav >
+					<div class="nav-wrapper teal">
+						<a href="#!" class="brand-logo" id="top_logo">Gradr</a>
+
+				</nav>
+
+			</div >
+
+			<md-content layout="column" flex class="md-padding">
+				<div ng-controller="ShoppingCartCtrl">
+					<!-- <hr>  -->
+					<div class="row">
+						<form class="col s12 teal-text orange lighten-5 transparent">
+							<div class="row">
+								<div class="input-field col s6">
+									<input type="text" class="validate" ng-model="item.Name" placeholder="Component" required>
+									<label for="last_name"></label>
+								</div>
+								<div class="input-field col s6">
+									<input type="text" class="validate" ng-model="item.Score" placeholder="Enter Score" required>
+									<label for="last_name"></label>
+								</div>
+							</div>
+							<!-- //// -->
+
+							<div class="row">
+								<div class="col s6">
+									<input  type="text" class="validate" ng-model="item.outOf"  placeholder="Attainable Score" required>
+									<label for="last_name"></label>
+								</div>
+								<div class="col s6">
+									<input type="text" class="validate" ng-model="item.Weight" placeholder="Weight of Component" required>
+									<label for="last_name"></label>
+								</div>
+							</div>
+
+							<table layout="column" >
+
+								<tr>
+									<td colspan="2">
+									<button class="waves-effect waves-pink btn z-depth-1" type="submit" name="action" ng-click="addItem(item)">
+										Add New
+
+									</td>
+
+								</tr>
+							</table>
+
+						</form>
+
+					</div>
+
+					<table border="1" class=" highlight centered bordered">
+						<thead class=" teal white-text text-lighten-5 centered" style="text-align: center;">
+							<tr>
+								<td class="centered gpa_fields"  >Component</td>
+								<td class="centered gpa_fields">Score</td>
+								<td class="centered gpa_fields">Weight</td>
+								<td  class="centered gpa_fields"></td>
+							</tr>
+						</thead>
+						<tbody class="teal-text">
+							<tr ng-repeat="item in items "  class=" orange lighten-5">
+								<td class"brown-text lighten-4">{{item.Name}}</td>
+								<td class"brown-text lighten-3">{{item.Score}}/{{item.outOf}}</td>
+								<td class"brown-text lighten-2">{{item.Weight}}&#37;</td>
+								<td class"blue transparent brown-text text-lighten-1 ">
+								<input type="button" value="X" ng-click="removeItem($index)" class=" waves-effect waves-light btn " />
+								</td>
+							</tr>
+							<tr  class="btn-right" width="100%" >
+								<td class="orange center teal-text text-darken-2 lighten-3  border" colspan="2">
+								<div >
+									Class Score {{grandTotal()}}/{{totalPossible()}}
+								</div></td>
+								<td colspan="2"><i blue-text text-lighten-5 ng-show="totalPossible() > 100" style="font-size=0.5∞;ß">Total should be less/equal to 100</i></td>
+							</tr>
+						</tbody>
+					</table>
+
+					<!-- ///// -->
+
+				</div>
+		</div>
+		<div class=" bottompage main white  teal-text text-darken-3 transparent center "  style="bottom: 0px; position: relative; text-align: center;
+		width:100%;; text-align:center; font-size: xx-small;">
+
+			By <a  href="http://uchibeke.com" >Uchi</a>
+			<!-- with <a href="http://materializecss.com">Materialize CSS</a>
+			and <a  href="http://angular.com">AnjularJS</a> -->
+			<!-- <hr> -->
+			<!--   <p href="hello@uchibeke.com" type="email" class="grey-text text-darken-3 ">Report issues to hello@uchibeke.com</a> -->
+		</div>
+
+		</md-content>
+
+	</body>
+</html>
