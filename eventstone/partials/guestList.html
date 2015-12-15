@@ -1,5 +1,7 @@
 <section class="guestpage container-fluid uofs-section">
-	<br />
+	<div class="back_div" id="listBack">
+		<a ng-href="#/populate">&laquo; Back</a>
+	</div>
 	<div class="fullList "></div>
 	<div class="checkedIn "></div>
 	<div class="notCheckIn "></div>
@@ -21,7 +23,7 @@
 			</p>
 		</div>
 		<br class="clearfix"/>
-		<div class="text-center">
+		<div class="text-center" >
 			<div class="col-xs-2 col-md-2">
 				<h3>S/N</h3>
 			</div>
@@ -56,9 +58,6 @@
 			</div> </a>
 		</li>
 	</ul>
-	<div class="back_div" id="listBack">
-		<a ng-href="#/populate">&laquo; Back</a>
-	</div>
 	<div class="row">
 		<div class="row">
 			<form class="search  text-center form col-xs-12 col-md-10"></form>
@@ -69,6 +68,16 @@
 				</button>
 			</p>
 		</div>
+		<p class="row text-center " ng-show="$storage.guestsList.length != $storage.backUpGuestList.length">
+			<span ng-show="listreplace"> Did you mistakenly delete your guest list? You can restore it from back up.
+				<button type="button" class="btn btn-primary btn-xs " ng-click="replaceList()">
+					Restore from Back Up
+				</button></span>
+			<span ng-show="!listreplace">This would remove all current guests. Are you sure?
+				<button type="button" class="btn btn-primary btn-xs " ng-click="replaceList(); restoreFromBackUp()">
+					Yes. Replace guests.
+				</button></span>
+		</p>
 	</div>
 
 	<footer class="uofs-footer cf" ng-include="'footer.html'"></footer>

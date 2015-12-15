@@ -18,13 +18,6 @@ function($scope, $http, $localStorage) {
 			guestsList : $scope.guests
 		});
 
-		// Backup data from last time user cleared list
-		// $scope.$storage = $localStorage.$default({
-		// backUpGuestList : $scope.$storage.guestsList
-		// });
-		$scope.backUpGuestList = {};
-		// $scope.backUpGuestList = $scope.$storage.guestsList;
-
 		$scope.$storage.x = '';
 
 		// List of all user events
@@ -34,26 +27,6 @@ function($scope, $http, $localStorage) {
 				showGuest = false;
 			}
 			return showGuest;
-		};
-
-		$scope.randomName = function() {
-			var arrOfNames1 = ["Jason", "Jim", "Bird", "Shari", "Lily", "Shukla", "Jake", "Kurt", "Sylvia", "Smith", "Luke", "Brent", "Tony", "Chi", "Chen", "Yang", "Ada", "Oluchi", "Maj", "Todd", "Sloan", "Uchibeke", "Shirley", "Kun", "Myers"];
-
-			var arrOfNames2 = ["Rachel", "Neal", "Miller", "Heidecker", "Gill", "Gina", "Eva", "Sam", "John", "Bob", "Ben", "Sonita", "Brenda", "Ahmed", "Musa", "Oraye", "Ade", "Tito", "Itoro", "Silong", "Kiki", "Raymond", "Vincent", "Zhang", "Lv"];
-
-			var arrOfNames3 = ["Monisha", "Peter", "Baraniuk", "Michael", "Linda", "Beni", "Asya", "Charlse", "Russel", "Brian", "Tim", "Ken", "Ugo", "Uche", "Uchi", "Zhed", "Luois", "Riel", "Emma", "Jimmy", "Luo", "Yan", "Chan", "Feng", "Stewart"];
-
-			var arrOfArrs = [arrOfNames1, arrOfNames2, arrOfNames3];
-
-			var randomArr = Math.floor((Math.random() * (arrOfArrs.length)) + 0);
-			var randomIndex = Math.floor((Math.random() * (arrOfNames1.length - 1)) + 0);
-			var arrToUSe = arrOfArrs[randomArr];
-			var name = arrToUSe[randomIndex] + " ";
-			randomArr = Math.floor((Math.random() * (arrOfArrs.length - 1)) + 0);
-			randomIndex = Math.floor((Math.random() * (arrOfNames1.length - 1)) + 0);
-			arrToUSe = arrOfArrs[randomArr];
-			name = name + arrToUSe[randomIndex];
-			$scope.dataField = $scope.dataField + name + ",";
 		};
 
 		$scope.clearField = function() {
@@ -139,17 +112,62 @@ function($scope, $http, $localStorage) {
 				$scope.$storage.guestsList[x].guestStatus = 'Checked in ' + ds;
 			}
 		}
-		$scope.backUp = false;
-		$scope.backUpTxt = function () {
+		
+		$scope.backUpTxt = function() {
 			if ($scope.backUp) {
-				return 'Hide Back up';;
+				return 'Hide Backed Guest List';
+				;
 			} else {
-				return 'Show Back up';
+				return 'View Backed up Guest List';
 			}
-		} 
+		}
+
+		$scope.backUp = false;
 		$scope.backUpBtn = function() {
 			$scope.backUp = !$scope.backUp;
 		}
+
+		$scope.restoreFromBackUp = function() {
+			$scope.$storage.guestsList = {};
+			Array.prototype.push.apply($scope.$storage.guestsList, $scope.$storage.backUpGuestList);
+
+		}
+
+		$scope.listreplace = true;
+		$scope.replaceList = function() {
+			$scope.listreplace = !$scope.listreplace;
+		}
+
+		$scope.popolateReplace = true;
+		$scope.replacePop = function() {
+			$scope.popolateReplace = !$scope.popolateReplace;
+		}
+
+		$scope.randomName = function() {
+			var arrOfNames1 = ["Jason", "Jim", "Bird", "Shari", "Lily", "Shukla", "Jake", "Kurt", "Sylvia", "Smith", "Luke", "Brent", "Tony", "Chi", "Chen", "Yang", "Ada", "Oluchi", "Maj"];
+
+			var arrOfNames2 = ["Rachel", "Neal", "Miller", "Heidecker", "Gill", "Gina", "Eva", "Sam", "John", "Bob", "Ben", "Sonita", "Brenda", "Ahmed", "Musa", "Oraye", "Ade", "Tito", "Itoro"];
+
+			var arrOfNames3 = ["Monisha", "Peter", "Baraniuk", "Michael", "Linda", "Beni", "Asya", "Charlse", "Russel", "Brian", "Tim", "Ken", "Ugo", "Uche", "Uchi", "Zhed", "Luois", "Riel", "Emma"];
+
+			var arrOfNames4 = ["Yan", "Chan", "Feng", "Stewart", "Raymond", "Vincent", "Zhang", "Lv", "Uchibeke", "Shirley", "Kun", "Myers" , "Jimmy", "Luo" , "Silong", "Kiki", "Todd", "Sloan"];
+			
+			// To lazy to count the array with the least number of names
+			var sz = Math.min(arrOfNames1.length, arrOfNames2.length, arrOfNames3.length, arrOfNames4.length); 
+			
+			var arrOfArrs = [arrOfNames1, arrOfNames2, arrOfNames3, arrOfNames4];
+
+			var randomArr = Math.floor((Math.random() * (arrOfArrs.length)) + 0);
+			var randomIndex = Math.floor((Math.random() * (sz - 1)) + 0);
+			var arrToUse = arrOfArrs[randomArr];
+			var name = arrToUse[randomIndex] + " ";
+			randomArr = Math.floor((Math.random() * (arrOfArrs.length - 1)) + 0);
+			randomIndex = Math.floor((Math.random() * (sz - 1)) + 0);
+			arrToUse = arrOfArrs[randomArr];
+			name = name + arrToUse[randomIndex];
+			$scope.dataField = $scope.dataField + name + ",";
+		};
+
 	});
 }]);
 

@@ -14,16 +14,16 @@
 	</div>
 	<div class=" populate_div pull-right" data-toggle="buttons">
 		<button ng-model="btnText" type="button"
-		class="btn btn-primary checkInBtn " ng-click="submitUserInput()">
-			{{listBtnText}}
+		class="btn btn-default btn-xs" ng-click="clearField()">
+			Clear Field
 		</button>
 		<button ng-model="btnText" type="button"
 		class="btn btn-default btn-xs " ng-click="randomName()">
 			Generate Name
 		</button>
 		<button ng-model="btnText" type="button"
-		class="btn btn-default btn-xs" ng-click="clearField()">
-			Clear Field
+		class="btn btn-primary checkInBtn " ng-click="submitUserInput()">
+			{{listBtnText}}
 		</button>
 	</div>
 	<hr />
@@ -39,16 +39,55 @@
 		<h4 class="pull-left" > &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
 	</div>
 	<div class="pull-right">
-		<h4><a class="" ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">&#926; View Guests &#926;</a></h4>
+		<a ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">
+		<button type="button" class="btn btn-primary checkInBtn ">
+			View Guests
+		</button> </a>
 	</div>
 	<hr />
-	<button type="button" class="btn btn-default btn-xs " ng-click="backUpBtn()">
-		{{backUpTxt()}}
-	</button>
-	<div class="clearfix">
+	<div class="pull-right">
+		<a type="button" class="btn btn-primary  btn-xs " ng-click="backUpBtn()">{{backUpTxt()}} &raquo;</a>
+	</div>
+	<div class="clearfix ">
 		<div ng-show="backUp" class="row ">
+			<hr />
+			<div class="col-xs-3 col-md-3">
+				<p>
+					This is your guest list from the last time you removed all guests from Eventstone . You will have two test
+					guests if you have not backed up any list.
+				</p>
+				<p>
+					You currently have {{$storage.guestsList.length}} guests in your guest list.
+				</p>
+				<p>
+					There are {{$storage.backUpGuestList.length}} guests in the back up list.
+				</p>
+				<p ng-show="$storage.guestsList.length != $storage.backUpGuestList.length">
+					<span ng-show="popolateReplace"> You can restore from from this back up.
+						<button type="button" class="btn btn-primary btn-xs " ng-click="replacePop()">
+							Restore
+						</button></span>
+					<span ng-show="!popolateReplace">This would remove all current guests. Are you sure?
+						<button type="button" class="btn btn-primary btn-xs " ng-click="replacePop(); restoreFromBackUp()">
+							Yes. Replace guests.
+						</button></span>
+				</p>
+			</div>
+			<div class="col-xs-1 col-md-1" ></div>
 			<ul class="guestlist col-xs-8 col-md-8 ">
-				<li class="guest cf row" ng-repeat="item in $storage.backUpGuestList | filter: guestSearch | orderBy: guestOrder:direction">
+				<div class="text-center row" >
+					<div class="col-xs-3 col-md-3">
+						<h3>S/N</h3>
+					</div>
+					<div class="col-xs-5 col-md-5">
+						<h3>Name</h3>
+					</div>
+					<div class="col-xs-4 col-md-4">
+						<h3>ID</h3>
+					</div>
+				</div>
+				<li class="guest cf row" ng-repeat="item in $storage.backUpGuestList | filter: guestSearch | orderBy: guestOrder:direction"
+				>
 					<a >
 					<div class="info">
 						<div class="row">
@@ -66,15 +105,6 @@
 					</div> </a>
 				</li>
 			</ul>
-			<div class="col-xs-4 col-md-4">
-				<p>
-					This is your guest list from the last time you removed removed all guests from Eventstone . You will have two test
-					guests if this is the first time you are using Eventstone.
-				</p>
-				<button type="button" class="btn btn-default btn-xs " ng-click="">
-					Restore Back Up
-				</button>
-			</div>
 		</div>
 	</div>
 </section>
