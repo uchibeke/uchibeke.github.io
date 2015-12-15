@@ -126,22 +126,23 @@ function($scope, $http, $localStorage) {
 		$scope.backUpBtn = function() {
 			$scope.backUp = !$scope.backUp;
 		}
-
-		$scope.restoreFromBackUp = function() {
-			$scope.$storage.guestsList = {};
-			Array.prototype.push.apply($scope.$storage.guestsList, $scope.$storage.backUpGuestList);
-
-		}
-
-		$scope.listreplace = true;
-		$scope.replaceList = function() {
-			$scope.listreplace = !$scope.listreplace;
-		}
-
-		$scope.popolateReplace = true;
-		$scope.replacePop = function() {
-			$scope.popolateReplace = !$scope.popolateReplace;
-		}
+// 
+		// $scope.restoreFromBackUp = function() {
+			// $scope.$storage.guestsList = {};
+			// Array.prototype.push.apply($scope.$storage.guestsList, $scope.$storage.backUpGuestList);
+// 
+		// }
+		
+// 
+		// $scope.listreplace = true;
+		// $scope.replaceList = function() {
+			// $scope.listreplace = !$scope.listreplace;
+		// }
+// 
+		// $scope.popolateReplace = true;
+		// $scope.replacePop = function() {
+			// $scope.popolateReplace = !$scope.popolateReplace;
+		// }
 
 		$scope.randomName = function() {
 			var arrOfNames1 = ["Jason", "Jim", "Bird", "Shari", "Lily", "Shukla", "Jake", "Kurt", "Sylvia", "Smith", "Luke", "Brent", "Tony", "Chi", "Chen", "Yang", "Ada", "Oluchi", "Maj"];
