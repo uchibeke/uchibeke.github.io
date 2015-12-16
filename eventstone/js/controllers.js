@@ -99,7 +99,7 @@ function($scope, $http, $localStorage) {
 
 		$scope.dateString = function() {
 			var d = new Date();
-			return d.getFullYear() + "" + ('0' + d.getMonth()).slice(-2) + "" + ('0' + d.getDate()).slice(-2);
+			return d.getFullYear() + "" + ('0' + (d.getMonth() +1)).slice(-2) + "" + ('0' + d.getDate()).slice(-2);
 		}
 
 		$scope.checkedIn = function(x) {
@@ -107,7 +107,7 @@ function($scope, $http, $localStorage) {
 			} else {
 				$scope.$storage.guestsList[x].checkedIn = true;
 				var d = new Date();
-				var ds = d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2) + " on " + d.getMonth() + "/" + d.getDate();
+				var ds = d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2) + " on " + (d.getMonth() + 1) + "/" + d.getDate();
 				$scope.$storage.guestsList[x].btnText = 'Checked in ' + ds;
 				$scope.$storage.guestsList[x].guestStatus = 'Checked in ' + ds;
 			}
