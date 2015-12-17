@@ -189,7 +189,13 @@ function($scope, $http, $localStorage) {
 			document.body.innerHTML = printReport;
 			window.print();
 			document.body.innerHTML = originalContents;
-		}
+		} 
+		$scope.link = 'http://1drv.ms/1m9z5RB';
+		$scope.slides = [{
+			image : '../images/sheet/DependencyGraph.png',
+		}, {
+			image : 'frame.png'
+		}]
 
 		$scope.randomName = function() {
 			var arrOfNames1 = ["Jason", "Jim", "Bird", "Shari", "Lily", "Shukla", "Jake", "Kurt", "Sylvia", "Smith", "Luke", "Brent", "Tony", "Chi", "Chen", "Yang", "Ada", "Oluchi", "Maj"];
