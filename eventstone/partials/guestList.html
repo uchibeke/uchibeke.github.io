@@ -2,10 +2,9 @@
 	<div class="back_div" id="listBack">
 		<a ng-href="#/populate">&laquo; Back</a>
 	</div>
-	<div class="fullList "></div>
-	<div class="checkedIn "></div>
-	<div class="notCheckIn "></div>
-	<div class="checkInStats "></div>
+	<!-- <div class="pull-right">
+		<a type="button" class="btn btn-default btn-xs" ng-href="#/live"> Start Event &raquo;</a>
+	</div> -->
 	<ul class="guestlist row " >
 		<div class="row">
 			<h1 class="text-center uofs-page-title"><a>Guest List</a></h1>
@@ -16,7 +15,7 @@
 			</form>
 			<!-- <div class="col-md-1 col-xs-0" ></div> -->
 			<p style="text-align: right; padding-top: 2%;" class="col-xs-12 col-md-2">
-				<button  ng-model="btnText" type="button" class="btn btn-default btn-xs"
+				<button  ng-model="btnText" type="button" class="btn btn-warning btn-xs"
 				ng-show="$storage.guestsList.length > 0 <= 0" ng-click="deleteStored()">
 					Remove All Guests
 				</button>
@@ -62,7 +61,7 @@
 		<div class="row">
 			<form class="search  text-center form col-xs-12 col-md-10"></form>
 			<p style="text-align: right; padding-top: 2%;" class="col-xs-12 col-md-2">
-				<button  ng-model="btnText" type="button" class="btn btn-default btn-xs"
+				<button  ng-model="btnText" type="button" class="btn btn-warning btn-xs"
 				ng-show="$storage.guestsList.length > 0 <= 0" ng-click="deleteStored()">
 					Remove All Guests
 				</button>

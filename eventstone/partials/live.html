@@ -4,14 +4,13 @@
 		<br class="clearfix"/>
 		<input ng-model="guestSearch" placeholder="Enter your name, NSID or other info to check-in"
 		autofocus="autofocus" class="searchBar form-control" >
-		<div ng-show="visualize()" class="alert alert-info alert-dismissable">
-			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
-				&times;
-			</button>
-			<strong></strong> {{instruction}}...
+		<div ng-show="visualize()" class="alert">
+			<p  class=" text-center center-block" >
+			<strong>{{instruction}}...</strong> 
+			</p>
 		</div>
 
-	</form>
+	</form> <hr />
 	<br />
 	<ul class="guestlist row" ng-hide="visualize()" >
 		<li class="guest cf" ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction">
@@ -38,7 +37,9 @@
 		<a ng-href="#/home">&laquo; Exit</a>
 	</div>
 	<div class="pull-right">
-		<a href="http://www.usask.ca/ict/help-support/index.php" target="_blank">Help  &raquo;</a>
+		<a type="button" class="btn btn-default btn-xs" href="http://www.usask.ca/ict/help-support/index.php"> 
+			Help  &raquo;</a>
+		<!-- <a href="http://www.usask.ca/ict/help-support/index.php" target="_blank">Help  &raquo;</a> -->
 	</div>
 	<footer class="uofs-footer cf" ng-include="'footer.html'"></footer>
 </section>

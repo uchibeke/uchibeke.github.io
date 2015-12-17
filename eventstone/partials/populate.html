@@ -1,10 +1,11 @@
 <section class="guestinfo uofs-section container-fluid">
 	<br />
-	<div class="back_div pull-left">
-		<a ng-href="#/home">&laquo; Home</a>
+	<div class="back_div pull-left ">
+		<!-- <a ng-href="#/home">&laquo; Home</a> -->
+		<a type="button" class="btn btn-default btn-xs" ng-href="#/home">&laquo; Home</a>
 	</div>
 	<div class="pull-right">
-		<a ng-href="#/live">Go Live &raquo;</a>
+		<a type="button" class="btn btn-default btn-xs" ng-href="#/live"> Start Event &raquo;</a>
 	</div>
 	<h1 class="text-center uofs-page-title"><a>Add Guests</a></h1>
 	<br />
@@ -12,21 +13,31 @@
 		<textarea ng-model="dataField" placeholder="Enter the names or NSIDs of guests seperated with comma and click 'Add Guests'" 
 		class="dataField form-control" type="textarea" style="height: auto !important;"></textarea>
 	</div>
-	<div class=" populate_div pull-right" data-toggle="buttons">
-		<button ng-model="btnText" type="button"
-		class="btn btn-default btn-xs" ng-click="clearField()">
-			Clear Field
-		</button>
-		<button ng-model="btnText" type="button"
-		class="btn btn-default btn-xs " ng-click="randomName()">
-			Generate Name
-		</button>
-		<button ng-model="btnText" type="button"
-		class="btn btn-primary checkInBtn " ng-click="submitUserInput()">
-			{{listBtnText}}
-		</button>
+	<div class=" populate_div  panel panel-default" data-toggle="buttons" style="padding-bottom: 2%;">
+		<div class="panel-body">
+			<div class="pull-right">
+				<button ng-model="btnText" type="button" ng-show="dataField.length >=1"
+				class="btn btn-primary btn-xs" ng-click="clearField(dataField); dataField = ' ' ">
+					Clear Field
+				</button>
+				<button ng-model="btnText" type="button" 
+				class="btn btn-primary btn-xs " ng-click="randomName()">
+					Random Name
+				</button>
+				<button ng-model="btnText" type="button"
+				class="btn btn-primary checkInBtn " ng-click="submitUserInput()">
+					{{listBtnText}}
+				</button>
+			</div>
+		</div>
+		<div class="panel-body">
+			<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
+			<a class="pull-right"  ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">
+			<button type="button" class="btn btn-success checkInBtn  ">
+				View Guests
+			</button> </a>
+		</div>
 	</div>
-	<hr />
 	<div>
 		<!-- {{$storage.x}} -->
 		<!-- <p >{{dateString()}}</p> -->
@@ -35,29 +46,30 @@
 			Clear localStorage
 		</button>
 	</div>
-	<div >
-		<h4 class="pull-left" > &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
+	<!-- <div class="panel panel-default">
+		<div class="panel-body">
+			<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
+			<a class="pull-right"  ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">
+			<button type="button" class="btn btn-success checkInBtn  ">
+				View Guests
+			</button> </a>
+		</div>
+	</div> -->
+	<div class="pull-left">
+		<a type="button" class="btn btn-default btn-xs" ng-href="#/cheatcheat"> Cheat Sheet Gen &raquo;</a>
 	</div>
-	<div class="pull-right">
-		<a ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">
-		<button type="button" class="btn btn-primary checkInBtn ">
-			View Guests
-		</button> </a>
-	</div>
-	<hr />
 	<div class="pull-right">
 		<a type="button" class="btn btn-primary  btn-xs " ng-click="backUpBtn()">{{backUpTxt()}} &raquo;</a>
 	</div>
 	<div class="clearfix ">
 		<div ng-show="backUp" class="row ">
 			<hr />
-			<div class="col-xs-3 col-md-3">
+			<div class="col-xs-4 col-md-4">
 				<p>
-					This is your guest list from the last time you removed all guests from Eventstone . You will have two test
-					guests if you have not backed up any list.
+					This is your guest list from the last time you removed all guests from Eventstone.
 				</p>
 				<p>
-					You currently have {{$storage.guestsList.length}} guests in your guest list.
+					You currently have {{$storage.guestsList.length-2}} guests in your guest list.
 				</p>
 				<p>
 					There are {{$storage.backUpGuestList.length}} guests in the back up list.
@@ -74,16 +86,13 @@
 				</p>
 			</div>
 			<div class="col-xs-1 col-md-1" ></div>
-			<ul class="guestlist col-xs-8 col-md-8 ">
+			<ul class="guestlist col-xs-7 col-md-7 ">
 				<div class="text-center row" >
-					<div class="col-xs-3 col-md-3">
+					<div class="col-xs-4 col-md-4">
 						<h3>S/N</h3>
 					</div>
-					<div class="col-xs-5 col-md-5">
+					<div class="col-xs-8 col-md-8">
 						<h3>Name</h3>
-					</div>
-					<div class="col-xs-4 col-md-4">
-						<h3>ID</h3>
 					</div>
 				</div>
 				<li class="guest cf row" ng-repeat="item in $storage.backUpGuestList | filter: guestSearch | orderBy: guestOrder:direction"
@@ -91,15 +100,12 @@
 					<a >
 					<div class="info">
 						<div class="row">
-							<div class="col-xs-3 col-md-3">
+							<div class="col-xs-4 col-md-4">
 								<a ng-click="removeElement($storage.backUpGuestList, $storage.backUpGuestList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" >{{item.icon}}</i></a>
 								<span class=" text-center">{{$index+1}}</span>
 							</div>
-							<div class="col-xs-5 col-md-5">
+							<div class="col-xs-8 col-md-8">
 								<h4>{{item.name}}</h4>
-							</div>
-							<div class="col-xs-4 col-md-4">
-								{{item.id}}0{{$index+1}}
 							</div>
 						</div>
 					</div> </a>

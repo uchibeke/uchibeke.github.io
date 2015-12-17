@@ -20,6 +20,9 @@ function($routeProvider) {
 	}).when('/guestList', {
 		templateUrl : 'partials/guestList.html',
 		controller : 'ListController'
+	}).when('/cheatcheat', {
+		templateUrl : 'partials/cheatcheat.html',
+		controller : 'ListController'
 	}).otherwise({
 		redirectTo : '/home'
 	});

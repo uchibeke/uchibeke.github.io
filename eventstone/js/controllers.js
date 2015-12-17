@@ -29,13 +29,19 @@ function($scope, $http, $localStorage) {
 			return showGuest;
 		};
 
-		$scope.clearField = function() {
-			$scope.dataField = '';
+		$scope.clearField = function(field) {
+			field = '';
 		}
 
 		$scope.userInputToArray = function() {
 			var arrOfAlph = $scope.dataField.split(",");
-			$scope.clearField();
+			$scope.clearField($scope.dataField);
+			return arrOfAlph;
+		};
+
+		$scope.splitLines = function() {
+			var arrOfAlph = $scope.cheatField.split("\n");
+			$scope.clearField($scope.cheatField);
 			return arrOfAlph;
 		};
 
@@ -46,7 +52,7 @@ function($scope, $http, $localStorage) {
 			if ((arr[arr.length - 1]).length === 0) {
 				length = arr.length - 1;
 			}
-			var prefix = ' ';
+			var prefix = '\n';
 			var splicedA = {};
 			for (var i = 0; i < length; i++) {
 				if ((arr[i].slice(0, prefix.length)) == prefix) {
@@ -70,6 +76,39 @@ function($scope, $http, $localStorage) {
 			$scope.$storage.guestsList.sort();
 
 		};
+
+		$scope.outPutwithDash = function() {
+			var arr = $scope.splitLines();
+			var newA = [];
+			var length = arr.length;
+			if ((arr[arr.length - 1]).length === 0) {
+				length = arr.length - 1;
+			}
+			var prefix = ' ';
+			var splicedA = {};
+			$scope.$storage.xx = '';
+			for (var i = 0; i < length; i++) {
+				if ((arr[i].slice(0, prefix.length)) == prefix) {
+					splicedA = arr[i].slice(1, arr[i].length);
+				} else {
+					splicedA = arr[i];
+				}
+				newA.push({
+					item : splicedA,
+					sept : '||'
+				});
+				$scope.$storage.xx = $scope.$storage.xx + splicedA + " ||| ";
+			}
+
+			$scope.$storage.dashed = {};
+			if ($scope.$storage.dashed.length <= 1) {
+				$scope.$storage.dashed = '';
+			}
+			Array.prototype.push.apply($scope.$storage.dashed, newA);
+
+		};
+
+		$scope.$storage.xx = "";
 
 		$scope.deleteStored = function() {
 			if (!(angular.equals($scope.$storage.guestsList, data))) {
@@ -99,7 +138,7 @@ function($scope, $http, $localStorage) {
 
 		$scope.dateString = function() {
 			var d = new Date();
-			return d.getFullYear() + "" + ('0' + (d.getMonth() +1)).slice(-2) + "" + ('0' + d.getDate()).slice(-2);
+			return d.getFullYear() + "" + ('0' + (d.getMonth() + 1)).slice(-2) + "" + ('0' + d.getDate()).slice(-2);
 		}
 
 		$scope.checkedIn = function(x) {
@@ -112,7 +151,7 @@ function($scope, $http, $localStorage) {
 				$scope.$storage.guestsList[x].guestStatus = 'Checked in ' + ds;
 			}
 		}
-		
+
 		$scope.backUpTxt = function() {
 			if ($scope.backUp) {
 				return 'Hide Backed Guest List';
@@ -126,23 +165,31 @@ function($scope, $http, $localStorage) {
 		$scope.backUpBtn = function() {
 			$scope.backUp = !$scope.backUp;
 		}
-// 
+		//
 		// $scope.restoreFromBackUp = function() {
-			// $scope.$storage.guestsList = {};
-			// Array.prototype.push.apply($scope.$storage.guestsList, $scope.$storage.backUpGuestList);
-// 
+		// $scope.$storage.guestsList = {};
+		// Array.prototype.push.apply($scope.$storage.guestsList, $scope.$storage.backUpGuestList);
+		//
 		// }
-		
-// 
+
+		//
 		// $scope.listreplace = true;
 		// $scope.replaceList = function() {
-			// $scope.listreplace = !$scope.listreplace;
+		// $scope.listreplace = !$scope.listreplace;
 		// }
-// 
+		//
 		// $scope.popolateReplace = true;
 		// $scope.replacePop = function() {
-			// $scope.popolateReplace = !$scope.popolateReplace;
+		// $scope.popolateReplace = !$scope.popolateReplace;
 		// }
+
+		$scope.printpage = function() {
+			var originalContents = document.body.innerHTML;
+			var printReport = document.getElementById('content').innerHTML;
+			document.body.innerHTML = printReport;
+			window.print();
+			document.body.innerHTML = originalContents;
+		}
 
 		$scope.randomName = function() {
 			var arrOfNames1 = ["Jason", "Jim", "Bird", "Shari", "Lily", "Shukla", "Jake", "Kurt", "Sylvia", "Smith", "Luke", "Brent", "Tony", "Chi", "Chen", "Yang", "Ada", "Oluchi", "Maj"];
@@ -151,11 +198,11 @@ function($scope, $http, $localStorage) {
 
 			var arrOfNames3 = ["Monisha", "Peter", "Baraniuk", "Michael", "Linda", "Beni", "Asya", "Charlse", "Russel", "Brian", "Tim", "Ken", "Ugo", "Uche", "Uchi", "Zhed", "Luois", "Riel", "Emma"];
 
-			var arrOfNames4 = ["Yan", "Chan", "Feng", "Stewart", "Raymond", "Vincent", "Zhang", "Lv", "Uchibeke", "Shirley", "Kun", "Myers" , "Jimmy", "Luo" , "Silong", "Kiki", "Todd", "Sloan"];
-			
+			var arrOfNames4 = ["Yan", "Chan", "Feng", "Stewart", "Raymond", "Vincent", "Zhang", "Lv", "Uchibeke", "Shirley", "Kun", "Myers", "Jimmy", "Luo", "Silong", "Kiki", "Todd", "Sloan"];
+
 			// To lazy to count the array with the least number of names
-			var sz = Math.min(arrOfNames1.length, arrOfNames2.length, arrOfNames3.length, arrOfNames4.length); 
-			
+			var sz = Math.min(arrOfNames1.length, arrOfNames2.length, arrOfNames3.length, arrOfNames4.length);
+
 			var arrOfArrs = [arrOfNames1, arrOfNames2, arrOfNames3, arrOfNames4];
 
 			var randomArr = Math.floor((Math.random() * (arrOfArrs.length)) + 0);
