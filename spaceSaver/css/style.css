@@ -138,70 +138,21 @@ padding-bottom: 10px;
 }
 
 .flipImg {
-	-ms-transform: rotate(90deg); /* IE 9 */
-	-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-	transform: rotate(90deg);
-}
-
-.ticket {
-	width: 528px;
-	height: 200px;
-	border-style: solid;
-	border: thin dashed #363942;
-	/*background-color: #FFF8E3;*/
-	font-family: monospace;
-}
-/*.ticketCol1 {
- border-style: solid;
- border-right: thin solid purple;
- }*/
-.ticketCol2 {
-	border-style: solid;
-	border-right: medium solid #363942;
-	border-left: medium solid #363942;
-}
-.lowerDiv {
-	border-style: solid;
-	border-right: thin solid #363942;
-	border-left: thin solid #363942;
-}
-
-.eventDets {
-	padding-right: 20%;
-	float: right;
-}
-
-.ticketTitle, .ticketVenue {
-	border-style: solid;
-	/*border-top: thin solid purple;*/
-	border-bottom: thin solid #363942;
-}
-/*.centerDiv {
- border-style: solid;
- border-top: thin solid purple;
- }*/
-
-.ticketCol3, .ticketCol1 {
-	-ms-transform: rotate(270deg); /* IE 9 */
-	-webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
-	transform: rotate(270deg);
-	font-family: monospace;
-}
-
-.styleBtns div, .styleBtns_Txt div {
-	width: 100%;
-    /*opacity: 1.0;*/
-}
-
-.styleBtns div:hover {
-    padding-left: 10%;
-	border-right: medium solid black;
-	border-top: medium solid black;
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
 } 
 
-.styleBtns_Txt div:hover {
-    padding-left: 10%;
-	border-right: medium solid #B8AE9C;
-	border-top: medium solid #B8AE9C;
-} 
+    md-sidenav  {
+      width: 110px;height:100%;
+      padding:20px;
+      background-color: #6bc7cc;
+    }
+
+    md-content {
+      background-color : tan;
+      height:100%;
+      padding:20px;
+    }
+
 

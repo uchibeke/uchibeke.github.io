@@ -5,26 +5,11 @@ function($routeProvider) {
 	$routeProvider.when('/list', {
 		templateUrl : 'partials/list.html',
 		controller : 'ListController'
-	}).when('/details/:itemId', {
-		templateUrl : 'partials/details.html',
-		controller : 'DetailsController'
-	}).when('/populate', {
-		templateUrl : 'partials/populate.html',
+	}).when('/cheatcheat', {
+		templateUrl : 'partials/cheatcheat.html',
 		controller : 'ListController'
-	}).when('/home', {
-		templateUrl : 'partials/home.html',
-		controller : 'ListController'
-	}).when('/live', {
-		templateUrl : 'partials/live.html',
-		controller : 'ListController'
-	}).when('/guestList', {
-		templateUrl : 'partials/guestList.html',
-		controller : 'ListController'
-	}).when('/tickets', {
-		templateUrl : 'partials/makeTicket.html',
-		controller : 'TicketController'
 	}).otherwise({
-		redirectTo : '/home'
+		redirectTo : '/cheatcheat'
 	});
 }]);
 

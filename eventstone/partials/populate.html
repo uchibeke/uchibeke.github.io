@@ -11,7 +11,7 @@
 	<br />
 	<div class="row dataFieldContainer center-block  text-center">
 		<textarea ng-model="dataField" placeholder="Enter the names or NSIDs of guests seperated with comma and click 'Add Guests'" 
-		class="dataField form-control" type="textarea" style="height: auto !important;"></textarea>
+		class="dataField form-control" type="textarea" style="height: 250px !important; "></textarea>
 	</div>
 	<div class=" populate_div  panel panel-default" data-toggle="buttons" style="padding-bottom: 2%;">
 		<div class="panel-body">
@@ -20,22 +20,23 @@
 				class="btn btn-primary btn-xs" ng-click="clearField(dataField); dataField = ' ' ">
 					Clear Field
 				</button>
-				<button ng-model="btnText" type="button" 
-				class="btn btn-primary btn-xs " ng-click="randomName()">
+				<button ng-model="btnText" type="button"
+				class="btn btn-primary " ng-click="randomName()">
 					Random Name
 				</button>
 				<button ng-model="btnText" type="button"
-				class="btn btn-primary checkInBtn " ng-click="submitUserInput()">
+				class="btn btn-primary checkInBtn " ng-click="submitUserInput();dataField = '' ">
 					{{listBtnText}}
 				</button>
 			</div>
-		</div>
-		<div class="panel-body">
-			<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
-			<a class="pull-right"  ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">
-			<button type="button" class="btn btn-success checkInBtn  ">
-				View Guests
-			</button> </a>
+			<div class="pull-left" style="width: 50%;">
+				<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
+				<a class="pull-right"  ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">
+				<button type="button" class="btn btn-success checkInBtn  ">
+					View Guests
+				</button> </a>
+
+			</div>
 		</div>
 	</div>
 	<div>
@@ -46,17 +47,8 @@
 			Clear localStorage
 		</button>
 	</div>
-	<!-- <div class="panel panel-default">
-		<div class="panel-body">
-			<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
-			<a class="pull-right"  ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">
-			<button type="button" class="btn btn-success checkInBtn  ">
-				View Guests
-			</button> </a>
-		</div>
-	</div> -->
 	<div class="pull-left">
-		<a type="button" class="btn btn-default btn-xs" ng-href="#/cheatcheat"> Cheat Sheet Gen &raquo;</a>
+		<a type="button" class="btn btn-primary  btn-xs "  ng-href="#/tickets">&laquo; Create Tickets </a>
 	</div>
 	<div class="pull-right">
 		<a type="button" class="btn btn-primary  btn-xs " ng-click="backUpBtn()">{{backUpTxt()}} &raquo;</a>

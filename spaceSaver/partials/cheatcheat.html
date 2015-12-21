@@ -1,0 +1,86 @@
+<section class="guestinfo page">
+	<br />
+	<h1 class="text-center uofs-page-title"><a>Cheat Sheet Generator</a></h1>
+	<br />
+	<div ng-hide=" $storage.xx.length > 0 && switchView == true">
+		<div class="row dataFieldContainer center-block  text-center">
+			<textarea ng-model="dataField.field" placeholder="Paste all the text you want to include in your cheat sheet. All lines will be removed and joined to the preceeding line." 
+		class="dataField form-control" type="textarea" style="height: 300px !important;"></textarea>
+		</div>
+		<div class=" populate_div  panel panel-default" data-toggle="buttons" style="padding-bottom: 2%;">
+			<div class="panel-body">
+				<p class=" pull-left" >
+					<span style="width: 20%;"> Current delimeter is '||'.  Enter a new delimeter: </span>
+					<input type="text" style="width: 10%;" ng-model="delim"/>
+					<button ng-model="btnText" type="button"
+					class="btn btn-primary checkInBtn " ng-click="generateSheet()">
+						Replace
+					</button>
+				</p>
+				<div class="pull-right">
+					<button ng-model="btnText" type="button" ng-show="dataField.field.length >=1"
+					class="btn btn-primary btn-xs" ng-click="clearField(dataField.field); dataField.field = ' ' ">
+						Clear Field
+					</button>
+					<button ng-model="btnText" type="button"
+					class="btn btn-primary checkInBtn " ng-click="generateSheet()">
+						Generate Cheat Sheet
+					</button>
+				</div>
+			</div>
+			<!-- {{dataField.field}} -->
+		</div>
+
+	</div>
+	<div>
+		<!-- {{$storage.x}} -->
+		<!-- <p >{{dateString()}}</p> -->
+		<button ng-hide="true" ng-click="$storage.$reset({ })">
+			Clear localStorage
+		</button>
+	</div>
+	<div style="padding-right: 10%;"  ng-show="switchView && $storage.xx.length > 0" class="pull-left">
+		<button ng-model="btnText" type="button" ng-click="switchView = !switchView"
+		class="btn btn-default btn-xs " ng-model="switchView" >
+			Go back
+		</button>
+
+	</div>
+	<div class="pull-right">
+		<button ng-model="btnText" type="button" name="printreport" id="printreport"
+		class="btn btn-primary checkInBtn pull-left btn-xs" ng-click="printpage()" ng-show="$storage.xx.length>0">
+			Print Cheat Sheet
+		</button>
+	</div>
+	<br />
+	<div  class="  panel panel-default" >
+		<div class="panel-heading">
+			Cheat Sheet
+		</div>
+		<div class="panel-body">
+			<input type="range" name="points" min="5" max="20" ng-model="fontSz">
+			<p class="text-center">
+				{{fontSz}} Pts &nbsp; &nbsp; | &nbsp; &nbsp; {{fontSz/(72/96) | number:0}} px
+			</p>
+			<br />
+			<!-- <div id="content" > -->
+			<p id="content" style="font-size:{{fontSz/(72/96)}}px;  text-align: justify; font-family: Tahoma;">
+				{{$storage.xx}}
+			</p>
+			<!-- </div> -->
+			<!-- <img ng-src="{{slides[0].image}}" width="200px" alt="...">
+			<img ng-src="{{slides[1].image}}" width="200px" alt="...">
+			<img ng-src="{{slides[2].image}}" width="200px" alt="...">
+			<img ng-src="{{slides[3].image}}" width="200px" alt="...">
+			<img ng-src="{{slides[5].image}}" width="200px" alt="..."> -->
+		</div>
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<!-- <p class="text-center"  ng-show="$storage.xx.length>0">
+	Need another app like this? Maybe something that can help you with school? Shoot me a message and I will try to make it.
+	</p> -->
+</section>
