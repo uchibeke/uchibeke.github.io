@@ -1,6 +1,6 @@
 [
 		{
-			"color" : "#363942",
+			"color" : "#85DB18",
 			"backgroundColor" : "#FFFFDC",
 			"borderLeft" : "",
 			"borderRight" : ""
@@ -24,50 +24,50 @@
 			"borderRight" : ""
 		},
 		{
-			"color" : "#D9853B",
-			"backgroundColor" : "#CCCCCC",
+			"color" : "#E74C3C",
+			"backgroundColor" : "#D9E8F5",
 			"borderLeft" : "",
 			"borderRight" : ""
 		},
 		{
 			"color" : "#263248",
-			"backgroundColor" : "#FF9009",
+			"backgroundColor" : "#E0FFFF",
 			"borderLeft" : "",
 			"borderRight" : ""
 		},
 		{
-			"color" : "#DAEDE2",
-			"backgroundColor" : "#AEEE00",
+			"color" : "#2980B9",
+			"backgroundColor" : "#D2A3E9",
 			"borderLeft" : "",
 			"borderRight" : ""
 		} ,
 		{
-			"color" : "#404040",
+			"color" : "#DF3D82",
 			"backgroundColor" : "white",
 			"borderLeft" : "",
 			"borderRight" : ""
 		},
 		{
-			"color" : "#FFFFFF",
+			"color" : "#404040",
 			"backgroundColor" : "#F3FAB6",
 			"borderLeft" : "",
 			"borderRight" : ""
 		},
 		{
-			"color" : "#DF3D82",
+			"color" : "#FFFFFF",
 			"backgroundColor" : "#FFC0A9",
 			"borderLeft" : "",
 			"borderRight" : ""
 		},
 		{
-			"color" : "#FF9800",
+			"color" : "#A262ED",
 			"backgroundColor" : "#FDF3E7",
 			"borderLeft" : "",
 			"borderRight" : ""
 		},
 		{
 			"color" : "#55B270",
-			"backgroundColor" : "#FFF056",
+			"backgroundColor" : "#C3C7C9",
 			"borderLeft" : "",
 			"borderRight" : ""
 		}

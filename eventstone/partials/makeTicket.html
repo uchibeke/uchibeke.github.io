@@ -14,7 +14,7 @@
 			<br />
 			<br />
 			<div >
-				<form role="form">
+				<form role="form ">
 					<div class="form-group">
 						<!-- <label >Event Title</label> -->
 						<input class="form-control" placeholder="Enter the name of the event" type="text"
@@ -41,7 +41,10 @@
 						ng-model="$storage.ticket[0].ticketPrice">
 					</div>
 					<div class="form-group ">
-						<input class="form-control"  placeholder="Enter ticket price" type="text">
+						<button  id="btnSave"  type="button" class="btn btn-primary btn-lg btn-block">
+							Print Setup
+						</button>
+						<!-- <input type="button" id="btnSave" value="Save PNG"/> -->
 					</div>
 				</form>
 			</div>
@@ -65,12 +68,17 @@
 					<a onclick='return false;' href="" ng-href="#layout5" data-toggle="tab" data-parent="#myTab" ng-click="showTicket(1)">Layout 5</a>
 				</li>
 			</ul>
-			<div class="tab-content row">
+			<div class="tab-content row" id="widget">
 				<br />
-				<div class="ticket tab-pane active center-block" id="layout1" ng-style="previewStyle()">
+				<div class="ticket tab-pane active center-block" id="layout1" ng-style="previewStyle()" >
 					<div class="row text-center " >
-						<div class="col-md-2 ticketCol1">
-							<h4 ng-style="previewStyle()"> {{$storage.prefix}}0{{$storage.startNumber}}</h4>
+						<div class="col-md-3 ticketCol1" class="text-center center-block">
+							<h4 class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</h4>
+							<img alt="Barcoded value 1234567890"
+							src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{$storage.prefix}}0{{$storage.startNumber}}&includetext&scale=1">
+							<p class=" text-center" style="font-size: smaller; " ng-style="previewStyle()">
+								19+ event
+							</p>
 						</div>
 						<div class="col-md-8 ticketCol2">
 							<h2 class="text-center ticketTitle" ng-style="previewStyle()"> {{$storage.ticket[0].ticketTitle}} </h2>
@@ -87,17 +95,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-2 ticketCol3 center-block">
-							<h4 class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</h4>
+						<div class="col-md-1 ticketCol3 center-block">
+							<!-- <h4 class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</h4> -->
 						</div>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<p class=" text-center" style="font-size: smaller; " ng-style="previewStyle()">
-							19+ event
-						</p>
 
 					</div>
 				</div>
@@ -113,9 +113,6 @@
 				</div>
 				<div class="ticket  tab-pane center-block" id="layout5">
 					5
-				</div>
-				<div class="ticket  tab-pane center-block" id="layout6">
-					6
 				</div>
 			</div>
 			<!-- {{style}} -->
@@ -148,7 +145,7 @@
 					<h2 class="text-center row ">Color</h2>
 					<br />
 					<br />
-					<div class="styleBtns cf" ng-repeat="item in style ">
+					<div class="styleBtns cf" ng-repeat="item in $storage.style ">
 						<a ng-click="ticketBackground(item.backgroundColor)">
 						<div type="button" class="btn btn-default btn-xs "
 						ng-style="textBtnStyle(item.backgroundColor)"
@@ -162,7 +159,7 @@
 					<h2 class="text-center row ">Text</h2>
 					<br />
 					<br />
-					<div class="styleBtns_Txt cf" ng-repeat="item in style ">
+					<div class="styleBtns_Txt cf" ng-repeat="item in $storage.style ">
 						<a ng-click="ticketTxtColor(item.color)">
 						<div type="button" class="btn btn-default btn-xs "
 						ng-style="textBtnStyle(item.color)"
@@ -177,7 +174,8 @@
 
 		</div>
 
-	</div>{{$storage.guestList}}
+	</div>
+	{{$storage.guestList}}
 	<div>
 		<!-- {{$storage.x}} -->
 		<!-- <p >{{dateString()}}</p> -->
@@ -185,6 +183,7 @@
 			Clear localStorage
 		</button>
 	</div>
+	<br />
 </section>
 <script>/* This is the function that will get executed after the DOM is fully loaded */</script>
 

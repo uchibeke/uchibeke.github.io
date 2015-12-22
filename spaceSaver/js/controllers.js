@@ -1,4 +1,4 @@
-var guestControllers = angular.module('guestControllers', ['ngStorage', 'ngMaterial'])
+var guestControllers = angular.module('guestControllers', ['ngStorage'])
 
 guestControllers.controller('ListController', ['$scope', '$http', '$localStorage',
 function($scope, $http, $localStorage) {
@@ -13,34 +13,22 @@ function($scope, $http, $localStorage) {
 		// To store the string from user input
 		$scope.dataField = '';
 
-		$scope.listBtnText = 'Add Guests';
 		$scope.$storage = $localStorage.$default({
-			guestsList : $scope.guests
+			guestsList : $scope.guests,
 		});
 
-		$scope.$storage.x = '';
-
-		// List of all user events
-		$scope.visualize = function() {
-			var showGuest = true;
-			if ($scope.guestSearch.length > 0) {
-				showGuest = false;
+		$scope.s = {
+			style : {
+				bg : "{'background-color' : 'red'}",
+				lastName : "Doe",
+				id : 5566,
+				bgColor : function() {
+					return this.bg;
+				}
 			}
-			return showGuest;
-		};
-
-		$scope.dataField = {
-			field : ''
 		}
 
-		$scope.clearField = function(field) {
-			$scope.dataField.field = '';
-		}
-		// $scope.userInputToArray = function() {
-		// var arrOfAlph = $scope.dataField.split(",");
-		// $scope.clearField($scope.dataField);
-		// return arrOfAlph;
-		// };
+		$scope.$storage.x = '';
 
 		$scope.splitLines = function(field) {
 			var arrOfAlph = field.split("\n");
@@ -48,7 +36,6 @@ function($scope, $http, $localStorage) {
 			return arrOfAlph;
 		};
 
-		$scope.$storage.xx = '';
 		$scope.generateSheet = function() {
 			var arr = $scope.splitLines($scope.dataField.field);
 			var newA = [];
@@ -83,14 +70,35 @@ function($scope, $http, $localStorage) {
 
 		$scope.delim = ' || ';
 
-		$scope.deleteStored = function() {
-			if (!(angular.equals($scope.$storage.guestsList, data))) {
-				$scope.$storage.backUpGuestList = {};
-				$scope.$storage.backUpGuestList = $scope.$storage.guestsList;
-				$scope.$storage.guestsList = {};
-				$scope.$storage.guestsList = data;
-			}
-		};
+		$scope.printpage = function() {
+			var originalContents = document.body.innerHTML;
+			var printReport = document.getElementById('content').innerHTML;
+			document.body.innerHTML = printReport;
+			window.print();
+			document.body.innerHTML = originalContents;
+		}
+
+		$scope.printSetup = function() {
+			$scope.$storage.toPrint = $scope.$storage.xx;
+		}
+
+		$scope.slides = [{
+			image : 'https://rawgit.com/uchibeke/uchibeke.github.io/master/eventstone/images/sheet/DependencyGraph.png',
+		}, {
+			image : 'https://rawgit.com/uchibeke/uchibeke.github.io/master/eventstone/images/sheet/frame.png'
+		}, {
+			image : 'https://rawgit.com/uchibeke/uchibeke.github.io/master/eventstone/images/sheet/memoryLayout.png'
+		}, {
+			image : 'https://rawgit.com/uchibeke/uchibeke.github.io/master/eventstone/images/sheet/repoStructure.png'
+		}, {
+			image : 'https://rawgit.com/uchibeke/uchibeke.github.io/master/eventstone/images/sheet/stackFrame.png'
+		}, {
+			image : 'https://rawgit.com/uchibeke/uchibeke.github.io/master/eventstone/images/sheet/stepsSoftwareBuild.png'
+		}]
+
+		$scope.clearField = function(field) {
+			field = '';
+		}
 
 		$scope.removeElement = function(list, idx) {
 			if (list.length <= 2) {
@@ -114,78 +122,12 @@ function($scope, $http, $localStorage) {
 			return d.getFullYear() + "" + ('0' + (d.getMonth() + 1)).slice(-2) + "" + ('0' + d.getDate()).slice(-2);
 		}
 
-		$scope.checkedIn = function(x) {
-			if ($scope.$storage.guestsList[x].checkedIn == true) {
-			} else {
-				$scope.$storage.guestsList[x].checkedIn = true;
-				var d = new Date();
-				var ds = d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2) + " on " + (d.getMonth() + 1) + "/" + d.getDate();
-				$scope.$storage.guestsList[x].btnText = 'Checked in ' + ds;
-				$scope.$storage.guestsList[x].guestStatus = 'Checked in ' + ds;
-			}
-		}
-
-		$scope.backUpTxt = function() {
-			if ($scope.backUp) {
-				return 'Hide Backed Guest List';
-				;
-			} else {
-				return 'View Backed up Guest List';
-			}
-		}
-
-		$scope.backUp = false;
-		$scope.backUpBtn = function() {
-			$scope.backUp = !$scope.backUp;
-		}
-
-		$scope.fontSz = 8;
-		$scope.printpage = function() {
-			var originalContents = document.body.innerHTML;
-			var printReport = document.getElementById('content').innerHTML;
-			document.body.innerHTML = printReport;
-			window.print();
-			document.body.innerHTML = originalContents;
-		}
-
+		$scope.link = 'http://1drv.ms/1m9z5RB';
 		$scope.slides = [{
-			image : 'https://rawgit.com/uchibeke/uchibeke.github.io/master/eventstone/images/sheet/DependencyGraph.png',
+			image : '../images/sheet/DependencyGraph.png',
 		}, {
-			image : 'https://rawgit.com/uchibeke/uchibeke.github.io/master/eventstone/images/sheet/frame.png'
-		}, {
-			image : 'https://rawgit.com/uchibeke/uchibeke.github.io/master/eventstone/images/sheet/memoryLayout.png'
-		}, {
-			image : 'https://rawgit.com/uchibeke/uchibeke.github.io/master/eventstone/images/sheet/repoStructure.png'
-		}, {
-			image : 'https://rawgit.com/uchibeke/uchibeke.github.io/master/eventstone/images/sheet/stackFrame.png'
-		}, {
-			image : 'https://rawgit.com/uchibeke/uchibeke.github.io/master/eventstone/images/sheet/stepsSoftwareBuild.png'
+			image : 'frame.png'
 		}]
-
-	});
-}]);
-
-guestControllers.controller('DetailsController', ['$scope', '$http', '$routeParams', '$localStorage',
-function($scope, $http, $routeParams, $localStorage) {
-	$http.get('js/data.json').success(function(data) {
-		$scope.guests = data;
-		$scope.$storage = $localStorage.$default({
-			guestsList : $scope.guests
-		});
-
-		$scope.whichItem = $routeParams.itemId;
-
-		if ($routeParams.itemId > 0) {
-			$scope.prevItem = Number($routeParams.itemId) - 1;
-		} else {
-			$scope.prevItem = $scope.$storage.guestsList.length - 1;
-		}
-
-		if ($routeParams.itemId < $scope.$storage.guestsList.length - 1) {
-			$scope.nextItem = Number($routeParams.itemId) + 1;
-		} else {
-			$scope.nextItem = 0;
-		}
 
 	});
 }]);

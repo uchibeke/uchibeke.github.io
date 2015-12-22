@@ -11,16 +11,19 @@ function($scope, $http, $localStorage) {
 			$scope.ticketSearch = '';
 
 			$scope.$storage = $localStorage.$default({
-				ticket : $scope.ticketdata
+				ticket : $scope.ticketdata,
+				style : $scope.styles
 			});
 
-			$scope.style = $scope.styles;
+			// $scope.style = $scope.styles;
 
 			// $scope.$storage.x = '';
 			//
 			// $scope.clearField = function(field) {
 			// field = '';
 			// }
+
+			$scope.bc = 10;
 
 			$scope.showTicket = function(ind) {
 				for (var i; i < $scope.$storage.length; i++) {
@@ -43,25 +46,39 @@ function($scope, $http, $localStorage) {
 			});
 
 			$scope.ticketBackground = function(ind) {
-				$scope.ticketText = $scope.ticketText;
-				$scope.ticketBgColor = ind;
+				$scope.$storage.ticketText = $scope.$storage.ticketText;
+				$scope.$storage.ticketBgColor = ind;
 			};
 
 			$scope.ticketTxtColor = function(ind) {
-				$scope.ticketBgColor = $scope.ticketBgColor;
-				$scope.ticketText = ind;
+				$scope.$storage.ticketBgColor = $scope.$storage.ticketBgColor;
+				$scope.$storage.ticketText = ind;
 			}
 
 			$scope.isModel = true;
-			
+
 			$scope.previewStyle = function() {
 				if ($scope.isModel) {
 					return {
-						'background-color' : $scope.ticketBgColor,
-						'color' : $scope.ticketText
+						'background-color' : $scope.$storage.ticketBgColor,
+						'color' : $scope.$storage.ticketText
 					}
 				}
 			}
+			$(function() {
+				$("#btnSave").click(function() {
+					html2canvas($("#widget"), {
+						onrendered : function(canvas) {
+							theCanvas = canvas;
+							document.body.appendChild(canvas);
+
+							canvas.toBlob(function(blob) {
+								saveAs(blob, "Dashboard.png");
+							});
+						}
+					});
+				});
+			});
 
 			$scope.textBtnStyle = function(bg) {
 				if ($scope.isModel) {
