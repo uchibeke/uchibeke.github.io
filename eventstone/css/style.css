@@ -132,6 +132,9 @@ padding-bottom: 10px;
 	width: 100%;
 	opacity: 1;
 }
+body {
+	background-color:#000000 ;
+}
 
 .navBtns {
 	padding: 1.5%;

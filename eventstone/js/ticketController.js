@@ -70,10 +70,13 @@ function($scope, $http, $localStorage) {
 					html2canvas($("#widget"), {
 						onrendered : function(canvas) {
 							theCanvas = canvas;
-							document.body.appendChild(canvas);
+							document.body.appendChild(canvas).className = "screen";
+							// var input = document.createElement("input");
+							// input.className = 'class_to_add';
+							// document.forms[0].appendChild(input);
 
 							canvas.toBlob(function(blob) {
-								saveAs(blob, "Dashboard.png");
+								saveAs(blob, "Card.png");
 							});
 						}
 					});
@@ -84,9 +87,9 @@ function($scope, $http, $localStorage) {
 				if ($scope.isModel) {
 					return {
 						'background-color' : bg
-					}
-				}
-			}
+					};
+				};
+			};
 			// $scope.userInputToArray = function() {
 			// var arrOfAlph = $scope.dataField.split(",");
 			// $scope.clearField($scope.dataField);
