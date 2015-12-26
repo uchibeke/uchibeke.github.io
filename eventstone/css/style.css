@@ -133,7 +133,7 @@ padding-bottom: 10px;
 	opacity: 1;
 }
 body {
-	background-color:#000000 ;
+	background-color: #000000;
 }
 
 .navBtns {
@@ -146,18 +146,30 @@ body {
 	transform: rotate(90deg);
 }
 
+/*@media print and (color) {
+ * {
+ -webkit-print-color-adjust: exact;
+ print-color-adjust: exact;
+ }
+ }*/
+
+body {
+	-webkit-print-color-adjust: exact !important;
+	print-color-adjust: exact !important;
+}
+
 .ticket {
-	width: 528px;
-	height: 200px;
+	page-break-inside: avoid;
+}
+
+.ticket {
+	width: 528px !important;
+	height: 200px !important;
 	border-style: solid;
 	border: thin dashed red;
-	/*background-color: #FFF8E3;*/
 	font-family: monospace;
 }
-/*.ticketCol1 {
- border-style: solid;
- border-right: thin solid purple;
- }*/
+
 .ticketCol2 {
 	border-style: solid;
 	border-right: medium solid #363942;
@@ -185,116 +197,103 @@ body {
  }*/
 
 .ticketCol3, .ticketCol1 {
-	/*-ms-transform: rotate(270deg); /* IE 9 */
-	/*-webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */*/
-	/*transform: rotate(270deg);*/
 	font-family: monospace;
 }
 
 .styleBtns div, .styleBtns_Txt div {
 	width: 100%;
-    /*opacity: 1.0;*/
+	/*opacity: 1.0;*/
 }
 
 .styleBtns div:hover {
-    padding-left: 10%;
+	padding-left: 10%;
 	border-right: medium solid black;
 	border-top: medium solid black;
-} 
+}
 
 .styleBtns_Txt div:hover {
-    padding-left: 10%;
+	padding-left: 10%;
 	border-right: medium solid #B8AE9C;
 	border-top: medium solid #B8AE9C;
-} 
-
-
-
-
-
-
-
-
-
+}
 
 /*Barcode*/
 .barcode.code128 {
-    float: left;
-    height: 100%;
-    min-height: 10px;
+	float: left;
+	height: 100%;
+	min-height: 10px;
 }
 .barcode.code128 > div.b {
-    background: none repeat scroll 0 0 #000000;
-    float: left;
-    height: 100%;
+	background: none repeat scroll 0 0 #000000;
+	float: left;
+	height: 100%;
 }
 .barcode.code128 > div.w {
-    background: none repeat scroll 0 0 #FFFFFF;
-    float: left;
-    height: 100%;
+	background: none repeat scroll 0 0 #FFFFFF;
+	float: left;
+	height: 100%;
 }
 .barcode.code128 .w20 {
-    width: 20px;
+	width: 20px;
 }
 .barcode.code128 .w1 {
-    width: 1px;
+	width: 1px;
 }
 .barcode.code128 .w2 {
-    width: 2px;
+	width: 2px;
 }
 .barcode.code128 .w3 {
-    width: 3px;
+	width: 3px;
 }
 .barcode.code128 .w4 {
-    width: 4px;
+	width: 4px;
 }
 .barcode.code128 .w5 {
-    width: 5px;
+	width: 5px;
 }
 .barcode.code128 .w6 {
-    width: 6px;
+	width: 6px;
 }
 .barcode.code128 .w7 {
-    width: 7px;
+	width: 7px;
 }
 .barcode.code128 .w8 {
-    width: 8px;
+	width: 8px;
 }
 .barcode.code128 .w9 {
-    width: 9px;
+	width: 9px;
 }
 .barcode.code128 .w10 {
-    width: 10px;
+	width: 10px;
 }
 .barcode.code128 .b1 {
-    width: 1px;
+	width: 1px;
 }
 .barcode.code128 .b2 {
-    width: 2px;
+	width: 2px;
 }
 .barcode.code128 .b3 {
-    width: 3px;
+	width: 3px;
 }
 .barcode.code128 .b4 {
-    width: 4px;
+	width: 4px;
 }
 .barcode.code128 .b5 {
-    width: 5px;
+	width: 5px;
 }
 .barcode.code128 .b6 {
-    width: 6px;
+	width: 6px;
 }
 .barcode.code128 .b7 {
-    width: 7px;
+	width: 7px;
 }
 .barcode.code128 .b8 {
-    width: 8px;
+	width: 8px;
 }
 .barcode.code128 .b9 {
-    width: 9px;
+	width: 9px;
 }
 .barcode.code128 .b10 {
-    width: 10px;
+	width: 10px;
 }
-
 

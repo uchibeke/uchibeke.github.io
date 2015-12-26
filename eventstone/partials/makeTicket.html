@@ -1,189 +1,228 @@
-<section class="guestinfo uofs-section container-fluid animated slideInDown">
+<section class="guestinfo uofs-section container-fluid animated slideInDown" id="ticketPage">
 	<br />
-	<div class="back_div pull-left ">
-		<a type="button" class="btn btn-default btn-xs" ng-href="#/populate">&laquo; Back</a>
-	</div>
-	<div class="pull-right">
-		<a type="button" class="btn btn-default btn-xs" ng-href="#/live"> Start Event &raquo;</a>
-	</div>
-	<h1 class="text-center uofs-page-title"><a>Tix Maker </a></h1>
-	<br />
-	<div class="row dataFieldContainer  center-block ">
-		<div class="col-md-4 pull-left " style="border-bottom-right-radius: solid 2px red">
-			<h2 class="text-center">Ticket Designer</h2>
-			<br />
-			<br />
-			<div >
-				<form role="form ">
-					<div class="form-group">
-						<!-- <label >Event Title</label> -->
-						<input class="form-control" placeholder="Enter the name of the event" type="text"
-						ng-model="$storage.ticket[0].ticketTitle">
-					</div>
-					<div class="form-group">
-						<!-- <label >Date</label> -->
-						<input class="form-control"  placeholder="Enter venue of event" type="text"
-						ng-model="$storage.ticket[0].eventVenue">
-					</div>
-					<div class="form-group">
-						<!-- <label >Date</label> -->
-						<input class="form-control" id="datepicker"  placeholder="Enter the event date" type="text"
-						ng-model="$storage.ticket[0].eventDate">
-					</div>
-					<div class="form-group">
-						<!-- <label >Time</label> -->
-						<input class="form-control"  placeholder="Enter the event time" type="time"
-						ng-model="$storage.ticket[0].eventTime">
-					</div>
-					<div class="form-group">
-						<!-- <label >Time</label> -->
-						<input class="form-control"  placeholder="Enter ticket price" type="number"
-						ng-model="$storage.ticket[0].ticketPrice">
-					</div>
-					<div class="form-group ">
-						<button  id="btnSave"  type="button" class="btn btn-primary btn-lg btn-block">
-							Setup for Printing
-						</button>
-						<!-- <input type="button" id="btnSave" value="Save PNG"/> -->
-					</div>
-				</form>
-			</div>
+	<div class="hideOnPrint" ng-hide="printSet">
+		<div class="back_div pull-left ">
+			<a type="button" class="btn btn-default btn-xs" ng-href="#/populate">&laquo; Back</a>
 		</div>
-		<div class="col-md-6 ">
-			<h2 class="text-center row ">Preview</h2>
-			<ul class="nav nav-tabs" id="myTab">
-				<li class="active">
-					<a href="#layout1" target="_self" data-toggle="tab"  ng-click="showTicket(0)">Layout 1</a>
-				</li>
-				<li>
-					<a onclick='return false;' href="" ng-href="#layout2" data-toggle="tab" data-parent="#myTab"  ng-click="showTicket(2)">Layout 2</a>
-				</li>
-				<li>
-					<a onclick='return false;' href="" ng-href="#layout3" data-toggle="tab" data-parent="#myTab"  ng-click="showTicket(3)">Layout 2</a>
-				</li>
-				<li>
-					<a onclick='return false;' href="" ng-href="#layout4" data-toggle="tab" data-parent="#myTab" ng-click="showTicket(1)">Layout 4</a>
-				</li>
-				<li>
-					<a onclick='return false;' href="" ng-href="#layout5" data-toggle="tab" data-parent="#myTab" ng-click="showTicket(1)">Layout 5</a>
-				</li>
-			</ul>
-			<div class="tab-content row" id="widget">
+		<div class="pull-right">
+			<a type="button" class="btn btn-default btn-xs" ng-href="#/live"> Start Event &raquo;</a>
+		</div>
+		<h1 class="text-center uofs-page-title"><a>Tix Maker </a></h1>
+		<br />
+		<div class="row dataFieldContainer  center-block ">
+			<div class="col-md-4 col-xs-12 pull-left " style="border-bottom-right-radius: solid 2px red">
+				<h2 class="text-center">Ticket Designer</h2>
 				<br />
-				<div class="ticket tab-pane active center-block" id="layout1" ng-style="previewStyle()" >
-					<div class="row text-center " >
-						<div class="col-md-3 ticketCol1" class="text-center center-block">
-							<h4 class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</h4>
-							<img alt="Barcoded value 1234567890"
-							src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{$storage.prefix}}0{{$storage.startNumber}}&includetext&scale=1">
-							<p class=" text-center" style="font-size: smaller; " ng-style="previewStyle()">
-								19+ event
-							</p>
+				<br />
+				<div >
+					<form role="form ">
+						<div class="form-group">
+							<input class="form-control" placeholder="Enter the name of the event" type="text"
+							ng-model="$storage.ticket[0].ticketTitle">
 						</div>
-						<div class="col-md-8 ticketCol2">
-							<h2 class="text-center ticketTitle" ng-style="previewStyle()"> {{$storage.ticket[0].ticketTitle}} </h2>
-							<h4 class="text-center ticketVenue" ng-style="previewStyle()"> {{$storage.ticket[0].eventVenue}} </h4>
-							<div class="row centerDiv">
-								<div class="col-md-4 text-center center-block">
-									{{$storage.ticket[0].eventDate}}
-								</div>
-								<div class="col-md-6 text-center lowerDiv">
-									<h2 ng-style="previewStyle()">Admit One</h2>
-								</div>
-								<div class="col-md-2 text-center"  >
-									at {{$storage.ticket[0].eventTime}}
+						<div class="form-group">
+							<input class="form-control"  placeholder="Enter venue of event" type="text"
+							ng-model="$storage.ticket[0].eventVenue">
+						</div>
+						<div class="form-group">
+							<input class="form-control" id="datepicker"  placeholder="Enter the event date" type="text"
+							ng-model="$storage.ticket[0].eventDate">
+						</div>
+						<div class="form-group">
+							<input class="form-control"  placeholder="Enter the event time" type="text"
+							ng-model="$storage.ticket[0].eventTime">
+						</div>
+						<div class="form-group">
+							<input class="form-control"  placeholder="Enter ticket price" type="text"
+							ng-model="$storage.ticket[0].ticketPrice">
+						</div>
+						<div class="form-group">
+							<input class="form-control"  placeholder="Enter other info eg. ID required/19+ event" type="text"
+							ng-model="$storage.ageInfo">
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-md-6 col-xs-12">
+				<h2 class="text-center row ">Preview</h2>
+				<ul class="nav nav-tabs" id="myTab">
+					<li class="active">
+						<a href="#layout1" target="_self" data-toggle="tab"  ng-click="showTicket(0)">Layout 1</a>
+					</li>
+					<li>
+						<a onclick='return false;' href="" ng-href="#layout2" data-toggle="tab" data-parent="#myTab"  ng-click="showTicket(2)">Layout 2</a>
+					</li>
+					<li>
+						<a onclick='return false;' href="" ng-href="#layout3" data-toggle="tab" data-parent="#myTab"  ng-click="showTicket(3)">Layout 2</a>
+					</li>
+					<li>
+						<a onclick='return false;' href="" ng-href="#layout4" data-toggle="tab" data-parent="#myTab" ng-click="showTicket(1)">Layout 4</a>
+					</li>
+					<li>
+						<a onclick='return false;' href="" ng-href="#layout5" data-toggle="tab" data-parent="#myTab" ng-click="showTicket(1)">Layout 5</a>
+					</li>
+				</ul>
+				<div class="tab-content " id="widget">
+					<br />
+					<div class=" tab-pane active center-block" id="layout1" >
+						<div class="row text-center ticket" ng-style="previewStyle()" >
+							<br />
+							<div class="col-md-3 col-lg-3 col-xs-3  ticketCol1" class="text-center center-block">
+								<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
+								<img alt="Barcoded value {{$storage.prefix}}0{{$storage.guestsList[0].name}}"
+								src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{$storage.prefix}}0{{$storage.guestsList[0].name}}&includetext&scale=1">
+								<span style="font-size: x-large; font-weight: bold;">{{$storage.guestsList[0].name}}</span>
+								<p class=" text-center" style="font-size: smaller; " ng-style="previewStyle()" >
+									{{$storage.ageInfo}}
+								</p>
+							</div>
+							<div class="col-md-8 col-lg-8 col-xs-8  ticketCol2">
+								<h2 class="text-center ticketTitle" ng-style="previewStyle()"> {{$storage.ticket[0].ticketTitle}} </h2>
+								<h4 class="text-center ticketVenue" ng-style="previewStyle()"> {{$storage.ticket[0].eventVenue}} </h4>
+								<div class="row centerDiv">
+									<div class="col-md-4 col-lg-4 col-xs-4  text-center center-block">
+										{{$storage.ticket[0].eventDate}}
+									</div>
+									<div class="col-md-6 col-lg-6 col-xs-6  text-center lowerDiv">
+										<h2 ng-style="previewStyle()">Admit One</h2>
+									</div>
+									<div class="col-md-2 col-lg-2 col-xs-2  text-center"  >
+										{{$storage.ticket[0].eventTime}}
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-md-1 ticketCol3 center-block">
-							<!-- <h4 class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</h4> -->
-						</div>
+							<div class="col-md-1 col-lg-1 col-xs-1  ticketCol3 center-block"></div>
 
+						</div>
+					</div>
+
+					<div class="ticket  tab-pane center-block" id="layout2">
+						2
+					</div>
+					<div class="ticket  tab-pane center-block" id="layout3">
+						3
+					</div>
+					<div class="ticket  tab-pane center-block" id="layout4">
+						4
+					</div>
+					<div class="ticket  tab-pane center-block" id="layout5">
+						5
 					</div>
 				</div>
-
-				<div class="ticket  tab-pane center-block" id="layout2">
-					2
-				</div>
-				<div class="ticket  tab-pane center-block" id="layout3">
-					3
-				</div>
-				<div class="ticket  tab-pane center-block" id="layout4">
-					4
-				</div>
-				<div class="ticket  tab-pane center-block" id="layout5">
-					5
+				<div class=" center-block row text-center">
+					<br />
+					<div class="center-block col-md-6">
+						<a type="button" class="btn btn-primary btn-lg btn-block" ng-href="#/populate">Manage Guests</a>
+					</div>
+					<div class="center-block col-md-6">
+						<button   type="button" class="btn btn-primary btn-lg btn-block" ng-click="printSet=true;($storage.sampleView) = true">
+							Print Setup
+						</button>
+					</div>
 				</div>
 			</div>
-			<!-- {{style}} -->
 			<br />
-			<!-- {{$storage.ticket}} -->
-			<div class="row center-block ">
-				<form role="form">
-					<br />
-					<div class="form-group col-md-3 text-center">
-						<label >Prefix</label>
-						<input class="form-control"  placeholder="Prefix" type="text"
-						ng-model="$storage.prefix">
+			<div class="col-md-2 col-xs-12">
+				<div class="">
+					<div class="col-md-6 col-xs-6 pull-right">
+						<h2 class="text-center row ">Color</h2>
+						<br />
+						<br />
+						<div class="styleBtns cf" ng-repeat="item in $storage.style ">
+							<a ng-click="ticketBackground(item.backgroundColor)">
+							<div type="button" class="btn btn-default btn-xs "
+							ng-style="textBtnStyle(item.backgroundColor)"
+							style="">
+								{{$index+1}}
+							</div> </a>
+						</div>
+
 					</div>
-					<div class="form-group col-md-3 text-center">
-						<label >Ticket No</label>
-						<input class="form-control"  placeholder="Number" type="text"
-						ng-model="$storage.startNumber">
+					<div class="col-md-6 col-xs-6 pull-right">
+						<h2 class="text-center row ">Text</h2>
+						<br />
+						<br />
+						<div class="styleBtns_Txt cf" ng-repeat="item in $storage.style ">
+							<a ng-click="ticketTxtColor(item.color)">
+							<div type="button" class="btn btn-default btn-xs "
+							ng-style="textBtnStyle(item.color)"
+							style="">
+								{{$index+1}}
+							</div> </a>
+						</div>
 					</div>
-					<div class="form-group col-md-6 text-center">
-						<label >Total Tickets to generate</label>
-						<input class="form-control"  placeholder="Total tickets to generate" type="text"
-						ng-model="$storage.totalTickets">
-					</div>
-				</form>
+				</div>
 			</div>
 		</div>
-		<div class="col-md-2">
-			<div class="row">
-				<div class="col-md-6 pull-right">
-					<h2 class="text-center row ">Color</h2>
-					<br />
-					<br />
-					<div class="styleBtns cf" ng-repeat="item in $storage.style ">
-						<a ng-click="ticketBackground(item.backgroundColor)">
-						<div type="button" class="btn btn-default btn-xs "
-						ng-style="textBtnStyle(item.backgroundColor)"
-						style="">
-							{{$index+1}}
-						</div> </a>
-					</div>
-
-				</div>
-				<div class="col-md-6 pull-right">
-					<h2 class="text-center row ">Text</h2>
-					<br />
-					<br />
-					<div class="styleBtns_Txt cf" ng-repeat="item in $storage.style ">
-						<a ng-click="ticketTxtColor(item.color)">
-						<div type="button" class="btn btn-default btn-xs "
-						ng-style="textBtnStyle(item.color)"
-						style="">
-							{{$index+1}}
-						</div> </a>
-					</div>
-
-				</div>
-
+		<div class="row">
+			<div class="pull-left ">
+				<button   type="button" class="btn btn-primary  btn-xs " ng-click="printSet=true;($storage.sampleView) = true">
+					<!-- <button   type="button" class="btn btn-primary  btn-xs  btnSave"> Former-->
+					Print preview
+				</button>
 			</div>
-
+			<div class="pull-right" ng-hide="($storage.sampleView)">
+				<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = true"
+				>Open Ticket Preview &raquo;</a>
+			</div>
+			<div class="pull-right" ng-hide="(!($storage.sampleView))==true">
+				<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = false"
+				>Close Ticket Preview &raquo;</a>
+			</div>
 		</div>
-
 	</div>
-	{{$storage.guestList}}
+	<div  ng-show="($storage.sampleView)" class="center-block text-center">
+		<div class="pull-left ">
+			<button   type="button" class="btn btn-default  btn-xs" ng-show="printSet"
+			ng-click="printSet=false;($storage.sampleView) = false">
+				Go Back
+			</button>
+		</div>
+		<h2>Showing tickets for {{$storage.guestsList.length-2}} guests. </h2>
+		<!-- <br /> -->
+		<div class="previewTickets  center-block text-center"
+		ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction">
+			<div class="row text-center ticket center-block" ng-style="previewStyle()">
+				<br />
+				<div class="col-md-3 col-lg-3 col-xs-3 ticketCol1" class="text-center center-block">
+					<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
+					<img alt="Barcoded value {{item.name}}"
+					src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{item.name}}&includetext&scale=1">
+					<span style="font-size: x-large; font-weight: bold";>{{item.name}}</span>
+					<p class=" text-center" style="font-size: x-small; " ng-style="previewStyle()" >
+						{{$storage.ageInfo}}
+					</p>
+				</div>
+				<div class="col-md-8 col-lg-8 col-xs-8 ticketCol2">
+					<h2 class="text-center ticketTitle" ng-style="previewStyle()"> {{$storage.ticket[0].ticketTitle}} </h2>
+					<h4 class="text-center ticketVenue" ng-style="previewStyle()"> {{$storage.ticket[0].eventVenue}} </h4>
+					<div class="row centerDiv">
+						<div class="col-md-4 col-lg-4 col-xs-4 text-center center-block">
+							{{$storage.ticket[0].eventDate}}
+						</div>
+						<div class="col-md-6 col-lg-6 col-xs-6 text-center lowerDiv">
+							<h2 ng-style="previewStyle()">Admit One</h2>
+						</div>
+						<div class="col-md-2 col-lg-2 col-xs-2 text-center"  >
+							{{$storage.ticket[0].eventTime}}
+						</div>
+					</div>
+				</div>
+				<div class="col-md-1 col-lg-1 col-xs-1 ticketCol3 center-block"></div>
+			</div>
+			<br />
+
+		</div>
+	</div>
+
 	<div>
-		<!-- {{$storage.x}} -->
-		<!-- <p >{{dateString()}}</p> -->
 		<button ng-hide="true" ng-click="$storage.$reset({ })">
 			Clear localStorage
 		</button>
 	</div>
-	<br />
+	<div id="compare">
+		<br />
+	</div>
 </section>
 <script>
 	/* This is the function that will get executed after the DOM is fully loaded */
@@ -191,7 +230,3 @@
 	var t = c.getContext('2d');
 
 </script>
-<button onclick="toImage()">
-	Grab
-</button>
-

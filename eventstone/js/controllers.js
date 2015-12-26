@@ -33,25 +33,23 @@ function($scope, $http, $localStorage) {
 			field = '';
 		}
 
-		$scope.userInputToArray = function() {
-			var arrOfAlph = $scope.dataField.split(",");
-			$scope.clearField($scope.dataField);
-			return arrOfAlph;
-		};
-
 		$scope.splitLines = function() {
 			var arrOfAlph = $scope.cheatField.split("\n");
 			$scope.clearField($scope.cheatField);
 			return arrOfAlph;
 		};
 
-		$scope.submitUserInput = function() {
-			var arr = $scope.userInputToArray();
+		$scope.submitUserInput = function(field) {
+			var arr = field.split(",");
 			var newA = [];
 			var length = arr.length;
+
+			// Check if last element is empty and remove it
 			if ((arr[arr.length - 1]).length === 0) {
 				length = arr.length - 1;
 			}
+
+			// Check if name/ticket number starts with a space and remove space
 			var prefix = '\n';
 			var splicedA = {};
 			for (var i = 0; i < length; i++) {
@@ -63,12 +61,14 @@ function($scope, $http, $localStorage) {
 				newA.push({
 					name : splicedA,
 					icon : 'x',
-					id : $scope.dateString(),
+					// id : $scope.dateString(),
 					checkedIn : false,
 					btnText : 'Check-in',
 					guestStatus : 'Not checked-in'
 				});
 			}
+
+			// Two test guests always in the system. Check for them
 			if ($scope.$storage.guestsList.length <= 1) {
 				$scope.$storage.guestsList = '';
 			}
@@ -159,12 +159,40 @@ function($scope, $http, $localStorage) {
 			} else {
 				return 'View Backed up Guest List';
 			}
-		}
+		};
 
 		$scope.backUp = false;
 		$scope.backUpBtn = function() {
 			$scope.backUp = !$scope.backUp;
-		}
+		};
+
+		$scope.generateTicketNums = function() {
+			$scope.dataFieldNum = "";
+			var numbDigits = $scope.$storage.ticketDigits - $scope.$storage.prefix.length;
+			var temp = "";
+			if ($scope.$storage.rand && (!($scope.$storage.seq))) {
+				for (var i = 0; i < $scope.$storage.totalTickets; i++) {
+					// magic number 2 used in slice to remove decimal place
+					temp = $scope.$storage.prefix + "" + (Math.random().toString().slice(2, numbDigits + 2));
+					$scope.dataFieldNum = temp + " ," + $scope.dataFieldNum;
+				}
+			} else if ((!($scope.$storage.rand)) && ($scope.$storage.seq)) {
+				var firstNum = " ";
+				while (firstNum.length > numbDigits || firstNum.length < numbDigits) {
+					firstNum = parseInt(Math.random().toString().slice(2, numbDigits + 2));
+				}
+				for (var i = 0; i < $scope.$storage.totalTickets; i++) {
+					$scope.dataFieldNum = ($scope.$storage.prefix + "" + (firstNum + 1)) + " ," + $scope.dataFieldNum;
+					firstNum--;
+				}
+			} else {
+				$scope.dataFieldNum = "You must select either random or sequential generation mode.";
+			}
+		};
+
+		$scope.ran = function() {
+			$scope.rand = Math.random().toString().slice(2, 7);
+		};
 		//
 		// $scope.restoreFromBackUp = function() {
 		// $scope.$storage.guestsList = {};
@@ -189,7 +217,7 @@ function($scope, $http, $localStorage) {
 			document.body.innerHTML = printReport;
 			window.print();
 			document.body.innerHTML = originalContents;
-		} 
+		}
 		$scope.link = 'http://1drv.ms/1m9z5RB';
 		$scope.slides = [{
 			image : '../images/sheet/DependencyGraph.png',

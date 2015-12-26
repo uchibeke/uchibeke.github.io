@@ -17,17 +17,14 @@
 			<a>
 			<div class="info">
 				<div class="row" style="padding-bottom: 1%;">
-					<div class="col-xs-4 col-md-4 pull-left ">
+					<div class="col-xs-6 col-md-6  pull-left ">
 						<h3>{{item.name}}</h3>
 					</div>
-					<div class="col-xs-4 col-md-4 text-left">
+					<div class="col-xs-6 col-md-6 text-left">
 						<button  type="button"
 						class="btn btn-primary checkInBtn " ng-click="checkedIn($storage.guestsList.indexOf(item))">
 							{{item.btnText}}
 						</button>
-					</div>
-					<div class="col-xs-4 col-md-4 text-right">
-						<h4>{{item.id}}0{{$index+1}}</h4>
 					</div>
 				</div>
 			</div> </a>

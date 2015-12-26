@@ -108,9 +108,9 @@ padding-bottom: 10px;
 #myCarousel {
 	height: 100%;
 	width: 100%;
-	top: 0;
+	/*top: 0;
 	left: 0;
-	position: fixed;
+	position: fixed;*/
 }
 
 .bg {
@@ -127,7 +127,7 @@ padding-bottom: 10px;
 	 font-variant:small-caps;*/
 	/*background-color: #ffd700;*/
 	/*background-image: url("..img/metalic.jpg);*/
-	background-color: #cccccc;
+	/*background-color: #cccccc;*/
 }
 
 #home_bg h1 {
