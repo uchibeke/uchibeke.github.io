@@ -18,7 +18,7 @@
 			By ticket Number </label>
 		<label class="col-md-3"></label>
 		<div class="back_div center-block col-md-2 pull-right">
-			<a type="button" class="btn btn-default" ng-href="#/tickets">Generate Tickets</a>
+			<a type="button" class="btn btn-primary" ng-href="#/tickets">Generate Tickets</a>
 		</div>
 	</div>
 	<div class="addWithName  animated slideInDown" ng-show="$storage.addWithName">
@@ -52,7 +52,6 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 	<div class="addWithNum  animated slideInDown" ng-show="$storage.addWithNum">
 		<div class="row dataFieldContainer center-block  text-center">
@@ -76,20 +75,15 @@
 							ng-click="$storage.rand=false;$storage.seq=true;"/>
 							{{$storage.seq}}
 						</div>
-						<!-- <div class="form-group col-md-3 text-center">
-						<label >Ticket Start Number</label>
-						<input class="form-control"  placeholder="Number" type="text"
-						ng-model="$storage.startNumber">
-						</div> -->
 						<div class="form-group col-md-3 text-center">
 							<label >Number of digits </label>
-							<input class="form-control"  placeholder="eg. 6 to get AXB105" type="text"
-							ng-model="$storage.ticketDigits">
+							<input class="form-control" placeholder="Max is 10. eg. 6 to get AXB105" type="text"
+							ng-model="$storage.ticketDigits" >
 						</div>
 						<div class="form-group col-md-3 text-center">
 							<label >Total Tickets to generate</label>
-							<input class="form-control"  placeholder="The total number of tickets, one per expected guest" type="text"
-							ng-model="$storage.totalTickets">
+							<input  class="form-control"  placeholder="The total number of tickets, one per expected guest" type="text"
+							ng-model="$storage.totalTickets" required>
 						</div>
 						<div class="form-group col-md-3 col-xs-3 text-center">
 							<label >Prefix</label>

@@ -5,9 +5,6 @@ function($routeProvider) {
 	$routeProvider.when('/photography', {
 		templateUrl : 'partials/photography.html',
 		controller : 'MainController'
-	}).when('/details/:itemId', {
-		templateUrl : 'partials/details.html',
-		controller : 'MainController'
 	}).when('/about', {
 		templateUrl : 'partials/about.html',
 		controller : 'MainController'

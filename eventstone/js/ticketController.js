@@ -58,6 +58,17 @@ function($scope, $http, $localStorage) {
 					}
 				}
 			}
+
+			$scope.$storage.sampleView = false;
+
+			$scope.textBtnStyle = function(bg) {
+				if ($scope.isModel) {
+					return {
+						'background-color' : bg
+					};
+				};
+			};
+
 			$(function() {
 				$(".btnSave").click(function() {
 					html2canvas($("#layout1"), {
@@ -70,25 +81,28 @@ function($scope, $http, $localStorage) {
 							// input.className = 'class_to_add';
 							// document.forms[0].appendChild(input);
 
-//Pops up new window compare
+							//Pops up new window compare
 							// canvas.toBlob(function(blob) {
-								// saveAs(blob, "Card.png");
+							// saveAs(blob, "Card.png");
 							// });
 						}
 					});
 				});
 			});
-			
-			$scope.$storage.sampleView = false;
 
-			$scope.textBtnStyle = function(bg) {
-				if ($scope.isModel) {
-					return {
-						'background-color' : bg
-					};
-				};
-			};
+			$scope.printDiv = function() {
+				var printContents = document.getElementById("printable").innerHTML;
+				var popupWin = window.open('', '_blank', 'width=1700,height=2200');
+				popupWin.document.open()
+				popupWin.document.write('<html><link rel="stylesheet" media="all" href="css/style.css"></head><body onload="window.print()">' + printContents + '</html>');
+				popupWin.document.close();
+			}
 
+			$.get("http://ipinfo.io", function(response) {
+				$("#ip").html("IP: " + response.ip);
+				$("#address").html("Location: " + response.city + ", " + response.postal +", " + response.region);
+				// $("#details").html(JSON.stringify(response, null, 4));
+			}, "jsonp");
 		});
 	});
 }]);

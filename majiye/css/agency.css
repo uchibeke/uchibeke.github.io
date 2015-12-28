@@ -6,7 +6,7 @@ body {
 	color: #777
 }
 .text-primary {
-	color: #FC9000
+	color: #fed136
 }
 p {
 	font-size: 14px;
@@ -19,10 +19,10 @@ a, a:hover, a:focus, a:active, a.active {
 	outline: 0
 }
 a {
-	color: #FC9000
+	color: #fed136
 }
 a:hover, a:focus, a:active, a.active {
-	color: #FC9000
+	color: #fec503
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -40,32 +40,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-primary {
 	color: #fff;
-	background-color: #FC9000;
-	border-color: #FC9000;
+	background-color: #fed136;
+	border-color: #fed136;
 	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	font-weight: 700
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
 	color: #fff;
-	background-color: #FC9000;
+	background-color: #fec503;
 	border-color: #f6bf01
 }
 .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
 	background-image: none
 }
 .btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active {
-	background-color: #FC9000;
-	border-color: #FC9000
+	background-color: #fed136;
+	border-color: #fed136
 }
 .btn-primary .badge {
-	color: #FC9000;
+	color: #fed136;
 	background-color: #fff
 }
 .btn-xl {
 	color: #fff;
-	background-color: #FC9000;
-	border-color: #FC9000;
+	background-color: #fed136;
+	border-color: #fed136;
 	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -75,63 +75,63 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-xl:hover, .btn-xl:focus, .btn-xl:active, .btn-xl.active, .open .dropdown-toggle.btn-xl {
 	color: #fff;
-	background-color: #FC9000;
+	background-color: #fec503;
 	border-color: #f6bf01
 }
 .btn-xl:active, .btn-xl.active, .open .dropdown-toggle.btn-xl {
 	background-image: none
 }
 .btn-xl.disabled, .btn-xl[disabled], fieldset[disabled] .btn-xl, .btn-xl.disabled:hover, .btn-xl[disabled]:hover, fieldset[disabled] .btn-xl:hover, .btn-xl.disabled:focus, .btn-xl[disabled]:focus, fieldset[disabled] .btn-xl:focus, .btn-xl.disabled:active, .btn-xl[disabled]:active, fieldset[disabled] .btn-xl:active, .btn-xl.disabled.active, .btn-xl[disabled].active, fieldset[disabled] .btn-xl.active {
-	background-color: #FC9000;
-	border-color: #FC9000
+	background-color: #fed136;
+	border-color: #fed136
 }
 .btn-xl .badge {
-	color: #FC9000;
+	color: #fed136;
 	background-color: #fff
 }
 .navbar-default {
-	background-color: #0A0A0A;
+	background-color: #222;
 	border-color: transparent
 }
 .navbar-default .navbar-brand {
-	color: #0A0A0A;
+	color: #fed136;
 	font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive
 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:active, .navbar-default .navbar-brand.active {
-	color: #FC9000
+	color: #fec503
 }
 .navbar-default .navbar-collapse {
 	border-color: rgba(255,255,255,.02)
 }
 .navbar-default .navbar-toggle {
-	background-color: #FC9000;
-	border-color: #FC9000
+	background-color: #fed136;
+	border-color: #fed136
 }
 .navbar-default .navbar-toggle .icon-bar {
 	background-color: #fff
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-	background-color: #FC9000
+	background-color: #fed136
 }
 .navbar-default .nav li a {
 	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	font-weight: 400;
 	letter-spacing: 1px;
-	color: #0A0A0A
+	color: #fff
 }
 .navbar-default .nav li a:hover, .navbar-default .nav li a:focus {
-	color: #FC9000;
+	color: #fed136;
 	outline: 0
 }
 .navbar-default .navbar-nav > .active > a {
 	border-radius: 0;
-	color: #0A0A0A;
-	background-color: #FC9000
+	color: #fff;
+	background-color: #fed136
 }
 .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	color: #fff;
-	background-color: #FC9000
+	background-color: #fec503
 }
 @media (min-width: 768px) {
 	.navbar-default {
@@ -236,17 +236,17 @@ section h3.section-subheading {
 	margin: 15px 0;
 	text-transform: none
 }
-#portfolio .portfolio-item {
+.portfolio .portfolio-item {
 	margin: 0 0 15px;
 	right: 0
 }
-#portfolio .portfolio-item .portfolio-link {
+.portfolio .portfolio-item .portfolio-link {
 	display: block;
 	position: relative;
 	max-width: 400px;
 	margin: 0 auto
 }
-#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+.portfolio .portfolio-item .portfolio-link .portfolio-hover {
 	background: rgba(254,209,54,.9);
 	position: absolute;
 	width: 100%;
@@ -256,10 +256,10 @@ section h3.section-subheading {
 	-webkit-transition: all ease .5s;
 	-moz-transition: all ease .5s
 }
-#portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
+.portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
 	opacity: 1
 }
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+.portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
 	position: absolute;
 	width: 100%;
 	height: 20px;
@@ -269,34 +269,34 @@ section h3.section-subheading {
 	margin-top: -12px;
 	color: #fff
 }
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+.portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
 	margin-top: -12px
 }
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3, #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+.portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3, .portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
 	margin: 0
 }
-#portfolio .portfolio-item .portfolio-caption {
+.portfolio .portfolio-item .portfolio-caption {
 	max-width: 400px;
 	margin: 0 auto;
 	background-color: #fff;
 	text-align: center;
 	padding: 25px
 }
-#portfolio .portfolio-item .portfolio-caption h4 {
+.portfolio .portfolio-item .portfolio-caption h4 {
 	text-transform: none;
 	margin: 0
 }
-#portfolio .portfolio-item .portfolio-caption p {
+.portfolio .portfolio-item .portfolio-caption p {
 	font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-style: italic;
 	font-size: 16px;
 	margin: 0
 }
-#portfolio * {
+.portfolio * {
 	z-index: 2
 }
 @media (min-width: 767px) {
-	#portfolio .portfolio-item {
+	.portfolio .portfolio-item {
 		margin: 0 0 30px
 	}
 }
@@ -353,7 +353,7 @@ section h3.section-subheading {
 	height: 80px;
 	position: absolute;
 	z-index: 100;
-	background-color: #FC9000;
+	background-color: #fed136;
 	color: #fff;
 	border-radius: 100%;
 	border: 7px solid #f1f1f1;
@@ -506,7 +506,7 @@ section#contact .form-group textarea.form-control {
 	height: 236px
 }
 section#contact .form-control:focus {
-	border-color: #FC9000;
+	border-color: #fed136;
 	box-shadow: none
 }
 section#contact ::-webkit-input-placeholder {
@@ -571,7 +571,7 @@ ul.social-buttons li a {
 	transition: all .3s
 }
 ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li a:active {
-	background-color: #FC9000
+	background-color: #fed136
 }
 .btn:focus, .btn:active, .btn.active, .btn:active:focus {
 	outline: 0
@@ -643,11 +643,11 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 }
 ::-moz-selection {
 	text-shadow: none;
-	background: #FC9000
+	background: #fed136
 }
 ::selection {
 	text-shadow: none;
-	background: #FC9000
+	background: #fed136
 }
 img::selection {
 	background: 0 0
@@ -656,5 +656,5 @@ img::-moz-selection {
 	background: 0 0
 }
 body {
-	webkit-tap-highlight-color: #FC9000
+	webkit-tap-highlight-color: #fed136
 }

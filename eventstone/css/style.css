@@ -3,6 +3,7 @@
  @import url("http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather:400,300,700,900|Droid+Sans:400,700");
 
  /* Reset Styles */
+/*@import url('http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css');*/
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
@@ -163,46 +164,78 @@ body {
 }
 
 .ticket {
-	width: 528px !important;
-	height: 200px !important;
+	width: 5.5in !important;
+	height: 2.125in !important;
 	border-style: solid;
 	border: thin dashed red;
 	font-family: monospace;
+	background-color: #92F1FF;
+	color: #E74C3C;
 }
 
+.ticketCol1 {
+	font-family: monospace;
+	width: 132px !important;
+	display: block !important;
+	/*height: 100% !important;*/
+}
 .ticketCol2 {
 	border-style: solid;
 	border-right: medium solid #363942;
 	border-left: medium solid #363942;
+	width: 352px !important;
+	display: block !important;
+	/*height: 100% !important;*/
+	/*height: 200px !important;*/
 }
-.lowerDiv {
-	border-style: solid;
-	border-right: thin solid #363942;
-	border-left: thin solid #363942;
+
+.ticketCol3 {
+	font-family: monospace !important;
+	width: 44px !important;
+	display: block !important;
+	/*height: 100% !important;*/
+	/*height: 200px !important;*/
+}
+.centerDiv {
+	width: 352px !important;
+}
+
+.centerDiv_1 {
+	width: 117px !important;
+}
+
+.centerDiv_2 {
+	width: 175px !important;
+	border-style: solid !important;
+	border-right: thin solid #363942 !important;
+	border-left: thin solid #363942 !important;
+}
+
+.centerDiv_3 {
+	width: 60px !important;
 }
 
 .eventDets {
-	padding-right: 20%;
-	float: right;
+	padding-right: 20% !important;
 }
 
-.ticketTitle, .ticketVenue {
-	border-style: solid;
-	/*border-top: thin solid purple;*/
-	border-bottom: thin solid #363942;
-}
-/*.centerDiv {
- border-style: solid;
- border-top: thin solid purple;
- }*/
-
-.ticketCol3, .ticketCol1 {
-	font-family: monospace;
+.ticketTitle{
+	font-size: x-large !important;
+	font-weight: bold !important;
+	border-style: solid !important;
+	border-bottom: thin solid #363942 !important;
+	/*padding-bottom: 5%;*/
 }
 
+.ticketVenue {
+	font-size: large !important;
+	font-weight: bold !important;
+	border-style: solid !important;
+	border-bottom: thin solid #363942 !important;
+	
+} 
 .styleBtns div, .styleBtns_Txt div {
 	width: 100%;
-	/*opacity: 1.0;*/
 }
 
 .styleBtns div:hover {
@@ -217,83 +250,27 @@ body {
 	border-top: medium solid #B8AE9C;
 }
 
-/*Barcode*/
-.barcode.code128 {
-	float: left;
-	height: 100%;
-	min-height: 10px;
-}
-.barcode.code128 > div.b {
-	background: none repeat scroll 0 0 #000000;
-	float: left;
-	height: 100%;
-}
-.barcode.code128 > div.w {
-	background: none repeat scroll 0 0 #FFFFFF;
-	float: left;
-	height: 100%;
-}
-.barcode.code128 .w20 {
-	width: 20px;
-}
-.barcode.code128 .w1 {
-	width: 1px;
-}
-.barcode.code128 .w2 {
-	width: 2px;
-}
-.barcode.code128 .w3 {
-	width: 3px;
-}
-.barcode.code128 .w4 {
-	width: 4px;
-}
-.barcode.code128 .w5 {
-	width: 5px;
-}
-.barcode.code128 .w6 {
-	width: 6px;
-}
-.barcode.code128 .w7 {
-	width: 7px;
-}
-.barcode.code128 .w8 {
-	width: 8px;
-}
-.barcode.code128 .w9 {
-	width: 9px;
-}
-.barcode.code128 .w10 {
-	width: 10px;
-}
-.barcode.code128 .b1 {
-	width: 1px;
-}
-.barcode.code128 .b2 {
-	width: 2px;
-}
-.barcode.code128 .b3 {
-	width: 3px;
-}
-.barcode.code128 .b4 {
-	width: 4px;
-}
-.barcode.code128 .b5 {
-	width: 5px;
-}
-.barcode.code128 .b6 {
-	width: 6px;
-}
-.barcode.code128 .b7 {
-	width: 7px;
-}
-.barcode.code128 .b8 {
-	width: 8px;
-}
-.barcode.code128 .b9 {
-	width: 9px;
-}
-.barcode.code128 .b10 {
-	width: 10px;
+
+/*Limestone*/
+
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto
 }
 
+.text-center {
+	text-align: center
+}
+
+.center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto
+}
+.pull-right {
+	float: right !important
+}
+.pull-left {
+	float: left !important
+}

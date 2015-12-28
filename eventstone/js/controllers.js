@@ -167,27 +167,41 @@ function($scope, $http, $localStorage) {
 		};
 
 		$scope.generateTicketNums = function() {
-			$scope.dataFieldNum = "";
-			var numbDigits = $scope.$storage.ticketDigits - $scope.$storage.prefix.length;
-			var temp = "";
-			if ($scope.$storage.rand && (!($scope.$storage.seq))) {
-				for (var i = 0; i < $scope.$storage.totalTickets; i++) {
-					// magic number 2 used in slice to remove decimal place
-					temp = $scope.$storage.prefix + "" + (Math.random().toString().slice(2, numbDigits + 2));
-					$scope.dataFieldNum = temp + " ," + $scope.dataFieldNum;
-				}
-			} else if ((!($scope.$storage.rand)) && ($scope.$storage.seq)) {
-				var firstNum = " ";
-				while (firstNum.length > numbDigits || firstNum.length < numbDigits) {
-					firstNum = parseInt(Math.random().toString().slice(2, numbDigits + 2));
-				}
-				for (var i = 0; i < $scope.$storage.totalTickets; i++) {
-					$scope.dataFieldNum = ($scope.$storage.prefix + "" + (firstNum + 1)) + " ," + $scope.dataFieldNum;
-					firstNum--;
-				}
+			if ($scope.$storage.totalTickets.length <= 0) {
+				$scope.dataFieldNum = "You must enter the number of tickets to generate";
 			} else {
-				$scope.dataFieldNum = "You must select either random or sequential generation mode.";
+				$scope.dataFieldNum = "";
+				var numbDigits = 5;
+				if ($scope.$storage.ticketDigits.length > 0) {
+					numbDigits = $scope.$storage.ticketDigits;
+				}
+				if ($scope.$storage.prefix.length > 0) {
+					numbDigits = $scope.$storage.ticketDigits - $scope.$storage.prefix.length;
+				}
+				var temp = "";
+				if ($scope.$storage.rand && (!($scope.$storage.seq))) {
+					for (var i = 0; i < $scope.$storage.totalTickets; i++) {
+						// magic number 2 used in slice to remove decimal place
+						temp = $scope.$storage.prefix + "" + (Math.random().toString().slice(2, numbDigits + 2));
+						$scope.dataFieldNum = temp + " ," + $scope.dataFieldNum;
+					}
+				} else if ((!($scope.$storage.rand)) && ($scope.$storage.seq)) {
+					var firstNum = " ";
+					while (firstNum.length > numbDigits || firstNum.length < numbDigits) {
+						firstNum = parseInt(Math.random().toString().slice(2, numbDigits + 2));
+					}
+					for (var i = 0; i < $scope.$storage.totalTickets; i++) {
+						$scope.dataFieldNum = ($scope.$storage.prefix + "" + (firstNum + 1)) + " ," + $scope.dataFieldNum;
+						firstNum--;
+					}
+				} else {
+					$scope.dataFieldNum = "You must select either random or sequential generation mode.";
+				}
+				$scope.$storage.ticketDigits = '';
+				$scope.$storage.prefix = '';
+				$scope.$storage.totalTickets = '';
 			}
+
 		};
 
 		$scope.ran = function() {
