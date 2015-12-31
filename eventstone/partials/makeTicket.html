@@ -190,9 +190,9 @@
 			ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction" >
 				<div class="row text-center ticket center-block" ng-style="previewStyle()">
 					<br />
-					<div class="col-md-3 col-lg-3 col-xs-3 ticketCol1" class="text-center center-block">
+					<div class="col-md-3 col-lg-3 col-xs-3 ticketCol1 text-center center-block">
 						<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
-						<img alt="Barcoded value {{item.name}}" class="img-responsive"
+						<img alt="Barcode:{{item.name}}" class="img-responsive"
 						src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{item.name}}&includetext&scale=1">
 						<span >{{item.name}}</span>
 						<p class=" text-center" style="font-size: x-small; " ng-style="previewStyle()" >
@@ -216,8 +216,6 @@
 					</div>
 					<div class="col-md-1 col-lg-1 col-xs-1 ticketCol3 center-block"></div>
 				</div>
-				<br />
-
 			</div>
 		</div>
 	</div>

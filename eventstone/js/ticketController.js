@@ -27,6 +27,7 @@ function($scope, $http, $localStorage) {
 					}
 				}
 			};
+			
 			$(function() {
 				$('#datepicker').datepicker({
 					showAnim : "fadeIn",
@@ -94,13 +95,13 @@ function($scope, $http, $localStorage) {
 				var printContents = document.getElementById("printable").innerHTML;
 				var popupWin = window.open('', '_blank', 'width=1700,height=2200');
 				popupWin.document.open()
-				popupWin.document.write('<html><link rel="stylesheet" media="all" href="css/style.css"></head><body onload="window.print()">' + printContents + '</html>');
+				popupWin.document.write('<html><link rel="stylesheet" media="all" href="css/style.css"><link href="css/limestone.css" rel="stylesheet"  media="all"></head><body onload="window.print()">' + printContents + '</html>');
 				popupWin.document.close();
 			}
 
 			$.get("http://ipinfo.io", function(response) {
 				$("#ip").html("IP: " + response.ip);
-				$("#address").html("Location: " + response.city + ", " + response.postal +", " + response.region);
+				$("#address").html("Location: " + response.city + ", " + response.postal + ", " + response.region);
 				// $("#details").html(JSON.stringify(response, null, 4));
 			}, "jsonp");
 		});
