@@ -1,27 +1,26 @@
-<section class="guestinfo uofs-section container-fluid animated slideInDown">
+<section class="guestinfo uofs-section container-fluid">
 	<br />
 	<div class="back_div pull-left ">
-		<!-- <a ng-href="#/home">&laquo; Home</a> -->
 		<a type="button" class="btn btn-default btn-xs" ng-href="#/home">&laquo; Home</a>
 	</div>
 	<div class="pull-right">
-		<a type="button" class="btn btn-default btn-xs" ng-href="#/live"> Start Event &raquo;</a>
+		<a type="button" class="btn btn-default btn-xs" ng-href="#/tickets"> Generate Tickets &raquo;</a>
 	</div>
-	<h1 class="text-center uofs-page-title"><a>Create Guest List</a></h1>
-	<div class="btn-group center-block row text-center" data-toggle="buttons" style="padding-bottom: 2%; padding-top: 1%;">
-		<label class="btn btn-primary col-md-3 pull-left" ng-click="$storage.addWithName=true;$storage.addWithNum=false;" >
-			<input type="radio" name="options" id="option1">
-			By Guest Name </label>
-		<label class="col-md-1"></label>
-		<label class="btn btn-primary col-md-3 pull-left" ng-click="$storage.addWithNum=true;$storage.addWithName=false;">
+	<h1 class="text-center uofs-page-title"><a>Add Guests</a></h1>
+	<br />
+	<div class="btn-group center-block row text-center" data-toggle="buttons" style="">
+		<label class="btn btn-primary btn-xs col-md-2 pull-left active" ng-click="addWithNum=true;addWithName=false;">
 			<input type="radio" name="options" id="option3">
 			By ticket Number </label>
-		<label class="col-md-3"></label>
-		<div class="back_div center-block col-md-2 pull-right">
-			<a type="button" class="btn btn-primary" ng-href="#/tickets">Generate Tickets</a>
-		</div>
+		<label class="btn btn-primary btn-xs col-md-2 pull-left " ng-click="addWithName=true;addWithNum=false;" >
+			<input type="radio" name="options" id="option1">
+			By Guest Name </label>
+		<label class="col-md-8"></label>
+		<!-- <div class="back_div center-block col-md-2 pull-right">
+		<a type="button" class="btn btn-primary" ng-href="#/tickets">Generate Tickets</a>
+		</div> -->
 	</div>
-	<div class="addWithName  animated slideInDown" ng-show="$storage.addWithName">
+	<div class="addWithName  animated slideInDown" ng-show="addWithName">
 		<div class="row dataFieldContainer center-block  text-center">
 			<textarea ng-model="dataField" placeholder="Enter the names or NSIDs of guests seperated with comma and click 'Add Guests'" 
 		class="dataField form-control" type="textarea" style="height: 250px !important; "></textarea>
@@ -37,10 +36,10 @@
 					class="btn btn-primary btn-xs" ng-click="clearField(dataField); dataField = ' ' ">
 						Clear Field
 					</button>
-					<button ng-model="btnText" type="button"
+					<!-- <button ng-model="btnText" type="button"
 					class="btn btn-primary " ng-click="randomName()">
 						Random Name
-					</button>
+					</button> -->
 				</div>
 				<div class="pull-left" style="width: 50%;">
 					<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
@@ -53,7 +52,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="addWithNum  animated slideInDown" ng-show="$storage.addWithNum">
+	<div class="addWithNum  animated slideInDown" ng-show="addWithNum">
 		<div class="row dataFieldContainer center-block  text-center">
 			<textarea ng-model="dataFieldNum" placeholder="Select options below and click 'Generate Number'. Numbers will show up here" 
 		class="dataField form-control" type="textarea" style="height: 250px !important; "></textarea>
@@ -62,36 +61,32 @@
 			<div class="panel-body">
 				<div class=" center-block col-xs-12">
 					<form role="form">
-						<br />
 						<div class="form-group col-md-3 text-center center-block">
 							<label >Generate Numbers</label>
 							Randomly? &nbsp; &nbsp;
 							<input  type="checkbox" ng-model="$storage.rand"
 							ng-click="$storage.rand=true;$storage.seq=false;" />
-							{{$storage.rand}}
 							<br />
 							Sequentially? &nbsp; &nbsp;
 							<input type="checkbox" ng-model="$storage.seq"
 							ng-click="$storage.rand=false;$storage.seq=true;"/>
-							{{$storage.seq}}
 						</div>
 						<div class="form-group col-md-3 text-center">
 							<label >Number of digits </label>
-							<input class="form-control" placeholder="Max is 10. eg. 6 to get AXB105" type="text"
+							<input class="form-control" placeholder="Max 10 eg. 6 for AXB105" type="text"
 							ng-model="$storage.ticketDigits" >
 						</div>
 						<div class="form-group col-md-3 text-center">
 							<label >Total Tickets to generate</label>
-							<input  class="form-control"  placeholder="The total number of tickets, one per expected guest" type="text"
+							<input  class="form-control"  placeholder="One per guest/group" type="text"
 							ng-model="$storage.totalTickets" required>
 						</div>
 						<div class="form-group col-md-3 col-xs-3 text-center">
 							<label >Prefix</label>
-							<input class="form-control"  placeholder="eg. ABC or XYZ" type="text"
+							<input class="form-control"  placeholder="eg ABC to get ABC1234" type="text"
 							ng-model="$storage.prefix">
 						</div>
 					</form>
-					<!-- <button ng-click="ran()" >Click Me <br /> {{rand}}</button> -->
 				</div>
 				<div class="pull-right">
 					<button ng-model="btnText" type="button" ng-show="dataFieldNum.length >=1"

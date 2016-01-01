@@ -166,22 +166,24 @@ function($scope, $http, $localStorage) {
 			$scope.backUp = !$scope.backUp;
 		};
 
+		// Generate ticket numbers either randomly or sequencially
 		$scope.generateTicketNums = function() {
 			if ($scope.$storage.totalTickets.length <= 0) {
-				$scope.dataFieldNum = "You must enter the number of tickets to generate";
+				alert("You must enter the number of tickets to generate");
 			} else {
 				$scope.dataFieldNum = "";
-				var numbDigits = 5;
+				var numbDigits = 5 - $scope.$storage.prefix.length;
 				if ($scope.$storage.ticketDigits.length > 0) {
-					numbDigits = $scope.$storage.ticketDigits;
-				}
-				if ($scope.$storage.prefix.length > 0) {
-					numbDigits = $scope.$storage.ticketDigits - $scope.$storage.prefix.length;
+					if ($scope.$storage.ticketDigits.length >= 10) {
+						numbDigits = 10 - $scope.$storage.prefix.length;
+					} else {
+						numbDigits = $scope.$storage.ticketDigits - $scope.$storage.prefix.length;
+					}
 				}
 				var temp = "";
 				if ($scope.$storage.rand && (!($scope.$storage.seq))) {
 					for (var i = 0; i < $scope.$storage.totalTickets; i++) {
-						// magic number 2 used in slice to remove decimal place
+						// magic number 2 used in slice to remove decimal place and move two indexes forward
 						temp = $scope.$storage.prefix + "" + (Math.random().toString().slice(2, numbDigits + 2));
 						$scope.dataFieldNum = temp + " ," + $scope.dataFieldNum;
 					}
@@ -195,35 +197,46 @@ function($scope, $http, $localStorage) {
 						firstNum--;
 					}
 				} else {
-					$scope.dataFieldNum = "You must select either random or sequential generation mode.";
+					alert("You must select either random or sequential generation mode.");
 				}
+				// Clear data inputted by user
 				$scope.$storage.ticketDigits = '';
 				$scope.$storage.prefix = '';
 				$scope.$storage.totalTickets = '';
 			}
+		};
 
+		// To be used to hide the side icon before printing
+		$scope.showListIcon = true;
+		$scope.printGuestList = function() {
+			var printContents = document.getElementById("GList").innerHTML;
+			var popupWin = window.open('', '_blank', 'width=1700,height=2200');
+			popupWin.document.open();
+			popupWin.document.write('<html><link rel="stylesheet" media="all" href="css/style.css"><link href="css/limestone.css" rel="stylesheet"  media="all"></head><body onload="window.print()">' + printContents + '</html>');
+			popupWin.document.close();
 		};
 
 		$scope.ran = function() {
 			$scope.rand = Math.random().toString().slice(2, 7);
 		};
-		//
-		// $scope.restoreFromBackUp = function() {
-		// $scope.$storage.guestsList = {};
-		// Array.prototype.push.apply($scope.$storage.guestsList, $scope.$storage.backUpGuestList);
-		//
-		// }
 
-		//
-		// $scope.listreplace = true;
-		// $scope.replaceList = function() {
-		// $scope.listreplace = !$scope.listreplace;
-		// }
-		//
-		// $scope.popolateReplace = true;
-		// $scope.replacePop = function() {
-		// $scope.popolateReplace = !$scope.popolateReplace;
-		// }
+		$scope.addWithNum = true;
+
+		$scope.restoreFromBackUp = function() {
+			$scope.$storage.guestsList = {};
+			Array.prototype.push.apply($scope.$storage.guestsList, $scope.$storage.backUpGuestList);
+
+		};
+
+		$scope.listreplace = true;
+		$scope.replaceList = function() {
+			$scope.listreplace = !$scope.listreplace;
+		};
+
+		$scope.popolateReplace = true;
+		$scope.replacePop = function() {
+			$scope.popolateReplace = !$scope.popolateReplace;
+		};
 
 		$scope.printpage = function() {
 			var originalContents = document.body.innerHTML;
@@ -231,13 +244,7 @@ function($scope, $http, $localStorage) {
 			document.body.innerHTML = printReport;
 			window.print();
 			document.body.innerHTML = originalContents;
-		}
-		$scope.link = 'http://1drv.ms/1m9z5RB';
-		$scope.slides = [{
-			image : '../images/sheet/DependencyGraph.png',
-		}, {
-			image : 'frame.png'
-		}]
+		};
 
 		$scope.randomName = function() {
 			var arrOfNames1 = ["Jason", "Jim", "Bird", "Shari", "Lily", "Shukla", "Jake", "Kurt", "Sylvia", "Smith", "Luke", "Brent", "Tony", "Chi", "Chen", "Yang", "Ada", "Oluchi", "Maj"];
@@ -248,7 +255,7 @@ function($scope, $http, $localStorage) {
 
 			var arrOfNames4 = ["Yan", "Chan", "Feng", "Stewart", "Raymond", "Vincent", "Zhang", "Lv", "Uchibeke", "Shirley", "Kun", "Myers", "Jimmy", "Luo", "Silong", "Kiki", "Todd", "Sloan"];
 
-			// To lazy to count the array with the least number of names
+			// To lazy to count the array with the least number of names. Writes code to do it
 			var sz = Math.min(arrOfNames1.length, arrOfNames2.length, arrOfNames3.length, arrOfNames4.length);
 
 			var arrOfArrs = [arrOfNames1, arrOfNames2, arrOfNames3, arrOfNames4];
@@ -267,27 +274,27 @@ function($scope, $http, $localStorage) {
 	});
 }]);
 
-guestControllers.controller('DetailsController', ['$scope', '$http', '$routeParams', '$localStorage',
-function($scope, $http, $routeParams, $localStorage) {
-	$http.get('js/data.json').success(function(data) {
-		$scope.guests = data;
-		$scope.$storage = $localStorage.$default({
-			guestsList : $scope.guests
-		});
-
-		$scope.whichItem = $routeParams.itemId;
-
-		if ($routeParams.itemId > 0) {
-			$scope.prevItem = Number($routeParams.itemId) - 1;
-		} else {
-			$scope.prevItem = $scope.$storage.guestsList.length - 1;
-		}
-
-		if ($routeParams.itemId < $scope.$storage.guestsList.length - 1) {
-			$scope.nextItem = Number($routeParams.itemId) + 1;
-		} else {
-			$scope.nextItem = 0;
-		}
-
-	});
-}]);
+// guestControllers.controller('DetailsController', ['$scope', '$http', '$routeParams', '$localStorage',
+// function($scope, $http, $routeParams, $localStorage) {
+// $http.get('js/data.json').success(function(data) {
+// $scope.guests = data;
+// $scope.$storage = $localStorage.$default({
+// guestsList : $scope.guests
+// });
+//
+// $scope.whichItem = $routeParams.itemId;
+//
+// if ($routeParams.itemId > 0) {
+// $scope.prevItem = Number($routeParams.itemId) - 1;
+// } else {
+// $scope.prevItem = $scope.$storage.guestsList.length - 1;
+// }
+//
+// if ($routeParams.itemId < $scope.$storage.guestsList.length - 1) {
+// $scope.nextItem = Number($routeParams.itemId) + 1;
+// } else {
+// $scope.nextItem = 0;
+// }
+//
+// });
+// }]);

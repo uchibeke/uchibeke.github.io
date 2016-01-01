@@ -2,7 +2,7 @@
 	<br />
 	<div class="hideOnPrint" ng-hide="printSet">
 		<div class="back_div pull-left ">
-			<a type="button" class="btn btn-default btn-xs" ng-href="#/populate">&laquo; Back</a>
+			<a type="button" class="btn btn-default btn-xs" ng-href="#/populate">&laquo; Manage Guests</a>
 		</div>
 		<div class="pull-right">
 			<a type="button" class="btn btn-default btn-xs" ng-href="#/live"> Start Event &raquo;</a>
@@ -21,23 +21,23 @@
 							ng-model="$storage.ticket[0].ticketTitle">
 						</div>
 						<div class="form-group">
-							<input class="form-control"  placeholder="Enter venue of event" type="text"
+							<input class="form-control"  placeholder="Event venue" type="text"
 							ng-model="$storage.ticket[0].eventVenue">
 						</div>
 						<div class="form-group">
-							<input class="form-control" id="datepicker"  placeholder="Enter the event date" type="text"
+							<input class="form-control" id="datepicker"  placeholder="Event date" type="text"
 							ng-model="$storage.ticket[0].eventDate">
 						</div>
 						<div class="form-group">
-							<input class="form-control"  placeholder="Enter the event time" type="text"
+							<input class="form-control"  placeholder="Event time" type="text"
 							ng-model="$storage.ticket[0].eventTime">
 						</div>
 						<div class="form-group">
-							<input class="form-control"  placeholder="Enter ticket price" type="text"
+							<input class="form-control"  placeholder="Price per ticket" type="text"
 							ng-model="$storage.ticket[0].ticketPrice">
 						</div>
 						<div class="form-group">
-							<input class="form-control"  placeholder="Enter other info eg. ID required/19+ event" type="text"
+							<input class="form-control"  placeholder="Other info eg. ID required/19+ event" type="text"
 							ng-model="$storage.ageInfo">
 						</div>
 					</form>
@@ -65,37 +65,37 @@
 				<div class="tab-content " id="widget">
 					<br />
 					<div class=" tab-pane active center-block" id="layout1" >
-						<div class="row text-center ticket" ng-style="previewStyle()" >
+						<div class="row text-center ticket center-block" ng-style="previewStyle()">
 							<br />
-							<div class="col-md-3 col-lg-3 col-xs-3  ticketCol1" class="text-center center-block">
+							<div class="col-md-3 col-lg-3 col-xs-3 ticketCol1 text-center center-block">
 								<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
-								<img alt="Pls, add guest to see barcode"
+								<img alt="Add guest to see barcode" class="img-responsive"
 								src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{$storage.prefix}}{{$storage.guestsList[$storage.guestsList.length-1].name}}&includetext&scale=1">
-								<span style="font-size: x-large; font-weight: bold;">{{$storage.guestsList[$storage.guestsList.length-1].name}}</span>
-								<p class=" text-center" style="font-size: smaller; " ng-style="previewStyle()" >
+								<span >{{$storage.guestsList[$storage.guestsList.length-1].name}}</span>
+								<p class=" text-center" style="font-size: x-small; " ng-style="previewStyle()" >
 									{{$storage.ageInfo}}
+									<br />
+									<span style="font-size: 0.6em;" class="securityEncoding"></span>
 								</p>
 							</div>
-							<div class="col-md-8 col-lg-8 col-xs-8  ticketCol2">
-								<h2 class="text-center ticketTitle" ng-style="previewStyle()"> {{$storage.ticket[0].ticketTitle}} </h2>
-								<h4 class="text-center ticketVenue" ng-style="previewStyle()"> {{$storage.ticket[0].eventVenue}} </h4>
+							<div class="col-md-8 col-lg-8 col-xs-8 ticketCol2">
+								<h2 class="text-center ticketTitle" ng-style="previewStyle()"  > {{$storage.ticket[0].ticketTitle}} </h2>
+								<h4 class="text-center ticketVenue" ng-style="previewStyle()"  > {{$storage.ticket[0].eventVenue}} </h4>
 								<div class="row centerDiv">
-									<div class="col-md-4 col-lg-4 col-xs-4  text-center center-block centerDiv_1">
+									<div class="col-md-4 col-lg-4 col-xs-4 text-center center-block centerDiv_1">
 										{{$storage.ticket[0].eventDate}}
 									</div>
-									<div class="col-md-6 col-lg-6 col-xs-6  text-center centerDiv_2">
+									<div class="col-md-6 col-lg-6 col-xs-6 text-center centerDiv_2">
 										<h2 ng-style="previewStyle()">Admit One</h2>
 									</div>
-									<div class="col-md-2 col-lg-2 col-xs-2  text-center centerDiv_3"  >
+									<div class="col-md-2 col-lg-2 col-xs-2 text-center centerDiv_3 center-block"  >
 										{{$storage.ticket[0].eventTime}}
 									</div>
 								</div>
 							</div>
-							<div class="col-md-1 col-lg-1 col-xs-1  ticketCol3 center-block"></div>
-
+							<div class="col-md-1 col-lg-1 col-xs-1 ticketCol3 center-block"></div>
 						</div>
 					</div>
-
 					<div class="ticket  tab-pane center-block" id="layout2">
 						2
 					</div>
@@ -112,16 +112,15 @@
 				<div class=" center-block row text-center">
 					<br />
 					<div class="center-block col-md-6">
-						<a type="button" class="btn btn-primary btn-lg btn-block" ng-href="#/populate">Manage Guests</a>
-					</div>
-					<div class="center-block col-md-6">
-						<button   type="button" class="btn btn-primary btn-lg btn-block" ng-click="printSet=true;($storage.sampleView) = true">
+						<button   type="button" class="btn btn-primary btn-xs btn-block" ng-click="printSet=true;($storage.sampleView) = true">
 							Print Setup
 						</button>
 					</div>
+					<div class="center-block col-md-6">
+						<a type="button" class="btn btn-primary btn-xs btn-block" ng-href="#/populate">Manage Guests</a>
+					</div>
 				</div>
 			</div>
-			<br />
 			<div class="col-md-2 col-xs-12">
 				<div class="">
 					<div class="col-md-6 col-xs-6 pull-right">
@@ -157,30 +156,28 @@
 		<div class="row">
 			<div class="pull-left ">
 				<button   type="button" class="btn btn-primary  btn-xs " ng-click="printSet=true;($storage.sampleView) = true">
-					<!-- <button   type="button" class="btn btn-primary  btn-xs  btnSave"> Former-->
 					Print preview
 				</button>
 			</div>
 			<div class="pull-right" ng-hide="($storage.sampleView)">
-				<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = true"
-				>Open Ticket Preview &raquo;</a>
+				<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = true"> Preview all Tickets &raquo;</a>
 			</div>
 			<div class="pull-right" ng-hide="(!($storage.sampleView))==true">
 				<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = false"
-				>Close Ticket Preview &raquo;</a>
+				>Hide all Tickets &raquo;</a>
 			</div>
 		</div>
 	</div>
-	<div  ng-show="($storage.sampleView)" class="center-block text-center">
+	<div  ng-show="($storage.sampleView)" class="center-block text-center" >
 		<div class="pull-left ">
 			<button   type="button" class="btn btn-default  btn-xs" ng-show="printSet"
 			ng-click="printSet=false;($storage.sampleView) = false">
 				Go Back
 			</button>
 		</div>
-		<div class="pull-right ">
+		<div class="pull-right " >
 			<button   type="button" class="btn btn-default  btn-xs" ng-show="printSet"
-			ng-click="printDiv()">
+			ng-click="printTickets()">
 				Print
 			</button>
 		</div>
@@ -197,6 +194,8 @@
 						<span >{{item.name}}</span>
 						<p class=" text-center" style="font-size: x-small; " ng-style="previewStyle()" >
 							{{$storage.ageInfo}}
+							<br />
+							<span style="font-size: 0.6em;" class="securityEncoding"></span>
 						</p>
 					</div>
 					<div class="col-md-8 col-lg-8 col-xs-8 ticketCol2">
@@ -221,16 +220,12 @@
 	</div>
 
 	<div>
-		<button ng-hide="true" ng-click="$storage.$reset({ })">
+		<button ng-hide="<!-- true -->" ng-click="$storage.$reset({ })">
 			Clear localStorage
 		</button>
 	</div>
+	<!-- <div class="row center-block text-center text-info">
 	<div id="address"></div>
 	<div id="ip"></div>
+	</div> -->
 </section>
-<script>
-	/* This is the function that will get executed after the DOM is fully loaded */
-	var c = document.getElementById('the_canvas_element_id');
-	var t = c.getContext('2d');
-
-</script>

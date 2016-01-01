@@ -27,7 +27,7 @@ function($scope, $http, $localStorage) {
 					}
 				}
 			};
-			
+
 			$(function() {
 				$('#datepicker').datepicker({
 					showAnim : "fadeIn",
@@ -69,40 +69,21 @@ function($scope, $http, $localStorage) {
 					};
 				};
 			};
-
-			$(function() {
-				$(".btnSave").click(function() {
-					html2canvas($("#layout1"), {
-						onrendered : function(canvas) {
-							theCanvas = canvas;
-							// $(".compare").appendChild(canvas).className = "screen";
-							document.getElementById("compare").appendChild(canvas);
-							// document.body.appendChild(canvas).className = "screen";
-							// var input = document.createElement("input");
-							// input.className = 'class_to_add';
-							// document.forms[0].appendChild(input);
-
-							//Pops up new window compare
-							// canvas.toBlob(function(blob) {
-							// saveAs(blob, "Card.png");
-							// });
-						}
-					});
-				});
-			});
-
-			$scope.printDiv = function() {
+			$scope.printTickets = function() {
 				var printContents = document.getElementById("printable").innerHTML;
 				var popupWin = window.open('', '_blank', 'width=1700,height=2200');
-				popupWin.document.open()
+				popupWin.document.open();
 				popupWin.document.write('<html><link rel="stylesheet" media="all" href="css/style.css"><link href="css/limestone.css" rel="stylesheet"  media="all"></head><body onload="window.print()">' + printContents + '</html>');
 				popupWin.document.close();
-			}
+			};
 
+
+			// For security reasons, get IP address, time and location of user at time of generating ticket
+			// and add it to each printed ticket. 
 			$.get("http://ipinfo.io", function(response) {
-				$("#ip").html("IP: " + response.ip);
-				$("#address").html("Location: " + response.city + ", " + response.postal + ", " + response.region);
-				// $("#details").html(JSON.stringify(response, null, 4));
+				var d = new Date();
+				$(".securityEncoding").html(response.ip + "|" + response.city + "|" + 
+				d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2));
 			}, "jsonp");
 		});
 	});
