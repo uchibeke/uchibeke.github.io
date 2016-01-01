@@ -172,38 +172,38 @@ body {
 
 .ticketCol1 {
 	font-family: monospace;
-	width: 132px !important;
+	/*width: 132px !important;*/
 	display: block !important;
 }
 .ticketCol2 {
 	border-style: solid;
 	border-right: medium solid #363942;
 	border-left: medium solid #363942;
-	width: 352px !important;
+	/*width: 352px !important;*/
 	display: block !important;
 }
 
 .ticketCol3 {
 	font-family: monospace !important;
-	width: 44px !important;
+	/*width: 44px !important;*/
 }
 .centerDiv {
 	width: 352px !important;
 }
 
 .centerDiv_1 {
-	width: 117px !important;
+	/*width: 117px !important;*/
 }
 
 .centerDiv_2 {
-	width: 175px !important;
+	/*width: 175px !important;*/
 	border-style: solid !important;
 	border-right: thin solid #363942 !important;
 	border-left: thin solid #363942 !important;
 }
 
 .centerDiv_3 {
-	width: 60px !important;
+	/*width: 60px !important;*/
 }
 
 .eventDets {
