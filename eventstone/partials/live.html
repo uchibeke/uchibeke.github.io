@@ -1,42 +1,78 @@
 <section class="guestpage container-fluid uofs-section animated slideInDown">
-	<form class="search center-block row text-center form">
-		<h1 class="text-center uofs-page-title"><a>Guest check-in</a></h1>
-		<br class="clearfix"/>
-		<input ng-model="guestSearch" placeholder="Enter your name, NSID or other info to check-in"
-		autofocus="autofocus" class="searchBar form-control" >
-		<div ng-show="visualize()" class="alert">
-			<p  class=" text-center center-block" >
-			<strong>{{instruction}}...</strong> 
-			</p>
+	<div class="row text-center text-info center-block" ng-show="firstLiveScreen">
+		<h2>Allow Guests to add their names to the list and check in?</h2>
+		<div class="row btn-group-lg">
+			<div class="col-lg-6 col-md-6">
+				<a type="button" class="btn btn-default btn-lg pull-right"
+				ng-click="secondLiveScreen=true;firstLiveScreen=false;thirdLiveScreen=true;">Yes</a>
+			</div>
+			<div cclass="col-lg-6 col-md-6">
+				<a type="button" class="btn btn-default btn-lg pull-left"
+				ng-click="secondLiveScreen=true;firstLiveScreen=false " > No</a>
+			</div>
 		</div>
+		<hr />
+	</div>
+	<div class="row" ng-show="secondLiveScreen" >
+		<form class="search center-block row text-center form">
+			<h1 class="text-center uofs-page-title"><a>Guest check-in</a></h1>
+			<br class="clearfix"/>
+			<input ng-model="guestSearch" placeholder="If you're already registered for this event, type your name, NSID or other info here to check-in"
+			class="searchBar form-control" autofocus>
+			<div ng-show="visualize()" class="alert">
+				<p  class=" text-center center-block" >
+					<strong>{{instruction}}...</strong>
+				</p>
+			</div>
 
-	</form> <hr />
-	<br />
-	<ul class="guestlist row" ng-hide="visualize()" >
-		<li class="guest cf" ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction">
-			<a>
-			<div class="info">
-				<div class="row" style="padding-bottom: 1%;">
-					<div class="col-xs-6 col-md-6  pull-left ">
-						<h3>{{item.name}}</h3>
+		</form>
+		<hr />
+		<br />
+		<ul class="guestlist row" ng-hide="visualize()" >
+			<li class="guest cf" ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction">
+				<a>
+				<div class="info">
+					<div class="row" style="padding-bottom: 1%;">
+						<div class="col-xs-6 col-md-6  pull-left ">
+							<h3>{{item.name}}</h3>
+						</div>
+						<div class="col-xs-6 col-md-6 text-left">
+							<button  type="button"
+							class="btn btn-primary checkInBtn " ng-click="checkedIn($storage.guestsList.indexOf(item))">
+								{{item.btnText}}
+							</button>
+						</div>
 					</div>
-					<div class="col-xs-6 col-md-6 text-left">
-						<button  type="button"
-						class="btn btn-primary checkInBtn " ng-click="checkedIn($storage.guestsList.indexOf(item))">
-							{{item.btnText}}
-						</button>
-					</div>
-				</div>
-			</div> </a>
-		</li>
-	</ul>
+				</div> </a>
+			</li>
+		</ul>
+	</div>
+	<h4 class="" ng-show="thirdLiveScreen">Not registered...?
+	<button  type="button"
+	class="btn btn-default btn-xs" ng-click="fourthLiveScreen=true">
+		Register
+	</button></h4>
+	<div class=" text-center text-info center-block" ng-show="thirdLiveScreen && fourthLiveScreen">
+		<div class=" col-lg-6 col-md-6" >
+			<input placeholder="Enter your name, NSID or other info and click register"
+			class=" form-control" ng-model="userRegInfo">
+		</div>
+		<!-- <div class="col-lg-3 col-md-3"></div> -->
+		<div class=" col-lg-3 col-md-3" >
+			<button  type="button"
+			class="btn btn-primary "
+			ng-click="submitUserInput(userRegInfo);userRegInfo = '';checkedIn($storage.guestsList.length-1);">
+				Register and Check in
+			</button>
+		</div>
+		<br />
+		<hr />
+	</div>
 	<div class="back_div pull-left close">
 		<a ng-href="#/home">&laquo; Exit</a>
 	</div>
 	<div class="pull-right">
-		<a type="button" class="btn btn-default btn-xs" href="http://www.usask.ca/ict/help-support/index.php" target="_blank"> 
-			Help  &raquo;</a>
+		<a type="button" class="btn btn-default btn-xs" href="http://www.usask.ca/ict/help-support/index.php" target="_blank"> Help  &raquo;</a>
 	</div>
-	<footer class="uofs-footer cf" ng-include="'footer.html'"></footer>
 </section>
 

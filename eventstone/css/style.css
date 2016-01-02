@@ -155,7 +155,7 @@ body {
 
 .ticket {
 	page-break-inside: avoid !important;
-	width: 5.5in !important;
+	width: 5in !important;
 	height: 2.125in !important;
 	border-style: solid;
 	border: thin dashed red;
@@ -188,7 +188,7 @@ body {
 	/*width: 44px !important;*/
 }
 .centerDiv {
-	width: 352px !important;
+	width: 340px !important;
 }
 
 .centerDiv_1 {
@@ -196,7 +196,7 @@ body {
 }
 
 .centerDiv_2 {
-	/*width: 175px !important;*/
+	width: 145px !important;
 	border-style: solid !important;
 	border-right: thin solid #363942 !important;
 	border-left: thin solid #363942 !important;

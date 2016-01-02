@@ -33,12 +33,6 @@ function($scope, $http, $localStorage) {
 			field = '';
 		}
 
-		$scope.splitLines = function() {
-			var arrOfAlph = $scope.cheatField.split("\n");
-			$scope.clearField($scope.cheatField);
-			return arrOfAlph;
-		};
-
 		$scope.submitUserInput = function(field) {
 			var arr = field.split(",");
 			var newA = [];
@@ -77,36 +71,6 @@ function($scope, $http, $localStorage) {
 
 		};
 
-		$scope.outPutwithDash = function() {
-			var arr = $scope.splitLines();
-			var newA = [];
-			var length = arr.length;
-			if ((arr[arr.length - 1]).length === 0) {
-				length = arr.length - 1;
-			}
-			var prefix = ' ';
-			var splicedA = {};
-			$scope.$storage.xx = '';
-			for (var i = 0; i < length; i++) {
-				if ((arr[i].slice(0, prefix.length)) == prefix) {
-					splicedA = arr[i].slice(1, arr[i].length);
-				} else {
-					splicedA = arr[i];
-				}
-				newA.push({
-					item : splicedA,
-					sept : '||'
-				});
-				$scope.$storage.xx = $scope.$storage.xx + splicedA + " ||| ";
-			}
-
-			$scope.$storage.dashed = {};
-			if ($scope.$storage.dashed.length <= 1) {
-				$scope.$storage.dashed = '';
-			}
-			Array.prototype.push.apply($scope.$storage.dashed, newA);
-
-		};
 
 		$scope.$storage.xx = "";
 
@@ -138,19 +102,21 @@ function($scope, $http, $localStorage) {
 
 		$scope.dateString = function() {
 			var d = new Date();
-			return d.getFullYear() + "" + ('0' + (d.getMonth() + 1)).slice(-2) + "" + ('0' + d.getDate()).slice(-2);
-		}
+			return d.getFullYear() + "" + ('0' + (d.getMonth() + 1)).slice(-2) 
+			+ "" + ('0' + d.getDate()).slice(-2);
+		};
 
 		$scope.checkedIn = function(x) {
 			if ($scope.$storage.guestsList[x].checkedIn == true) {
 			} else {
 				$scope.$storage.guestsList[x].checkedIn = true;
 				var d = new Date();
-				var ds = d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2) + " on " + (d.getMonth() + 1) + "/" + d.getDate();
+				var ds = d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2) + " on " 
+				+ (d.getMonth() + 1) + "/" + d.getDate()+ "/" + d.getFullYear();
 				$scope.$storage.guestsList[x].btnText = 'Checked in ' + ds;
 				$scope.$storage.guestsList[x].guestStatus = 'Checked in ' + ds;
 			}
-		}
+		};
 
 		$scope.backUpTxt = function() {
 			if ($scope.backUp) {
@@ -177,7 +143,8 @@ function($scope, $http, $localStorage) {
 					if ($scope.$storage.ticketDigits.length >= 10) {
 						numbDigits = 10 - $scope.$storage.prefix.length;
 					} else {
-						numbDigits = $scope.$storage.ticketDigits - $scope.$storage.prefix.length;
+						numbDigits = $scope.$storage.ticketDigits 
+						- $scope.$storage.prefix.length;
 					}
 				}
 				var temp = "";
@@ -245,6 +212,11 @@ function($scope, $http, $localStorage) {
 			window.print();
 			document.body.innerHTML = originalContents;
 		};
+		
+		
+		// Live screens
+		$scope.firstLiveScreen = true;
+		$scope.secondLiveScreen, $scope.thirdLiveScreen, $scope.fourthLiveScreen = false;
 
 		$scope.randomName = function() {
 			var arrOfNames1 = ["Jason", "Jim", "Bird", "Shari", "Lily", "Shukla", "Jake", "Kurt", "Sylvia", "Smith", "Luke", "Brent", "Tony", "Chi", "Chen", "Yang", "Ada", "Oluchi", "Maj"];
