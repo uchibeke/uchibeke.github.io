@@ -158,10 +158,14 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 					for (var i = 0; i < $scope.$storage.totalTickets; i++) {
 						// magic number 2 used in slice to remove decimal place and move two indexes forward
 						temp = $scope.$storage.prefix + "" + (Math.random().toString().slice(2, numbDigits + 2));
-						// Push every element to array and check if element already exists
-						while (a.indexOf(temp) != -1) {
-							temp = $scope.$storage.prefix + "" + (Math.random().toString().slice(2, numbDigits + 2));
-						}
+						// recursively check if element already exists in array a
+						var checkRepeat = function() {
+							if (a.indexOf(temp) > -1) {
+								temp = $scope.$storage.prefix + "" + (Math.random().toString().slice(2, numbDigits + 2));
+								checkRepeat();
+							}
+						};
+						checkRepeat();
 						a.push(temp);
 						$scope.dataFieldNum = temp + " ," + $scope.dataFieldNum;
 					}
@@ -175,14 +179,17 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 						$scope.dataFieldNum = ($scope.$storage.prefix + "" + (firstNum + 1)) + " ," + $scope.dataFieldNum;
 						firstNum--;
 					}
-				} else {
-					alert("You must select either random or sequential generation mode.");
 				}
 				// Clear data inputted by user
 				$scope.$storage.ticketDigits = '';
 				$scope.$storage.prefix = '';
 				$scope.$storage.totalTickets = '';
 			}
+
+			// else {
+			// alert("You must select either random or sequential generation mode.");
+			// }
+
 		};
 
 		// To be used to hide the side icon before printing

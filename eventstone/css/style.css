@@ -147,7 +147,6 @@ body {
 	transform: rotate(90deg);
 }
 
-
 body {
 	-webkit-print-color-adjust: exact !important;
 	print-color-adjust: exact !important;
@@ -162,7 +161,7 @@ body {
 	font-family: monospace;
 	background-color: #92F1FF;
 	color: #E74C3C;
-	text-align:center;
+	text-align: center;
 }
 
 .guestInList {
@@ -210,7 +209,7 @@ body {
 	padding-right: 20% !important;
 }
 
-.ticketTitle{
+.ticketTitle {
 	font-size: x-large !important;
 	font-weight: bold !important;
 	border-style: solid !important;
@@ -222,8 +221,7 @@ body {
 	font-weight: bold !important;
 	border-style: solid !important;
 	border-bottom: thin solid #363942 !important;
-	
-} 
+}
 .styleBtns div, .styleBtns_Txt div {
 	width: 100%;
 }
@@ -240,10 +238,18 @@ body {
 	border-top: medium solid #B8AE9C;
 }
 .affix {
-      top: 0;
-      /*width: 100%;*/
-  }
+	top: 0;
+	/*width: 100%;*/
+}
 
+.ticketColors {
+	height: 450px;;
+	overflow: scroll;
+	border-left: thin solid black;
+	border-right: thin solid black;
+}
 
+.dataFieldContainer {
+}
 /*Removed default print styles from limestone*/
 
