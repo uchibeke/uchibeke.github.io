@@ -1,6 +1,7 @@
-var majControllers = angular.module('majControllers', ['ngStorage']);
+var majControllers = angular.module('majControllers', []);
+// var majControllers = angular.module('majControllers', ['ngStorage']);
 
-majControllers.controller('MainController', ['$scope', '$http', '$localStorage',
+majControllers.controller('MainController', ['$scope', '$http', 
 function($scope, $http, $localStorage) {
 	$scope.dataField = '';
 

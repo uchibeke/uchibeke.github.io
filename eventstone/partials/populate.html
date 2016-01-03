@@ -1,3 +1,4 @@
+<div ng-include="'partials/nav.html'"></div>
 <section class="guestinfo uofs-section container-fluid">
 	<br />
 	<div class="back_div pull-left ">
@@ -8,17 +9,25 @@
 	</div>
 	<h1 class="text-center uofs-page-title"><a>Add Guests</a></h1>
 	<br />
+	<div style="max-width: 100%;">
+		<ul>
+			{{ aa }}
+			<li ng-repeat="item in aa">
+				item
+			</li>
+		</ul>
+	</div>
 	<div class="btn-group center-block row text-center" data-toggle="buttons" style="">
 		<label class="btn btn-primary btn-xs col-md-2 pull-left active" ng-click="addWithNum=true;addWithName=false;">
-			<input type="radio" name="options" id="option3">
+			<input type="radio" name="options" id="option1">
 			By ticket Number </label>
 		<label class="btn btn-primary btn-xs col-md-2 pull-left " ng-click="addWithName=true;addWithNum=false;" >
-			<input type="radio" name="options" id="option1">
+			<input type="radio" name="options" id="option2">
 			By Guest Name </label>
-		<label class="col-md-8"></label>
-		<!-- <div class="back_div center-block col-md-2 pull-right">
-		<a type="button" class="btn btn-primary" ng-href="#/tickets">Generate Tickets</a>
-		</div> -->
+		<a class="pull-right"  ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">
+		<button type="button" class="btn btn-primary btn-xs  ">
+			View Guests
+		</button> </a>
 	</div>
 	<div class="addWithName  animated slideInDown" ng-show="addWithName">
 		<div class="row dataFieldContainer center-block  text-center">
@@ -38,7 +47,7 @@
 					</button>
 					<!-- <button ng-model="btnText" type="button"
 					class="btn btn-primary " ng-click="randomName()">
-						Random Name
+					Random Name
 					</button> -->
 				</div>
 				<div class="pull-left" style="width: 50%;">

@@ -177,7 +177,7 @@ body {
 }
 .ticketCol2 {
 	border-style: solid;
-	border-right: medium solid #363942;
+	/*border-right: medium solid #363942;*/
 	border-left: medium solid #363942;
 	/*width: 352px !important;*/
 	display: block !important;
@@ -239,6 +239,11 @@ body {
 	border-right: medium solid #B8AE9C;
 	border-top: medium solid #B8AE9C;
 }
+.affix {
+      top: 0;
+      /*width: 100%;*/
+  }
+
 
 /*Removed default print styles from limestone*/
 

@@ -1,7 +1,7 @@
-var guestControllers = angular.module('guestControllers', ['ngStorage'])
+var guestControllers = angular.module('guestControllers', ['ngStorage', 'firebase', 'ngSanitize'])
 
-guestControllers.controller('ListController', ['$scope', '$http', '$localStorage',
-function($scope, $http, $localStorage) {
+guestControllers.controller('ListController', ['$scope', '$http', '$localStorage', '$timeout', '$firebaseObject', '$firebaseArray', '$firebaseAuth', '$sce',
+function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray, $firebaseAuth, $sce) {
 	$http.get('js/data.json').success(function(data) {
 		// Data from json file
 		$scope.guests = data;
@@ -18,6 +18,8 @@ function($scope, $http, $localStorage) {
 			guestsList : $scope.guests
 		});
 
+		var ref = new Firebase("https://eventstone.firebaseio.com");
+
 		$scope.$storage.x = '';
 
 		// List of all user events
@@ -32,6 +34,8 @@ function($scope, $http, $localStorage) {
 		$scope.clearField = function(field) {
 			field = '';
 		}
+		// $scope.g = $firebaseObject(ref);
+		// $scope.g.$bindTo($scope, "$storage.guestsList");
 
 		$scope.submitUserInput = function(field) {
 			var arr = field.split(",");
@@ -42,7 +46,6 @@ function($scope, $http, $localStorage) {
 			if ((arr[arr.length - 1]).length === 0) {
 				length = arr.length - 1;
 			}
-
 			// Check if name/ticket number starts with a space and remove space
 			var prefix = '\n';
 			var splicedA = {};
@@ -68,9 +71,7 @@ function($scope, $http, $localStorage) {
 			}
 			Array.prototype.push.apply($scope.$storage.guestsList, newA);
 			$scope.$storage.guestsList.sort();
-
 		};
-
 
 		$scope.$storage.xx = "";
 
@@ -102,8 +103,7 @@ function($scope, $http, $localStorage) {
 
 		$scope.dateString = function() {
 			var d = new Date();
-			return d.getFullYear() + "" + ('0' + (d.getMonth() + 1)).slice(-2) 
-			+ "" + ('0' + d.getDate()).slice(-2);
+			return d.getFullYear() + "" + ('0' + (d.getMonth() + 1)).slice(-2) + "" + ('0' + d.getDate()).slice(-2);
 		};
 
 		$scope.checkedIn = function(x) {
@@ -111,8 +111,8 @@ function($scope, $http, $localStorage) {
 			} else {
 				$scope.$storage.guestsList[x].checkedIn = true;
 				var d = new Date();
-				var ds = d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2) + " on " 
-				+ (d.getMonth() + 1) + "/" + d.getDate()+ "/" + d.getFullYear();
+				// var ds = d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2) + " on " + (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
+				var ds = d.toLocaleTimeString() + " on " + (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
 				$scope.$storage.guestsList[x].btnText = 'Checked in ' + ds;
 				$scope.$storage.guestsList[x].guestStatus = 'Checked in ' + ds;
 			}
@@ -120,10 +120,10 @@ function($scope, $http, $localStorage) {
 
 		$scope.backUpTxt = function() {
 			if ($scope.backUp) {
-				return 'Hide Backed Guest List';
+				return 'Hide Backup list';
 				;
 			} else {
-				return 'View Backed up Guest List';
+				return 'View Backup list';
 			}
 		};
 
@@ -138,22 +138,34 @@ function($scope, $http, $localStorage) {
 				alert("You must enter the number of tickets to generate");
 			} else {
 				$scope.dataFieldNum = "";
-				var numbDigits = 5 - $scope.$storage.prefix.length;
+				if ($scope.$storage.prefix.length <= 0) {
+					$scope.$storage.prefix = "";
+				}
+				if ($scope.$storage.ticketDigits.length <= 0) {
+					$scope.$storage.ticketDigits = 5;
+				}
+				var numbDigits = $scope.$storage.ticketDigits - $scope.$storage.prefix.length;
 				if ($scope.$storage.ticketDigits.length > 0) {
 					if ($scope.$storage.ticketDigits.length >= 10) {
 						numbDigits = 10 - $scope.$storage.prefix.length;
 					} else {
-						numbDigits = $scope.$storage.ticketDigits 
-						- $scope.$storage.prefix.length;
+						numbDigits = $scope.$storage.ticketDigits - $scope.$storage.prefix.length;
 					}
 				}
 				var temp = "";
 				if ($scope.$storage.rand && (!($scope.$storage.seq))) {
+					var a = [];
 					for (var i = 0; i < $scope.$storage.totalTickets; i++) {
 						// magic number 2 used in slice to remove decimal place and move two indexes forward
 						temp = $scope.$storage.prefix + "" + (Math.random().toString().slice(2, numbDigits + 2));
+						// Push every element to array and check if element already exists
+						while (a.indexOf(temp) != -1) {
+							temp = $scope.$storage.prefix + "" + (Math.random().toString().slice(2, numbDigits + 2));
+						}
+						a.push(temp);
 						$scope.dataFieldNum = temp + " ," + $scope.dataFieldNum;
 					}
+					a = [];
 				} else if ((!($scope.$storage.rand)) && ($scope.$storage.seq)) {
 					var firstNum = " ";
 					while (firstNum.length > numbDigits || firstNum.length < numbDigits) {
@@ -212,11 +224,18 @@ function($scope, $http, $localStorage) {
 			window.print();
 			document.body.innerHTML = originalContents;
 		};
-		
-		
+
 		// Live screens
 		$scope.firstLiveScreen = true;
 		$scope.secondLiveScreen, $scope.thirdLiveScreen, $scope.fourthLiveScreen = false;
+
+		// Live screen check in message
+		$scope.liveMsgStatus = false;
+		$scope.liveMsg = function() {
+			$timeout(function() {
+				$scope.liveMsgStatus = false;
+			}, 5000);
+		};
 
 		$scope.randomName = function() {
 			var arrOfNames1 = ["Jason", "Jim", "Bird", "Shari", "Lily", "Shukla", "Jake", "Kurt", "Sylvia", "Smith", "Luke", "Brent", "Tony", "Chi", "Chen", "Yang", "Ada", "Oluchi", "Maj"];

@@ -13,4 +13,4 @@ Created and maintained by **Uchi Uchibeke**, Computer Science and Design Student
 
 ## Copyright and License
 
-Copyright 2015 Uchi. Code released under the [License for Eventstone](http://www.binpress.com/license/view/l/9d1d5647c334348a9d72d20a8a55a791).
+Copyright 2015 Uchi. Code released under the [License for Eventstone](http://www.binpress.com/license/view/l/9d1d5647c334348a9d72d20a8a55a791) except when another licence is declared.

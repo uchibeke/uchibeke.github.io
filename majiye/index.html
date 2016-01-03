@@ -23,6 +23,7 @@
 		<!-- Custom CSS -->
 		<link href="css/agency.css" rel="stylesheet">
 
+
 		<!-- Custom Fonts -->
 		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -72,7 +73,7 @@
 							<a class="page-scroll" ng-href="##uEven_">Unevenly Even</a>
 						</li>
 						<li>
-							<a class="page-scroll" ng-href="##hUp_">Hame Up</a>
+							<a class="page-scroll" ng-href="##hUp_">Hit Me Up</a>
 						</li>
 					</ul>
 				</div>
@@ -80,7 +81,6 @@
 			</div>
 			<!-- /.container-fluid -->
 		</nav>
-
 		<div id="page-top" class="index " ng-view></div>
 		<div ng-include="'partials/about.html'" id="about_" class=" animated  fadeInUpBig"></div>
 		<div ng-include="'partials/photography.html'" id="photography_" class=" animated  fadeInUpBig"></div>
@@ -93,10 +93,10 @@
 		<script src="js/agency.js"></script>
 
 		<!-- Load jQuery JS -->
-		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<!-- Load jQuery UI Main JS  -->
 		<!-- <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> -->
-		<script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
+		<!-- <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script> -->
 
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
@@ -111,6 +111,7 @@
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
 		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/packery/1.4.3/packery.pkgd.min.js"></script> -->
+
 
 		<!-- Portfolio Modals -->
 		<!-- Use the modals below to showcase details about your portfolio projects! -->
@@ -310,7 +311,6 @@
 				</div>
 			</div>
 		</div>
-		2{{2+2}}{{dateString()}}{{s}}
 		<script>
 			function footerDt() {
 				var d = new Date();
@@ -319,7 +319,6 @@
 				// return n;
 			};
 			window.onload = footerDt;
-			// external js: masonry.pkgd.js
 
 			$(document).ready(function() {
 				// init Masonry
