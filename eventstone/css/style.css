@@ -159,8 +159,8 @@ body {
 	border-style: solid;
 	border: thin dashed red;
 	font-family: monospace;
-	background-color: #92F1FF;
-	color: #E74C3C;
+	background-color: OldLace;
+	color: Magenta;
 	text-align: center;
 }
 
@@ -243,13 +243,44 @@ body {
 }
 
 .ticketColors {
-	height: 450px;;
+	height: 310px;
 	overflow: scroll;
 	border-left: thin solid black;
 	border-right: thin solid black;
 }
 
 .dataFieldContainer {
+}
+
+#printable {
+	padding-top: 7% !important;
+}
+
+@page {
+	margin-top: 1in;
+}
+
+.ticketSamples {
+	padding: 20px;
+	border: dotted 1px;
+	white-space: nowrap;
+	overflow-x: auto;
+	height: 250px;
+	overflow-y: hidden;
+	-ms-overflow-y: hidden;
+}
+.ticketSamplesOuter {
+	/*zoom: 0.5;
+	-moz-transform: scale(0.5);*/
+}
+.ticketSamples div.ticket {
+	/*width: 2.5in !important;
+	height: 1.0625in !important;*/
+	/*zoom: 0.5;
+	-moz-transform: scale(0.5);*/
+}
+.ticketSamples div {
+	display: inline-block
 }
 /*Removed default print styles from limestone*/
 

@@ -185,11 +185,6 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 				$scope.$storage.prefix = '';
 				$scope.$storage.totalTickets = '';
 			}
-
-			// else {
-			// alert("You must select either random or sequential generation mode.");
-			// }
-
 		};
 
 		// To be used to hide the side icon before printing
@@ -243,6 +238,21 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 				$scope.liveMsgStatus = false;
 			}, 5000);
 		};
+		
+		$scope.checkIns = "0";
+		$scope.noCheckIns = "0";
+		
+		// $scope.summary = function() {
+			// $scope.totalGuests = $scope.$storage.guestsList.length - 2;
+			// for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
+				// if ($scope.$storage.guestsList[i].checkedIn == true) {
+					// $scope.checkIns = $scope.checkIns + 1;
+				// } else if (($scope.$storage.guestsList[i].checkedIn) != true) {
+					// $scope.noCheckIns = $scope.checkIns + 1;
+				// }
+			// }
+			// $scope.noCheckIns = $scope.noCheckIns -2;
+		// };
 
 		$scope.randomName = function() {
 			var arrOfNames1 = ["Jason", "Jim", "Bird", "Shari", "Lily", "Shukla", "Jake", "Kurt", "Sylvia", "Smith", "Luke", "Brent", "Tony", "Chi", "Chen", "Yang", "Ada", "Oluchi", "Maj"];

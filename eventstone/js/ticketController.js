@@ -78,7 +78,7 @@ function($scope, $http, $localStorage, $sce) {
 					var printContents = document.getElementById("printable").innerHTML;
 					var popupWin = window.open('', '_blank', 'width=1700,height=2200');
 					popupWin.document.open();
-					popupWin.document.write('<html><link rel="stylesheet" media="all" href="css/style.css"><link href="css/limestone.css" rel="stylesheet"  media="all"></head><body onload="window.print()">' + printContents + '</html>');
+					popupWin.document.write('<html><link rel="stylesheet" media="all" href="css/style.css"><link href="css/limestone.css" rel="stylesheet"  media="all"></head><body onload="window.print()" style="padding-top: 7% !important;">' + printContents + '</html>');
 					popupWin.document.close();
 				};
 

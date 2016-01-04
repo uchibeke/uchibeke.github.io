@@ -1,36 +1,36 @@
-<div ng-include="'partials/nav.html'"></div>
-<div class="row">
-	<div class="row text-center ticket center-block" ng-style="previewStyle()"
-	ng-repeat="item in ticketVariants">
-		<br />
-		<!-- http://jsfiddle.net/Shital_D/b9qtj56p/6/ --> <!-- NG BIND HTML -->
-		<div ng-class="item.div1Class">
-			<span class=" text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
-			<img alt="Add guest to see barcode" class="img-responsive"
-			src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{$storage.prefix}}{{$storage.guestsList[$storage.guestsList.length-1].name}}&includetext&scale=1">
-			<span >{{$storage.guestsList[$storage.guestsList.length-1].name}}</span>
-			<p class=" text-center" style="font-size: x-small; " ng-style="previewStyle()" >
-				{{$storage.ageInfo}}
-				<br />
-				<span style="font-size: 0.6em;" class="securityEncoding"></span>
-			</p>
-		</div>
-		<div ng-class="item.div2Class">
-			<h2 class="text-center ticketTitle" ng-style="previewStyle()"  > {{$storage.ticket[0].ticketTitle}} </h2>
-			<h5 class="text-center ticketVenue" ng-style="previewStyle()"  > {{$storage.ticket[0].eventVenue}} </h5>
-			<div class="row centerDiv">
-				<div class="col-md-4 col-lg-4 col-xs-4 text-center center-block centerDiv_1">
+<div class="ticketSamplesOuter row">
+	<div class="row center text-center ticketSamples">
+		<div class="text-center center-block " ng-repeat="item in ticketVariants">
+			<div class="row text-center ticket center-block" ng-style="previewStyle()">
+				<a ng-click="" > <!-- http://jsfiddle.net/Shital_D/b9qtj56p/6/ --> <!-- NG BIND HTML -->
+				<div ng-class="item.div1Class">
+					<span class=" text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
+					<img alt="Add guest to see barcode" class="img-responsive"
+					src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{$storage.prefix}}{{$storage.guestsList[$storage.guestsList.length-1].name}}&includetext&scale=1">
+					<span >{{$storage.guestsList[$storage.guestsList.length-1].name}}</span>
+					<p class=" text-center" style="font-size: x-small; " ng-style="previewStyle()" >
+					{{$storage.ageInfo}}
+					<br />
+					<span style="font-size: 0.6em;" class="securityEncoding"></span>
+					</p>
+				</div>
+				<div ng-class="item.div2Class">
+					<h2 class="text-center ticketTitle" ng-style="previewStyle()"  > {{$storage.ticket[0].ticketTitle}} </h2>
+					<h5 class="text-center ticketVenue" ng-style="previewStyle()"  > {{$storage.ticket[0].eventVenue}} </h5>
+					<div class="row centerDiv">
+					<div class="col-md-4 col-lg-4 col-xs-4 text-center center-block centerDiv_1">
 					{{$storage.ticket[0].eventDate}}
-				</div>
-				<div class="col-md-6 col-lg-6 col-xs-6 text-center centerDiv_2">
+					</div>
+					<div class="col-md-6 col-lg-6 col-xs-6 text-center centerDiv_2">
 					<h3 ng-style="previewStyle()">Admit One</h3>
-				</div>
-				<div class="col-md-2 col-lg-2 col-xs-2  centerDiv_3  pull-left"  >
+					</div>
+					<div class="col-md-2 col-lg-2 col-xs-2  centerDiv_3  pull-left"  >
 					{{$storage.ticket[0].eventTime}}
-				</div>
+					</div>
+					</div>
+				</div> <div ng-class="item.div3Class"></div> </a>
 			</div>
 		</div>
-		<div ng-class="item.div3Class"></div>
+		<hr />
 	</div>
-	<hr />
 </div>
