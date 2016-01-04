@@ -1,7 +1,28 @@
 [
 		{
+			"color" : "#191970",
+			"backgroundColor" : "linear-gradient(to right, gold , GoldenRod )",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},		{
+			"color" : "#4D2A2A",
+			"backgroundColor" : "linear-gradient(to right, #FFFFFF , #C0C0C0 )",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
 			"color" : "#85DB18",
 			"backgroundColor" : "#FFFFDC",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},{
+			"color" : "#191970",
+			"backgroundColor" : "linear-gradient(to right, GoldenRod, gold )",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},{
+			"color" : "#4D2A2A",
+			"backgroundColor" : "linear-gradient(to right, #C0C0C0 ,  #FFFFFF)",
 			"borderLeft" : "",
 			"borderRight" : ""
 		},

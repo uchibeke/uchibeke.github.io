@@ -59,7 +59,7 @@ function($scope, $http, $localStorage, $sce) {
 				$scope.previewStyle = function() {
 					if ($scope.isModel) {
 						return {
-							'background-color' : $scope.$storage.ticketBgColor,
+							'background' : $scope.$storage.ticketBgColor,
 							'color' : $scope.$storage.ticketText
 						}
 					}
@@ -70,7 +70,7 @@ function($scope, $http, $localStorage, $sce) {
 				$scope.textBtnStyle = function(bg) {
 					if ($scope.isModel) {
 						return {
-							'background-color' : bg
+							'background' : bg
 						};
 					};
 				};
@@ -86,7 +86,7 @@ function($scope, $http, $localStorage, $sce) {
 				// and add it to each printed ticket.
 				$.get("http://ipinfo.io", function(response) {
 					var d = new Date();
-					$(".securityEncoding").html(response.ip + "|" + response.city + "|" + d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2));
+					$(".securityEncoding").html(response.ip + "|" + d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2));
 				}, "jsonp");
 			});
 		});

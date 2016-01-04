@@ -4,7 +4,42 @@
 
  /* Reset Styles */
 /*@import url('http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css');*/
+/* http://meyerweb.com/eric/tools/css/reset/
+ v2.0 | 20110126
+ License: none (public domain)
+ */
 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*Other Reset*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -158,9 +193,9 @@ body {
 	height: 2.125in !important;
 	border-style: solid;
 	border: thin dashed red;
-	font-family: monospace;
-	background-color: OldLace;
-	color: Magenta;
+	font-family: monospace !important;
+	background: linear-gradient(to right, gold , GoldenRod );
+	color: #191970;
 	text-align: center;
 }
 
@@ -170,11 +205,12 @@ body {
 }
 
 .ticketCol1 {
-	font-family: monospace;
+	font-family: monospace !important;
 	/*width: 132px !important;*/
 	display: block !important;
 }
 .ticketCol2 {
+	font-family: monospace !important;
 	border-style: solid;
 	/*border-right: medium solid #363942;*/
 	border-left: medium solid #363942;
@@ -187,14 +223,17 @@ body {
 	/*width: 44px !important;*/
 }
 .centerDiv {
+	font-family: monospace !important;
 	width: 340px !important;
 }
 
 .centerDiv_1 {
+	font-family: monospace !important;
 	/*width: 117px !important;*/
 }
 
 .centerDiv_2 {
+	font-family: monospace !important;
 	width: 145px !important;
 	border-style: solid !important;
 	border-right: thin solid #363942 !important;
@@ -202,14 +241,17 @@ body {
 }
 
 .centerDiv_3 {
+	font-family: monospace !important;
 	/*width: 60px !important;*/
 }
 
 .eventDets {
+	font-family: monospace !important;
 	padding-right: 20% !important;
 }
 
 .ticketTitle {
+	font-family: monospace !important;
 	font-size: x-large !important;
 	font-weight: bold !important;
 	border-style: solid !important;
@@ -217,6 +259,7 @@ body {
 }
 
 .ticketVenue {
+	font-family: monospace !important;
 	font-size: large !important;
 	font-weight: bold !important;
 	border-style: solid !important;
@@ -271,16 +314,16 @@ body {
 }
 .ticketSamplesOuter {
 	/*zoom: 0.5;
-	-moz-transform: scale(0.5);*/
+	 -moz-transform: scale(0.5);*/
 }
 .ticketSamples div.ticket {
 	/*width: 2.5in !important;
-	height: 1.0625in !important;*/
+	 height: 1.0625in !important;*/
 	/*zoom: 0.5;
-	-moz-transform: scale(0.5);*/
+	 -moz-transform: scale(0.5);*/
 }
 .ticketSamples div {
-	display: inline-block
+	display: inline-block;
 }
 /*Removed default print styles from limestone*/
 

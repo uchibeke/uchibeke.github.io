@@ -58,8 +58,6 @@
 								<span >{{$storage.guestsList[$storage.guestsList.length-1].name}}</span>
 								<p class=" text-center" style="font-size: x-small; " ng-style="previewStyle()" >
 									{{$storage.ageInfo}}
-									<br />
-									<span style="font-size: 0.6em;" class="securityEncoding"></span>
 								</p>
 							</div>
 							<div class="col-md-9 col-lg-9 col-xs-9 ticketCol2  text-center center-block">
@@ -73,7 +71,8 @@
 										<h3 ng-style="previewStyle()">Admit One</h3>
 									</div>
 									<div class="col-md-2 col-lg-2 col-xs-2  centerDiv_3  pull-left"  >
-										{{$storage.ticket[0].eventTime}}
+										{{$storage.ticket[0].eventTime}}<br />
+										<span style="font-size:7px;" class="securityEncoding"></span>
 									</div>
 								</div>
 							</div>
@@ -242,7 +241,7 @@
 	</div>
 
 	<div>
-		<button ng-hide="true" ng-click="$storage.$reset({ })">
+		<button ng-hide="<!-- true -->" ng-click="$storage.$reset({ })">
 			Clear localStorage
 		</button>
 	</div>
