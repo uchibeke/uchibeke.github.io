@@ -1,7 +1,7 @@
-var ticketControllers = angular.module('ticketControllers', ['ngStorage', 'firebase', 'ngSanitize'])
+var ticketControllers = angular.module('ticketControllers', ['ngStorage', 'firebase', 'ngSanitize', 'ngFileUpload', 'ngImgCrop'])
 
-guestControllers.controller('TicketController', ['$scope', '$http', '$localStorage', '$sce' ,
-function($scope, $http, $localStorage, $sce) {
+guestControllers.controller('TicketController', ['$scope', '$http', '$localStorage', '$sce', 'Upload', '$timeout',
+function($scope, $http, $localStorage, $sce, Upload, $timeout) {
 	$http.get('js/tickets.json').success(function(tdata) {
 		// Guest Data from json file
 		$scope.ticketdata = tdata;
@@ -21,7 +21,27 @@ function($scope, $http, $localStorage, $sce) {
 					ticket : $scope.ticketdata,
 					style : $scope.styles
 				});
+
 				$scope.bc = 10;
+				
+				// File upload
+				$scope.upload = function(dataUrl) {
+					Upload.upload({
+						url : 'https://angular-file-upload-cors-srv.appspot.com/upload',
+						data : {
+							file : Upload.dataUrltoBlob(dataUrl)
+						},
+					}).then(function(response) {
+						$timeout(function() {
+							$scope.result = response.data;
+						});
+					}, function(response) {
+						if (response.status > 0)
+							$scope.errorMsg = response.status + ': ' + response.data;
+					}, function(evt) {
+						$scope.progress = parseInt(100.0 * evt.loaded / evt.total);
+					});
+				};
 
 				$scope.showTicket = function(ind) {
 					for (var i; i < $scope.$storage.length; i++) {
@@ -47,11 +67,13 @@ function($scope, $http, $localStorage, $sce) {
 				$scope.ticketBackground = function(ind) {
 					$scope.$storage.ticketText = $scope.$storage.ticketText;
 					$scope.$storage.ticketBgColor = ind;
+					$scope.userFillColor=$scope.$storage.ticketBgColor;
 				};
 
 				$scope.ticketTxtColor = function(ind) {
 					$scope.$storage.ticketBgColor = $scope.$storage.ticketBgColor;
 					$scope.$storage.ticketText = ind;
+					$scope.userTextColor=$scope.$storage.ticketText;
 				}
 
 				$scope.isModel = true;
@@ -81,12 +103,17 @@ function($scope, $http, $localStorage, $sce) {
 					popupWin.document.write('<html><link rel="stylesheet" media="all" href="css/style.css"><link href="css/limestone.css" rel="stylesheet"  media="all"></head><body onload="window.print()" style="padding-top: 7% !important;">' + printContents + '</html>');
 					popupWin.document.close();
 				};
+				
+				// $scope.$storage.imgLINK = function () {
+					// $scope.$storage.imgURL  = $scope.croppedDataUrl;
+				// };
+				// $scope.$storage.imgLINK();
 
 				// For security reasons, get IP address, time and location of user at time of generating ticket
 				// and add it to each printed ticket.
-				$.get("http://ipinfo.io", function(response) {
+				$.get("http://ipinfo.io", function(r) {
 					var d = new Date();
-					$(".securityEncoding").html(response.ip + "|" + d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2));
+					$(".securityEncoding").html(r.ip + "|" + d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2));
 				}, "jsonp");
 			});
 		});
