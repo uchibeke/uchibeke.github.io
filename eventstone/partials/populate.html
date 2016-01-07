@@ -18,12 +18,15 @@
 		</ul>
 	</div>
 	<div class="btn-group center-block row text-center" data-toggle="buttons" style="">
-		<label class="btn btn-primary btn-xs col-md-2 pull-left active" ng-click="addWithNum=true;addWithName=false;">
+		<label class="btn btn-primary btn-xs col-md-2 pull-left active" ng-click="addWithNum=true;addWithName=false;addByPasting=false">
 			<input type="radio" name="options" id="option1">
 			By ticket Number </label>
-		<label class="btn btn-primary btn-xs col-md-2 pull-left " ng-click="addWithName=true;addWithNum=false;" >
+		<label class="btn btn-primary btn-xs col-md-2 pull-left " ng-click="addWithName=true;addWithNum=false;addByPasting=false;" >
 			<input type="radio" name="options" id="option2">
 			By Guest Name </label>
+		<label class="btn btn-primary btn-xs col-md-2 pull-left " ng-click="addByPasting=true;addWithNum=false;addWithName=false" >
+			<input type="radio" name="options" id="option3">
+			Paste From Excel </label>
 		<a class="pull-right"  ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">
 		<button type="button" class="btn btn-primary btn-xs  ">
 			View Guests
@@ -60,6 +63,39 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="addWithName  animated slideInDown" ng-show="addByPasting">
+		<div class="row dataFieldContainer center-block  text-center">
+			<textarea ng-model="dataFieldExcel" placeholder="Copy only the columns you want and click 'Add Guests'" 
+		class="dataField form-control" type="textarea" style="height: 250px !important; " ></textarea>
+		</div>
+		<div class=" populate_div  panel panel-default" data-toggle="buttons" style="padding-bottom: 2%;">
+			<div class="panel-body">
+				<div class="pull-right">
+					<button ng-model="btnText" type="button" ng-show="dataFieldExcel.length >=1"
+					class="btn btn-primary " ng-click="addPastedExcel();">
+						{{listBtnText}}
+					</button>
+					<button ng-model="btnText" type="button" ng-show="dataFieldExcel.length >=1"
+					class="btn btn-primary btn-xs" ng-click="clearField(dataFieldExcel); dataFieldExcel = ' ' ">
+						Clear Field
+					</button>
+				</div>
+				<div class="pull-left" style="width: 50%;">
+					<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
+					<a class="pull-right"  ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">
+					<button type="button" class="btn btn-success checkInBtn  ">
+						View Guests
+					</button> </a>
+
+				</div>
+			</div>
+		</div>
+		<div class="styleBtns cf" ng-repeat="item in $storage.ExcelOutput">
+			<p>{{item.r1}} {{item.r2}}</p>
+		</div>
+		{{ExcelOutput}}
+
 	</div>
 	<div class="addWithNum  animated slideInDown" ng-show="addWithNum">
 		<div class="row dataFieldContainer center-block  text-center">

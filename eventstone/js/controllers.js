@@ -33,7 +33,7 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 
 		$scope.clearField = function(field) {
 			field = '';
-		}
+		};
 		// $scope.g = $firebaseObject(ref);
 		// $scope.g.$bindTo($scope, "$storage.guestsList");
 
@@ -131,6 +131,9 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 		$scope.backUpBtn = function() {
 			$scope.backUp = !$scope.backUp;
 		};
+		//
+		// Import/Export
+		// All event lists: Previous list
 
 		// Generate ticket numbers either randomly or sequencially
 		$scope.generateTicketNums = function() {
@@ -187,6 +190,20 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 			}
 		};
 
+		$scope.addPastedExcel = function() {
+			var rows = $scope.dataFieldExcel.split('\n');
+			var obj = [];
+			// var val;
+			for (var i = 0; i < rows.length; i++) {
+				var o = rows[i].split('\t');
+				obj.push({
+					r1 : o[0],
+					r2 : o[1],
+				});
+			}
+			$scope.$storage.ExcelOutput = obj;
+		};
+
 		// To be used to hide the side icon before printing
 		$scope.showListIcon = true;
 		$scope.printGuestList = function() {
@@ -238,20 +255,20 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 				$scope.liveMsgStatus = false;
 			}, 5000);
 		};
-		
+
 		$scope.checkIns = "0";
 		$scope.noCheckIns = "0";
-		
+
 		// $scope.summary = function() {
-			// $scope.totalGuests = $scope.$storage.guestsList.length - 2;
-			// for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
-				// if ($scope.$storage.guestsList[i].checkedIn == true) {
-					// $scope.checkIns = $scope.checkIns + 1;
-				// } else if (($scope.$storage.guestsList[i].checkedIn) != true) {
-					// $scope.noCheckIns = $scope.checkIns + 1;
-				// }
-			// }
-			// $scope.noCheckIns = $scope.noCheckIns -2;
+		// $scope.totalGuests = $scope.$storage.guestsList.length - 2;
+		// for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
+		// if ($scope.$storage.guestsList[i].checkedIn == true) {
+		// $scope.checkIns = $scope.checkIns + 1;
+		// } else if (($scope.$storage.guestsList[i].checkedIn) != true) {
+		// $scope.noCheckIns = $scope.checkIns + 1;
+		// }
+		// }
+		// $scope.noCheckIns = $scope.noCheckIns -2;
 		// };
 
 		$scope.randomName = function() {
@@ -280,29 +297,4 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 		};
 
 	});
-}]);
-
-// guestControllers.controller('DetailsController', ['$scope', '$http', '$routeParams', '$localStorage',
-// function($scope, $http, $routeParams, $localStorage) {
-// $http.get('js/data.json').success(function(data) {
-// $scope.guests = data;
-// $scope.$storage = $localStorage.$default({
-// guestsList : $scope.guests
-// });
-//
-// $scope.whichItem = $routeParams.itemId;
-//
-// if ($routeParams.itemId > 0) {
-// $scope.prevItem = Number($routeParams.itemId) - 1;
-// } else {
-// $scope.prevItem = $scope.$storage.guestsList.length - 1;
-// }
-//
-// if ($routeParams.itemId < $scope.$storage.guestsList.length - 1) {
-// $scope.nextItem = Number($routeParams.itemId) + 1;
-// } else {
-// $scope.nextItem = 0;
-// }
-//
-// });
-// }]);
+}]); 

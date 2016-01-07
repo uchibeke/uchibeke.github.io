@@ -319,5 +319,11 @@
 			"backgroundColor" : "OldLace",
 			"borderLeft" : "",
 			"borderRight" : ""
+		},
+		{
+			"color" : "gray",
+			"backgroundColor" : "black",
+			"borderLeft" : "",
+			"borderRight" : ""
 		}
 ]

@@ -169,11 +169,15 @@ body {
 }
 
 .ticketCol1 {
+	margin-top: 6px !important;
+	margin-bottom: 0px !important;
 	font-family: monospace !important;
 	/*width: 132px !important;*/
 	display: block !important;
 }
 .ticketCol2 {
+	margin-top: 6px !important;
+	margin-bottom: 0px !important;
 	border-style: solid;
 	/*border-right: medium solid #363942;*/
 	border-left: medium solid #363942;
@@ -182,6 +186,8 @@ body {
 }
 
 .ticketCol3 {
+	margin-top: 6px !important;
+	margin-bottom: 0px !important;
 	font-family: monospace !important;
 	/*width: 44px !important;*/
 }
@@ -206,7 +212,6 @@ body {
 }
 
 .eventDets {
-	padding-right: 20% !important;
 }
 
 .ticketTitle {
@@ -324,11 +329,26 @@ form .progress {
 }
 
 .ticketP {
-	font-size: 10px  !important;
+	font-size: 7px  !important;
 }
 
 
 .securityEncoding {
-	font-size: 6px   !important;
+	font-size: 5px   !important;
 	text-align: center;
+	margin: 0px  !important;
+}
+
+.ticketGName {
+	font-size: 14px;
+	overflow:hidden !important;
+}
+
+.userInfo {
+	font-size 10px  !important;
+	margin: 0px  !important;
+}
+
+.barcodeIMG {
+	margin: 0px  !important;
 }

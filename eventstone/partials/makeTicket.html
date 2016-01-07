@@ -6,7 +6,7 @@
 			<a type="button" class="btn btn-default btn-xs" ng-href="#/populate">&laquo; Manage Guests</a>
 		</div>
 		<div class="pull-right">
-			<a type="button" class="btn btn-default btn-xs" ng-href="#/live"> Start Event &raquo;</a>
+			<a type="button" class="btn btn-default btn-xs" ng-href="#/live">Start Event &raquo;</a>
 		</div>
 		<h1 class="text-center uofs-page-title"><a>Ticket Designer</a></h1>
 		<br />
@@ -38,13 +38,13 @@
 							ng-model="$storage.ticket[0].ticketPrice">
 						</div>
 						<div class="form-group">
-							<input class="form-control"  placeholder="Other info eg. ID required/19+ event" type="text"
+							<input class="form-control "  placeholder="Other info eg. ID required/19+ event" type="text"
 							ng-model="$storage.ageInfo">
 						</div>
 						<div class="checkbox " >
 							<label>Upload Logo/Image?
 								<input type="checkbox" ng-model="toUpload">
-								 </label>
+							</label>
 						</div>
 						<div class="form-group text-justify " ng-show="toUpload">
 							<button ngf-select ng-model="picFile" accept="image/*">
@@ -62,19 +62,18 @@
 			<div class="col-md-6 col-xs-12 ticketPreview">
 				<h2 class="text-center row ">Preview</h2>
 				<div class="tab-content " id="widget">
-					<!-- <br /> -->
 					<div class=" tab-pane active center-block" id="layout1" >
 						<div class="row text-center ticket center-block" ng-style="previewStyle()">
-							<br />
 							<div class="col-md-3 col-lg-3 col-xs-3 ticketCol1 text-center center-block">
 								<div style="width: 50%;" class="center center-block text-center" ng-show="toUpload">
-									<img ng-src="{{croppedDataUrl}}" width="100%" class=""/><br />
+									<img ng-src="{{croppedDataUrl}}" width="100%" class=""/>
+									<br />
 								</div>
-								<span >{{$storage.guestsList[$storage.guestsList.length-1].name}}</span>
-								<img alt="Add guest to see barcode" class="img-responsive"
+								<span class="ticketGName">{{$storage.guestsList[$storage.guestsList.length-1].name}}</span>
+								<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
 								src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{$storage.prefix}}{{$storage.guestsList[$storage.guestsList.length-1].name}}&includetext&scale=1">
 								<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
-								<p class=" text-center" style="font-size: xx-small; " ng-style="previewStyle()" >
+								<p class=" text-center userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
 									{{$storage.ageInfo}}
 								</p>
 							</div>
@@ -226,46 +225,17 @@
 			<div class="previewTickets  center-block text-center"
 			ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction" >
 				<div class="row text-center ticket center-block" ng-style="previewStyle()">
-					<br />
-							<div class="col-md-3 col-lg-3 col-xs-3 ticketCol1 text-center center-block">
-								<div style="width: 50%;" class="center center-block text-center" ng-show="toUpload">
-									<img ng-src="{{croppedDataUrl}}" width="100%" class=""/><br />
-								</div>
-								<span >{{item.name}}</span>
-								<img alt="Add guest to see barcode" class="img-responsive"
-								src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{item.name}}&includetext&scale=1">
-								<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
-								<p class=" text-center" style="font-size: xx-small; " ng-style="previewStyle()" >
-									{{$storage.ageInfo}}
-								</p>
-							</div>
-							<div class="col-md-9 col-lg-9 col-xs-9 ticketCol2  text-center center-block">
-								<h2 class="text-center ticketTitle" ng-style="previewStyle()"  > {{$storage.ticket[0].ticketTitle}} </h2>
-								<h5 class="text-center ticketVenue" ng-style="previewStyle()"  > {{$storage.ticket[0].eventVenue}} </h5>
-								<div class="row centerDiv">
-									<div class="col-md-4 col-lg-4 col-xs-4 text-center center-block centerDiv_1">
-										{{$storage.ticket[0].eventDate}}
-									</div>
-									<div class="col-md-6 col-lg-6 col-xs-6 text-center centerDiv_2">
-										<h3 ng-style="previewStyle()">Admit One</h3>
-									</div>
-									<div class="col-md-2 col-lg-2 col-xs-2  centerDiv_3  pull-left"  >
-										{{$storage.ticket[0].eventTime}}
-										<br />
-										<span class="securityEncoding"></span>
-									</div>
-								</div>
-							</div>
-							<!-- <div class="col-md-1 col-lg-1 col-xs-1 ticketCol3 center-block"></div> -->
-					<!-- <div class="col-md-3 col-lg-3 col-xs-3 ticketCol1 text-center center-block">
-						<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
-						<img alt="Add guest to see barcode" class="img-responsive"
-						src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{item.name}}&includetext&scale=1">
-						<span >{{item.name}}</span>
-						<p class=" text-center" style="font-size: xx-small; " ng-style="previewStyle()" >
-							{{$storage.ageInfo}}
+					<div class="col-md-3 col-lg-3 col-xs-3 ticketCol1 text-center center-block">
+						<div style="width: 50%;" class="center center-block text-center" ng-show="toUpload">
+							<img ng-src="{{croppedDataUrl}}" width="100%" class=""/>
 							<br />
-							<span style="font-size: 0.6em;" class="securityEncoding"></span>
+						</div>
+						<span class="ticketGName">{{item.name}}</span>
+						<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
+						src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{item.name}}&includetext&scale=1">
+						<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
+						<p class="text-center userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
+							{{$storage.ageInfo}}
 						</p>
 					</div>
 					<div class="col-md-9 col-lg-9 col-xs-9 ticketCol2  text-center center-block">
@@ -280,10 +250,11 @@
 							</div>
 							<div class="col-md-2 col-lg-2 col-xs-2  centerDiv_3  pull-left"  >
 								{{$storage.ticket[0].eventTime}}
+								<br />
+								<span class="securityEncoding"></span>
 							</div>
 						</div>
-					</div> -->
-					<!-- <div class="col-md-1 col-lg-1 col-xs-1 ticketCol3 center-block"></div> -->
+					</div>
 				</div>
 			</div>
 		</div>
