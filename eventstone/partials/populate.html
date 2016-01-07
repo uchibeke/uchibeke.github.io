@@ -5,7 +5,7 @@
 		<a type="button" class="btn btn-default btn-xs" ng-href="#/home">&laquo; Home</a>
 	</div>
 	<div class="pull-right">
-		<a type="button" class="btn btn-default btn-xs" ng-href="#/tickets"> Generate Tickets &raquo;</a>
+		<a type="button" class="btn btn-default btn-xs" ng-href="#/guestList"> View Guests &raquo;</a>
 	</div>
 	<h1 class="text-center uofs-page-title"><a>Add Guests</a></h1>
 	<br />
@@ -64,7 +64,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="addWithName  animated slideInDown" ng-show="addByPasting">
+	<div class="addByPasting  animated slideInDown" ng-show="addByPasting">
 		<div class="row dataFieldContainer center-block  text-center">
 			<textarea ng-model="dataFieldExcel" placeholder="Copy only the columns you want and click 'Add Guests'" 
 		class="dataField form-control" type="textarea" style="height: 250px !important; " ></textarea>
@@ -73,7 +73,7 @@
 			<div class="panel-body">
 				<div class="pull-right">
 					<button ng-model="btnText" type="button" ng-show="dataFieldExcel.length >=1"
-					class="btn btn-primary " ng-click="addPastedExcel();">
+					class="btn btn-primary " ng-click="addPastedExcel();dataFieldExcel = '' ">
 						{{listBtnText}}
 					</button>
 					<button ng-model="btnText" type="button" ng-show="dataFieldExcel.length >=1"
@@ -91,11 +91,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="styleBtns cf" ng-repeat="item in $storage.ExcelOutput">
-			<p>{{item.r1}} {{item.r2}}</p>
-		</div>
-		{{ExcelOutput}}
-
 	</div>
 	<div class="addWithNum  animated slideInDown" ng-show="addWithNum">
 		<div class="row dataFieldContainer center-block  text-center">

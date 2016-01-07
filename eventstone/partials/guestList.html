@@ -1,23 +1,29 @@
-<div ng-include="'partials/nav.html'"></div>
 <section class="guestpage container-fluid uofs-section animated slideInDown">
 	<div class=" pull-left" >
-		<a ng-href="#/populate">&laquo; Back</a>
+		<a class="btn btn-default btn-xs" type="button" ng-href="#/populate">&laquo; Back</a>
 	</div>
 	<div class=" pull-right" >
-		<button class="btn btn-primary btn-xs" ng-click="printGuestList()">Print Guestlist</button>
+		<a class="btn btn-default btn-xs" type="button" ng-href="#/tickets">&laquo; Generate Tickets</a>
 	</div>
 	<div class="guestlist row  text-center center-block" >
 		<div class="row">
 			<h1 class="text-center uofs-page-title"><a>Guest List</a></h1>
-			<br />
+			<div class="">
+				<br />
+				<h6 class="col-xs-3 col-md-3">Checked in: {{checkIns()}} </h6>
+				<h6 class="col-xs-3 col-md-3">Not Checked in: {{noCheckIns()}} </h6>
+			</div>
 			<form class="search  text-center form col-xs-12 col-md-10">
 				<input ng-model="guestSearch" placeholder="Search for a guest"
 				autofocus="autofocus" class="searchBar form-control" >
 			</form>
-			<p style="text-align: right; padding-top: 2%;" class="col-xs-12 col-md-2">
+			<p style="" class="col-xs-12 col-md-2 pull-right">
 				<button  ng-model="btnText" type="button" class="btn btn-warning btn-xs"
 				ng-show="$storage.guestsList.length > 0 <= 0" ng-click="deleteStored()">
 					Remove All Guests
+				</button>
+				<button class="btn btn-primary btn-xs" ng-click="printGuestList()">
+					Print Guestlist
 				</button>
 			</p>
 		</div>
@@ -39,11 +45,10 @@
 				<div class="info">
 					<div class="row guestInList" style="border-bottom: thin dashed gray;">
 						<div class="col-xs-1 col-md-1">
-							<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> 
-								<i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">{{item.icon}}</i></a>
+							<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">{{item.icon}}</i></a>
 							<span class=" text-center">{{$index+1}}</span>
 						</div>
-						<div class="col-xs-6 col-md-6">
+						<div class="col-xs-6 col-md-6 ">
 							<h4>{{item.name}}</h4>
 						</div>
 						<div class="col-xs-5 col-md-5">
@@ -58,7 +63,10 @@
 	<div class="row">
 		<div class="row">
 			<form class="search  text-center form col-xs-12 col-md-10"></form>
-			<p style="text-align: right; padding-top: 2%;" class="col-xs-12 col-md-2">
+			<p style="" class="col-xs-12 col-md-2 pull-right text-center">
+				<button class="btn btn-primary btn-xs" ng-click="printGuestList()">
+					Print Guestlist
+				</button>
 				<button  ng-model="btnText" type="button" class="btn btn-warning btn-xs"
 				ng-show="$storage.guestsList.length > 0 <= 0" ng-click="deleteStored()">
 					Remove All Guests

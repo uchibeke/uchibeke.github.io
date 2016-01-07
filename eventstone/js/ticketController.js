@@ -96,6 +96,7 @@ function($scope, $http, $localStorage, $sce, Upload, $timeout) {
 						};
 					};
 				};
+				
 				$scope.printTickets = function() {
 					var printContents = document.getElementById("printable").innerHTML;
 					var popupWin = window.open('', '_blank', 'width=1700,height=2200');
@@ -104,10 +105,6 @@ function($scope, $http, $localStorage, $sce, Upload, $timeout) {
 					popupWin.document.close();
 				};
 				
-				// $scope.$storage.imgLINK = function () {
-					// $scope.$storage.imgURL  = $scope.croppedDataUrl;
-				// };
-				// $scope.$storage.imgLINK();
 
 				// For security reasons, get IP address, time and location of user at time of generating ticket
 				// and add it to each printed ticket.

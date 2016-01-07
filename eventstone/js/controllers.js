@@ -193,15 +193,23 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 		$scope.addPastedExcel = function() {
 			var rows = $scope.dataFieldExcel.split('\n');
 			var obj = [];
-			// var val;
 			for (var i = 0; i < rows.length; i++) {
-				var o = rows[i].split('\t');
-				obj.push({
-					r1 : o[0],
-					r2 : o[1],
-				});
+				var arr = rows[i].split('\t');
+				// returns full name and takes care of when person has more than
+				// two names
+				function a() {
+					var name = "";
+					for (var i = 0; i < arr.length; i++) {
+						name = name + arr[i] + " ";
+					}
+					return name;
+				}
+
+
+				obj.push(a());
 			}
-			$scope.$storage.ExcelOutput = obj;
+			$scope.objJoin = obj.join(",");
+			$scope.submitUserInput($scope.objJoin);
 		};
 
 		// To be used to hide the side icon before printing
@@ -255,21 +263,23 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 				$scope.liveMsgStatus = false;
 			}, 5000);
 		};
+		//
+		// $scope.checkIns = "0";
+		// $scope.noCheckIns = "0";
 
-		$scope.checkIns = "0";
-		$scope.noCheckIns = "0";
+		$scope.checkIns = function() {
+			var checkIns = 0;
+			for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
+				if ($scope.$storage.guestsList[i].checkedIn == true) {
+					checkIns = checkIns + 1;
+				}
+			}
+			return checkIns;
+		};
 
-		// $scope.summary = function() {
-		// $scope.totalGuests = $scope.$storage.guestsList.length - 2;
-		// for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
-		// if ($scope.$storage.guestsList[i].checkedIn == true) {
-		// $scope.checkIns = $scope.checkIns + 1;
-		// } else if (($scope.$storage.guestsList[i].checkedIn) != true) {
-		// $scope.noCheckIns = $scope.checkIns + 1;
-		// }
-		// }
-		// $scope.noCheckIns = $scope.noCheckIns -2;
-		// };
+		$scope.noCheckIns  = function ()  {
+			return $scope.$storage.guestsList.length - $scope.checkIns() - 2;
+		};
 
 		$scope.randomName = function() {
 			var arrOfNames1 = ["Jason", "Jim", "Bird", "Shari", "Lily", "Shukla", "Jake", "Kurt", "Sylvia", "Smith", "Luke", "Brent", "Tony", "Chi", "Chen", "Yang", "Ada", "Oluchi", "Maj"];
@@ -297,4 +307,4 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 		};
 
 	});
-}]); 
+}]);
