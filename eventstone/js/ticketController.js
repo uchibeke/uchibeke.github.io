@@ -59,7 +59,6 @@ function($scope, $http, $localStorage, $sce, Upload, $timeout) {
 						onSelect : function(dateText, inst) {
 							var date = $(this).val();
 							$scope.$storage.ticket[0].eventDate = date;
-							// alert();
 						}
 					});
 				});

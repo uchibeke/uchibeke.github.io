@@ -3,16 +3,11 @@
 		<a class="btn btn-default btn-xs" type="button" ng-href="#/populate">&laquo; Back</a>
 	</div>
 	<div class=" pull-right" >
-		<a class="btn btn-default btn-xs" type="button" ng-href="#/tickets">&laquo; Generate Tickets</a>
+		<a class="btn btn-default btn-xs" type="button" ng-href="#/tickets">&laquo; Design Tickets</a>
 	</div>
 	<div class="guestlist row  text-center center-block" >
 		<div class="row">
-			<h1 class="text-center uofs-page-title"><a>Guest List</a></h1>
-			<div class="">
-				<br />
-				<h6 class="col-xs-3 col-md-3">Checked in: {{checkIns()}} </h6>
-				<h6 class="col-xs-3 col-md-3">Not Checked in: {{noCheckIns()}} </h6>
-			</div>
+			<h1 class="text-center uofs-page-title"><a>List</a></h1>
 			<form class="search  text-center form col-xs-12 col-md-10">
 				<input ng-model="guestSearch" placeholder="Search for a guest"
 				autofocus="autofocus" class="searchBar form-control" >
@@ -29,7 +24,15 @@
 		</div>
 		<br class="clearfix"/>
 		<div id="GList" class="row">
-			<div class="text-center" >
+			<!-- <div class="row text-center center-block">
+			<h3>
+			Summary</h3>
+			<br />
+			<h4 class="col-xs-6 col-md-6">Checked in: {{checkIns()}} </h4>
+			<h4 class="col-xs-6 col-md-6">Not Checked in: {{noCheckIns()}} </h4>
+			<br />
+			</div> -->
+			<div class="text-center " >
 				<div class="col-xs-1 col-md-1">
 					<h3>S/N</h3>
 				</div>
@@ -40,7 +43,7 @@
 					<h3>Status</h3>
 				</div>
 			</div>
-			<div class="guest cf text-center" ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction">
+			<div class="guest cf text-center row" ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction">
 				<a>
 				<div class="info">
 					<div class="row guestInList" style="border-bottom: thin dashed gray;">
@@ -57,7 +60,6 @@
 					</div>
 				</div> </a>
 			</div>
-
 		</div>
 	</div>
 	<div class="row">

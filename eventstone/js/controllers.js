@@ -34,8 +34,6 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 		$scope.clearField = function(field) {
 			field = '';
 		};
-		// $scope.g = $firebaseObject(ref);
-		// $scope.g.$bindTo($scope, "$storage.guestsList");
 
 		$scope.submitUserInput = function(field) {
 			var arr = field.split(",");
@@ -111,7 +109,6 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 			} else {
 				$scope.$storage.guestsList[x].checkedIn = true;
 				var d = new Date();
-				// var ds = d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2) + " on " + (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
 				var ds = d.toLocaleTimeString() + " on " + (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
 				$scope.$storage.guestsList[x].btnText = 'Checked in ' + ds;
 				$scope.$storage.guestsList[x].guestStatus = 'Checked in ' + ds;
@@ -141,47 +138,21 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 				alert("You must enter the number of tickets to generate");
 			} else {
 				$scope.dataFieldNum = "";
-				if ($scope.$storage.prefix.length <= 0) {
-					$scope.$storage.prefix = "";
-				}
-				if ($scope.$storage.ticketDigits.length <= 0) {
+				if ($scope.$storage.ticketDigits <= 0) {
 					$scope.$storage.ticketDigits = 5;
+				} else if ($scope.$storage.ticketDigits >= 10) {
+					$scope.$storage.ticketDigits = 10;
+				} else {
+					$scope.$storage.ticketDigits = $scope.$storage.ticketDigits;
 				}
 				var numbDigits = $scope.$storage.ticketDigits - $scope.$storage.prefix.length;
-				if ($scope.$storage.ticketDigits.length > 0) {
-					if ($scope.$storage.ticketDigits.length >= 10) {
-						numbDigits = 10 - $scope.$storage.prefix.length;
-					} else {
-						numbDigits = $scope.$storage.ticketDigits - $scope.$storage.prefix.length;
-					}
+				var firstNum = " ";
+				while (firstNum.length > numbDigits || firstNum.length < numbDigits) {
+					firstNum = parseInt(Math.random().toString().slice(2, numbDigits + 2));
 				}
-				var temp = "";
-				if ($scope.$storage.rand && (!($scope.$storage.seq))) {
-					var a = [];
-					for (var i = 0; i < $scope.$storage.totalTickets; i++) {
-						// magic number 2 used in slice to remove decimal place and move two indexes forward
-						temp = $scope.$storage.prefix + "" + (Math.random().toString().slice(2, numbDigits + 2));
-						// recursively check if element already exists in array a
-						var checkRepeat = function() {
-							if (a.indexOf(temp) > -1) {
-								temp = $scope.$storage.prefix + "" + (Math.random().toString().slice(2, numbDigits + 2));
-								checkRepeat();
-							}
-						};
-						checkRepeat();
-						a.push(temp);
-						$scope.dataFieldNum = temp + " ," + $scope.dataFieldNum;
-					}
-					a = [];
-				} else if ((!($scope.$storage.rand)) && ($scope.$storage.seq)) {
-					var firstNum = " ";
-					while (firstNum.length > numbDigits || firstNum.length < numbDigits) {
-						firstNum = parseInt(Math.random().toString().slice(2, numbDigits + 2));
-					}
-					for (var i = 0; i < $scope.$storage.totalTickets; i++) {
-						$scope.dataFieldNum = ($scope.$storage.prefix + "" + (firstNum + 1)) + " ," + $scope.dataFieldNum;
-						firstNum--;
-					}
+				for (var i = 0; i < $scope.$storage.totalTickets; i++) {
+					$scope.dataFieldNum = ($scope.$storage.prefix + "" + (firstNum + 1)) + " ," + $scope.dataFieldNum;
+					firstNum--;
 				}
 				// Clear data inputted by user
 				$scope.$storage.ticketDigits = '';
@@ -226,7 +197,7 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 			$scope.rand = Math.random().toString().slice(2, 7);
 		};
 
-		$scope.addWithNum = true;
+		$scope.addByPasting = true;
 
 		$scope.restoreFromBackUp = function() {
 			$scope.$storage.guestsList = {};
@@ -260,9 +231,18 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 		$scope.liveMsgStatus = false;
 		$scope.liveMsg = function() {
 			$timeout(function() {
-				$scope.liveMsgStatus = false;
+				$scope.liveMsgStatus  = false;
 			}, 5000);
 		};
+		
+			// Live screen check in message
+		$scope.guestAddFeedback = false;
+		$scope.guestAddMsg = function() {
+			$timeout(function() {
+				$scope.guestAddFeedback  = false;
+			}, 5000);
+		};
+		
 		//
 		// $scope.checkIns = "0";
 		// $scope.noCheckIns = "0";
@@ -277,7 +257,7 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 			return checkIns;
 		};
 
-		$scope.noCheckIns  = function ()  {
+		$scope.noCheckIns = function() {
 			return $scope.$storage.guestsList.length - $scope.checkIns() - 2;
 		};
 

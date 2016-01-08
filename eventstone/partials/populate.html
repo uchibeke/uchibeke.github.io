@@ -5,32 +5,128 @@
 		<a type="button" class="btn btn-default btn-xs" ng-href="#/home">&laquo; Home</a>
 	</div>
 	<div class="pull-right">
-		<a type="button" class="btn btn-default btn-xs" ng-href="#/guestList"> View Guests &raquo;</a>
+		<a type="button" class="btn btn-default btn-xs" ng-href="#/guestList">List &raquo;</a>
 	</div>
 	<h1 class="text-center uofs-page-title"><a>Add Guests</a></h1>
 	<br />
-	<div style="max-width: 100%;">
-		<ul>
-			{{ aa }}
-			<li ng-repeat="item in aa">
-				item
-			</li>
-		</ul>
-	</div>
 	<div class="btn-group center-block row text-center" data-toggle="buttons" style="">
-		<label class="btn btn-primary btn-xs col-md-2 pull-left active" ng-click="addWithNum=true;addWithName=false;addByPasting=false">
+		<label class="btn btn-primary btn-xs col-md-2 pull-left active" ng-click="addByPasting=true;addWithNum=false;addWithName=false" >
 			<input type="radio" name="options" id="option1">
+			Paste From Excel </label>
+		<label class="btn btn-primary btn-xs col-md-2 pull-left " ng-click="addWithNum=true;addWithName=false;addByPasting=false">
+			<input type="radio" name="options" id="option2">
 			By ticket Number </label>
 		<label class="btn btn-primary btn-xs col-md-2 pull-left " ng-click="addWithName=true;addWithNum=false;addByPasting=false;" >
-			<input type="radio" name="options" id="option2">
-			By Guest Name </label>
-		<label class="btn btn-primary btn-xs col-md-2 pull-left " ng-click="addByPasting=true;addWithNum=false;addWithName=false" >
 			<input type="radio" name="options" id="option3">
-			Paste From Excel </label>
-		<a class="pull-right"  ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">
-		<button type="button" class="btn btn-primary btn-xs  ">
-			View Guests
-		</button> </a>
+			By Guest Name </label>
+	</div>
+	<div class="addByPasting  animated slideInDown" ng-show="addByPasting">
+		<div class="row dataFieldContainer center-block  text-center">
+			<textarea ng-model="dataFieldExcel" placeholder="Copy and paste the excel columns containing the names,  Leave out the column heading, and click 'Add Guests'." 
+		class="dataField form-control" type="textarea" style="height: 250px !important; " ></textarea>
+		</div>
+		<div class=" populate_div  panel panel-default" data-toggle="buttons" style="padding-bottom: 2%;">
+			<div class="panel-body">
+				<div class="pull-right">
+					<button ng-model="btnText" type="button" ng-show="dataFieldExcel.length >=1"
+					class="btn btn-primary " ng-click="addPastedExcel();dataFieldExcel = '';guestAddFeedback=true;guestAddMsg(); ">
+						{{listBtnText}}
+					</button>
+					<button ng-model="btnText" type="button" ng-show="dataFieldExcel.length >=1"
+					class="btn btn-primary btn-xs" ng-click="clearField(dataFieldExcel); dataFieldExcel = ' ' ">
+						Clear Field
+					</button>
+				</div>
+				<div class="pull-left" style="width: 50%;">
+					<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
+					<a class="pull-right"   ng-show="$storage.guestsList.length-2>0" ng-click="guestAddFeedback = !guestAddFeedback">
+					<button type="button" class="btn btn-primary checkInBtn btn-xs ">
+						<span ng-show="guestAddFeedback">Hide Guests</span>
+						<span ng-show="!guestAddFeedback">View Guests</span>
+					</button> </a>
+				</div>
+			</div>
+			<div class="guest cf text-center row" ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction"
+			ng-show="guestAddFeedback">
+				<div class="col-xs-2 col-md-2" style="padding-left: 5%;">
+					<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">{{item.icon}}</i></a>
+					<span class=" text-center">{{$index+1}}</span>
+				</div>
+				<div class="col-xs-5 col-md-5 ">
+					<h4>{{item.name}}</h4>
+				</div>
+				<div class="col-xs-5 col-md-5">
+					{{item.guestStatus}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="addWithNum  animated slideInDown" ng-show="addWithNum">
+		<div class="row dataFieldContainer center-block  text-center">
+			<textarea ng-model="dataFieldNum" placeholder="Select options below and click 'Generate Number'. Numbers will show up here. You can also just type or copy and paste a bunch of numbers/characters delimited by comma and use them as your ticket number." 
+		class="dataField form-control" type="textarea" style="height: 250px !important; "></textarea>
+		</div>
+		<div class=" populate_div  panel panel-default" data-toggle="buttons" style="padding-bottom: 2%;">
+			<div class="panel-body">
+				<div class=" center-block col-xs-12">
+					<form role="form">
+						<div class="form-group col-md-3 text-center center-block">
+							<label >Number of digits </label>
+							<input class="form-control" placeholder="Max 10 eg. 6 for AXB105" type="text"
+							ng-model="$storage.ticketDigits" >
+						</div>
+						<div class="form-group col-md-3 text-center">
+							<label >Total Tickets to generate</label>
+							<input  class="form-control"  placeholder="One per guest/group" type="text"
+							ng-model="$storage.totalTickets" ng-required="true">
+						</div>
+						<div class="form-group col-md-3 text-center">
+							<label >Prefix</label>
+							<input class="form-control"  placeholder="eg ABC to get ABC1234" type="text"
+							ng-model="$storage.prefix">
+						</div>
+						<div class="form-group col-md-3 text-center">
+							<br />
+							<button ng-model="btnText" type="button"
+							class="btn btn-primary checkInBtn " ng-click="generateTicketNums(); ">
+								Generate Number
+							</button>
+						</div>
+					</form>
+				</div>
+				<div class="pull-right">
+					<button ng-model="btnText" type="button" ng-show="dataFieldNum.length >=1"
+					class="btn btn-primary " ng-click="submitUserInput(dataFieldNum);dataFieldNum = '' ">
+						Add Guests
+					</button>
+					<button ng-model="btnText" type="button" ng-show="dataFieldNum.length >=1"
+					class="btn btn-primary btn-xs" ng-click="clearField(dataFieldNum); dataFieldNum = '' ">
+						Clear Field
+					</button>
+				</div>
+				<div class="pull-left" style="width: 50%;">
+					<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
+					<a class="pull-right"   ng-show="$storage.guestsList.length-2>0" ng-click="guestAddFeedback = !guestAddFeedback">
+					<button type="button" class="btn btn-primary checkInBtn btn-xs ">
+						<span ng-show="guestAddFeedback">Hide Guests</span>
+						<span ng-show="!guestAddFeedback">View Guests</span>
+					</button> </a>
+				</div>
+			</div>
+			<div class="guest cf text-center row" ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction"
+			ng-show="guestAddFeedback">
+				<div class="col-xs-2 col-md-2" style="padding-left: 5%;">
+					<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">{{item.icon}}</i></a>
+					<span class=" text-center">{{$index+1}}</span>
+				</div>
+				<div class="col-xs-5 col-md-5 ">
+					<h4>{{item.name}}</h4>
+				</div>
+				<div class="col-xs-5 col-md-5">
+					{{item.guestStatus}}
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="addWithName  animated slideInDown" ng-show="addWithName">
 		<div class="row dataFieldContainer center-block  text-center">
@@ -55,110 +151,31 @@
 				</div>
 				<div class="pull-left" style="width: 50%;">
 					<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
-					<a class="pull-right"  ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">
-					<button type="button" class="btn btn-success checkInBtn  ">
-						View Guests
+					<a class="pull-right"   ng-show="$storage.guestsList.length-2>0" ng-click="guestAddFeedback = !guestAddFeedback">
+					<button type="button" class="btn btn-primary checkInBtn btn-xs ">
+						<span ng-show="guestAddFeedback">Hide Guests</span>
+						<span ng-show="!guestAddFeedback">View Guests</span>
 					</button> </a>
-
+				</div>
+			</div>
+			<div class="guest cf text-center row" ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction"
+			ng-show="guestAddFeedback">
+				<div class="col-xs-2 col-md-2" style="padding-left: 5%;">
+					<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">{{item.icon}}</i></a>
+					<span class=" text-center">{{$index+1}}</span>
+				</div>
+				<div class="col-xs-5 col-md-5 ">
+					<h4>{{item.name}}</h4>
+				</div>
+				<div class="col-xs-5 col-md-5">
+					{{item.guestStatus}}
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="addByPasting  animated slideInDown" ng-show="addByPasting">
-		<div class="row dataFieldContainer center-block  text-center">
-			<textarea ng-model="dataFieldExcel" placeholder="Copy only the columns you want and click 'Add Guests'" 
-		class="dataField form-control" type="textarea" style="height: 250px !important; " ></textarea>
-		</div>
-		<div class=" populate_div  panel panel-default" data-toggle="buttons" style="padding-bottom: 2%;">
-			<div class="panel-body">
-				<div class="pull-right">
-					<button ng-model="btnText" type="button" ng-show="dataFieldExcel.length >=1"
-					class="btn btn-primary " ng-click="addPastedExcel();dataFieldExcel = '' ">
-						{{listBtnText}}
-					</button>
-					<button ng-model="btnText" type="button" ng-show="dataFieldExcel.length >=1"
-					class="btn btn-primary btn-xs" ng-click="clearField(dataFieldExcel); dataFieldExcel = ' ' ">
-						Clear Field
-					</button>
-				</div>
-				<div class="pull-left" style="width: 50%;">
-					<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
-					<a class="pull-right"  ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">
-					<button type="button" class="btn btn-success checkInBtn  ">
-						View Guests
-					</button> </a>
-
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="addWithNum  animated slideInDown" ng-show="addWithNum">
-		<div class="row dataFieldContainer center-block  text-center">
-			<textarea ng-model="dataFieldNum" placeholder="Select options below and click 'Generate Number'. Numbers will show up here. You can also just type or copy and paste a bunch of numbers/characters delimited by comma and use them as your ticket number." 
-		class="dataField form-control" type="textarea" style="height: 250px !important; "></textarea>
-		</div>
-		<div class=" populate_div  panel panel-default" data-toggle="buttons" style="padding-bottom: 2%;">
-			<div class="panel-body">
-				<div class=" center-block col-xs-12">
-					<form role="form">
-						<div class="form-group col-md-3 text-center center-block">
-							<label >Generate Numbers</label>
-							Randomly? &nbsp; &nbsp;
-							<input  type="checkbox" ng-model="$storage.rand"
-							ng-click="$storage.rand=true;$storage.seq=false;" />
-							<br />
-							Sequentially? &nbsp; &nbsp;
-							<input type="checkbox" ng-model="$storage.seq"
-							ng-click="$storage.rand=false;$storage.seq=true;"/>
-						</div>
-						<div class="form-group col-md-3 text-center">
-							<label >Number of digits </label>
-							<input class="form-control" placeholder="Max 10 eg. 6 for AXB105" type="text"
-							ng-model="$storage.ticketDigits" >
-						</div>
-						<div class="form-group col-md-3 text-center">
-							<label >Total Tickets to generate</label>
-							<input  class="form-control"  placeholder="One per guest/group" type="text"
-							ng-model="$storage.totalTickets" ng-required="true">
-						</div>
-						<div class="form-group col-md-3 col-xs-3 text-center">
-							<label >Prefix</label>
-							<input class="form-control"  placeholder="eg ABC to get ABC1234" type="text"
-							ng-model="$storage.prefix">
-						</div>
-					</form>
-				</div>
-				<div class="pull-right">
-					<button ng-model="btnText" type="button" ng-show="dataFieldNum.length >=1"
-					class="btn btn-primary " ng-click="submitUserInput(dataFieldNum);dataFieldNum = '' ">
-						Add Guests
-					</button>
-					<button ng-model="btnText" type="button" ng-show="dataFieldNum.length >=1"
-					class="btn btn-primary btn-xs" ng-click="clearField(dataFieldNum); dataFieldNum = '' ">
-						Clear Field
-					</button>
-					<button ng-model="btnText" type="button"
-					class="btn btn-primary checkInBtn " ng-click="generateTicketNums(); ">
-						Generate Number
-					</button>
-				</div>
-				<div class="pull-left" style="width: 50%;">
-					<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
-					<a class="pull-right"  ng-href="#/guestList" ng-show="$storage.guestsList.length-2>0">
-					<button type="button" class="btn btn-success checkInBtn  ">
-						View Guests
-					</button> </a>
-
-				</div>
-			</div>
-		</div>
-
-	</div>
-
 	<div>
 		<!-- {{$storage.x}} -->
 		<!-- <p >{{dateString()}}</p> -->
-
 		<button ng-hide="true" ng-click="$storage.$reset({ })">
 			Clear localStorage
 		</button>
