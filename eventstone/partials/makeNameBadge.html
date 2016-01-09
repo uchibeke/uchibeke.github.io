@@ -1,12 +1,7 @@
 <!-- Simon : How do I add name of group organizing event -->
 <!-- Megan: Name badge. Synch accross devices -->
-<!-- Leannne: Copy and paste from excel -->
 <!-- Solves a problem? -->
-<!-- Restore. Check if empty -->
-<!-- Innovative name badge. ROtate -->
 <!-- 4" x 3 1/4" -->
-<!-- Generating the printing the name badge after adding attendees with their names should take less than half an hour. Menu that points to all the pages is in th top left corner.
-Of to bed now. Message me if you have any concerns and I will get to it asap. -->
 <div ng-include="'partials/nav.html'"></div>
 <section class="guestinfo uofs-section container-fluid animated slideInDown" id="ticketPage">
 	<br />
@@ -284,14 +279,6 @@ Of to bed now. Message me if you have any concerns and I will get to it asap. --
 		</div>
 		<h2>Showing name badge for {{$storage.guestsList.length-2}} guests. </h2>
 		<div id="printable" class="text-center center-block">
-			<!-- <h4  class="text-center center-block">Summary</h4>
-			<div  class="text-center center-block">
-			You added a total of {{$storage.guestsList.length-2}} guests with {{$storage.guestsList.length-2}} tickets
-			</div>
-			<br />
-			<div> -->
-			<!-- So far, you have {{checkIns}} guest who have checked in and {{noCheckIns}} who have not check in. -->
-			<!-- </div> -->
 			<div class="previewTickets  center-block text-center"
 			ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction" >
 				<div class=" tab-pane active center-block text-center backNFront" id="layout1" >
@@ -329,7 +316,6 @@ Of to bed now. Message me if you have any concerns and I will get to it asap. --
 							</div>
 						</div>
 					</div>
-					<!-- <hr /> -->
 					<!-- Badge back -->
 					<div class="badgeBack">
 						<div class="badeContainer nameBadgePrinting">
