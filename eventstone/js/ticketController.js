@@ -112,8 +112,6 @@ function($scope, $http, $localStorage, $sce, Upload, $timeout) {
 				}, "jsonp");
 				
 				$scope.guestRole = "Participant";
-				$storage.ticket[1].ticketTitle = picFile;
-
 			});
 		});
 	});
