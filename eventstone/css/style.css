@@ -385,14 +385,17 @@ form .progress {
 
 .badgeRow1 {
 	height: 0.8in !important;
+	z-index: 1000 !important;
 }
 
 .badgeRow1 div img {
 	padding-left: 10px !important;
+	z-index: 10000 !important;
 }
 
 .badgeRow2 {
 	height: 1.7in !important;
+	z-index: 100000 !important;
 }
 
 .badgeRow3 {
@@ -412,7 +415,7 @@ form .progress {
 }
 
 .badgeGName {
-	font-size: 40pt !important;
+	font-size: 35pt !important;
 	font-family: monospace !important;
 	overflow: hidden !important;
 }
