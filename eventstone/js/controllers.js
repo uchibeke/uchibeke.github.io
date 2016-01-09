@@ -132,7 +132,7 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 		// Import/Export
 		// All event lists: Previous list
 
-		// Generate ticket numbers either randomly or sequencially
+		// Generate ticket numbers sequencially
 		$scope.generateTicketNums = function() {
 			if ($scope.$storage.totalTickets.length <= 0) {
 				alert("You must enter the number of tickets to generate");
@@ -175,8 +175,6 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 					}
 					return name;
 				}
-
-
 				obj.push(a());
 			}
 			$scope.objJoin = obj.join(",");
@@ -200,9 +198,12 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 		$scope.addByPasting = true;
 
 		$scope.restoreFromBackUp = function() {
-			$scope.$storage.guestsList = {};
-			Array.prototype.push.apply($scope.$storage.guestsList, $scope.$storage.backUpGuestList);
-
+			if ($scope.$storage.backUpGuestList.length > 0) {
+				$scope.$storage.guestsList = {};
+				Array.prototype.push.apply($scope.$storage.guestsList, $scope.$storage.backUpGuestList);
+			}else {
+				
+			}
 		};
 
 		$scope.listreplace = true;
@@ -231,18 +232,18 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 		$scope.liveMsgStatus = false;
 		$scope.liveMsg = function() {
 			$timeout(function() {
-				$scope.liveMsgStatus  = false;
+				$scope.liveMsgStatus = false;
 			}, 5000);
 		};
-		
-			// Live screen check in message
+
+		// Live screen check in message
 		$scope.guestAddFeedback = false;
 		$scope.guestAddMsg = function() {
 			$timeout(function() {
-				$scope.guestAddFeedback  = false;
+				$scope.guestAddFeedback = false;
 			}, 5000);
 		};
-		
+
 		//
 		// $scope.checkIns = "0";
 		// $scope.noCheckIns = "0";

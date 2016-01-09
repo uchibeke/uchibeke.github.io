@@ -23,7 +23,7 @@ function($scope, $http, $localStorage, $sce, Upload, $timeout) {
 				});
 
 				$scope.bc = 10;
-				
+
 				// File upload
 				$scope.upload = function(dataUrl) {
 					Upload.upload({
@@ -66,13 +66,13 @@ function($scope, $http, $localStorage, $sce, Upload, $timeout) {
 				$scope.ticketBackground = function(ind) {
 					$scope.$storage.ticketText = $scope.$storage.ticketText;
 					$scope.$storage.ticketBgColor = ind;
-					$scope.userFillColor=$scope.$storage.ticketBgColor;
+					$scope.userFillColor = $scope.$storage.ticketBgColor;
 				};
 
 				$scope.ticketTxtColor = function(ind) {
 					$scope.$storage.ticketBgColor = $scope.$storage.ticketBgColor;
 					$scope.$storage.ticketText = ind;
-					$scope.userTextColor=$scope.$storage.ticketText;
+					$scope.userTextColor = $scope.$storage.ticketText;
 				}
 
 				$scope.isModel = true;
@@ -95,7 +95,7 @@ function($scope, $http, $localStorage, $sce, Upload, $timeout) {
 						};
 					};
 				};
-				
+
 				$scope.printTickets = function() {
 					var printContents = document.getElementById("printable").innerHTML;
 					var popupWin = window.open('', '_blank', 'width=1700,height=2200');
@@ -103,7 +103,6 @@ function($scope, $http, $localStorage, $sce, Upload, $timeout) {
 					popupWin.document.write('<html><link rel="stylesheet" media="all" href="css/style.css"><link href="css/limestone.css" rel="stylesheet"  media="all"></head><body onload="window.print()" style="padding-top: 7% !important;">' + printContents + '</html>');
 					popupWin.document.close();
 				};
-				
 
 				// For security reasons, get IP address, time and location of user at time of generating ticket
 				// and add it to each printed ticket.
@@ -111,6 +110,7 @@ function($scope, $http, $localStorage, $sce, Upload, $timeout) {
 					var d = new Date();
 					$(".securityEncoding").html(r.ip + "|" + d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2));
 				}, "jsonp");
+
 			});
 		});
 	});

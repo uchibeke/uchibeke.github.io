@@ -20,6 +20,9 @@ function($routeProvider) {
 	}).when('/tickets', {
 		templateUrl : 'partials/makeTicket.html',
 		controller : 'TicketController'
+	}).when('/nameBadge', {
+		templateUrl : 'partials/makeNameBadge.html',
+		controller : 'TicketController'
 	}).otherwise({
 		redirectTo : '/home'
 	});
