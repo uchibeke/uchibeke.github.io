@@ -110,6 +110,9 @@ function($scope, $http, $localStorage, $sce, Upload, $timeout) {
 					var d = new Date();
 					$(".securityEncoding").html(r.ip + "|" + d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2));
 				}, "jsonp");
+				
+				$scope.guestRole = "Participant";
+				$storage.ticket[1].ticketTitle = picFile;
 
 			});
 		});
