@@ -415,7 +415,11 @@ form .progress {
 }
 
 .badgeGName {
-	font-size: 35pt !important;
+	font-size: 30pt !important;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	margin-top:  0px;
+	margin-bottom:  0px;
 	font-family: monospace !important;
 	overflow: hidden !important;
 }
