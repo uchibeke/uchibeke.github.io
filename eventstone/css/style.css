@@ -352,8 +352,8 @@ form .progress {
 
 .nameBadge {
 	page-break-inside: avoid !important;
-	width: 3.9in !important;
-	height: 3in !important;
+	width: 3.85in !important;
+	height: 3.1in !important;
 	border-style: solid;
 	border: thin solid #005A31;
 	font-family: monospace !important;
@@ -361,8 +361,17 @@ form .progress {
 	color: #191970;
 	text-align: center;
 	min-height: 100%;
-	border-radius: 15px/50px;
 	transform-style: preserve-3d;
+	border-radius: 10px 150px 30px 150px;
+}
+
+.badeContainer {
+	page-break-inside: avoid !important;
+	width: 3.95in !important;
+	height: 3.2in !important;
+	border: thin solid #005A31;
+	border-radius: 15px;
+	display: inline-block !important;
 }
 
 .nameBadge:after {
@@ -379,7 +388,7 @@ form .progress {
 }
 
 .badgeRow1 div img {
-	padding-left: 10px;
+	padding-left: 10px !important;
 }
 
 .badgeRow2 {
@@ -389,20 +398,21 @@ form .progress {
 .badgeRow3 {
 	/*border-bottom: thin solid gold;*/
 	height: 0.5in !important;
+	display: block !important;
 }
 
 .badgeRow3 div {
-	position: relative;
+	position: relative !important;
 }
 
 .badgeRow3 div img {
-	position: absolute;
-	bottom: 0px;
-	right: 0px;
+	position: absolute !important;
+	bottom: 0px !important;
+	right: 0px !important;
 }
 
 .badgeGName {
-	font-size: 40pt;
+	font-size: 40pt !important;
 	font-family: monospace !important;
 	overflow: hidden !important;
 }
@@ -412,11 +422,20 @@ form .progress {
 }
 
 .sponsorLogo img {
-	padding-right: 10%;
-	padding-left: 10%;
+	padding-right: 10% !important;
+	padding-left: 10% !important;
 }
 
-.badgeBack {
+/*.nameBadgePrinting {
+	transform:  rotate( -90deg ) ;
+}*/
+/*.badgeBack {
 	transform-origin: right center;
-	transform: rotateX( -180deg );
+	transform:  rotateX( -180deg ) ;
+}*/
+.a {
+	
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Safari */
+    transform: rotate(20deg);
 }
