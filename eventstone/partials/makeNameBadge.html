@@ -3,7 +3,7 @@
 <!-- Solves a problem? -->
 <!-- 4" x 3 1/4" -->
 <div ng-include="'partials/nav.html'"></div>
-<section class="guestinfo uofs-section container-fluid animated slideInDown" id="ticketPage">
+<section class="guestinfo uofs-section container-fluid animated slideInDown" id="badgePage">
 	<br />
 	<div class="hideOnPrint" ng-hide="printSet">
 		<div class="back_div pull-left ">
@@ -13,7 +13,10 @@
 			<a type="button" class="btn btn-default btn-xs" ng-href="#/live">Start Event &raquo;</a>
 		</div>
 		<h1 class="text-center uofs-page-title"><a>Badge Designer</a></h1>
-		<br />
+		<p>
+			Design name badges by uploading the logo of the event and up to
+			4 logos event sponsors. Names of attendees will be added automatically.
+		</p>
 		<!-- <div ng-include="'partials/ticketSamples.html'"></div> -->
 		<div class="row dataFieldContainer  center-block ">
 			<div class="col-md-4 col-xs-12 pull-left ticketContent">
@@ -86,6 +89,39 @@
 							class=""></div>
 						</div>
 					</form>
+				</div>
+				<div class=" center-block row text-center">
+					<br />
+					<div class="center-block col-md-6">
+						<button   type="button" class="btn btn-primary btn-xs btn-block"
+						ng-click="printSet=true;($storage.sampleView) = true;">
+							Print Setup
+						</button>
+					</div>
+					<div class="center-block col-md-6">
+						<a type="button" class="btn btn-primary btn-xs btn-block" ng-href="#/populate">Manage Guests</a>
+					</div>
+				</div>
+				<div class=" center-block row text-justify text-muted">
+					<br />
+					<ul class="list-group">
+						<li class="list-group-item">
+							You can use any background or text for this badge.
+						</li>
+						<li class="list-group-item">
+							Get color names <a href="http://www.w3schools.com/html/html_colornames.asp" target="_blank">Here</a>.
+						</li>
+						<li class="list-group-item">
+							Mix colors with <a href="http://www.w3schools.com/tags/ref_colormixer.asp" target="_blank">this Color Mixer</a>
+							then copy the hex value.
+						</li>
+						<li class="list-group-item">
+							Please include a '#' before the 6 digit color value for hex values.
+						</li>
+						<li class="list-group-item">
+							Type/paste a color name or hex value (eg #000ABC) in the 'color' field and click "Ok".
+						</li>
+					</ul>
 				</div>
 			</div>
 			<div class="col-md-6 col-xs-12 ticketPreview">
@@ -162,39 +198,6 @@
 						</div>
 					</div>
 				</div>
-				<div class=" center-block row text-center">
-					<br />
-					<div class="center-block col-md-6">
-						<button   type="button" class="btn btn-primary btn-xs btn-block"
-						ng-click="printSet=true;($storage.sampleView) = true;">
-							Print Setup
-						</button>
-					</div>
-					<div class="center-block col-md-6">
-						<a type="button" class="btn btn-primary btn-xs btn-block" ng-href="#/populate">Manage Guests</a>
-					</div>
-				</div>
-				<div class=" center-block row text-justify text-muted">
-					<br />
-					<ul class="list-group">
-						<li class="list-group-item">
-							You can use any background or text for this badge.
-						</li>
-						<li class="list-group-item">
-							Get color names <a href="http://www.w3schools.com/html/html_colornames.asp" target="_blank">Here</a>.
-						</li>
-						<li class="list-group-item">
-							Mix colors with <a href="http://www.w3schools.com/tags/ref_colormixer.asp" target="_blank">this Color Mixer</a>
-							then copy the hex value.
-						</li>
-						<li class="list-group-item">
-							Please include a '#' before the 6 digit color value for hex values.
-						</li>
-						<li class="list-group-item">
-							Type/paste a color name or hex value (eg #000ABC) in the 'color' field and click "Ok".
-						</li>
-					</ul>
-				</div>
 			</div>
 			<div class="col-md-2 col-xs-12 ">
 				<div class="">
@@ -256,11 +259,11 @@
 				</button>
 			</div>
 			<div class="pull-right" ng-hide="($storage.sampleView)">
-				<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = true"> Preview all Tickets &raquo;</a>
+				<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = true"> Preview all Badges &raquo;</a>
 			</div>
 			<div class="pull-right" ng-hide="(!($storage.sampleView))==true">
 				<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = false"
-				>Hide all Tickets &raquo;</a>
+				>Hide all Badges &raquo;</a>
 			</div>
 		</div>
 	</div>

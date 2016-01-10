@@ -446,3 +446,63 @@ form .progress {
     -webkit-transform: rotate(20deg); /* Safari */
     transform: rotate(20deg);
 }
+
+.dropdown span {
+	/*font-size: 30px;*/
+	padding-left: 5px;
+}
+
+.dropdown span a{
+	width: 16.6666%;
+	/*padding: 5px;*/
+}
+
+.navHome {
+	color: rgba(255, 0, 0, 1);
+}
+
+.navPopulate {
+	color: rgba(0, 255, 0, 1);
+}
+
+.navTickets {
+	color: rgba(0, 255, 255, 1);
+}
+
+.navBadges {
+	color: rgba(0, 0, 255, 1);
+}
+
+.navGList {
+	color: rgba(255, 0, 255, 1);
+}
+
+.navGoLive {
+	color: rgba(255, 0, 0, 1);
+	padding-right: 5px;
+}
+
+#populatePage {
+	border-left: thick solid rgba(0, 255, 0, 1);
+	border-right: thick solid rgba(0, 255, 0, 1);
+}
+
+#ticketPage {
+	border-left: thick solid rgba(0, 255, 255, 1);
+	border-right: thick solid rgba(0, 255, 255, 1);
+}
+
+#badgePage {
+	border-left: thick solid rgba(0, 0, 255, 1);
+	border-right: thick solid rgba(0, 0, 255, 1);
+}
+
+#guestListPage {
+	border-left: thick solid rgba(255, 0, 255, 1);
+	border-right: thick solid rgba(255, 0, 255, 1);
+}
+
+#livePage {
+	/*border-left: thick solid rgba(255, 0, 0, 1);
+	border-right: thick solid rgba(255, 0, 0, 1);*/
+}
