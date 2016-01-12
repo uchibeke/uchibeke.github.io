@@ -1,6 +1,12 @@
-<section class="guestpage container-fluid uofs-section animated slideInDown" id="livePage">
+<section class="guestpage container-fluid uofs-section animated slideInDown center text-center " id="livePage">
+	<p >
+		You are about to go live with your event. 
+		People can check in with their name, ticket number or other info you registered them with.
+		In live page, type the name or ticket number in the search box and click check in to check in a guest.
+	</p>
 	<div class="row text-center text-info center-block" ng-show="firstLiveScreen">
-		<h2>Register more poeple during check in?</h2>
+		<h2>Would you like to allow more people to register during this event?</h2>
+		You can change this at any time. Just exit the live screen and come back to it.
 		<div class="row btn-group-lg">
 			<div class="col-lg-6 col-md-6">
 				<a type="button" class="btn btn-default btn-lg pull-right"
@@ -74,7 +80,7 @@
 		<a ng-href="#/home">&laquo; Exit</a>
 	</div>
 	<div class="pull-right">
-		<a type="button" class="btn btn-default btn-xs" href="http://www.usask.ca/ict/help-support/index.php" target="_blank"> Help  &raquo;</a>
+		<a type="button" class="btn btn-default btn-xs" ng-href="#/about" target="_blank"> Help  &raquo;</a>
 	</div>
 </section>
 

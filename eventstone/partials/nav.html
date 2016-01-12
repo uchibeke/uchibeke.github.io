@@ -1,32 +1,36 @@
-<div class=" affix" data-spy="affix">
-	<ul class="nav nav-tabs  ">
-		<div class="dropdown" style="background: white; z-index: 1000000000;" >
-			<!-- <button class="btn btn-primary dropdown-toggle btn-xs" type="button" data-toggle="dropdown" ng-click="downD = !downD">
-				<i class="uofs-icon uofs-icon-back" ng-show="downD"></i><i ng-show="!downD" class="uofs-icon uofs-icon-forward"></i>
-			</button> -->
-			<span ng-show="true" class=" animated rollIn" >  <a  ng-href="#/home" class="navHome"> Home</a> | <a  ng-href="#/populate" class="navPopulate">Attendees</a> 
-			| <a  ng-href="#/tickets" class="navTickets">Tickets</a> | <a ng-href="#/nameBadge" class="navBadges">Name Badges</a> 
-			| <a ng-href="#/guestList" class="navGList">Guest List</a> | <a ng-href="#/live" class="navGoLive">Go Live</a> </span>
-			<!-- <ul class=" row animated slideInDown " style="background-color: rgba(255, 255, 255, 0.3);">
-			<li>
-			<a  ng-href="#/home">Home</a>
-			</li>
-			<li>
-			<a  ng-href="#/tickets">Design Ticket</a>
-			</li>
-			<li>
-			<a  ng-href="#/populate">Manage Guests</a>
-			</li>
-			<li>
-			<a ng-href="#/guestList">Guest List</a>
-			</li>
-			<li>
-			<a ng-href="#/nameBadge">Design Badge</a>
-			</li>
-			<li>
-			<a ng-href="#/live">Go Live</a>
-			</li>
-			</ul> -->
+<nav class="navbar-wrapper navbar-default navbar-fixed-top navbar-inverted " role="navigation">
+	<div class="" style="width: 100%;">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"> <img class="img-responsive"  src="images/logo.png" alt="Eventstone" /> <!-- <span class="uofs-icon uofs-icon-home pull-left"> --> </span> </a>
 		</div>
-	</ul>
-</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-left"></ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li style="">
+					<a type="" ng-href="#/populate" class=" "> <span class="uofs-icon uofs-icon-plus"> </span> Manage Guests</a>
+				</li>
+				<li style="">
+					<a type="" ng-href="#/guestList" class=""> <span class="uofs-icon uofs-icon-user"> </span> View Guests</a>
+				</li>
+				<li style="">
+					<a type="" ng-href="#/tickets" class=""> <span class="uofs-icon uofs-icon-pages"> </span> Design Tickets</a>
+				</li>
+				<li style="">
+					<a type="" ng-href="#/nameBadge" class="" > <span class="uofs-icon uofs-icon-frame"> </span> Design Name Badges</a>
+				</li>
+				<li style="">
+					<a type="" ng-href="#/live" class=""  style="padding-right: 40%;"> <span class="uofs-icon uofs-icon-checkmark"> </span> Go</a>
+				</li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</div>
+</nav>

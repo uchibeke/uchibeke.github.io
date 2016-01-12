@@ -482,7 +482,7 @@ form .progress {
 	padding-right: 5px;
 }
 
-#populatePage {
+/*#populatePage {
 	border-left: thick solid rgba(0, 255, 0, 1);
 	border-right: thick solid rgba(0, 255, 0, 1);
 }
@@ -500,7 +500,7 @@ form .progress {
 #guestListPage {
 	border-left: thick solid rgba(255, 0, 255, 1);
 	border-right: thick solid rgba(255, 0, 255, 1);
-}
+}*/
 
 #livePage {
 	/*border-left: thick solid rgba(255, 0, 0, 1);

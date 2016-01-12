@@ -1,6 +1,5 @@
 <div ng-include="'partials/nav.html'"></div>
 <section class="guestinfo uofs-section container-fluid" id="populatePage">
-	<br />
 	<div class="back_div pull-left ">
 		<a type="button" class="btn btn-default btn-xs" ng-href="#/home">&laquo; Home</a>
 	</div>
@@ -9,7 +8,8 @@
 	</div>
 	<h1 class="text-center uofs-page-title"><a>Attendees</a></h1>
 	<p>
-		You can add attendees by pasting columns of names from excel file, generating tickets orby typing their names in the field.
+		You can create a list of names/ticket numbers by pasting columns of names from excel file, 
+		by typing comma delimted names or by generating ticket numbers below. Choose one option.
 	</p>
 	<div class="btn-group center-block row text-center" data-toggle="buttons" style="">
 		<label class="btn btn-primary btn-xs col-md-2 pull-left active" ng-click="addByPasting=true;addWithNum=false;addWithName=false" >

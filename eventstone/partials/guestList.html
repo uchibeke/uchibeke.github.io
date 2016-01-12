@@ -4,7 +4,7 @@
 		<a class="btn btn-default btn-xs" type="button" ng-href="#/populate">&laquo; Back</a>
 	</div>
 	<div class=" pull-right" >
-		<a class="btn btn-default btn-xs" type="button" ng-href="#/tickets">&laquo; Design Tickets</a>
+		<a class="btn btn-default btn-xs" type="button" ng-href="#/tickets">Design Tickets &raquo;</a>
 	</div>
 	<div class="guestlist row  text-center center-block" >
 		<div class="row">
@@ -16,22 +16,21 @@
 			<p style="" class="col-xs-12 col-md-2 pull-right">
 				<button  ng-model="btnText" type="button" class="btn btn-warning btn-xs"
 				ng-show="$storage.guestsList.length > 0 <= 0" ng-click="deleteStored()">
-					Remove All Guests
+					Remove All 
 				</button>
 				<button class="btn btn-primary btn-xs" ng-click="printGuestList()">
-					Print Guestlist
+					Print List
 				</button>
 			</p>
 		</div>
 		<br class="clearfix"/>
 		<div id="GList" class="row">
 			<!-- <div class="row text-center center-block">
-			<h3>
-			Summary</h3>
-			<br />
-			<h4 class="col-xs-6 col-md-6">Checked in: {{checkIns()}} </h4>
-			<h4 class="col-xs-6 col-md-6">Not Checked in: {{noCheckIns()}} </h4>
-			<br />
+				<h3> Summary</h3>
+				<br />
+				<h4 class="col-xs-6 col-md-6">Checked in: {{checkIns()}} </h4>
+				<h4 class="col-xs-6 col-md-6">Not Checked in: {{noCheckIns()}} </h4>
+				<br />
 			</div> -->
 			<div class="text-center " >
 				<div class="col-xs-1 col-md-1">
@@ -68,11 +67,11 @@
 			<form class="search  text-center form col-xs-12 col-md-10"></form>
 			<p style="" class="col-xs-12 col-md-2 pull-right text-center">
 				<button class="btn btn-primary btn-xs" ng-click="printGuestList()">
-					Print Guestlist
+					Print List
 				</button>
 				<button  ng-model="btnText" type="button" class="btn btn-warning btn-xs"
 				ng-show="$storage.guestsList.length > 0 <= 0" ng-click="deleteStored()">
-					Remove All Guests
+					Remove All
 				</button>
 			</p>
 		</div>
@@ -83,7 +82,7 @@
 				</button></span>
 			<span ng-show="!listreplace">This would remove all current guests. Are you sure?
 				<button type="button" class="btn btn-primary btn-xs " ng-click="replaceList(); restoreFromBackUp()">
-					Yes. Replace guests.
+					Yes. Replace.
 				</button></span>
 		</p>
 	</div>
