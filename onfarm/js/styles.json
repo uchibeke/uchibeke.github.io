@@ -1,0 +1,329 @@
+[
+		{
+			"color" : "#375CD4",
+			"backgroundColor" : "linear-gradient(to right, gold , GoldenRod )",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},		{
+			"color" : "#4D2A2A",
+			"backgroundColor" : "linear-gradient(to right, #FFFFFF , #C0C0C0 )",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#85DB18",
+			"backgroundColor" : "#FFFFDC",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},{
+			"color" : "#191970",
+			"backgroundColor" : "linear-gradient(to right, GoldenRod, gold )",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},{
+			"color" : "#4D2A2A",
+			"backgroundColor" : "linear-gradient(to right, #C0C0C0 ,  #FFFFFF)",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#8A0917",
+			"backgroundColor" : "#D9C6B0",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#F6F792",
+			"backgroundColor" : "#92F1FF",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#005A31",
+			"backgroundColor" : "#B9FAA7",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#E74C3C",
+			"backgroundColor" : "#D9E8F5",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#263248",
+			"backgroundColor" : "#E0FFFF",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#2980B9",
+			"backgroundColor" : "#D2A3E9",
+			"borderLeft" : "",
+			"borderRight" : ""
+		} ,
+		{
+			"color" : "#DF3D82",
+			"backgroundColor" : "white",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#404040",
+			"backgroundColor" : "#F3FAB6",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#FFFFFF",
+			"backgroundColor" : "#FFC0A9",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#A262ED",
+			"backgroundColor" : "#FDF3E7",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#55B270",
+			"backgroundColor" : "#C3C7C9",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#0000FF",
+			"backgroundColor" : "#7FFFD4",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#A52A2A",
+			"backgroundColor" : "#FFEBCD",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#DEB887",
+			"backgroundColor" : "#00FFFF",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#8A2BE2",
+			"backgroundColor" : "#00CED1",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#7FFF00",
+			"backgroundColor" : "#00BFFF",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#4B0082",
+			"backgroundColor" : "#FFF8DC",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#FF00FF",
+			"backgroundColor" : "#F8F8FF",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#FFD700",
+			"backgroundColor" : "#F0FFF0",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#FF69B4",
+			"backgroundColor" : "#FFF0F5",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#F08080",
+			"backgroundColor" : "#E0FFFF",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#808000",
+			"backgroundColor" : "#FFEFD5",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#D3D3D3",
+			"backgroundColor" : "#87CEFA",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#800000",
+			"backgroundColor" : "#66CDAA",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#9370DB",
+			"backgroundColor" : "#00FA9A",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "OrangeRed",
+			"backgroundColor" : "Orange",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "Orchid",
+			"backgroundColor" : "PaleTurquoise",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "PaleVioletRed",
+			"backgroundColor" : "PapayaWhip",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "Peru ",
+			"backgroundColor" : "PowderBlue",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "#191970",
+			"backgroundColor" : "Pink",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "Purple",
+			"backgroundColor" : "RoyalBlue",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "Red",
+			"backgroundColor" : "RosyBrown",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "SaddleBrown",
+			"backgroundColor" : "SeaShell",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "RoyalBlue",
+			"backgroundColor" : "Red",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "SeaGreen",
+			"backgroundColor" : "Silver",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "Sienna",
+			"backgroundColor" : "Salmon",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "SlateBlue",
+			"backgroundColor" : "SkyBlue",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "SlateGray",
+			"backgroundColor" : "Snow",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "SpringGreen",
+			"backgroundColor" : "Thistle",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "Teal",
+			"backgroundColor" : "Tan",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "Tomato",
+			"backgroundColor" : "WhiteSmoke",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "Turquoise",
+			"backgroundColor" : "PeachPuff",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "YellowGreen",
+			"backgroundColor" : "PaleGoldenRod",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "WhiteSmoke",
+			"backgroundColor" : "NavajoWhite",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "Violet",
+			"backgroundColor" : "MediumAquaMarine",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "LimeGreen",
+			"backgroundColor" : "Turquoise",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "RebeccaPurple",
+			"backgroundColor" : "Magenta",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "Olive",
+			"backgroundColor" : "Navy",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "Magenta",
+			"backgroundColor" : "OldLace",
+			"borderLeft" : "",
+			"borderRight" : ""
+		},
+		{
+			"color" : "gray",
+			"backgroundColor" : "black",
+			"borderLeft" : "",
+			"borderRight" : ""
+		}
+]

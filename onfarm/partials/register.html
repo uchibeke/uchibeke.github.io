@@ -1,0 +1,59 @@
+<div ng-include="'partials/nav.html'"></div>
+<section class="guestpage container-fluid uofs-section animated slideInDown" id="">
+
+	<form name="myform"
+	ng-submit="register()"
+	novalidate>
+
+		<div class="textintro">
+			<h1>Register</h1>
+			<p>
+				To access site cool site features and see crop reviews you can trust. You can register with
+				a phone number or email.
+			</p>
+			<p class="message" ng-show="message">
+				{{ message }}
+			</p>
+		</div>
+
+		<fieldset>
+			<input class="form-control" type="text" name="firstname" placeholder="First Name"
+			ng-model="user.firstname" ng-required="true">
+			<p class="error validationerror"
+			ng-show="myform.firstname.$invalid && myform.firstname.$touched">
+				First name required
+			</p>
+
+			<input class="form-control" type="text" name="lastname" placeholder="Last Name"
+			ng-model="user.lastname" ng-required="true">
+			<p class="error validationerror"
+			ng-show="myform.lastname.$invalid && myform.lastname.$touched">
+				Last name required
+			</p>
+
+			<input class="form-control" type="email" name="email" placeholder="Phone number or Email"
+			ng-model="user.email" ng-required="true">
+			<p class="error validationerror"
+			ng-show="myform.email.$invalid && myform.email.$touched">
+				Must be a valid email
+			</p>
+
+			<input class="form-control" type="password" name="password" placeholder="Password"
+			ng-model="user.password" ng-required="true">
+			<p class="error validationerror"
+			ng-show="myform.password.$invalid && myform.email.$touched">
+				Password is required
+			</p>
+
+		</fieldset>
+
+		<button type="submit" class="btn"
+		ng-disabled="myform.$invalid">
+			Register
+		</button>
+		<p>
+			or <a ng-href="#/login">login</a>
+		</p>
+	</form>
+</section>
+

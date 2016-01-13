@@ -1,0 +1,430 @@
+<div ng-include="'partials/nav.html'"></div>
+<section class="guestinfo uofs-section container-fluid" id="">
+	<br />
+	<!-- <h1 class="text-center uofs-page-title"><a>Home</a></h1> -->
+	<div class="addByPasting  animated slideInDown col-lg-3 col-md-3 col-xs-12 categories" >
+		<div class="text-justify">
+			<h3>Crops</h3>
+		</div>
+		<!-- <div class="text-justify"> -->
+		<div class="panel-group" id="accordion">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title"><a  data-target="#collapseOne" data-toggle="collapse" data-parent="#accordion" >Canola</a></h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse">
+					<ul class="list-group">
+						<li class="list-group-item">
+							<div class="panel-heading">
+								<h4 class="panel-title"><a  data-target="#collapseOneOne" data-toggle="collapse" data-parent="" >Clear Field</a></h4>
+							</div>
+							<div id="collapseOneOne" class="panel-collapse collapse">
+								<ul class="list-group" ng-repeat="item in canola.Clearfield">
+									<li class="list-group-item">
+										{{item.name}}
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="list-group-item">
+							<div class="panel-heading">
+								<h4 class="panel-title"><a  data-target="#collapseOneTwo" data-toggle="collapse" data-parent="" >Liberty Link</a></h4>
+							</div>
+							<div id="collapseOneTwo" class="panel-collapse collapse">
+								<ul class="list-group" ng-repeat="item in canola.LibertyLink">
+									<li class="list-group-item">
+										{{item.name}}
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="list-group-item">
+							<div class="panel-heading">
+								<h4 class="panel-title"><a  data-target="#collapseOneThree" data-toggle="collapse" data-parent="" >Roundup Ready</a></h4>
+							</div>
+							<div id="collapseOneThree" class="panel-collapse collapse">
+								<ul class="list-group" ng-repeat="item in canola.RoundupReady">
+									<li class="list-group-item">
+										{{item.name}}
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title"><a  data-target="#collapseTwo" data-toggle="collapse" data-parent="#accordion"> Barley</a></h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse">
+					<ul class="list-group">
+						<li class="list-group-item">
+							Cras justo odio
+						</li>
+						<li class="list-group-item">
+							Dapibus ac facilisis in
+						</li>
+						<li class="list-group-item">
+							Morbi leo risus
+						</li>
+						<li class="list-group-item">
+							Porta ac consectetur ac
+						</li>
+						<li class="list-group-item">
+							Vestibulum at eros
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title"><a  data-target="#collapseThree" data-toggle="collapse" data-parent="#accordion"> Beans</a></h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse">
+					<ul class="list-group">
+						<li class="list-group-item">
+							Cras justo odio
+						</li>
+						<li class="list-group-item">
+							Dapibus ac facilisis in
+						</li>
+						<li class="list-group-item">
+							Morbi leo risus
+						</li>
+						<li class="list-group-item">
+							Porta ac consectetur ac
+						</li>
+						<li class="list-group-item">
+							Vestibulum at eros
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title"><a  data-target="#collapseFour" data-toggle="collapse" data-parent="#accordion">Canarygrass</a></h4>
+				</div>
+				<div id="collapseFour" class="panel-collapse collapse">
+					<ul class="list-group">
+						<li class="list-group-item">
+							Cras justo odio
+						</li>
+						<li class="list-group-item">
+							Dapibus ac facilisis in
+						</li>
+						<li class="list-group-item">
+							Morbi leo risus
+						</li>
+						<li class="list-group-item">
+							Porta ac consectetur ac
+						</li>
+						<li class="list-group-item">
+							Vestibulum at eros
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title"><a  data-target="#collapseFive" data-toggle="collapse" data-parent="#accordion">Fababean </a></h4>
+				</div>
+				<div id="collapseFive" class="panel-collapse collapse">
+					<ul class="list-group">
+						<li class="list-group-item">
+							Cras justo odio
+						</li>
+						<li class="list-group-item">
+							Dapibus ac facilisis in
+						</li>
+						<li class="list-group-item">
+							Morbi leo risus
+						</li>
+						<li class="list-group-item">
+							Porta ac consectetur ac
+						</li>
+						<li class="list-group-item">
+							Vestibulum at eros
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title"><a  data-target="#collapseSix" data-toggle="collapse" data-parent="#accordion">Lentils </a></h4>
+				</div>
+				<div id="collapseSix" class="panel-collapse collapse">
+					<ul class="list-group">
+						<li class="list-group-item">
+							Cras justo odio
+						</li>
+						<li class="list-group-item">
+							Dapibus ac facilisis in
+						</li>
+						<li class="list-group-item">
+							Morbi leo risus
+						</li>
+						<li class="list-group-item">
+							Porta ac consectetur ac
+						</li>
+						<li class="list-group-item">
+							Vestibulum at eros
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title"><a  data-target="#collapseSeven" data-toggle="collapse" data-parent="#accordion">Mustard </a></h4>
+				</div>
+				<div id="collapseSeven" class="panel-collapse collapse">
+					<ul class="list-group">
+						<li class="list-group-item">
+							Cras justo odio
+						</li>
+						<li class="list-group-item">
+							Dapibus ac facilisis in
+						</li>
+						<li class="list-group-item">
+							Morbi leo risus
+						</li>
+						<li class="list-group-item">
+							Porta ac consectetur ac
+						</li>
+						<li class="list-group-item">
+							Vestibulum at eros
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title"><a  data-target="#collapseEight" data-toggle="collapse" data-parent="#accordion">Oats </a></h4>
+				</div>
+				<div id="collapseEight" class="panel-collapse collapse">
+					<ul class="list-group">
+						<li class="list-group-item">
+							Cras justo odio
+						</li>
+						<li class="list-group-item">
+							Dapibus ac facilisis in
+						</li>
+						<li class="list-group-item">
+							Morbi leo risus
+						</li>
+						<li class="list-group-item">
+							Porta ac consectetur ac
+						</li>
+						<li class="list-group-item">
+							Vestibulum at eros
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title"><a  data-target="#collapseNine" data-toggle="collapse" data-parent="#accordion">Peas </a></h4>
+				</div>
+				<div id="collapseNine" class="panel-collapse collapse">
+					<ul class="list-group">
+						<li class="list-group-item">
+							Cras justo odio
+						</li>
+						<li class="list-group-item">
+							Dapibus ac facilisis in
+						</li>
+						<li class="list-group-item">
+							Morbi leo risus
+						</li>
+						<li class="list-group-item">
+							Porta ac consectetur ac
+						</li>
+						<li class="list-group-item">
+							Vestibulum at eros
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title"><a  data-target="#collapseTen" data-toggle="collapse" data-parent="#accordion">Wheat </a></h4>
+				</div>
+				<div id="collapseTen" class="panel-collapse collapse">
+					<ul class="list-group">
+						<li class="list-group-item">
+							Cras justo odio
+						</li>
+						<li class="list-group-item">
+							Dapibus ac facilisis in
+						</li>
+						<li class="list-group-item">
+							Morbi leo risus
+						</li>
+						<li class="list-group-item">
+							Porta ac consectetur ac
+						</li>
+						<li class="list-group-item">
+							Vestibulum at eros
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="addWithNum  animated slideInDown  col-lg-9 col-md-9 col-xs-12">
+		<div class="row text-center">
+			<h3>Reviews</h3>
+			<br />
+		</div>
+		<div class="row  center-block  text-center">
+			<div class="row" style="">
+				<div class="col-lg-2 col-md-2 col-xs-2"></div>
+				<h5 class="col-lg-2 col-md-2 col-xs-2 text-justify" >Item</h5>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					Yield
+				</p>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					Revenue
+				</p>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					Gross Revenue
+				</p>
+				<!-- <span class="col-lg-3 col-md-3 col-xs-3  text-justify" ><a ng-href="#/main" style="color:#A0522D;">See more &raquo;</a></span> -->
+			</div>
+			<div class="row" ng-repeat="item in canola.Clearfield" style="border-bottom: thin dotted red; margin-bottom: 2%;">
+				<div class="col-lg-2 col-md-2 col-xs-2"><img ng-src="{{item.image}}" class="img-responsive">
+				</div>
+				<h5 class="col-lg-2 col-md-2 col-xs-2 text-justify" >{{item.name}}</h5>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					{{item.yield}} BU/AC
+				</p>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					{{item.revenue | currency}}
+				</p>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					{{(1 * item.revenue + 1)*1000/23 | currency }}
+				</p>
+				<span class="col-lg-1 col-md-1 col-xs-1  text-justify" ><a ng-href="#/main" ng-click="openDD=!openDD"> <i class="uofs-icon uofs-icon-down"
+					style="font-size: xx-large;" ng-show="!openDD"></i> <i class="uofs-icon uofs-icon-up"
+					style="font-size: xx-large;" ng-show="openDD"></i> </a></span>
+				<div class="container-fluid text-justify" ng-show="openDD">
+					<hr />
+					<p>
+						{{item.comment}}
+					</p>
+				</div>
+			</div>
+			<div class="row" ng-repeat="item in canola.LibertyLink" style="border-bottom: thin dotted red; margin-bottom: 2%;">
+				<div class="col-lg-2 col-md-2 col-xs-2"><img ng-src="{{item.image}}" class="img-responsive">
+				</div>
+				<h5 class="col-lg-2 col-md-2 col-xs-2 text-justify" >{{item.name}}</h5>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					{{item.yield}} BU/AC
+				</p>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					{{item.revenue | currency}}
+				</p>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					{{(1 * item.revenue + 1)*1000/23 | currency }}
+				</p>
+				<span class="col-lg-1 col-md-1 col-xs-1  text-justify" ><a ng-href="#/main" ng-click="openDD=!openDD"> <i class="uofs-icon uofs-icon-down"
+					style="font-size: xx-large;" ng-show="!openDD"></i> <i class="uofs-icon uofs-icon-up"
+					style="font-size: xx-large;" ng-show="openDD"></i></a></span>
+				<hr />
+				<div class="container-fluid text-justify" ng-show="openDD">
+					<hr />
+					<p>
+						{{item.comment}}
+					</p>
+				</div>
+			</div>
+			<div class="row" ng-repeat="item in canola.RoundupReady" style="border-bottom: thin dotted red; margin-bottom: 2%;">
+				<div class="col-lg-2 col-md-2 col-xs-2"><img ng-src="{{item.image}}" class="img-responsive">
+				</div>
+				<h5 class="col-lg-2 col-md-2 col-xs-2 text-justify" >{{item.name}}</h5>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					{{item.yield}} BU/AC
+				</p>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					{{item.revenue | currency}}
+				</p>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					{{(1 * item.revenue + 1)*1000/23 | currency }}
+				</p>
+				<span class="col-lg-1 col-md-1 col-xs-1  text-justify" ><a ng-href="#/main" ng-click="openDD=!openDD"> <i class="uofs-icon uofs-icon-down"
+					style="font-size: xx-large;" ng-show="!openDD"></i> <i class="uofs-icon uofs-icon-up"
+					style="font-size: xx-large;" ng-show="openDD"></i> </a></span>
+				<div class="container-fluid text-justify" ng-show="openDD">
+					<hr />
+					<p>
+						{{item.comment}}
+					</p>
+				</div>
+			</div>
+			<div class="row" ng-repeat="item in lentils.default" style="border-bottom: thin dotted red; margin-bottom: 2%;">
+				<div class="col-lg-2 col-md-2 col-xs-2"><img ng-src="{{item.image}}" class="img-responsive">
+				</div>
+				<h5 class="col-lg-2 col-md-2 col-xs-2 text-justify" >{{item.name}}</h5>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					{{item.yield}} BU/AC
+				</p>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					{{item.revenue | currency}}
+				</p>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					{{(1 * item.revenue + 1)*1000/23 | currency }}
+				</p>
+				<span class="col-lg-1 col-md-1 col-xs-1  text-justify" ><a ng-href="#/main" ng-click="openDD=!openDD"> <i class="uofs-icon uofs-icon-down"
+					style="font-size: xx-large;" ng-show="!openDD"></i> <i class="uofs-icon uofs-icon-up"
+					style="font-size: xx-large;" ng-show="openDD"></i> </a></span>
+				<div class="container-fluid text-justify" ng-show="openDD">
+					<hr />
+					<p>
+						{{item.comment}}
+					</p>
+				</div>
+			</div>
+			<div class="row" ng-repeat="item in barley.default" style="border-bottom: thin dotted red; margin-bottom: 2%;">
+				<div class="col-lg-2 col-md-2 col-xs-2"><img ng-src="{{item.image}}" class="img-responsive">
+				</div>
+				<h5 class="col-lg-2 col-md-2 col-xs-2 text-justify" >{{item.name}}</h5>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					{{item.yield}} BU/AC
+				</p>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					{{item.revenue | currency}}
+				</p>
+				<p class="col-lg-2 col-md-2 col-xs-2  text-justify" >
+					{{(1 * item.revenue + 1)*1000/23 | currency }}
+				</p>
+				<span class="col-lg-1 col-md-1 col-xs-1  text-justify" ><a ng-href="#/main" ng-click="openDD=!openDD"> <i class="uofs-icon uofs-icon-down"
+					style="font-size: xx-large;" ng-show="!openDD"></i> <i class="uofs-icon uofs-icon-up"
+					style="font-size: xx-large;" ng-show="openDD"></i> </a></span>
+				<div class="container-fluid text-justify" ng-show="openDD">
+					<hr />
+					<p>
+						{{item.comment}}
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- {{lentils}} -->
+	</div>
+
+	<!-- For alpha nav -->
+	<!-- <div class="addWithName  animated slideInDown  col-lg-3 col-md-3 col-xs-12" >
+	<div class="row dataFieldContainer center-block  text-center">
+	<textarea ng-model="dataField" placeholder="Enter the names of guests seperated with comma and click 'Add Guests'"
+	class="dataField form-control" type="textarea" style="height: 250px !important; "></textarea>
+	</div>
+	</div> -->
+	<div>
+		<!-- {{$storage.x}} -->
+		<!-- <p >{{dateString()}}</p> -->
+		<button ng-hide="true" ng-click="$storage.$reset({ })">
+			Clear localStorage
+		</button>
+	</div>
+</section>
+

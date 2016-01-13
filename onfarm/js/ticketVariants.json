@@ -1,0 +1,57 @@
+[
+		{
+			"Title" : "Your Event Name",
+			"div1Class" : " col-md-8 col-lg-8 col-xs-8 text-center center-block",
+			"div2Class" : "col-md-3 col-lg-3 col-xs-3  text-center center-block",
+			"div3Class" : "col-md-1 col-lg-1 col-xs-1 center-block text-center ",
+			"div11" : "",
+			"border" : "",
+			"background" : "",
+			"ticketPrice" : ""
+		},{
+			"Title" : "Your Event Name",
+			"div1Class" : "col-md-3 col-lg-3 col-xs-3  text-center center-block",
+			"div2Class" : " col-md-8 col-lg-8 col-xs-8 text-center center-block",
+			"div3Class" : "col-md-1 col-lg-1 col-xs-1 center-block text-center ",
+			"div11" : "",
+			"border" : "",
+			"background" : "",
+			"ticketPrice" : ""
+		},{
+			"Title" : "Your Event Name",
+			"div1Class" : " col-md-8 col-lg-8 col-xs-8 text-center center-block",
+			"div2Class" : "col-md-1 col-lg-1 col-xs-1 center-block text-center ",
+			"div3Class" : "col-md-3 col-lg-3 col-xs-3  text-center center-block",
+			"div11" : "",
+			"border" : "",
+			"background" : "",
+			"ticketPrice" : ""
+		},{
+			"Title" : "Your Event Name",
+			"div1Class" : " col-md-8 col-lg-8 col-xs-8 text-center center-block",
+			"div2Class" : "col-md-1 col-lg-1 col-xs-1 center-block text-center ",
+			"div3Class" : "col-md-3 col-lg-3 col-xs-3  text-center center-block",
+			"div11" : "",
+			"border" : "",
+			"background" : "",
+			"ticketPrice" : ""
+		},{
+			"Title" : "Your Event Name",
+			"div1Class" : " col-md-8 col-lg-8 col-xs-8 text-center center-block",
+			"div2Class" : "col-md-3 col-lg-3 col-xs-3 center-block text-center",
+			"div3Class" : "col-md-1 col-lg-1 col-xs-1 center-block text-center",
+			"div11" : "",
+			"border" : "",
+			"background" : "",
+			"ticketPrice" : ""
+		},{
+			"Title" : "Your Event Name",
+			"div1Class" : " col-md-5 col-lg-5 col-xs-5 text-center center-block",
+			"div2Class" : "col-md-5 col-lg-5 col-xs-5 center-block text-center",
+			"div3Class" : "col-md-2 col-lg-2 col-xs-2 center-block text-center",
+			"div11" : "",
+			"border" : "",
+			"background" : "",
+			"ticketPrice" : ""
+		}
+]

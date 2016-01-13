@@ -1,11 +1,12 @@
 <div ng-include="'partials/nav.html'"></div>
 <section class="guestinfo uofs-section container-fluid animated slideInDown" id="ticketPage">
+	<br />
 	<div class="hideOnPrint" ng-hide="printSet">
 		<div class="back_div pull-left ">
 			<a type="button" class="btn btn-default btn-xs" ng-href="#/guestList">&laquo; Back</a>
 		</div>
 		<div class="pull-right">
-			<a type="button" class="btn btn-default btn-xs" ng-href="#/nameBadge">Design Name Badges &raquo;</a>
+			<a type="button" class="btn btn-default btn-xs" ng-href="#/live">Start Event &raquo;</a>
 		</div>
 		<h1 class="text-center uofs-page-title"><a>Ticket Designer</a></h1>
 		<br />
@@ -50,16 +51,9 @@
 								Select Picture and crop
 							</button>
 							<div ngf-drop ng-model="picFile" ngf-pattern="image/*"
-							class="" ng-hide="cropImg"></div>
-							<div class="checkbox " >
-								<label>Crop Logo/Image?
-									<input type="checkbox" ng-model="cropImg">
-								</label>
-							</div>
-							<div ngf-drop ng-model="picFile" ngf-pattern="image/*"
-							class="cropArea"ng-show="cropImg">
+							class="cropArea">
 								<img-crop image="picFile  | ngfDataUrl"
-								result-image="croppedDataUrl" ng-init="croppedDataUrl=''" area-type="square"></img-crop>
+								result-image="croppedDataUrl" ng-init="croppedDataUrl=''"></img-crop>
 							</div>
 						</div>
 					</form>
@@ -266,7 +260,7 @@
 		</div>
 	</div>
 	<div>
-		<button ng-hide="<!-- true -->" ng-click="$storage.$reset({ })">
+		<button ng-hide="true" ng-click="$storage.$reset({ })">
 			Clear localStorage
 		</button>
 	</div>

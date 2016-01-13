@@ -1,0 +1,199 @@
+<div ng-include="'partials/nav.html'"></div>
+<section class=" container-fluid center-block">
+	<h1 class="row center text-center ">Add Review</h1>
+	<p>
+		Click on one of the crops below to review it.
+	</p>
+	<div class="btn-group center-block row text-center" data-toggle="buttons" style="">
+		<label class="btn btn-primary  col-md-2 pull-left "
+		ng-click="canolaBol=true;beansBol=false;lentilsBol=false;barleyBol=false;oatsBol=false;peasBol=false" >
+			<input type="radio" name="options" id="option1">
+			Canola </label>
+		<label class="btn btn-primary  col-md-2 pull-left "
+		ng-click="canolaBol=false;beansBol=true;lentilsBol=false;barleyBol=false;oatsBol=false;peasBol=false" >
+			<input type="radio" name="options" id="option2">
+			Beans </label>
+		<label class="btn btn-primary  col-md-2 pull-left "
+		ng-click="canolaBol=false;beansBol=false;lentilsBol=true;barleyBol=false;oatsBol=false;peasBol=false"  >
+			<input type="radio" name="options" id="option3">
+			lentils </label>
+		<label class="btn btn-primary  col-md-2 pull-left "
+		ng-click="canolaBol=false;beansBol=false;lentilsBol=false;barleyBol=true;oatsBol=false;peasBol=false"  >
+			<input type="radio" name="options" id="option3">
+			Barley </label>
+		<label class="btn btn-primary  col-md-2 pull-left "
+		ng-click="canolaBol=false;beansBol=false;lentilsBol=false;barleyBol=false;oatsBol=true;peasBol=false"  >
+			<input type="radio" name="options" id="option3">
+			Oats </label>
+		<label class="btn btn-primary  col-md-2 pull-left "
+		ng-click="canolaBol=false;beansBol=false;lentilsBol=false;barleyBol=false;oatsBol=false;peasBol=true"  >
+			<input type="radio" name="options" id="option3">
+			Peas </label>
+	</div>
+	<div class="  animated slideInDown text-center center-block " ng-show="canolaBol">
+		<div class="btn-group center-block row text-center" data-toggle="buttons" style="padding: 2%;">
+			<p>
+				Select one below.
+			</p>
+			<label class="btn btn-info  col-md-1 pull-left "
+			ng-click="" > </label>
+			<label class="btn btn-info  col-md-2 pull-left "
+			ng-click="" > </label>
+			<label class="btn btn-info  col-md-2 pull-left "
+			ng-click="canolaBolOne=true;beansBol=false;lentilsBol=false;barleyBol=false;oatsBol=false;peasBol=false" >
+				<input type="radio" name="options" id="option2">
+				Liberty Link </label>
+			<label class="btn btn-info  col-md-2 pull-left "
+			ng-click=""  >
+				<input type="radio" name="options" id="option3">
+				Round Up Ready </label>
+			<label class="btn btn-info  col-md-2 pull-left "
+			ng-click=""  >
+				<input type="radio" name="options" id="option3">
+				Clear Field </label>
+			<label class="btn btn-info  col-md-2 pull-left "
+			ng-click="" > </label>
+			<label class="btn btn-info  col-md-1 pull-left "
+			ng-click="" > </label>
+		</div>
+	</div>
+	<div class="  animated slideInDown text-center center-block " ng-show="canolaBolOne">
+		<p>
+			Click on one of the varieties below.
+		</p>
+		<div class="btn-group center-block row text-center" data-toggle="buttons"
+		style="padding-bottom: 2%;padding-left: 2%;padding-right: 2%;">
+			<label class="btn btn-default  col-md-2 pull-left "
+			ng-click="revItemSet($index);" ng-repeat="item in canola.LibertyLink">
+				<input type="radio" name="options" id="option2" value="">
+				{{item.name }}</label>
+		</div>
+	</div>
+	<div class="  animated lightSpeedIn center-block row" ng-show="canolaBolOne && revItem.length!='' "
+	style="padding-bottom: 2%;padding-left: 2%;padding-right: 2%;">
+		<div class="center center-block text-center">
+			<img class="img-responsive" ng-src="{{revItem.image}}" alt="On Farm" width="20%"/>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class=" text-justify" style="font-size: larger"> How did your {{revItem.name}} do?</h4>
+			</div>
+			<ul class="list-group">
+				<li class="list-group-item">
+					My Yield was <strong>{{revItem.yield}} BU/AC. </strong>
+					<span>Drag to change yield:
+						<input type="range" min="0" max="1000" ng-model="revItem.yield" />
+					</span>
+				</li>
+				<li class="list-group-item">
+					<div class="btn-group center-block" data-toggle="buttons" style="padding-bottom: 2%;" >
+						<span class="pull-left" style="padding-right:2%; "> My revenue for the year was: </span>
+						<label class="btn btn-danger btn-xs col-md-2 "
+						ng-click="" >
+							<input type="radio" name="options" id="option1">
+							Bad </label>
+						<label class="btn btn-success btn-xs   col-md-2 "
+						ng-click="" >
+							<input type="radio" name="options" id="option2">
+							Good </label>
+						<label class="btn btn-warning btn-xs   col-md-2 "
+						ng-click="" >
+							<input type="radio" name="options" id="option2">
+							Normal </label>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div class="btn-group center-block" data-toggle="buttons" style="padding-bottom: 2%;" >
+						<span class="pull-left" style="padding-right:2%; "> Disease affected my crops: </span>
+						<label class="btn btn-danger btn-xs col-md-2 "
+						ng-click="" >
+							<input type="radio" name="options" id="option1">
+							Badly </label>
+						<label class="btn btn-success btn-xs   col-md-2 "
+						ng-click="" >
+							<input type="radio" name="options" id="option2">
+							No Disease </label>
+						<label class="btn btn-warning btn-xs   col-md-2 "
+						ng-click="" >
+							<input type="radio" name="options" id="option2">
+							Minimal Disease </label>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div class="btn-group center-block" data-toggle="buttons" style="padding-bottom: 2%;" >
+						<span class="pull-left" style="padding-right:2%; "> Logding was: </span>
+						<label class="btn btn-danger btn-xs col-md-2 "
+						ng-click="" >
+							<input type="radio" name="options" id="option1">
+							Bad </label>
+						<label class="btn btn-success btn-xs   col-md-2 "
+						ng-click="" >
+							<input type="radio" name="options" id="option2">
+							Good </label>
+						<label class="btn btn-warning btn-xs   col-md-2 "
+						ng-click="" >
+							<input type="radio" name="options" id="option2">
+							Normal </label>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div class="btn-group center-block" data-toggle="buttons" style="padding-bottom: 2%;" >
+						<span class="pull-left" style="padding-right:2%; "> The season was: </span>
+						<label class="btn btn-danger btn-xs col-md-2 "
+						ng-click="" >
+							<input type="radio" name="options" id="option1">
+							Dry </label>
+						<label class="btn btn-success btn-xs   col-md-2 "
+						ng-click="" >
+							<input type="radio" name="options" id="option2">
+							Wet </label>
+						<label class="btn btn-warning btn-xs   col-md-2 "
+						ng-click="" >
+							<input type="radio" name="options" id="option2">
+							Normal </label>
+					</div>
+				</li>
+				<li class="list-group-item" >
+					<div class="btn-group center-block" data-toggle="buttons" style="padding-bottom: 2%;" >
+						<span class="pull-left" style="padding-right:2%; "> Weather Conditions were: </span>
+						<label class="btn btn-danger btn-xs col-md-2 "
+						ng-click="" >
+							<input type="radio" name="options" id="option1">
+							Bad </label>
+						<label class="btn btn-success btn-xs   col-md-2 "
+						ng-click="" >
+							<input type="radio" name="options" id="option2">
+							Good </label>
+						<label class="btn btn-warning btn-xs   col-md-2 "
+						ng-click="" >
+							<input type="radio" name="options" id="option2">
+							Normal </label>
+					</div>
+				</li>
+				<li class="list-group-item" >
+					<div class="btn-group center-block" data-toggle="buttons" style="padding-bottom: 2%;" >
+						<span class="pull-left" style="padding-right:2%; "> Select your Location from the map: </span>
+						<img class="img-responsive" src="images/map.png" alt="On Farm" width="40%"/>
+
+					</div>
+				</li>
+				<li class="">
+					<span class="pull-left" style="padding-right:2%;padding-left:2%; "> Enter Specific Comments (optional):</span>
+
+					<form role="form" style="padding: 2%">
+						<textarea class="form-control" rows="3"></textarea>
+					</form>
+				</li>
+				<li class=""  style="padding-right: 2%">
+					<button type="submit" class="btn btn-primary pull-right" >
+						Submit
+					</button>
+				</li>
+			</ul>
+			<br />
+			<br />
+			<br />
+			<br />
+		</div>
+	</div>
+</section>

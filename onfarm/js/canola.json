@@ -1,0 +1,56 @@
+{
+            "Clearfield":[
+               {
+					"name" : "5525 CL",
+					"yield" : "94.4",
+					"revenue" : "1059",
+					"lodging" : "2.8",
+					"comment" : "",
+					"image" : "images/crops/09_canola.png"
+				}, 
+				{
+					"name" : "VR 9560 CL ",
+                    "yield":"93.7",
+                    "revenue":"1051",
+                    "lodging":"3.5",
+                    "comment":"",
+					"image" : "images/crops/09_canola.png"
+				}
+            ],
+            "LibertyLink":[
+               {
+					"name" : "5525 CL",
+                    "yield":"94.4",
+                    "revenue":"1059",
+                    "lodging":"2.8",
+                    "comment":"",
+					"image" : "images/crops/09_canola.png"
+				}, 
+				{
+					"name" : "VR 9560 CL ",
+                    "yield":"93.7",
+                    "revenue":"1051",
+                    "lodging":"3.5",
+                    "comment":"",
+					"image" : "images/crops/09_canola.png"
+				}
+            ],
+            "RoundupReady":[
+               {
+					"name" : "5525 CL",
+                    "yield":"94.4",
+                    "revenue":"1059",
+                    "lodging":"2.8",
+                    "comment":"",
+					"image" : "images/crops/09_canola.png"
+				}, 
+				{
+					"name" : "VR 9560 CL ",
+                    "yield":"93.7",
+                    "revenue":"1051",
+                    "lodging":"3.5",
+                    "comment":"",
+					"image" : "images/crops/09_canola.png"
+				}
+            ]  
+}

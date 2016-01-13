@@ -1,0 +1,401 @@
+[
+  {
+    	"name":"Canola",
+        "Clearfield":[
+           {
+				"name" : "5525 CL",
+				"yield" : "94.4",
+				"revenue" : "1059",
+				"lodging" : "2.8",
+                "environment":"",
+                "weather":"",
+				"comment" : "The 5525 CL Canola variety is the best I have tried so far. It grows really wild",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "VR 9560 CL ",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"You can't go wrong with VR 9560 CL ",
+				"image" : "images/crops/09_canola.png"
+			}
+        ],
+        "LibertyLink":[
+           {
+				"name" : "5440",
+                "yield":"59.3",
+                "revenue":"1059",
+                "lodging":"2.8",
+                "environment":"",
+                "weather":"",
+                "comment":"5440 is the best in my field. It's standability is just unbelievable. Even in the harse weather, I stands tall.",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "L252 ",
+                "yield":"58.4",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "L130",
+                "yield":"61.1",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "L154 ",
+                "yield":"59.8",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "L159 ",
+                "yield":"58.4",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "LSD",
+                "yield":"5.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}
+        ],
+        "RoundupReady":[
+           {
+				"name" : "73-45 Rr",
+                "yield":"94.4",
+                "revenue":"1059",
+                "lodging":"2.8",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "6060 Rr",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "6050 Rr",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "6044 Rr",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "1990",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "V12-1",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "V12-2",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "09H7757",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "10Dl30109",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "10Dl30109",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "10Dl30509",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "73-75 Rr",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "74-44 Bl",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "74-54 Rr",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "Sy4114",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "Sy4135",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "Vr 9562 Gc",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "Vt 530 G",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "73-15 Rr",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}, 
+			{
+				"name" : "Lsd",
+                "yield":"93.7",
+                "revenue":"1051",
+                "lodging":"3.5",
+                "environment":"",
+                "weather":"",
+                "comment":"",
+				"image" : "images/crops/09_canola.png"
+			}
+        ]
+ },
+  {
+    	"name":"Lentils",
+        "default":[
+           {
+				"name" : "3059-6",
+				"yield" : "000",
+				"revenue" : "000",
+				"lodging" : "000",
+                "environment":"",
+                "weather":"",
+				"comment" : "000",
+				"image" : "images/crops/15_lentils.png"
+			}, 
+           {
+				"name" : "IBC 507",
+				"yield" : "000",
+				"revenue" : "000",
+				"lodging" : "000",
+                "environment":"",
+                "weather":"",
+				"comment" : "000",
+				"image" : "images/crops/15_lentils.png"
+			}, 
+           {
+				"name" : "IBC 479",
+				"yield" : "000",
+				"revenue" : "000",
+				"lodging" : "000",
+                "environment":"",
+                "weather":"",
+				"comment" : "000",
+				"image" : "images/crops/15_lentils.png"
+			}, 
+           {
+				"name" : "IBC 597",
+				"yield" : "000",
+				"revenue" : "000",
+				"lodging" : "000",
+                "environment":"",
+                "weather":"",
+				"comment" : "000",
+				"image" : "images/crops/15_lentils.png"
+			}, 
+           {
+				"name" : "IBC 586",
+				"yield" : "000",
+				"revenue" : "000",
+				"lodging" : "000",
+                "environment":"",
+                "weather":"",
+				"comment" : "000",
+				"image" : "images/crops/15_lentils.png"
+			}
+        ]
+ },
+  {
+    	"name":"Barley",
+        "default":[
+           {
+				"name" : "BT593",
+				"yield" : "000",
+				"revenue" : "000",
+				"lodging" : "000",
+                "environment":"",
+                "weather":"",
+				"comment" : "000",
+				"image" : "images/crops/02_barley.png"
+			}, 
+           {
+				"name" : "TR10124",
+				"yield" : "000",
+				"revenue" : "000",
+				"lodging" : "000",
+                "environment":"",
+                "weather":"",
+				"comment" : "000",
+				"image" : "images/crops/02_barley.png"
+			}, 
+           {
+				"name" : "TR10694",
+				"yield" : "000",
+				"revenue" : "000",
+				"lodging" : "000",
+                "environment":"",
+                "weather":"",
+				"comment" : "000",
+				"image" : "images/crops/02_barley.png"
+			}, 
+           {
+				"name" : "TR11698",
+				"yield" : "000",
+				"revenue" : "000",
+				"lodging" : "000",
+                "environment":"",
+                "weather":"",
+				"comment" : "000",
+				"image" : "images/crops/02_barley.png"
+			}, 
+           {
+				"name" : "HB-11316",
+				"yield" : "000",
+				"revenue" : "000",
+				"lodging" : "000",
+                "environment":"",
+                "weather":"",
+				"comment" : "000",
+				"image" : "images/crops/02_barley.png"
+			}
+        ]
+ }
+]

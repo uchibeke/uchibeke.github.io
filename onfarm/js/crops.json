@@ -1,0 +1,113 @@
+{
+	"canola": {
+            "Clearfield":[
+               {
+					"name" : "5525 CL",
+					"yield" : "94.4",
+					"revenue" : "1059",
+					"lodging" : "2.8",
+					"comment" : ""
+				}, 
+				{
+					"name" : "VR 9560 CL ",
+                    "yield":"93.7",
+                    "revenue":"1051",
+                    "lodging":"3.5",
+                    "comment":""
+				}
+            ],
+            "LibertyLink":[
+               {
+					"name" : "5525 CL",
+                    "yield":"94.4",
+                    "revenue":"1059",
+                    "lodging":"2.8",
+                    "comment":""
+				}, 
+				{
+					"name" : "VR 9560 CL ",
+                    "yield":"93.7",
+                    "revenue":"1051",
+                    "lodging":"3.5",
+                    "comment":""
+				}
+            ],
+            "RoundupReady":[
+               {
+					"name" : "5525 CL",
+                    "yield":"94.4",
+                    "revenue":"1059",
+                    "lodging":"2.8",
+                    "comment":""
+				}, 
+				{
+					"name" : "VR 9560 CL ",
+                    "yield":"93.7",
+                    "revenue":"1051",
+                    "lodging":"3.5",
+                    "comment":""
+				}
+            ]  
+},
+	
+	"beans": {
+            "default":[
+               {
+					"name" : "5525 CL",
+					"yield" : "94.4",
+					"revenue" : "1059",
+					"lodging" : "2.8",
+					"comment" : ""
+				}, 
+				{
+					"name" : "VR 9560 CL ",
+                    "yield":"93.7",
+                    "revenue":"1051",
+                    "lodging":"3.5",
+                    "comment":""
+				}
+            ]
+},
+	
+	"barley": {
+            "default":[
+               {
+					"name" : "5525 CL",
+					"yield" : "94.4",
+					"revenue" : "1059",
+					"lodging" : "2.8",
+					"comment" : ""
+				}, 
+				{
+					"name" : "VR 9560 CL ",
+                    "yield":"93.7",
+                    "revenue":"1051",
+                    "lodging":"3.5",
+                    "comment":""
+				}
+            ]
+}
+
+,
+	
+	"flax": {
+            "default":[
+               {
+					"name" : "5525 CL",
+					"yield" : "94.4",
+					"revenue" : "1059",
+					"lodging" : "2.8",
+					"comment" : ""
+				}, 
+				{
+					"name" : "VR 9560 CL ",
+                    "yield":"93.7",
+                    "revenue":"1051",
+                    "lodging":"3.5",
+                    "comment":""
+				}
+            ]
+}
+
+
+}

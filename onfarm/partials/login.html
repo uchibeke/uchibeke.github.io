@@ -1,0 +1,46 @@
+<div ng-include="'partials/nav.html'"></div>
+<section class="card login container-fluid uofs-section animated slideInDown">
+	<form name="myform"
+	ng-submit="login()"
+	novalidate>
+
+		<div class="textintro">
+			<h1>Hi there!</h1>
+			<p>
+				Log-in to save you yield!
+			</p>
+			<p class="message"
+			ng-show="message">
+				{{ message }}
+			</p>
+		</div>
+
+		<fieldset>
+			<input class="form-control" type="email" name="email" placeholder="Username ie email or phone number"
+			ng-model="user.email" ng-required="true">
+			<!-- <input type="email" name="email" placeholder="Email"
+			ng-model="user.email" ng-required="true"> -->
+			<p class="error validationerror"
+			ng-show="myform.email.$invalid && myform.email.$touched">
+				Must be a valid email
+			</p>
+
+			<input class="form-control" type="password" name="password" placeholder="Password"
+			ng-model="user.password" ng-required="true">
+			<p class="error validationerror"
+			ng-show="myform.password.$invalid && myform.email.$touched">
+				Password is required
+			</p>
+
+		</fieldset>
+
+		<button type="submit" class="btn"
+		ng-disabled="myform.$invalid">
+			Login
+		</button>
+		<p>
+			or <a ng-href="#/register">register</a>
+		</p>
+	</form>
+</section>
+<!-- <footer class="uofs-footer cf" ng-include="'footer.html'"></footer> -->
