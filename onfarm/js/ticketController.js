@@ -2,9 +2,11 @@ var ticketControllers = angular.module('ticketControllers', ['ngStorage', 'fireb
 
 guestControllers.controller('TicketController', ['$scope', '$http', '$localStorage', '$sce', 'Upload', '$timeout',
 function($scope, $http, $localStorage, $sce, Upload, $timeout) {
-	$http.get('js/tickets.json').success(function(tdata) {
+	$http.get('js/shopify.json').success(function(tdata) {
 		// Guest Data from json file
 		$scope.ticketdata = tdata;
+		
+		$scope.shopifyData  = JSON.stringify($scope.ticketdata, null, "\t");
 
 		$http.get('js/styles.json').success(function(st) {
 			// Ticket Data from json file

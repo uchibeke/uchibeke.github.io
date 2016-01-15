@@ -1,6 +1,26 @@
 <div ng-include="'partials/nav.html'"></div>
 <section class="guestinfo uofs-section container-fluid animated slideInDown" id="ticketPage">
 	<br />
+
+	<!-- <h1>Playing</h1>
+	{{ticketdata.products[0]}}
+	<br />
+	<br />
+	<p ng-repeat="item in ticketdata.products" >
+		ID: {{item.id}} ||| Type: {{item.product_type}}
+		<br />
+		Variants Length: {{item.variants.length}}
+		<br />
+		Grams: {{item.variants[0].grams}} || {{item.variants[1].grams}}
+		<br />
+		Variants: {{item.variants[0].price}} || {{item.variants[1].price}}
+		<br />
+		<br />
+	</p>
+	<p ng-repeat="n in ticketdata.products" >
+		{{n.variants}}
+	</p>
+	</p> -->
 	<div class="hideOnPrint" ng-hide="printSet">
 		<div class="back_div pull-left ">
 			<a type="button" class="btn btn-default btn-xs" ng-href="#/guestList">&laquo; Back</a>
