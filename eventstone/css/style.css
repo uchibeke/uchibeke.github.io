@@ -457,29 +457,34 @@ form .progress {
 	/*padding: 5px;*/
 }
 
-.navHome {
+#navHome {
 	color: rgba(255, 0, 0, 1);
 }
 
-.navPopulate {
-	color: rgba(0, 255, 0, 1);
+#navPopulate {
+	/*color: rgba(0, 255, 0, 1);*/
+	border-bottom: thin solid rgba(0, 255, 0, 1);
 }
 
-.navTickets {
-	color: rgba(0, 255, 255, 1);
+#navTickets {
+	/*color: rgba(0, 255, 255, 1);*/
+	border-bottom: thin solid rgba(0, 255, 255, 1);
 }
 
-.navBadges {
-	color: rgba(0, 0, 255, 1);
+#navBadges {
+	/*color: rgba(0, 0, 255, 1);*/
+	border-bottom: thin solid rgba(0, 0, 255, 1);
 }
 
-.navGList {
-	color: rgba(255, 0, 255, 1);
+#navGList {
+	/*color: rgba(255, 0, 255, 1);*/
+	border-bottom: thin solid rgba(255, 0, 255, 1);
 }
 
-.navGoLive {
+#navGoLive {
 	color: rgba(255, 0, 0, 1);
-	padding-right: 5px;
+	border-bottom: thin solid rgba(255, 0, 0, 1);
+	/*padding-right: 5px;*/
 }
 
 /*#populatePage {

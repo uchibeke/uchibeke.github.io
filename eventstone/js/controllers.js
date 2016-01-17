@@ -161,6 +161,28 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 			}
 		};
 
+		$scope.init = function() {
+			function startTime() {
+				var today = new Date();
+				var h = today.getHours();
+				var m = today.getMinutes();
+				var s = today.getSeconds();
+				m = checkTime(m);
+				s = checkTime(s);
+				document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+				var t = setTimeout(startTime, 500);
+			}
+
+			function checkTime(i) {
+				if (i < 10) {
+					i = "0" + i
+				};// add zero in front of numbers < 10
+				return i;
+			}
+			startTime();
+		}
+		$timeout($scope.init);
+
 		$scope.addPastedExcel = function() {
 			var rows = $scope.dataFieldExcel.split('\n');
 			var obj = [];
@@ -175,6 +197,8 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 					}
 					return name;
 				}
+
+
 				obj.push(a());
 			}
 			$scope.objJoin = obj.join(",");
@@ -201,8 +225,8 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 			if ($scope.$storage.backUpGuestList.length > 0) {
 				$scope.$storage.guestsList = {};
 				Array.prototype.push.apply($scope.$storage.guestsList, $scope.$storage.backUpGuestList);
-			}else {
-				
+			} else {
+
 			}
 		};
 

@@ -1,39 +1,43 @@
-<section class="guestpage container-fluid uofs-section animated slideInDown center text-center " id="livePage">
-	<p >
-		You are about to go live with your event. 
+<section onload="startTime()" class="guestpage container-fluid uofs-section animated slideInDown " id="livePage">
+	<p ng-show="firstLiveScreen">
+		You are about to go live with your event.
 		People can check in with their name, ticket number or other info you registered them with.
-		In live page, type the name or ticket number in the search box and click check in to check in a guest.
+		In the next page, type the name or ticket number in the search box and click check in to check in a guest.
 	</p>
 	<div class="row text-center text-info center-block" ng-show="firstLiveScreen">
+		<input ng-model="$storage.eventName" placeholder="Enter Event name. Can be changed anytime" class="form-control">
 		<h2>Would you like to allow more people to register during this event?</h2>
-		You can change this at any time. Just exit the live screen and come back to it.
+		<br />
 		<div class="row btn-group-lg">
 			<div class="col-lg-6 col-md-6">
-				<a type="button" class="btn btn-default btn-lg pull-right"
+				<a type="button" class="btn btn-default pull-right"
 				ng-click="secondLiveScreen=true;firstLiveScreen=false;thirdLiveScreen=true;">Yes</a>
 			</div>
 			<div cclass="col-lg-6 col-md-6">
-				<a type="button" class="btn btn-default btn-lg pull-left"
+				<a type="button" class="btn btn-default pull-left"
 				ng-click="secondLiveScreen=true;firstLiveScreen=false " > No</a>
 			</div>
 		</div>
-		<hr />
+		You can change this at any time. Just exit the live screen and come back to it.
+		<br />
 	</div>
 	<div class="row" ng-show="secondLiveScreen" >
 		<form class="search center-block row text-center form">
-			<h1 class="text-center uofs-page-title"><a>Guest check-in</a></h1>
+			<h1 class="text-center uofs-page-title"><a>{{$storage.eventName}}</a></h1>
+			<div class="text-center" style="font-size: xx-large;">
+				Check-in
+			</div>
 			<br class="clearfix"/>
-			<input ng-model="guestSearch" placeholder="If you're already registered for this event, type your name, NSID or other info here to check-in"
+			<input ng-model="guestSearch" placeholder="Type ticket number, name, NSID or other info here to check-in a guest"
 			class="searchBar form-control" autofocus>
 			<div ng-show="visualize()" class="alert">
 				<p  class=" text-center center-block" >
-					<strong>{{instruction}}...</strong>
+					{{instruction}}...
 				</p>
 			</div>
 
 		</form>
-		<hr />
-		<br />
+		<!-- <br /> -->
 		<ul class="guestlist row" ng-hide="visualize()" >
 			<li class="guest cf" ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction">
 				<a>
@@ -53,11 +57,13 @@
 			</li>
 		</ul>
 	</div>
-	<h4 class="" ng-show="thirdLiveScreen">Not registered...?
-	<button  type="button"
-	class="btn btn-default btn-xs" ng-click="fourthLiveScreen=true">
-		Register
-	</button></h4>
+	<p class="" ng-show="thirdLiveScreen">
+		Want to add new guest...?
+		<button  type="button"
+		class="btn btn-default btn-xs" ng-click="fourthLiveScreen=true">
+			Add
+		</button>
+	</p>
 	<div class=" text-center text-info center-block" ng-show="thirdLiveScreen && fourthLiveScreen">
 		<div class=" col-lg-4 col-md-4" >
 			<input placeholder="Enter your name, NSID or other info and click register"
@@ -67,15 +73,15 @@
 			<button  type="button"
 			class="btn btn-primary "
 			ng-click="submitUserInput(userRegInfo);userRegInfo = '';checkedIn($storage.guestsList.length-1);liveMsgStatus=true;liveMsg();">
-				Register and Check in
+				Add and Check in
 			</button>
 		</div>
 		<div class=" col-lg-5 col-md-5" ng-show="liveMsgStatus">
 			{{$storage.guestsList[$storage.guestsList.length-1].name}} - {{$storage.guestsList[$storage.guestsList.length-1].guestStatus}}
 		</div>
 		<br />
-		<hr />
 	</div>
+	<div id="txt" class="text-center text-muted" style="font-size: 80px;;"></div>
 	<div class="back_div pull-left close">
 		<a ng-href="#/home">&laquo; Exit</a>
 	</div>
