@@ -160,7 +160,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 header {
-	background-image: url(../img/header-bg.jpg);
+	background-image: url(../assets/bg4.jpg);
 	background-repeat: none;
 	background-attachment: scroll;
 	background-position: center center;
@@ -486,9 +486,15 @@ aside.clients img {
 }
 section#contact {
 	background-color: #222;
-	background-image: url(../img/map-image.png);
+	background-image: url(../assets/contact.jpg);
 	background-position: center;
-	background-repeat: no-repeat
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
 }
 section#contact .section-heading {
 	color: #fff

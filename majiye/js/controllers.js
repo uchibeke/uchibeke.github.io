@@ -6,31 +6,9 @@ function($scope, $http, $localStorage) {
 	$scope.dataField = '';
 
 	$scope.listBtnText = 'Add Guests';
-	// $scope.$storage = $localStorage.$default({
-		// guestsList : {hey : h, when : w}
-	// });
-	// $scope.s=10;
-// 
-	// $scope.$storage.x = '';
 
-	// $scope.image = [{
-	// home : {
-	// src : '../img/home/carousel1.jpg',
-	// },
-	// photography : {
-	// src : 'image/source/image.png'
-	// },
-	// filmography : {
-	// src : 'image/source/image.png'
-	// },
-	// hUp : {
-	// src : 'image/source/image.png'
-	// },
-	// uEven : {
-	// src : 'image/source/image.png'
-	// }
-	// }];
-
+	
+	$scope.nature = true;
 	// List of all user events
 	$scope.visualize = function() {
 		var showGuest = true;
@@ -100,30 +78,3 @@ function($scope, $http, $localStorage) {
 	};
 
 }]);
-
-	//
-	// majControllers.controller('otherController', ['$scope', '$http', '$routeParams', '$localStorage',
-	// function($scope, $http, $routeParams, $localStorage) {
-	// $http.get('js/data.json').success(function(data) {
-	// $scope.guests = data;
-	// $scope.$storage = $localStorage.$default({
-	// guestsList : $scope.guests
-	// });
-	//
-	// $scope.whichItem = $routeParams.itemId;
-	//
-	// if ($routeParams.itemId > 0) {
-	// $scope.prevItem = Number($routeParams.itemId) - 1;
-	// } else {
-	// $scope.prevItem = $scope.$storage.guestsList.length - 1;
-	// }
-	//
-	// if ($routeParams.itemId < $scope.$storage.guestsList.length - 1) {
-	// $scope.nextItem = Number($routeParams.itemId) + 1;
-	// } else {
-	// $scope.nextItem = 0;
-	// }
-	//
-	// });
-	// }]);
-
