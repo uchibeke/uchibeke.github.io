@@ -1,0 +1,219 @@
+/* @override
+
+ @import url("http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather:400,300,700,900|Droid+Sans:400,700");
+
+ /*Other Reset*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+html {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+q, blockquote {
+	quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+	content: "";
+	content: none;
+}
+
+a img {
+	border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+	display: block;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Base Styles */
+
+.cf:before, .cf:after {
+	content: " "; /* 1 */
+	display: table; /* 2 */
+}
+
+.cf:after {
+	clear: both;
+}
+
+/* guest List Styles */
+
+body {
+	background-color: #fffff;
+}
+
+
+body {
+	-webkit-print-color-adjust: exact !important;
+	print-color-adjust: exact !important;
+}
+
+.projectDiv {
+	margin-top: 5%;
+	min-height: 400px;
+	cursor: pointer;
+	transition-duration: 0.1s;
+	transition-property: transform;
+}
+
+.projectDiv:hover {
+	/*border: thick solid #E8EFF9;*/
+	transform: scale(1.005);
+	box-shadow: 10px 10px 5px #888888;
+}
+
+.portfolioPage {
+}
+
+a {
+	color: #313649 !important;
+}
+
+.portfolioPageAlt {
+	background: #313649;
+	color: #E8EFF2 !important;
+}
+
+.portfolioPageAlt h1 {
+	color: #E8EFF2 !important;
+}
+
+
+.uofs-header-nav a, .uofs-header-nav span {
+	display: inline-block;
+}
+
+.portfolioTexts {
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
+.portfolioHomeImg {
+	max-height: 300px;
+}
+
+
+
+.navHeader div {
+	background-color: rgba(232, 239, 242, 0.5) !important;
+}
+
+.seeDetails {
+	color: #FF4912 !important;
+	font-style: bold;
+}
+.portfolioPage .panel-body img {
+	border: thin solid #E8EFF2;
+	transition: all .2s ease-in-out; 
+}
+.portfolioPage .panel-body img:hover, .portfolioPage .panel-body img:active {
+	width: 100%;
+	cursor: pointer;
+}
+.stubornImgDiv img:hover {
+	width: 30% !important;
+}
+
+.footerDiv a {
+	padding: 2%;
+}
+
+
+.projectIntro a {
+	color: #E8EFF2 !important;
+	font-style:italic;
+}
+	
+
+@media (min-width:320px) { 
+	/* smartphones, iPhone, portrait 480x320 phones */
+	.portfolioTexts, .projectIntro {
+		padding-left: 0;
+		padding-right: 0;
+    	line-height: 2.0;
+	}
+	
+	.portfolioTexts h3 {
+		font-weight: bolder;
+		font-variant: small-caps;
+	}
+	
+	.panel-body h1  {
+		font-weight: bolder;
+		font-variant: small-caps;
+	}
+}
+
+
+@media (min-width:481px) { 
+	/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+	.portfolioTexts {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+@media (min-width:641px) { 
+	/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
+		.portfolioTexts, .projectDiv  p {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+	
+	.portfolioTexts p , .projectIntro , .projectDiv p, .homeIntro{
+		font-size: 1.2em !important;
+	}
+		
+	
+	.portfolioTexts h3 {
+		font-size: 2em !important;
+		font-weight: bolder;
+		font-variant: small-caps;
+	}
+	
+	.panel-body h1 {
+		font-size: 2.5em !important;
+		font-weight: bolder;
+		font-variant: small-caps;
+	}
+
+}
+@media (min-width:961px) { 
+	/* tablet, landscape iPad, lo-res laptops ands desktops */
+	.portfolioTexts {
+	padding-left: 20%;
+	padding-right: 20%;
+}
+@media (min-width:1025px) { 
+	/* big landscape tablets, laptops, and desktops */
+}
+@media (min-width:1281px) { 
+	/* hi-res laptops and desktops */ 
+}
