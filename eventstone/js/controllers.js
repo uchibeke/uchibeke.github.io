@@ -75,11 +75,11 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 		$scope.$storage.xx = "";
 
 		$scope.deleteStored = function() {
-			if (!(angular.equals($scope.$storage.guestsList, data))) {
+			if (!(angular.equals($scope.$storage.guestsList, $scope.guests ))) {
 				$scope.$storage.backUpGuestList = {};
 				$scope.$storage.backUpGuestList = $scope.$storage.guestsList;
 				$scope.$storage.guestsList = {};
-				$scope.$storage.guestsList = data;
+				$scope.$storage.guestsList = $scope.guests ;
 			}
 		};
 
