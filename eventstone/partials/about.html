@@ -1,6 +1,6 @@
 <div ng-include="'partials/nav.html'"></div>
 <section class="guestinfo uofs-section container-fluid" id="aboutPage">
-	<br />
+	<!-- <br /> -->
 	<div class="back_div pull-left ">
 		<a type="button" class="btn btn-default btn-xs" ng-href="#/home">&laquo; Home</a>
 	</div>
@@ -9,6 +9,80 @@
 	</div>
 	<h1 class="text-center uofs-page-title"><a>About</a></h1>
 	<br />
+	<div class="btn-group center-block row text-center" data-toggle="buttons" style="">
+		Please <b>download your guest list before you uninstall your browser, delete your browser cache,
+			clear cookies or reset your browser</b>. This is because your data is stored only by you alone and nowhere else.
+			Deleting a list with one of the options provided <!-- <a ng-href="#/guestList" target="_blank">here</a> --> will create a backup
+			of the list. Eventstone is designed to protect your privacy and also help you recover your data.<br /><br />
+			Click one of the options to learn how to use Eventstone.  <br /><br />
+		<a class="col-md-2 "></a>
+		<label class="btn btn-primary btn-xs col-md-2 " ng-click="designBTab=false;designTTab=false;addGTab=false;liveTab=true;" >
+			<input type="radio" name="options" id="option4">
+			Before your event </label>
+		<label class="btn btn-primary btn-xs col-md-2  " ng-click="addGTab=true;designTTab=false;designBTab=false;liveTab=false;" >
+			<input type="radio" name="options" id="option1">
+			How to add guest </label>
+		<label class="btn btn-primary btn-xs col-md-2  " ng-click="designTTab=true;designBTab=false;addGTab=false;liveTab=false;">
+			<input type="radio" name="options" id="option2">
+			How to design Tickets </label>
+		<label class="btn btn-primary btn-xs col-md-2  " ng-click="designBTab=true;designTTab=false;addGTab=false;liveTab=false;" >
+			<input type="radio" name="options" id="option3">
+			How to design Name Badges </label>
+		<a class="col-md-2 "></a>
+
+	</div>
+	<div class="row center-block " style="width: 90%">
+
+		<div class="designBTab  animated slideInRight" ng-show="liveTab">
+			<br />
+			<div class="row text-justify">
+				<p>
+					Before going to the live screen to start an event. Confirm that all your attendees have been added.
+					You can do this by viewing the <a ng-href="#/guestList" target="_blank">List</a>.
+					Please, <a ng-href="#/populate" target="_blank">add Attendees</a> now if you have not already done so. Old attendees
+					will be backed up automatically when you add a new list. This can be restored at anytime from the
+					<a ng-href="#/guestList" target="_blank">List</a> page. 
+				</p>
+				<p>
+					Remember, deleting your browser will delete all guests.
+				</p>
+				<p>
+					On the <a ng-href="#/live" target="_blank">live screen</a>, enter event name and click go.
+				</p>
+				<p>
+					You can now check in attendees in the next screen. Type the name of the attendee and click "check-in".
+				</p>
+				<p>
+					Refresh page at any time to change event name  or other options in the live screen window.
+				</p>
+				<p>
+					You will never lose the guests you have checked in and the time you checked them in.
+				</p>
+			</div>
+		</div>
+		<div class="addGTab  animated slideInRight" ng-show="addGTab">
+			<br />
+			<div class="row text-justify">
+				<p>
+					To add guests from an excel file. Highlight all the columns you want to add and copy and paste in the fields. 
+					Next, click "Add guests". Attendees will be added.
+				</p>
+				<p>
+					To add only specific columns, copy them to a new excel one at a time and copy and paste all of them in the
+					text area provided.
+				</p>
+			</div>
+		</div>
+		<div class="designTTab  animated slideInRight" ng-show="designTTab">
+			Work in progress
+
+		</div>
+		<div class="designBTab  animated slideInRight" ng-show="designBTab">
+			Work in progress
+
+		</div>
+	</div>
+	<h1 class="text-center">Why Eventstone</h1>
 	<div class="row text-justify">
 		<p>
 			This all started a few months ago when I decided to make a simple app to make it easier and faster for guests to check in at events that happen in Marquis hall. I have been helping out at Marquis for almost 2 years now doing setup and other things when we host banquets, dinners, galas and conferences. Anytime I work there, I notice guests waiting in line to be checked in from a list on paper or, in rare occasions, a document on a computer. The process took time and was stressful for some guests.  This made me decide to make something that will save peoples time, empower event organizers especially those organizing small events and protect the privacy of guests.
@@ -19,34 +93,6 @@
 		<p>
 			Eventstone started from a quick and dirty sketch on a whiteboard. In the process of making Eventstone, I always think about events that it might be used and I draw out simple sketches of the app while I am imagining people using it. Through the process, I have been able to refine the idea by having people test it and by getting comments from users. I have spent nights and days working on Eventstone and I am excited to share some of its features with you. When I think about Eventstone, I see an app that takes on most of the responsibility for people who organize events and and app that makes events run smoothly. I see an app that protects the privacy of people who organize and attend events. It does this by storing event details and user data in one device, the device of the one organizing the event.
 		</p>
-		<p>
-			Need help? See the instructions below...
-		</p>
-	</div>
-	<div class="btn-group center-block row text-center" data-toggle="buttons" style="">
-		<label class="btn btn-primary btn-xs col-md-2 pull-left active" ng-click="addByPasting=true;addWithNum=false;addWithName=false" >
-			<input type="radio" name="options" id="option1">
-			How to add guest </label>
-		<label class="btn btn-primary btn-xs col-md-2 pull-left " ng-click="addWithNum=true;addWithName=false;addByPasting=false">
-			<input type="radio" name="options" id="option2">
-			Design Tickets </label>
-		<label class="btn btn-primary btn-xs col-md-2 pull-left " ng-click="addWithName=true;addWithNum=false;addByPasting=false;" >
-			<input type="radio" name="options" id="option3">
-			Design Name Badges </label>
-		<label class="btn btn-primary btn-xs col-md-2 pull-left " ng-click="addWithName=true;addWithNum=false;addByPasting=false;" >
-			<input type="radio" name="options" id="option4">
-			Go Live </label>
-	</div>
-	<div class="addByPasting  animated slideInDown" ng-show="addByPasting">
-		Work in progress
-	</div>
-	<div class="addWithNum  animated slideInDown" ng-show="addWithNum">
-		Work in progress
-
-	</div>
-	<div class="addWithName  animated slideInDown" ng-show="addWithName">
-		Work in progress
-		
 	</div>
 </section>
 

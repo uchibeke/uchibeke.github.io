@@ -2,25 +2,58 @@
 <section class="guestinfo uofs-section container-fluid" id="populatePage">
 	<div class="back_div pull-left ">
 		<a type="button" class="btn btn-default btn-xs" ng-href="#/home">&laquo; Home</a>
-	</div>
+	</div><!-- Avery paper. Fit 6 per page. Design and just print -->
 	<div class="pull-right">
 		<a type="button" class="btn btn-default btn-xs" ng-href="#/guestList">Guest List &raquo;</a>
 	</div>
 	<h1 class="text-center uofs-page-title"><a>Attendees</a></h1>
-	<p>
-		You can create a list of names/ticket numbers by pasting columns of names from excel file, 
-		by typing comma delimted names or by generating ticket numbers below. Choose one option.
+	<br />
+	<!-- {{testObj}} -->
+	<!-- <div class="row  center-block  text-center">{{excelRowArr.title}}<br />
+	{{excelGList}}
+	<br />
+	<div class="col-lg-5">
+	<textarea ng-model="excelRow" placeholder="Copy and paste the excel columns containing the names,  Leave out the column heading, and click 'Add Guests'."
+	class="dataField form-control " type="textarea" style="height: 250px !important;" ></textarea>
+	</div>
+	<div class="col-lg-7">
+	<div class="form-group col-md-3 text-center">
+	<label >Column Heading</label>
+	<input  class="form-control"  placeholder="Heading name" type="text"
+	ng-model="headingName" ng-required="true">
+	</div>
+	<button type="button"
+	class="btn btn-primary " ng-click="addExcelRow();excelRow = '';">
+	Show Row
+	</button>
+	</div>
+	</div> -->
+	<!-- <div class="row">
+
+	<div ng-repeat="item in excelGList " class="col-lg-3 text-justify" style="font-size: xx-small;line-height: 15px;">
+	<span ng-repeat="a in item " style="font-size: 7pt;">{{a.item}}
+	<br />
+	</span>
+	<hr />
+	</div>
+	</div> -->
+	<p class="text-muted">
+		You can create a list of attendees by pasting columns from excel file.
+		If you need to add details from separate columns,
+		copy and paste all the columns one at a time into a separate excel sheet and copy them together and paste here.
+		<!-- ,
+		by typing comma delimted names or by generating ticket numbers below. Choose one option. -->
 	</p>
 	<div class="btn-group center-block row text-center" data-toggle="buttons" style="">
 		<label class="btn btn-primary btn-xs col-md-2 pull-left active" ng-click="addByPasting=true;addWithNum=false;addWithName=false" >
 			<input type="radio" name="options" id="option1">
-			Paste From Excel </label>
-		<label class="btn btn-primary btn-xs col-md-2 pull-left " ng-click="addWithNum=true;addWithName=false;addByPasting=false">
-			<input type="radio" name="options" id="option2">
-			By ticket Number </label>
+			Add From Excel </label>
+		<!-- <label class="btn btn-primary btn-xs col-md-2 pull-left " ng-click="addWithNum=true;addWithName=false;addByPasting=false">
+		<input type="radio" name="options" id="option2">
+		Generate Tickets </label>
 		<label class="btn btn-primary btn-xs col-md-2 pull-left " ng-click="addWithName=true;addWithNum=false;addByPasting=false;" >
-			<input type="radio" name="options" id="option3">
-			By Guest Name </label>
+		<input type="radio" name="options" id="option3">
+		Add guests by name </label> -->
 	</div>
 	<div class="addByPasting  animated slideInDown" ng-show="addByPasting">
 		<div class="row dataFieldContainer center-block  text-center">
@@ -40,7 +73,7 @@
 					</button>
 				</div>
 				<div class="pull-left" style="width: 50%;">
-					<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
+					<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length}} Guests &#926;</h4>
 					<a class="pull-right"   ng-show="$storage.guestsList.length-2>0" ng-click="guestAddFeedback = !guestAddFeedback">
 					<button type="button" class="btn btn-primary checkInBtn btn-xs ">
 						<span ng-show="guestAddFeedback">Hide Guests</span>
@@ -48,63 +81,55 @@
 					</button> </a>
 				</div>
 			</div>
-			<div class="guest cf text-center row" ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction"
-			ng-show="guestAddFeedback">
-				<div class="col-xs-2 col-md-2" style="padding-left: 5%;">
-					<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">{{item.icon}}</i></a>
-					<span class=" text-center">{{$index+1}}</span>
-				</div>
-				<div class="col-xs-5 col-md-5 ">
-					<h4>{{item.name}}</h4>
-				</div>
-				<div class="col-xs-5 col-md-5">
-					{{item.guestStatus}}
-				</div>
+			<div class="guest cf text-center row center-block" ng-repeat="item in $storage.guestsList | filter: guestSearch " ng-show="guestAddFeedback">
+				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 gListNew" ng-repeat="a in item | filter: guestSearch "> {{a}} </span>
 			</div>
+			<!-- <div class="guest cf text-center row" ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction"
+			ng-show="guestAddFeedback">
+			<div class="col-xs-2 col-md-2" style="padding-left: 5%;">
+			<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">{{item.icon}}</i></a>
+			<span class=" text-center">{{$index+1}}</span>
+			</div>
+			<div class="col-xs-5 col-md-5 ">
+			<h4>{{item.name}}</h4>
+			</div>
+			<div class="col-xs-5 col-md-5">
+			{{item.guestStatus}}
+			</div>
+			</div> -->
 		</div>
 	</div>
 	<div class="addWithNum  animated slideInDown" ng-show="addWithNum">
-		<div class="row dataFieldContainer center-block  text-center">
-			<textarea ng-model="dataFieldNum" placeholder="Select options below and click 'Generate Number'. Numbers will show up here. You can also just type or copy and paste a bunch of numbers/characters delimited by comma and use them as your ticket number." 
+		<div class="row dataFieldContainer center-block  text-center" ng-hide="true">
+			<textarea ng-model="dataFieldNum" placeholder="Select options below and click 'Add Guests'. Numbers will be generated and added to the list." 
 		class="dataField form-control" type="textarea" style="height: 250px !important; "></textarea>
 		</div>
 		<div class=" populate_div  panel panel-default" data-toggle="buttons" style="padding-bottom: 2%;">
 			<div class="panel-body">
 				<div class=" center-block col-xs-12">
 					<form role="form">
-						<div class="form-group col-md-3 text-center center-block">
-							<label >Number of digits </label>
-							<input class="form-control" placeholder="Max 10 eg. 6 for AXB105" type="text"
-							ng-model="$storage.ticketDigits" >
+						<div class="form-group col-md-4 text-center">
+							<label >Ticket Prefix</label>
+							<input class="form-control"  placeholder="eg. ABC will yield ticket # ABC*******" type="text"
+							ng-model="$storage.prefix">
 						</div>
-						<div class="form-group col-md-3 text-center">
+						<div class="form-group col-md-4 text-center">
 							<label >Total Tickets to generate</label>
 							<input  class="form-control"  placeholder="One per guest/group" type="text"
 							ng-model="$storage.totalTickets" ng-required="true">
 						</div>
-						<div class="form-group col-md-3 text-center">
-							<label >Prefix</label>
-							<input class="form-control"  placeholder="eg ABC to get ABC1234" type="text"
-							ng-model="$storage.prefix">
-						</div>
-						<div class="form-group col-md-3 text-center">
+						<div class="form-group col-md-4 text-center">
 							<br />
-							<button ng-model="btnText" type="button"
-							class="btn btn-primary checkInBtn " ng-click="generateTicketNums(); ">
-								Generate Number
+							<button ng-model="btnText" type="button" ng-show="true"
+							class="btn btn-primary " ng-click="generateTicketNums();guestAddFeedback=true;guestAddMsg();  ">
+								Add Tickets
 							</button>
+							<!-- <button ng-model="btnText" type="button"
+							class="btn btn-primary checkInBtn " ng-click="generateTicketNums(); ">
+							Generate Number
+							</button> -->
 						</div>
 					</form>
-				</div>
-				<div class="pull-right">
-					<button ng-model="btnText" type="button" ng-show="dataFieldNum.length >=1"
-					class="btn btn-primary " ng-click="submitUserInput(dataFieldNum);dataFieldNum = '';guestAddFeedback=true;guestAddMsg();  ">
-						Add Guests
-					</button>
-					<button ng-model="btnText" type="button" ng-show="dataFieldNum.length >=1"
-					class="btn btn-primary btn-xs" ng-click="clearField(dataFieldNum); dataFieldNum = '' ">
-						Clear Field
-					</button>
 				</div>
 				<div class="pull-left" style="width: 50%;">
 					<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
@@ -178,7 +203,7 @@
 	<div>
 		<!-- {{$storage.x}} -->
 		<!-- <p >{{dateString()}}</p> -->
-		<button ng-hide="true" ng-click="$storage.$reset({ })">
+		<button ng-hide="<!-- true -->" ng-click="$storage.$reset({ })">
 			Clear localStorage
 		</button>
 	</div>
@@ -214,29 +239,20 @@
 			</div>
 			<div class="col-xs-1 col-md-1" ></div>
 			<ul class="guestlist col-xs-7 col-md-7 ">
-				<div class="text-center row" >
-					<div class="col-xs-4 col-md-4">
-						<h3>S/N</h3>
-					</div>
-					<div class="col-xs-8 col-md-8">
-						<h3>Name</h3>
-					</div>
+				<!-- Click title to edit and save after change
+				<button type="button" class="btn btn-primary btn-xs " id="saveChange">
+					Save Change
+				</button></span>
+				<br /> -->				<div class="text-center row center-block">
+					<span id="titleContent" class=" text-center col-lg-2 col-md-2 col-sm-2 gListTitle" ng-repeat="a in  $storage.backUpGuestList[0]  | filter: guestSearch " contenteditable="true"> {{$storage.titleArr[$index]}} </span>
+
 				</div>
-				<li class="guest cf row" ng-repeat="item in $storage.backUpGuestList | filter: guestSearch | orderBy: guestOrder:direction"
-				>
-					<a >
-					<div class="info">
-						<div class="row">
-							<div class="col-xs-4 col-md-4">
-								<a ng-click="removeElement($storage.backUpGuestList, $storage.backUpGuestList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" >{{item.icon}}</i></a>
-								<span class=" text-center">{{$index+1}}</span>
-							</div>
-							<div class="col-xs-8 col-md-8">
-								<h4>{{item.name}}</h4>
-							</div>
-						</div>
-					</div> </a>
-				</li>
+				<br />
+
+				<div class="guest cf row center-block" ng-repeat="item in $storage.backUpGuestList | filter: guestSearch | orderBy: guestOrder:direction">
+					<span  class=" text-left col-lg-2 col-md-2 col-sm-2 gListNew" ng-repeat="a in item | filter: guestSearch "> {{a}} </span>
+
+				</div>
 			</ul>
 		</div>
 	</div>

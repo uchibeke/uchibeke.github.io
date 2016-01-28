@@ -1,10 +1,10 @@
-var guestControllers = angular.module('guestControllers', ['ngStorage', 'firebase', 'ngSanitize'])
+var guestControllers = angular.module('guestControllers', ['ngStorage', 'ngSanitize'])
 
-guestControllers.controller('ListController', ['$scope', '$http', '$localStorage', '$timeout', '$firebaseObject', '$firebaseArray', '$firebaseAuth', '$sce',
-function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray, $firebaseAuth, $sce) {
+guestControllers.controller('ListController', ['$scope', '$http', '$localStorage', '$timeout', '$sce',
+function($scope, $http, $localStorage, $timeout, $sce) {
 	$http.get('js/data.json').success(function(data) {
 		// Data from json file
-		$scope.guests = data;
+		$scope.guests = [];
 
 		$scope.guestOrder = 'name';
 		$scope.guestSearch = '';
@@ -18,7 +18,7 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 			guestsList : $scope.guests
 		});
 
-		var ref = new Firebase("https://eventstone.firebaseio.com");
+		// var ref = new Firebase("https://eventstone.firebaseio.com");
 
 		$scope.$storage.x = '';
 
@@ -36,7 +36,7 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 		};
 
 		$scope.submitUserInput = function(field) {
-			var arr = field.split(",");
+			var arr = field.split("+");
 			var newA = [];
 			var length = arr.length;
 
@@ -69,6 +69,7 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 			}
 			Array.prototype.push.apply($scope.$storage.guestsList, newA);
 			$scope.$storage.guestsList.sort();
+			// field= "";
 		};
 
 		$scope.$storage.xx = "";
@@ -107,13 +108,14 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 		$scope.checkedIn = function(x) {
 			if ($scope.$storage.guestsList[x].checkedIn == true) {
 			} else {
-				$scope.$storage.guestsList[x].checkedIn = true;
 				var d = new Date();
-				var ds = d.toLocaleTimeString() + " on " + (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
-				$scope.$storage.guestsList[x].btnText = 'Checked in ' + ds;
+				var ds = d.toLocaleTimeString();
+				// + " on " + (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
 				$scope.$storage.guestsList[x].guestStatus = 'Checked in ' + ds;
 			}
 		};
+
+		$scope.$storage.titleArr = ["Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading"];
 
 		$scope.backUpTxt = function() {
 			if ($scope.backUp) {
@@ -138,28 +140,26 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 				alert("You must enter the number of tickets to generate");
 			} else {
 				$scope.dataFieldNum = "";
-				if ($scope.$storage.ticketDigits <= 0) {
-					$scope.$storage.ticketDigits = 5;
-				} else if ($scope.$storage.ticketDigits >= 10) {
-					$scope.$storage.ticketDigits = 10;
-				} else {
-					$scope.$storage.ticketDigits = $scope.$storage.ticketDigits;
-				}
-				var numbDigits = $scope.$storage.ticketDigits - $scope.$storage.prefix.length;
+				var numbDigits = 10 - $scope.$storage.prefix.length;
 				var firstNum = " ";
 				while (firstNum.length > numbDigits || firstNum.length < numbDigits) {
 					firstNum = parseInt(Math.random().toString().slice(2, numbDigits + 2));
 				}
 				for (var i = 0; i < $scope.$storage.totalTickets; i++) {
-					$scope.dataFieldNum = ($scope.$storage.prefix + "" + (firstNum + 1)) + " ," + $scope.dataFieldNum;
+					$scope.dataFieldNum = ($scope.$storage.prefix + "" + (firstNum + 1)) + " +" + $scope.dataFieldNum;
 					firstNum--;
 				}
-				// Clear data inputted by user
-				$scope.$storage.ticketDigits = '';
+				// $scope.$storage.guestsList = Object.assign([], $scope.testObj);
+				$scope.submitUserInput($scope.dataFieldNum);
 				$scope.$storage.prefix = '';
 				$scope.$storage.totalTickets = '';
+				$scope.dataFieldNum = '';
 			}
 		};
+		
+		
+		
+		// $scope.addGTab = true;
 
 		$scope.init = function() {
 			function startTime() {
@@ -179,30 +179,37 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 				};// add zero in front of numbers < 10
 				return i;
 			}
+
 			startTime();
 		}
 		$timeout($scope.init);
 
+		// Paste from excel file
 		$scope.addPastedExcel = function() {
 			var rows = $scope.dataFieldExcel.split('\n');
 			var obj = [];
+			cart = [];
 			for (var i = 0; i < rows.length; i++) {
 				var arr = rows[i].split('\t');
-				// returns full name and takes care of when person has more than
-				// two names
 				function a() {
-					var name = "";
+					var wholeRow = "";
+					var element = {};
 					for (var i = 0; i < arr.length; i++) {
-						name = name + arr[i] + " ";
+						wholeRow = wholeRow + arr[i] + "     ";
+						element[i] = arr[i];
 					}
-					return name;
+					element.guestStatus = 'Not checked-in';
+					cart.push(element);
+					return wholeRow;
 				}
 
 
 				obj.push(a());
 			}
-			$scope.objJoin = obj.join(",");
-			$scope.submitUserInput($scope.objJoin);
+			$scope.testObj = cart;
+			$scope.$storage.guestsList = Object.assign([], $scope.testObj);
+
+			$scope.$storage.showExcelList = true;
 		};
 
 		// To be used to hide the side icon before printing
@@ -247,6 +254,7 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 			window.print();
 			document.body.innerHTML = originalContents;
 		};
+		
 
 		// Live screens
 		$scope.firstLiveScreen = true;
@@ -310,6 +318,5 @@ function($scope, $http, $localStorage, $timeout, $firebaseObject, $firebaseArray
 			name = name + arrToUse[randomIndex];
 			$scope.dataField = $scope.dataField + name + ",";
 		};
-
 	});
 }]);

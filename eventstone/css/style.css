@@ -487,6 +487,40 @@ form .progress {
 	/*padding-right: 5px;*/
 }
 
+.gListNew {
+	display:inline-block !important;
+	font-size: 8pt !important;
+}
+
+.gListTitle {
+	display:inline-block !important;
+	font-size: 10pt !important;
+}
+
+
+.liveGList {
+	display:inline-block !important;
+	font-size: 12pt !important;
+}
+
+.hrInList {
+	padding: 0 !important;
+	margin 0 !important;
+}
+
+.guestLive {
+	/*padding: 0 !important;
+	margin 0 !important;
+	border-bottom: thin solid gray;
+	width: 95%;*/
+}
+
+.guest {
+	padding: 0 !important;
+	margin 0 !important;
+	border-bottom: thin solid gray !important;
+	width: 95% !important;
+}
 /*#populatePage {
 	border-left: thick solid rgba(0, 255, 0, 1);
 	border-right: thick solid rgba(0, 255, 0, 1);

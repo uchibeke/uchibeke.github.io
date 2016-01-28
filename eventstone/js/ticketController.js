@@ -1,4 +1,4 @@
-var ticketControllers = angular.module('ticketControllers', ['ngStorage', 'firebase', 'ngSanitize', 'ngFileUpload', 'ngImgCrop'])
+var ticketControllers = angular.module('ticketControllers', ['ngStorage',  'ngSanitize', 'ngFileUpload', 'ngImgCrop'])
 
 guestControllers.controller('TicketController', ['$scope', '$http', '$localStorage', '$sce', 'Upload', '$timeout',
 function($scope, $http, $localStorage, $sce, Upload, $timeout) {

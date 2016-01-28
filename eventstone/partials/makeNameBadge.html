@@ -1,9 +1,7 @@
 <!-- Simon : How do I add name of group organizing event -->
 <!-- Megan: Name badge. Synch accross devices -->
-<!-- Solves a problem? -->
-<!-- 4" x 3 1/4" -->
 <div ng-include="'partials/nav.html'"></div>
-<section class="guestinfo uofs-section container-fluid animated slideInDown" id="badgePage">
+<section class="guestinfo uofs-section container-fluid animated slideInRight" id="badgePage">
 	<div class="hideOnPrint" ng-hide="printSet">
 		<div class="back_div pull-left ">
 			<a type="button" class="btn btn-default btn-xs" ng-href="#/tickets">&laquo; Back</a>
@@ -136,7 +134,7 @@
 								</div>
 								<br />
 								<div class="col-md-12 col-lg-12 col-xs-12 badgeRow2  text-center center-block">
-									<span class="badgeGName">{{$storage.guestsList[$storage.guestsList.length-1].name}}</span>
+									<span class="badgeGName">{{$storage.guestsList[$storage.guestsList.length-1][0]}}</span>
 									<br />
 									<span class="">{{guestRole}}</span>
 								</div>
@@ -171,7 +169,7 @@
 									</div>
 									<br />
 									<div class="col-md-12 col-lg-12 col-xs-12 badgeRow2  text-center center-block">
-										<span class="badgeGName">{{$storage.guestsList[$storage.guestsList.length-1].name}}</span>
+										<span class="badgeGName">{{$storage.guestsList[$storage.guestsList.length-1][0]}}</span>
 										<br />
 										<span class="">{{guestRole}}</span>
 									</div>
@@ -293,7 +291,7 @@
 							</div>
 							<br />
 							<div class="col-md-12 col-lg-12 col-xs-12 badgeRow2  text-center center-block">
-								<span class="badgeGName">{{item.name}}</span>
+								<span class="badgeGName">{{item[0]}}</span>
 								<br />
 								<span class="">{{guestRole}}</span>
 							</div>
@@ -329,7 +327,7 @@
 								</div>
 								<br />
 								<div class="col-md-12 col-lg-12 col-xs-12 badgeRow2  text-center center-block">
-									<span class="badgeGName">{{item.name}}</span>
+									<span class="badgeGName">{{item[0]}}</span>
 									<br />
 									<span class="">{{guestRole}}</span>
 								</div>
