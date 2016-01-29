@@ -84,7 +84,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 .guestlist li {
 	margin: 0;
-	padding: 10px 10px 15px 10px;
+	padding: 10px 10px  10px;
 	border-bottom: 1px dotted black;
 }
 
@@ -490,6 +490,7 @@ form .progress {
 .gListNew {
 	display:inline-block !important;
 	font-size: 8pt !important;
+	/*page-break-inside: avoid !important;*/
 }
 
 .gListTitle {
@@ -501,6 +502,7 @@ form .progress {
 .liveGList {
 	display:inline-block !important;
 	font-size: 12pt !important;
+	/*page-break-inside: avoid !important;*/
 }
 
 .hrInList {
@@ -520,6 +522,7 @@ form .progress {
 	margin 0 !important;
 	border-bottom: thin solid gray !important;
 	width: 95% !important;
+	page-break-inside: avoid !important;
 }
 /*#populatePage {
 	border-left: thick solid rgba(0, 255, 0, 1);

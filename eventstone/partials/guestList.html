@@ -14,12 +14,12 @@
 				autofocus="autofocus" class="searchBar form-control" >
 			</form>
 			<p style="" class="col-xs-12 col-md-2 pull-right">
+				<button class="btn btn-primary btn-xs" ng-click="printGuestList()">
+					Print List
+				</button>
 				<button  ng-model="btnText" type="button" class="btn btn-warning btn-xs"
 				ng-show="$storage.guestsList.length > 0 <= 0" ng-click="deleteStored()">
 					Remove All
-				</button>
-				<button class="btn btn-primary btn-xs" ng-click="printGuestList()">
-					Print List
 				</button>
 			</p>
 		</div>
