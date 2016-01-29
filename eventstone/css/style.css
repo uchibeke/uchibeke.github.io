@@ -84,7 +84,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 .guestlist li {
 	margin: 0;
-	padding: 10px 10px 0 10px;
+	padding: 10px 10px 15px 10px;
 	border-bottom: 1px dotted black;
 }
 

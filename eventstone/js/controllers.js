@@ -75,11 +75,11 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 		$scope.$storage.xx = "";
 
 		$scope.deleteStored = function() {
-			if (!(angular.equals($scope.$storage.guestsList, $scope.guests ))) {
+			if (!(angular.equals($scope.$storage.guestsList, $scope.guests))) {
 				$scope.$storage.backUpGuestList = {};
 				$scope.$storage.backUpGuestList = $scope.$storage.guestsList;
 				$scope.$storage.guestsList = {};
-				$scope.$storage.guestsList = $scope.guests ;
+				$scope.$storage.guestsList = $scope.guests;
 			}
 		};
 
@@ -156,9 +156,7 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 				$scope.dataFieldNum = '';
 			}
 		};
-		
-		
-		
+
 		// $scope.addGTab = true;
 
 		$scope.init = function() {
@@ -254,7 +252,6 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 			window.print();
 			document.body.innerHTML = originalContents;
 		};
-		
 
 		// Live screens
 		$scope.firstLiveScreen = true;
@@ -275,15 +272,11 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 				$scope.guestAddFeedback = false;
 			}, 5000);
 		};
-
-		//
-		// $scope.checkIns = "0";
-		// $scope.noCheckIns = "0";
-
+		
 		$scope.checkIns = function() {
 			var checkIns = 0;
 			for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
-				if ($scope.$storage.guestsList[i].checkedIn == true) {
+				if (($scope.$storage.guestsList[i].guestStatus) != 'Not checked-in') {
 					checkIns = checkIns + 1;
 				}
 			}
@@ -291,8 +284,20 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 		};
 
 		$scope.noCheckIns = function() {
-			return $scope.$storage.guestsList.length - $scope.checkIns() - 2;
+			return $scope.$storage.guestsList.length - $scope.checkIns();
 		};
+		
+		$scope.sessionTotal = function(sess, column) {
+			var totReg = 0;
+			var col = column - 1;
+			for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
+				if ((($scope.$storage.guestsList[i][col]).toLowerCase().replace(/\W+/g, " ")).indexOf(sess.toLowerCase().replace(/\W+/g, " ")) > -1) {
+					totReg = totReg + 1;
+				}
+			}
+			return totReg;
+		};
+		
 
 		$scope.randomName = function() {
 			var arrOfNames1 = ["Jason", "Jim", "Bird", "Shari", "Lily", "Shukla", "Jake", "Kurt", "Sylvia", "Smith", "Luke", "Brent", "Tony", "Chi", "Chen", "Yang", "Ada", "Oluchi", "Maj"];

@@ -28,12 +28,18 @@
 			<div class="text-center" style="font-size: xx-large;">
 				Check-in
 			</div>
+			<div class="row tex text-muted">
+				<span class="col-lg-4 col-md-4 col-sm-4">{{$storage.guestsList.length}} total</span>
+				<span class="col-lg-4 col-md-4 col-sm-4">{{checkIns()}} checked-in</span>
+				<span class="col-lg-4 col-md-4 col-sm-4">{{noCheckIns()}} not checked-in</span>
+			</div>
 			<br class="clearfix"/>
 			<input ng-model="guestSearch" placeholder="Type ticket number, name, NSID or other info here to check-in a guest"
 			class="searchBar form-control" autofocus>
 			<div ng-show="visualize()" class="alert">
 				<p  class=" text-center center-block" >
 					{{instruction}}...
+					<!-- {{sessionTotal("Speech Language ", 3)}} -->
 				</p>
 			</div>
 
@@ -42,12 +48,15 @@
 		<ul class="guestlist row" ng-hide="visualize()" >
 			<li class="guestLive cf" ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction">
 				<!-- <hr /> -->
-				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 liveGList" ng-repeat="a in item | filter: guestSearch "> {{a}} <br /> </span>
-				<hr />
-				<button  type="button" ng-hide="hideBtn"
-				class="btn btn-primary checkInBtn  btn-xs" ng-click="checkedIn($storage.guestsList.indexOf(item));hideBtn=true;">
-				Check-In
-				</button>
+				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 liveGList" ng-repeat="a in item | filter: guestSearch "> {{a}}
+					<br />
+				</span>
+				<div class="row">
+					<button  type="button" ng-hide="hideBtn"
+					class="btn btn-primary checkInBtn  btn-xs pull-right" ng-click="checkedIn($storage.guestsList.indexOf(item));hideBtn=true;">
+						Check-In
+					</button>
+				</div>
 				<!-- <a>
 				<div class="info">
 				<div class="row" style="padding-bottom: 1%;">
@@ -66,28 +75,28 @@
 		</ul>
 	</div>
 	<!-- <p class="" ng-show="thirdLiveScreen">
-		Want to add new guest...?
-		<button  type="button"
-		class="btn btn-default btn-xs" ng-click="fourthLiveScreen=true">
-			Add
-		</button>
+	Want to add new guest...?
+	<button  type="button"
+	class="btn btn-default btn-xs" ng-click="fourthLiveScreen=true">
+	Add
+	</button>
 	</p>
 	<div class=" text-center text-info center-block" ng-show="thirdLiveScreen && fourthLiveScreen">
-		<div class=" col-lg-4 col-md-4" >
-			<input placeholder="Enter your name, NSID or other info and click register"
-			class=" form-control" ng-model="userRegInfo">
-		</div>
-		<div class=" col-lg-3 col-md-3" >
-			<button  type="button"
-			class="btn btn-primary "
-			ng-click="submitUserInput(userRegInfo);userRegInfo = '';checkedIn($storage.guestsList.length-1);liveMsgStatus=true;liveMsg();">
-				Add and Check in
-			</button>
-		</div>
-		<div class=" col-lg-5 col-md-5" ng-show="liveMsgStatus">
-			{{$storage.guestsList[$storage.guestsList.length-1].name}} - {{$storage.guestsList[$storage.guestsList.length-1].guestStatus}}
-		</div>
-		<br />
+	<div class=" col-lg-4 col-md-4" >
+	<input placeholder="Enter your name, NSID or other info and click register"
+	class=" form-control" ng-model="userRegInfo">
+	</div>
+	<div class=" col-lg-3 col-md-3" >
+	<button  type="button"
+	class="btn btn-primary "
+	ng-click="submitUserInput(userRegInfo);userRegInfo = '';checkedIn($storage.guestsList.length-1);liveMsgStatus=true;liveMsg();">
+	Add and Check in
+	</button>
+	</div>
+	<div class=" col-lg-5 col-md-5" ng-show="liveMsgStatus">
+	{{$storage.guestsList[$storage.guestsList.length-1].name}} - {{$storage.guestsList[$storage.guestsList.length-1].guestStatus}}
+	</div>
+	<br />
 	</div> -->
 	<br />
 	<div id="txt" class="text-center text-muted" style="font-size: 80px;;"></div>
