@@ -111,7 +111,7 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 				var d = new Date();
 				var ds = d.toLocaleTimeString();
 				// + " on " + (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
-				$scope.$storage.guestsList[x].guestStatus = 'Checked in ' + ds;
+				$scope.$storage.guestsList[x].guestStatus = 'Signed in ' + ds;
 			}
 		};
 
@@ -297,6 +297,18 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 			}
 			return totReg;
 		};
+		
+		// $scope.itemsSummary = function(column) {
+			// var totReg = 0;
+			// var col = column - 1;
+			// for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
+				// var sess = $scope.$storage.guestsList[i][col];
+				// if ((($scope.$storage.guestsList[i][col]).toLowerCase().replace(/\W+/g, " ")).indexOf(sess.toLowerCase().replace(/\W+/g, " ")) > -1) {
+					// totReg = totReg + 1;
+				// }
+			// }
+			// return totReg;
+		// };
 		
 
 		$scope.randomName = function() {

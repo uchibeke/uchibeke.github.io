@@ -24,16 +24,50 @@
 			</p>
 		</div>
 		<br class="clearfix"/>
+		<div class="row">
+			<button class="btn btn-primary btn-xs" ng-click="eventSummary = !eventSummary;">
+				<span ng-show="!eventSummary">Summarize Event</span><span ng-show="eventSummary">Hide Summary</span>
+			</button>
+			<hr />
+			<div class="  panel panel-default" data-toggle="buttons" style="padding-bottom: 2%;"
+			ng-show="eventSummary">
+				<div class="panel-body">
+					<form role="form">
+						<div class="form-group col-md-6 text-center">
+							<label >Text to get summary for: </label>
+							<input class="form-control"  placeholder="Type 'Nurse' to get how many times Nurse is found in a column" type="text"
+							ng-model="summaryItem">
+						</div>
+						<div class="form-group col-md-6 text-center">
+							<label >Column number</label>
+							<input  class="form-control"  placeholder="Column where word is located" type="text"
+							ng-model="columnNumber" ng-required="true">
+						</div>
+					</form>
+					<p class="text-left text-muted">
+						Eg. If I wanted to get how many times {{$storage.guestsList[0][0]}} shows up in
+						column 1, I would enter {{$storage.guestsList[0][0]}} on the left and 1 on the right field.
+						You may use this feature to get a summary of the role of attendees, the session they are are
+						attending or their company or job.
+					</p>
+					<p class=" text-muted" >
+						{{summaryItem}} was found <b class="text-success" style="font-size: xx-large;">{{sessionTotal(summaryItem, columnNumber)}}</b> times in
+						column {{columnNumber}}
+					</p>
+				</div>
+			</div>
+		</div>
 		<div id="GList" class="row" >
 			<div class="text-center " >
+				<!-- <p style="" class="col-xs-12 col-md-2 text-center"> -->
 				<!-- <div class="col-xs-1 col-md-1">
-					<h3>S/N</h3>
+				<h3>S/N</h3>
 				</div>
 				<div class="col-xs-6 col-md-6">
-					<h3>Name/Ticket Number</h3>
+				<h3>Name/Ticket Number</h3>
 				</div>
 				<div class="col-xs-5 col-md-5">
-					<h3>Status</h3>
+				<h3>Status</h3>
 				</div> -->
 			</div>
 			<div class="guest cf text-center row center-block" ng-repeat="item in $storage.guestsList | filter: guestSearch ">
