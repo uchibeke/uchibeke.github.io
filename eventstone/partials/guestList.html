@@ -70,7 +70,7 @@
 				<h3>Status</h3>
 				</div> -->
 			</div>
-			<div class="guest cf text-center row center-block" ng-repeat="item in $storage.guestsList | filter: guestSearch ">
+			<div class="guest cf text-left row center-block" ng-repeat="item in $storage.guestsList | filter: guestSearch ">
 				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 gListNew" ng-repeat="a in item | filter: guestSearch "> {{a}} </span>
 			</div>
 		</div>
