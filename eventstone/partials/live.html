@@ -30,8 +30,8 @@
 			</div>
 			<div class="row tex text-muted">
 				<span class="col-lg-4 col-md-4 col-sm-4">{{$storage.guestsList.length}} total</span>
-				<span class="col-lg-4 col-md-4 col-sm-4">{{checkIns()}} checked-in</span>
-				<span class="col-lg-4 col-md-4 col-sm-4">{{noCheckIns()}} not checked-in</span>
+				<span class="col-lg-4 col-md-4 col-sm-4 text-success">{{checkIns()}} checked-in</span>
+				<span class="col-lg-4 col-md-4 col-sm-4 text-warning">{{noCheckIns()}} not checked-in</span>
 			</div>
 			<br class="clearfix"/>
 			<input ng-model="guestSearch" placeholder="Type ticket number, name, NSID or other info here to check-in a guest"
