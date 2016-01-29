@@ -490,7 +490,7 @@ form .progress {
 .gListNew {
 	display:inline-block !important;
 	font-size: 8pt !important;
-	text-align: left !important;
+	/*text-align: left !important;*/
 	/*page-break-inside: avoid !important;*/
 }
 
