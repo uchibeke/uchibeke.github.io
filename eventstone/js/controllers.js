@@ -107,7 +107,7 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 
 		$scope.checkedIn = function(x) {
 			if ($scope.$storage.guestsList[x].checkedIn == true) {
-			} else if ($scope.$storage.guestsList[x].guestStatus) == 'Not checked-in') {
+			} else if (($scope.$storage.guestsList[x].guestStatus) == 'Not checked-in') {
 				var d = new Date();
 				var ds = d.toLocaleTimeString();
 				// + " on " + (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
