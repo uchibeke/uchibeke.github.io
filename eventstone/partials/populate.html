@@ -4,7 +4,7 @@
 		<a type="button" class="btn btn-default btn-xs" ng-href="#/about">&laquo; About</a>
 	</div><!-- Avery paper. Fit 6 per page. Design and just print -->
 	<div class="pull-right">
-		<a type="button" class="btn btn-default btn-xs" ng-href="#/guestList">Guest List &raquo;</a>
+		<a type="button" class="btn btn-default btn-xs" ng-href="#/guestList">Attendee List &raquo;</a>
 	</div>
 	<h1 class="text-center uofs-page-title"><a>Attendees</a></h1>
 	<br />
@@ -73,11 +73,11 @@
 					</button>
 				</div>
 				<div class="pull-left" style="width: 50%;">
-					<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length}} Guests &#926;</h4>
+					<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length}} Attendees &#926;</h4>
 					<a class="pull-right"   ng-show="$storage.guestsList.length-2>0" ng-click="guestAddFeedback = !guestAddFeedback">
 					<button type="button" class="btn btn-primary checkInBtn btn-xs ">
-						<span ng-show="guestAddFeedback">Hide Guests</span>
-						<span ng-show="!guestAddFeedback">View Guests</span>
+						<span ng-show="guestAddFeedback">Hide Attendees</span>
+						<span ng-show="!guestAddFeedback">View Attendees</span>
 					</button> </a>
 				</div>
 			</div>
