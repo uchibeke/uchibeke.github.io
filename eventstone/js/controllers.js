@@ -253,6 +253,7 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 			document.body.innerHTML = originalContents;
 		};
 
+		
 		// Live screens
 		$scope.firstLiveScreen = true;
 		$scope.secondLiveScreen, $scope.thirdLiveScreen, $scope.fourthLiveScreen = false;
