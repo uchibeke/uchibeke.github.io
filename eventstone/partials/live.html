@@ -1,8 +1,8 @@
 <section onload="startTime()" class="guestpage container-fluid uofs-section animated slideInDown " id="livePage">
 	<p ng-show="firstLiveScreen">
-		You are about to go live with your event.
-		People can check in with their name, ticket number or other info you registered them with.
-		In the next page, type the name or ticket number in the field provided and click <b>check in</b>  to check in a guest.
+		You are about to go live with an event. You can keep track of people that attend your event by adding their names as they come in.
+		People can also check in with their name or ticket number if they are already registered.
+		In the next page, type the name or ticket number in the field provided and click <b>check in</b> to check in an attendee.
 	</p>
 	<div class="row text-center text-info center-block" ng-show="firstLiveScreen">
 		<input ng-model="$storage.eventName" placeholder="Enter Event name. Refresh page to change" class="form-control">
@@ -11,8 +11,8 @@
 
 		<div class="row btn-group-lg">
 			<!-- <div class="col-lg-6 col-md-6">
-				<a type="button" class="btn btn-default pull-right"
-				ng-click="secondLiveScreen=true;firstLiveScreen=false;thirdLiveScreen=true;">Yes</a>
+			<a type="button" class="btn btn-default pull-right"
+			ng-click="secondLiveScreen=true;firstLiveScreen=false;thirdLiveScreen=true;">Yes</a>
 			</div> -->
 			<div class=" text-center center-block ">
 				<a type="button" class="btn btn-default "
@@ -24,18 +24,21 @@
 	</div>
 	<div class="row" ng-show="secondLiveScreen" >
 		<form class="search center-block row text-center form">
-			<h1 class="text-center uofs-page-title"><a>{{$storage.eventName}}</a></h1>
-			<div class="text-center" style="font-size: xx-large;">
+			<h1 class="text-center uofs-page-title"><a>{{($storage.eventName).toUpperCase()}}</a></h1>
+			<!-- <div class="text-center" style="font-size: xx-large;">
 				Check-in
-			</div>
+			</div> -->
 			<div class="row  text-muted">
-				<span class="col-lg-4 col-md-4 col-sm-4">{{$storage.guestsList.length}} total attendees</span>
-				<span class="col-lg-4 col-md-4 col-sm-4 text-success">{{checkIns()}} checked-in</span>
-				<span class="col-lg-4 col-md-4 col-sm-4 text-warning">{{noCheckIns()}} not checked-in</span>
+				<span class="col-lg-4 col-md-4 col-sm-4  col-xs-12">{{$storage.guestsList.length}} total attendees</span>
+				<span class="col-lg-4 col-md-4 col-sm-4  col-xs-12 text-success">{{checkIns()}} checked-in</span>
+				<span class="col-lg-4 col-md-4 col-sm-4  col-xs-12 text-warning">{{noCheckIns()}} not checked-in</span>
 			</div>
 			<br class="clearfix"/>
-			<input ng-model="guestSearch" placeholder="Type ticket number, name, NSID or other info here to check-in a guest"
-			class="searchBar form-control" autofocus>
+			<div class="row">
+
+			</div>
+			<input ng-model="guestSearch" placeholder="Type ticket number, name, NSID or other info here to check-in an attendee"
+			class=" form-control " autofocus>
 			<div ng-show="visualize()" class="alert">
 				<p  class=" text-center center-block" >
 					{{instruction}}...

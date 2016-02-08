@@ -2,12 +2,11 @@
 <section class="guestinfo uofs-section container-fluid animated slideInRight" id="ticketPage">
 	<div class="hideOnPrint" ng-hide="printSet">
 		<div class="back_div pull-left ">
-			<a type="button" class="btn btn-default btn-xs" ng-href="#/guestList">&laquo; Back</a>
+			<a type="button" class="btn btn-default btn-xs" ng-href="#/addticket">
+				<span class="uofs-icon uofs-icon-chevron-left"></span>
+			</a>
 		</div>
-		<div class="pull-right">
-			<a type="button" class="btn btn-default btn-xs" ng-href="#/nameBadge">Design Name Badges &raquo;</a>
-		</div>
-		<h1 class="text-center uofs-page-title"><a>Ticket Designer</a></h1>
+		<h1 class="text-center uofs-page-title"><a>TICKET DESIGNER</a></h1>
 		<br />
 		<!-- <div ng-include="'partials/ticketSamples.html'"></div> -->
 		<div class="row dataFieldContainer  center-block ">
@@ -75,9 +74,9 @@
 									<img ng-src="{{croppedDataUrl}}" width="100%" class=""/>
 									<br />
 								</div>
-								<span class="ticketGName">{{$storage.guestsList[$storage.guestsList.length-1][0]}}</span>
+								<span class="ticketGName">{{$storage.guestsList[$storage.guestsList.length-1].num}}</span>
 								<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
-								src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{$storage.prefix}}{{$storage.guestsList[$storage.guestsList.length-1][0]}}&includetext&scale=1">
+								src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{$storage.prefix}}{{$storage.guestsList[$storage.guestsList.length-1].num}}&includetext&scale=1">
 								<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
 								<p class=" text-center userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
 									{{$storage.ageInfo}}
@@ -106,15 +105,15 @@
 				</div>
 				<div class=" center-block row text-center">
 					<br />
-					<div class="center-block col-md-6">
-						<button   type="button" class="btn btn-primary btn-xs btn-block"
+					<div class="center-block col-md-12">
+						<button   type="button" class="btn btn-primary  btn-block"
 						ng-click="printSet=true;($storage.sampleView) = true;">
-							Print Setup
+							Print
 						</button>
 					</div>
-					<div class="center-block col-md-6">
+					<!-- <div class="center-block col-md-6">
 						<a type="button" class="btn btn-primary btn-xs btn-block" ng-href="#/populate">Manage Guests</a>
-					</div>
+					</div> -->
 				</div>
 				<div class=" center-block row text-justify text-muted">
 					<br />
@@ -146,7 +145,7 @@
 						<div class="text-center row ticketColors">
 							<div class="styleBtns cf" ng-repeat="item in $storage.style ">
 								<a ng-click="ticketBackground(item.backgroundColor)">
-								<div type="button" class="btn btn-default btn-xs "
+								<div type="button" class="btn  btn-xs "
 								ng-style="textBtnStyle(item.backgroundColor)"
 								style="">
 									{{$index+1}}
@@ -170,7 +169,7 @@
 						<div class="text-center row ticketColors">
 							<div class="styleBtns_Txt cf" ng-repeat="item in $storage.style ">
 								<a ng-click="ticketTxtColor(item.color);">
-								<div type="button" class="btn btn-default btn-xs "
+								<div type="button" class="btn btn-xs "
 								ng-style="textBtnStyle(item.color)"
 								style="">
 									{{$index+1}}
@@ -190,7 +189,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<!-- <div class="row">
 			<br />
 			<div class="pull-left ">
 				<button   type="button" class="btn btn-primary  btn-xs " ng-click="printSet=true;($storage.sampleView) = true">
@@ -204,13 +203,13 @@
 				<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = false"
 				>Hide all Tickets &raquo;</a>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<div  ng-show="($storage.sampleView)" class="center-block text-center" >
 		<div class="pull-left ">
 			<button   type="button" class="btn btn-default  btn-xs" ng-show="printSet"
 			ng-click="printSet=false;($storage.sampleView) = false">
-				Go Back
+				<span class="uofs-icon uofs-icon-chevron-left"></span>
 			</button>
 		</div>
 		<div class="pull-right " >
@@ -236,9 +235,9 @@
 							<img ng-src="{{croppedDataUrl}}" width="100%" class=""/>
 							<br />
 						</div>
-						<span class="ticketGName">{{item[0]}}</span>
+						<span class="ticketGName">{{item.num}}</span>
 						<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
-						src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{item[0]}}&includetext&scale=1">
+						src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{item.num}}&includetext&scale=1">
 						<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
 						<p class="text-center userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
 							{{$storage.ageInfo}}

@@ -1,0 +1,110 @@
+<div ng-include="'partials/nav_party.html'"></div>
+<!-- Avery paper. Fit 6 per page. Design and just print -->
+<section class="guestinfo uofs-section container-fluid animated slideInUp" id="populatePage">
+	<h1 class="text-center uofs-page-title"><a>GENERATE TICKETS</a></h1>
+	<p class="text-muted"></p>
+	<div class="addWithNum  " >
+		<div class=" populate_div  " data-toggle="buttons" style="padding-bottom: 2%;">
+			<div class="">
+				<div class=" center-block col-xs-12">
+					<form role="form">
+						<div class="form-group col-md-12  col-xs-12 text-center">
+							<label >Total number of Tickets to generate</label>
+							<input  class="form-control"  placeholder="One per expected attendee" type="text"
+							ng-model="$storage.totalTickets" ng-required="true">
+						</div>
+						<div class="form-group col-md-12  col-xs-12 text-center">
+							<br />
+							<button ng-model="btnText" type="button" ng-show="true"
+							class="btn btn-primary " ng-click="generateTicketNums();guestAddFeedback=true;guestAddMsg();tDesign=true  ">
+								<span class="uofs-icon uofs-icon-checkmark"> </span> Add
+							</button>
+						</div>
+						<div class="form-group col-md-12  col-xs-12 text-center" ng-show="tDesign || $storage.guestsList.length>0">
+							<br />
+							<a type="button" class="btn btn-primary  "  ng-href="#/tickets"> Design Tickets  &raquo; </a>
+						</div>
+					</form>
+				</div>
+				<div class="row text-center center-block" ng-show="(tDesign || $storage.guestsList.length>0)">
+					<a class="col-md-12  col-xs-12 "   ng-show="$storage.guestsList.length>0" ng-click="guestAddFeedback = !guestAddFeedback">
+					<button type="button" class="btn btn-warning checkInBtn btn-xs ">
+						<span ng-show="guestAddFeedback"> <span class="uofs-icon uofs-icon-chevron-up"> </span></span>
+						<span ng-show="!guestAddFeedback"> <span class="uofs-icon uofs-icon-chevron-down"> </span></span>
+					</button> </a>
+				</div>
+			</div>
+
+			<h4 class="col-md-12  col-xs-12 " ng-show="guestAddFeedback"> &#926; You've added {{$storage.guestsList.length}} Tickets &#926;</h4>
+			<div class="guest cf text-center row " ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction"
+			ng-show="guestAddFeedback">
+				<div class="guest">
+					<div class="col-xs-2 col-md-2 " >
+						<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">{{item.icon}}</i></a>
+						<span class=" text-center">{{$index+1}}</span>
+					</div>
+					<div class="col-xs-5 col-md-5 ">
+						<h4>{{item.num}}</h4>
+					</div>
+					<div class="col-xs-5 col-md-5">
+						{{item.guestStatus}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<!-- {{$storage.x}} -->
+		<!-- <p >{{dateString()}}</p> -->
+		<button ng-hide="true" ng-click="$storage.$reset({ })">
+			Clear localStorage
+		</button>
+	</div>
+	<br />
+	<br />
+	<div class="clearfix ">
+		<div ng-show="backUp" class="row ">
+			<hr />
+			<div class="col-xs-4 col-md-4">
+				<p>
+					This is your guest list from the last time you removed all guests from Eventstone.
+				</p>
+				<p>
+					You currently have {{$storage.guestsList.length-2}} guests in your guest list.
+				</p>
+				<p>
+					There are {{$storage.backUpGuestList.length}} guests in the back up list.
+				</p>
+				<p ng-show="$storage.guestsList.length != $storage.backUpGuestList.length">
+					<span ng-show="popolateReplace"> You can restore from from this back up.
+						<button type="button" class="btn btn-primary btn-xs " ng-click="replacePop()">
+							Restore
+						</button></span>
+					<span ng-show="!popolateReplace">This would remove all current guests. Are you sure?
+						<button type="button" class="btn btn-primary btn-xs " ng-click="replacePop(); restoreFromBackUp()">
+							Yes. Replace guests.
+						</button></span>
+				</p>
+			</div>
+			<div class="col-xs-1 col-md-1" ></div>
+			<ul class="guestlist col-xs-7 col-md-7 ">
+				<!-- Click title to edit and save after change
+				<button type="button" class="btn btn-primary btn-xs " id="saveChange">
+				Save Change
+				</button></span>
+				<br /> -->
+				<div class="text-center row center-block">
+					<span id="titleContent" class=" text-center col-lg-2 col-md-2 col-sm-2 gListTitle" ng-repeat="a in  $storage.backUpGuestList[0]  | filter: guestSearch " contenteditable="true"> {{$storage.titleArr[$index]}} </span>
+
+				</div>
+				<br />
+
+				<div class="guest cf row center-block" ng-repeat="item in $storage.backUpGuestList | filter: guestSearch | orderBy: guestOrder:direction">
+					<span  class=" text-left col-lg-2 col-md-2 col-sm-2 gListNew" ng-repeat="a in item | filter: guestSearch "> {{a}} </span>
+
+				</div>
+			</ul>
+		</div>
+	</div>
+</section>
+

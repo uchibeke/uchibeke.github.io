@@ -10,6 +10,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	font: inherit;
 	font-size: 100%;
 	vertical-align: baseline;
+	font-family: 'Exo 2', 'Roboto', 'Candal', monospace, sans-serif;
 }
 
 html {
@@ -74,17 +75,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 	z-index: 10;
 }
 
-.searchBar {
-	width: 100%;
-}
-
+/*.searchBar {
+ width: 100%;
+ }*/
 .dataField {
 	width: 100%;
 }
 
 .guestlist li {
 	margin: 0;
-	padding: 10px 10px  10px;
+	padding: 10px 10px 10px;
 	border-bottom: 1px dotted black;
 }
 
@@ -105,20 +105,15 @@ padding-bottom: 10px;
 }
 
 #home_bg {
-	background-image: url("../images/home4.jpg");
+	background-image: url("../images/home2.jpg");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
 	background-size: cover;
-	color: #BED600;
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	-ms-backface-visibility: hidden;
 	-webkit-transform: translate3d(0, 0, 0);
-}
-
-#home_bg h1 {
-	color: #BED600;
 }
 
 #home_bg li a {
@@ -156,7 +151,7 @@ body {
 	height: 2.125in !important;
 	border-style: solid;
 	border: thin dashed red;
-	font-family: monospace !important;
+	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
 	background: linear-gradient(to right, gold , GoldenRod );
 	color: #191970;
 	text-align: center;
@@ -170,7 +165,7 @@ body {
 .ticketCol1 {
 	margin-top: 6px !important;
 	margin-bottom: 0px !important;
-	font-family: monospace !important;
+	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
 	/*width: 132px !important;*/
 	display: block !important;
 }
@@ -187,11 +182,11 @@ body {
 .ticketCol3 {
 	margin-top: 6px !important;
 	margin-bottom: 0px !important;
-	font-family: monospace !important;
+	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
 	/*width: 44px !important;*/
 }
 .centerDiv {
-	font-family: monospace !important;
+	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
 	width: 340px !important;
 }
 
@@ -232,14 +227,14 @@ body {
 
 .styleBtns div:hover {
 	padding-left: 10%;
-	border-right: medium solid black;
-	border-top: medium solid black;
+	border-right: medium solid black !important;
+	border-top: medium solid blac !importantk;
 }
 
 .styleBtns_Txt div:hover {
 	padding-left: 10%;
-	border-right: medium solid #B8AE9C;
-	border-top: medium solid #B8AE9C;
+	border-right: medium solid #B8AE9C !important;
+	border-top: medium solid #B8AE9C !important;
 }
 .affix {
 	top: 0;
@@ -273,16 +268,7 @@ body {
 	overflow-y: hidden;
 	-ms-overflow-y: hidden;
 }
-.ticketSamplesOuter {
-	/*zoom: 0.5;
-	 -moz-transform: scale(0.5);*/
-}
-.ticketSamples div.ticket {
-	/*width: 2.5in !important;
-	 height: 1.0625in !important;*/
-	/*zoom: 0.5;
-	 -moz-transform: scale(0.5);*/
-}
+
 .ticketSamples div {
 	display: inline-block;
 }
@@ -356,7 +342,7 @@ form .progress {
 	height: 3.1in !important;
 	border-style: solid;
 	border: thin solid #005A31;
-	font-family: monospace !important;
+	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
 	background: white;
 	color: #191970;
 	text-align: center;
@@ -399,7 +385,6 @@ form .progress {
 }
 
 .badgeRow3 {
-	/*border-bottom: thin solid gold;*/
 	height: 0.5in !important;
 	display: block !important;
 }
@@ -418,9 +403,9 @@ form .progress {
 	font-size: 30pt !important;
 	padding-bottom: 0px;
 	padding-top: 0px;
-	margin-top:  0px;
-	margin-bottom:  0px;
-	font-family: monospace !important;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
 	overflow: hidden !important;
 }
 
@@ -433,28 +418,11 @@ form .progress {
 	padding-left: 10% !important;
 }
 
-/*.nameBadgePrinting {
-	transform:  rotate( -90deg ) ;
-}*/
-/*.badgeBack {
-	transform-origin: right center;
-	transform:  rotateX( -180deg ) ;
-}*/
 .a {
-	
-    -ms-transform: rotate(20deg); /* IE 9 */
-    -webkit-transform: rotate(20deg); /* Safari */
-    transform: rotate(20deg);
-}
 
-.dropdown span {
-	/*font-size: 30px;*/
-	padding-left: 5px;
-}
-
-.dropdown span a{
-	width: 16.6666%;
-	/*padding: 5px;*/
+	-ms-transform: rotate(20deg); /* IE 9 */
+	-webkit-transform: rotate(20deg); /* Safari */
+	transform: rotate(20deg);
 }
 
 #navHome {
@@ -462,91 +430,176 @@ form .progress {
 }
 
 #navPopulate {
-	/*color: rgba(0, 255, 0, 1);*/
 	border-bottom: thin solid rgba(0, 255, 0, 1);
 }
 
 #navTickets {
-	/*color: rgba(0, 255, 255, 1);*/
 	border-bottom: thin solid rgba(0, 255, 255, 1);
 }
 
 #navBadges {
-	/*color: rgba(0, 0, 255, 1);*/
 	border-bottom: thin solid rgba(0, 0, 255, 1);
 }
 
 #navGList {
-	/*color: rgba(255, 0, 255, 1);*/
 	border-bottom: thin solid rgba(255, 0, 255, 1);
 }
 
 #navGoLive {
 	color: rgba(255, 0, 0, 1);
 	border-bottom: thin solid rgba(255, 0, 0, 1);
-	/*padding-right: 5px;*/
 }
 
 .gListNew {
-	display:inline-block !important;
+	display: inline-block !important;
 	font-size: 8pt !important;
 	min-height: 25px !important;
-	/*text-align: left !important;*/
-	/*page-break-inside: avoid !important;*/
 }
 
 .gListTitle {
-	display:inline-block !important;
+	display: inline-block !important;
 	font-size: 10pt !important;
 }
 
-
 .liveGList {
-	display:inline-block !important;
+	display: inline-block !important;
 	font-size: 12pt !important;
-	/*page-break-inside: avoid !important;*/
 }
 
 .hrInList {
-	padding: 0 !important;
-	margin 0 !important;
+	padding: 0 !important;margin 0 !important;
 }
 
-.guestLive {
-	/*padding: 0 !important;
-	margin 0 !important;
-	border-bottom: thin solid gray;
-	width: 95%;*/
-}
+
 
 .guest {
-	padding: 0 !important;
-	margin 0 !important;
+	padding: 0 !important;margin 0 !important;
 	border-bottom: thin solid gray !important;
 	width: 95% !important;
 	page-break-inside: avoid !important;
 }
-/*#populatePage {
-	border-left: thick solid rgba(0, 255, 0, 1);
-	border-right: thick solid rgba(0, 255, 0, 1);
+
+#home_center a {
+	font-size: 30px;
+	display: flex;
+	justify-content: center; /* align horizontal */
+	align-items: center; /* align vertical */
+	border: thin solid white !important;
 }
 
-#ticketPage {
-	border-left: thick solid rgba(0, 255, 255, 1);
-	border-right: thick solid rgba(0, 255, 255, 1);
+#home_center a:hover {
+	transform: scale(1.05) !important;
+	transition: 0.5s ease !important;
+	z-index: 10000;
 }
 
-#badgePage {
-	border-left: thick solid rgba(0, 0, 255, 1);
-	border-right: thick solid rgba(0, 0, 255, 1);
+#home_center a h1 {
+	color: #FFC02F;
 }
 
-#guestListPage {
-	border-left: thick solid rgba(255, 0, 255, 1);
-	border-right: thick solid rgba(255, 0, 255, 1);
-}*/
+#party_help {
+	color: #FFC02F;
+	top: 15px;
+	left: 15px;
+	position: fixed;
+	z-index: 100000;
+}
+
+#conf_help {
+	color: #FFC02F;
+	top: 15px;
+	right: 15px;
+	position: fixed;
+	z-index: 1000000;
+}
+
+#live_help {
+	color: #FFC02F;
+	right: 15px;
+	top: 45%;
+	position: fixed;
+	z-index: 10000000;
+}
+
+#party_help:hover, #conf_help:hover, #live_help:hover {
+	color: white;
+}
+
+a {
+	color: #00B3DD !important;
+	text-decoration: none
+}
+.btn-primary:focus, .btn-primary:hover, .btn-default:focus, .btn-default:hover, .btn-warning:focus, .btn-warning:hover {
+	background-color: black !important;
+	border: thin solid black !important;
+	text-decoration: underline;
+}
+
+.btn-primary, .btn-default {
+	color: white !important;
+	background-color: #00B3DD !important;
+	border: thin solid #00B3DD !important;
+}
+
+#home_party {
+	min-height: 500px !important;
+	background-image: url("../images/concert1.jpg") !important;
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+	background-size: cover !important;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+}
+
+#home_conf {
+	min-height: 300px !important;
+	background-image: url("../images/home4.jpg") !important;
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+	background-size: cover !important;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 60%;
+}
+
+#home_live {
+	min-height: 200px !important;
+	background-image: url("../images/checkin1.jpg") !important;
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+	background-size: cover !important;
+	position: fixed;
+	top: 40%;
+	bottom: 0;
+	right: 0;
+	bottom: 0;
+	/*margin:2%;*/
+}
+
+.home_description {
+	font-size: 18px !important;
+	font-family: 'Sanchez', 'Exo 2', 'Roboto', 'Candal', monospace, sans-serif !important;
+	font-weight: normal;
+	white-space: normal !important;
+	background: rgba(255, 192, 47, 0.7) !important;
+	color: white;
+	padding: 2%;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+	.home_description {
+		font-size: 14px !important;
+	}
+}
+
+.home_description:hover {
+	background: rgba(255, 192, 47, 0.9) !important
+}
 
 #livePage {
 	/*border-left: thick solid rgba(255, 0, 0, 1);
-	border-right: thick solid rgba(255, 0, 0, 1);*/
+	 border-right: thick solid rgba(255, 0, 0, 1);*/
 }

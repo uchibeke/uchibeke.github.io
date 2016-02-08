@@ -1,4 +1,10 @@
 <!doctype html>
+<!-- Avoid clutering the UI -->
+
+<!-- Eventstone for tickets -->
+<!-- Eventstone for name badges -->
+<!-- Eventstone for excel tickets -->
+
 <html lang="en" ng-app="myApp">
 	<head>
 		<meta charset="UTF-8">
@@ -6,7 +12,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="description" content="Uchi is student leader in the Peer Assisted learning program in the University of Saskatchewan.
 		Uchi also works, part time, in the ICT Service Desk in the University
-		where he support staff, faculty and students with their IT needs. 
+		where he support staff, faculty and students with their IT needs.
 
 		Uchi does these while taking an interdisciplinary BS and BA degree in the Computer Science Department of the U
 		of S majoring in Interactive Systems Design.">
@@ -28,8 +34,7 @@
 
 	<body  class="container" style="background-color: #E8EFF2;">
 		<!-- Navgation -->
-
-		<header class=" navHeader" >
+		<header class=" navHeader " >
 			<!-- U of S crest and website name -->
 			<div class="uofs-header-masthead" role="banner" style="background-color: #E8EFF2;">
 				<a href="#" class="navbar-text text-center" ><h2>UCHI </h2></a>
@@ -49,8 +54,8 @@
 			</div>
 		</header>
 		<div class="" ng-view></div>
-		<div ng-include="'partials/footer.html'" ></div>
-		
+		<div ng-include="'views/footer.html'" ></div>
+
 		<!-- Limestone JS -->
 		<script src="js/limestone.js"></script>
 		<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>

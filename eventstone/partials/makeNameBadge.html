@@ -4,17 +4,17 @@
 <section class="guestinfo uofs-section container-fluid animated slideInRight" id="badgePage">
 	<div class="hideOnPrint" ng-hide="printSet">
 		<div class="back_div pull-left ">
-			<a type="button" class="btn btn-default btn-xs" ng-href="#/tickets">&laquo; Back</a>
+			<a type="button" class="btn btn-default btn-xs" ng-href="#/populate">
+			<span class="uofs-icon uofs-icon-chevron-left"></span> </a></a>
 		</div>
 		<div class="pull-right">
 			<a type="button" class="btn btn-default btn-xs" ng-href="#/live">Start Event &raquo;</a>
 		</div>
-		<h1 class="text-center uofs-page-title"><a>Badge Designer</a></h1>
+		<h1 class="text-center uofs-page-title"><a>BADGE DESIGNER</a></h1>
 		<p>
 			Design name badges by uploading the logo of the event and up to
 			4 logos event sponsors. Names of attendees will be added automatically.
 		</p>
-		<!-- <div ng-include="'partials/ticketSamples.html'"></div> -->
 		<div class="row dataFieldContainer  center-block ">
 			<div class="col-md-4 col-xs-12 pull-left ticketContent">
 				<h2 class="text-center">Content</h2>
@@ -204,7 +204,7 @@
 						<div class="text-center row ticketColors">
 							<div class="styleBtns cf" ng-repeat="item in $storage.style ">
 								<a ng-click="ticketBackground(item.backgroundColor)">
-								<div type="button" class="btn btn-default btn-xs "
+								<div type="button" class="btn  btn-xs "
 								ng-style="textBtnStyle(item.backgroundColor)"
 								style="">
 									{{$index+1}}
@@ -215,7 +215,7 @@
 						<div class="text-center row">
 							<input ng-model="userFillColor" class="row text-center" style="width: 100%;" placeholder="color"
 							/>
-							<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketBackground(userFillColor)">
+							<button  type="button" class="btn btn-xs " ng-click="ticketBackground(userFillColor)">
 								Ok
 							</button>
 							<!-- Use your own color. Enter color name or code -->
@@ -228,7 +228,7 @@
 						<div class="text-center row ticketColors">
 							<div class="styleBtns_Txt cf" ng-repeat="item in $storage.style ">
 								<a ng-click="ticketTxtColor(item.color);">
-								<div type="button" class="btn btn-default btn-xs "
+								<div type="button" class="btn  btn-xs "
 								ng-style="textBtnStyle(item.color)"
 								style="">
 									{{$index+1}}
@@ -240,7 +240,7 @@
 							<!-- Use your own color. Enter color name or code -->
 							<input ng-model="userTextColor" class="row text-center" style="width: 100%;" placeholder="color"
 							/>
-							<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketTxtColor(userTextColor)">
+							<button  type="button" class="btn  btn-xs " ng-click="ticketTxtColor(userTextColor)">
 								Ok
 							</button>
 						</div>
@@ -268,7 +268,7 @@
 		<div class="pull-left ">
 			<button   type="button" class="btn btn-default  btn-xs" ng-show="printSet"
 			ng-click="printSet=false;($storage.sampleView) = false">
-				Go Back
+				<span class="uofs-icon uofs-icon-chevron-left"></span>
 			</button>
 		</div>
 		<div class="pull-right " >

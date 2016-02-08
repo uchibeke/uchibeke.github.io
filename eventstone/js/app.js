@@ -8,6 +8,9 @@ function($routeProvider) {
 	}).when('/populate', {
 		templateUrl : 'partials/populate.html',
 		controller : 'ListController'
+	}).when('/addticket', {
+		templateUrl : 'partials/addticket.html',
+		controller : 'ListController'
 	}).when('/home', {
 		templateUrl : 'partials/home.html',
 		controller : 'ListController'
@@ -23,8 +26,14 @@ function($routeProvider) {
 	}).when('/nameBadge', {
 		templateUrl : 'partials/makeNameBadge.html',
 		controller : 'TicketController'
-	}).when('/about', {
-		templateUrl : 'partials/about.html',
+	}).when('/aboutconf', {
+		templateUrl : 'partials/about_conf.html',
+		controller : 'TicketController'
+	}).when('/aboutparty', {
+		templateUrl : 'partials/about_party.html',
+		controller : 'TicketController'
+	}).when('/aboutlive', {
+		templateUrl : 'partials/about_live.html',
 		controller : 'TicketController'
 	}).otherwise({
 		redirectTo : '/home'

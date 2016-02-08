@@ -13,7 +13,7 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 		// To store the string from user input
 		$scope.dataField = '';
 
-		$scope.listBtnText = 'Add Guests';
+		$scope.listBtnText = 'Add';
 		$scope.$storage = $localStorage.$default({
 			guestsList : $scope.guests
 		});
@@ -56,7 +56,6 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 				newA.push({
 					name : splicedA,
 					icon : 'x',
-					// id : $scope.dateString(),
 					checkedIn : false,
 					btnText : 'Check-in',
 					guestStatus : 'Not checked-in'
@@ -110,7 +109,6 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 			} else if (($scope.$storage.guestsList[x].guestStatus) == 'Not checked-in') {
 				var d = new Date();
 				var ds = d.toLocaleTimeString();
-				// + " on " + (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
 				$scope.$storage.guestsList[x].guestStatus = 'Signed in ' + ds;
 			}
 		};
@@ -139,23 +137,32 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 			if ($scope.$storage.totalTickets.length <= 0) {
 				alert("You must enter the number of tickets to generate");
 			} else {
-				$scope.dataFieldNum = "";
-				var numbDigits = 10 - $scope.$storage.prefix.length;
-				var firstNum = " ";
+				var numbDigits = 10 - 6;
+				var firstNum = "";
 				while (firstNum.length > numbDigits || firstNum.length < numbDigits) {
 					firstNum = parseInt(Math.random().toString().slice(2, numbDigits + 2));
 				}
+				var obj = [];
 				for (var i = 0; i < $scope.$storage.totalTickets; i++) {
-					$scope.dataFieldNum = ($scope.$storage.prefix + "" + (firstNum + 1)) + " +" + $scope.dataFieldNum;
+					var element = {};
+					element.num = (stringGen(3) + "" + (firstNum + 1) + stringGen(3)).toUpperCase();
+					element.guestStatus = 'Not checked-in';
+					obj.push(element);
 					firstNum--;
 				}
-				// $scope.$storage.guestsList = Object.assign([], $scope.testObj);
-				$scope.submitUserInput($scope.dataFieldNum);
+				$scope.$storage.guestsList = Object.assign([], obj);
 				$scope.$storage.prefix = '';
 				$scope.$storage.totalTickets = '';
-				$scope.dataFieldNum = '';
 			}
 		};
+
+		function stringGen(len) {
+			var text = "";
+			var charset = "abcdefghijklmnopqrstuvwxyz";
+			for (var i = 0; i < len; i++)
+				text += charset.charAt(Math.floor(Math.random() * charset.length));
+			return text;
+		}
 
 		// $scope.addGTab = true;
 
@@ -253,7 +260,6 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 			document.body.innerHTML = originalContents;
 		};
 
-		
 		// Live screens
 		$scope.firstLiveScreen = true;
 		$scope.secondLiveScreen, $scope.thirdLiveScreen, $scope.fourthLiveScreen = false;
@@ -271,9 +277,9 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 		$scope.guestAddMsg = function() {
 			$timeout(function() {
 				$scope.guestAddFeedback = false;
-			}, 5000);
+			}, 10000);
 		};
-		
+
 		$scope.checkIns = function() {
 			var checkIns = 0;
 			for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
@@ -287,7 +293,7 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 		$scope.noCheckIns = function() {
 			return $scope.$storage.guestsList.length - $scope.checkIns();
 		};
-		
+
 		$scope.sessionTotal = function(sess, column) {
 			var totReg = 0;
 			var col = column - 1;
@@ -298,19 +304,18 @@ function($scope, $http, $localStorage, $timeout, $sce) {
 			}
 			return totReg;
 		};
-		
+
 		// $scope.itemsSummary = function(column) {
-			// var totReg = 0;
-			// var col = column - 1;
-			// for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
-				// var sess = $scope.$storage.guestsList[i][col];
-				// if ((($scope.$storage.guestsList[i][col]).toLowerCase().replace(/\W+/g, " ")).indexOf(sess.toLowerCase().replace(/\W+/g, " ")) > -1) {
-					// totReg = totReg + 1;
-				// }
-			// }
-			// return totReg;
+		// var totReg = 0;
+		// var col = column - 1;
+		// for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
+		// var sess = $scope.$storage.guestsList[i][col];
+		// if ((($scope.$storage.guestsList[i][col]).toLowerCase().replace(/\W+/g, " ")).indexOf(sess.toLowerCase().replace(/\W+/g, " ")) > -1) {
+		// totReg = totReg + 1;
+		// }
+		// }
+		// return totReg;
 		// };
-		
 
 		$scope.randomName = function() {
 			var arrOfNames1 = ["Jason", "Jim", "Bird", "Shari", "Lily", "Shukla", "Jake", "Kurt", "Sylvia", "Smith", "Luke", "Brent", "Tony", "Chi", "Chen", "Yang", "Ada", "Oluchi", "Maj"];

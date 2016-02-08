@@ -1,16 +1,17 @@
 <div ng-include="'partials/nav.html'"></div>
 <section class="guestpage container-fluid uofs-section animated slideInDown" id="guestListPage">
 	<div class=" pull-left" >
-		<a class="btn btn-default btn-xs" type="button" ng-href="#/populate">&laquo; Back</a>
+		<a class="btn btn-default btn-xs" type="button" ng-href="#/populate"> 
+			<span class="uofs-icon uofs-icon-chevron-left"></span> </a>
 	</div>
-	<div class=" pull-right" >
+	<!-- <div class=" pull-right" >
 		<a class="btn btn-default btn-xs" type="button" ng-href="#/tickets">Design Tickets &raquo;</a>
-	</div>
+	</div> -->
 	<div class="guestlist row  text-center center-block" >
 		<div class="row">
-			<h1 class="text-center uofs-page-title"><a>List</a></h1>
+			<h1 class="text-center uofs-page-title"><a>LIST</a></h1>
 			<form class="search  text-center form col-xs-12 col-md-10">
-				<input ng-model="guestSearch" placeholder="Search for a guest"
+				<input ng-model="guestSearch" placeholder="Search for a ticket number or name"
 				autofocus="autofocus" class="searchBar form-control" >
 			</form>
 			<p style="" class="col-xs-12 col-md-2 pull-right">
@@ -18,7 +19,7 @@
 					Print List
 				</button>
 				<button  ng-model="btnText" type="button" class="btn btn-warning btn-xs"
-				ng-show="$storage.guestsList.length > 0 <= 0" ng-click="deleteStored()">
+				ng-show="$storage.guestsList.length > 0" ng-click="deleteStored()">
 					Remove All
 				</button>
 			</p>
@@ -53,7 +54,8 @@
 					<p class=" text-muted" ng-show="summaryItem.length > 0 && columnNumber.length > 0">
 						{{summaryItem}} was found <b class="text-success" style="font-size: xx-large;">{{sessionTotal(summaryItem, columnNumber)}}</b> times in
 						column {{columnNumber}}
-					</p><br />
+					</p>
+					<br />
 					<div class="row text-center " >
 						<span class="col-lg-4 col-md-4 col-sm-4">{{$storage.guestsList.length}} total</span>
 						<!-- <br /> -->
@@ -66,16 +68,6 @@
 		</div>
 		<div id="GList" class="row" >
 			<div class="text-center " >
-				<!-- <p style="" class="col-xs-12 col-md-2 text-center"> -->
-				<!-- <div class="col-xs-1 col-md-1">
-				<h3>S/N</h3>
-				</div>
-				<div class="col-xs-6 col-md-6">
-				<h3>Name/Ticket Number</h3>
-				</div>
-				<div class="col-xs-5 col-md-5">
-				<h3>Status</h3>
-				</div> -->
 			</div>
 			<div class="guest cf text-left row center-block" ng-repeat="item in $storage.guestsList | filter: guestSearch ">
 				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 col-xs-2  gListNew" ng-repeat="a in item | filter: guestSearch "> {{a}} </span>
@@ -90,7 +82,7 @@
 					Print List
 				</button>
 				<button  ng-model="btnText" type="button" class="btn btn-warning btn-xs"
-				ng-show="$storage.guestsList.length > 0 <= 0" ng-click="deleteStored()">
+				ng-show="$storage.guestsList.length > 0" ng-click="deleteStored()">
 					Remove All
 				</button>
 			</p>
