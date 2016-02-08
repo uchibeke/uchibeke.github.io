@@ -11,6 +11,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	font-size: 100%;
 	vertical-align: baseline;
 	font-family: 'Exo 2', 'Roboto', 'Candal', monospace, sans-serif;
+	-webkit-print-color-adjust: exact !important;
+	print-color-adjust: exact !important;
 }
 
 html {
@@ -126,9 +128,6 @@ padding-bottom: 10px;
 	width: 100%;
 	opacity: 1;
 }
-body {
-	background-color: #fffff;
-}
 
 .navBtns {
 	padding: 1.5%;
@@ -145,6 +144,13 @@ body {
 	print-color-adjust: exact !important;
 }
 
+@media print {
+	body, div, a, p, li {
+		-webkit-print-color-adjust: exact !important;
+		print-color-adjust: exact !important;
+	}
+}
+
 .ticket {
 	page-break-inside: avoid !important;
 	width: 5in !important;
@@ -152,9 +158,10 @@ body {
 	border-style: solid;
 	border: thin dashed red;
 	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
-	background: linear-gradient(to right, gold , GoldenRod );
 	color: #191970;
 	text-align: center;
+	-webkit-print-color-adjust: exact !important;
+	print-color-adjust: exact !important;
 }
 
 .guestInList {
@@ -168,6 +175,8 @@ body {
 	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
 	/*width: 132px !important;*/
 	display: block !important;
+	-webkit-print-color-adjust: exact !important;
+	print-color-adjust: exact !important;
 }
 .ticketCol2 {
 	margin-top: 6px !important;
@@ -177,6 +186,8 @@ body {
 	border-left: medium solid #363942;
 	/*width: 352px !important;*/
 	display: block !important;
+	-webkit-print-color-adjust: exact !important;
+	print-color-adjust: exact !important;
 }
 
 .ticketCol3 {
@@ -469,8 +480,6 @@ form .progress {
 .hrInList {
 	padding: 0 !important;margin 0 !important;
 }
-
-
 
 .guest {
 	padding: 0 !important;margin 0 !important;
