@@ -140,9 +140,7 @@ a {
 	width: 100%;
 	cursor: pointer;
 }
-.stubornImgDiv img:hover {
-	width: 30% !important;
-}
+
 
 .footerDiv a {
 	padding: 2%;
