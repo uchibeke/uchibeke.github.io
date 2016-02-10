@@ -1,7 +1,7 @@
 var guestControllers = angular.module('guestControllers', [])
 
 guestControllers.controller('ListController', ['$scope', '$http',  '$timeout',
-function($scope, $http, $timeout) {
+function($scope, $http, $timeout, analytics) {
 	$http.get('js/old_data.json').success(function(data) {
 		// Data from json file
 		$scope.crops = data;
