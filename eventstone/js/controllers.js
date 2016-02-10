@@ -145,7 +145,7 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics) {
 				var obj = [];
 				for (var i = 0; i < $scope.$storage.totalTickets; i++) {
 					var element = {};
-					element.num = (stringGen(3) + "" + (firstNum + 1) + stringGen(3)).toUpperCase();
+					element[0] = (stringGen(3) + "" + (firstNum + 1) + stringGen(3)).toUpperCase();
 					element.guestStatus = 'Not checked-in';
 					obj.push(element);
 					firstNum--;

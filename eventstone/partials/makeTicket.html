@@ -74,9 +74,9 @@
 									<img ng-src="{{croppedDataUrl}}" width="100%" class=""/>
 									<br />
 								</div>
-								<span class="ticketGName">{{$storage.guestsList[$storage.guestsList.length-1].num}}</span>
+								<span class="ticketGName">{{$storage.guestsList[$storage.guestsList.length-1][0]}}</span>
 								<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
-								src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{$storage.prefix}}{{$storage.guestsList[$storage.guestsList.length-1].num}}&includetext&scale=1">
+								src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{$storage.prefix}}{{$storage.guestsList[$storage.guestsList.length-1][0]}}&includetext&scale=1">
 								<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
 								<p class=" text-center userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
 									{{$storage.ageInfo}}
@@ -155,7 +155,7 @@
 						<br />
 						<div class="text-center row">
 							<input ng-model="userFillColor" class="row text-center" style="width: 100%;" placeholder="color"
-							/>
+							/><br />
 							<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketBackground(userFillColor)">
 								Ok
 							</button>
@@ -180,7 +180,7 @@
 						<div class="text-center row">
 							<!-- Use your own color. Enter color name or code -->
 							<input ng-model="userTextColor" class="row text-center" style="width: 100%;" placeholder="color"
-							/>
+							/><br />
 							<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketTxtColor(userTextColor)">
 								Ok
 							</button>
@@ -235,9 +235,9 @@
 							<img ng-src="{{croppedDataUrl}}" width="100%" class=""/>
 							<br />
 						</div>
-						<span class="ticketGName">{{item.num}}</span>
+						<span class="ticketGName">{{item[0]}}</span>
 						<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
-						src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{item.num}}&includetext&scale=1">
+						src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{item[0]}}&includetext&scale=1">
 						<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
 						<p class="text-center userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
 							{{$storage.ageInfo}}
