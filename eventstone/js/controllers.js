@@ -1,7 +1,7 @@
 var guestControllers = angular.module('guestControllers', ['ngStorage', 'ngSanitize'])
 
 guestControllers.controller('ListController', ['$scope', '$http', '$localStorage', '$timeout', '$sce',
-function($scope, $http, $localStorage, $timeout, $sce) {
+function($scope, $http, $localStorage, $timeout, $sce, analytics) {
 	$http.get('js/data.json').success(function(data) {
 		// Data from json file
 		$scope.guests = [];

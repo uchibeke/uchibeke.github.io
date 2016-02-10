@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'guestControllers', 'ticketControllers']);
+var myApp = angular.module('myApp', ['ngRoute', 'guestControllers', 'ticketControllers','analytics']);
 
 myApp.config(['$routeProvider',
 function($routeProvider) {

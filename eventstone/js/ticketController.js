@@ -1,7 +1,7 @@
 var ticketControllers = angular.module('ticketControllers', ['ngStorage',  'ngSanitize', 'ngFileUpload', 'ngImgCrop'])
 
 guestControllers.controller('TicketController', ['$scope', '$http', '$localStorage', '$sce', 'Upload', '$timeout',
-function($scope, $http, $localStorage, $sce, Upload, $timeout) {
+function($scope, $http, $localStorage, $sce, Upload, $timeout, analytics) {
 	$http.get('js/tickets.json').success(function(tdata) {
 		// Guest Data from json file
 		$scope.ticketdata = tdata;
