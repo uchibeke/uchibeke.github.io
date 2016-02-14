@@ -6,7 +6,8 @@
 	<div class="pull-right">
 	<a type="button" class="btn btn-default btn-xs" ng-href="#/guestList">Attendee List &raquo;</a>
 	</div> -->
-	<h1 class="text-center uofs-page-title"><a>ADD FROM EXCEL</a></h1>
+	<h1 class="text-center uofs-page-title"><a>ADD FROM SPREADSHEET</a></h1>
+	<h4 class="text-center "><a>{{$storage.eventName}}</a></h4>
 	<p class="text-muted">
 		<!-- You can create a list of attendees by pasting columns from excel file.
 		If you need to add details from separate columns of an excel file,
@@ -42,9 +43,9 @@
 					<a type="button" class="btn btn-primary  "  ng-href="#/nameBadge"> Design Name Badges  &raquo; </a>
 				</div>
 				<div class="row text-center center-block">
-					<a class="col-md-12  col-xs-12  "   ng-show="$storage.guestsList.length>0" 
-						ng-click="guestAddFeedback = !guestAddFeedback">
-					<button type="button" class="btn btn-primary checkInBtn btn-xs btn-warning ">
+					<a class="col-md-12  col-xs-12  "   ng-show="$storage.guestsList.length>0"
+					ng-click="guestAddFeedback = !guestAddFeedback">
+					<button type="button" class="btn btn-primary checkInBtn btn-xs  ">
 						<span ng-show="guestAddFeedback"> <span class="uofs-icon uofs-icon-chevron-up"> </span></span>
 						<span ng-show="!guestAddFeedback"> <span class="uofs-icon uofs-icon-chevron-down"> </span></span>
 						<!-- <span ng-show="guestAddFeedback">Hide Attendees</span>
@@ -56,6 +57,7 @@
 			<h4 class="col-md-12  col-xs-12 " ng-show="guestAddFeedback"> &#926; You've added {{$storage.guestsList.length}} Guests &#926;</h4>
 			<div class="guest cf text-center row center-block" ng-repeat="item in $storage.guestsList | filter: guestSearch "
 			ng-show="guestAddFeedback">
+				<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">X</i></a>
 				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 gListNew" ng-repeat="a in item | filter: guestSearch "> {{a}} </span>
 			</div>
 		</div>
@@ -76,18 +78,9 @@
 					class="btn btn-primary btn-xs" ng-click="clearField(dataField); dataField = ' ' ">
 						Clear Field
 					</button>
-					<!-- <button ng-model="btnText" type="button"
-					class="btn btn-primary " ng-click="randomName()">
-					Random Name
-					</button> -->
 				</div>
 				<div class="pull-left" style="width: 50%;">
-					<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length-2}} Guests &#926;</h4>
-					<a class="pull-right"   ng-show="$storage.guestsList.length-2>0" ng-click="guestAddFeedback = !guestAddFeedback">
-					<button type="button" class="btn btn-primary checkInBtn btn-xs ">
-						<span ng-show="guestAddFeedback">Hide Guests</span>
-						<span ng-show="!guestAddFeedback">View Guests</span>
-					</button> </a>
+					<h4 class="pull-left"> &#926; You've added {{$storage.guestsList.length}} Guests &#926;</h4>
 				</div>
 			</div>
 			<div class="" ng-show="nbDesign || $storage.guestsList.length>0">
@@ -115,12 +108,6 @@
 			Clear localStorage
 		</button>
 	</div>
-	<!-- <div class="pull-right" ng-show="nbDesign || $storage.guestsList.length>0">
-	<a type="button" class="btn btn-primary  btn-xs "  ng-href="#/nameBadges"> Design Name badges &raquo; </a>
-	</div> -->
-	<!-- <div class="pull-left">
-	<a type="button" class="btn btn-primary  btn-xs " ng-click="backUpBtn()">{{backUpTxt()}} &raquo;</a>
-	</div> -->
 	<div class="clearfix ">
 		<div ng-show="backUp" class="row ">
 			<hr />

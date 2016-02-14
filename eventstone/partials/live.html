@@ -6,17 +6,16 @@
 	</p>
 	<div class="row text-center text-info center-block" ng-show="firstLiveScreen">
 		<input ng-model="$storage.eventName" placeholder="Enter Event name. Refresh page to change" class="form-control">
-		<!-- <h2>Would you like to allow more people to register during this event?</h2> -->
 		<br />
+		<h3>Would you want to add new people to the list during your event?</h3>
+		<!-- <br /> -->
 
 		<div class="row btn-group-lg">
-			<!-- <div class="col-lg-6 col-md-6">
-			<a type="button" class="btn btn-default pull-right"
-			ng-click="secondLiveScreen=true;firstLiveScreen=false;thirdLiveScreen=true;">Yes</a>
-			</div> -->
 			<div class=" text-center center-block ">
 				<a type="button" class="btn btn-default "
-				ng-click="secondLiveScreen=true;firstLiveScreen=false " > Go</a>
+				ng-click="secondLiveScreen=true;firstLiveScreen=false;addNewGuestOption=true; " > Yes</a>
+				<a type="button" class="btn btn-default "
+				ng-click="secondLiveScreen=true;firstLiveScreen=false; " > No</a>
 			</div>
 		</div>
 		<!-- You can change this at any time. Just refresh the page. -->
@@ -26,7 +25,7 @@
 		<form class="search center-block row text-center form">
 			<h1 class="text-center uofs-page-title"><a>{{($storage.eventName).toUpperCase()}}</a></h1>
 			<!-- <div class="text-center" style="font-size: xx-large;">
-				Check-in
+			Check-in
 			</div> -->
 			<div class="row  text-muted">
 				<span class="col-lg-4 col-md-4 col-sm-4  col-xs-12">{{$storage.guestsList.length}} total attendees</span>
@@ -42,7 +41,6 @@
 			<div ng-show="visualize()" class="alert">
 				<p  class=" text-center center-block" >
 					{{instruction}}...
-					<!-- {{sessionTotal("Speech Language ", 3)}} -->
 				</p>
 			</div>
 
@@ -56,58 +54,43 @@
 				</span>
 				<div class="row">
 					<button  type="button" ng-hide="hideBtn"
-					class="btn btn-primary checkInBtn  btn-xs pull-right" ng-click="checkedIn($storage.guestsList.indexOf(item));hideBtn=true;">
+					class="btn btn-primary checkInBtn  btn-danger pull-right" ng-click="checkedIn($storage.guestsList.indexOf(item));hideBtn=true;">
 						Check-In
 					</button>
 				</div>
-				<!-- <a>
-				<div class="info">
-				<div class="row" style="padding-bottom: 1%;">
-				<div class="col-xs-10 col-md-10  pull-left ">
-				<h3>{{item.name}}</h3>
-				</div>
-				<div class="col-xs-2 col-md-2 text-left">
-				<button  type="button"
-				class="btn btn-primary checkInBtn " ng-click="checkedIn($storage.guestsList.indexOf(item))">
-				{{item.btnText}}
-				</button>
-				</div>
-				</div>
-				</div> </a> -->
 			</li>
 		</ul>
 	</div>
-	<!-- <p class="" ng-show="thirdLiveScreen">
-	Want to add new guest...?
-	<button  type="button"
-	class="btn btn-default btn-xs" ng-click="fourthLiveScreen=true">
-	Add
+	<button  type="button" ng-show="addNewGuestOption"
+	class="btn btn-default" ng-click="showAddField=!showAddField">
+		Add New Attendee
 	</button>
-	</p>
-	<div class=" text-center text-info center-block" ng-show="thirdLiveScreen && fourthLiveScreen">
-	<div class=" col-lg-4 col-md-4" >
-	<input placeholder="Enter your name, NSID or other info and click register"
-	class=" form-control" ng-model="userRegInfo">
-	</div>
-	<div class=" col-lg-3 col-md-3" >
-	<button  type="button"
-	class="btn btn-primary "
-	ng-click="submitUserInput(userRegInfo);userRegInfo = '';checkedIn($storage.guestsList.length-1);liveMsgStatus=true;liveMsg();">
-	Add and Check in
-	</button>
-	</div>
-	<div class=" col-lg-5 col-md-5" ng-show="liveMsgStatus">
-	{{$storage.guestsList[$storage.guestsList.length-1].name}} - {{$storage.guestsList[$storage.guestsList.length-1].guestStatus}}
-	</div>
 	<br />
-	</div> -->
+	<div class="row text-center text-info center-block" ng-show="addNewGuestOption && showAddField">
+		<br />
+		<div class=" col-lg-4 col-md-4" >
+			<input placeholder="Enter your name, NSID or other info and click register"
+			class=" form-control" ng-model="userRegInfo">
+		</div>
+		<div class=" col-lg-3 col-md-3" >
+			<button  type="button"
+			class="btn btn-primary"
+			ng-click="submitUserInput(userRegInfo);userRegInfo = '';checkedIn($storage.guestsList.length-1);liveMsgStatus=true;liveMsg();">
+				Add and Check in
+			</button>
+		</div>
+		<div class=" col-lg-5 col-md-5" ng-show="liveMsgStatus">
+			<h3> {{$storage.guestsList[$storage.guestsList.length-1][0]}} - {{$storage.guestsList[$storage.guestsList.length-1].guestStatus}}</h3>
+		</div>
+		<br />
+	</div>
 	<br />
 	<div id="txt" class="text-center text-muted" style="font-size: 80px;;"></div>
 	<div class="back_div pull-left close">
 		<a ng-href="#/home">&laquo; Exit</a>
 	</div>
-	<div class="pull-right">
-		<a type="button" class="btn btn-default btn-xs" ng-href="#/aboutparty" target="_blank"> Help  &raquo;</a>
+	<div class="pull-right" style="font-size: 25px;">
+		<a type="button" class="" ng-href="#/aboutparty" target="_blank"> <i class="uofs-icon uofs-icon-help"></i></a>
 	</div>
 </section>
 

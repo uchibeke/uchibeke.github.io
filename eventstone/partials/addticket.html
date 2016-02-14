@@ -2,7 +2,9 @@
 <!-- Avery paper. Fit 6 per page. Design and just print -->
 <section class="guestinfo uofs-section container-fluid" id="populatePage">
 	<h1 class="text-center uofs-page-title"><a>GENERATE TICKETS</a></h1>
+	<h4 class="text-center "><a>{{$storage.eventName}}</a></h4>
 	<p class="text-muted"></p>
+	<!-- <div ng-repeat="a in $storage.backUpGuestList">{{a.guestStatus}}</div> -->
 	<div class="addWithNum  " >
 		<div class=" populate_div  " data-toggle="buttons" style="padding-bottom: 2%;">
 			<div class="">
@@ -28,7 +30,7 @@
 				</div>
 				<div class="row text-center center-block" ng-show="(tDesign || $storage.guestsList.length>0)">
 					<a class="col-md-12  col-xs-12 "   ng-show="$storage.guestsList.length>0" ng-click="guestAddFeedback = !guestAddFeedback">
-					<button type="button" class="btn btn-warning checkInBtn btn-xs ">
+					<button type="button" class="btn btn-primary checkInBtn btn-xs">
 						<span ng-show="guestAddFeedback"> <span class="uofs-icon uofs-icon-chevron-up"> </span></span>
 						<span ng-show="!guestAddFeedback"> <span class="uofs-icon uofs-icon-chevron-down"> </span></span>
 					</button> </a>
@@ -36,7 +38,7 @@
 			</div>
 
 			<h4 class="col-md-12  col-xs-12 " ng-show="guestAddFeedback"> &#926; You've added {{$storage.guestsList.length}} Tickets &#926;</h4>
-			<div class="guest cf text-center row " ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction"
+			<!-- <div class="guest cf text-center row " ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction"
 			ng-show="guestAddFeedback">
 				<div class="guest">
 					<div class="col-xs-2 col-md-2 " >
@@ -50,6 +52,11 @@
 						{{item.guestStatus}}
 					</div>
 				</div>
+			</div> -->
+			<div class="guest cf text-center row center-block" ng-repeat="item in $storage.guestsList | filter: guestSearch "
+			ng-show="guestAddFeedback">
+				<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">X</i></a>
+				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 gListNew" ng-repeat="a in item | filter: guestSearch "> {{a}} </span>
 			</div>
 		</div>
 	</div>

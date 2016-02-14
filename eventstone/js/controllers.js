@@ -54,10 +54,10 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics) {
 					splicedA = arr[i];
 				}
 				newA.push({
-					name : splicedA,
-					icon : 'x',
-					checkedIn : false,
-					btnText : 'Check-in',
+					0 : splicedA,
+					// icon : 'x',
+					// checkedIn : false,
+					// btnText : 'Check-in',
 					guestStatus : 'Not checked-in'
 				});
 			}
@@ -75,9 +75,9 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics) {
 
 		$scope.deleteStored = function() {
 			if (!(angular.equals($scope.$storage.guestsList, $scope.guests))) {
-				$scope.$storage.backUpGuestList = {};
+				$scope.$storage.backUpGuestList = [];
 				$scope.$storage.backUpGuestList = $scope.$storage.guestsList;
-				$scope.$storage.guestsList = {};
+				$scope.$storage.guestsList = [];
 				$scope.$storage.guestsList = $scope.guests;
 			}
 		};
@@ -105,7 +105,7 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics) {
 		};
 
 		$scope.checkedIn = function(x) {
-			if ($scope.$storage.guestsList[x].checkedIn == true) {
+			if ((($scope.$storage.guestsList[x].guestStatus.toLowerCase().replace(/\W+/g, " ")).indexOf('Not checked-in'))> -1) {
 			} else if (($scope.$storage.guestsList[x].guestStatus) == 'Not checked-in') {
 				var d = new Date();
 				var ds = d.toLocaleTimeString();
@@ -235,8 +235,8 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics) {
 
 		$scope.restoreFromBackUp = function() {
 			if ($scope.$storage.backUpGuestList.length > 0) {
-				$scope.$storage.guestsList = {};
-				Array.prototype.push.apply($scope.$storage.guestsList, $scope.$storage.backUpGuestList);
+				$scope.$storage.guestsList = [];
+				$scope.$storage.guestsList = $scope.$storage.backUpGuestList ;
 			} else {
 
 			}
@@ -267,9 +267,11 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics) {
 		// Live screen check in message
 		$scope.liveMsgStatus = false;
 		$scope.liveMsg = function() {
+			var theTime = 5000;
 			$timeout(function() {
 				$scope.liveMsgStatus = false;
-			}, 5000);
+				$scope.showAddField = false;
+			}, theTime);
 		};
 
 		// Live screen check in message

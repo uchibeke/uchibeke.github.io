@@ -107,19 +107,24 @@ padding-bottom: 10px;
 }
 
 #home_bg {
-	background-image: url("../images/home2.jpg");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-attachment: fixed;
-	background-size: cover;
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	-ms-backface-visibility: hidden;
-	-webkit-transform: translate3d(0, 0, 0);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	background: #303F9F;
+	background-image: linear-gradient(
+	to bottom,
+	#303F9F,
+	#C5CAE9 70%
+	);
 }
 
-#home_bg li a {
-	background-color: #E4E597;
+h1 a {
+	color: #3F51B5 !important;
 }
 
 #listBack {
@@ -140,26 +145,6 @@ padding-bottom: 10px;
 }
 
 body {
-	-webkit-print-color-adjust: exact !important;
-	print-color-adjust: exact !important;
-}
-
-@media print {
-	body, div, a, p, li {
-		-webkit-print-color-adjust: exact !important;
-		print-color-adjust: exact !important;
-	}
-}
-
-.ticket {
-	page-break-inside: avoid !important;
-	width: 5in !important;
-	height: 2.125in !important;
-	border-style: solid;
-	border: thin dashed red;
-	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
-	color: #191970;
-	text-align: center;
 	-webkit-print-color-adjust: exact !important;
 	print-color-adjust: exact !important;
 }
@@ -488,54 +473,51 @@ form .progress {
 	page-break-inside: avoid !important;
 }
 
-#home_center a {
-	font-size: 30px;
+.home_center #home_party, .home_center #home_conf {
+	/*font-size: 30px;*/
 	display: flex;
 	justify-content: center; /* align horizontal */
 	align-items: center; /* align vertical */
 	border: thin solid white !important;
 }
 
-#home_center a:hover {
+.home_center a:hover {
 	transform: scale(1.05) !important;
 	transition: 0.5s ease !important;
 	z-index: 10000;
+	border: thin solid #FFC02F !important;
 }
 
-#home_center a h1 {
-	color: #FFC02F;
+.home_center a h1 {
+	color: rgba(255, 255, 255, 0.7) !important;
 }
 
 #party_help {
-	color: #FFC02F;
-	top: 15px;
-	left: 15px;
+	font-size: 30px;
+	color: white;
+	right: 52%;
+	top: 95%;
 	position: fixed;
 	z-index: 100000;
 }
 
 #conf_help {
-	color: #FFC02F;
-	top: 15px;
-	right: 15px;
+	font-size: 30px;
+	color: white;
+	left: 96%;
+	top: 95%;
 	position: fixed;
 	z-index: 1000000;
 }
 
-#live_help {
-	color: #FFC02F;
-	right: 15px;
-	top: 45%;
-	position: fixed;
-	z-index: 10000000;
-}
-
 #party_help:hover, #conf_help:hover, #live_help:hover {
-	color: white;
+	transform: scale(1.05) !important;
+	transition: 0.5s ease !important;
+	color: #F50057;
 }
 
 a {
-	color: #00B3DD !important;
+	color: #FF4081 !important;
 	text-decoration: none
 }
 .btn-primary:focus, .btn-primary:hover, .btn-default:focus, .btn-default:hover, .btn-warning:focus, .btn-warning:hover {
@@ -546,46 +528,108 @@ a {
 
 .btn-primary, .btn-default {
 	color: white !important;
-	background-color: #00B3DD !important;
-	border: thin solid #00B3DD !important;
+	background-color: #F50057 !important;
+	border: thin solid #F50057 !important;
+}
+
+#home_welcome {
+	min-height: 100% !important;
+	/*background-image: url("../images/home4.jpg") !important;*/
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+	background-size: cover !important;
+	position: fixed;
+	left: 0 !important;
+	top: 0 !important;
+	bottom: 0 !important;
+	border: none !important;
+	/*background: rgba(255, 255, 255, 0.6) !important;*/
+	color: gray !important;
+	font-size: 1.3em;
+}
+
+#home_welcome, .brandTitle {
+	color: white !important;
+}
+
+#homeInput {
+	background: white;
+	z-index: 100000000;
+	/*color:white;*/
 }
 
 #home_party {
-	min-height: 500px !important;
+	color: black !important;
+	/*min-height: 300px !important;*/
 	background-image: url("../images/concert1.jpg") !important;
 	background-repeat: no-repeat !important;
 	background-position: center center !important;
 	background-size: cover !important;
 	position: fixed;
-	top: 0;
-	left: 0;
 	bottom: 0;
+	left: 0;
+	top: 50%;
+	height: 50% !important;
+	padding: 2%;
+	-moz-transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+	-ms-transition: all .3s linear;
+	-o-transition: all .3s linear;
+	transition: all .3s linear;
+}
+
+#home_party div, #home_conf div {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #C5CAE9;
+}
+
+#home_party div div, #home_conf div div {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	/*background: rgba(255, 255, 255, 0.1) !important;*/
+	padding-left: 4%;
+	padding-right: 4%;
+	padding-bottom: 2%;
+}
+
+#home_party div:hover, #home_conf div:hover {
+	background: #303F9F;
+	color: white;
+}
+
+.newPrev:hover {
+	color: white !important;
+}
+
+#partyPrev, #confPrev, .newPrev {
+	color: #303F9F !important;
 }
 
 #home_conf {
-	min-height: 300px !important;
+	color: black !important;
+	/*min-height: 200px !important;*/
 	background-image: url("../images/home4.jpg") !important;
 	background-repeat: no-repeat !important;
 	background-position: center center !important;
 	background-size: cover !important;
 	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 60%;
-}
-
-#home_live {
-	min-height: 200px !important;
-	background-image: url("../images/checkin1.jpg") !important;
-	background-repeat: no-repeat !important;
-	background-position: center center !important;
-	background-size: cover !important;
-	position: fixed;
-	top: 40%;
 	bottom: 0;
 	right: 0;
-	bottom: 0;
-	/*margin:2%;*/
+	top: 50%;
+	height: 50% !important;
+	padding: 2%;
+	-moz-transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+	-ms-transition: all .3s linear;
+	-o-transition: all .3s linear;
+	transition: all .3s linear;
 }
 
 .home_description {
@@ -602,13 +646,93 @@ a {
 	.home_description {
 		font-size: 14px !important;
 	}
+
+	#home_party {
+		color: black !important;
+		bottom: 0;
+		left: 0;
+		top: 45%;
+		height: 55% !important;
+	}
+
+	#home_conf {
+		color: black !important;
+		bottom: 0;
+		right: 0;
+		top: 45%;
+		height: 55% !important;
+	}
+	#home_welcome {
+		font-size: 1em;
+		text-align: center !important;
+	}
+
+	#party_help {
+		right: 90% !important;
+		top: 50% !important;
+		position: fixed;
+	}
+
+	#conf_help {
+		left: 90% !important;
+		top: 50% !important;
+		position: fixed;
+	}
+
+	.navTopLeft, .navTopRight, .navBottomLeft, .navBottmRight {
+		font-size: 25px !important;
+	}
 }
 
-.home_description:hover {
-	background: rgba(255, 192, 47, 0.9) !important
+@media print {
+	body, div, a, p, li, .ticket {
+		-webkit-print-color-adjust: exact !important;
+		print-color-adjust: exact !important;
+	}
 }
 
-#livePage {
-	/*border-left: thick solid rgba(255, 0, 0, 1);
-	 border-right: thick solid rgba(255, 0, 0, 1);*/
+.navTopLeft {
+	top: 15px;
+	left: 15px;
+	position: fixed;
+	z-index: 100000;
 }
+
+.navTopRight {
+	top: 15px;
+	right: 15px;
+	position: fixed;
+	z-index: 100000;
+}
+
+.navBottomLeft {
+	bottom: 15px;
+	left: 15px;
+	position: fixed;
+	z-index: 100000;
+}
+
+.navBottmRight {
+	bottom: 15px;
+	right: 15px;
+	position: fixed;
+	z-index: 100000;
+}
+
+.navTopLeft, .navTopRight, .navBottomLeft, .navBottmRight {
+	font-size: 30px;
+}
+.ticket {
+	page-break-inside: avoid !important;
+	width: 5in !important;
+	height: 2.125in !important;
+	border-style: solid;
+	border: thin dashed red;
+	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
+	color: #191970;
+	text-align: center;
+	-moz-print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	print-color-adjust: exact !important;
+}
+

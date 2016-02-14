@@ -1,11 +1,10 @@
 <div ng-include="'partials/nav.html'"></div>
 <section class="guestpage container-fluid uofs-section " id="guestListPage">
 	<div class=" pull-left" >
-		<a class="btn btn-default btn-xs" type="button" ng-href="#/populate"> 
-			<span class="uofs-icon uofs-icon-chevron-left"></span> </a>
+		<a class="btn btn-default btn-xs" type="button" ng-href="#/populate"> <span class="uofs-icon uofs-icon-chevron-left"></span> </a>
 	</div>
 	<!-- <div class=" pull-right" >
-		<a class="btn btn-default btn-xs" type="button" ng-href="#/tickets">Design Tickets &raquo;</a>
+	<a class="btn btn-default btn-xs" type="button" ng-href="#/tickets">Design Tickets &raquo;</a>
 	</div> -->
 	<div class="guestlist row  text-center center-block" >
 		<div class="row">
@@ -67,9 +66,9 @@
 			</div>
 		</div>
 		<div id="GList" class="row" >
-			<div class="text-center " >
-			</div>
+			<div class="text-center " ></div>
 			<div class="guest cf text-left row center-block" ng-repeat="item in $storage.guestsList | filter: guestSearch ">
+				<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">X</i></a>
 				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 col-xs-2  gListNew" ng-repeat="a in item | filter: guestSearch "> {{a}} </span>
 			</div>
 		</div>
