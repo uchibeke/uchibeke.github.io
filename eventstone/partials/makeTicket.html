@@ -2,9 +2,7 @@
 <section class="guestinfo uofs-section container-fluid animated slideInRight" id="ticketPage">
 	<div class="hideOnPrint" ng-hide="printSet">
 		<div class="back_div pull-left ">
-			<a type="button" class="btn btn-default btn-xs" ng-href="#/addticket">
-				<span class="uofs-icon uofs-icon-chevron-left"></span>
-			</a>
+			<a type="button" class="btn btn-default btn-xs" ng-href="#/addticket"> <span class="uofs-icon uofs-icon-chevron-left"></span> </a>
 		</div>
 		<h1 class="text-center uofs-page-title"><a>TICKET DESIGNER</a></h1>
 		<h4 class="text-center"><a>{{$storage.eventName}}</a></h4>
@@ -113,7 +111,7 @@
 						</button>
 					</div>
 					<!-- <div class="center-block col-md-6">
-						<a type="button" class="btn btn-primary btn-xs btn-block" ng-href="#/populate">Manage Guests</a>
+					<a type="button" class="btn btn-primary btn-xs btn-block" ng-href="#/populate">Manage Guests</a>
 					</div> -->
 				</div>
 				<div class=" center-block row text-justify text-muted">
@@ -149,14 +147,15 @@
 								<div type="button" class="btn  btn-xs "
 								ng-style="textBtnStyle(item.backgroundColor)"
 								style="">
-									{{$index+1}}
+									&nbsp;
 								</div> </a>
 							</div>
 						</div >
 						<br />
 						<div class="text-center row">
 							<input ng-model="userFillColor" class="row text-center" style="width: 100%;" placeholder="color"
-							/><br />
+							/>
+							<br />
 							<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketBackground(userFillColor)">
 								Ok
 							</button>
@@ -173,7 +172,7 @@
 								<div type="button" class="btn btn-xs "
 								ng-style="textBtnStyle(item.color)"
 								style="">
-									{{$index+1}}
+									&nbsp;
 								</div> </a>
 							</div>
 						</div>
@@ -181,7 +180,8 @@
 						<div class="text-center row">
 							<!-- Use your own color. Enter color name or code -->
 							<input ng-model="userTextColor" class="row text-center" style="width: 100%;" placeholder="color"
-							/><br />
+							/>
+							<br />
 							<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketTxtColor(userTextColor)">
 								Ok
 							</button>
@@ -191,19 +191,19 @@
 			</div>
 		</div>
 		<!-- <div class="row">
-			<br />
-			<div class="pull-left ">
-				<button   type="button" class="btn btn-primary  btn-xs " ng-click="printSet=true;($storage.sampleView) = true">
-					Print preview
-				</button>
-			</div>
-			<div class="pull-right" ng-hide="($storage.sampleView)">
-				<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = true"> Preview all Tickets &raquo;</a>
-			</div>
-			<div class="pull-right" ng-hide="(!($storage.sampleView))==true">
-				<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = false"
-				>Hide all Tickets &raquo;</a>
-			</div>
+		<br />
+		<div class="pull-left ">
+		<button   type="button" class="btn btn-primary  btn-xs " ng-click="printSet=true;($storage.sampleView) = true">
+		Print preview
+		</button>
+		</div>
+		<div class="pull-right" ng-hide="($storage.sampleView)">
+		<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = true"> Preview all Tickets &raquo;</a>
+		</div>
+		<div class="pull-right" ng-hide="(!($storage.sampleView))==true">
+		<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = false"
+		>Hide all Tickets &raquo;</a>
+		</div>
 		</div> -->
 	</div>
 	<div  ng-show="($storage.sampleView)" class="center-block text-center" >
