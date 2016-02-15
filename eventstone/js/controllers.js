@@ -274,14 +274,7 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics) {
 			}, theTime);
 		};
 
-		// Live screen check in message
-		$scope.guestAddFeedback = false;
-		$scope.guestAddMsg = function() {
-			$timeout(function() {
-				$scope.guestAddFeedback = false;
-			}, 10000);
-		};
-
+	
 		$scope.checkIns = function() {
 			var checkIns = 0;
 			for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
