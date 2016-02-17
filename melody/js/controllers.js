@@ -43,7 +43,7 @@ function($scope, $http, $timeout, analytics) {
 		var str3 = ` **<br/> You fill up my senses like a night in the forest,
 				like the mountains in springtime, like a walk in the rain,
 				like a storm in the desert, like a sleepy blue ocean.
-				You fill up my senses, come fill me again. <br/> <br/> *<br/> This poean, Annies Song perfectly summarizes my feeling. <br/> Uchi  `;
+				You fill up my senses, come fill me again. <br/> <br/> *<br/> This poem, Annies Song, perfectly summarizes my feeling. <br/> Uchi  `;
 				
 		$scope.arr1 = str1.split("");
 		$scope.arr2 = str2.split("");
