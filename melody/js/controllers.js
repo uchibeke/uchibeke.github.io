@@ -34,13 +34,13 @@ function($scope, $http, $timeout, analytics) {
 		like a storm in the desert, like a sleepy blue ocean. You fill up my senses, come fill me again. `;
 				
 
-		var str2 = ` Come let me love you, let me give my life to you,
+		var str2 = ` **<br/>Come let me love you, let me give my life to you,
 				let me drown in your laughter, let me die in your arms,
 				let me lay down beside you, let me always be with you.
 				Come let me love you, come love me again. `;
 				
 
-		var str3 = `  You fill up my senses like a night in the forest,
+		var str3 = ` **<br/> You fill up my senses like a night in the forest,
 				like the mountains in springtime, like a walk in the rain,
 				like a storm in the desert, like a sleepy blue ocean.
 				You fill up my senses, come fill me again. <br/> <br/> *<br/> This poean, Annies Song perfectly summarizes my feeling. <br/> Uchi  `;
