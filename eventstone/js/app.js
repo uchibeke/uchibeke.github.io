@@ -1,25 +1,25 @@
-var myApp = angular.module('myApp', ['ngRoute', 'guestControllers', 'ticketControllers','analytics']);
+var myApp = angular.module('myApp', ['ngRoute', 'guestControllers',  'ticketControllers', 'analytics', 'firebase']);
 
 myApp.config(['$routeProvider',
 function($routeProvider) {
 	$routeProvider.when('/list', {
 		templateUrl : 'partials/list.html',
-		controller : 'ListController'
+		controller : 'GuestController'
 	}).when('/populate', {
 		templateUrl : 'partials/populate.html',
-		controller : 'ListController'
+		controller : 'GuestController'
 	}).when('/addticket', {
 		templateUrl : 'partials/addticket.html',
-		controller : 'ListController'
+		controller : 'GuestController'
 	}).when('/home', {
 		templateUrl : 'partials/home.html',
-		controller : 'ListController'
+		controller : 'GuestController'
 	}).when('/live', {
 		templateUrl : 'partials/live.html',
-		controller : 'ListController'
+		controller : 'GuestController'
 	}).when('/guestList', {
 		templateUrl : 'partials/guestList.html',
-		controller : 'ListController'
+		controller : 'GuestController'
 	}).when('/tickets', {
 		templateUrl : 'partials/makeTicket.html',
 		controller : 'TicketController'

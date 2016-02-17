@@ -1,7 +1,7 @@
-var guestControllers = angular.module('guestControllers', ['ngStorage', 'ngSanitize'])
+var guestControllers = angular.module('guestControllers', ['ngStorage', 'ngSanitize']);
 
-guestControllers.controller('ListController', ['$scope', '$http', '$localStorage', '$timeout', '$sce',
-function($scope, $http, $localStorage, $timeout, $sce, analytics) {
+guestControllers.controller('GuestController', ['$scope', '$http', '$localStorage', '$timeout', '$sce', 'analytics', '$firebaseObject',
+function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObject) {
 	$http.get('js/data.json').success(function(data) {
 		// Data from json file
 		$scope.guests = [];
@@ -18,7 +18,46 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics) {
 			guestsList : $scope.guests
 		});
 
-		// var ref = new Firebase("https://eventstone.firebaseio.com");
+		$scope.ref = new Firebase("https://eventstone.firebaseio.com");
+		var fbObj = $firebaseObject(ref);
+		// $scope.fbObject = $firebaseObject($scope.ref);
+
+
+		// function to set the default data
+		$scope.reset = function() {
+
+			// fb.$set({
+			// monday : {
+			// name : 'Monday',
+			// slots : {
+			// 0900 : {
+			// time : '9:00am',
+			// booked : false
+			// },
+			// 0110 : {
+			// time : '11:00am',
+			// booked : false
+			// }
+			// }
+			// },
+			// tuesday : {
+			// name : 'Tuesday',
+			// slots : {
+			// 0900 : {
+			// time : '9:00am',
+			// booked : false
+			// },
+			// 0110 : {
+			// time : '11:00am',
+			// booked : false
+			// }
+			// }
+			// }
+			// });
+			$scope.hey = "Hey" + (numb++);
+		};
+		var numb = 0;
+		$scope.hey = "___";
 
 		$scope.$storage.x = '';
 
@@ -105,7 +144,7 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics) {
 		};
 
 		$scope.checkedIn = function(x) {
-			if ((($scope.$storage.guestsList[x].guestStatus.toLowerCase().replace(/\W+/g, " ")).indexOf('Not checked-in'))> -1) {
+			if ((($scope.$storage.guestsList[x].guestStatus.toLowerCase().replace(/\W+/g, " ")).indexOf('Not checked-in')) > -1) {
 			} else if (($scope.$storage.guestsList[x].guestStatus) == 'Not checked-in') {
 				var d = new Date();
 				var ds = d.toLocaleTimeString();
@@ -236,7 +275,7 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics) {
 		$scope.restoreFromBackUp = function() {
 			if ($scope.$storage.backUpGuestList.length > 0) {
 				$scope.$storage.guestsList = [];
-				$scope.$storage.guestsList = $scope.$storage.backUpGuestList ;
+				$scope.$storage.guestsList = $scope.$storage.backUpGuestList;
 			} else {
 
 			}
@@ -274,7 +313,6 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics) {
 			}, theTime);
 		};
 
-	
 		$scope.checkIns = function() {
 			var checkIns = 0;
 			for (var i = 0; i < $scope.$storage.guestsList.length; i++) {

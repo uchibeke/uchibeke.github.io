@@ -1,7 +1,7 @@
-var ticketControllers = angular.module('ticketControllers', ['ngStorage',  'ngSanitize', 'ngFileUpload', 'ngImgCrop'])
+var ticketControllers = angular.module('ticketControllers', ['ngStorage', 'ngSanitize', 'ngFileUpload', 'ngImgCrop']);
 
-guestControllers.controller('TicketController', ['$scope', '$http', '$localStorage', '$sce', 'Upload', '$timeout',
-function($scope, $http, $localStorage, $sce, Upload, $timeout, analytics) {
+ticketControllers.controller('TicketController', ['$scope', '$http', '$localStorage', '$sce', 'Upload', '$timeout', 'analytics',   '$firebaseObject',
+function($scope, $http, $localStorage, $sce, Upload, $timeout, analytics, $firebaseObject) {
 	$http.get('js/tickets.json').success(function(tdata) {
 		// Guest Data from json file
 		$scope.ticketdata = tdata;
@@ -110,7 +110,7 @@ function($scope, $http, $localStorage, $sce, Upload, $timeout, analytics) {
 					var d = new Date();
 					$(".securityEncoding").html(r.ip + "|" + d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2));
 				}, "jsonp");
-				
+
 				$scope.guestRole = "Participant";
 			});
 		});
