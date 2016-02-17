@@ -18,8 +18,8 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObjec
 			guestsList : $scope.guests
 		});
 
-		$scope.ref = new Firebase("https://eventstone.firebaseio.com");
-		var fbObj = $firebaseObject(ref);
+		// $scope.ref = new Firebase("https://eventstone.firebaseio.com");
+		// var fbObj = $firebaseObject(ref);
 		// $scope.fbObject = $firebaseObject($scope.ref);
 
 
