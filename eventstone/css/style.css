@@ -115,11 +115,11 @@ padding-bottom: 10px;
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
-	background: #303F9F;
+	background: #F5F5F5;
 	background-image: linear-gradient(
-	to bottom,
-	#303F9F,
-	#C5CAE9 70%
+	to top,
+	#F50057,
+	#F5F5F5 60%
 	);
 }
 
@@ -478,7 +478,7 @@ form .progress {
 	display: flex;
 	justify-content: center; /* align horizontal */
 	align-items: center; /* align vertical */
-	border: thin solid white !important;
+	/*border: thin solid  #F5F5F5 !important;*/
 }
 
 .home_center a:hover {
@@ -494,7 +494,7 @@ form .progress {
 
 #party_help {
 	font-size: 30px;
-	color: white;
+	color: #F5F5F5;
 	right: 52%;
 	top: 95%;
 	position: fixed;
@@ -503,7 +503,7 @@ form .progress {
 
 #conf_help {
 	font-size: 30px;
-	color: white;
+	color: #F5F5F5;
 	left: 96%;
 	top: 95%;
 	position: fixed;
@@ -549,11 +549,11 @@ a {
 }
 
 #home_welcome, .brandTitle {
-	color: white !important;
+	color: #303F9F !important;
 }
 
 #homeInput {
-	background: white;
+	background: #F5F5F5;
 	z-index: 100000000;
 	/*color:white;*/
 }
@@ -576,6 +576,7 @@ a {
 	-ms-transition: all .3s linear;
 	-o-transition: all .3s linear;
 	transition: all .3s linear;
+    border-radius: 0 100% 0 0;
 }
 
 #home_party div, #home_conf div {
@@ -584,32 +585,31 @@ a {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: #C5CAE9;
+	background: #F5E1EA;
+	border: thin solid #F50057 !important;
 }
 
-#home_party div div, #home_conf div div {
+/*#home_party div div, #home_conf div div {
 	position: fixed;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	/*background: rgba(255, 255, 255, 0.1) !important;*/
 	padding-left: 4%;
 	padding-right: 4%;
 	padding-bottom: 2%;
-}
-
+}*/
 #home_party div:hover, #home_conf div:hover {
-	background: #303F9F;
-	color: white;
+	background: #F50057;
+	color: #F5F5F5;
 }
 
 .newPrev:hover {
-	color: white !important;
+	color: #F5F5F5 !important;
 }
 
 #partyPrev, #confPrev, .newPrev {
-	color: #303F9F !important;
+	color: #F50057 !important;
 }
 
 #home_conf {
@@ -630,6 +630,7 @@ a {
 	-ms-transition: all .3s linear;
 	-o-transition: all .3s linear;
 	transition: all .3s linear;
+    border-radius: 100% 0 0 0;
 }
 
 .home_description {
@@ -638,7 +639,7 @@ a {
 	font-weight: normal;
 	white-space: normal !important;
 	background: rgba(255, 192, 47, 0.7) !important;
-	color: white;
+	color: #F5F5F5;
 	padding: 2%;
 }
 /* Smartphones (portrait and landscape) ----------- */

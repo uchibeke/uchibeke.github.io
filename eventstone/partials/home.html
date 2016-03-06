@@ -16,12 +16,12 @@ style="position:fixed;top:0;left:0;right:0;bottom:0;height:100%;overflow: hidden
 					Organize and manage your events. Enter the event name to get started.
 				</p>
 				<input ng-model="$storage.eventName" placeholder="  Event name"
-				class="form-control" id="homeInput" autofocus="autofocus" autocomplete="autocomplete">
+				class="form-control" id="homeInput" autofocus="autofocus" >
 			</div>
 		</div>
 		<div class=" center-block text-center row home_center" >
 			<a class="col-lg-6 col-md-6 col-sm-6 col-xs-6  jumbotron animated slideInUp" ng-href="#/addticket"
-			id="home_party"> <h1 ng-show="$storage.eventName==''">Party</h1><b>
+			id="home_party"> <h1 >Party</h1><b>
 			<br />
 			<div ng-show="$storage.eventName.length>=1" >
 				<div>
@@ -33,7 +33,7 @@ style="position:fixed;top:0;left:0;right:0;bottom:0;height:100%;overflow: hidden
 				</div>
 			</div> </a>
 			<a class="col-lg-6 col-md-6 col-sm-6 col-xs-6  jumbotron animated slideInUp" ng-href="#/populate"
-			id="home_conf"> <h1 ng-show="$storage.eventName==''">Conf</h1><b>
+			id="home_conf"> <h1 >Conf</h1><b>
 			<br />
 			<div ng-show="$storage.eventName.length>=1" >
 				<div>

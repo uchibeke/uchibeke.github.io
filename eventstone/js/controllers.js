@@ -337,6 +337,10 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObjec
 			}
 			return totReg;
 		};
+		
+		
+		gapi.load("auth:client,drive-realtime,drive-share", callback);
+
 
 		// $scope.itemsSummary = function(column) {
 		// var totReg = 0;
