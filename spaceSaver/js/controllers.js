@@ -70,17 +70,25 @@ function($scope, $http, $localStorage) {
 
 		$scope.delim = ' || ';
 
-		$scope.printpage = function() {
-			var originalContents = document.body.innerHTML;
-			var printReport = document.getElementById('content').innerHTML;
-			document.body.innerHTML = printReport;
-			window.print();
-			document.body.innerHTML = originalContents;
-		}
+		// $scope.printpage = function() {
+			// var originalContents = document.body.innerHTML;
+			// var printReport = document.getElementById('content').innerHTML;
+			// document.body.innerHTML = printReport;
+			// window.print();
+			// document.body.innerHTML = originalContents;
+		// }
 
 		$scope.printSetup = function() {
 			$scope.$storage.toPrint = $scope.$storage.xx;
 		}
+
+		$scope.printFile = function() {
+			var printContents = document.getElementById("content").innerHTML;
+			var popupWin = window.open('', '_blank', 'width=1700,height=2200');
+			popupWin.document.open();
+			popupWin.document.write('<html><link rel="stylesheet" media="all" href="css/style.css"><link href="css/limestone.css" rel="stylesheet"  media="all"></head><body onload="window.print()" style="padding-top: 7% !important;">' + printContents + '</html>');
+			popupWin.document.close();
+		};
 
 		$scope.slides = [{
 			image : 'https://rawgit.com/uchibeke/uchibeke.github.io/master/eventstone/images/sheet/DependencyGraph.png',

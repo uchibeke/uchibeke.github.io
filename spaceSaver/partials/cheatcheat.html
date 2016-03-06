@@ -48,7 +48,7 @@
 		</div>
 		<div class="right row" ng-show="switchView && $storage.xx.length > 0">
 			<button ng-model="btnText" type="button" name="printreport" id="printreport"
-			class="waves-effect waves-light btn checkInBtn" ng-click="" >
+			class="waves-effect waves-light btn checkInBtn" ng-click="printFile()" >
 				Print Setup
 			</button>
 		</div>
@@ -60,10 +60,10 @@
 		<div class="row">
 			<input type="range" name="points" min="5" max="20" ng-model="$storage.fontSz">
 			<p class="center">
-				{{fontSz}} Pts &nbsp; &nbsp; | &nbsp; &nbsp; {{$storage.fontSz/(72/96) | number:0}} px
+				{{$storage.fontSz}} Pts &nbsp; &nbsp; | &nbsp; &nbsp; {{$storage.fontSz/(72/96) | number:0}} px
 			</p>
 			<br />
-			<p id="content" style="font-size:{{$storage.fontSz/(72/96)}}px;  text-align: justify; font-family: Tahoma;">
+			<p id="content" style="font-size:6px !important;  text-align: justify !important; font-family : Tahoma !important;">
 				{{$storage.xx}}
 			</p>
 			<!-- </div> -->
