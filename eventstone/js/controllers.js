@@ -18,10 +18,11 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObjec
 			guestsList : $scope.guests
 		});
 
+		$scope.hide_logo = false;
+
 		// $scope.ref = new Firebase("https://eventstone.firebaseio.com");
 		// var fbObj = $firebaseObject(ref);
 		// $scope.fbObject = $firebaseObject($scope.ref);
-
 
 		// function to set the default data
 		$scope.reset = function() {
@@ -224,6 +225,14 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObjec
 				return i;
 			}
 
+			function playVid() {
+				if ($scope.$storage.eventName.length >= 1) {
+					vid.pause();
+				} else {
+					vid.play();
+				}
+			};
+
 			startTime();
 		}
 		$timeout($scope.init);
@@ -313,6 +322,8 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObjec
 			}, theTime);
 		};
 
+		var vid = document.getElementById("bgvid");
+
 		$scope.checkIns = function() {
 			var checkIns = 0;
 			for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
@@ -337,22 +348,8 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObjec
 			}
 			return totReg;
 		};
-		
-		
+
 		gapi.load("auth:client,drive-realtime,drive-share", callback);
-
-
-		// $scope.itemsSummary = function(column) {
-		// var totReg = 0;
-		// var col = column - 1;
-		// for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
-		// var sess = $scope.$storage.guestsList[i][col];
-		// if ((($scope.$storage.guestsList[i][col]).toLowerCase().replace(/\W+/g, " ")).indexOf(sess.toLowerCase().replace(/\W+/g, " ")) > -1) {
-		// totReg = totReg + 1;
-		// }
-		// }
-		// return totReg;
-		// };
 
 		$scope.randomName = function() {
 			var arrOfNames1 = ["Jason", "Jim", "Bird", "Shari", "Lily", "Shukla", "Jake", "Kurt", "Sylvia", "Smith", "Luke", "Brent", "Tony", "Chi", "Chen", "Yang", "Ada", "Oluchi", "Maj"];

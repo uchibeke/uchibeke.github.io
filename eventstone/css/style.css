@@ -475,10 +475,10 @@ form .progress {
 
 .home_center #home_party, .home_center #home_conf {
 	/*font-size: 30px;*/
-	display: flex;
-	justify-content: center; /* align horizontal */
-	align-items: center; /* align vertical */
-	/*border: thin solid  #F5F5F5 !important;*/
+	/*display: flex;
+	 justify-content: center;
+	 align-items: center;*/
+
 }
 
 .home_center a:hover {
@@ -555,7 +555,15 @@ a {
 }
 
 #home_welcome, .brandTitle {
-	color: #303F9F !important;
+	font-weight: 600 !important;
+	color: #F5F5F5 !important;
+	position: fixed;
+	top: 2%;
+	left: 2%;
+}
+
+#home_welcome h1 {
+	color: #F5F5F5 !important;
 }
 
 #homeInput {
@@ -567,7 +575,7 @@ a {
 #home_party {
 	color: black !important;
 	/*min-height: 300px !important;*/
-	background-image: url("../images/concert1.jpg") !important;
+	/*background-image: url("../images/concert1.jpg") !important;*/
 	background-repeat: no-repeat !important;
 	background-position: center center !important;
 	background-size: cover !important;
@@ -585,6 +593,27 @@ a {
 	border-radius: 0 100% 0 0;
 }
 
+#home_party_btn {
+	position: fixed;
+	top: 60% !important;
+	right: 15px;
+	/*right: 0% !important;*/
+	width: 300px !important;
+	color: white !important;
+	background-color: rgba(245, 0, 87, 1) !important;!important;
+	border: thin solid #F50057 !important;
+	min-height: 150px;
+	padding: 10px;
+	text-align: left;
+	float: none;
+}
+
+#home_party_btn:focus, #home_party_btn:hover {
+	/*background-color: black !important;*/
+	/*border: thin solid black !important;*/
+	/*text-decoration: none;*/
+}
+
 #home_party div, #home_conf div {
 	position: fixed;
 	top: 0;
@@ -595,16 +624,6 @@ a {
 	border: thin solid #F50057 !important;
 }
 
-/*#home_party div div, #home_conf div div {
- position: fixed;
- top: 0;
- right: 0;
- bottom: 0;
- left: 0;
- padding-left: 4%;
- padding-right: 4%;
- padding-bottom: 2%;
- }*/
 #home_party div:hover, #home_conf div:hover {
 	background: #F50057;
 	color: #F5F5F5;
@@ -620,7 +639,6 @@ a {
 
 #home_conf {
 	color: black !important;
-	/*min-height: 200px !important;*/
 	background-image: url("../images/home4.jpg") !important;
 	background-repeat: no-repeat !important;
 	background-position: center center !important;
@@ -689,17 +707,31 @@ a {
 	.navTopLeft, .navTopRight, .navBottomLeft, .navBottmRight {
 		font-size: 25px !important;
 	}
+
+	/*#home_party_btn {
+		position: fixed;
+		top: 50% !important;
+		width: 100% !important;
+		color: white !important;
+		text-align: left;
+		float: none;
+		background-color: rgba(245, 0, 87, 0.5) !important;!important;
+		border: thin solid #F50057 !important;
+		min-height: 150px;
+		padding: 10px;
+	}*/
+
 }
 body {
 	margin: 0;
 	background: #000;
 }
-video{
+video {
 	position: fixed;
-	top: 100%;
+	top: 50%;
 	left: 50%;
-	min-width: 100%;
-	min-height: 100%;
+	min-width: 50%;
+	min-height: 50%;
 	width: auto;
 	height: auto;
 	z-index: -100;
@@ -708,7 +740,6 @@ video{
 	background-size: cover;
 	transition: 1s opacity;
 }
-
 
 #bg_grayed {
 	position: fixed;
@@ -722,9 +753,23 @@ video{
 	transform: translateX(-50%) translateY(-50%);
 	background-size: cover;
 	transition: 1s opacity;
-	background: rgba(255, 255, 255, 0.5) !important;
+	background: rgba(0, 0, 0, 0.5) !important;
 }
 
+#bg_grayed_darker {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	transform: translateX(-50%) translateY(-50%);
+	background-size: cover;
+	transition: 1s opacity;
+	background: rgba(0, 0, 0, 0.9) !important;
+}
 @media print {
 	body, div, a, p, li, .ticket {
 		-webkit-print-color-adjust: exact !important;

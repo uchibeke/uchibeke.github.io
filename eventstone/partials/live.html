@@ -1,4 +1,4 @@
-<section onload="startTime()" class="guestpage container-fluid uofs-section  " id="livePage">
+<section onload="startTime()" class="guestpage container-fluid uofs-section  " id="livePage" ng-mouseover="hide_logo=true;">
 	<p ng-show="firstLiveScreen">
 		You are about to go live with an event. You can keep track of people that attend your event by adding their names as they come in.
 		People can also check in with their name or ticket number if they are already registered.
@@ -28,10 +28,10 @@
 			<!-- <div class="text-center" style="font-size: xx-large;">
 			Check-in
 			</div> -->
-			<div class="row  text-muted">
-				<span class="col-lg-4 col-md-4 col-sm-4  col-xs-12">{{$storage.guestsList.length}} total attendees</span>
-				<span class="col-lg-4 col-md-4 col-sm-4  col-xs-12 text-success">{{checkIns()}} checked-in</span>
-				<span class="col-lg-4 col-md-4 col-sm-4  col-xs-12 text-warning">{{noCheckIns()}} not checked-in</span>
+			<div class="  text-muted">
+				<span class="pull-left col-xs-12 text-success">{{checkIns()}} checked-in</span><br />
+				<span class="pull-left col-xs-12">{{$storage.guestsList.length}} total attendees</span><br />
+				<span class="pull-left col-xs-12 text-warning">{{noCheckIns()}} not checked-in</span><br />
 			</div>
 			<br class="clearfix"/>
 			<div class="row">
