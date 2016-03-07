@@ -1,12 +1,12 @@
 <div ng-include="'partials/nav.html'"></div>
 <section class="guestinfo uofs-section container-fluid " id="populatePage">
-	<!-- <div class="back_div pull-left ">
-	<a type="button" class="btn btn-default btn-xs" ng-href="#/about">&laquo; About</a>
+	<div class="back_div pull-left ">
+		<a type="button" class="btn btn-default btn-xs" ng-href="#/home"> <span class="uofs-icon uofs-icon-chevron-left"></span> </a></a>
 	</div>
-	<div class="pull-right">
-	<a type="button" class="btn btn-default btn-xs" ng-href="#/guestList">Attendee List &raquo;</a>
-	</div> -->
-	<h1 class="text-center uofs-page-title"><a>ADD FROM SPREADSHEET</a></h1>
+	<!-- <div class="pull-right">
+		<a type="button" class="btn btn-default btn-xs" ng-href="#/guestList">Attendee List &raquo;</a>
+	</div><br /> -->
+	<h1 class="text-center uofs-page-title"><a>ADD FROM <br /> SPREADSHEET</a></h1>
 	<h4 class="text-center "><a>{{$storage.eventName}}</a></h4>
 	<p class="text-muted">
 		<!-- You can create a list of attendees by pasting columns from excel file.
@@ -21,10 +21,10 @@
 		<input type="radio" name="options" id="option3">
 		Add guests by name </label>  -->
 	</div>
-	<div class="addByPasting " ng-show="addByPasting">
+	<div class="addByPasting center center-block " ng-show="addByPasting">
 		<div class="row dataFieldContainer center-block  text-center">
 			<textarea ng-model="dataFieldExcel" placeholder="Copy and paste the excel columns containing the names,  Leave out the column heading, and click 'Add'. You can also add new attendees by typing their info here with each new attendee in a new line." 
-		class="dataField form-control" type="textarea" style="height: 250px !important; " ></textarea>
+		class="dataField form-control center-block center" type="textarea" style="height: 250px !important; " ></textarea>
 		</div>
 		<div class=" populate_div  panel panel-default" data-toggle="buttons" style="padding-bottom: 2%;">
 			<div class="panel-body">

@@ -5,7 +5,8 @@
 		In the next page, type the name or ticket number in the field provided and click <b>check in</b> to check in an attendee.
 	</p>
 	<div class="row text-center text-info center-block" ng-show="firstLiveScreen">
-		<input ng-model="$storage.eventName" placeholder="Enter Event name. Refresh page to change" class="form-control">
+		<input ng-model="$storage.eventName" placeholder="Enter Event name. Refresh page to change" class="form-control
+		liveInputField text-center center-block">
 		<br />
 		<h3>Would you want to add new people to the list during your event?</h3>
 		<!-- <br /> -->
@@ -85,9 +86,10 @@
 		<br />
 	</div>
 	<br />
-	<div id="txt" class="text-center text-muted" style="font-size: 80px;;"></div>
-	<div class="back_div pull-left close">
-		<a ng-href="#/home">&laquo; Exit</a>
+	<div id="txt" class="text-center " style="font-size: 80px;;"></div>
+	<div class="back_div pull-left ">
+		<a type="button" class="btn btn-default btn-xs" ng-href="#/guestList"> <span class="uofs-icon uofs-icon-chevron-left"></span> </a>
+		<!-- <a ng-href="#/guestList"> <span class="uofs-icon uofs-icon-chevron-left"></span></a> -->
 	</div>
 	<div class="pull-right" style="font-size: 25px;">
 		<a type="button" class="" ng-href="#/aboutparty" target="_blank"> <i class="uofs-icon uofs-icon-help"></i></a>

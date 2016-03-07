@@ -1,6 +1,9 @@
 <div ng-include="'partials/nav_party.html'"></div>
 <!-- Avery paper. Fit 6 per page. Design and just print -->
 <section class="guestinfo uofs-section container-fluid" id="populatePage">
+	<div class="back_div pull-left ">
+		<a type="button" class="btn btn-default btn-xs" ng-href="#/home"> <span class="uofs-icon uofs-icon-chevron-left"></span> </a></a>
+	</div>
 	<h1 class="text-center uofs-page-title"><a>GENERATE TICKETS</a></h1>
 	<h4 class="text-center "><a>{{$storage.eventName}}</a></h4>
 	<p class="text-muted"></p>
@@ -10,9 +13,9 @@
 			<div class="">
 				<div class=" center-block col-xs-12">
 					<form role="form">
-						<div class="form-group col-md-12  col-xs-12 text-center">
+						<div class="form-group col-md-12  col-xs-12 text-center center-block">
 							<label >Total number of Tickets to generate</label>
-							<input  class="form-control"  placeholder="One per expected attendee" type="text"
+							<input  class="form-control addTicketInput text-center center-block"  placeholder="One per expected attendee" type="text"
 							ng-model="$storage.totalTickets" ng-required="true">
 						</div>
 						<div class="form-group col-md-12  col-xs-12 text-center">
@@ -40,18 +43,18 @@
 			<h4 class="col-md-12  col-xs-12 " ng-show="guestAddFeedback"> &#926; You've added {{$storage.guestsList.length}} Tickets &#926;</h4>
 			<!-- <div class="guest cf text-center row " ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction"
 			ng-show="guestAddFeedback">
-				<div class="guest">
-					<div class="col-xs-2 col-md-2 " >
-						<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">{{item.icon}}</i></a>
-						<span class=" text-center">{{$index+1}}</span>
-					</div>
-					<div class="col-xs-5 col-md-5 ">
-						<h4>{{item[0]}}</h4>
-					</div>
-					<div class="col-xs-5 col-md-5">
-						{{item.guestStatus}}
-					</div>
-				</div>
+			<div class="guest">
+			<div class="col-xs-2 col-md-2 " >
+			<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">{{item.icon}}</i></a>
+			<span class=" text-center">{{$index+1}}</span>
+			</div>
+			<div class="col-xs-5 col-md-5 ">
+			<h4>{{item[0]}}</h4>
+			</div>
+			<div class="col-xs-5 col-md-5">
+			{{item.guestStatus}}
+			</div>
+			</div>
 			</div> -->
 			<div class="guest cf text-center row center-block" ng-repeat="item in $storage.guestsList | filter: guestSearch "
 			ng-show="guestAddFeedback">

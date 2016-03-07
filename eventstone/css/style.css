@@ -123,7 +123,7 @@ padding-bottom: 10px;
 	);
 }
 
-h1 a, h4 a{
+h1 a, h4 a {
 	color: #3F51B5 !important;
 }
 
@@ -485,9 +485,15 @@ form .progress {
 	transform: scale(1.05) !important;
 	transition: 0.5s ease !important;
 	z-index: 10000;
-	border: thin solid #FFC02F !important;
 }
 
+.home_eventName, .addTicketInput, .gListSearch, .liveInputField {
+	width: 60% !important;
+}
+
+.addByPasting {
+	width: 80% !important;
+}
 .home_center a h1 {
 	color: rgba(255, 255, 255, 0.7) !important;
 }
@@ -576,7 +582,7 @@ a {
 	-ms-transition: all .3s linear;
 	-o-transition: all .3s linear;
 	transition: all .3s linear;
-    border-radius: 0 100% 0 0;
+	border-radius: 0 100% 0 0;
 }
 
 #home_party div, #home_conf div {
@@ -590,15 +596,15 @@ a {
 }
 
 /*#home_party div div, #home_conf div div {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	padding-left: 4%;
-	padding-right: 4%;
-	padding-bottom: 2%;
-}*/
+ position: fixed;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ padding-left: 4%;
+ padding-right: 4%;
+ padding-bottom: 2%;
+ }*/
 #home_party div:hover, #home_conf div:hover {
 	background: #F50057;
 	color: #F5F5F5;
@@ -630,7 +636,7 @@ a {
 	-ms-transition: all .3s linear;
 	-o-transition: all .3s linear;
 	transition: all .3s linear;
-    border-radius: 100% 0 0 0;
+	border-radius: 100% 0 0 0;
 }
 
 .home_description {
@@ -684,6 +690,40 @@ a {
 		font-size: 25px !important;
 	}
 }
+body {
+	margin: 0;
+	background: #000;
+}
+video{
+	position: fixed;
+	top: 100%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	transform: translateX(-50%) translateY(-50%);
+	background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+	background-size: cover;
+	transition: 1s opacity;
+}
+
+
+#bg_grayed {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	transform: translateX(-50%) translateY(-50%);
+	background-size: cover;
+	transition: 1s opacity;
+	background: rgba(255, 255, 255, 0.5) !important;
+}
 
 @media print {
 	body, div, a, p, li, .ticket {
@@ -693,29 +733,29 @@ a {
 }
 
 .navTopLeft {
-	top: 15px;
-	left: 15px;
+	bottom: 93%;
+	right: 10px;
 	position: fixed;
 	z-index: 100000;
 }
 
 .navTopRight {
-	top: 15px;
-	right: 15px;
+	bottom: 86%;
+	right: 10px;
 	position: fixed;
 	z-index: 100000;
 }
 
 .navBottomLeft {
-	bottom: 15px;
-	left: 15px;
+	bottom: 72%;
+	right: 10px;
 	position: fixed;
 	z-index: 100000;
 }
 
 .navBottmRight {
-	bottom: 15px;
-	right: 15px;
+	bottom: 79%;
+	right: 10px;
 	position: fixed;
 	z-index: 100000;
 }

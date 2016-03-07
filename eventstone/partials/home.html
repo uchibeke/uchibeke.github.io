@@ -1,52 +1,67 @@
 <section class="uofs-section jumbotron  uofs-section-cover text-center  homeBg " data-lastmodifiedby="uiu040"
 style="position:fixed;top:0;left:0;right:0;bottom:0;height:100%;overflow: hidden;" id="">
 	<div class="" id="home_bg">
-		<!-- <br />
-		<br />
-		<br />
-		<br /> -->
-		<!-- <p style="background-color: rgba(0, 0, 0, 0.3); padding: 2%;" class="jumbotron uofs-jumbotron-grey">
-		<span> I am Evewhyte. I am your buddy and I will help you organize and manage your events. <a  ng-href="#/about"> See how  &raquo;</a>
-		</p> -->
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  jumbotron "
 		id="home_welcome">
 			<div class="text-center row center-block container-fluid" >
-				<h1 class="brandTitle"> EveWhyte  </h1 >
+				<h1 class="brandTitle"> EveWhyte </h1 >
 				<p class="text-center">
-					Organize and manage your events. Enter the event name to get started.
+					Make it happen. You're in charge of your event
 				</p>
-				<input ng-model="$storage.eventName" placeholder="  Event name"
-				class="form-control" id="homeInput" autofocus="autofocus" >
+				<input ng-model="$storage.eventName" placeholder="Enter the name of your event to get started..."
+				class="form-control center center-block home_eventName" id="homeInput" autofocus="autofocus">
 			</div>
 		</div>
+		<video ng-hide="$storage.eventName.length>=1" autoplay loop muted  poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" >
+			<source src="https://08-lvl3-pdl.vimeocdn.com/01/4322/4/121614039/343902224.mp4?expires=1457340047&token=07d50ed1257711dfb78a7" type="video/webm">
+			<source src="https://08-lvl3-pdl.vimeocdn.com/01/4322/4/121614039/343902224.mp4?expires=1457340047&token=07d50ed1257711dfb78a7" type="video/mp4">
+		</video>
+		<!-- <div ng-hide="$storage.eventName.length>=1" id="bg_grayed"></div> -->
+		<!-- <script>
+		var vid = document.getElementById("bgvid");
+		var pauseButton = document.querySelector("#polina button");
+
+		function vidFade() {
+		vid.classList.add("stopfade");
+		}
+
+		vid.addEventListener('ended', function() {
+		// only functional if "loop" is removed
+		vid.pause();
+		// to capture IE10
+		vidFade();
+		});
+		</script> -->
 		<div class=" center-block text-center row home_center" >
-			<a class="col-lg-6 col-md-6 col-sm-6 col-xs-6  jumbotron animated slideInUp" ng-href="#/addticket"
-			id="home_party"> <h1 >Party</h1><b>
+			<a class="col-lg-6 col-md-6 col-sm-6 col-xs-6  jumbotron animated slideInUp" ng-href="#/populate"
+			id="home_party" ng-show="$storage.eventName.length>=1"> <h1 >Party</h1><b>
 			<br />
-			<div ng-show="$storage.eventName.length>=1" >
+			<div ng-show="false" >
 				<div>
 					<p id="partyPrev">
-						<span>
-						<h3 class="newPrev">{{$storage.eventName}}</h3>
-						Throw a Party. Generate and design tickets for your Party.</span>
+						<span> <h3 class="newPrev">{{$storage.eventName}}</h3> Throw a Party. Generate and design tickets for your Party.</span>
 					</p>
 				</div>
 			</div> </a>
 			<a class="col-lg-6 col-md-6 col-sm-6 col-xs-6  jumbotron animated slideInUp" ng-href="#/populate"
-			id="home_conf"> <h1 >Conf</h1><b>
+			id="home_conf" ng-show="$storage.eventName.length>=1"> <h1 >Conf</h1><b>
 			<br />
-			<div ng-show="$storage.eventName.length>=1" >
+			<div ng-show="false" >
 				<div>
 					<p id="confPrev">
-						<span>
-						<h3 class="newPrev">{{$storage.eventName}}</h3>
-						Manage an Attendee list and design Name Badges for your conference.</span>
+						<span> <h3 class="newPrev">{{$storage.eventName}}</h3> Manage an Attendee list and design Name Badges for your conference.</span>
 					</p>
 				</div>
 			</div> </a>
 		</div>
 		<!-- <a class="" ng-href="#/aboutparty" > <i class="uofs-icon uofs-icon-help " id="party_help"></i> </a> -->
-		<a class="" ng-href="#/aboutparty" > <i class="uofs-icon uofs-icon-help " id="party_help"></i> </a>
-		<a class="" ng-href="#/aboutconf" > <i class="uofs-icon uofs-icon-help " id="conf_help"></i> </a>
+		<a class="" ng-href="#/aboutparty" ng-show="$storage.eventName.length>=1"> <i class="uofs-icon uofs-icon-help " id="party_help"></i> </a>
+		<a class="" ng-href="#/aboutconf" ng-show="$storage.eventName.length>=1"> <i class="uofs-icon uofs-icon-help " id="conf_help"></i> </a>
+		<!-- <div id="" class="navTopLeft">
+			<a class="" href="#populate">Party</a>
+		</div>
+		<div id="" class=" navTopRight">
+			<a type="" ng-href="#/populate" class="">Conference</a>
+		</div> -->
 	</div>
 </section>
