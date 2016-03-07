@@ -6,12 +6,17 @@ style="position:fixed;top:0;left:0;right:0;bottom:0;height:100%;overflow: hidden
 			<div class="text-center row center-block container-fluid" >
 				<h1 class="brandTitle"> EveWhyte </h1 >
 				<p class="text-center">
-					Make it happen. You're in charge of your event
+					Make it happen. Own your event
 				</p>
 				<input ng-model="$storage.eventName" placeholder="Enter the name of your event to get started..."
 				class="form-control center center-block home_eventName" id="homeInput" autofocus="autofocus">
 			</div>
 		</div>
+		
+		<!-- Sample: http://www.mediagravity.com/#home-page -->
+		<!-- https://jawbone.com/ -->
+		<!-- https://www.palantir.com/ -->
+		<!-- https://www.airbnb.ca/ -->
 		<video ng-hide="$storage.eventName.length>=1" autoplay loop muted  poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" >
 			<source src="https://08-lvl3-pdl.vimeocdn.com/01/4322/4/121614039/343902224.mp4?expires=1457340047&token=07d50ed1257711dfb78a7" type="video/webm">
 			<source src="https://08-lvl3-pdl.vimeocdn.com/01/4322/4/121614039/343902224.mp4?expires=1457340047&token=07d50ed1257711dfb78a7" type="video/mp4">
