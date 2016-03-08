@@ -225,14 +225,6 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObjec
 				return i;
 			}
 
-			function playVid() {
-				if ($scope.$storage.eventName.length >= 1) {
-					vid.pause();
-				} else {
-					vid.play();
-				}
-			};
-
 			startTime();
 		}
 		$timeout($scope.init);
@@ -322,7 +314,6 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObjec
 			}, theTime);
 		};
 
-		var vid = document.getElementById("bgvid");
 
 		$scope.checkIns = function() {
 			var checkIns = 0;
