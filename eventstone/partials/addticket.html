@@ -7,12 +7,12 @@
 	<h1 class="text-center uofs-page-title"><a>GENERATE TICKETS</a></h1>
 	<h4 class="text-center "><a>{{$storage.eventName}}</a></h4>
 	<p class="text-muted"></p>
-	<!-- <div ng-repeat="a in $storage.backUpGuestList">{{a.guestStatus}}</div> -->
 	<div class="addWithNum  " >
 		<div class=" populate_div  " data-toggle="buttons" style="padding-bottom: 2%;">
 			<div class="">
 				<div class=" center-block col-xs-12">
 					<form role="form">
+						<br />
 						<div class="form-group col-md-12  col-xs-12 text-center center-block">
 							<label >Total number of Tickets to generate</label>
 							<input  class="form-control addTicketInput text-center center-block"  placeholder="One per expected attendee" type="text"
@@ -41,21 +41,6 @@
 			</div>
 
 			<h4 class="col-md-12  col-xs-12 " ng-show="guestAddFeedback"> &#926; You've added {{$storage.guestsList.length}} Tickets &#926;</h4>
-			<!-- <div class="guest cf text-center row " ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction"
-			ng-show="guestAddFeedback">
-			<div class="guest">
-			<div class="col-xs-2 col-md-2 " >
-			<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">{{item.icon}}</i></a>
-			<span class=" text-center">{{$index+1}}</span>
-			</div>
-			<div class="col-xs-5 col-md-5 ">
-			<h4>{{item[0]}}</h4>
-			</div>
-			<div class="col-xs-5 col-md-5">
-			{{item.guestStatus}}
-			</div>
-			</div>
-			</div> -->
 			<div class="guest cf text-center row center-block" ng-repeat="item in $storage.guestsList | filter: guestSearch "
 			ng-show="guestAddFeedback">
 				<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">X</i></a>
@@ -64,8 +49,6 @@
 		</div>
 	</div>
 	<div>
-		<!-- {{$storage.x}} -->
-		<!-- <p >{{dateString()}}</p> -->
 		<button ng-hide="true" ng-click="$storage.$reset({ })">
 			Clear localStorage
 		</button>
@@ -98,11 +81,6 @@
 			</div>
 			<div class="col-xs-1 col-md-1" ></div>
 			<ul class="guestlist col-xs-7 col-md-7 ">
-				<!-- Click title to edit and save after change
-				<button type="button" class="btn btn-primary btn-xs " id="saveChange">
-				Save Change
-				</button></span>
-				<br /> -->
 				<div class="text-center row center-block">
 					<span id="titleContent" class=" text-center col-lg-2 col-md-2 col-sm-2 gListTitle" ng-repeat="a in  $storage.backUpGuestList[0]  | filter: guestSearch " contenteditable="true"> {{$storage.titleArr[$index]}} </span>
 
