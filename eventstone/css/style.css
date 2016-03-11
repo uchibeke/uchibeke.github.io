@@ -11,8 +11,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	font-size: 100%;
 	vertical-align: baseline;
 	font-family: 'Exo 2', 'Roboto', 'Candal', monospace, sans-serif;
-	-webkit-print-color-adjust: exact !important;
 	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
 }
 
 html {
@@ -145,8 +146,9 @@ h1 a, h4 a {
 }
 
 body {
-	-webkit-print-color-adjust: exact !important;
 	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
 }
 
 .guestInList {
@@ -160,8 +162,9 @@ body {
 	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
 	/*width: 132px !important;*/
 	display: block !important;
-	-webkit-print-color-adjust: exact !important;
 	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
 }
 .ticketCol2 {
 	margin-top: 6px !important;
@@ -171,8 +174,9 @@ body {
 	border-left: medium solid #363942;
 	/*width: 352px !important;*/
 	display: block !important;
-	-webkit-print-color-adjust: exact !important;
 	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
 }
 
 .ticketCol3 {
@@ -709,17 +713,17 @@ a {
 	}
 
 	/*#home_party_btn {
-		position: fixed;
-		top: 50% !important;
-		width: 100% !important;
-		color: white !important;
-		text-align: left;
-		float: none;
-		background-color: rgba(245, 0, 87, 0.5) !important;!important;
-		border: thin solid #F50057 !important;
-		min-height: 150px;
-		padding: 10px;
-	}*/
+	 position: fixed;
+	 top: 50% !important;
+	 width: 100% !important;
+	 color: white !important;
+	 text-align: left;
+	 float: none;
+	 background-color: rgba(245, 0, 87, 0.5) !important;!important;
+	 border: thin solid #F50057 !important;
+	 min-height: 150px;
+	 padding: 10px;
+	 }*/
 
 }
 body {
@@ -772,8 +776,9 @@ video {
 }
 @media print {
 	body, div, a, p, li, .ticket {
-		-webkit-print-color-adjust: exact !important;
 		print-color-adjust: exact !important;
+		-webkit-print-color-adjust: exact !important;
+		-moz-print-color-adjust: exact !important;
 	}
 }
 
@@ -817,8 +822,8 @@ video {
 	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
 	color: #191970;
 	text-align: center;
-	-moz-print-color-adjust: exact !important;
-	-webkit-print-color-adjust: exact !important;
 	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
 }
 

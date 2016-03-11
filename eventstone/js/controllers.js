@@ -1,7 +1,7 @@
 var guestControllers = angular.module('guestControllers', ['ngStorage', 'ngSanitize']);
 
 guestControllers.controller('GuestController', ['$scope', '$http', '$localStorage', '$timeout', '$sce', 'analytics', '$firebaseObject',
-function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObject) {
+function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObject, RealtimeController) {
 	$http.get('js/data.json').success(function(data) {
 		// Data from json file
 		$scope.guests = [];
