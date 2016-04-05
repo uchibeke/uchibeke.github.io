@@ -725,6 +725,14 @@ html, p, body {
   height: 800px;
 }
 
+.android-wear-sectionProtect {
+  position: relative;
+  /*Change the image from img3 to another image between img1 - img5*/
+  background: url('images/manBack.jpg') center top no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
 button:hover {
 	cursor: pointer !important;
 }
@@ -734,5 +742,9 @@ button:hover {
   background: url('images/img7.jpg') center top no-repeat;
   background-size: cover;
   height: 800px;
+}
+
+.mdl-navigation__link {
+	text-decoration:none !important;
 }
 

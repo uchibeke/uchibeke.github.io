@@ -43,7 +43,7 @@ limitations under the License
 		<!--
 		<link rel="canonical" href="http://www.example.com/">
 		-->
-
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
@@ -66,13 +66,6 @@ limitations under the License
 				<div class="mdl-layout__header-row">
 					<span class="mdl-layout-title">RFID Buddy</span>
 					<div class="mdl-layout-spacer"></div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-						<label class="mdl-button mdl-js-button mdl-button--icon" for="search"> <i class="material-icons">search</i> </label>
-						<div class="mdl-textfield__expandable-holder">
-							<input class="mdl-textfield__input" type="text" id="search">
-							<label class="mdl-textfield__label" for="search">Enter your query...</label>
-						</div>
-					</div>
 					<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
 						<i class="material-icons">more_vert</i>
 					</button>
@@ -93,16 +86,13 @@ limitations under the License
 				<nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
 					<a class="mdl-navigation__link" href="#about"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
 					<a class="mdl-navigation__link" href="#aboutRFID"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">info</i>About RFID</a>
-					<a class="mdl-navigation__link" href="#usesOfRFID"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">folder</i>Uses</a>
-					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">thumb_up</i>Advantages</a>
-					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">thumb_down</i>Disadvantages</a>
-					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">info</i>DIY Safety Tip</a>
-					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">lock</i>Aluminium Foil</a>
-					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">pan_tool</i>RFID blocking materials</a>
-					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">toc</i>Leather</a>
-					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">shopping_cart</i>Cloth</a>
-					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">book</i>Latex glove</a>
-					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">book</i>Nothing</a>
+					<a class="mdl-navigation__link" href="#protectYourself"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">info</i>Protect Yourself</a>
+					<a class="mdl-navigation__link" href="#materialsTested"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">info</i>Some Material Tested</a>
+					<a class="mdl-navigation__link" href="#testingMethod"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">info</i>Testing Methodology</a>
+					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">info</i>Results</a>
+					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">info</i>DIY Safety</a>
+					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">pan_tool</i>Aluminium Foil</a>
+					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">book</i>RFID Blocking Wallet</a>
 					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
 					<div class="mdl-layout-spacer"></div>
 				</nav>
@@ -115,117 +105,297 @@ limitations under the License
 						About RFID
 					</div>
 
-					<!--Edit9 ******** -->
-					<!-- A summary of yourself below -->
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						RFID or Radio Frequency IDentification is a way to transmit information wirelessly with a signal.
+					</p>
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						Small devices that use radio waves to
+					</p>
+					<div class="android-wear-section"  id="usesOfRFID">
+						<div class="android-wear-band">
+							<div class="android-wear-band-text">
 
-					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
-						RFID or Radio Frequency IDentification is a way to transmit information wirelessly with a signal. 
-					</p>
-					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
-						To store small amount of data
-					</p>
-					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
-						Allows us to enable “Internet Of Things”
-					</p>
-			
-				</div>
-				<div class="android-wear-section"  id="usesOfRFID">
-					<div class="android-wear-band">
-						<div class="android-wear-band-text">
-
-							<div class="mdl-typography--display-2 mdl-typography--font-thin">
-								Uses
+								<div class="mdl-typography--display-2 mdl-typography--font-thin">
+									Uses
+								</div>
+								<p class="mdl-typography--headline mdl-typography--font-thin">
+									To identify things that are out of sight.
+								</p>
+								<p class="mdl-typography--headline mdl-typography--font-thin">
+									To store small amount of data
+								</p>
+								<p class="mdl-typography--headline mdl-typography--font-thin">
+									Allows us to enable “Internet Of Things”
+								</p>
+								<p class="mdl-typography--headline mdl-typography--font-thin">
+									Automatically identify and track tags attached to the objects,
+									and it provided unique information for the object.
+								</p>
+								<p class="mdl-typography--headline mdl-typography--font-thin">
+									Auto-ID system, such as bar codes, smart cards and some biometric technologies
+								</p>
+								<p>
+									<a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link"
+									href="https://www.google.ca/search?q=protect+yourself+rfid#q=about+rfid" target="_blank"> Read More About the Uses of RFID&nbsp;<i class="material-icons">chevron_right</i> </a>
+								</p>
 							</div>
-							<p class="mdl-typography--headline mdl-typography--font-thin">
-								To identify things that are out of sight and to allow electronic devices to see the
-								information while hiding it from humans.
-							</p>
-							<p class="mdl-typography--headline mdl-typography--font-thin">
-								To store small amount of data
-							</p>
-							<p class="mdl-typography--headline mdl-typography--font-thin">
-								Allows us to enable “Internet Of Things”
-							</p>
-							<p>
-								<a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" href=""> Read More About the Uses of RFID&nbsp;<i class="material-icons">chevron_right</i> </a>
-							</p>
 						</div>
 					</div>
 				</div>
-		</div>
-		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position: fixed; left: -1000px; height: -1000px;">
-			<defs>
-				<mask id="piemask" maskContentUnits="objectBoundingBox">
-					<circle cx=0.5 cy=0.5 r=0.49 fill="white" />
-					<circle cx=0.5 cy=0.5 r=0.40 fill="black" />
-				</mask>
-				<g id="piechart">
-					<circle cx=0.5 cy=0.5 r=0.5 />
-					<path d="M 0.5 0.5 0.5 0 A 0.5 0.5 0 0 1 0.95 0.28 z" stroke="none" fill="rgba(255, 255, 255, 0.75)" />
-				</g>
-			</defs>
-		</svg>
-		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 250" style="position: fixed; left: -1000px; height: -1000px;">
-			<defs>
-				<g id="chart">
-					<g id="Gridlines">
-						<line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="27.3" x2="468.3" y2="27.3" />
-						<line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="66.7" x2="468.3" y2="66.7" />
-						<line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="105.3" x2="468.3" y2="105.3" />
-						<line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="144.7" x2="468.3" y2="144.7" />
-						<line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="184.3" x2="468.3" y2="184.3" />
-					</g>
-					<g id="Numbers">
-						<text transform="matrix(1 0 0 1 485 29.3333)" fill="#888888" font-family="'Roboto'" font-size="9">
-							500
-						</text>
-						<text transform="matrix(1 0 0 1 485 69)" fill="#888888" font-family="'Roboto'" font-size="9">
-							400
-						</text>
-						<text transform="matrix(1 0 0 1 485 109.3333)" fill="#888888" font-family="'Roboto'" font-size="9">
-							300
-						</text>
-						<text transform="matrix(1 0 0 1 485 149)" fill="#888888" font-family="'Roboto'" font-size="9">
-							200
-						</text>
-						<text transform="matrix(1 0 0 1 485 188.3333)" fill="#888888" font-family="'Roboto'" font-size="9">
-							100
-						</text>
-						<text transform="matrix(1 0 0 1 0 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">
-							1
-						</text>
-						<text transform="matrix(1 0 0 1 78 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">
-							2
-						</text>
-						<text transform="matrix(1 0 0 1 154.6667 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">
-							3
-						</text>
-						<text transform="matrix(1 0 0 1 232.1667 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">
-							4
-						</text>
-						<text transform="matrix(1 0 0 1 309 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">
-							5
-						</text>
-						<text transform="matrix(1 0 0 1 386.6667 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">
-							6
-						</text>
-						<text transform="matrix(1 0 0 1 464.3333 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">
-							7
-						</text>
-					</g>
-					<g id="Layer_5">
-						<polygon opacity="0.36" stroke-miterlimit="10" points="0,223.3 48,138.5 154.7,169 211,88.5
-						294.5,80.5 380,165.2 437,75.5 469.5,223.3 	"/>
-					</g>
-					<g id="Layer_4">
-						<polygon stroke-miterlimit="10" points="469.3,222.7 1,222.7 48.7,166.7 155.7,188.3 212,132.7
-						296.7,128 380.7,184.3 436.7,125 	"/>
-					</g>
-				</g>
-			</defs>
-		</svg>
-		<!-- <a href="https://github.com/google/material-design-lite/blob/master/templates/dashboard/" -->
-		<!-- target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">View Source</a> -->
-		<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+				<div class="android-screen-section mdl-typography--text-left" id="protectYourself">
+					<a name="screens"></a>
+					<div class="mdl-typography--display-1-color-contrast mdl-typography--text-center">
+						PROTECT YOURSELF
+					</div>
+
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						RFID Skimming is more common than we realize.
+					</p>
+					<video width="auto" controls muted  autoplay
+					class="mdl-typography--headline mdl-typography--font-thin textPadding center center-block"
+					style="width: 100%;margin: 0 auto;">
+						<source src="images/rfidFail.webm" type="video/mp4">
+						<source src="images/rfidFail.webm" type="video/webm">
+						Your browser does not support HTML5 video.
+					</video>
+					<br />
+					<div class="android-wear-sectionProtect" >
+						<div class="android-wear-band">
+							<div class="android-wear-band-text">
+
+								<div class="mdl-typography--display-2 mdl-typography--font-thin">
+									RFID THEFT
+								</div>
+								<p class="mdl-typography--headline mdl-typography--font-thin">
+									In a 2006 Study  "Vulnerabilities in First-Generation RFID-Enabled Credit Cards" , and in reports by other white-hat hackers,
+									it was discovered that:
+									<br />
+									<i> <q>Every one of the 20 cards tested in the study was defeated by at least one of the attacks the researchers deployed</q> </i>
+
+									<br />
+									-<b> RSA</b>
+								</p>
+								<p>
+									<a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link"
+									href="https://www.google.ca/search?q=protect+yourself+rfid" target="_blank"> Read More About protecting yourself from RFID theft&nbsp;<i class="material-icons">chevron_right</i> </a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="android-screen-section mdl-typography--text-left" id="materialsTested">
+					<a name="screens"></a>
+					<div class="mdl-typography--display-1-color-contrast mdl-typography--text-center">
+						SOME MATERIALS TESTED
+					</div>
+					<br />
+					<hr />
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						Aluminium&nbsp;&nbsp;&nbsp;&nbsp;
+						<br />
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+					</p>
+					<hr />
+
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						Cloth&nbsp;&nbsp;&nbsp;&nbsp;
+						<br />
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+					</p>
+					<hr />
+
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						Vinyl&nbsp;&nbsp;&nbsp;&nbsp;
+						<br />
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+					</p>
+					<hr />
+
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						RFID Blocking Wallet&nbsp;&nbsp;&nbsp;&nbsp;
+						<br />
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+					</p>
+					<hr />
+
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						Leather&nbsp;&nbsp;&nbsp;&nbsp;
+						<br />
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+					</p>
+					<hr />
+
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						Latex Glove&nbsp;&nbsp;&nbsp;&nbsp;
+						<br />
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+					</p>
+					<hr />
+
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						Condom&nbsp;&nbsp;&nbsp;&nbsp;
+						<br />
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+					</p>
+					<hr />
+					<hr />
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding"
+					style="font-weight: bolder !important;">
+						Aluminium and RFID Blocking Wallet passed all 12 tests&nbsp;&nbsp;&nbsp;&nbsp;
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">thumb_up</i>
+					</p>
+					<hr />
+					<hr />
+					<br />
+
+					<video  controls muted  autoplay
+					class="mdl-typography--headline mdl-typography--font-thin textPadding center center-block"
+					style="width: 100%;margin: 0 auto; ">
+						<source src="images/backPocket.mp4" type="video/webm">
+						<source src="images/backPocket.mp4" type="video/mp4">
+						Your browser does not support HTML5 video.
+					</video>
+					<!-- <div class="android-wear-sectionProtect" >
+					<div class="android-wear-band"></div>
+					</div> -->
+				</div>
+
+				<div class="android-screen-section mdl-typography--text-left" id="testingMethod">
+					<a name="screens"></a>
+					<div class="mdl-typography--display-1-color-contrast mdl-typography--text-center">
+						TESTING METHODOLOGY
+					</div>
+
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						5 RFID cards and 1 RFID key fob are tested 10 times intially to see whether they all work and to 
+						provide a base case (control) to compare the results of the with the material around them.
+					</p>
+					
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						The RFID reader will read the cards and the ID of the card will be printed to a spreadsheet to 
+						record the attempts that the reader was able to penetrate the material and read the card.
+					</p>
+					
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						All of the materials tested are things which can be found within a ordinary household. The RFID card 
+						and RFID fob are each wrapped in one of the materials and will be tested like in the control.
+					</p>
+					<video width="auto" controls muted  autoplay
+					class="mdl-typography--headline mdl-typography--font-thin textPadding center center-block"
+					style="width: 100%;margin: 0 auto;">
+						<source src="images/rfidFail.webm" type="video/mp4">
+						<source src="images/rfidFail.webm" type="video/webm">
+						Your browser does not support HTML5 video.
+					</video>
+					<br />
+					<div class="android-wear-sectionProtect" >
+						<div class="android-wear-band">
+							<div class="android-wear-band-text">
+
+								<div class="mdl-typography--display-2 mdl-typography--font-thin">
+									RFID THEFT
+								</div>
+								<p class="mdl-typography--headline mdl-typography--font-thin">
+									In a 2006 Study  "Vulnerabilities in First-Generation RFID-Enabled Credit Cards" , and in reports by other white-hat hackers,
+									it was discovered that:
+									<br />
+									<i> <q>Every one of the 20 cards tested in the study was defeated by at least one of the attacks the researchers deployed</q> </i>
+
+									<br />
+									-<b> RSA</b>
+								</p>
+								<p>
+									<a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link"
+									href="https://www.google.ca/search?q=protect+yourself+rfid" target="_blank"> Read More About protecting yourself from RFID theft&nbsp;<i class="material-icons">chevron_right</i> </a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</main>
+			
+			<!-- <a href="https://github.com/google/material-design-lite/blob/master/templates/dashboard/" -->
+			<!-- target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">View Source</a> -->
+			<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 	</body>
 </html>
