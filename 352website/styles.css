@@ -73,16 +73,16 @@ html, body {
   display: flex !important;
   flex-direction: row;
   align-items: center;
-  color: rgba(255, 255, 255, 0.56);
+  color: rgba(255, 255, 255, 0.56)  !important;
   font-weight: 500;
 }
 .demo-layout .demo-navigation .mdl-navigation__link:hover {
-  background-color: #00BCD4;
-  color: #37474F;
+  background-color: #00BCD4  !important;
+  color: #37474F  !important;
 }
 .demo-navigation .mdl-navigation__link .material-icons {
   font-size: 24px;
-  color: rgba(255, 255, 255, 0.56);
+  color: rgba(255, 255, 255, 0.56) !important;
   margin-right: 32px;
 }
 
@@ -720,7 +720,7 @@ html, p, body {
 .android-wear-section {
   position: relative;
   /*Change the image from img3 to another image between img1 - img5*/
-  background: url('images/code.jpg') center top no-repeat;
+  background: url('images/rfid.png') center top no-repeat;
   background-size: cover;
   height: 800px;
 }
@@ -728,7 +728,7 @@ html, p, body {
 .android-wear-sectionProtect {
   position: relative;
   /*Change the image from img3 to another image between img1 - img5*/
-  background: url('images/manBack.jpg') center top no-repeat;
+  background: url('images/gold_gate.jpg') center top no-repeat;
   background-size: cover;
   height: 800px;
 }
@@ -744,7 +744,26 @@ button:hover {
   height: 800px;
 }
 
+.android-wear-NoPix {
+  position: relative;
+  background-size: cover;
+  height: 800px;
+}
+
+
 .mdl-navigation__link {
 	text-decoration:none !important;
+}
+
+
+//CSS
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
 }
 

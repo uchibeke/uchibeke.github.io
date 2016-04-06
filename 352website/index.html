@@ -19,7 +19,7 @@ limitations under the License
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+		<meta name="description" content="RFID Buddy helps you get what the hell RFID is and how it works">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>RFID Buddy</title>
 
@@ -30,7 +30,7 @@ limitations under the License
 		<!-- Add to homescreen for Safari on iOS -->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="apple-mobile-web-app-title" content="Material Design Lite">
+		<meta name="apple-mobile-web-app-title" content="RFID BUddy">
 		<link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
 
 		<!-- Tile icon for Win8 (144x144 + tile color) -->
@@ -46,8 +46,8 @@ limitations under the License
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
 		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.brown-yellow.min.css" />
 		<!-- <style>
 		#view-source {
 		position: fixed;
@@ -60,7 +60,7 @@ limitations under the License
 		}
 		</style> -->
 	</head>
-	<body>
+	<body >
 		<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
 			<header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
 				<div class="mdl-layout__header-row">
@@ -71,28 +71,28 @@ limitations under the License
 					</button>
 					<ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
 						<li class="mdl-menu__item">
-							About
+							About Us
 						</li>
 						<li class="mdl-menu__item">
-							Contact
+							Contact Us
 						</li>
 						<li class="mdl-menu__item">
-							Legal information
+							Disclaimer
 						</li>
 					</ul>
 				</div>
 			</header>
 			<div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
 				<nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-					<a class="mdl-navigation__link" href="#about"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+					<a class="mdl-navigation__link" href="#aboutRFID"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
 					<a class="mdl-navigation__link" href="#aboutRFID"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">info</i>About RFID</a>
 					<a class="mdl-navigation__link" href="#protectYourself"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">info</i>Protect Yourself</a>
 					<a class="mdl-navigation__link" href="#materialsTested"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">info</i>Some Material Tested</a>
 					<a class="mdl-navigation__link" href="#testingMethod"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">info</i>Testing Methodology</a>
-					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">info</i>Results</a>
-					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">info</i>DIY Safety</a>
-					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">pan_tool</i>Aluminium Foil</a>
-					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">book</i>RFID Blocking Wallet</a>
+					<a class="mdl-navigation__link" href="#results"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">info</i>Results</a>
+					<a class="mdl-navigation__link" href="#DIYSafety"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">info</i>DIY Safety</a>
+					<a class="mdl-navigation__link" href="#aluminiumFoil"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">pan_tool</i>Aluminium Foil</a>
+					<a class="mdl-navigation__link" href="#RFIDWallet"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">book</i>RFID Blocking Wallet</a>
 					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
 					<div class="mdl-layout-spacer"></div>
 				</nav>
@@ -109,7 +109,25 @@ limitations under the License
 						RFID or Radio Frequency IDentification is a way to transmit information wirelessly with a signal.
 					</p>
 					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
-						Small devices that use radio waves to
+						The RFID frequency ranges are between 30kHz to 3GHz.
+					</p>
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						Low Frequency: 3kHz - 300kHz.
+					</p>
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						High Frequency: 300kHz - 30MHz.
+					</p>
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						Ultra-High Freqency: 300MHz -  3GHz.
+					</p>
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						The maximum range of an RFID is around 100m.
+					</p>
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						Ultra-High Freqency: 300MHz -  3GHz.
+					</p>
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						Ultra-High Freqency: 300MHz -  3GHz.
 					</p>
 					<div class="android-wear-section"  id="usesOfRFID">
 						<div class="android-wear-band">
@@ -141,6 +159,7 @@ limitations under the License
 							</div>
 						</div>
 					</div>
+					<hr />
 				</div>
 
 				<div class="android-screen-section mdl-typography--text-left" id="protectYourself">
@@ -150,7 +169,8 @@ limitations under the License
 					</div>
 
 					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
-						RFID Skimming is more common than we realize.
+						RFID success rate of RFID signal detecting during the scan of different cards is higher than we realize.
+						Our information is worth as much as hard currency.
 					</p>
 					<video width="auto" controls muted  autoplay
 					class="mdl-typography--headline mdl-typography--font-thin textPadding center center-block"
@@ -159,6 +179,9 @@ limitations under the License
 						<source src="images/rfidFail.webm" type="video/webm">
 						Your browser does not support HTML5 video.
 					</video>
+					<p class=" mdl-typography--headline mdl-typography--font-thin  text-center">
+						Protect your information
+					</p>
 					<br />
 					<div class="android-wear-sectionProtect" >
 						<div class="android-wear-band">
@@ -183,6 +206,7 @@ limitations under the License
 							</div>
 						</div>
 					</div>
+					<hr />
 				</div>
 
 				<div class="android-screen-section mdl-typography--text-left" id="materialsTested">
@@ -191,7 +215,23 @@ limitations under the License
 						SOME MATERIALS TESTED
 					</div>
 					<br />
+					<div>
+						<img class="img-responsive" src="images/allTools.jpg" />
+					</div>
+					<br />
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding  pull-right">
+						Fail&nbsp;&nbsp;&nbsp;&nbsp;
+						= &nbsp;&nbsp;&nbsp;&nbsp;
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
+					</p>
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding  pull-left">
+						Pass&nbsp;&nbsp;&nbsp;&nbsp;
+						= &nbsp;&nbsp;&nbsp;&nbsp;
+						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">check_circle</i>
+					</p>
+					<div class="clearfix"></div>
 					<hr />
+					<!-- <hr /> -->
 					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
 						Aluminium&nbsp;&nbsp;&nbsp;&nbsp;
 						<br />
@@ -229,7 +269,7 @@ limitations under the License
 					<hr />
 
 					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
-						Vinyl&nbsp;&nbsp;&nbsp;&nbsp;
+						Vinyl Glove&nbsp;&nbsp;&nbsp;&nbsp;
 						<br />
 						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
 						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
@@ -283,7 +323,7 @@ limitations under the License
 					<hr />
 
 					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
-						Latex Glove&nbsp;&nbsp;&nbsp;&nbsp;
+						Latex Condom&nbsp;&nbsp;&nbsp;&nbsp;
 						<br />
 						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
 						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
@@ -298,32 +338,13 @@ limitations under the License
 						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
 						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
 					</p>
-					<hr />
-
-					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
-						Condom&nbsp;&nbsp;&nbsp;&nbsp;
-						<br />
-						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
-						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
-						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
-						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
-						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
-						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
-						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
-						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
-						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
-						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
-						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
-						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">clear</i>
-					</p>
-					<hr />
-					<hr />
+					<!-- <hr />
+					<hr /> -->
 					<p class="mdl-typography--headline mdl-typography--font-thin textPadding"
 					style="font-weight: bolder !important;">
 						Aluminium and RFID Blocking Wallet passed all 12 tests&nbsp;&nbsp;&nbsp;&nbsp;
 						<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">thumb_up</i>
 					</p>
-					<hr />
 					<hr />
 					<br />
 
@@ -334,9 +355,10 @@ limitations under the License
 						<source src="images/backPocket.mp4" type="video/mp4">
 						Your browser does not support HTML5 video.
 					</video>
-					<!-- <div class="android-wear-sectionProtect" >
-					<div class="android-wear-band"></div>
-					</div> -->
+					<p class=" mdl-typography--headline mdl-typography--font-thin  text-center">
+						Cloths would not protect your Cards
+					</p>
+					<hr />
 				</div>
 
 				<div class="android-screen-section mdl-typography--text-left" id="testingMethod">
@@ -346,56 +368,167 @@ limitations under the License
 					</div>
 
 					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
-						5 RFID cards and 1 RFID key fob are tested 10 times intially to see whether they all work and to 
+						5 RFID cards and 1 RFID key fob are tested 10 times intially to see whether they all work and to
 						provide a base case (control) to compare the results of the with the material around them.
 					</p>
-					
+
 					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
-						The RFID reader will read the cards and the ID of the card will be printed to a spreadsheet to 
+						The RFID reader will read the cards and the ID of the card will be printed to a spreadsheet to
 						record the attempts that the reader was able to penetrate the material and read the card.
 					</p>
-					
+
 					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
-						All of the materials tested are things which can be found within a ordinary household. The RFID card 
+						All of the materials tested are things which can be found within a ordinary household. The RFID card
 						and RFID fob are each wrapped in one of the materials and will be tested like in the control.
 					</p>
-					<video width="auto" controls muted  autoplay
-					class="mdl-typography--headline mdl-typography--font-thin textPadding center center-block"
-					style="width: 100%;margin: 0 auto;">
-						<source src="images/rfidFail.webm" type="video/mp4">
-						<source src="images/rfidFail.webm" type="video/webm">
-						Your browser does not support HTML5 video.
-					</video>
 					<br />
-					<div class="android-wear-sectionProtect" >
+					<div class="android-wear-NoPix" >
 						<div class="android-wear-band">
 							<div class="android-wear-band-text">
 
 								<div class="mdl-typography--display-2 mdl-typography--font-thin">
-									RFID THEFT
+									ITEMS USED
 								</div>
 								<p class="mdl-typography--headline mdl-typography--font-thin">
-									In a 2006 Study  "Vulnerabilities in First-Generation RFID-Enabled Credit Cards" , and in reports by other white-hat hackers,
-									it was discovered that:
-									<br />
-									<i> <q>Every one of the 20 cards tested in the study was defeated by at least one of the attacks the researchers deployed</q> </i>
-
-									<br />
-									-<b> RSA</b>
+									- 1 RFID reader @125kHz
+								</p>
+								<p class="mdl-typography--headline mdl-typography--font-thin">
+									- 5 RFID cards
+								</p>
+								<p class="mdl-typography--headline mdl-typography--font-thin">
+									- 1 RFID fob
+								</p>
+								<p class="mdl-typography--headline mdl-typography--font-thin">
+									- Aluminium foil
+								</p>
+								<p class="mdl-typography--headline mdl-typography--font-thin">
+									- Leather wallet
+								</p>
+								<p class="mdl-typography--headline mdl-typography--font-thin">
+									- Jeans (for a cloth)
+								</p>
+								<p class="mdl-typography--headline mdl-typography--font-thin">
+									- 1 Vinyl Glove
+								</p>
+								<p class="mdl-typography--headline mdl-typography--font-thin">
+									- 1 Latex Condom
+								</p>
+								<p class="mdl-typography--headline mdl-typography--font-thin">
+									- RFID blocking wallet
 								</p>
 								<p>
 									<a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link"
-									href="https://www.google.ca/search?q=protect+yourself+rfid" target="_blank"> Read More About protecting yourself from RFID theft&nbsp;<i class="material-icons">chevron_right</i> </a>
+									href="https://www.google.ca/search?q=rfid+blocking" target="_blank"> Read More About RFID Blocking&nbsp;<i class="material-icons">chevron_right</i> </a>
 								</p>
 							</div>
 						</div>
 					</div>
+					<hr />
 				</div>
 
+				<div class="android-screen-section mdl-typography--text-left" id="results">
+					<a name="screens"></a>
+					<div class="mdl-typography--display-1-color-contrast mdl-typography--text-center">
+						RESULTS
+					</div>
+
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						Only the Aluminium foil and the RFID blocking wallet succeffuly blocked the RFID reader's signal.
+					</p>
+
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						All other materials failed to block the RF signal.
+					</p>
+
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						The card <i>must</i>  be completely surrounded by the material to fully prevent the signal
+						from reaching the card. If any part of the card is exposed, it can be read by the reader.
+
+					</p>
+					<hr />
+				</div>
+
+				<div class="android-screen-section mdl-typography--text-left" id="DIYSafety">
+					<a name="screens"></a>
+					<div class="mdl-typography--display-1-color-contrast mdl-typography--text-center">
+						DIY PROTECTION
+					</div>
+
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						<i> RFID sleeve shield </i> by Constructed :
+						<br />
+						<a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link"
+						href="http://www.instructables.com/id/RFID-sleeve-shield/" target="_blank"> How to Make yours&nbsp;<i class="material-icons">chevron_right</i> </a>
+
+					</p>
+
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						<i> Use an Altoid Tin as an RFID-Blocking Wallet </i>:
+						<br />
+						<a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link"
+						href="http://lifehacker.com/5934635/use-an-altoid-tin-as-an-rfid-blocking-wallet" target="_blank"> How to Make yours&nbsp;<i class="material-icons">chevron_right</i> </a>
+
+					</p>
+
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						<i> RFID Bloacking Wallet </i> by Polymath :
+						<br />
+						<a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link"
+						href="http://www.rpi-polymath.com/ducttape/RFIDWallet.php" target="_blank"> How to Make yours&nbsp;<i class="material-icons">chevron_right</i> </a>
+					</p>
+					<hr />
+				</div>
+
+				<div class="android-screen-section mdl-typography--text-left" id="aluminiumFoil">
+					<a name="screens"></a>
+					<div class="mdl-typography--display-1-color-contrast mdl-typography--text-center">
+						ALUMINIUM FOIL
+					</div>
+
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						Aluminium Foil passed 12 out out 12 of our tests. We recommend lining your Wallet with double layer of
+						Aluminium foil.
+					</p>
+					<video width="auto" controls muted  autoplay
+					class="mdl-typography--headline mdl-typography--font-thin textPadding center center-block"
+					style="width: 100%;margin: 0 auto;">
+						<source src="images/aluminium_foil.mp4" type="video/webm">
+						<source src="images/aluminium_foil.mp4" type="video/mp4">
+						Your browser does not support HTML5 video.
+					</video>
+					<p class=" mdl-typography--headline mdl-typography--font-thin  text-center">
+						Alumnium Foil Works like charm
+					</p>
+					<hr />
+				</div>
+
+				<div class="android-screen-section mdl-typography--text-left" id="RFIDWallet">
+					<a name="screens"></a>
+					<div class="mdl-typography--display-1-color-contrast mdl-typography--text-center">
+						RFID Bloacking Wallet
+					</div>
+
+					<p class="mdl-typography--headline mdl-typography--font-thin textPadding">
+						RFID Blocking passed 12 out out 12 of our tests. We recommend a good RFID Bloacking Wallet.
+					</p>
+					<video width="auto" controls muted  autoplay
+					class="mdl-typography--headline mdl-typography--font-thin textPadding center center-block"
+					style="width: 100%;margin: 0 auto;">
+						<!-- <source src="images/rfid_wallet.mp4" type="video/webm"> -->
+						<source src="images/rfid_wallet.mp4" type="video/mp4">
+						Your browser does not support HTML5 video.
+					</video>
+					<p class=" mdl-typography--headline mdl-typography--font-thin  text-center">
+						RFID Blocking Wallet
+					</p>
+					<!-- <hr /> -->
+				</div>
+				<hr />
+				<p class="textPadding">
+					&copy; A University of Saskatchewan CMPT 352 Project
+				</p>
+
 			</main>
-			
-			<!-- <a href="https://github.com/google/material-design-lite/blob/master/templates/dashboard/" -->
-			<!-- target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">View Source</a> -->
 			<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 	</body>
 </html>
