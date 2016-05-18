@@ -84,7 +84,7 @@ body {
 .projectDiv {
 	margin-top: 5%;
 	min-height: 400px;
-	cursor: pointer;
+	cursor: url(../images/cursor-pointer.gif), auto; 
 	transition-duration: 0.1s;
 	transition-property: transform;
 }
