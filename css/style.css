@@ -91,18 +91,15 @@ body {
 
 .projectDiv:hover {
 	/*border: thick solid #E8EFF9;*/
-	transform: scale(1.002);
-	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+	/*transform: scale(1.002);*/
+	/*box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);*/
 	/*box-shadow: 10px 10px 5px #888888;*/
 }
-
 .portfolioPage {
 }
-
 a {
 	color: #313649 !important;
 }
-
 .portfolioPageAlt {
 	background: #313649;
 	color: #E8EFF2 !important;
