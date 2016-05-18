@@ -172,17 +172,17 @@ a {
 	border-bottom: medium solid #313649;
 }
 	
-.uofs-header-masthead a, .uofs-header-masthead a h2 {
+.header-masthead a, .header-masthead a h2 {
 	text-decoration: none  !important;
 	transition: all .1s ease-in-out; 
 }
 
-.uofs-header-masthead {
+.header-masthead {
 	text-decoration: none  !important;
 	transition: all .1s ease-in-out; 
 }
 
-.uofs-header-masthead a:hover, .uofs-header-masthead a h2:hover {
+.header-masthead a:hover, .header-masthead a h2:hover {
 	text-decoration: none  !important;
     transform: scale(1.05);
 }
