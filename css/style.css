@@ -88,7 +88,9 @@ body {
 	transition-duration: 0.1s;
 	transition-property: transform;
 }
-
+.extern_link {
+	cursor: url(../images/cursor-pointer-right.png), auto; 
+}
 .projectDiv:hover {
 	/*border: thick solid #E8EFF9;*/
 	/*transform: scale(1.002);*/
