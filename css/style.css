@@ -140,7 +140,10 @@ a {
 .portfolioPage .panel-body img:hover, .portfolioPage .panel-body img:active {
 	width: 100%;
 	/*cursor: pointer;*/
-	cursor: url(../images/cursor-pointer2.png), auto; 
+}
+
+a {
+	cursor: url(../images/cursor-pointer2.png), auto; 	
 }
 
 
