@@ -143,11 +143,11 @@ a {
 .portfolioPage .panel-body img:hover, .portfolioPage .panel-body img:active {
 	width: 100%;
 	/*cursor: pointer;*/
-	cursor: url(../images/cursor-pointer2.png), auto ; 
+	cursor: url(../images/cursor-pointer.gif), auto ; 
 }
 
 a:hover {
-	cursor: url(../images/cursor-pointer2.png), auto !important; 	
+	cursor: url(../images/cursor-pointer.gif), auto; 	
 }
 
 
@@ -157,46 +157,34 @@ a:hover {
 	text-decoration: underline !important;
 	
 }
-
 .footerDiv h3 b {
 	padding: 2%;
 	font-size: 2em !important;
-	
 }
-
-
-
 .projectIntro a {
 	color: #E8EFF2 !important;
 	font-style:italic;
 }
-
 .uofs-header-nav a{
 	text-decoration: none  !important;
 	transition: all .1s ease-in-out; 
 }
-
 .uofs-header-nav a:hover {
 	text-decoration: none  !important;
 	border-bottom: medium solid #313649;
 }
-	
 .uofs-header-masthead a, .uofs-header-masthead a h2 {
 	text-decoration: none  !important;
 	transition: all .1s ease-in-out; 
 }
-
 .uofs-header-masthead {
 	text-decoration: none  !important;
 	transition: all .1s ease-in-out; 
 }
-
 .uofs-header-masthead a:hover, .uofs-header-masthead a h2:hover {
 	text-decoration: none  !important;
     transform: scale(1.05);
 }
-
-
 @media (min-width:320px) { 
 	/* smartphones, iPhone, portrait 480x320 phones */
 	.portfolioTexts, .projectIntro {
@@ -215,8 +203,6 @@ a:hover {
 		font-variant: small-caps;
 	}
 }
-
-
 @media (min-width:481px) { 
 	/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
 	.portfolioTexts {
