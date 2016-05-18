@@ -87,8 +87,8 @@ body {
 
 .projectDiv:hover {
 	/*border: thick solid #E8EFF9;*/
-	transform: scale(1.005);
-	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+	transform: scale(1.002);
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
 	/*box-shadow: 10px 10px 5px #888888;*/
 }
 
