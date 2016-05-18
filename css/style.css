@@ -88,9 +88,6 @@ body {
 	transition-duration: 0.1s;
 	transition-property: transform;
 }
-.extern_link {
-	cursor: url(../images/cursor-pointer-right.png), auto; 
-}
 .projectDiv:hover {
 	/*border: thick solid #E8EFF9;*/
 	/*transform: scale(1.002);*/
@@ -124,9 +121,6 @@ a {
 .portfolioHomeImg {
 	max-height: 300px;
 }
-
-
-
 .navHeader div {
 	background-color: rgba(232, 239, 242, 0.5) !important;
 }
@@ -144,12 +138,12 @@ a {
 	/*cursor: pointer;*/
 	cursor: url(../images/cursor-pointer.gif), auto ; 
 }
-
 a:hover, a:active {
 	cursor: url(../images/cursor-pointer.gif), auto; 	
 }
-
-
+.extern_link:hover, .extern_link:active {
+	cursor: url(../images/cursor-pointer-right.png), auto; 
+}
 .footerDiv h4 a  {
 	padding: 2%;
 	font-size: 2em !important;
