@@ -151,7 +151,7 @@ a:hover, a:active {
 	
 }
 .footerDiv h3 b {
-	/*padding: 2%;*/
+	padding: 0% !important;
 	font-size: 2em !important;
 }
 .projectIntro a {
