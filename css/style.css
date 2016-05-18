@@ -145,6 +145,7 @@ a {
 .footerDiv h4 a , .footerDiv h2 b {
 	padding: 2%;
 	font-size: 2em !important;
+	text-decoration: underline !important;
 	
 }
 
