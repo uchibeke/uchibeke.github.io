@@ -84,7 +84,7 @@ body {
 .projectDiv {
 	margin-top: 5%;
 	min-height: 400px;
-	cursor: url(../images/cursor-pointer.gif), auto; 
+	cursor: url(../images/cursor-pointer.png), auto; 
 	transition-duration: 0.1s;
 	transition-property: transform;
 }
@@ -136,10 +136,10 @@ a {
 .portfolioPage .panel-body img:hover, .portfolioPage .panel-body img:active {
 	width: 100%;
 	/*cursor: pointer;*/
-	cursor: url(../images/cursor-pointer.gif), auto ; 
+	cursor: url(../images/cursor-pointer.png), auto ; 
 }
 a:hover, a:active {
-	cursor: url(../images/cursor-pointer.gif), auto; 	
+	cursor: url(../images/cursor-pointer.png), auto; 	
 }
 .extern_link:hover, .extern_link:active {
 	cursor: url(../images/cursor-pointer-right.png), auto; 
