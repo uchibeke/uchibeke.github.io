@@ -82,7 +82,7 @@ body {
 }
 
 .projectDiv {
-	margin-top: 5%;
+	margin-bottom: 5%;
 	min-height: 400px;
 	cursor: url(../images/cursor-pointer.png), auto; 
 	transition-duration: 0.1s;
