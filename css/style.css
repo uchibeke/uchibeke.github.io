@@ -82,6 +82,7 @@ body {
 }
 
 .projectDiv {
+	background: WhiteSmoke !important;
 	margin-bottom: 5%;
 	min-height: 400px;
 	cursor: url(../images/cursor-pointer.png), auto; 
@@ -94,7 +95,8 @@ body {
 	/*box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);*/
 	/*box-shadow: 10px 10px 5px #888888;*/
 }
-.portfolioPage {
+.portfolioPageMain {
+	background: WhiteSmoke !important;
 }
 a {
 	color: #313649 !important;
@@ -116,6 +118,14 @@ a {
 .portfolioTexts {
 	padding-left: 20%;
 	padding-right: 20%;
+}
+
+.aboutTexts {
+	background: WhiteSmoke !important;; 
+	padding-left: 2%;
+	padding-right: 2%;
+	font-size: 2em !important;
+    line-height: 2.0;
 }
 
 .portfolioHomeImg {
@@ -185,7 +195,6 @@ a:hover, a:active {
 		padding-right: 0;
     	line-height: 2.0;
 	}
-	
 	.portfolioTexts h3 {
 		font-weight: bolder;
 		font-variant: small-caps;
