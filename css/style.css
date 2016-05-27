@@ -188,7 +188,7 @@ a:hover, a:active {
 		padding-left: 5%;
 		padding-right: 5%;
 	}
-	.portfolioTexts p , .projectIntro , .projectDiv p, .homeIntro{
+	.portfolioTexts p , .projectIntro , .projectDiv p, .homeIntro, .aboutTexts{
 		font-size: 2em !important;
 	}
 	.portfolioTexts h3 {
