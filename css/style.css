@@ -112,6 +112,7 @@ a {
 .seeDetails {
 	color: #FF4912 !important;
 	font-style: bold;
+	text-decoration: underline;
 }
 .portfolioPage .panel-body img {
 	border: thin solid #E8EFF2;
@@ -199,7 +200,7 @@ a:hover, a:active {
 	    position: fixed;
 	    top: 2%;
 	    left: 2%;
-     	z-index: 10000000;
+    	z-index: 10000000;
 	}
 }
 @media (min-width:641px) { 
@@ -228,7 +229,7 @@ a:hover, a:active {
 	    position: fixed;
 	    top: 2%;
 	    left: 2%;
-     	z-index: 10000000;
+    	z-index: 10000000;
 	}
 }
 @media (min-width:961px) { 
