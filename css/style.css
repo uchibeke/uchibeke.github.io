@@ -105,8 +105,6 @@ a {
 	background: WhiteSmoke !important;; 
 	padding-left: 2%;
 	padding-right: 2%;
-	font-size: 2.2em !important;
-    line-height: 1.5;
 }
 .portfolioHomeImg {
 	max-height: 300px;
@@ -148,6 +146,9 @@ a:hover, a:active {
 	text-decoration: none  !important;
 	border-bottom: medium solid #313649;
 }
+.selectedMenu {
+	border-bottom: medium solid #313649;
+}
 .uofs-header-masthead a, .uofs-header-masthead a h2 {
 	text-decoration: none  !important;
 	transition: all .1s ease-in-out; 
@@ -175,12 +176,31 @@ a:hover, a:active {
 		font-weight: bolder;
 		font-variant: small-caps;
 	}
+	.previousPageBtn {
+		font-size: 2em;
+		font-weight: bolder;
+		color:#000000;
+	    position: fixed;
+	    top: 2%;
+	    left: 2%;
+    	z-index: 10000000;
+	}
 }
 @media (min-width:481px) { 
 	/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
 	.portfolioTexts {
 	padding-left: 2.5%;
 	padding-right: 2.5%;
+	
+	.previousPageBtn {
+		font-size: 2em;
+		font-weight: bolder;
+		color:#000000;
+	    position: fixed;
+	    top: 2%;
+	    left: 2%;
+     	z-index: 10000000;
+	}
 }
 @media (min-width:641px) { 
 	/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
@@ -188,7 +208,7 @@ a:hover, a:active {
 		padding-left: 5%;
 		padding-right: 5%;
 	}
-	.portfolioTexts p , .projectIntro , .projectDiv p, .homeIntro, .aboutTexts{
+	.portfolioTexts p , .projectIntro , .projectDiv p, .homeIntro, .aboutTexts p{
 		font-size: 2em !important;
 	}
 	.portfolioTexts h3 {
@@ -200,6 +220,15 @@ a:hover, a:active {
 		font-size: 2.7em !important;
 		font-weight: bolder;
 		font-variant: small-caps;
+	}
+	.previousPageBtn {
+		font-size: 2em;
+		font-weight: bolder;
+		color:#000000;
+	    position: fixed;
+	    top: 2%;
+	    left: 2%;
+     	z-index: 10000000;
 	}
 }
 @media (min-width:961px) { 
@@ -213,4 +242,13 @@ a:hover, a:active {
 }
 @media (min-width:1281px) { 
 	/* hi-res laptops and desktops */ 
+}
+.previousPageBtn {
+	font-size: 2em;
+	font-weight: bolder;
+	color:#000000;
+    position: fixed;
+    top: 2%;
+    left: 2%;
+    z-index: 10000000;
 }
