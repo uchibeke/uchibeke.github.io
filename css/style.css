@@ -61,7 +61,7 @@ body {
 	print-color-adjust: exact !important;
 }
 .projectDiv {
-	background: WhiteSmoke !important;
+	background: #E8E8E8 !important;
 	margin-bottom: 5%;
 	min-height: 450px;
 	cursor: url(../images/cursor-pointer.png), auto; 
@@ -78,7 +78,7 @@ body {
 	/*box-shadow: 10px 10px 5px #888888;*/
 }
 .portfolioPageMain {
-	background: WhiteSmoke !important;
+	background: #E8E8E8 !important;
 }
 a {
 	color: #313649 !important;
@@ -102,7 +102,7 @@ a {
 	padding-right: 10%;
 }
 .aboutTexts {
-	background: WhiteSmoke !important;; 
+	background: #E8E8E8 !important;; 
 	padding-left: 2%;
 	padding-right: 2%;
 }
