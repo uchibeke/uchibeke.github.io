@@ -98,8 +98,8 @@ a {
 	display: inline-block;
 }
 .portfolioTexts {
-	padding-left: 10%;
-	padding-right: 10%;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 .aboutTexts {
 	background: #E8E8E8 !important;; 
@@ -190,8 +190,8 @@ a:hover, a:active {
 @media (min-width:481px) { 
 	/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
 	.portfolioTexts {
-	padding-left: 2.5%;
-	padding-right: 2.5%;
+	padding-left: 2%;
+	padding-right: 2%;
 	
 	.previousPageBtn {
 		font-size: 1.5em;
@@ -206,8 +206,8 @@ a:hover, a:active {
 @media (min-width:641px) { 
 	/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
 		.portfolioTexts, .projectDiv  p {
-		padding-left: 5%;
-		padding-right: 5%;
+		padding-left: 3%;
+		padding-right: 3%;
 	}
 	.portfolioTexts p , .projectIntro , .projectDiv p, .homeIntro, .aboutTexts p{
 		font-size: 1.5em !important;
@@ -235,8 +235,8 @@ a:hover, a:active {
 @media (min-width:961px) { 
 	/* tablet, landscape iPad, lo-res laptops ands desktops */
 	.portfolioTexts {
-	padding-left: 10%;
-	padding-right: 10%;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 @media (min-width:1025px) { 
 	/* big landscape tablets, laptops, and desktops */
