@@ -67,6 +67,8 @@ body {
 	cursor: url(../images/cursor-pointer.png), auto; 
 	transition-duration: 0.1s;
 	transition-property: transform;
+	left: 0 !important;
+	right:0 !important;
 }
 .projectDiv p{
 	padding-left:0 !important;
@@ -80,14 +82,20 @@ body {
 .portfolioPage .panel {
 	margin-bottom: 0 !important;
 	margin-top: 0 !important;
+	left: 0 !important;
+	right:0 !important;
 }
 .portfolioPageMain {
 	background: #E8E8E8 !important;
+	left: 0 !important;
+	right:0 !important;
 }
 a {
 	color: #313649 !important;
 }
 .portfolioPageAlt {
+	left: 0 !important;
+	right:0 !important;
 	background: #313649;
 	color: #E8EFF2 !important;
 	}
