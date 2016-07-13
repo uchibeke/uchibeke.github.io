@@ -62,8 +62,8 @@ body {
 }
 .projectDiv {
 	background: #E8E8E8 !important;
-	margin-bottom: 5%;
-	min-height: 400px;
+	margin-bottom: 2%;
+	min-height: 380px;
 	cursor: url(../images/cursor-pointer.png), auto; 
 	transition-duration: 0.1s;
 	transition-property: transform;
