@@ -78,6 +78,8 @@ body {
 	/*box-shadow: 10px 10px 5px #888888;*/
 }
 .portfolioPageMain {
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
 	background: #E8E8E8 !important;
 }
 a {
