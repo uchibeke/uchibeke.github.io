@@ -67,6 +67,9 @@ body {
 	cursor: url(../images/cursor-pointer.png), auto; 
 	transition-duration: 0.1s;
 	transition-property: transform;
+	position: absolute;
+	width: 100%;
+	left: 0;
 }
 .projectDiv p{
 	padding-left:0 !important;
@@ -78,6 +81,9 @@ body {
 	/*box-shadow: 10px 10px 5px #888888;*/
 }
 .portfolioPage .panel {
+	position: absolute;
+	width: 100%;
+	left: 0;
 	margin-bottom: 0 !important;
 	margin-top: 0 !important;
 }
