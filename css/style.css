@@ -129,11 +129,11 @@ a:hover, a:active {
 	cursor: url(../images/cursor-pointer-right.png), auto; 
 }
 .footerDiv h4 a  {
-	font-size: 2em !important;
+	font-size: 1.5em !important;
 	text-decoration: underline !important;
 }
 .footerDiv h3 b {
-	font-size: 2em !important;
+	font-size: 1.5em !important;
 }
 .projectIntro a {
 	color: #E8EFF2 !important;
@@ -167,7 +167,7 @@ a:hover, a:active {
 	.portfolioTexts, .projectIntro {
 		padding-left: 0;
 		padding-right: 0;
-    	line-height: 1.5;
+    	line-height: 1.2;
 	}
 	.portfolioTexts h3 {
 		font-weight: bolder;
@@ -178,7 +178,7 @@ a:hover, a:active {
 		font-variant: small-caps;
 	}
 	.previousPageBtn {
-		font-size: 2em;
+		font-size: 1.5em;
 		font-weight: bolder;
 		color:#000000;
 	    position: fixed;
@@ -194,7 +194,7 @@ a:hover, a:active {
 	padding-right: 2.5%;
 	
 	.previousPageBtn {
-		font-size: 2em;
+		font-size: 1.5em;
 		font-weight: bolder;
 		color:#000000;
 	    position: fixed;
@@ -210,20 +210,20 @@ a:hover, a:active {
 		padding-right: 5%;
 	}
 	.portfolioTexts p , .projectIntro , .projectDiv p, .homeIntro, .aboutTexts p{
-		font-size: 2em !important;
+		font-size: 1.5em !important;
 	}
 	.portfolioTexts h3 {
-		font-size: 2.2em !important;
+		font-size: 2em !important;
 		font-weight: bolder;
 		font-variant: small-caps;
 	}
 	.panel-body h1 {
-		font-size: 2.7em !important;
+		font-size: 2.5em !important;
 		font-weight: bolder;
 		font-variant: small-caps;
 	}
 	.previousPageBtn {
-		font-size: 2em;
+		font-size: 1.5em;
 		font-weight: bolder;
 		color:#000000;
 	    position: fixed;
@@ -245,7 +245,7 @@ a:hover, a:active {
 	/* hi-res laptops and desktops */ 
 }
 .previousPageBtn {
-	font-size: 2em;
+	font-size: 1.5em;
 	font-weight: bolder;
 	color:#000000;
     position: fixed;
