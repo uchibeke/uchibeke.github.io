@@ -15,18 +15,19 @@
 		<div class=" populate_div  " data-toggle="buttons" style="padding-bottom: 2%;">
 			<!-- <div class="panel-body"> -->
 			<div class="pull-right">
-				<button ng-model="btnText" type="button" ng-show="dataFieldExcel.length >=1"
+				<button ng-model="btnText" type="button" ng-disabled="dataFieldExcel.length <1 || dataFieldExcel.length == undefined"
 				class="btn btn-primary" ng-click="addPastedExcel();dataFieldExcel = '';guestAddFeedback=true;guestAddMsg();nbDesign=true ">
 					{{listBtnText}}
 				</button>
-				<button ng-model="btnText" type="button" ng-show="dataFieldExcel.length >=1"
+				<button ng-model="btnText" type="button" ng-disabled="dataFieldExcel.length <1 || dataFieldExcel.length == undefined"
 				class="btn btn-primary" ng-click="clearField(dataFieldExcel); dataFieldExcel = ' ' ">
 					Clear Field
 				</button>
 			</div>
 			<br />
-			<hr />
+			<br />
 			<div class="form-group col-md-12  col-xs-12 text-center" ng-show="nbDesign || $storage.guestsList.length>0">
+				<hr />
 				<a type="button" class="btn btn-primary  "  ng-href="#/nameBadge"><span class="glyphicon glyphicon-edit"></span> Design Name Badges</a>
 			</div>
 			<div class="row text-center center-block">
