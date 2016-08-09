@@ -62,11 +62,13 @@ body {
 }
 .projectDiv {
 	background: #E8E8E8 !important;
-	margin-bottom: 5%;
-	min-height: 450px;
+	margin-bottom: 1%;
+	min-height: 380px;
 	cursor: url(../images/cursor-pointer.png), auto; 
 	transition-duration: 0.1s;
 	transition-property: transform;
+	width: 100%;
+	left: 0;
 }
 .projectDiv p{
 	padding-left:0 !important;
@@ -76,6 +78,12 @@ body {
 	/*transform: scale(1.002);*/
 	/*box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);*/
 	/*box-shadow: 10px 10px 5px #888888;*/
+}
+.portfolioPage .panel {
+	width: 100%;
+	left: 0;
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
 }
 .portfolioPageMain {
 	background: #E8E8E8 !important;
@@ -98,8 +106,8 @@ a {
 	display: inline-block;
 }
 .portfolioTexts {
-	padding-left: 10%;
-	padding-right: 10%;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 .aboutTexts {
 	background: #E8E8E8 !important;; 
@@ -129,11 +137,11 @@ a:hover, a:active {
 	cursor: url(../images/cursor-pointer-right.png), auto; 
 }
 .footerDiv h4 a  {
-	font-size: 2em !important;
+	font-size: 1.5em !important;
 	text-decoration: underline !important;
 }
 .footerDiv h3 b {
-	font-size: 2em !important;
+	font-size: 1.5em !important;
 }
 .projectIntro a {
 	color: #E8EFF2 !important;
@@ -167,7 +175,7 @@ a:hover, a:active {
 	.portfolioTexts, .projectIntro {
 		padding-left: 0;
 		padding-right: 0;
-    	line-height: 1.5;
+    	line-height: 1.2;
 	}
 	.portfolioTexts h3 {
 		font-weight: bolder;
@@ -178,7 +186,7 @@ a:hover, a:active {
 		font-variant: small-caps;
 	}
 	.previousPageBtn {
-		font-size: 2em;
+		font-size: 1.5em;
 		font-weight: bolder;
 		color:#000000;
 	    position: fixed;
@@ -190,11 +198,11 @@ a:hover, a:active {
 @media (min-width:481px) { 
 	/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
 	.portfolioTexts {
-	padding-left: 2.5%;
-	padding-right: 2.5%;
+	padding-left: 2%;
+	padding-right: 2%;
 	
 	.previousPageBtn {
-		font-size: 2em;
+		font-size: 1.5em;
 		font-weight: bolder;
 		color:#000000;
 	    position: fixed;
@@ -206,24 +214,24 @@ a:hover, a:active {
 @media (min-width:641px) { 
 	/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
 		.portfolioTexts, .projectDiv  p {
-		padding-left: 5%;
-		padding-right: 5%;
+		padding-left: 3%;
+		padding-right: 3%;
 	}
 	.portfolioTexts p , .projectIntro , .projectDiv p, .homeIntro, .aboutTexts p{
-		font-size: 2em !important;
+		font-size: 1.5em !important;
 	}
 	.portfolioTexts h3 {
-		font-size: 2.2em !important;
+		font-size: 2em !important;
 		font-weight: bolder;
 		font-variant: small-caps;
 	}
 	.panel-body h1 {
-		font-size: 2.7em !important;
+		font-size: 2.5em !important;
 		font-weight: bolder;
 		font-variant: small-caps;
 	}
 	.previousPageBtn {
-		font-size: 2em;
+		font-size: 1.5em;
 		font-weight: bolder;
 		color:#000000;
 	    position: fixed;
@@ -235,8 +243,8 @@ a:hover, a:active {
 @media (min-width:961px) { 
 	/* tablet, landscape iPad, lo-res laptops ands desktops */
 	.portfolioTexts {
-	padding-left: 10%;
-	padding-right: 10%;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 @media (min-width:1025px) { 
 	/* big landscape tablets, laptops, and desktops */
@@ -245,7 +253,7 @@ a:hover, a:active {
 	/* hi-res laptops and desktops */ 
 }
 .previousPageBtn {
-	font-size: 2em;
+	font-size: 1.5em;
 	font-weight: bolder;
 	color:#000000;
     position: fixed;
