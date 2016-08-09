@@ -3,44 +3,43 @@
 	<div class="back_div pull-left ">
 		<a type="button" class="btn btn-default btn-xs" ng-href="#/home"> <span class="glyphicon glyphicon-menu-left"></span> </a></a>
 	</div>
-	<h1 class="text-center uofs-page-title"><a>ADD FROM
-	<br />
-	SPREADSHEET</a></h1>
+	<h1 class="text-center uofs-page-title"><a>SPREADSHEET</a></h1>
 	<h4 class="text-center "><a>{{$storage.eventName}}</a></h4>
-	<br />
 	<p class="text-muted"></p>
 	<div class="btn-group center-block row text-center" data-toggle="buttons" style=""></div>
-	<div class="addByPasting center center-block " ng-show="addByPasting">
+	<div class="addByPasting center center-block row center-block" ng-show="addByPasting">
 		<div class="row dataFieldContainer center-block  text-center">
-			<textarea ng-model="dataFieldExcel" placeholder="Copy and paste the excel columns containing the names,  Leave out the column heading, and click 'Add'. You can also add new attendees by typing their info here with each new attendee in a new line." 
-		class="dataField form-control center-block center" type="textarea" style="height: 250px !important; " ></textarea>
+			<textarea ng-model="dataFieldExcel" placeholder="Paste data from excel or csv file" 
+		class="dataField form-control center-block center" type="textarea" style="height: 250px !important; " autofocus="autofocus" ></textarea>
 		</div>
-		<div class=" populate_div  panel panel-default" data-toggle="buttons" style="padding-bottom: 2%;">
-			<div class="panel-body">
-				<div class="pull-right">
-					<button ng-model="btnText" type="button" ng-show="dataFieldExcel.length >=1"
-					class="btn btn-primary btn-xs" ng-click="addPastedExcel();dataFieldExcel = '';guestAddFeedback=true;guestAddMsg();nbDesign=true ">
-						{{listBtnText}}
-					</button>
-					<button ng-model="btnText" type="button" ng-show="dataFieldExcel.length >=1"
-					class="btn btn-primary btn-xs" ng-click="clearField(dataFieldExcel); dataFieldExcel = ' ' ">
-						Clear Field
-					</button>
-				</div>
-				<div class="form-group col-md-12  col-xs-12 text-center" ng-show="nbDesign || $storage.guestsList.length>0">
-					<a type="button" class="btn btn-primary  "  ng-href="#/nameBadge"><span class="glyphicon glyphicon-edit"></span> Design Name Badges</a>
-				</div>
-				<div class="row text-center center-block">
-					<a class="col-md-12  col-xs-12  "   ng-show="$storage.guestsList.length>0"
-					ng-click="guestAddFeedback = !guestAddFeedback">
-					<button type="button" class="btn btn-primary checkInBtn btn-xs  ">
-						<span ng-show="guestAddFeedback"> <span class="glyphicon glyphicon-menu-up"> </span></span>
-						<span ng-show="!guestAddFeedback"> <span class="glyphicon glyphicon-menu-down"> </span></span>
-						<!-- <span ng-show="guestAddFeedback">Hide Attendees</span>
-						<span ng-show="!guestAddFeedback">View  Attendees</span> -->
-					</button> </a>
-				</div>
+		<div class=" populate_div  " data-toggle="buttons" style="padding-bottom: 2%;">
+			<!-- <div class="panel-body"> -->
+			<div class="pull-right">
+				<button ng-model="btnText" type="button" ng-show="dataFieldExcel.length >=1"
+				class="btn btn-primary" ng-click="addPastedExcel();dataFieldExcel = '';guestAddFeedback=true;guestAddMsg();nbDesign=true ">
+					{{listBtnText}}
+				</button>
+				<button ng-model="btnText" type="button" ng-show="dataFieldExcel.length >=1"
+				class="btn btn-primary" ng-click="clearField(dataFieldExcel); dataFieldExcel = ' ' ">
+					Clear Field
+				</button>
 			</div>
+			<br />
+			<hr />
+			<div class="form-group col-md-12  col-xs-12 text-center" ng-show="nbDesign || $storage.guestsList.length>0">
+				<a type="button" class="btn btn-primary  "  ng-href="#/nameBadge"><span class="glyphicon glyphicon-edit"></span> Design Name Badges</a>
+			</div>
+			<div class="row text-center center-block">
+				<a class="col-md-12  col-xs-12  "   ng-show="$storage.guestsList.length>0"
+				ng-click="guestAddFeedback = !guestAddFeedback">
+				<button type="button" class="btn btn-primary checkInBtn btn-xs  ">
+					<span ng-show="guestAddFeedback"> <span class="glyphicon glyphicon-menu-up"> </span></span>
+					<span ng-show="!guestAddFeedback"> <span class="glyphicon glyphicon-menu-down"> </span></span>
+					<!-- <span ng-show="guestAddFeedback">Hide Attendees</span>
+					<span ng-show="!guestAddFeedback">View  Attendees</span> -->
+				</button> </a>
+			</div>
+			<!-- </div> -->
 
 			<h4 class="col-md-12  col-xs-12 " ng-show="guestAddFeedback"> &#926; You've added {{$storage.guestsList.length}} Guests &#926;</h4>
 			<div class="guest cf text-center row center-block" ng-repeat="item in $storage.guestsList | filter: guestSearch "
@@ -58,10 +57,8 @@
 		<div class=" populate_div  panel panel-default" data-toggle="buttons" style="padding-bottom: 2%;">
 			<div class="panel-body">
 				<div class="pull-right">
-					<button ng-model="btnText" type="button" ng-show="dataField.length >=1"
-					class="btn btn-primary checkInBtn " ng-click="submitUserInput(dataField);dataField = '';guestAddFeedback=true;guestAddMsg(); nbDesign=true; ">
-						{{listBtnText}}
-					</button>
+					<a ng-model="btnText" type="button" ng-show="dataField.length >=1"
+					class="btn btn-primary checkInBtn " ng-click="submitUserInput(dataField);dataField = '';guestAddFeedback=true;guestAddMsg(); nbDesign=true; "> <span class="glyphicon glyphicon-plus"></span> {{listBtnText}} </a>
 					<button ng-model="btnText" type="button" ng-show="dataField.length >=1"
 					class="btn btn-primary btn-xs" ng-click="clearField(dataField); dataField = ' ' ">
 						Clear Field

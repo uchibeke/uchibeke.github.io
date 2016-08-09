@@ -2,6 +2,7 @@ var guestControllers = angular.module('guestControllers', ['ngStorage', 'ngSanit
 
 guestControllers.controller('GuestController', ['$scope', '$http', '$localStorage', '$timeout', '$sce', 'analytics', '$firebaseObject',
 function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObject) {
+	$scope.loading = true;
 	$http.get('js/data.json').success(function(data) {
 		// Data from json file
 		$scope.guests = [];
@@ -133,30 +134,25 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObjec
 		$scope.backUpBtn = function() {
 			$scope.backUp = !$scope.backUp;
 		};
-		//
-		// Import/Export
-		// All event lists: Previous list
 
 		// Generate ticket numbers sequencially
 		$scope.generateTicketNums = function() {
 			if ($scope.$storage.totalTickets.length <= 0) {
 				alert("You must enter the number of tickets to generate");
 			} else {
-				var numbDigits = 10 - 6;
-				var firstNum = "";
-				while (firstNum.length > numbDigits || firstNum.length < numbDigits) {
-					firstNum = parseInt(Math.random().toString().slice(2, numbDigits + 2));
-				}
+				var numbDigits = 4;
 				var obj = [];
 				for (var i = 0; i < $scope.$storage.totalTickets; i++) {
 					var element = {};
-					element[0] = (stringGen(3) + "" + (firstNum + 1) + stringGen(3)).toUpperCase();
+					var firstNum = "";
+					while (firstNum.length > numbDigits || firstNum.length < numbDigits) {
+						firstNum = parseInt(Math.random().toString().slice(2, numbDigits + 2));
+					}
+					element[0] = (stringGen(3) + "" + firstNum + stringGen(3)).toUpperCase();
 					element.guestStatus = 'Not checked-in';
 					obj.push(element);
-					firstNum--;
 				}
 				$scope.$storage.guestsList = Object.assign([], obj);
-				$scope.$storage.prefix = '';
 				$scope.$storage.totalTickets = '';
 			}
 		};
@@ -303,5 +299,7 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObjec
 			}
 			return totReg;
 		};
+	}).finally(function() {
+		$scope.loading = false;
 	});
 }]);

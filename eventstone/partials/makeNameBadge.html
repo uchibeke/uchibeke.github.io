@@ -4,12 +4,8 @@
 <section class="guestinfo uofs-section container-fluid animated slideInRight" id="badgePage">
 	<div class="hideOnPrint" ng-hide="printSet">
 		<div class="back_div pull-left ">
-			<a type="button" class="btn btn-default btn-xs" ng-href="#/populate">
-			<span class="uofs-icon uofs-icon-chevron-left"></span> </a></a>
+			<a type="button" class="btn btn-default btn-xs" ng-href="#/populate"> <span class="uofs-icon uofs-icon-chevron-left"></span> </a></a>
 		</div>
-		<!-- <div class="pull-right">
-			<a type="button" class="btn btn-default btn-xs" ng-href="#/live">Start Event &raquo;</a>
-		</div> -->
 		<h1 class="text-center uofs-page-title"><a>BADGE DESIGNER</a></h1>
 		<p>
 			Design name badges by uploading the logo of the event and up to
@@ -21,10 +17,9 @@
 				<br />
 				<div >
 					<form role="form ">
-						<div class="checkbox " >
-							<label>Upload event Logo/Image?
-								<input type="checkbox" ng-model="toUpload">
-							</label>
+						<div class=" " >
+							<label>Upload event Logo/Image? </label>
+							<input type="checkbox" ng-model="toUpload">
 						</div>
 						<div class="form-group text-justify " ng-show="toUpload">
 							<button ngf-select ng-model="picFile" accept="image/*">
@@ -37,10 +32,9 @@
 							<input class="form-control"  placeholder="Role" type="text"
 							ng-model="guestRole">
 						</div>
-						<div class="checkbox ">
-							<label>Upload sponsor 1 logo
-								<input type="checkbox" ng-model="toUpload1">
-							</label>
+						<div class=" ">
+							<label>Upload sponsor 1 logo </label>
+							<input type="checkbox" ng-model="toUpload1">
 						</div>
 						<div class="form-group text-justify " ng-show="toUpload1">
 							<button ngf-select ng-model="image1" accept="image/*">
@@ -49,10 +43,9 @@
 							<div ngf-drop ng-model="image1" ngf-pattern="image/*"
 							class=""></div>
 						</div>
-						<div class="checkbox ">
-							<label>Upload sponsor 2 logo
-								<input type="checkbox" ng-model="toUpload2">
-							</label>
+						<div class=" ">
+							<label>Upload sponsor 2 logo </label>
+							<input type="checkbox" ng-model="toUpload2">
 						</div>
 						<div class="form-group text-justify " ng-show="toUpload2">
 							<button ngf-select ng-model="image2" accept="image/*">
@@ -61,10 +54,9 @@
 							<div ngf-drop ng-model="image2" ngf-pattern="image/*"
 							class=""></div>
 						</div>
-						<div class="checkbox ">
-							<label>Upload sponsor 3 logo
-								<input type="checkbox" ng-model="toUpload3">
-							</label>
+						<div class=" ">
+							<label>Upload sponsor 3 logo </label>
+							<input type="checkbox" ng-model="toUpload3">
 						</div>
 						<div class="form-group text-justify " ng-show="toUpload3">
 							<button ngf-select ng-model="image3" accept="image/*">
@@ -73,10 +65,9 @@
 							<div ngf-drop ng-model="image3" ngf-pattern="image/*"
 							class=""></div>
 						</div>
-						<div class="checkbox ">
-							<label>Upload sponsor 4 logo
-								<input type="checkbox" ng-model="toUpload4">
-							</label>
+						<div class=" ">
+							<label>Upload sponsor 4 logo </label>
+							<input type="checkbox" ng-model="toUpload4">
 						</div>
 						<div class="form-group text-justify " ng-show="toUpload4">
 							<button ngf-select ng-model="image4" accept="image/*">
@@ -214,7 +205,8 @@
 						<br />
 						<div class="text-center row">
 							<input ng-model="userFillColor" class="row text-center" style="width: 100%;" placeholder="color"
-							/><br />
+							/>
+							<br />
 							<button  type="button" class="btn btn-xs btn-primary " ng-click="ticketBackground(userFillColor)">
 								Ok
 							</button>
@@ -239,7 +231,8 @@
 						<div class="text-center row">
 							<!-- Use your own color. Enter color name or code -->
 							<input ng-model="userTextColor" class="row text-center" style="width: 100%;" placeholder="color"
-							/><br />
+							/>
+							<br />
 							<button  type="button" class="btn  btn-xs btn-primary " ng-click="ticketTxtColor(userTextColor)">
 								Ok
 							</button>

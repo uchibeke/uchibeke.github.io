@@ -494,6 +494,11 @@ form .progress {
 	width: 60% !important;
 }
 
+.home_eventName{
+	width: 100% !important;
+}
+
+
 .addByPasting {
 	width: 80% !important;
 }
@@ -613,7 +618,7 @@ a {
 
 #home_buttons {
 	position: fixed;
-	top: 60% !important;
+	top: 350px !important;
 	width: 100%;
 	/*background-color: rgba(245, 0, 87, 1) !important;!important;*/
 	/*border: thin solid #F50057 !important;*/

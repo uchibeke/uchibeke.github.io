@@ -1,3 +1,4 @@
+<div ng-show="loading">heheheheh<br />heheheheh<br />heheheheh<br />heheheheh<br />heheheheh<br /></div>
 <section class="uofs-section jumbotron  uofs-section-cover text-center  homeBg " data-lastmodifiedby="uiu040"
 style="position:fixed;top:0;left:0;right:0;bottom:0;height:100%;overflow: hidden;" id="">
 	<div class="" id="home_bg">
@@ -6,7 +7,7 @@ style="position:fixed;top:0;left:0;right:0;bottom:0;height:100%;overflow: hidden
 			<div class="text-center row center-block container-fluid" >
 				<br />
 				<h1 class="text-center"> Make it happen. Own your event </h1>
-				<input ng-model="$storage.eventName" placeholder="Enter the name and select event type"
+				<input ng-model="$storage.eventName" placeholder="Enter your event name to begin"
 				class="form-control center center-block home_eventName" id="homeInput" autofocus="autofocus">
 			</div>
 		</div>
@@ -19,11 +20,11 @@ style="position:fixed;top:0;left:0;right:0;bottom:0;height:100%;overflow: hidden
 		<div ng-show="$storage.eventName.length>=1" id="bg_grayed_darker"></div>
 		<div class=" center-block text-center row home_center" >
 			<div class="" id="home_buttons">
-				<a type="button" class="btn btn-primary btn-lg"  ng-href="#/addticket"
+				<a type="button" class="btn btn-primary btn-lg"  ng-href="#/addticket" ng-disabled="$storage.eventName.length<1 || $storage.eventName == undefined"
 				data-toggle="tooltip" title="You can design, generate tickets and print tickets and also check people in"
 				data-placement="top"> Party </a>
 				<span style="margin-left: 30px;"></span>
-				<a type="button" class="btn btn-primary btn-lg"  ng-href="#/populate"
+				<a type="button" class="btn btn-primary btn-lg"  ng-href="#/populate" ng-disabled="$storage.eventName.length<1 || $storage.eventName == undefined"
 				data-toggle="tooltip" title="You can import a list from a excel/csv file and design, generate and print name badges"
 				data-placement="top"> Conference </a>
 			</div>
