@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'guestControllers',  'ticketControllers', 'analytics', 'firebase', 'DriveAPILib']);
+var myApp = angular.module('myApp', ['ngRoute', 'guestControllers',  'ticketControllers', 'analytics', 'firebase']);
 
 myApp.config(['$routeProvider',
 function($routeProvider) {

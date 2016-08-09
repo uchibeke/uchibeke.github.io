@@ -2,7 +2,7 @@
 <!-- Avery paper. Fit 6 per page. Design and just print -->
 <section class="guestinfo uofs-section container-fluid" id="populatePage">
 	<div class="back_div pull-left ">
-		<a type="button" class="btn btn-default btn-xs" ng-href="#/home"> <span class="uofs-icon uofs-icon-chevron-left"></span> </a></a>
+		<a type="button" class="btn btn-default btn-xs" ng-href="#/home"> <span class="glyphicon glyphicon-menu-left"></span> </a></a>
 	</div>
 	<h1 class="text-center uofs-page-title"><a>GENERATE TICKETS</a></h1>
 	<h4 class="text-center "><a>{{$storage.eventName}}</a></h4>
@@ -22,20 +22,20 @@
 							<br />
 							<button ng-model="btnText" type="button" ng-show="true"
 							class="btn btn-primary " ng-click="generateTicketNums();guestAddFeedback=true;guestAddMsg();tDesign=true  ">
-								<span class="uofs-icon uofs-icon-checkmark"> </span> Add
+								<span class="glyphicon glyphicon-plus"></span> Add
 							</button>
 						</div>
 						<div class="form-group col-md-12  col-xs-12 text-center" ng-show="tDesign || $storage.guestsList.length>0">
 							<br />
-							<a type="button" class="btn btn-primary  "  ng-href="#/tickets"> Design Tickets  &raquo; </a>
+							<a type="button" class="btn btn-primary  "  ng-href="#/tickets"><span class="glyphicon glyphicon-edit"></span> Design Tickets </a>
 						</div>
 					</form>
 				</div>
 				<div class="row text-center center-block" ng-show="(tDesign || $storage.guestsList.length>0)">
 					<a class="col-md-12  col-xs-12 "   ng-show="$storage.guestsList.length>0" ng-click="guestAddFeedback = !guestAddFeedback">
 					<button type="button" class="btn btn-primary checkInBtn btn-xs">
-						<span ng-show="guestAddFeedback"> <span class="uofs-icon uofs-icon-chevron-up"> </span></span>
-						<span ng-show="!guestAddFeedback"> <span class="uofs-icon uofs-icon-chevron-down"> </span></span>
+						<span ng-show="guestAddFeedback"> <span class="glyphicon glyphicon-menu-up"> </span></span>
+						<span ng-show="!guestAddFeedback"> <span class="glyphicon glyphicon-menu-down"> </span></span>
 					</button> </a>
 				</div>
 			</div>

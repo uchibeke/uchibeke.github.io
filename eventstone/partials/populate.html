@@ -1,7 +1,7 @@
 <div ng-include="'partials/nav.html'"></div>
 <section class="guestinfo uofs-section container-fluid " id="populatePage">
 	<div class="back_div pull-left ">
-		<a type="button" class="btn btn-default btn-xs" ng-href="#/home"> <span class="uofs-icon uofs-icon-chevron-left"></span> </a></a>
+		<a type="button" class="btn btn-default btn-xs" ng-href="#/home"> <span class="glyphicon glyphicon-menu-left"></span> </a></a>
 	</div>
 	<h1 class="text-center uofs-page-title"><a>ADD FROM
 	<br />
@@ -28,14 +28,14 @@
 					</button>
 				</div>
 				<div class="form-group col-md-12  col-xs-12 text-center" ng-show="nbDesign || $storage.guestsList.length>0">
-					<a type="button" class="btn btn-primary  "  ng-href="#/nameBadge"> Design Name Badges  &raquo; </a>
+					<a type="button" class="btn btn-primary  "  ng-href="#/nameBadge"><span class="glyphicon glyphicon-edit"></span> Design Name Badges</a>
 				</div>
 				<div class="row text-center center-block">
 					<a class="col-md-12  col-xs-12  "   ng-show="$storage.guestsList.length>0"
 					ng-click="guestAddFeedback = !guestAddFeedback">
 					<button type="button" class="btn btn-primary checkInBtn btn-xs  ">
-						<span ng-show="guestAddFeedback"> <span class="uofs-icon uofs-icon-chevron-up"> </span></span>
-						<span ng-show="!guestAddFeedback"> <span class="uofs-icon uofs-icon-chevron-down"> </span></span>
+						<span ng-show="guestAddFeedback"> <span class="glyphicon glyphicon-menu-up"> </span></span>
+						<span ng-show="!guestAddFeedback"> <span class="glyphicon glyphicon-menu-down"> </span></span>
 						<!-- <span ng-show="guestAddFeedback">Hide Attendees</span>
 						<span ng-show="!guestAddFeedback">View  Attendees</span> -->
 					</button> </a>

@@ -425,31 +425,30 @@ form .progress {
 	transform: rotate(20deg);
 }
 
-#navHome {
-	color: rgba(255, 0, 0, 1);
-}
+/*#navHome {
+ color: rgba(255, 0, 0, 1);
+ }
 
-#navPopulate {
-	border-bottom: thin solid rgba(0, 255, 0, 1);
-}
+ #navPopulate {
+ border-bottom: thin solid rgba(0, 255, 0, 1);
+ }
 
-#navTickets {
-	border-bottom: thin solid rgba(0, 255, 255, 1);
-}
+ #navTickets {
+ border-bottom: thin solid rgba(0, 255, 255, 1);
+ }
 
-#navBadges {
-	border-bottom: thin solid rgba(0, 0, 255, 1);
-}
+ #navBadges {
+ border-bottom: thin solid rgba(0, 0, 255, 1);
+ }
 
-#navGList {
-	border-bottom: thin solid rgba(255, 0, 255, 1);
-}
+ #navGList {
+ border-bottom: thin solid rgba(255, 0, 255, 1);
+ }
 
-#navGoLive {
-	color: rgba(255, 0, 0, 1);
-	border-bottom: thin solid rgba(255, 0, 0, 1);
-}
-
+ #navGoLive {
+ color: rgba(255, 0, 0, 1);
+ border-bottom: thin solid rgba(255, 0, 0, 1);
+ }*/
 .gListNew {
 	display: inline-block !important;
 	font-size: 8pt !important;
@@ -612,6 +611,22 @@ a {
 	float: none;
 }
 
+#home_buttons {
+	position: fixed;
+	top: 60% !important;
+	width: 100%;
+	/*background-color: rgba(245, 0, 87, 1) !important;!important;*/
+	/*border: thin solid #F50057 !important;*/
+	float: none;
+}
+
+#home_logo {
+	position: absolute;
+	bottom: 10px !important;
+	width: 100%;
+	filter: blur(3px) invert(100%);
+}
+
 #home_party_btn:focus, #home_party_btn:hover {
 	/*background-color: black !important;*/
 	/*border: thin solid black !important;*/
@@ -708,22 +723,9 @@ a {
 		position: fixed;
 	}
 
-	.navTopLeft, .navTopRight, .navBottomLeft, .navBottmRight {
+	.navHome, .navHelp, .navLive, .navGList {
 		font-size: 25px !important;
 	}
-
-	/*#home_party_btn {
-	 position: fixed;
-	 top: 50% !important;
-	 width: 100% !important;
-	 color: white !important;
-	 text-align: left;
-	 float: none;
-	 background-color: rgba(245, 0, 87, 0.5) !important;!important;
-	 border: thin solid #F50057 !important;
-	 min-height: 150px;
-	 padding: 10px;
-	 }*/
 
 }
 body {
@@ -782,35 +784,35 @@ video {
 	}
 }
 
-.navTopLeft {
-	bottom: 93%;
+.navHome {
+	top: 10px;
 	right: 10px;
 	position: fixed;
 	z-index: 100000;
 }
 
-.navTopRight {
-	bottom: 86%;
+.navHelp {
+	top: 60px;
 	right: 10px;
 	position: fixed;
 	z-index: 100000;
 }
 
-.navBottomLeft {
-	bottom: 72%;
+.navLive {
+	top: 110px;
 	right: 10px;
 	position: fixed;
 	z-index: 100000;
 }
 
-.navBottmRight {
-	bottom: 79%;
+.navGList {
+	top: 160px;
 	right: 10px;
 	position: fixed;
 	z-index: 100000;
 }
 
-.navTopLeft, .navTopRight, .navBottomLeft, .navBottmRight {
+.navHome, .navHelp, .navLive, .navGList {
 	font-size: 30px;
 }
 .ticket {

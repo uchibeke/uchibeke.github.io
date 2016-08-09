@@ -1,7 +1,7 @@
 var guestControllers = angular.module('guestControllers', ['ngStorage', 'ngSanitize']);
 
 guestControllers.controller('GuestController', ['$scope', '$http', '$localStorage', '$timeout', '$sce', 'analytics', '$firebaseObject',
-function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObject, RealtimeController) {
+function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObject) {
 	$http.get('js/data.json').success(function(data) {
 		// Data from json file
 		$scope.guests = [];
@@ -20,41 +20,9 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObjec
 
 		$scope.hide_logo = false;
 
-		// $scope.ref = new Firebase("https://eventstone.firebaseio.com");
-		// var fbObj = $firebaseObject(ref);
-		// $scope.fbObject = $firebaseObject($scope.ref);
-
 		// function to set the default data
 		$scope.reset = function() {
 
-			// fb.$set({
-			// monday : {
-			// name : 'Monday',
-			// slots : {
-			// 0900 : {
-			// time : '9:00am',
-			// booked : false
-			// },
-			// 0110 : {
-			// time : '11:00am',
-			// booked : false
-			// }
-			// }
-			// },
-			// tuesday : {
-			// name : 'Tuesday',
-			// slots : {
-			// 0900 : {
-			// time : '9:00am',
-			// booked : false
-			// },
-			// 0110 : {
-			// time : '11:00am',
-			// booked : false
-			// }
-			// }
-			// }
-			// });
 			$scope.hey = "Hey" + (numb++);
 		};
 		var numb = 0;
@@ -95,9 +63,6 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObjec
 				}
 				newA.push({
 					0 : splicedA,
-					// icon : 'x',
-					// checkedIn : false,
-					// btnText : 'Check-in',
 					guestStatus : 'Not checked-in'
 				});
 			}
@@ -214,7 +179,7 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObjec
 				var s = today.getSeconds();
 				m = checkTime(m);
 				s = checkTime(s);
-				document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+				$('#txt').html(h + ":" + m + ":" + s);
 				var t = setTimeout(startTime, 500);
 			}
 
@@ -314,7 +279,6 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObjec
 			}, theTime);
 		};
 
-
 		$scope.checkIns = function() {
 			var checkIns = 0;
 			for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
@@ -338,33 +302,6 @@ function($scope, $http, $localStorage, $timeout, $sce, analytics, $firebaseObjec
 				}
 			}
 			return totReg;
-		};
-
-		gapi.load("auth:client,drive-realtime,drive-share", callback);
-
-		$scope.randomName = function() {
-			var arrOfNames1 = ["Jason", "Jim", "Bird", "Shari", "Lily", "Shukla", "Jake", "Kurt", "Sylvia", "Smith", "Luke", "Brent", "Tony", "Chi", "Chen", "Yang", "Ada", "Oluchi", "Maj"];
-
-			var arrOfNames2 = ["Rachel", "Neal", "Miller", "Heidecker", "Gill", "Gina", "Eva", "Sam", "John", "Bob", "Ben", "Sonita", "Brenda", "Ahmed", "Musa", "Oraye", "Ade", "Tito", "Itoro"];
-
-			var arrOfNames3 = ["Monisha", "Peter", "Baraniuk", "Michael", "Linda", "Beni", "Asya", "Charlse", "Russel", "Brian", "Tim", "Ken", "Ugo", "Uche", "Uchi", "Zhed", "Luois", "Riel", "Emma"];
-
-			var arrOfNames4 = ["Yan", "Chan", "Feng", "Stewart", "Raymond", "Vincent", "Zhang", "Lv", "Uchibeke", "Shirley", "Kun", "Myers", "Jimmy", "Luo", "Silong", "Kiki", "Todd", "Sloan"];
-
-			// To lazy to count the array with the least number of names. Writes code to do it
-			var sz = Math.min(arrOfNames1.length, arrOfNames2.length, arrOfNames3.length, arrOfNames4.length);
-
-			var arrOfArrs = [arrOfNames1, arrOfNames2, arrOfNames3, arrOfNames4];
-
-			var randomArr = Math.floor((Math.random() * (arrOfArrs.length)) + 0);
-			var randomIndex = Math.floor((Math.random() * (sz - 1)) + 0);
-			var arrToUse = arrOfArrs[randomArr];
-			var name = arrToUse[randomIndex] + " ";
-			randomArr = Math.floor((Math.random() * (arrOfArrs.length - 1)) + 0);
-			randomIndex = Math.floor((Math.random() * (sz - 1)) + 0);
-			arrToUse = arrOfArrs[randomArr];
-			name = name + arrToUse[randomIndex];
-			$scope.dataField = $scope.dataField + name + ",";
 		};
 	});
 }]);

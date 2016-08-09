@@ -3,91 +3,33 @@ style="position:fixed;top:0;left:0;right:0;bottom:0;height:100%;overflow: hidden
 	<div class="" id="home_bg">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  jumbotron "
 		id="home_welcome">
-			<!-- <img src="images/evewhytelogo_spaced.png" class="img-responsive" /> -->
 			<div class="text-center row center-block container-fluid" >
-				<!-- <h4 class="brandTitle" style="width:200px; ">
-				<img src="images/evewhytelogo_black.png" class="img-responsive" /> </h4 > -->
 				<br />
 				<h1 class="text-center"> Make it happen. Own your event </h1>
-				<input ng-model="$storage.eventName" placeholder="Enter the name of your event to get started..."
+				<input ng-model="$storage.eventName" placeholder="Enter the name and select event type"
 				class="form-control center center-block home_eventName" id="homeInput" autofocus="autofocus">
 			</div>
 		</div>
-
-		<!-- Sample: http://www.mediagravity.com/#home-page -->
-		<!-- https://jawbone.com/ -->
-		<!-- https://www.palantir.com/ -->
-		<!-- https://www.airbnb.ca/ -->
-		<video  autoplay loop muted  poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" preload="auto" 
-		 autoplay=""  aria-hidden="true" role="presentation">
+		<video  autoplay loop muted  poster="images/concert1.jpg" id="bgvid" preload="auto"
+		autoplay=""  aria-hidden="true" role="presentation">
 			<source src="images/people.mp4" type="video/webm">
 			<source src="images/people.mp4" type="video/mp4">
 		</video>
 		<div ng-show="$storage.eventName.length<1" id="bg_grayed"></div>
 		<div ng-show="$storage.eventName.length>=1" id="bg_grayed_darker"></div>
-		<!-- <script>
-		var vid = document.getElementById("bgvid");
-		var pauseButton = document.querySelector("#polina button");
-
-		function vidFade() {
-		vid.classList.add("stopfade");
-		}
-
-		vid.addEventListener('ended', function() {
-		// only functional if "loop" is removed
-		vid.pause();
-		// to capture IE10
-		vidFade();
-		});
-		</script> -->
 		<div class=" center-block text-center row home_center" >
-			<a type="button"  class=" " id="home_party_btn" ng-href="#/addticket"> <!-- <h2>Party</h2> -->
-			<p>
-				Manage your event with
-				<br />
-				<img src="images/evewhytelogo_spaced.png" class="img-responsive" />
-			</p> </a>
-			<!-- <div type="button"  class=" " id="home_party_btn" >
-			<button   type="button" class="btn btn-primary  btn-block"
-			ng-click="printSet=true;($storage.sampleView) = true;">
-			Print
-			</button>
-			</p>
-			</div> -->
-			<!-- <a type="button"  class=" " id="home_conf_btn" ng-href="#/populate">
-			<p>
-			Manage an Attendee list and design Name Badges for your conference.
-			</p>
-			</a> -->
-			<!-- <a class="col-lg-6 col-md-6 col-sm-6 col-xs-6  jumbotron animated slideInUp" ng-href="#/addticket"
-			id="home_party" ng-show="$storage.eventName.length>=1" > <h1 >Party</h1>
-			<br />
-			<div >
-			<div>
-			<p id="partyPrev">
-			<span> <h3 class="newPrev">{{$storage.eventName}}</h3> Throw a Party. Generate and design tickets for your Party.</span>
-			</p>
+			<div class="" id="home_buttons">
+				<a type="button" class="btn btn-primary btn-lg"  ng-href="#/addticket"
+				data-toggle="tooltip" title="You can design, generate tickets and print tickets and also check people in"
+				data-placement="top"> Party </a>
+				<span style="margin-left: 30px;"></span>
+				<a type="button" class="btn btn-primary btn-lg"  ng-href="#/populate"
+				data-toggle="tooltip" title="You can import a list from a excel/csv file and design, generate and print name badges"
+				data-placement="top"> Conference </a>
 			</div>
-			</div> </a>
-			<a class="col-lg-6 col-md-6 col-sm-6 col-xs-6  jumbotron animated slideInUp" ng-href="#/populate"
-			id="home_conf"  > <h1 >Conf</h1><b>
-			<br />
-			<div ng-show="$storage.eventName.length>=1">
-			<div>
-			<p id="confPrev">
-			<span> <h3 class="newPrev">{{$storage.eventName}}</h3> Manage an Attendee list and design Name Badges for your conference.</span>
-			</p>
-			</div>
-			</div> </a> -->
 		</div>
-		<!-- <a class="" ng-href="#/aboutparty" > <i class="uofs-icon uofs-icon-help " id="party_help"></i> </a> -->
-		<!-- <a class="" ng-href="#/aboutparty" ng-show="$storage.eventName.length>=1"> <i class="uofs-icon uofs-icon-help " id="party_help"></i> </a> -->
-		<!-- <a class="" ng-href="#/aboutconf" ng-show="$storage.eventName.length>=1"> <i class="uofs-icon uofs-icon-help " id="conf_help"></i> </a> -->
-		<!-- <div id="" class="navTopLeft">
-		<a class="" href="#populate">Party</a>
+		<div class="row text-center" id="home_logo">
+			<img  src="images/evewhytelogo_spaced.png" class="img-responsive"  />
 		</div>
-		<div id="" class=" navTopRight">
-		<a type="" ng-href="#/populate" class="">Conference</a>
-		</div> -->
 	</div>
 </section>
