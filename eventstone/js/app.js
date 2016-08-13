@@ -6,10 +6,10 @@ function($routeProvider) {
 		templateUrl : 'partials/list.html',
 		controller : 'GuestController'
 	}).when('/populate', {
-		templateUrl : 'partials/populate.html',
+		templateUrl : 'partials/setup/populate.html',
 		controller : 'GuestController'
 	}).when('/addticket', {
-		templateUrl : 'partials/addticket.html',
+		templateUrl : 'partials/setup/addticket.html',
 		controller : 'GuestController'
 	}).when('/home', {
 		templateUrl : 'partials/home.html',
@@ -21,10 +21,10 @@ function($routeProvider) {
 		templateUrl : 'partials/guestList.html',
 		controller : 'GuestController'
 	}).when('/tickets', {
-		templateUrl : 'partials/makeTicket.html',
+		templateUrl : 'partials/design/makeTicket.html',
 		controller : 'TicketController'
 	}).when('/nameBadge', {
-		templateUrl : 'partials/makeNameBadge.html',
+		templateUrl : 'partials/design/makeNameBadge.html',
 		controller : 'TicketController'
 	}).when('/aboutconf', {
 		templateUrl : 'partials/about_conf.html',

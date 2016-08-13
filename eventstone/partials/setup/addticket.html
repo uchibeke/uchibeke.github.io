@@ -24,6 +24,9 @@
 							class="btn btn-primary " ng-click="generateTicketNums();guestAddFeedback=true;guestAddMsg();tDesign=true  ">
 								<span class="glyphicon glyphicon-plus"></span> Add
 							</button>
+							<div ng-show="loading.generatingTicket">
+								<img class="img-responsive row center-block" src="images/spin.gif"/>
+							</div>
 						</div>
 						<br />
 						<div class="form-group col-md-12  col-xs-12 text-center" ng-show="tDesign || $storage.guestsList.length>0">
@@ -43,10 +46,10 @@
 			</div>
 
 			<h4 class="col-md-12  col-xs-12 " ng-show="guestAddFeedback"> &#926; You've added {{$storage.guestsList.length}} Tickets &#926;</h4>
-			<div class="guest cf text-center row center-block" ng-repeat="item in $storage.guestsList | filter: guestSearch "
+			<div class="guest cf text-center row center-block" ng-repeat="item in $storage.guestsList"
 			ng-show="guestAddFeedback">
 				<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">X</i></a>
-				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 gListNew" ng-repeat="a in item | filter: guestSearch "> {{a}} </span>
+				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 gListNew" ng-repeat="a in item"> {{a}} </span>
 			</div>
 		</div>
 	</div>
@@ -84,13 +87,13 @@
 			<div class="col-xs-1 col-md-1" ></div>
 			<ul class="guestlist col-xs-7 col-md-7 ">
 				<div class="text-center row center-block">
-					<span id="titleContent" class=" text-center col-lg-2 col-md-2 col-sm-2 gListTitle" ng-repeat="a in  $storage.backUpGuestList[0]  | filter: guestSearch " contenteditable="true"> {{$storage.titleArr[$index]}} </span>
+					<span id="titleContent" class=" text-center col-lg-2 col-md-2 col-sm-2 gListTitle" ng-repeat="a in  $storage.backUpGuestList[0] " contenteditable="true"> {{$storage.titleArr[$index]}} </span>
 
 				</div>
 				<br />
 
-				<div class="guest cf row center-block" ng-repeat="item in $storage.backUpGuestList | filter: guestSearch | orderBy: guestOrder:direction">
-					<span  class=" text-left col-lg-2 col-md-2 col-sm-2 gListNew" ng-repeat="a in item | filter: guestSearch "> {{a}} </span>
+				<div class="guest cf row center-block" ng-repeat="item in $storage.backUpGuestList">
+					<span  class=" text-left col-lg-2 col-md-2 col-sm-2 gListNew" ng-repeat="a in item"> {{a}} </span>
 
 				</div>
 			</ul>

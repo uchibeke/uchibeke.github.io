@@ -618,10 +618,8 @@ a {
 
 #home_buttons {
 	position: fixed;
-	top: 350px !important;
+	top: 60% !important;
 	width: 100%;
-	/*background-color: rgba(245, 0, 87, 1) !important;!important;*/
-	/*border: thin solid #F50057 !important;*/
 	float: none;
 }
 
