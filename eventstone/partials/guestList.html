@@ -3,32 +3,15 @@
 	<div class=" pull-left" >
 		<a class="btn btn-default btn-xs" type="button" ng-href="#/populate"> <span class="uofs-icon uofs-icon-chevron-left"></span> </a>
 	</div>
-	<!-- <div class=" pull-right" >
-	<a class="btn btn-default btn-xs" type="button" ng-href="#/tickets">Design Tickets &raquo;</a>
-	</div> -->
 	<div class="guestlist row  text-center center-block" >
 		<div class="row">
-			<h1 class="text-center uofs-page-title"><a>LIST</a></h1>
-			<form class="search  text-center form col-xs-12 col-md-10">
-				<input ng-model="guestSearch" placeholder="Search for a ticket number or name"
-				autofocus="autofocus" class="searchBar form-control gListSearch center center-block" >
-			</form>
-			<p style="" class="col-xs-12 col-md-2 pull-right">
-				<button class="btn btn-primary btn-xs" ng-click="printGuestList()">
-					Print List
-				</button>
-				<button  ng-model="btnText" type="button" class="btn btn-warning btn-xs"
-				ng-show="$storage.guestsList.length > 0" ng-click="deleteStored()">
-					Remove All
-				</button>
-			</p>
-		</div>
-		<br class="clearfix"/>
-		<div class="row">
-			<button class="btn btn-primary btn-xs pull-left" ng-click="eventSummary = !eventSummary;">
-				<span ng-show="!eventSummary">View summary</span><span ng-show="eventSummary">Hide Summary</span>
-			</button>
-			<hr />
+			<div class="">
+				<p style="" class="col-xs-12 col-md-2 pull-right">
+					<button class="btn btn-primary btn-xs pull-right" ng-click="eventSummary = !eventSummary;">
+						<span ng-show="!eventSummary">View summary</span><span ng-show="eventSummary">Hide Summary</span>
+					</button>
+				</p>
+			</div>
 			<div class="  panel panel-default" data-toggle="buttons" style="padding-bottom: 2%;"
 			ng-show="eventSummary">
 				<div class="panel-body">
@@ -65,18 +48,12 @@
 				</div>
 			</div>
 		</div>
-		<div id="GList" class="row" >
-			<div class="text-center " ></div>
-			<div class="guest cf text-left row center-block" ng-repeat="item in $storage.guestsList | filter: guestSearch ">
-				<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">X</i></a>
-				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 col-xs-2  gListNew" ng-repeat="a in item | filter: guestSearch "> {{a}} </span>
-			</div>
-		</div>
-	</div>
-	<div class="row">
 		<div class="row">
-			<form class="search  text-center form col-xs-12 col-md-10"></form>
-			<p style="" class="col-xs-12 col-md-2 pull-right text-center">
+			<form class="search  text-center form col-xs-12 col-md-10 pull-left">
+				<input ng-model="guestSearch" placeholder="Search for a ticket number or name"
+				autofocus="autofocus" class="searchBar form-control gListSearch center center-block" >
+			</form>
+			<p style="" class="col-xs-12 col-md-2 pull-right">
 				<button class="btn btn-primary btn-xs" ng-click="printGuestList()">
 					Print List
 				</button>
@@ -86,8 +63,26 @@
 				</button>
 			</p>
 		</div>
+		<!-- <br class="clearfix"/> -->
+		<table class="table table-responsive table-hover table-striped table-bordered table-condensed" >
+			<!-- <thead>
+			<tr>
+			<th>Firstname</th>
+			<th>Lastname</th>
+			<th>Email</th>
+			</tr>
+			</thead> -->
+			<tbody>
+				<tr ng-repeat="item in $storage.guestsList | filter:guestSearch">
+					<td ><a href="" ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"><span class="glyphicon glyphicon-remove"></span></td>
+					<td ng-repeat="a in item">{{ a }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
 		<p class="row text-center " ng-show="$storage.guestsList.length != $storage.backUpGuestList.length">
-			<span ng-show="listreplace"> Did you mistakenly delete your guest list? You can restore it from back up.
+			<span ng-show="listreplace"> Did you remove all your guest? You can restore it from back up.
 				<button type="button" class="btn btn-primary btn-xs " ng-click="replaceList()">
 					Restore from Back Up
 				</button></span>

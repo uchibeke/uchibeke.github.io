@@ -25,11 +25,6 @@
 	<div class="row" ng-show="secondLiveScreen" >
 		<form class="search center-block row text-center form">
 			<h1 class="text-center uofs-page-title"><a>{{($storage.eventName).toUpperCase()}}</a></h1>
-			<!-- <div class="  text-muted row text-center">
-				<span class=" col-lg-12 text-success">{{checkIns()}} checked-in</span>
-				<span class=" col-lg-12">{{$storage.guestsList.length}} total attendees</span>
-				<span class=" col-lg-12 text-warning">{{noCheckIns()}} not checked-in</span>
-			</div> -->
 			<br class="clearfix"/>
 			<div class="row">
 
@@ -45,9 +40,9 @@
 		</form>
 		<!-- <br /> -->
 		<ul class="guestlist row" ng-hide="visualize()" >
-			<li class="guestLive cf" ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction">
+			<li class="guestLive cf" ng-repeat="item in $storage.guestsList | filter:guestSearch">
 				<!-- <hr /> -->
-				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 liveGList" ng-repeat="a in item | filter: guestSearch "> {{a}}
+				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 liveGList" ng-repeat="a in item"> {{a}}
 					<br />
 				</span>
 				<div class="row">
@@ -86,7 +81,6 @@
 	<div id="txt" class="text-center " style="font-size: 80px;"></div>
 	<div class="back_div pull-left ">
 		<a type="button" class="btn btn-default btn-xs" ng-href="#/guestList"> <span class="uofs-icon uofs-icon-chevron-left"></span> </a>
-		<!-- <a ng-href="#/guestList"> <span class="uofs-icon uofs-icon-chevron-left"></span></a> -->
 	</div>
 	<div class="pull-right" style="font-size: 25px;">
 		<a type="button" class="" ng-href="#/aboutparty" target="_blank"> <i class="uofs-icon uofs-icon-help"></i></a>

@@ -1,7 +1,7 @@
-var guestControllers = angular.module('guestControllers', ['ngStorage', 'ngSanitize']);
+var guestControllers = angular.module('guestControllers', ['ngStorage', 'ngSanitize', "firebase"]);
 
-guestControllers.controller('GuestController', ['$scope', '$http', '$localStorage', '$timeout', '$interval', '$sce', 'analytics', '$firebaseObject',
-function($scope, $http, $localStorage, $timeout, $interval, $sce, analytics, $firebaseObject) {
+guestControllers.controller('GuestController', ['$rootScope', '$scope', '$http', '$localStorage', '$timeout', '$interval', '$sce', 'analytics', '$firebaseObject', '$firebaseArray', '$firebaseAuth', 'shareDataService',
+function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, analytics, $firebaseObject, $firebaseArray, $firebaseAuth, shareDataService) {
 	$scope.guests = [];
 
 	$scope.guestOrder = 'name';
@@ -84,35 +84,9 @@ function($scope, $http, $localStorage, $timeout, $interval, $sce, analytics, $fi
 		}
 	};
 
-	$scope.removeElement = function(list, idx) {
-		if (list.length <= 2) {
-		} else {
-			if (idx > list.length - 1) {
-			} else {
-				if (isNaN(idx)) {
-				} else {
-					delete list[idx];
-					for (var i = idx; i < list.length; i++) {
-						list[i] = list[i + 1];
-					}
-					list.length = list.length - 1;
-				}
-			}
-		}
-	};
-
 	$scope.dateString = function() {
 		var d = new Date();
 		return d.getFullYear() + "" + ('0' + (d.getMonth() + 1)).slice(-2) + "" + ('0' + d.getDate()).slice(-2);
-	};
-
-	$scope.checkedIn = function(x) {
-		if ((($scope.$storage.guestsList[x].guestStatus.toLowerCase().replace(/\W+/g, " ")).indexOf('Not checked-in')) > -1) {
-		} else if (($scope.$storage.guestsList[x].guestStatus) == 'Not checked-in') {
-			var d = new Date();
-			var ds = d.toLocaleTimeString();
-			$scope.$storage.guestsList[x].guestStatus = 'Signed in ' + ds;
-		}
 	};
 
 	$scope.$storage.titleArr = ["Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading"];
@@ -134,10 +108,15 @@ function($scope, $http, $localStorage, $timeout, $interval, $sce, analytics, $fi
 	function stringGen(len) {
 		var text = "";
 		var charset = "abcdefghijklmnopqrstuvwxyz";
-		for (var i = 0; i < 5; i++)
+		for (var i = 0; i < len; i++)
 			text += charset.charAt(Math.floor(Math.random() * charset.length));
 		return text;
 	}
+
+	var ref = firebase.database().ref().child("/users/" + firebase.auth().currentUser.uid + "/" + $scope.$storage.eventName + "/");
+
+	$scope.$storage.guestsList = $firebaseArray(ref);
+	// $firebaseObject(ref).$bindTo($scope, $scope.$storage.guestsList);
 
 	function ticketOp() {
 		if ($scope.$storage.totalTickets.length <= 0) {
@@ -151,11 +130,12 @@ function($scope, $http, $localStorage, $timeout, $interval, $sce, analytics, $fi
 				while (firstNum.length > numbDigits || firstNum.length < numbDigits) {
 					firstNum = parseInt(Math.random().toString().slice(2, numbDigits + 2));
 				}
-				element[0] = (stringGen(3) + "" + firstNum + stringGen(3)).toUpperCase();
+				element.ticketNumber = (stringGen(3) + "" + firstNum + stringGen(3)).toUpperCase();
 				element.guestStatus = 'Not checked-in';
 				obj.push(element);
 			}
 			$scope.$storage.guestsList = Object.assign([], obj);
+			ref.set($scope.$storage.guestsList);
 			$scope.$storage.totalTickets = '';
 		}
 	};
@@ -168,7 +148,7 @@ function($scope, $http, $localStorage, $timeout, $interval, $sce, analytics, $fi
 		try {
 			ticketOp();
 		} catch(err) {
-			message.innerHTML = "Error: " + err + ".";
+			// message.innerHTML = "Error: " + err + ".";
 		} finally {
 			$scope.loading.generatingTicket = false;
 		}
@@ -203,8 +183,52 @@ function($scope, $http, $localStorage, $timeout, $interval, $sce, analytics, $fi
 		}
 		$scope.testObj = cart;
 		$scope.$storage.guestsList = Object.assign([], $scope.testObj);
-
+		ref.set($scope.$storage.guestsList);
 		$scope.$storage.showExcelList = true;
+	};
+
+	$scope.checkedIn = function(x) {
+		if ((($scope.$storage.guestsList[x].guestStatus.toLowerCase().replace(/\W+/g, " ")).indexOf('Not checked-in')) > -1) {
+		} else if (($scope.$storage.guestsList[x].guestStatus) == 'Not checked-in') {
+			var d = new Date();
+			var ds = d.toLocaleTimeString();
+			$scope.$storage.guestsList[x].guestStatus = ds;
+		}
+		var toPush = {
+			guestStatus : $scope.$storage.guestsList[x].guestStatus,
+		};
+		ref.child(x + "/").update(toPush);
+	};
+
+	$scope.removeElement = function(list, idx) {
+		if (list.length <= 2) {
+			alert("Delete All elements from the guestlist page instead");
+		} else {
+			if (idx > list.length - 1) {
+			} else {
+				if (isNaN(idx)) {
+				} else {
+					delete list[idx];
+					for (var i = idx; i < list.length; i++) {
+						list[i] = list[i + 1];
+					}
+					list.length = list.length - 1;
+					// ref.child(idx + "/").remove();
+					// ref.once('value', function(s) {
+					// $scope.$storage.guestsList = JSON.parse(JSON.stringify(s.val()));
+					// console.log($scope.$storage.guestsList);
+					// console.log(s.val());
+					// console.log($scope.$storage.guestsList);
+					// }, function(e) {
+					// console.error(e);
+					// })
+					// for (var i = idx; i < $scope.$storage.guestsList.length; i++) {
+					// $scope.$storage.guestsList[i] = $scope.$storage.guestsList[i + 1];
+					// }
+					// $scope.$storage.guestsList.length = $scope.$storage.guestsList.length - 1;
+				}
+			}
+		}
 	};
 
 	// To be used to hide the side icon before printing
@@ -280,13 +304,27 @@ function($scope, $http, $localStorage, $timeout, $interval, $sce, analytics, $fi
 		var totReg = 0;
 		var col = column - 1;
 		for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
-			if ((($scope.$storage.guestsList[i][col]).toLowerCase().replace(/\W+/g, " ")).indexOf(sess.toLowerCase().replace(/\W+/g, " ")) > -1) {
-				totReg = totReg + 1;
+			if ( typeof $scope.$storage.guestsList[i][col] === 'undefined') {
+				return 0;
+			} else {
+				if ((($scope.$storage.guestsList[i][col]).toLowerCase().replace(/\W+/g, " ")).indexOf(sess.toLowerCase().replace(/\W+/g, " ")) > -1) {
+					totReg = totReg + 1;
+				}
 			}
 		}
 		return totReg;
 	};
-	$http.get('js/data.json').success(function(data) {
-	}).finally(function() {
-	});
 }]);
+
+myApp.service('shareDataService', function() {
+	var property = [];
+
+	return {
+		getProperty : function(key) {
+			return property[key];
+		},
+		setProperty : function(key, value) {
+			property[key] = value;
+		}
+	};
+});

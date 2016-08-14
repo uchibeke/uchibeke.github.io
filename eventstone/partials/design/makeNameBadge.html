@@ -273,7 +273,7 @@
 		<h2>Showing name badge for {{$storage.guestsList.length-2}} guests. </h2>
 		<div id="printable" class="text-center center-block">
 			<div class="previewTickets  center-block text-center"
-			ng-repeat="item in $storage.guestsList | filter: guestSearch | orderBy: guestOrder:direction" >
+			ng-repeat="item in $storage.guestsList" >
 				<div class=" tab-pane active center-block text-center backNFront" id="layout1" >
 					<div class="badeContainer nameBadgePrinting">
 						<div class="row nameBadge center-block text-center" ng-style="previewStyle()">

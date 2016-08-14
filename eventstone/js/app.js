@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'guestControllers',  'ticketControllers', 'analytics', 'firebase']);
+var myApp = angular.module('myApp', ['ngRoute', 'guestControllers', 'ticketControllers', 'analytics', 'firebase']);
 
 myApp.config(['$routeProvider',
 function($routeProvider) {
@@ -35,24 +35,41 @@ function($routeProvider) {
 	}).when('/aboutlive', {
 		templateUrl : 'partials/about_live.html',
 		controller : 'TicketController'
+	}).when('', {
+		templateUrl : 'partials/home.html',
+		controller : 'GuestController'
 	}).otherwise({
 		redirectTo : '/home'
 	});
 }]);
 
-//
-// $scope.randomNum = function() {
-// return (Math.floor((Math.random() * 9) + 0) );
-// };
-//
-// $scope.randomLetter = function() {
-// var alpas = "abcdefghijklmnopqrstuvwxyz";
-// var arrOfAlph = alpas.split("");
-// var randomIndex = Math.floor((Math.random() * (alpas.length - 1)) + 0);
-// return arrOfAlph[randomIndex];
-// };
-//
-// $scope.generatedNSID = function() {
-// var ranNUm = $scope.randomLetter() + $scope.randomLetter() + $scope.randomLetter() + ($scope.randomNum()) + ($scope.randomNum()) + ($scope.randomNum());
-// return ranNUm;
-// };
+myApp.run(['$rootScope', '$location', '$firebaseAuth', 'shareDataService',
+function($rootScope, $location, $firebaseAuth, shareDataService) {
+	var auth = $firebaseAuth();
+	var user = firebase.auth().currentUser;
+	$rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
+
+		if (firebase.auth().currentUser == null) {
+			// auth.$signInWithPopup("twitter").then(function(firebaseUser) {
+			// auth.$signInWithPopup("google").then(function(firebaseUser) {
+			auth.$signInWithPopup("facebook").then(function(firebaseUser) {
+				if (firebase.auth().currentUser) {
+					// console.log("Signed in as:", firebaseUser.user.displayName);
+					// console.log('ALLOW');
+					// console.log(logged.uid);
+					// console.log(currRoute.originalPath);
+					$location.path(currRoute.originalPath);
+				} else {
+					// console.log('DENY ');
+					// console.log(logged);
+					event.preventDefault();
+					$location.path('/home');
+				}
+			}).catch(function(error) {
+				console.log("Authentication failed:", error);
+			});
+		}
+		var logged = firebase.auth().currentUser;
+		shareDataService.setProperty('signedInUser', firebase.auth().currentUser);
+	});
+}]);
