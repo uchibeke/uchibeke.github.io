@@ -72,9 +72,9 @@
 									<img ng-src="{{croppedDataUrl}}" width="100%" class=""/>
 									<br />
 								</div>
-								<span class="ticketGName">{{$storage.guestsList[$storage.guestsList.length-1][0]}}</span>
+								<span class="ticketGName">{{$storage.guestsList[0].ticketNumber}}</span>
 								<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
-								src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{$storage.prefix}}{{$storage.guestsList[$storage.guestsList.length-1][0]}}&includetext&scale=1">
+								src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{$storage.guestsList[0].ticketNumber}}&includetext&scale=1">
 								<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
 								<p class=" text-center userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
 									{{$storage.ageInfo}}
@@ -97,7 +97,6 @@
 									</div>
 								</div>
 							</div>
-							<!-- <div class="col-md-1 col-lg-1 col-xs-1 ticketCol3 center-block"></div> -->
 						</div>
 					</div>
 				</div>
@@ -109,9 +108,6 @@
 							Print
 						</button>
 					</div>
-					<!-- <div class="center-block col-md-6">
-					<a type="button" class="btn btn-primary btn-xs btn-block" ng-href="#/populate">Manage Guests</a>
-					</div> -->
 				</div>
 				<div class=" center-block row text-justify text-muted">
 					<br />
