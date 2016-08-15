@@ -38,11 +38,19 @@
 				</button> </a>
 			</div>
 			<h4 class="col-md-12  col-xs-12 " ng-show="guestAddFeedback"> &#926; You've added {{$storage.guestsList.length}} Guests &#926;</h4>
-			<div class="guest cf text-center row center-block" ng-repeat="item in $storage.guestsList"
+			<table class="table table-responsive table-hover table-striped table-bordered table-condensed" ng-show="guestAddFeedback">
+				<tbody>
+					<tr ng-repeat="item in $storage.guestsList ">
+						<td ><a href="" ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"><span class="glyphicon glyphicon-remove"></span></a></td>
+						<td ng-repeat="a in item">{{ a }}</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- <div class="guest cf text-center row center-block" ng-repeat="item in $storage.guestsList"
 			ng-show="guestAddFeedback">
 				<a ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"> <i type="button" class="close pull-left" aria-hidden="true" ng-show="showListIcon">X</i></a>
 				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 gListNew" ng-repeat="a in item"> {{a}} </span>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </section>

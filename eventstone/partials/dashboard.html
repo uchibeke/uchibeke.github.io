@@ -4,7 +4,9 @@
 		<h4 class="text-center "><a>{{$storage.eventName}}</a></h4>
 		<div class="col-lg-3 panel panel-default" >
 			<div class="panel-body">
-				<span ng-repeat="item in $storage.allEvents"> <a style="padding-right: 10px;font-size: 12px;" href="" class="btn btn-group-lg" type="button" ng-click="setEvent(item.eventName)"> {{item.eventName}} <i  class="glyphicon glyphicon-menu-right"></i></a> </span>
+				<div ng-repeat="item in $storage.allEvents">
+					<a style="padding-right: 10px;font-size: 12px;" href="" class="btn btn-group-lg" type="button" ng-click="setEvent(item.eventName)"> {{item.eventName}} <i  class="glyphicon glyphicon-menu-right"></i></a>
+				</div>
 			</div>
 		</div>
 		<div class="col-lg-9 panel panel-default" id="dashDiv">
