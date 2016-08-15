@@ -233,7 +233,7 @@
 						</div>
 						<span class="ticketGName">{{item[0]}}</span>
 						<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
-						src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{item[0]}}&includetext&scale=1">
+						src="http://api-bwipjs.rhcloud.com/?bcid=code128&text={{item.ticketNumber}}&includetext&scale=1">
 						<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
 						<p class="text-center userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
 							{{$storage.ageInfo}}

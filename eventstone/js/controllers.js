@@ -10,7 +10,6 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 
 	// To store the string from user input
 	$scope.dataField = '';
-
 	$scope.listBtnText = 'Add';
 	$scope.$storage = $localStorage.$default({
 		guestsList : $scope.guests
@@ -39,38 +38,6 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 
 	$scope.clearField = function(field) {
 		field = '';
-	};
-
-	$scope.submitUserInput = function(field) {
-		var arr = field.split("+");
-		var newA = [];
-		var length = arr.length;
-
-		// Check if last element is empty and remove it
-		if ((arr[arr.length - 1]).length === 0) {
-			length = arr.length - 1;
-		}
-		// Check if name/ticket number starts with a space and remove space
-		var prefix = '\n';
-		var splicedA = {};
-		for (var i = 0; i < length; i++) {
-			if ((arr[i].slice(0, prefix.length)) == prefix) {
-				splicedA = arr[i].slice(1, arr[i].length);
-			} else {
-				splicedA = arr[i];
-			}
-			newA.push({
-				0 : splicedA,
-				guestStatus : 'Not checked-in'
-			});
-		}
-		// Two test guests always in the system. Check for them
-		if ($scope.$storage.guestsList.length <= 1) {
-			$scope.$storage.guestsList = '';
-		}
-		Array.prototype.push.apply($scope.$storage.guestsList, newA);
-		$scope.$storage.guestsList.sort();
-		// field= "";
 	};
 
 	$scope.$storage.xx = "";
@@ -113,10 +80,21 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		return text;
 	}
 
-	var ref = firebase.database().ref().child("/users/" + firebase.auth().currentUser.uid + "/" + $scope.$storage.eventName + "/");
+	var allRef = firebase.database().ref().child("/users/" + firebase.auth().currentUser.uid + "/");
+	$scope.$storage.allEvents = $firebaseArray(allRef);
 
-	$scope.$storage.guestsList = $firebaseArray(ref);
-	// $firebaseObject(ref).$bindTo($scope, $scope.$storage.guestsList);
+	var ref = firebase.database().ref().child("/users/" + firebase.auth().currentUser.uid + "/" + $scope.$storage.eventName + "/");
+	$scope.$storage.currentEvent = $firebaseArray(ref);
+
+	var guestRef = firebase.database().ref().child("/users/" + firebase.auth().currentUser.uid + "/" + $scope.$storage.eventName + "/guests");
+	$scope.$storage.guestsList = $firebaseArray(guestRef);
+
+	$scope.setEvent = function(eventName) {
+		$scope.$storage.eventName = eventName;
+		guestRef = firebase.database().ref().child("/users/" + firebase.auth().currentUser.uid + "/" + $scope.$storage.eventName + "/guests");
+		$scope.$storage.guestsList = $firebaseArray(guestRef);
+
+	};
 
 	function ticketOp() {
 		if ($scope.$storage.totalTickets.length <= 0) {
@@ -135,7 +113,8 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 				obj.push(element);
 			}
 			$scope.$storage.guestsList = Object.assign([], obj);
-			ref.set($scope.$storage.guestsList);
+			guestRef.set($scope.$storage.guestsList);
+			ref.child("/eventName/").set($scope.$storage.eventName);
 			$scope.$storage.totalTickets = '';
 		}
 	};
@@ -183,7 +162,8 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		}
 		$scope.testObj = cart;
 		$scope.$storage.guestsList = Object.assign([], $scope.testObj);
-		ref.set($scope.$storage.guestsList);
+		guestRef.set($scope.$storage.guestsList);
+		ref.child("/eventName/").set($scope.$storage.eventName);
 		$scope.$storage.showExcelList = true;
 	};
 
@@ -192,12 +172,12 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		} else if (($scope.$storage.guestsList[x].guestStatus) == 'Not checked-in') {
 			var d = new Date();
 			var ds = d.toLocaleTimeString();
-			$scope.$storage.guestsList[x].guestStatus = ds;
+			$scope.$storage.guestsList[x].guestStatus = "Checkin at " + ds;
 		}
 		var toPush = {
 			guestStatus : $scope.$storage.guestsList[x].guestStatus,
 		};
-		ref.child(x + "/").update(toPush);
+		guestRef.child(x + "/").update(toPush);
 	};
 
 	$scope.removeElement = function(list, idx) {
@@ -229,6 +209,43 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 				}
 			}
 		}
+	};
+
+	$scope.submitUserInput = function(field) {
+		var arr = field.split("+");
+		var newA = [];
+		var length = arr.length;
+
+		// Check if last element is empty and remove it
+		if ((arr[arr.length - 1]).length === 0) {
+			length = arr.length - 1;
+		}
+		// Check if name/ticket number starts with a space and remove space
+		var prefix = '\n';
+		var splicedA = {};
+		for (var i = 0; i < length; i++) {
+			if ((arr[i].slice(0, prefix.length)) == prefix) {
+				splicedA = arr[i].slice(1, arr[i].length);
+			} else {
+				splicedA = arr[i];
+			}
+			newA.push({
+				0 : splicedA,
+				guestStatus : 'Not checked-in'
+			});
+			// var key = $scope.$storage.guestsList.length + 1;
+			// ref.push({
+			// 0 : splicedA,
+			// guestStatus : 'Not checked-in'
+			// });
+		}
+		// Two test guests always in the system. Check for them
+		if ($scope.$storage.guestsList.length <= 1) {
+			$scope.$storage.guestsList = '';
+		}
+		Array.prototype.push.apply($scope.$storage.guestsList, newA);
+		$scope.$storage.guestsList.sort();
+		// field= "";
 	};
 
 	// To be used to hide the side icon before printing
@@ -313,6 +330,20 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 			}
 		}
 		return totReg;
+	};
+
+	$(document).ready(function() {
+		$("div.evewhyte-tab-menu>div.list-group>a").click(function(e) {
+			e.preventDefault();
+			$(this).siblings('a.active').removeClass("active");
+			$(this).addClass("active");
+			var index = $(this).index();
+			$("div.evewhyte-tab>div.evewhyte-tab-content").removeClass("active");
+			$("div.evewhyte-tab>div.evewhyte-tab-content").eq(index).addClass("active");
+		});
+	});
+
+	$scope.activeDashTab = function() {
 	};
 }]);
 

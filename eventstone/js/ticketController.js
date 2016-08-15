@@ -1,7 +1,7 @@
 var ticketControllers = angular.module('ticketControllers', ['ngStorage', 'ngSanitize', 'ngFileUpload', 'ngImgCrop']);
 
-ticketControllers.controller('TicketController', ['$rootScope', '$scope', '$http', '$localStorage', '$sce', 'Upload', '$timeout', 'analytics', '$firebaseObject', 'shareDataService',
-function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analytics, $firebaseObject, shareDataService) {
+ticketControllers.controller('TicketController', ['$rootScope', '$scope', '$http', '$localStorage', '$sce', 'Upload', '$timeout', 'analytics', '$firebaseObject', '$firebaseArray', '$firebaseAuth', 'shareDataService',
+function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analytics, $firebaseObject, $firebaseArray, $firebaseAuth, shareDataService) {
 	// $http.get('js/tickets.json').success(function(tdata) {
 	// // Guest Data from json file
 	// $scope.ticketdata = tdata;
@@ -17,7 +17,15 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 		style : $scope.styles
 	});
 
+	// var ref = firebase.database().ref().child("/users/" + firebase.auth().currentUser.uid + "/" + $scope.$storage.eventName + "/");
+
+	// $scope.$storage.guestsList = $firebaseArray(ref);
+	// $firebaseObject(ref).$bindTo($scope, $scope.$storage.guestsList);
+
 	$scope.$storage.currentUser = shareDataService.getProperty('signedInUser');
+
+	console.log($scope.$storage.currentUser.displayName);
+	console.log($scope.$storage.guestsList);
 
 	$http.get('js/ticketVariants.json').success(function(ticV) {
 		// Ticket variant Data from json file

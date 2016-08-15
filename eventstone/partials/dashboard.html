@@ -1,0 +1,31 @@
+<div ng-include="'partials/nav.html'"></div>
+<section class="container-fluid uofs-section " id="dashboardPage" style="left: 0;">
+	<div class="row">
+		<h4 class="text-center "><a>{{$storage.eventName}}</a></h4>
+		<div class="col-lg-3 panel panel-default" >
+			<div class="panel-body">
+				<span ng-repeat="item in $storage.allEvents"> <a style="padding-right: 10px;font-size: 12px;" href="" class="btn btn-group-lg" type="button" ng-click="setEvent(item.eventName)"> {{item.eventName}} <i  class="glyphicon glyphicon-menu-right"></i></a> </span>
+			</div>
+		</div>
+		<div class="col-lg-9 panel panel-default" id="dashDiv">
+			<div class="panel-body">
+				<form>
+					<div class="form-group">
+						<label>Type a new name if you want to change event name</label>
+						<input ng-model="$storage.eventName" placeholder="Name of event" id="homeInput" autofocus="autofocus">
+					</div>
+				</form>
+				<div class="row" >
+					<table class="table table-responsive table-hover table-striped table-bordered table-condensed" >
+						<tbody>
+							<tr ng-repeat="item in $storage.guestsList | filter:guestSearch">
+								<td ><a href="" ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"><span class="glyphicon glyphicon-remove"></span></td>
+								<td ng-repeat="a in item">{{ a }}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

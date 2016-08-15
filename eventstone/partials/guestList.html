@@ -63,15 +63,7 @@
 				</button>
 			</p>
 		</div>
-		<!-- <br class="clearfix"/> -->
 		<table class="table table-responsive table-hover table-striped table-bordered table-condensed" >
-			<!-- <thead>
-			<tr>
-			<th>Firstname</th>
-			<th>Lastname</th>
-			<th>Email</th>
-			</tr>
-			</thead> -->
 			<tbody>
 				<tr ng-repeat="item in $storage.guestsList | filter:guestSearch">
 					<td ><a href="" ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"><span class="glyphicon glyphicon-remove"></span></td>

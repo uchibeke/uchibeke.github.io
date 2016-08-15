@@ -424,31 +424,6 @@ form .progress {
 	-webkit-transform: rotate(20deg); /* Safari */
 	transform: rotate(20deg);
 }
-
-/*#navHome {
- color: rgba(255, 0, 0, 1);
- }
-
- #navPopulate {
- border-bottom: thin solid rgba(0, 255, 0, 1);
- }
-
- #navTickets {
- border-bottom: thin solid rgba(0, 255, 255, 1);
- }
-
- #navBadges {
- border-bottom: thin solid rgba(0, 0, 255, 1);
- }
-
- #navGList {
- border-bottom: thin solid rgba(255, 0, 255, 1);
- }
-
- #navGoLive {
- color: rgba(255, 0, 0, 1);
- border-bottom: thin solid rgba(255, 0, 0, 1);
- }*/
 .gListNew {
 	display: inline-block !important;
 	font-size: 8pt !important;
@@ -494,10 +469,9 @@ form .progress {
 	width: 60% !important;
 }
 
-.home_eventName{
+.home_eventName {
 	width: 100% !important;
 }
-
 
 .addByPasting {
 	width: 80% !important;
@@ -726,7 +700,7 @@ a {
 		position: fixed;
 	}
 
-	.navHome, .navHelp, .navLive, .navGList {
+	.navHome, .navHelp, .navLive, .navGList, .navDashboard {
 		font-size: 25px !important;
 	}
 
@@ -814,10 +788,20 @@ video {
 	z-index: 100000;
 }
 
-.navHome, .navHelp, .navLive, .navGList {
+.navDashboard {
+	top: 210px;
+	right: 10px;
+	position: fixed;
+	z-index: 100000;
+}
+
+.navHome, .navHelp, .navLive, .navGList, .navDashboard {
 	font-size: 30px;
 }
 .ticket {
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
 	page-break-inside: avoid !important;
 	width: 5in !important;
 	height: 2.125in !important;
@@ -826,8 +810,5 @@ video {
 	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
 	color: #191970;
 	text-align: center;
-	print-color-adjust: exact !important;
-	-webkit-print-color-adjust: exact !important;
-	-moz-print-color-adjust: exact !important;
 }
 

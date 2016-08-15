@@ -38,6 +38,9 @@ function($routeProvider) {
 	}).when('', {
 		templateUrl : 'partials/home.html',
 		controller : 'GuestController'
+	}).when('/dashboard', {
+		templateUrl : 'partials/dashboard.html',
+		controller : 'GuestController'
 	}).otherwise({
 		redirectTo : '/home'
 	});
@@ -48,17 +51,22 @@ function($rootScope, $location, $firebaseAuth, shareDataService) {
 	var auth = $firebaseAuth();
 	var user = firebase.auth().currentUser;
 	$rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
-
-		if (firebase.auth().currentUser == null) {
+		var isAuth = $firebaseAuth().$getAuth();
+		if (isAuth == null) {
 			// auth.$signInWithPopup("twitter").then(function(firebaseUser) {
 			// auth.$signInWithPopup("google").then(function(firebaseUser) {
 			auth.$signInWithPopup("facebook").then(function(firebaseUser) {
 				if (firebase.auth().currentUser) {
+					var token = firebaseUser.credential.accessToken;
 					// console.log("Signed in as:", firebaseUser.user.displayName);
 					// console.log('ALLOW');
 					// console.log(logged.uid);
 					// console.log(currRoute.originalPath);
-					$location.path(currRoute.originalPath);
+					if (currRoute.originalPath === "/home" || currRoute.originalPath == null) {
+						$location.path('/dashboard');
+					} else {
+						$location.path(currRoute.originalPath);
+					}
 				} else {
 					// console.log('DENY ');
 					// console.log(logged);
@@ -68,8 +76,9 @@ function($rootScope, $location, $firebaseAuth, shareDataService) {
 			}).catch(function(error) {
 				console.log("Authentication failed:", error);
 			});
+		} else {
+			$location.path(currRoute.originalPath);
 		}
-		var logged = firebase.auth().currentUser;
 		shareDataService.setProperty('signedInUser', firebase.auth().currentUser);
 	});
 }]);
