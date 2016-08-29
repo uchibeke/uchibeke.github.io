@@ -55,7 +55,7 @@ function($rootScope, $location, $firebaseAuth, shareDataService) {
 		if (isAuth == null) {
 			// auth.$signInWithPopup("twitter").then(function(firebaseUser) {
 			// auth.$signInWithPopup("google").then(function(firebaseUser) {
-			auth.$signInWithPopup("facebook").then(function(firebaseUser) {
+			auth.$signInWithPopup("google").then(function(firebaseUser) {
 				if (firebase.auth().currentUser) {
 					var token = firebaseUser.credential.accessToken;
 					// console.log("Signed in as:", firebaseUser.user.displayName);
