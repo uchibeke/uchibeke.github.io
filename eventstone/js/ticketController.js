@@ -99,6 +99,12 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 		}
 	}
 
+	$scope.ticketBgColorFilter = function() {
+		var x = $scope.$storage.ticketBgColor;
+		x = x.replace('#', '');
+		return x;
+	};
+
 	$scope.$storage.sampleView = false;
 
 	$scope.textBtnStyle = function(bg) {
