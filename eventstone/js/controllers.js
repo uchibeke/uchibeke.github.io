@@ -1,6 +1,6 @@
-var guestControllers = angular.module('guestControllers', ['ngStorage', 'ngSanitize', "firebase"]);
+var mainControllers = angular.module('mainControllers', ['ngStorage', 'ngSanitize', "firebase"]);
 
-guestControllers.controller('GuestController', ['$rootScope', '$scope', '$http', '$localStorage', '$timeout', '$interval', '$sce', 'analytics', '$firebaseObject', '$firebaseArray', '$firebaseAuth', 'shareDataService',
+mainControllers.controller('MainController', ['$rootScope', '$scope', '$http', '$localStorage', '$timeout', '$interval', '$sce', 'analytics', '$firebaseObject', '$firebaseArray', '$firebaseAuth', 'shareDataService',
 function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, analytics, $firebaseObject, $firebaseArray, $firebaseAuth, shareDataService) {
 	$scope.guests = [];
 
@@ -80,14 +80,6 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		return text;
 	}
 
-	var allRef = firebase.database().ref().child("/users/" + firebase.auth().currentUser.uid + "/");
-	$scope.$storage.allEvents = $firebaseArray(allRef);
-
-	var ref = firebase.database().ref().child("/users/" + firebase.auth().currentUser.uid + "/" + $scope.$storage.eventName + "/");
-	$scope.$storage.currentEvent = $firebaseArray(ref);
-
-	var guestRef = firebase.database().ref().child("/users/" + firebase.auth().currentUser.uid + "/" + $scope.$storage.eventName + "/guests");
-	$scope.$storage.guestsList = $firebaseArray(guestRef);
 
 	$scope.setEvent = function(eventName) {
 		$scope.$storage.eventName = eventName;
@@ -95,6 +87,17 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		$scope.$storage.guestsList = $firebaseArray(guestRef);
 
 	};
+	var user = firebase.auth().currentUser;
+	console.log(user);
+
+	var allRef = firebase.database().ref().child("/users/" + user.uid + "/");
+	$scope.$storage.allEvents = $firebaseArray(allRef);
+
+	var ref = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/");
+	$scope.$storage.currentEvent = $firebaseArray(ref);
+
+	var guestRef = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/guests");
+	$scope.$storage.guestsList = $firebaseArray(guestRef);
 
 	function ticketOp() {
 		if ($scope.$storage.totalTickets.length <= 0) {
@@ -346,16 +349,3 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 	$scope.activeDashTab = function() {
 	};
 }]);
-
-myApp.service('shareDataService', function() {
-	var property = [];
-
-	return {
-		getProperty : function(key) {
-			return property[key];
-		},
-		setProperty : function(key, value) {
-			property[key] = value;
-		}
-	};
-});

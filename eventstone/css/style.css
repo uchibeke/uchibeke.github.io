@@ -10,7 +10,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	font: inherit;
 	font-size: 100%;
 	vertical-align: baseline;
-	font-family: 'Exo 2', 'Roboto', 'Candal', monospace, sans-serif;
+	font-family: 'Exo 2', 'Roboto Condensed', 'Candal', monospace, sans-serif;
 	print-color-adjust: exact !important;
 	-webkit-print-color-adjust: exact !important;
 	-moz-print-color-adjust: exact !important;
@@ -159,7 +159,7 @@ body {
 .ticketCol1 {
 	margin-top: 6px !important;
 	margin-bottom: 0px !important;
-	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
+	font-family: font-family : 'Exo 2',  'Roboto Condensed', 'Candal', monospace, sans-serif !important;
 	/*width: 132px !important;*/
 	display: block !important;
 	print-color-adjust: exact !important;
@@ -182,11 +182,11 @@ body {
 .ticketCol3 {
 	margin-top: 6px !important;
 	margin-bottom: 0px !important;
-	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
+	font-family: font-family : 'Exo 2',  'Roboto Condensed', 'Candal', monospace, sans-serif !important;
 	/*width: 44px !important;*/
 }
 .centerDiv {
-	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
+	font-family: font-family : 'Exo 2',  'Roboto Condensed', 'Candal', monospace, sans-serif !important;
 	width: 340px !important;
 }
 
@@ -342,7 +342,7 @@ form .progress {
 	height: 3.1in !important;
 	border-style: solid;
 	border: thin solid #005A31;
-	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
+	font-family: font-family : 'Exo 2',  'Roboto Condensed', 'Candal', monospace, sans-serif !important;
 	background: white;
 	color: #191970;
 	text-align: center;
@@ -405,7 +405,7 @@ form .progress {
 	padding-top: 0px;
 	margin-top: 0px;
 	margin-bottom: 0px;
-	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
+	font-family: font-family : 'Exo 2',  'Roboto Condensed', 'Candal', monospace, sans-serif !important;
 	overflow: hidden !important;
 }
 
@@ -655,7 +655,7 @@ a {
 
 .home_description {
 	font-size: 18px !important;
-	font-family: 'Sanchez', 'Exo 2', 'Roboto', 'Candal', monospace, sans-serif !important;
+	font-family: 'Sanchez', 'Exo 2', 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
 	font-weight: normal;
 	white-space: normal !important;
 	background: rgba(255, 192, 47, 0.7) !important;
@@ -807,9 +807,14 @@ video {
 	height: 2.125in !important;
 	border-style: solid;
 	border: thin dashed red;
-	font-family: font-family : 'Exo 2',  'Roboto', 'Candal', monospace, sans-serif !important;
+	font-family: font-family : 'Exo 2',  'Roboto Condensed', 'Candal', monospace, sans-serif !important;
 	color: #191970;
 	text-align: center;
 	padding-top: 10px;
 }
+
+.loginBtn {
+	width: 100px;
+}
+
 

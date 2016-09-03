@@ -1,25 +1,25 @@
-var myApp = angular.module('myApp', ['ngRoute', 'guestControllers', 'ticketControllers', 'analytics', 'firebase']);
+var myApp = angular.module('myApp', ['ngRoute', 'mainControllers', 'ticketControllers', 'loginControllers', 'analytics', 'firebase']);
 
 myApp.config(['$routeProvider',
 function($routeProvider) {
 	$routeProvider.when('/list', {
 		templateUrl : 'partials/list.html',
-		controller : 'GuestController'
+		controller : 'MainController'
 	}).when('/populate', {
 		templateUrl : 'partials/setup/populate.html',
-		controller : 'GuestController'
+		controller : 'MainController'
 	}).when('/addticket', {
 		templateUrl : 'partials/setup/addticket.html',
-		controller : 'GuestController'
+		controller : 'MainController'
 	}).when('/home', {
 		templateUrl : 'partials/home.html',
-		controller : 'GuestController'
+		controller : 'MainController'
 	}).when('/live', {
 		templateUrl : 'partials/live.html',
-		controller : 'GuestController'
+		controller : 'MainController'
 	}).when('/guestList', {
 		templateUrl : 'partials/guestList.html',
-		controller : 'GuestController'
+		controller : 'MainController'
 	}).when('/tickets', {
 		templateUrl : 'partials/design/makeTicket.html',
 		controller : 'TicketController'
@@ -37,53 +37,40 @@ function($routeProvider) {
 		controller : 'TicketController'
 	}).when('', {
 		templateUrl : 'partials/home.html',
-		controller : 'GuestController'
+		controller : 'MainController'
 	}).when('/dashboard', {
 		templateUrl : 'partials/dashboard.html',
-		controller : 'GuestController'
+		controller : 'MainController'
 	}).when('/login', {
 		templateUrl : 'partials/login.html',
-		controller : 'GuestController'
+		controller : 'LoginController'
 	}).when('/register', {
 		templateUrl : 'partials/register.html',
-		controller : 'GuestController'
+		controller : 'LoginController'
 	}).otherwise({
 		redirectTo : '/home'
 	});
 }]);
+// Condition base:
+// http://stackoverflow.com/questions/11541695/redirecting-to-a-certain-route-based-on-condition
 
-myApp.run(['$rootScope', '$location', '$firebaseAuth', 'shareDataService',
-function($rootScope, $location, $firebaseAuth, shareDataService) {
-	var auth = $firebaseAuth();
-	var user = firebase.auth().currentUser;
+myApp.run(['$rootScope', '$location', '$firebaseAuth', '$localStorage', 'shareDataService',
+function($rootScope, $location, $firebaseAuth, $localStorage, shareDataService) {
+	$rootScope.$storage = $localStorage.$default({
+		g : $rootScope.guests
+	});
 	$rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
 		var isAuth = $firebaseAuth().$getAuth();
-		if (isAuth == null) {
-			// auth.$signInWithPopup("twitter").then(function(firebaseUser) {
-			// auth.$signInWithPopup("google").then(function(firebaseUser) {
-			auth.$signInWithPopup("google").then(function(firebaseUser) {
-				if (firebase.auth().currentUser) {
-					var token = firebaseUser.credential.accessToken;
-					// console.log("Signed in as:", firebaseUser.user.displayName);
-					// console.log('ALLOW');
-					// console.log(logged.uid);
-					// console.log(currRoute.originalPath);
-					if (currRoute.originalPath === "/home" || currRoute.originalPath == null) {
-						$location.path('/dashboard');
-					} else {
-						$location.path(currRoute.originalPath);
-					}
-				} else {
-					// console.log('DENY ');
-					// console.log(logged);
-					event.preventDefault();
-					$location.path('/home');
-				}
-			}).catch(function(error) {
-				console.log("Authentication failed:", error);
-			});
-		} else {
+		console.log("isAuth:", firebase.auth());
+		if ($rootScope.$storage.hasOwnProperty('user') && $rootScope.$storage.user.hasOwnProperty('token') && $rootScope.$storage.user.token != undefined) {
 			$location.path(currRoute.originalPath);
+			console.log('ALLOW');
+			console.log("Signed in as: ");
+			console.log($rootScope.$storage.user);
+		} else {
+
+			console.log('DENY ');
+			$location.path('/login');
 		}
 		shareDataService.setProperty('signedInUser', firebase.auth().currentUser);
 	});

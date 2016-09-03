@@ -17,16 +17,6 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 		style : $scope.styles
 	});
 
-	// var ref = firebase.database().ref().child("/users/" + firebase.auth().currentUser.uid + "/" + $scope.$storage.eventName + "/");
-
-	// $scope.$storage.guestsList = $firebaseArray(ref);
-	// $firebaseObject(ref).$bindTo($scope, $scope.$storage.guestsList);
-
-	$scope.$storage.currentUser = shareDataService.getProperty('signedInUser');
-
-	console.log($scope.$storage.currentUser.displayName);
-	console.log($scope.$storage.guestsList);
-
 	$http.get('js/ticketVariants.json').success(function(ticV) {
 		// Ticket variant Data from json file
 		$scope.ticketVariants = ticV;
@@ -66,15 +56,23 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 		}
 	};
 
-	$(function() {
-		$('#datepicker').datepicker({
-			showAnim : "fadeIn",
-			onSelect : function(dateText, inst) {
-				var date = $(this).val();
-				$scope.$storage.ticket[0].eventDate = date;
-			}
-		});
-	});
+	// $(function() {
+	// $('#datepicker').datepicker({
+	// onSelect : function(dateText, inst) {
+	// var date = $(this).val();
+	// $scope.$storage.ticket[0].eventDate = date;
+	// }
+	// });
+	// });
+	//
+	// (function() {
+	// document.getElementById('#datepicker').datepicker({
+	// onSelect : function(dateText, inst) {
+	// var date = $(this).val();
+	// $scope.$storage.ticket[0].eventDate = date;
+	// }
+	// });
+	// })();
 
 	$scope.ticketBackground = function(ind) {
 		$scope.$storage.ticketText = $scope.$storage.ticketText;
@@ -100,9 +98,10 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 	}
 
 	$scope.ticketBgColorFilter = function() {
-		var x = $scope.$storage.ticketBgColor;
-		x = x.replace('#', '');
-		return x;
+		if ($scope.$storage.ticketBgColor != undefined) {
+			$scope.$storage.ticketBgColor = $scope.$storage.ticketBgColor.replace('#', '');
+		}
+		return $scope.$storage.ticketBgColor;
 	};
 
 	$scope.$storage.sampleView = false;
