@@ -1,5 +1,5 @@
 <div class="col-md-6 col-md-offset-3">
-	<form class="form text-center center-block" ng-show="$storage.user == undefined">
+	<form class="form text-center center-block" ng-show="$storage.user == null">
 		<p class="text-info text-left">
 			Must be logged in to use app. This allows you return to this app from another device and time and manage all your events.
 			It also allows you check people in simultaneuous from mutiple devices and locations.
@@ -23,11 +23,12 @@
 			</button>
 		</div>
 	</form>
-	<form class="form text-center center-block" ng-hide="$storage.user == undefined">
+	<form class="form text-center center-block" ng-hide="$storage.user == null">
 		<div class="form-group">
 			<button type="submit" class="btn btn-danger loginBtn" ng-click="logOut()">
 				<i class="fa fa-sign-out" aria-hidden="true"></i>
 			</button>
+			<a ng-href="#/dashboard" class="btn btn-info " type="button"> <i class="glyphicon glyphicon-blackboard" aria-hidden="true"></i> Dashboard </a>
 		</div>
 	</form>
 	<!-- <form name="form" ng-submit="vm.login()" role="form">

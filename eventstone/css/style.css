@@ -106,6 +106,19 @@ padding-bottom: 10px;
 .back_div {
 	padding-bottom: 10px;
 }
+.forwardCenterArr {
+	top: 50% !important;
+	font-size: 30px;
+	position:fixed;
+	right:0;
+}
+
+.backwardCenterArr {
+	top: 50% !important;
+	font-size: 30px;
+	position:fixed;
+	left:0;
+}
 
 #home_bg {
 	position: fixed;

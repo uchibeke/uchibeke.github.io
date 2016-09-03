@@ -28,9 +28,8 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 
 				var guestRef = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/guests");
 				$scope.$storage.guestsList = $firebaseArray(guestRef);
-				if ($location.path('/dashboard')) {
-					location.reload();
-				}
+				$location.path('/home')
+				location.reload();
 			} else {
 				event.preventDefault();
 				$location.path('/login');
@@ -40,12 +39,32 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		});
 	};
 
+	// Opera 8.0+
+	var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+	// Firefox 1.0+
+	var isFirefox = typeof InstallTrigger !== 'undefined';
+	// At least Safari 3+: "[object HTMLElementConstructor]"
+	var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+	// Internet Explorer 6-11
+	var isIE = /*@cc_on!@*/false || !!document.documentMode;
+	// Edge 20+
+	var isEdge = !isIE && !!window.StyleMedia;
+	// Chrome 1+
+	var isChrome = !!window.chrome && !!window.chrome.webstore;
+	// Blink engine detection
+	var isBlink = (isChrome || isOpera) && !!window.CSS;
+
 	$scope.logOut = function() {
 		var auth = $firebaseAuth();
 		console.log(firebase.auth() + " logging out");
 		firebase.auth().signOut().then(function(result) {
 			// Sign-out successful.
-			$localStorage.$reset($rootScope.$storage.user);
+			if (isChrome) {
+				delete $localStorage.user;
+			} else {
+				$localStorage.$reset($scope.$storage.user);
+			}
+
 		}, function(error) {
 			console.log(error);
 		});
