@@ -42,6 +42,10 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 
 	$scope.$storage.xx = "";
 
+	$scope.$storage.options = {
+	};
+	$scope.$storage.options.hideCheckin = [];
+
 	$scope.deleteStored = function() {
 		if (!(angular.equals($scope.$storage.guestsList, $scope.guests))) {
 			$scope.$storage.backUpGuestList = [];
@@ -177,7 +181,7 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		} else if (($scope.$storage.guestsList[x].guestStatus) == 'Not checked-in') {
 			var d = new Date();
 			var ds = d.toLocaleTimeString();
-			$scope.$storage.guestsList[x].guestStatus = "Checkin at " + ds;
+			$scope.$storage.guestsList[x].guestStatus = "" + ds;
 		}
 		var toPush = {
 			guestStatus : $scope.$storage.guestsList[x].guestStatus,

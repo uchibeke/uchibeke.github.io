@@ -46,8 +46,8 @@
 					<br />
 				</span>
 				<div class="row">
-					<button  type="button" ng-hide="hideBtn"
-					class="btn btn-primary checkInBtn  btn-danger pull-right" ng-click="checkedIn($storage.guestsList.indexOf(item));hideBtn=true;">
+					<button  type="button" ng-hide="$storage.options.hideCheckin[$index]"
+					class="btn btn-primary checkInBtn  btn-danger pull-right" ng-click="checkedIn($storage.guestsList.indexOf(item));$storage.options.hideCheckin[$index]=true;">
 						Check-In
 					</button>
 				</div>

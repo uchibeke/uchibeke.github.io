@@ -109,15 +109,15 @@ padding-bottom: 10px;
 .forwardCenterArr {
 	top: 50% !important;
 	font-size: 30px;
-	position:fixed;
-	right:0;
+	position: fixed;
+	right: 0;
 }
 
 .backwardCenterArr {
 	top: 50% !important;
 	font-size: 30px;
-	position:fixed;
-	left:0;
+	position: fixed;
+	left: 0;
 }
 
 #home_bg {
@@ -713,8 +713,8 @@ a {
 		position: fixed;
 	}
 
-	.navHome, .navHelp, .navLive, .navGList, .navDashboard {
-		font-size: 25px !important;
+	.navHome, .navHelp, .navLive, .navGList, .navDashboard, .navlogin {
+		font-size: 20px !important;
 	}
 
 }
@@ -781,28 +781,28 @@ video {
 }
 
 .navHelp {
-	top: 60px;
+	top: 50px;
 	right: 10px;
 	position: fixed;
 	z-index: 100000;
 }
 
 .navLive {
-	top: 110px;
+	top: 90px;
 	right: 10px;
 	position: fixed;
 	z-index: 100000;
 }
 
 .navGList {
-	top: 160px;
+	top: 130px;
 	right: 10px;
 	position: fixed;
 	z-index: 100000;
 }
 
 .navDashboard {
-	top: 210px;
+	top: 170px;
 	right: 10px;
 	position: fixed;
 	z-index: 100000;
@@ -815,8 +815,8 @@ video {
 	z-index: 100000;
 }
 
-.navHome, .navHelp, .navLive, .navGList, .navDashboard {
-	font-size: 30px;
+.navHome, .navHelp, .navLive, .navGList, .navDashboard, .navlogin {
+	font-size: 20px;
 }
 .ticket {
 	print-color-adjust: exact !important;
@@ -836,5 +836,8 @@ video {
 .loginBtn {
 	width: 100px;
 }
-
+.guestInDash {
+	border: 1px solid #EEEEEE;
+	padding: 5px;
+}
 

@@ -2,18 +2,24 @@
 <section class="container-fluid uofs-section " id="dashboardPage" style="left: 0;">
 	<div class="row text-center center-block">
 		<div ng-repeat="item in $storage.allEvents" class="col-lg-4 col-sm-4 col-xs-4 text-center" >
-			<a type="button" style="width:100%;" href="" class="btn btn-sm" type="button" ng-click="setEvent(item.eventName)" ng-style="$storage.allEvents[$storage.allEvents.indexOf(item)].eventName == $storage.eventName && {'border-bottom':'thin solid #EEEEEE', 'border-style' : 'outset'}"> {{item.eventName}}</a>
-
+			<a  type="button" style="width:100%;" href="" class="btn btn-md" type="button" ng-click="setEvent(item.eventName)" ng-style="$storage.allEvents[$storage.allEvents.indexOf(item)].eventName == $storage.eventName && {'border':'2px solid #EEEEEE','outline':'0'}" > {{item.eventName}}</a>
+			<a style="position: absolute; right:25px; bottom:10px;" ng-href="#/addticket"   data-toggle="tooltip" title="Edit Event" ng-show="$storage.allEvents[$storage.allEvents.indexOf(item)].eventName == $storage.eventName"><span class="glyphicon glyphicon-edit text-muted"></span></a>
 		</div>
 	</div>
+	<br />
 	<div class="row" >
-		<table class="table table-responsive table-hover table-striped table-bordered table-condensed" >
-			<tbody>
-				<tr ng-repeat="item in $storage.guestsList">
-					<td ><a href="" ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"><span class="glyphicon glyphicon-remove"></span></td>
-					<td ng-repeat="a in item">{{ a }}</td>
-				</tr>
-			</tbody>
-		</table>
+		<form class=" text-center form col-xs-12 center-block">
+			<input ng-model="dashSearch" placeholder="Search for a ticket number or name"
+			autofocus="autofocus" class=" form-control center center-block" >
+		</form>
+		<p class="clearfix"></p>
+		<div ng-repeat="item in $storage.guestsList  | filter:dashSearch" class="col-lg-2 col-md-3 col-sm-4 col-xs-6 text-center guestInDash"  ng-style="$index % 2 == 0 && {'background':'pink'}">
+			<p  class="">
+				<a style="position: absolute; right:5px; top:5px;;" href="" ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"   data-toggle="tooltip" title="Remove a guest"><span class="glyphicon glyphicon-remove "></span></a>
+				{{item.ticketNumber}}
+				<br />
+				<span class="text-muted"> {{item.guestStatus}}</span>
+			</p>
+		</div>
 	</div>
 </section>
