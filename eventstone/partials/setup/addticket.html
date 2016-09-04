@@ -21,7 +21,7 @@
 			{{$storage.eventName}} is the event you are managing.
 		</p>
 		<div class="forwardCenterArr ">
-			<a  class="" ng-click="showAddTickNum = true"  href=""> <span class="glyphicon glyphicon-menu-right"></span> </a> </a>
+			<a  class="" ng-click="showAddTickNum = true;$storage.eventName=$storage.eventName"  href=""> <span class="glyphicon glyphicon-menu-right"></span> </a> </a>
 		</div>
 	</div>
 	<div class=" populate_div  " style="padding-bottom: 2%;" ng-show="showAddTickNum">

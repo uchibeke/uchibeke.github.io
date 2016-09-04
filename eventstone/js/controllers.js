@@ -116,7 +116,9 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 				obj.push(element);
 			}
 			$scope.$storage.guestsList = Object.assign([], obj);
+			guestRef = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/guests");
 			guestRef.set($scope.$storage.guestsList);
+			ref = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/");
 			ref.child("/eventName/").set($scope.$storage.eventName);
 			$scope.$storage.totalTickets = '';
 		}
