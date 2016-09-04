@@ -808,6 +808,13 @@ video {
 	z-index: 100000;
 }
 
+.navlogin {
+	bottom: 0px;
+	right: 10px;
+	position: fixed;
+	z-index: 100000;
+}
+
 .navHome, .navHelp, .navLive, .navGList, .navDashboard {
 	font-size: 30px;
 }
