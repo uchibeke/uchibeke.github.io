@@ -775,42 +775,42 @@ video {
 
 .navHome {
 	top: 10px;
-	right: 10px;
+	right: 5px;
 	position: fixed;
 	z-index: 100000;
 }
 
 .navHelp {
 	top: 50px;
-	right: 10px;
+	right: 5px;
 	position: fixed;
 	z-index: 100000;
 }
 
 .navLive {
 	top: 90px;
-	right: 10px;
+	right: 5px;
 	position: fixed;
 	z-index: 100000;
 }
 
 .navGList {
 	top: 130px;
-	right: 10px;
+	right: 5px;
 	position: fixed;
 	z-index: 100000;
 }
 
 .navDashboard {
 	top: 170px;
-	right: 10px;
+	right: 5px;
 	position: fixed;
 	z-index: 100000;
 }
 
 .navlogin {
 	bottom: 0px;
-	right: 10px;
+	right: 5px;
 	position: fixed;
 	z-index: 100000;
 }

@@ -8,8 +8,8 @@ function($routeProvider) {
 	}).when('/populate', {
 		templateUrl : 'partials/setup/populate.html',
 		controller : 'MainController'
-	}).when('/addticket', {
-		templateUrl : 'partials/setup/addticket.html',
+	}).when('/newevent', {
+		templateUrl : 'partials/setup/newevent.html',
 		controller : 'MainController'
 	}).when('/home', {
 		templateUrl : 'partials/home.html',

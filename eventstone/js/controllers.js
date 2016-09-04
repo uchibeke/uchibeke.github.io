@@ -60,8 +60,6 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		return d.getFullYear() + "" + ('0' + (d.getMonth() + 1)).slice(-2) + "" + ('0' + d.getDate()).slice(-2);
 	};
 
-	$scope.$storage.titleArr = ["Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading", "Heading"];
-
 	$scope.backUpTxt = function() {
 		if ($scope.backUp) {
 			return 'Hide Backup list';
@@ -242,11 +240,6 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 				0 : splicedA,
 				guestStatus : 'Not checked-in'
 			});
-			// var key = $scope.$storage.guestsList.length + 1;
-			// ref.push({
-			// 0 : splicedA,
-			// guestStatus : 'Not checked-in'
-			// });
 		}
 		// Two test guests always in the system. Check for them
 		if ($scope.$storage.guestsList.length <= 1) {
@@ -339,19 +332,5 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 			}
 		}
 		return totReg;
-	};
-
-	$(document).ready(function() {
-		$("div.evewhyte-tab-menu>div.list-group>a").click(function(e) {
-			e.preventDefault();
-			$(this).siblings('a.active').removeClass("active");
-			$(this).addClass("active");
-			var index = $(this).index();
-			$("div.evewhyte-tab>div.evewhyte-tab-content").removeClass("active");
-			$("div.evewhyte-tab>div.evewhyte-tab-content").eq(index).addClass("active");
-		});
-	});
-
-	$scope.activeDashTab = function() {
 	};
 }]);
