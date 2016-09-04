@@ -7,6 +7,10 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		guestsList : $scope.guests
 	});
 
+	var user,
+	    allRef,
+	    ref,
+	    guestRef;
 	// Accepts twiter, facebook or google
 	$scope.login = function(loginMethod) {
 
@@ -18,15 +22,15 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 				console.log(firebaseUser);
 				$rootScope.$storage.user = firebaseUser;
 				$rootScope.$storage.user.token = firebaseUser.credential.accessToken;
-				var user = firebaseUser.user;
+				user = firebaseUser.user;
 				$rootScope.$storage.user.signInUser = user;
-				var allRef = firebase.database().ref().child("/users/" + user.uid + "/");
+				allRef = firebase.database().ref().child("/users/" + user.uid + "/");
 				$scope.$storage.allEvents = $firebaseArray(allRef);
 
-				var ref = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/");
+				ref = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/");
 				$scope.$storage.currentEvent = $firebaseArray(ref);
 
-				var guestRef = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/guests");
+				guestRef = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/guests");
 				$scope.$storage.guestsList = $firebaseArray(guestRef);
 				$location.path('/home')
 				location.reload();

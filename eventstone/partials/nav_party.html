@@ -14,5 +14,9 @@
 	<a type="" ng-href="#/dashboard" class="" ng-click="hide_logo=true;"  data-toggle="tooltip" title="Dashboard to see all your events" > <span class="glyphicon glyphicon-blackboard"> </span> </a>
 </div>
 <div  class="navlogin">
-	<a type="" ng-href="#/login" class="" ng-click=""  data-toggle="tooltip" title="Login" > <span class="glyphicon glyphicon-user"> </span> </a>
+
+	<a type="" ng-href="#/login" style="color: #E294A9"  data-toggle="tooltip" title="Login/Logout"><img src="{{$storage.user.signInUser.photoURL}}" width="50px" class="img-circle img-responsive"/> <span class=""> </span> </a>
+	<!--
+	<br />
+	<a type="" ng-href="#/login" style="color: #E294A9"  data-toggle="tooltip" title="Login">{{$storage.user.signInUser.displayName}} <span class=""> </span> </a> -->
 </div>

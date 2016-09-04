@@ -68,9 +68,13 @@ function($rootScope, $location, $firebaseAuth, $localStorage, shareDataService) 
 			console.log("Signed in as: ");
 			console.log($rootScope.$storage.user);
 		} else {
-
+			console.log(currRoute.originalPath);
 			console.log('DENY ');
-			$location.path('/login');
+			if (currRoute.originalPath == '/login') {
+				$location.path('/login');
+			} else {
+				$location.path('/home');
+			}
 		}
 		shareDataService.setProperty('signedInUser', firebase.auth().currentUser);
 	});

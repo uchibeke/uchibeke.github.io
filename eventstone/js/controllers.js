@@ -89,17 +89,25 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		$scope.$storage.guestsList = $firebaseArray(guestRef);
 
 	};
-	var user = firebase.auth().currentUser;
-	console.log(user);
 
-	var allRef = firebase.database().ref().child("/users/" + user.uid + "/");
-	$scope.$storage.allEvents = $firebaseArray(allRef);
+	var user,
+	    allRef,
+	    ref,
+	    guestRef;
+	if (firebase.auth().currentUser) {
+		user = firebase.auth().currentUser;
+		console.log(user);
 
-	var ref = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/");
-	$scope.$storage.currentEvent = $firebaseArray(ref);
+		allRef = firebase.database().ref().child("/users/" + user.uid + "/");
+		$scope.$storage.allEvents = $firebaseArray(allRef);
 
-	var guestRef = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/guests");
-	$scope.$storage.guestsList = $firebaseArray(guestRef);
+		ref = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/");
+		$scope.$storage.currentEvent = $firebaseArray(ref);
+
+		guestRef = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/guests");
+		$scope.$storage.guestsList = $firebaseArray(guestRef);
+
+	}
 
 	function ticketOp() {
 		if ($scope.$storage.totalTickets.length <= 0) {
@@ -138,6 +146,26 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		} finally {
 			$scope.loading.generatingTicket = false;
 		}
+	};
+
+	$scope.deleteEvent = function(eventName) {
+		ref = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "");
+		var list = $firebaseArray(ref);
+		var item = list[eventName];
+		console.log("Deleting");
+
+		var obj = $firebaseObject(ref);
+		obj.$remove().then(function(ref) {
+			// data has been deleted locally and in the database
+			console.log("Deleted")
+		}, function(error) {
+			console.log("Error:", error);
+		});
+		// list.$remove(item).then(function(ref) {
+			// ref.key === item.$id;
+			// // true
+			// console.log("Deleted")
+		// });
 	};
 
 	$interval(function() {
