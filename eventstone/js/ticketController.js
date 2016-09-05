@@ -48,24 +48,6 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 			}
 		};
 
-		// $(function() {
-		// $('#datepicker').datepicker({
-		// onSelect : function(dateText, inst) {
-		// var date = $(this).val();
-		// $scope.$storage.ticket[0].eventDate = date;
-		// }
-		// });
-		// });
-		//
-		// (function() {
-		// document.getElementById('#datepicker').datepicker({
-		// onSelect : function(dateText, inst) {
-		// var date = $(this).val();
-		// $scope.$storage.ticket[0].eventDate = date;
-		// }
-		// });
-		// })();
-
 		$scope.ticketBackground = function(ind) {
 			$scope.$storage.ticketText = $scope.$storage.ticketText;
 			$scope.$storage.ticketBgColor = ind;
@@ -136,7 +118,16 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 		}, "jsonp");
 
 		$scope.guestRole = "Participant";
+		var ticketFormats = {
+			'formats' : ['partials/tickets/t1.html', 'partials/tickets/t2.html'],
+			'preview' : ['partials/tickets/t1Preview.html', 'partials/tickets/t2Preview.html']
+		};
 
+		$scope.$storage.user.styles = {};
+		$scope.setTicketFormat = function(index) {
+			$scope.$storage.user.styles.selectedTicFormat = ticketFormats.formats[index];
+			$scope.$storage.user.styles.selectedTicFormatPre = ticketFormats.formats[index];
+		};
 	});
 }]);
 

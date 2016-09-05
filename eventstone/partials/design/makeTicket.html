@@ -2,7 +2,7 @@
 <section class="guestinfo uofs-section container-fluid animated slideInRight" id="ticketPage">
 	<div class="hideOnPrint" ng-hide="printSet">
 		<div class="back_div pull-left ">
-			<a type="button" class="btn btn-default btn-xs" ng-href="#/dashboard"> <span class="glyphicon glyphicon-blackboard"></span> </a>
+			<a type="button" class="btn btn-default btn-xs" ng-href="#/dashboard"> <span class="fa fa-tachometer"></span> </a>
 		</div>
 		<div class="printIcon">
 			<button   type="button" class="btn btn-info btn-md "
@@ -31,7 +31,7 @@
 							ng-model="$storage.ticket[0].eventVenue">
 						</div>
 						<div class="form-group">
-							<input class="form-control" id="datepicker"  placeholder="Must be 09/09/2016" type="text"
+							<input class="form-control" id="datepicker"  placeholder=" 09/09/2016 preferred" type="text"
 							ng-model="$storage.ticket[0].eventDate">
 						</div>
 						<div class="form-group">
@@ -51,27 +51,28 @@
 							ng-model="$storage.otherTicketInfo" ng-style="$storage.otherTicketInfo.length>=70 && {'border': '2px dotted red'}">
 							{{$storage.otherTicketInfo.length}} of 70 characters
 						</div>
-						<!-- <div class="checkbox " >
-						<label>Upload Logo/Image? </label>
-						<input type="checkbox" ng-model="toUpload">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" ng-model="toUpload">
+								Add Image? </label>
 						</div>
 						<div class="form-group text-justify " ng-show="toUpload">
-						<button ngf-select ng-model="picFile" accept="image/*">
-						Select Picture and crop
-						</button>
-						<div ngf-drop ng-model="picFile" ngf-pattern="image/*"
-						class="" ng-hide="cropImg"></div>
-						<div class="checkbox " >
-						<label>Crop Logo/Image?
-						</label>
-						<input type="checkbox" ng-model="cropImg">
+							<label class="btn btn-default btn-file"> Select Picture and crop
+								<input type="file" style="display: none;" ngf-select ng-model="picFile" accept="image/*">
+							</label>
+							<div ngf-drop ng-model="picFile" ngf-pattern="image/*"
+							class="" ng-hide="cropImg"></div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" ng-model="cropImg">
+									Crop Image? </label>
+							</div>
+							<div ngf-drop ng-model="picFile" ngf-pattern="image/*"
+							class="cropArea"ng-show="cropImg">
+								<img-crop image="picFile  | ngfDataUrl"
+								result-image="croppedDataUrl" ng-init="croppedDataUrl=''" area-type="square"></img-crop>
+							</div>
 						</div>
-						<div ngf-drop ng-model="picFile" ngf-pattern="image/*"
-						class="cropArea"ng-show="cropImg">
-						<img-crop image="picFile  | ngfDataUrl"
-						result-image="croppedDataUrl" ng-init="croppedDataUrl=''" area-type="square"></img-crop>
-						</div>
-						</div> -->
 					</form>
 				</div>
 			</div>
@@ -123,7 +124,17 @@
 					</div>
 				</div>
 			</div>
-			<div ng-include="'partials/tickets/t2.html'"></div>
+			<div class="col-sm-7 col-xs-12 ticketPreview">
+				<div class="btn-group btn-group">
+					<button  type="button" href="" ng-click="setTicketFormat(0)" class="btn btn-info">
+						Style 1
+					</button>
+					<button  type="button" href="" ng-click="setTicketFormat(1)" class="btn btn-info">
+						Style 2
+					</button>
+				</div>
+				<div ng-include="$storage.user.styles.selectedTicFormat"></div>
+			</div>
 		</div>
 	</div>
 	<div  ng-show="($storage.sampleView)" class="center-block text-center" >
