@@ -4,18 +4,11 @@
 		<div class="back_div pull-left ">
 			<a type="button" class="btn btn-default btn-xs" ng-href="#/dashboard"> <span class="fa fa-tachometer"></span> </a>
 		</div>
-		<div class="printIcon">
-			<button   type="button" class="btn btn-info btn-md "
-			ng-click="printSet=true;($storage.sampleView) = true;">
-				<span class="glyphicon glyphicon-print"></span>
-			</button>
-		</div>
 		<!-- <div class="backwardCenterArr ">
 		<a  class="" ng-click="showAddTickNum = true"  ng-href="#/newevent"  href=""> <span class="glyphicon glyphicon-menu-left"></span> </a> </a>
 		</div> -->
 		<h1 class="text-center uofs-page-title"><a>TICKET DESIGNER</a></h1>
 		<h4 class="text-center"><a>{{$storage.eventName}}</a></h4>
-		<br />
 		<div class="row dataFieldContainer  center-block ">
 			<div class="col-sm-4 col-xs-12 pull-left ticketContent">
 				<h2 class="text-center">Content</h2>
@@ -114,7 +107,6 @@
 					</div>
 					<br />
 					<div class="text-center row">
-						<!-- Use your own color. Enter color name or code -->
 						<input ng-model="userTextColor" class="row text-center" style="width: 100%;" placeholder="color"
 						/>
 						<br />
@@ -125,14 +117,20 @@
 				</div>
 			</div>
 			<div class="col-sm-7 col-xs-12 ticketPreview">
-				<div class="btn-group btn-group">
+				<div class="btn-group">
 					<button  type="button" href="" ng-click="setTicketFormat(0)" class="btn btn-info">
 						Style 1
 					</button>
 					<button  type="button" href="" ng-click="setTicketFormat(1)" class="btn btn-info">
 						Style 2
 					</button>
+					<!-- <div class="printIcon"> -->
+					<!-- </div> -->
 				</div>
+					<button   type="button" class="btn btn-info btn-md pull-right "
+					ng-click="printSet=true;($storage.sampleView) = true;">
+						<span class="glyphicon glyphicon-print"></span>
+					</button>
 				<div ng-include="$storage.user.styles.selectedTicFormat"></div>
 			</div>
 		</div>
