@@ -3,8 +3,9 @@
 	<div class="row text-center center-block">
 		<div ng-repeat="item in $storage.allEvents" class="col-lg-4 col-sm-4 col-xs-4 text-center" >
 			<a   style="width:100%;" href="" class="btn btn-md" type="button" ng-click="setEvent(item.eventName)" ng-style="$storage.allEvents[$storage.allEvents.indexOf(item)].eventName == $storage.eventName && {'border':'1px solid #F50057','outline':'0'}" > {{item.eventName}}</a>
+			<a style="position: absolute; left:20px; top:3px;" href="#/tickets" ng-show="$storage.allEvents[$storage.allEvents.indexOf(item)].eventName == $storage.eventName"><span class="fa fa-ticket text-muted"></span></a>
 			<a style="position: absolute; right:20px; top:3px;" ng-href="#/newevent"   data-toggle="tooltip" title="Edit Event" ng-show="$storage.allEvents[$storage.allEvents.indexOf(item)].eventName == $storage.eventName"><span class="glyphicon glyphicon-edit text-muted"></span></a>
-			<a style="position: absolute; left:20px; top:3px;" href=""  data-toggle="modal" data-target="#confirmModal" ng-show="$storage.allEvents[$storage.allEvents.indexOf(item)].eventName == $storage.eventName"><span class="glyphicon glyphicon-remove text-muted"></span></a>
+			<a style="position: absolute; right:20px; bottom:-3px;" href=""  data-toggle="modal" data-target="#confirmModal" ng-show="$storage.allEvents[$storage.allEvents.indexOf(item)].eventName == $storage.eventName"><span class="glyphicon glyphicon-remove text-muted"></span></a>
 		</div>
 		<div  class="col-lg-4 col-sm-4 col-xs-4 text-center" >
 			<a  style="width:100%;" href="" class="btn btn-md" type="button" ng-href="#/newevent"   data-toggle="tooltip" title="Add new Event"><span class="glyphicon glyphicon-plus "></span> </a>
