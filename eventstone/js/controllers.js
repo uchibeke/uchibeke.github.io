@@ -96,8 +96,6 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 	    guestRef;
 	if (firebase.auth().currentUser) {
 		user = firebase.auth().currentUser;
-		console.log(user);
-
 		allRef = firebase.database().ref().child("/users/" + user.uid + "/");
 		$scope.$storage.allEvents = $firebaseArray(allRef);
 
@@ -152,20 +150,11 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		ref = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "");
 		var list = $firebaseArray(ref);
 		var item = list[eventName];
-		console.log("Deleting");
-
 		var obj = $firebaseObject(ref);
 		obj.$remove().then(function(ref) {
-			// data has been deleted locally and in the database
-			console.log("Deleted")
 		}, function(error) {
 			console.log("Error:", error);
 		});
-		// list.$remove(item).then(function(ref) {
-		// ref.key === item.$id;
-		// // true
-		// console.log("Deleted")
-		// });
 	};
 
 	$interval(function() {
@@ -227,19 +216,6 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 						list[i] = list[i + 1];
 					}
 					list.length = list.length - 1;
-					// ref.child(idx + "/").remove();
-					// ref.once('value', function(s) {
-					// $scope.$storage.guestsList = JSON.parse(JSON.stringify(s.val()));
-					// console.log($scope.$storage.guestsList);
-					// console.log(s.val());
-					// console.log($scope.$storage.guestsList);
-					// }, function(e) {
-					// console.error(e);
-					// })
-					// for (var i = idx; i < $scope.$storage.guestsList.length; i++) {
-					// $scope.$storage.guestsList[i] = $scope.$storage.guestsList[i + 1];
-					// }
-					// $scope.$storage.guestsList.length = $scope.$storage.guestsList.length - 1;
 				}
 			}
 		}

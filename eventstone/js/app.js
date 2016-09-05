@@ -61,14 +61,10 @@ function($rootScope, $location, $firebaseAuth, $localStorage, shareDataService) 
 	});
 	$rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
 		var isAuth = $firebaseAuth().$getAuth();
-		console.log("isAuth:", firebase.auth());
 		if ($rootScope.$storage.hasOwnProperty('user') && $rootScope.$storage.user.hasOwnProperty('token') && $rootScope.$storage.user.token != undefined) {
 			$location.path(currRoute.originalPath);
 			console.log('ALLOW');
-			console.log("Signed in as: ");
-			console.log($rootScope.$storage.user);
 		} else {
-			console.log(currRoute.originalPath);
 			console.log('DENY ');
 			if (currRoute.originalPath == '/login') {
 				$location.path('/login');

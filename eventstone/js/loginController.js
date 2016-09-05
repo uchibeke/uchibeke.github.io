@@ -18,8 +18,6 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 
 		auth.$signInWithPopup(loginMethod).then(function(firebaseUser) {
 			if (firebase.auth().currentUser) {
-				console.log('FB User in login:');
-				console.log(firebaseUser);
 				$rootScope.$storage.user = firebaseUser;
 				$rootScope.$storage.user.token = firebaseUser.credential.accessToken;
 				user = firebaseUser.user;
@@ -60,7 +58,6 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 
 	$scope.logOut = function() {
 		var auth = $firebaseAuth();
-		console.log(firebase.auth() + " logging out");
 		firebase.auth().signOut().then(function(result) {
 			// Sign-out successful.
 			if (isChrome) {
