@@ -122,7 +122,7 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 					firstNum = parseInt(Math.random().toString().slice(2, numbDigits + 2));
 				}
 				element.ticketNumber = (stringGen(3) + "" + firstNum + stringGen(3)).toUpperCase();
-				element.guestStatus = 'Not checked-in';
+				element.guestStatus = false;
 				obj.push(element);
 			}
 			$scope.$storage.guestsList = Object.assign([], obj);
@@ -162,9 +162,9 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 			console.log("Error:", error);
 		});
 		// list.$remove(item).then(function(ref) {
-			// ref.key === item.$id;
-			// // true
-			// console.log("Deleted")
+		// ref.key === item.$id;
+		// // true
+		// console.log("Deleted")
 		// });
 	};
 
@@ -187,7 +187,7 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 					wholeRow = wholeRow + arr[i] + "     ";
 					element[i] = arr[i];
 				}
-				element.guestStatus = 'Not checked-in';
+				element.guestStatus = false;
 				cart.push(element);
 				return wholeRow;
 			}
@@ -203,16 +203,15 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 	};
 
 	$scope.checkedIn = function(x) {
-		if ((($scope.$storage.guestsList[x].guestStatus.toLowerCase().replace(/\W+/g, " ")).indexOf('Not checked-in')) > -1) {
-		} else if (($scope.$storage.guestsList[x].guestStatus) == 'Not checked-in') {
+		if (!($scope.$storage.guestsList[x].guestStatus)) {
 			var d = new Date();
 			var ds = d.toLocaleTimeString();
 			$scope.$storage.guestsList[x].guestStatus = "" + ds;
+			var toPush = {
+				guestStatus : $scope.$storage.guestsList[x].guestStatus,
+			};
+			guestRef.child(x + "/").update(toPush);
 		}
-		var toPush = {
-			guestStatus : $scope.$storage.guestsList[x].guestStatus,
-		};
-		guestRef.child(x + "/").update(toPush);
 	};
 
 	$scope.removeElement = function(list, idx) {
@@ -266,7 +265,7 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 			}
 			newA.push({
 				0 : splicedA,
-				guestStatus : 'Not checked-in'
+				guestStatus : false
 			});
 		}
 		// Two test guests always in the system. Check for them
@@ -336,7 +335,7 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 	$scope.checkIns = function() {
 		var checkIns = 0;
 		for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
-			if (($scope.$storage.guestsList[i].guestStatus) != 'Not checked-in') {
+			if (($scope.$storage.guestsList[i].guestStatus) != false) {
 				checkIns = checkIns + 1;
 			}
 		}

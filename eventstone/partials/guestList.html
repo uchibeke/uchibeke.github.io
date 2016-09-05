@@ -67,7 +67,7 @@
 			<tbody>
 				<tr ng-repeat="item in $storage.guestsList | filter:guestSearch">
 					<td ><a href="" ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"><span class="glyphicon glyphicon-remove"></span></td>
-					<td ng-repeat="a in item">{{ a }}</td>
+					<td ng-repeat="a in item">{{a ? a : 'Not Checked-in'}}</td>
 				</tr>
 			</tbody>
 		</table>

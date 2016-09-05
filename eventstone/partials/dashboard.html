@@ -23,7 +23,7 @@
 				<a style="position: absolute; right:5px; top:5px;;" href="" ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"   data-toggle="tooltip" title="Remove a guest"><span class="glyphicon glyphicon-remove "></span></a>
 				{{item.ticketNumber}}
 				<br />
-				<span class="text-muted"> {{item.guestStatus}}</span>
+				<span class="text-muted"> {{item.guestStatus ? item.guestStatus : 'Not Checked-in'}}</span>
 			</p>
 		</div>
 	</div>

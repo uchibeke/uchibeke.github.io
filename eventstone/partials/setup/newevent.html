@@ -48,9 +48,9 @@
 				</div>
 				<br />
 				<!-- <div class="form-group col-md-12  col-xs-12 text-center" ng-show="tDesign || $storage.guestsList.length>0">
-					<hr />
-					<br />
-					<a type="button" class="btn btn-primary  "  ng-href="#/tickets"><span class="glyphicon glyphicon-edit"></span> Design Tickets </a>
+				<hr />
+				<br />
+				<a type="button" class="btn btn-primary  "  ng-href="#/tickets"><span class="glyphicon glyphicon-edit"></span> Design Tickets </a>
 				</div> -->
 			</form>
 		</div>
@@ -70,7 +70,7 @@
 			<tbody>
 				<tr ng-repeat="item in $storage.guestsList ">
 					<td ><a href="" ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"><span class="glyphicon glyphicon-remove"></span></a></td>
-					<td ng-repeat="a in item">{{ a }}</td>
+					<td ng-repeat="a in item">{{a ? a : 'Not Checked-in'}}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -115,7 +115,7 @@
 				<br />
 
 				<div class="guest cf row center-block" ng-repeat="item in $storage.backUpGuestList">
-					<span  class=" text-left col-lg-2 col-md-2 col-sm-2 gListNew" ng-repeat="a in item"> {{a}} </span>
+					<span  class=" text-left col-lg-2 col-md-2 col-sm-2 gListNew" ng-repeat="a in item">{{a ? a : 'Not Checked-in'}} </span>
 
 				</div>
 			</ul>

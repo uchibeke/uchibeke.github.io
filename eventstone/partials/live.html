@@ -1,25 +1,18 @@
 <section onload="startTime()" class="guestpage container-fluid uofs-section  " id="livePage" ng-mouseover="hide_logo=true;">
-	<p ng-show="firstLiveScreen">
-		You are about to go live with an event. You can keep track of people that attend your event by adding their names as they come in.
-		People can also check in with their name or ticket number if they are already registered.
-		In the next page, type the name or ticket number in the field provided and click <b>check in</b> to check in an attendee.
-	</p>
-	<div class="row text-center text-info center-block" ng-show="firstLiveScreen">
-		<input ng-model="$storage.eventName" placeholder="Enter Event name. Refresh page to change" class="form-control
-		liveInputField text-center center-block">
-		<br />
-		<h3>Would you want to add new people to the list during your event?</h3>
-		<!-- <br /> -->
 
+	<div class="row text-center text-info center-block" ng-show="firstLiveScreen">
+		<p ng-show="firstLiveScreen">
+			When guests come to your event, enter their ticket number or name and click <b>check in</b> to check in the guest.
+		</p>
+		<h3>Would you like to be able to add a new/unregistered guest to your guestlist during the event?</h3>
 		<div class="row btn-group-lg">
 			<div class=" text-center center-block ">
 				<a type="button" class="btn btn-default "
-				ng-click="secondLiveScreen=true;firstLiveScreen=false;addNewGuestOption=true; " > Yes</a>
+				ng-click="secondLiveScreen=true;firstLiveScreen=false;addNewGuestOption=true; "> Yes</a>
 				<a type="button" class="btn btn-default "
 				ng-click="secondLiveScreen=true;firstLiveScreen=false; " > No</a>
 			</div>
 		</div>
-		<!-- You can change this at any time. Just refresh the page. -->
 		<br />
 	</div>
 	<div class="row" ng-show="secondLiveScreen" >
@@ -46,8 +39,8 @@
 					<br />
 				</span>
 				<div class="row">
-					<button  type="button" ng-hide="$storage.options.hideCheckin[$index]"
-					class="btn btn-primary checkInBtn  btn-danger pull-right" ng-click="checkedIn($storage.guestsList.indexOf(item));$storage.options.hideCheckin[$index]=true;">
+					<button  type="button" ng-show="item.guestStatus == false"
+					class="btn btn-primary checkInBtn  btn-danger pull-right" ng-click="checkedIn($storage.guestsList.indexOf(item));">
 						Check-In
 					</button>
 				</div>
