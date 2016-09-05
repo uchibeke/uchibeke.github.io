@@ -669,7 +669,7 @@ video {
 }
 
 .navHelp {
-	top: 50px;
+	top: 130px;
 	right: 5px;
 	position: fixed;
 	z-index: 100000;
@@ -683,14 +683,10 @@ video {
 }
 
 .navGList {
-	top: 130px;
-	right: 5px;
-	position: fixed;
-	z-index: 100000;
 }
 
 .navDashboard {
-	top: 170px;
+	top: 50px;
 	right: 5px;
 	position: fixed;
 	z-index: 100000;
@@ -725,8 +721,8 @@ video {
 
 .printIcon {
 	top: 110px !important;
-	right: 70px  !important;
-	position: fixed  !important;
+	right: 70px !important;
+	position: fixed !important;
 	z-index: 100000;
 }
 
