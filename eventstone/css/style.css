@@ -819,26 +819,26 @@ video {
 	font-size: 20px;
 }
 /*.ticket {
-	print-color-adjust: exact !important;
-	-webkit-print-color-adjust: exact !important;
-	-moz-print-color-adjust: exact !important;
-	page-break-inside: avoid !important;
-	width: 5in !important;
-	height: 2.125in !important;
-	border-style: solid;
-	border: thin dashed red;
-	font-family: font-family : 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
-	color: #191970;
-	text-align: center;
-	padding-top: 10px;
-}*/
+ print-color-adjust: exact !important;
+ -webkit-print-color-adjust: exact !important;
+ -moz-print-color-adjust: exact !important;
+ page-break-inside: avoid !important;
+ width: 5in !important;
+ height: 2.125in !important;
+ border-style: solid;
+ border: thin dashed red;
+ font-family: font-family : 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
+ color: #191970;
+ text-align: center;
+ padding-top: 10px;
+ }*/
 .ticket {
 	print-color-adjust: exact !important;
 	-webkit-print-color-adjust: exact !important;
 	-moz-print-color-adjust: exact !important;
 	page-break-inside: avoid !important;
 	width: 6in !important;
-	height: 1.8in !important;
+	height: 2in !important;
 	border-style: solid;
 	border: thin dashed red;
 	font-family: font-family : 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
@@ -846,6 +846,9 @@ video {
 	text-align: center;
 	padding-top: 10px;
 }
+/*Regular (2.125" x 5.5"), Large (2.8" x 5.5"), and Jumbo (2.75" x 8.5") Other (3.5 x 8.5) New (2 x 6)*/
+/*https://www.behance.net/gallery/37596627/Wine-Art-Mixer-Ticket-Template 3.25 × 7.25 */
+/*Ticket template http://www.wwticket.com/ht_sheettemplates.html */
 
 .loginBtn {
 	width: 100px;

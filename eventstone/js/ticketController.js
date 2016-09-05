@@ -84,13 +84,26 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 				'color' : $scope.$storage.ticketText
 			}
 		}
-
-		$scope.ticketBgColorFilter = function() {
-			var col = $scope.$storage.ticketBgColor;
+		var ticketColorFilter = function(givenCol) {
+			var col = givenCol;
 			if (col != undefined) {
 				col = col.replace('#', '');
 			}
 			return col;
+		};
+
+		$scope.barcodeSrc = function(tNum, bColor, tColor) {
+			var useQR = true;
+			var userBarcode = false;
+			bColor = ticketColorFilter(bColor);
+			tColor = ticketColorFilter(tColor);
+			var final = "";
+			if (useQR) {
+				var foreGroundColor = tColor;
+				var base = "http://generator.barcodetools.com/barcode.png?gen=3";
+				final = base + "&data=" + tNum + "&bcolor=" + bColor + "&fcolor=" + foreGroundColor + "&tcolor=" + "000000";
+				return final;
+			}
 		};
 
 		$scope.$storage.sampleView = false;

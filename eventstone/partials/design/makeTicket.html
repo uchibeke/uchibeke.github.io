@@ -73,11 +73,10 @@
 							<div class="col-md-3 col-lg-3 col-xs-3 ticketCol1 text-center center-block">
 								<div style="width: 50%;" class="center center-block text-center" ng-show="toUpload">
 									<img ng-src="{{croppedDataUrl}}" width="100%" class=""/>
-									<br />
 								</div>
 								<span class="ticketGName">{{$storage.guestsList[0].ticketNumber}}</span>
 								<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
-								src="http://generator.barcodetools.com/barcode.png?gen=3&data={{$storage.guestsList[0].ticketNumber}}&bcolor={{ticketBgColorFilter()}}&fcolor=000000&tcolor=000000">
+								src="{{barcodeSrc($storage.guestsList[0].ticketNumber,$storage.ticketBgColor,$storage.ticketText)}}">
 								<!-- src="http://generator.barcodetools.com/barcode.png?gen=3&data={{$storage.guestsList[0].ticketNumber}}&bcolor={{$storage.ticketBgColorFilter()}}&fcolor=000000&tcolor=000000"> -->
 								<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
 								<p class=" text-center userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
@@ -120,6 +119,9 @@
 							You can use any background or text for this ticket.
 						</li>
 						<li class="list-group-item">
+							Enter color name or hex value (#EEEEEE) or rgba value in on the right and click "Ok".
+						</li>
+						<li class="list-group-item">
 							Get color names <a href="http://www.w3schools.com/html/html_colornames.asp" target="_blank">Here</a>.
 						</li>
 						<li class="list-group-item">
@@ -129,13 +131,9 @@
 						<li class="list-group-item">
 							Please include a '#' before the 6 digit color value for hex values.
 						</li>
-						<li class="list-group-item">
-							Type/paste a color name or hex value (eg #000ABC) in the 'color' field and click "Ok".
-						</li>
 					</ul>
 				</div>
 			</div>
-			<!-- <div></div> -->
 			<div class="col-sm-1 col-xs-12 text-center center-block" >
 				<a href="" ng-click="showTextColor=!showTextColor" ng-show="showTextColor"><i class="text-center fa fa-toggle-off text-bold" > </i> </i></a>
 				<a href="" ng-click="showTextColor=!showTextColor" ng-show="!showTextColor"><i class="text-center fa fa-toggle-on text-bold" > </i></a>
@@ -220,20 +218,17 @@
 			<div  class="text-center center-block">
 				You added a total of {{$storage.guestsList.length}} guests with {{$storage.guestsList.length}} tickets
 			</div>
-			<div>
-				<!-- So far, you have {{checkIns}} guest who have checked in and {{noCheckIns}} who have not check in. -->
-			</div>
+			<div></div>
 			<div class="previewTickets  center-block text-center"
 			ng-repeat="item in $storage.guestsList" >
 				<div class="row text-center ticket center-block" ng-style="previewStyle()">
 					<div class="col-md-3 col-lg-3 col-xs-3 ticketCol1 text-center center-block">
 						<div style="width: 50%;" class="center center-block text-center" ng-show="toUpload">
 							<img ng-src="{{croppedDataUrl}}" width="100%" class=""/>
-							<br />
 						</div>
 						<span class="ticketGName">{{item.ticketNumber}}</span>
 						<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
-						src="http://generator.barcodetools.com/barcode.png?gen=3&data={{$storage.guestsList[0].ticketNumber}}&bcolor={{ticketBgColorFilter()}}&fcolor=000000&tcolor=000000">
+						src="{{barcodeSrc($storage.guestsList[0].ticketNumber,$storage.ticketBgColor,$storage.ticketText)}}">
 						<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
 						<p class="text-center userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
 							{{$storage.ageInfo}}
