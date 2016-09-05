@@ -5,14 +5,14 @@
 			<a type="button" class="btn btn-default btn-xs" ng-href="#/dashboard"> <span class="glyphicon glyphicon-blackboard"></span> </a>
 		</div>
 		<!-- <div class="backwardCenterArr ">
-			<a  class="" ng-click="showAddTickNum = true"  ng-href="#/newevent"  href=""> <span class="glyphicon glyphicon-menu-left"></span> </a> </a>
+		<a  class="" ng-click="showAddTickNum = true"  ng-href="#/newevent"  href=""> <span class="glyphicon glyphicon-menu-left"></span> </a> </a>
 		</div> -->
 		<h1 class="text-center uofs-page-title"><a>TICKET DESIGNER</a></h1>
 		<h4 class="text-center"><a>{{$storage.eventName}}</a></h4>
 		<br />
 		<!-- <div ng-include="'partials/ticketSamples.html'"></div> -->
 		<div class="row dataFieldContainer  center-block ">
-			<div class="col-md-4 col-xs-12 pull-left ticketContent">
+			<div class="col-sm-4 col-xs-12 pull-left ticketContent">
 				<h2 class="text-center">Content</h2>
 				<br />
 				<div >
@@ -65,7 +65,7 @@
 					</form>
 				</div>
 			</div>
-			<div class="col-md-6 col-xs-12 ticketPreview">
+			<div class="col-sm-7 col-xs-12 ticketPreview">
 				<h2 class="text-center row ">Preview</h2>
 				<div class="tab-content " id="widget">
 					<div class=" tab-pane active center-block" id="layout1" >
@@ -135,56 +135,52 @@
 					</ul>
 				</div>
 			</div>
-			<div class="col-md-2 col-xs-12 ">
-				<div class="">
-					<div class="col-md-6 col-xs-6 pull-right">
-						<h2 class="text-center row">Fill</h2>
+			<!-- <div></div> -->
+			<div class="col-sm-1 col-xs-12 text-center center-block" >
+				<a href="" ng-click="showTextColor=!showTextColor" ng-show="showTextColor"><i class="text-center fa fa-toggle-off text-bold" > </i> </i></a>
+				<a href="" ng-click="showTextColor=!showTextColor" ng-show="!showTextColor"><i class="text-center fa fa-toggle-on text-bold" > </i></a>
+				<div class="col-sm-12  pull-right" ng-hide="showTextColor">
+					<div class="text-center row ticketColors">
+						<div class="styleBtns cf" ng-repeat="item in $storage.style ">
+							<a ng-click="ticketBackground(item.hex)">
+							<div type="button" class="btn  btn-xs "
+							ng-style="textBtnStyle(item.hex)"
+							style="">
+								&nbsp;
+							</div> </a>
+						</div>
+					</div >
+					<br />
+					<div class="text-center row">
+						<input ng-model="userFillColor" class="row text-center" style="width: 100%;" placeholder="color"
+						/>
 						<br />
-						<div class="text-center row ticketColors">
-							<div class="styleBtns cf" ng-repeat="item in $storage.style ">
-								<a ng-click="ticketBackground(item.backgroundColor)">
-								<div type="button" class="btn  btn-xs "
-								ng-style="textBtnStyle(item.backgroundColor)"
-								style="">
-									&nbsp;
-								</div> </a>
-							</div>
-						</div >
-						<br />
-						<div class="text-center row">
-							<input ng-model="userFillColor" class="row text-center" style="width: 100%;" placeholder="color"
-							/>
-							<br />
-							<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketBackground(userFillColor)">
-								Ok
-							</button>
-							<!-- Use your own color. Enter color name or code -->
+						<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketBackground(userFillColor)">
+							Ok
+						</button>
 
+					</div>
+				</div>
+				<div class="col-sm-12 pull-right" ng-show="showTextColor">
+					<div class="text-center row ticketColors">
+						<div class="styleBtns_Txt cf" ng-repeat="item in $storage.style | orderBy:'-' ">
+							<a ng-click="ticketTxtColor(item.hex);">
+							<div type="button" class="btn btn-xs "
+							ng-style="textBtnStyle(item.hex)"
+							style="">
+								&nbsp;
+							</div> </a>
 						</div>
 					</div>
-					<div class="col-md-6 col-xs-6 pull-right">
-						<h2 class="text-center row">Text</h2>
+					<br />
+					<div class="text-center row">
+						<!-- Use your own color. Enter color name or code -->
+						<input ng-model="userTextColor" class="row text-center" style="width: 100%;" placeholder="color"
+						/>
 						<br />
-						<div class="text-center row ticketColors">
-							<div class="styleBtns_Txt cf" ng-repeat="item in $storage.style ">
-								<a ng-click="ticketTxtColor(item.color);">
-								<div type="button" class="btn btn-xs "
-								ng-style="textBtnStyle(item.color)"
-								style="">
-									&nbsp;
-								</div> </a>
-							</div>
-						</div>
-						<br />
-						<div class="text-center row">
-							<!-- Use your own color. Enter color name or code -->
-							<input ng-model="userTextColor" class="row text-center" style="width: 100%;" placeholder="color"
-							/>
-							<br />
-							<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketTxtColor(userTextColor)">
-								Ok
-							</button>
-						</div>
+						<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketTxtColor(userTextColor)">
+							Ok
+						</button>
 					</div>
 				</div>
 			</div>

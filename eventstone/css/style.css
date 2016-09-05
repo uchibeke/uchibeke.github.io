@@ -818,7 +818,7 @@ video {
 .navHome, .navHelp, .navLive, .navGList, .navDashboard, .navlogin {
 	font-size: 20px;
 }
-.ticket {
+/*.ticket {
 	print-color-adjust: exact !important;
 	-webkit-print-color-adjust: exact !important;
 	-moz-print-color-adjust: exact !important;
@@ -827,7 +827,21 @@ video {
 	height: 2.125in !important;
 	border-style: solid;
 	border: thin dashed red;
-	font-family: font-family : 'Exo 2',  'Roboto Condensed', 'Candal', monospace, sans-serif !important;
+	font-family: font-family : 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
+	color: #191970;
+	text-align: center;
+	padding-top: 10px;
+}*/
+.ticket {
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+	width: 6in !important;
+	height: 1.8in !important;
+	border-style: solid;
+	border: thin dashed red;
+	font-family: font-family : 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
 	color: #191970;
 	text-align: center;
 	padding-top: 10px;
