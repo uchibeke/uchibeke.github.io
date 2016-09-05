@@ -63,14 +63,6 @@
 	border-style: solid !important;
 	border-bottom: thin solid #363942 !important;
 }
-
-.ticketColors {
-	height: 310px;
-	overflow: scroll;
-	border-left: thin solid black;
-	border-right: thin solid black;
-}
-
 .ticketP {
 	font-size: 7px !important;
 }

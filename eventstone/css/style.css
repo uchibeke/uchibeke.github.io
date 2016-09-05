@@ -241,7 +241,7 @@ form .progress {
 	height: 3.1in !important;
 	border-style: solid;
 	border: thin solid #005A31;
-	font-family:'Roboto Condensed', 'Candal', monospace, sans-serif !important;
+	font-family: 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
 	background: white;
 	color: #191970;
 	text-align: center;
@@ -304,7 +304,7 @@ form .progress {
 	padding-top: 0px;
 	margin-top: 0px;
 	margin-bottom: 0px;
-	font-family:  'Roboto Condensed', 'Candal', monospace, sans-serif !important;
+	font-family: 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
 	overflow: hidden !important;
 }
 
@@ -421,7 +421,6 @@ a {
 
 #home_welcome {
 	min-height: 100% !important;
-	/*background-image: url("../images/home4.jpg") !important;*/
 	background-repeat: no-repeat !important;
 	background-position: center center !important;
 	background-size: cover !important;
@@ -455,8 +454,6 @@ a {
 
 #home_party {
 	color: black !important;
-	/*min-height: 300px !important;*/
-	/*background-image: url("../images/concert1.jpg") !important;*/
 	background-repeat: no-repeat !important;
 	background-position: center center !important;
 	background-size: cover !important;
@@ -719,4 +716,11 @@ video {
 .guestInDash {
 	padding: 5px;
 }
+.ticketColors {
+	height: 350px;
+	overflow: scroll;
+	border-left: thin solid black;
+	border-right: thin solid black;
+}
+
 

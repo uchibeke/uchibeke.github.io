@@ -69,6 +69,54 @@
 					</form>
 				</div>
 			</div>
+			<div class="col-sm-1 col-xs-12 text-center center-block" >
+				<a href="" ng-click="showTextColor=!showTextColor" ng-show="showTextColor"><i class="text-center fa fa-toggle-off text-bold" > </i> </i></a>
+				<a href="" ng-click="showTextColor=!showTextColor" ng-show="!showTextColor"><i class="text-center fa fa-toggle-on text-bold" > </i></a>
+				<div class="col-sm-12  pull-right" ng-hide="showTextColor">
+					<div class="text-center row ticketColors">
+						<div class="styleBtns cf" ng-repeat="item in $storage.style ">
+							<a ng-click="ticketBackground(item.hex)">
+							<div type="button" class="btn  btn-xs "
+							ng-style="textBtnStyle(item.hex)"
+							style="">
+								&nbsp;
+							</div> </a>
+						</div>
+					</div >
+					<br />
+					<div class="text-center row">
+						<input ng-model="userFillColor" class="row text-center" style="width: 100%;" placeholder="color"
+						/>
+						<br />
+						<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketBackground(userFillColor)">
+							Ok
+						</button>
+
+					</div>
+				</div>
+				<div class="col-sm-12 pull-right" ng-show="showTextColor">
+					<div class="text-center row ticketColors">
+						<div class="styleBtns_Txt cf" ng-repeat="item in $storage.style | orderBy:'-' ">
+							<a ng-click="ticketTxtColor(item.hex);">
+							<div type="button" class="btn btn-xs "
+							ng-style="textBtnStyle(item.hex)"
+							style="">
+								&nbsp;
+							</div> </a>
+						</div>
+					</div>
+					<br />
+					<div class="text-center row">
+						<!-- Use your own color. Enter color name or code -->
+						<input ng-model="userTextColor" class="row text-center" style="width: 100%;" placeholder="color"
+						/>
+						<br />
+						<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketTxtColor(userTextColor)">
+							Ok
+						</button>
+					</div>
+				</div>
+			</div>
 			<div class="col-sm-7 col-xs-12 ticketPreview">
 				<h2 class="text-center row ">Preview</h2>
 				<div class="tab-content " id="widget">
@@ -138,54 +186,6 @@
 							Please include a '#' before the 6 digit color value for hex values.
 						</li>
 					</ul>
-				</div>
-			</div>
-			<div class="col-sm-1 col-xs-12 text-center center-block" >
-				<a href="" ng-click="showTextColor=!showTextColor" ng-show="showTextColor"><i class="text-center fa fa-toggle-off text-bold" > </i> </i></a>
-				<a href="" ng-click="showTextColor=!showTextColor" ng-show="!showTextColor"><i class="text-center fa fa-toggle-on text-bold" > </i></a>
-				<div class="col-sm-12  pull-right" ng-hide="showTextColor">
-					<div class="text-center row ticketColors">
-						<div class="styleBtns cf" ng-repeat="item in $storage.style ">
-							<a ng-click="ticketBackground(item.hex)">
-							<div type="button" class="btn  btn-xs "
-							ng-style="textBtnStyle(item.hex)"
-							style="">
-								&nbsp;
-							</div> </a>
-						</div>
-					</div >
-					<br />
-					<div class="text-center row">
-						<input ng-model="userFillColor" class="row text-center" style="width: 100%;" placeholder="color"
-						/>
-						<br />
-						<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketBackground(userFillColor)">
-							Ok
-						</button>
-
-					</div>
-				</div>
-				<div class="col-sm-12 pull-right" ng-show="showTextColor">
-					<div class="text-center row ticketColors">
-						<div class="styleBtns_Txt cf" ng-repeat="item in $storage.style | orderBy:'-' ">
-							<a ng-click="ticketTxtColor(item.hex);">
-							<div type="button" class="btn btn-xs "
-							ng-style="textBtnStyle(item.hex)"
-							style="">
-								&nbsp;
-							</div> </a>
-						</div>
-					</div>
-					<br />
-					<div class="text-center row">
-						<!-- Use your own color. Enter color name or code -->
-						<input ng-model="userTextColor" class="row text-center" style="width: 100%;" placeholder="color"
-						/>
-						<br />
-						<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketTxtColor(userTextColor)">
-							Ok
-						</button>
-					</div>
 				</div>
 			</div>
 		</div>
