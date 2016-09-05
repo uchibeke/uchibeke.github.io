@@ -1,0 +1,110 @@
+.ticketCol1 {
+	margin-top: 3px !important;
+	margin-bottom: 0px !important;
+	font-family: 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
+	/*width: 132px !important;*/
+	display: block !important;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+}
+.ticketCol2 {
+	margin-top: 3px !important;
+	margin-bottom: 0px !important;
+	border-style: solid;
+	/*border-right: medium solid #363942;*/
+	border-left: medium solid #363942;
+	/*width: 352px !important;*/
+	display: block !important;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+}
+
+.ticketCol3 {
+	margin-top: 3px !important;
+	margin-bottom: 0px !important;
+	font-family: 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
+	/*width: 44px !important;*/
+}
+.centerDiv {
+	font-family: 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
+	width: 500px !important;
+}
+
+.centerDiv_1 {
+	/*width: 117px !important;*/
+}
+
+.centerDiv_2 {
+	width: 145px !important;
+	border-style: solid !important;
+	border-right: thin solid #363942 !important;
+	border-left: thin solid #363942 !important;
+}
+
+.centerDiv_3 {
+	/*width: 60px !important;*/
+}
+
+.eventDets {
+}
+
+.ticketTitle {
+	font-size: x-large !important;
+	font-weight: bold !important;
+	border-style: solid !important;
+	border-bottom: thin solid #363942 !important;
+}
+
+.ticketVenue {
+	font-size: large !important;
+	font-weight: bold !important;
+	border-style: solid !important;
+	border-bottom: thin solid #363942 !important;
+}
+
+.ticketColors {
+	height: 310px;
+	overflow: scroll;
+	border-left: thin solid black;
+	border-right: thin solid black;
+}
+
+.ticketP {
+	font-size: 7px !important;
+}
+
+.securityEncoding {
+	font-size: 7px !important;
+	text-align: center;
+	margin: 0px !important;
+}
+
+.ticketGName {
+	font-size: 14px;
+	overflow: hidden !important;
+}
+.userInfo {
+	font-size: 10px !important;
+	margin: 0px !important;
+}
+
+.barcodeIMG {
+	margin: 0px !important;
+}
+
+.ticket {
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+	width: 6.5in !important;
+	height: 2in !important;
+	border-style: solid;
+	border: thin dashed red;
+	font-family: 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
+	color: #191970;
+	text-align: center;
+	padding-top: 5px;
+}

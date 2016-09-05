@@ -10,7 +10,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	font: inherit;
 	font-size: 100%;
 	vertical-align: baseline;
-	font-family: 'Exo 2', 'Roboto Condensed', 'Candal', monospace, sans-serif;
+	font-family: 'Roboto Condensed', 'Candal', monospace, sans-serif;
 	print-color-adjust: exact !important;
 	-webkit-print-color-adjust: exact !important;
 	-moz-print-color-adjust: exact !important;
@@ -168,72 +168,6 @@ body {
 	page-break-inside: avoid !important;
 	display: block !important;
 }
-
-.ticketCol1 {
-	margin-top: 6px !important;
-	margin-bottom: 0px !important;
-	font-family: font-family : 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
-	/*width: 132px !important;*/
-	display: block !important;
-	print-color-adjust: exact !important;
-	-webkit-print-color-adjust: exact !important;
-	-moz-print-color-adjust: exact !important;
-}
-.ticketCol2 {
-	margin-top: 6px !important;
-	margin-bottom: 0px !important;
-	border-style: solid;
-	/*border-right: medium solid #363942;*/
-	border-left: medium solid #363942;
-	/*width: 352px !important;*/
-	display: block !important;
-	print-color-adjust: exact !important;
-	-webkit-print-color-adjust: exact !important;
-	-moz-print-color-adjust: exact !important;
-}
-
-.ticketCol3 {
-	margin-top: 6px !important;
-	margin-bottom: 0px !important;
-	font-family: font-family : 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
-	/*width: 44px !important;*/
-}
-.centerDiv {
-	font-family: font-family : 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
-	width: 500px !important;
-}
-
-.centerDiv_1 {
-	/*width: 117px !important;*/
-}
-
-.centerDiv_2 {
-	width: 145px !important;
-	border-style: solid !important;
-	border-right: thin solid #363942 !important;
-	border-left: thin solid #363942 !important;
-}
-
-.centerDiv_3 {
-	/*width: 60px !important;*/
-}
-
-.eventDets {
-}
-
-.ticketTitle {
-	font-size: x-large !important;
-	font-weight: bold !important;
-	border-style: solid !important;
-	border-bottom: thin solid #363942 !important;
-}
-
-.ticketVenue {
-	font-size: large !important;
-	font-weight: bold !important;
-	border-style: solid !important;
-	border-bottom: thin solid #363942 !important;
-}
 .styleBtns div, .styleBtns_Txt div {
 	width: 100%;
 }
@@ -254,36 +188,12 @@ body {
 	/*width: 100%;*/
 }
 
-.ticketColors {
-	height: 310px;
-	overflow: scroll;
-	border-left: thin solid black;
-	border-right: thin solid black;
-}
-
-.dataFieldContainer {
-}
-
 #printable {
 	padding-top: 7% !important;
 }
 
 @page {
 	margin-top: 1in;
-}
-
-.ticketSamples {
-	padding: 20px;
-	border: dotted 1px;
-	white-space: nowrap;
-	overflow-x: auto;
-	height: 250px;
-	overflow-y: hidden;
-	-ms-overflow-y: hidden;
-}
-
-.ticketSamples div {
-	display: inline-block;
 }
 
 /*Crop*/
@@ -325,37 +235,13 @@ form .progress {
 	background: orange;
 	width: 0;
 }
-
-.ticketP {
-	font-size: 7px !important;
-}
-
-.securityEncoding {
-	font-size: 7px !important;
-	text-align: center;
-	margin: 0px !important;
-}
-
-.ticketGName {
-	font-size: 14px;
-	overflow: hidden !important;
-}
-.userInfo {
-	font-size: 10px !important;
-	margin: 0px !important;
-}
-
-.barcodeIMG {
-	margin: 0px !important;
-}
-
 .nameBadge {
 	page-break-inside: avoid !important;
 	width: 3.85in !important;
 	height: 3.1in !important;
 	border-style: solid;
 	border: thin solid #005A31;
-	font-family: font-family : 'Exo 2',  'Roboto Condensed', 'Candal', monospace, sans-serif !important;
+	font-family:'Roboto Condensed', 'Candal', monospace, sans-serif !important;
 	background: white;
 	color: #191970;
 	text-align: center;
@@ -418,7 +304,7 @@ form .progress {
 	padding-top: 0px;
 	margin-top: 0px;
 	margin-bottom: 0px;
-	font-family: font-family : 'Exo 2',  'Roboto Condensed', 'Candal', monospace, sans-serif !important;
+	font-family:  'Roboto Condensed', 'Candal', monospace, sans-serif !important;
 	overflow: hidden !important;
 }
 
@@ -822,34 +708,6 @@ video {
 
 .navHome, .navHelp, .navLive, .navGList, .navDashboard, .navlogin {
 	font-size: 20px;
-}
-/*.ticket {
- print-color-adjust: exact !important;
- -webkit-print-color-adjust: exact !important;
- -moz-print-color-adjust: exact !important;
- page-break-inside: avoid !important;
- width: 5in !important;
- height: 2.125in !important;
- border-style: solid;
- border: thin dashed red;
- font-family: font-family : 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
- color: #191970;
- text-align: center;
- padding-top: 10px;
- }*/
-.ticket {
-	print-color-adjust: exact !important;
-	-webkit-print-color-adjust: exact !important;
-	-moz-print-color-adjust: exact !important;
-	page-break-inside: avoid !important;
-	width: 6.5in !important;
-	height: 2in !important;
-	border-style: solid;
-	border: thin dashed red;
-	font-family: font-family : 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
-	color: #191970;
-	text-align: center;
-	padding-top: 10px;
 }
 /*Regular (2.125" x 5.5"), Large (2.8" x 5.5"), and Jumbo (2.75" x 8.5") Other (3.5 x 8.5) New (2 x 6)*/
 /*https://www.behance.net/gallery/37596627/Wine-Art-Mixer-Ticket-Template 3.25 × 7.25 */
