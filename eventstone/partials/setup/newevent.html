@@ -57,7 +57,8 @@
 		<div class="forwardCenterArr ">
 			<a  class="" ng-href="#/dashboard"  href=""> <span class="glyphicon glyphicon-menu-right"></span> </a> </a>
 		</div>
-		<div class="row text-center center-block" ng-show="(tDesign || $storage.guestsList.length>0)">
+		<p></p>
+		<div class="row text-center center-block" ng-show="(tDesign || $storage.guestsList.length>0)" ng-hide="guestAddFeedback">
 			<a class="col-md-12  col-xs-12 "   ng-show="$storage.guestsList.length>0" ng-click="guestAddFeedback = !guestAddFeedback">
 			<button type="button" class="btn btn-primary checkInBtn btn-xs">
 				<span ng-show="guestAddFeedback"> <span class="glyphicon glyphicon-menu-up"> </span></span>
