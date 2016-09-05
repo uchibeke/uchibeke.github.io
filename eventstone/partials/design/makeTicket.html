@@ -141,7 +141,7 @@
 		<div class="pull-left ">
 			<button   type="button" class="btn btn-default  btn-xs" ng-show="printSet"
 			ng-click="printSet=false;($storage.sampleView) = false">
-				<span class="uofs-icon uofs-icon-chevron-left"></span>
+				<span class="glyphicon glyphicon-chevron-left "></span>
 			</button>
 		</div>
 		<div class="pull-right " >
@@ -151,7 +151,7 @@
 			</button>
 		</div>
 
-		<div ng-include="'partials/tickets/t1Preview.html'"></div>
+		<div ng-include="$storage.user.styles.selectedTicFormatPre"></div>
 	</div>
 	<div>
 		<button ng-hide="true" onclick="localStorage.clear();">

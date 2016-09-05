@@ -126,7 +126,7 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 		$scope.$storage.user.styles = {};
 		$scope.setTicketFormat = function(index) {
 			$scope.$storage.user.styles.selectedTicFormat = ticketFormats.formats[index];
-			$scope.$storage.user.styles.selectedTicFormatPre = ticketFormats.formats[index];
+			$scope.$storage.user.styles.selectedTicFormatPre = ticketFormats.preview[index];
 		};
 	});
 }]);
