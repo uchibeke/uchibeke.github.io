@@ -129,9 +129,10 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 
 		// For security reasons, get IP address, time and location of user at time of generating ticket
 		// and add it to each printed ticket.
+
 		$.get("http://ipinfo.io", function(r) {
-			var d = new Date();
-			$(".securityEncoding").html(r.ip + "|" + d.getHours() + ":" + ('0' + d.getMinutes()).slice(-2));
+			var d = new Date().toLocaleDateString();
+			$scope.$storage.secEncoding = r.ip + "|" + d;
 		}, "jsonp");
 
 		$scope.guestRole = "Participant";

@@ -172,7 +172,7 @@ body {
 .ticketCol1 {
 	margin-top: 6px !important;
 	margin-bottom: 0px !important;
-	font-family: font-family : 'Exo 2',  'Roboto Condensed', 'Candal', monospace, sans-serif !important;
+	font-family: font-family : 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
 	/*width: 132px !important;*/
 	display: block !important;
 	print-color-adjust: exact !important;
@@ -195,12 +195,12 @@ body {
 .ticketCol3 {
 	margin-top: 6px !important;
 	margin-bottom: 0px !important;
-	font-family: font-family : 'Exo 2',  'Roboto Condensed', 'Candal', monospace, sans-serif !important;
+	font-family: font-family : 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
 	/*width: 44px !important;*/
 }
 .centerDiv {
-	font-family: font-family : 'Exo 2',  'Roboto Condensed', 'Candal', monospace, sans-serif !important;
-	width: 340px !important;
+	font-family: font-family : 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
+	width: 500px !important;
 }
 
 .centerDiv_1 {
@@ -331,7 +331,7 @@ form .progress {
 }
 
 .securityEncoding {
-	font-size: 5px !important;
+	font-size: 7px !important;
 	text-align: center;
 	margin: 0px !important;
 }
@@ -771,6 +771,11 @@ video {
 		-webkit-print-color-adjust: exact !important;
 		-moz-print-color-adjust: exact !important;
 	}
+
+	body {
+		margin: 0px;
+		padding: 0px;
+	}
 }
 
 .navHome {
@@ -837,7 +842,7 @@ video {
 	-webkit-print-color-adjust: exact !important;
 	-moz-print-color-adjust: exact !important;
 	page-break-inside: avoid !important;
-	width: 6in !important;
+	width: 6.5in !important;
 	height: 2in !important;
 	border-style: solid;
 	border: thin dashed red;
