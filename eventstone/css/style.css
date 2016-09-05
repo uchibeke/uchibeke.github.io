@@ -723,4 +723,10 @@ video {
 	border-right: thin solid black;
 }
 
+.printIcon {
+	top: 110px !important;
+	right: 70px  !important;
+	position: fixed  !important;
+	z-index: 100000;
+}
 

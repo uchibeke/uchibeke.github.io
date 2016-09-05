@@ -4,13 +4,18 @@
 		<div class="back_div pull-left ">
 			<a type="button" class="btn btn-default btn-xs" ng-href="#/dashboard"> <span class="glyphicon glyphicon-blackboard"></span> </a>
 		</div>
+		<div class="printIcon">
+			<button   type="button" class="btn btn-info btn-md "
+			ng-click="printSet=true;($storage.sampleView) = true;">
+				<span class="glyphicon glyphicon-print"></span>
+			</button>
+		</div>
 		<!-- <div class="backwardCenterArr ">
 		<a  class="" ng-click="showAddTickNum = true"  ng-href="#/newevent"  href=""> <span class="glyphicon glyphicon-menu-left"></span> </a> </a>
 		</div> -->
 		<h1 class="text-center uofs-page-title"><a>TICKET DESIGNER</a></h1>
 		<h4 class="text-center"><a>{{$storage.eventName}}</a></h4>
 		<br />
-		<!-- <div ng-include="'partials/ticketSamples.html'"></div> -->
 		<div class="row dataFieldContainer  center-block ">
 			<div class="col-sm-4 col-xs-12 pull-left ticketContent">
 				<h2 class="text-center">Content</h2>
@@ -41,9 +46,10 @@
 							<input class="form-control "  placeholder="Other info eg. ID required/19+ event" type="text"
 							ng-model="$storage.ageInfo">
 						</div>
-						<div class="form-group">
+						<div class="form-group text-center">
 							<input class="form-control "  placeholder="Include other info for right side of ticket" type="text"
-							ng-model="$storage.otherTicketInfo">
+							ng-model="$storage.otherTicketInfo" ng-style="$storage.otherTicketInfo.length>=70 && {'border': '2px dotted red'}">
+							{{$storage.otherTicketInfo.length}} of 70 characters
 						</div>
 						<!-- <div class="checkbox " >
 						<label>Upload Logo/Image? </label>
@@ -117,93 +123,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-7 col-xs-12 ticketPreview">
-				<h2 class="text-center row ">Preview</h2>
-				<div class="tab-content " id="widget">
-					<div class=" tab-pane active center-block" id="layout1" >
-						<div class="row text-center ticket center-block" ng-style="previewStyle()">
-							<div class="col-md-3 col-lg-3 col-xs-3 ticketCol1 text-center center-block">
-								<div style="width: 50%;" class="center center-block text-center" ng-show="toUpload">
-									<img ng-src="{{croppedDataUrl}}" width="100%" class=""/>
-								</div>
-								<span class="ticketGName">{{$storage.guestsList[0].ticketNumber}}</span>
-								<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
-								src="{{barcodeSrc($storage.guestsList[0].ticketNumber,$storage.ticketBgColor,$storage.ticketText)}}">
-								<p class=" text-center userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
-									{{$storage.ageInfo}}
-								</p>
-							</div>
-							<div class="col-md-9 col-lg-9 col-xs-9 ticketCol2  text-center center-block">
-								<h2 class="text-center ticketTitle" ng-style="previewStyle()"  > {{$storage.eventName}} </h2>
-								<h5 class="text-center ticketVenue" ng-style="previewStyle()"  > {{$storage.ticket[0].eventVenue}} </h5>
-								<div class="row centerDiv">
-									<div class="col-md-4 col-lg-4 col-xs-4 text-center center-block centerDiv_1">
-										<span>{{$storage.ticket[0].eventDate}} {{$storage.ticket[0].eventTime}}</span>
-										<br />
-										<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
-										<br />
-										<span  class="securityEncoding">{{$storage.secEncoding }}</span>
-									</div>
-									<div class="col-md-4 col-lg-4 col-xs-4 text-center centerDiv_2">
-										<h3 ng-style="previewStyle()">Admit One</h3>
-									</div>
-									<div class="col-md-4 col-lg-4 col-xs-4  centerDiv_3"  >
-										<p class=" text-left userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
-											{{$storage.otherTicketInfo}}
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class=" center-block row text-center">
-					<br />
-					<div class="center-block col-md-12">
-						<button   type="button" class="btn btn-primary  btn-block"
-						ng-click="printSet=true;($storage.sampleView) = true;">
-							Print
-						</button>
-					</div>
-				</div>
-				<div class=" center-block row text-justify text-muted">
-					<br />
-					<ul class="list-group">
-						<li class="list-group-item">
-							You can use any background or text for this ticket.
-						</li>
-						<li class="list-group-item">
-							Enter color name or hex value (#EEEEEE) or rgba value in on the right and click "Ok".
-						</li>
-						<li class="list-group-item">
-							Get color names <a href="http://www.w3schools.com/html/html_colornames.asp" target="_blank">Here</a>.
-						</li>
-						<li class="list-group-item">
-							Mix colors with <a href="http://www.w3schools.com/tags/ref_colormixer.asp" target="_blank">this Color Mixer</a>
-							then copy the hex value.
-						</li>
-						<li class="list-group-item">
-							Please include a '#' before the 6 digit color value for hex values.
-						</li>
-					</ul>
-				</div>
-			</div>
+			<div ng-include="'partials/tickets/t1.html'"></div>
 		</div>
-		<!-- <div class="row">
-		<br />
-		<div class="pull-left ">
-		<button   type="button" class="btn btn-primary  btn-xs " ng-click="printSet=true;($storage.sampleView) = true">
-		Print preview
-		</button>
-		</div>
-		<div class="pull-right" ng-hide="($storage.sampleView)">
-		<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = true"> Preview all Tickets &raquo;</a>
-		</div>
-		<div class="pull-right" ng-hide="(!($storage.sampleView))==true">
-		<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = false"
-		>Hide all Tickets &raquo;</a>
-		</div>
-		</div> -->
 	</div>
 	<div  ng-show="($storage.sampleView)" class="center-block text-center" >
 		<div class="pull-left ">
@@ -218,53 +139,8 @@
 				Print
 			</button>
 		</div>
-		<h2>Showing tickets for {{$storage.guestsList.length}} guests. </h2>
-		<div  class="text-center center-block">
-			You are about to print a total of {{$storage.guestsList.length}} tickets.
-			<br />
-			<span class="text-danger text-bold">IN YOUR BROWSER, MAKE SURE TO CHECK 'PRINT BACKGROUND COLORS' and 'PRINT BACKGROUND IMAGES'</span>
-		</div>
-		<div id="printable" class="text-center center-block">
-			<h4  class="text-center center-block">{{$storage.eventName}} Tickets designed and generated at http://eventstion.io </h4>
-			<div class="previewTickets  center-block text-center"
-			ng-repeat="item in $storage.guestsList" >
-				<div class="row text-center ticket center-block" ng-style="previewStyle()">
-					<div class="col-md-3 col-lg-3 col-xs-3 ticketCol1 text-center center-block">
-						<div style="width: 50%;" class="center center-block text-center" ng-show="toUpload">
-							<img ng-src="{{croppedDataUrl}}" width="100%" class=""/>
-						</div>
-						<span class="ticketGName">{{item.ticketNumber}}</span>
-						<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
-						src="{{barcodeSrc(item.ticketNumber,$storage.ticketBgColor,$storage.ticketText)}}">
-						<p class="text-center userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
-							{{$storage.ageInfo}}
-						</p>
-					</div>
-					<div class="col-md-9 col-lg-9 col-xs-9 ticketCol2  text-center center-block">
-						<h2 class="text-center ticketTitle" ng-style="previewStyle()"  > {{$storage.eventName}} </h2>
-						<h5 class="text-center ticketVenue" ng-style="previewStyle()"  > {{$storage.ticket[0].eventVenue}} </h5>
-						<div class="row centerDiv">
-							<div class="col-md-4 col-lg-4 col-xs-4 text-center center-block centerDiv_1">
-								<span>{{$storage.ticket[0].eventDate}} {{$storage.ticket[0].eventTime}}</span>
-								<br />
-								<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
-								<br />
-								<span  class="securityEncoding">{{$storage.secEncoding }}</span>
 
-							</div>
-							<div class="col-md-4 col-lg-4 col-xs-4 text-center centerDiv_2">
-								<h3 ng-style="previewStyle()">Admit One</h3>
-							</div>
-							<div class="col-md-4 col-lg-4 col-xs-4  centerDiv_3"  >
-								<p class=" text-left userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
-									{{$storage.otherTicketInfo}}
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div ng-include="'partials/tickets/t1Preview.html'"></div>
 	</div>
 	<div>
 		<button ng-hide="true" onclick="localStorage.clear();">
