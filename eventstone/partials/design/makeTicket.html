@@ -4,9 +4,6 @@
 		<div class="back_div pull-left ">
 			<a type="button" class="btn btn-default btn-xs" ng-href="#/dashboard"> <span class="fa fa-tachometer"></span> </a>
 		</div>
-		<!-- <div class="backwardCenterArr ">
-		<a  class="" ng-click="showAddTickNum = true"  ng-href="#/newevent"  href=""> <span class="glyphicon glyphicon-menu-left"></span> </a> </a>
-		</div> -->
 		<h1 class="text-center uofs-page-title"><a>TICKET DESIGNER</a></h1>
 		<h4 class="text-center"><a>{{$storage.eventName}}</a></h4>
 		<div class="row dataFieldContainer  center-block ">
@@ -44,7 +41,7 @@
 							ng-model="$storage.otherTicketInfo" ng-style="$storage.otherTicketInfo.length>=70 && {'border': '2px dotted red'}">
 							{{$storage.otherTicketInfo.length}} of 70 characters
 						</div>
-						<div class="checkbox">
+						<!-- <div class="checkbox">
 							<label>
 								<input type="checkbox" ng-model="toUpload">
 								Add Image? </label>
@@ -65,7 +62,7 @@
 								<img-crop image="picFile  | ngfDataUrl"
 								result-image="croppedDataUrl" ng-init="croppedDataUrl=''" area-type="square"></img-crop>
 							</div>
-						</div>
+						</div> -->
 					</form>
 				</div>
 			</div>
@@ -127,10 +124,10 @@
 					<!-- <div class="printIcon"> -->
 					<!-- </div> -->
 				</div>
-					<button   type="button" class="btn btn-info btn-md pull-right "
-					ng-click="printSet=true;($storage.sampleView) = true;">
-						<span class="glyphicon glyphicon-print"></span>
-					</button>
+				<button   type="button" class="btn btn-info btn-md pull-right "
+				ng-click="printSet=true;($storage.sampleView) = true;">
+					<span class="glyphicon glyphicon-print"></span>
+				</button>
 				<div ng-include="$storage.user.styles.selectedTicFormat"></div>
 			</div>
 		</div>

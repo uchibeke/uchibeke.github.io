@@ -76,6 +76,8 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 			location.reload();
 		}
 	};
+
+	$scope.evewhyteBenefits = ["Manage Unlimited Events", "Design Tickets for each event", "Generate unique and imitation-proof tickets", "Speed up check-in process", "Check-in guests from multiple devices", "Run Events from multiple locations simulteneously", "View and manage guestlist on-the-go", "Get event summary and plan for future events", "Measure cost, benefits and impact of your event"];
 }]);
 
 myApp.service('shareDataService', function() {

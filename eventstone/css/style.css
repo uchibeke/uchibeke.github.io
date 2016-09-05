@@ -130,11 +130,6 @@ padding-bottom: 10px;
 	width: 100%;
 	overflow: hidden;
 	background: #F5F5F5;
-	background-image: linear-gradient(
-	to center,
-	#F50057 ,
-	#F5F5F5 80%
-	);
 }
 
 h1 a, h4 a {
@@ -605,7 +600,7 @@ body {
 	margin: 0;
 	background: #000;
 }
-video {
+#bgvid {
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -627,11 +622,26 @@ video {
 	min-height: 100%;
 	width: auto;
 	height: auto;
-	z-index: -100;
 	transform: translateX(-50%) translateY(-50%);
 	background-size: cover;
 	transition: 1s opacity;
 	background: rgba(0, 0, 0, 0.5) !important;
+	z-index: -10;
+}
+
+#login_bg_grayed {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	transform: translateX(-50%) translateY(-50%);
+	background-size: cover;
+	transition: 1s opacity;
+	background: rgba(0, 0, 0, 0.5) !important;
+	z-index: -10;
 }
 
 #bg_grayed_darker {
@@ -642,11 +652,11 @@ video {
 	min-height: 100%;
 	width: auto;
 	height: auto;
-	z-index: -100;
 	transform: translateX(-50%) translateY(-50%);
 	background-size: cover;
 	transition: 1s opacity;
 	background: rgba(0, 0, 0, 0.9) !important;
+	z-index: -10;
 }
 @media print {
 	body, div, a, p, li, .ticket {
@@ -725,4 +735,16 @@ video {
 	position: fixed !important;
 	z-index: 100000;
 }
-
+#loginInto {
+	color: #000000 !important;
+	font-size: 20px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.7) !important;
+	border-radius: 50px 0px 90px 0px;
+	-moz-border-radius: 50px 0px 90px 0px;
+	-webkit-border-radius: 50px 0px 90px 0px;
+	border: 1px solid #F5F5F5;
+}

@@ -29,13 +29,10 @@
 					{{instruction}}...
 				</p>
 			</div>
-
 		</form>
-		<!-- <br /> -->
 		<ul class="guestlist row" ng-hide="visualize()" >
 			<li class="guestLive cf" ng-repeat="item in $storage.guestsList | filter:guestSearch">
-				<!-- <hr /> -->
-				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 liveGList" ng-repeat="a in item"> {{a}}
+				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 liveGList" ng-repeat="a in item"> {{a ? a : 'Not Checked-in'}}
 					<br />
 				</span>
 				<div class="row">
