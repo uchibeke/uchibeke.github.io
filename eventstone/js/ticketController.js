@@ -120,6 +120,10 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 		$scope.guestRole = "Participant";
 
 		$scope.$storage.user.styles = {};
+		if ($scope.$storage.user.styles.selectedTicFormat == undefined && $scope.$storage.user.styles.selectedTicFormatPre == undefined) {
+			$scope.$storage.user.styles.selectedTicFormat = 'partials/tickets/t1.html';
+			$scope.$storage.user.styles.selectedTicFormatPre = 'partials/tickets/t1Preview.html';
+		}
 		$scope.setTicketFormat = function(index) {
 			var ticketFormats = {
 				'formats' : ['partials/tickets/t1.html', 'partials/tickets/t2.html'],
