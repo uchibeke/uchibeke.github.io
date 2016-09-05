@@ -77,7 +77,6 @@
 								<span class="ticketGName">{{$storage.guestsList[0].ticketNumber}}</span>
 								<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
 								src="{{barcodeSrc($storage.guestsList[0].ticketNumber,$storage.ticketBgColor,$storage.ticketText)}}">
-								<!-- src="http://generator.barcodetools.com/barcode.png?gen=3&data={{$storage.guestsList[0].ticketNumber}}&bcolor={{$storage.ticketBgColorFilter()}}&fcolor=000000&tcolor=000000"> -->
 								<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
 								<p class=" text-center userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
 									{{$storage.ageInfo}}
@@ -228,7 +227,7 @@
 						</div>
 						<span class="ticketGName">{{item.ticketNumber}}</span>
 						<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
-						src="{{barcodeSrc($storage.guestsList[0].ticketNumber,$storage.ticketBgColor,$storage.ticketText)}}">
+						src="{{barcodeSrc(item.ticketNumber,$storage.ticketBgColor,$storage.ticketText)}}">
 						<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
 						<p class="text-center userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
 							{{$storage.ageInfo}}

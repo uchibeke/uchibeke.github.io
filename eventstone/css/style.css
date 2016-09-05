@@ -340,8 +340,8 @@ form .progress {
 	font-size: 14px;
 	overflow: hidden !important;
 }
-
-.userInfo {font-size 10px  !important;
+.userInfo {
+	font-size: 10px !important;
 	margin: 0px !important;
 }
 

@@ -98,12 +98,17 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 			bColor = ticketColorFilter(bColor);
 			tColor = ticketColorFilter(tColor);
 			var final = "";
+			var base = "";
 			if (useQR) {
 				var foreGroundColor = tColor;
-				var base = "http://generator.barcodetools.com/barcode.png?gen=3";
-				final = base + "&data=" + tNum + "&bcolor=" + bColor + "&fcolor=" + foreGroundColor + "&tcolor=" + "000000";
-				return final;
+				base = "http://generator.barcodetools.com/barcode.png?gen=3";
+				final = base + "&data=" + tNum + "&bcolor=" + bColor + "&fcolor=" + foreGroundColor;
 			}
+			if (userBarcode) {
+				base = "http://api-bwipjs.rhcloud.com/?bcid=code128";
+				final = base + "&text=" + tNum + "&includetext" + "&scale=1";
+			}
+			return final;
 		};
 
 		$scope.$storage.sampleView = false;
