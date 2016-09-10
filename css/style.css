@@ -73,12 +73,6 @@ body {
 .projectDiv p{
 	padding-left:0 !important;
 }
-.projectDiv:hover {
-	/*border: thick solid #E8EFF9;*/
-	/*transform: scale(1.002);*/
-	/*box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);*/
-	/*box-shadow: 10px 10px 5px #888888;*/
-}
 .portfolioPage .panel {
 	width: 100%;
 	left: 0;
@@ -261,3 +255,10 @@ a:hover, a:active {
     left: 2%;
     z-index: 10000000;
 }
+
+body * {
+	font-family: 'Roboto', sans-serif !important;
+
+}
+
+
