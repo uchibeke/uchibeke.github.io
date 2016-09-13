@@ -10,17 +10,21 @@
 		<div class="form-group col-md-2  col-xs-2 text-center">
 			<br />
 			<button ng-model="btnText" type="button" ng-show="true" ng-disabled="$storage.api.questions.ing.length<1 || $storage.api.questions.ing == undefined"
-			class="btn btn-primary " ng-click="getRecipeForIngredient($storage.api.questions.ing);">Get recipe
+			class="btn btn-primary " ng-click="getRecipeForIngredient($storage.api.questions.ing);">
+				Get recipe
 			</button>
 		</div>
-		<br />
-	</form>
 	<p class="clearfix"></p>
+	</form>
 	<div class="panel row" >
 		<div class="panel-body">
 			<div class="row">
-				<div ng-repeat="ingredient in $storage.api.responses.ingAnswer" class="col-xs-12 text-center center-block" style="padding-bottom: 15px">
-					<p>{{ingredient.title}}</p>
+				<div ng-repeat="ingredient in $storage.api.responses.ingAnswer" class="col-xs-6 col-md-4 text-center center-block"
+				style="margin-bottom: 15px;
+				border: thin solid #EEEEEE;height:400px;">
+					<p>
+						{{ingredient.title}}
+					</p>
 					<img class="img-responsive center-block text-center" src="{{ingredient.image}}" width="50%"/>
 					<a  href="" data-toggle="modal" data-target="#recipeDetailModal" ng-click="getAnalyzedRecipe(ingredient.id, ingredient.title)">See Recipe Details </a>
 				</div>
