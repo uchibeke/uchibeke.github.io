@@ -2,19 +2,21 @@
 <div class="row">
 	<form role="form">
 		<br />
-		<div class="form-group col-md-12  col-xs-12 center-block">
+		<div class="form-group col-md-10 col-xs-10 center-block">
 			<label >Enter the ingredients you have separated by comma</label>
 			<input  class="form-control "  placeholder="cheese, bread" type="text"
 			ng-model="$storage.api.questions.ing" ng-required="true" autofocus="autofocus">
 		</div>
-		<div class="form-group col-md-12  col-xs-12 text-center">
+		<div class="form-group col-md-2  col-xs-2 text-center">
+			<br />
 			<button ng-model="btnText" type="button" ng-show="true" ng-disabled="$storage.api.questions.ing.length<1 || $storage.api.questions.ing == undefined"
 			class="btn btn-primary " ng-click="getRecipeForIngredient($storage.api.questions.ing);">Get recipe
 			</button>
 		</div>
 		<br />
 	</form>
-	<div class="panel " >
+	<p class="clearfix"></p>
+	<div class="panel row" >
 		<div class="panel-body">
 			<div class="row">
 				<div ng-repeat="ingredient in $storage.api.responses.ingAnswer" class="col-xs-12 text-center center-block" style="padding-bottom: 15px">

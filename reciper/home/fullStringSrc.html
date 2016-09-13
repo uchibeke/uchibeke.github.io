@@ -3,12 +3,12 @@
 	<form role="form">
 		<br />
 		<div class="form-group col-md-12  col-xs-12 center-block">
-			<div>
+			<div class="col-md-6 col-sm-12">
 				<label >What kind of meail would you like. </label>
 				<input  class="form-control "  placeholder="Required. Others are optional.eg african, chinese, japanese, korean, vietnamese, thai, indian, british, irish, french, italian, mexican, spanish, middle eastern, jewish, american, cajun, southern, greek, german, nordic, eastern european, caribbean, latin american" type="text"
 				ng-model="$storage.api.questions.fullStr.kind" ng-required="true" autofocus="autofocus">
-			</div>
-			<div>
+			</div >
+			<div class="col-md-6 col-sm-12">
 				<label >What kind of diet are you on</label>
 				<input  class="form-control "  placeholder="pescetarian, lacto vegetarian, ovo vegetarian, vegan, vegetarian" type="text"
 				ng-model="$storage.api.questions.fullStr.diet" ng-required="true" autofocus="autofocus">
@@ -35,6 +35,7 @@
 		</div>
 		<br />
 	</form>
+	<p class="clearfix"></p>
 	<div class="panel" >
 		<div class="panel-body">
 			<div class="row">
