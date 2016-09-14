@@ -2,13 +2,12 @@
 <div class="row">
 	<form role="form">
 		<br />
-		<div class="form-group col-md-10  col-xs-10 center-block">
-			<label >Ask nutrition related  question, in natural language.</label>
+		<div class="form-group center-block">
+			<p >Ask nutrition related  question, in natural language.</p>
 			<input  class="form-control "  placeholder="How much calories in egg?" type="text"
 			ng-model="$storage.api.questions.natLang" ng-required="true" autofocus="autofocus">
 		</div>
-		<div class="form-group col-md-2  col-xs-2 text-center">
-			<br />
+		<div class="form-group text-right">
 			<button ng-model="btnText" type="button" ng-show="true" ng-disabled="$storage.api.questions.natLang.length<1 || $storage.api.questions.natLang == undefined"
 			class="btn btn-primary " ng-click="getQuickAnswer($storage.api.questions.natLang);showAnswer=!showAnswer;">
 				Ask Me

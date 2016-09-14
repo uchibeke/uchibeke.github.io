@@ -49,7 +49,7 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, $f
 		ingredients = ingredients.match(/\S+/g) || [];
 		console.log(ingredients);
 		$http({
-			url : $scope.$storage.api.baseUrl + 'findByIngredients?fillIngredients=false&ingredients=' + ingredients + '&limitLicense=false&number=20&ranking=1',
+			url : $scope.$storage.api.baseUrl + 'findByIngredients?fillIngredients=false&ingredients=' + ingredients + '&limitLicense=false&number=100&ranking=1',
 			headers : {
 				'X-Mashape-Authorization' : '4ZN4cDI4J9mshHSMwb0APK9NGjJEp1rbTaAjsnEPWabILxb9nl'
 			},
@@ -68,9 +68,13 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, $f
 			// Catch and handle exceptions from success/error/finally functions
 		});
 	};
+	$scope.summaryModalLink = 'home/modalForNormal.html';
 
 	$scope.getAnalyzedRecipe = function(id, name) {
+		console.log('getAnalyzedRecipe');
 		console.log(id);
+		console.log(name);
+		$scope.summaryModalLink = 'home/modalForAnalyzed.html';
 		$http({
 			url : $scope.$storage.api.baseUrl + id + '/analyzedInstructions?stepBreakdown=true',
 			headers : {
@@ -91,13 +95,63 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, $f
 			// Catch and handle exceptions from success/error/finally functions
 		});
 	};
-	// [request setUrl:@"https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?diet=vegetarian&excludeIngredients=coconut&intolerances=egg%2C+gluten&limitLicense=false&number=10&offset=0&query=burger&type=main+course"];
-	// [request setUrl:@"https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?kind=spanish%2Camerican%2Ckorean%2Cindian&diet=vegan&intolerances=egg&limitLicense=false&number=10&offset=0&query=burger"];
+	$scope.getRecipeInfo = function(id, name) {
+		console.log('getRecipeInfo');
+		console.log(id);
+		console.log(name);
+		$scope.summaryModalLink = 'home/modalForNormal.html';
+		$http({
+			url : $scope.$storage.api.baseUrl + id + '/information?includeNutrition=true',
+			headers : {
+				'X-Mashape-Authorization' : '4ZN4cDI4J9mshHSMwb0APK9NGjJEp1rbTaAjsnEPWabILxb9nl'
+			},
+			method : 'GET',
+			dataType : 'application/json',
+		}).success(function(data) {
+			console.log('got....');
+			console.log(data);
+			$scope.$storage.api.responses.preview = data;
+			$scope.$storage.api.responses.preview.recipeName = name;
+		}).error(function(data, status) {
+			// Handle HTTP error
+		}).finally(function() {
+			// Execute logic independent of success/error
+		}).catch(function(error) {
+			// Catch and handle exceptions from success/error/finally functions
+		});
+	};
+	$scope.$storage.api.responses.UrlAnswer = {};
+	$scope.extraxtRecipeFromUrl = function(url) {
+		console.log(url);
+		$http({
+			url : $scope.$storage.api.baseUrl + "extract?forceExtraction=false&url=http%3A%2F%2F" + url.replace(/.*?:\/\//g, ""),
+			headers : {
+				'X-Mashape-Authorization' : '4ZN4cDI4J9mshHSMwb0APK9NGjJEp1rbTaAjsnEPWabILxb9nl'
+			},
+			method : 'GET',
+			dataType : 'application/json',
+		}).success(function(data) {
+			console.log('got....');
+			console.log(data);
+			$scope.$storage.api.responses.UrlAnswer = data;
+			var imgLnk = $scope.$storage.api.responses.UrlAnswer.image;
+			if (imgLnk.substr(0, 'https://'.length) !== 'https://' && imgLnk.substr(0, 'http://'.length) !== 'http://') {
+				$scope.$storage.api.responses.UrlAnswer.image = "https://spoonacular.com/recipeImages/" + imgLnk;
+			}
+			$scope.$storage.api.questions.Url = "";
+		}).error(function(data, status) {
+			// Handle HTTP error
+		}).finally(function() {
+			// Execute logic independent of success/error
+		}).catch(function(error) {
+			// Catch and handle exceptions from success/error/finally functions
+		});
+	};
 
 	$scope.searchRecipes = function(fullStr) {
 
 		var url = $scope.$storage.api.baseUrl;
-		if (fullStr.kind != undefined && fullStr.kind ) {
+		if (fullStr.kind != undefined && fullStr.kind) {
 			fullStr.kind = fullStr.kind.match(/\S+/g) || [];
 			url = url + 'search?kind=' + fullStr.kind;
 		}
@@ -113,7 +167,7 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, $f
 			fullStr.allergic = fullStr.allergic.match(/\S+/g) || [];
 			url = url + '&intolerances=' + fullStr.allergic;
 		}
-		url = url + '&limitLicense=false&number=50&offset=0';
+		url = url + '&limitLicense=false&number=100&offset=0';
 		console.log(url);
 		$http({
 			url : url,
