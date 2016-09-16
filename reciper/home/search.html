@@ -21,7 +21,7 @@
 		<div class="row">
 			<div id="foodContainer" ng-repeat="recipe in $storage.api.responses.searchAnswer.matches" class="col-xs-6 col-md-4 text-center center-block"
 			style="height:400px;">
-				<a  href="" data-toggle="modal" data-target="#recipeDetailModal" ng-click="getRecipeInfo(ingredient.id, ingredient.title)">
+				<a  href="" data-toggle="modal" data-target="#recipeDetailModal" ng-click="getYummlyRecipe(recipe.id, recipe.recipeName)">
 				<div class="row">
 					<img class="img-responsive center-block text-center" src="{{recipe.smallImageUrls[0]}}" width="50%"/>
 					<p>

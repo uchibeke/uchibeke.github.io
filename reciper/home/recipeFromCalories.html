@@ -1,0 +1,44 @@
+<!-- Test string search -->
+<form role="form">
+	<br />
+	<div class="form-group center-block ">
+		<div class="row">
+			<div class="col-xs-6">
+				<p >
+					Enter Target Calories
+				</p>
+				<input  class="form-control "  placeholder="salmon with pepper" type="number" ng-model="$storage.api.questions.targetCal">
+			</div>
+			<div class="col-xs-6">
+				<p >
+					Enter Time Frame (day or week)
+				</p>
+				<input  class="form-control "  placeholder="day OR week" type="text" ng-model="$storage.api.questions.timeFrame">
+			</div>
+		</div>
+	</div>
+	<div class="form-group text-right">
+		<button ng-model="btnText" type="button" ng-show="true" ng-disabled="$storage.api.questions.targetCal.length<1 || $storage.api.questions.targetCal == undefined"
+		class="btn btn-primary " ng-click="matchRecipeToCalories($storage.api.questions.targetCal,$storage.api.questions.timeFrame );">
+			Get Recipe
+		</button>
+	</div>
+	<p class="clearfix"></p>
+</form>
+{{$storage.api.responses.preview}}
+<div class="panel row" >
+	<div class="panel-body">
+		<div class="row">
+			<div id="foodContainer" ng-repeat="recipe in $storage.api.responses.searchAnswer.matches" class="col-xs-6 col-md-4 text-center center-block"
+			style="height:400px;">
+				<a  href="" data-toggle="modal" data-target="#recipeDetailModal" ng-click="getYummlyRecipe(recipe.id, recipe.recipeName)">
+				<div class="row">
+					<img class="img-responsive center-block text-center" src="{{recipe.smallImageUrls[0]}}" width="50%"/>
+					<p>
+						{{recipe.recipeName}}
+					</p>
+				</div> </a>
+			</div>
+		</div>
+	</div>
+</div>

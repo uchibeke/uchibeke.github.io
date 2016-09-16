@@ -68,13 +68,58 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, $f
 			// Catch and handle exceptions from success/error/finally functions
 		});
 	};
-	$scope.summaryModalLink = 'home/modalForNormal.html';
+	$scope.matchRecipeToCalories = function(target, dayORweek) {
+		console.log('matchRecipeToCalories');
+		console.log(target);
+		console.log(dayORweek);
+		$http({
+			url : $scope.$storage.api.baseUrl + 'mealplans/generate?targetCalories=' + target + '&timeFrame=' + dayORweek,
+			headers : {
+				'X-Mashape-Authorization' : '4ZN4cDI4J9mshHSMwb0APK9NGjJEp1rbTaAjsnEPWabILxb9nl'
+			},
+			method : 'GET',
+			dataType : 'application/json',
+		}).success(function(data) {
+			console.log('got....');
+			$scope.$storage.api.responses.preview = data;
+			console.log($scope.$storage.api.responses.preview);
+			$scope.$storage.api.responses.preview.recipeName = name;
+		}).error(function(data, status) {
+			// Handle HTTP error
+		}).finally(function() {
+			// Execute logic independent of success/error
+		}).catch(function(error) {
+			// Catch and handle exceptions from success/error/finally functions
+		});
+	};
+	$scope.getFoodGuide = function(target, dayORweek) {
+		console.log('matchRecipeToCalories');
+		console.log(target);
+		console.log(dayORweek);
+		$http({
+			url : 'http://open.canada.ca/data/api/action/package_show?id=e5f4a98e-0ccf-4e5e-9912-d308b46c5a7f',
+			method : 'GET',
+			dataType : 'application/json',
+		}).success(function(data) {
+			console.log('got....');
+			$scope.$storage.api.responses.preview = data;
+			console.log($scope.$storage.api.responses.preview);
+			$scope.$storage.api.responses.preview.recipeName = name;
+		}).error(function(data, status) {
+			// Handle HTTP error
+		}).finally(function() {
+			// Execute logic independent of success/error
+		}).catch(function(error) {
+			// Catch and handle exceptions from success/error/finally functions
+		});
+	};
+	$scope.summaryModalLink = 'home/modalForAnalyzed.html';
 
 	$scope.getAnalyzedRecipe = function(id, name) {
 		console.log('getAnalyzedRecipe');
 		console.log(id);
 		console.log(name);
-		$scope.summaryModalLink = 'home/modalForAnalyzed.html';
+		// $scope.summaryModalLink = 'home/modalForAnalyzed.html';
 		$http({
 			url : $scope.$storage.api.baseUrl + id + '/analyzedInstructions?stepBreakdown=true',
 			headers : {
@@ -85,8 +130,27 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, $f
 		}).success(function(data) {
 			console.log('got....');
 			console.log(data);
-			$scope.$storage.api.responses.preview = data;
+			$scope.$storage.api.responses.preview = {};
 			$scope.$storage.api.responses.preview.recipeName = name;
+			var stepInd = 0;
+			$scope.$storage.api.responses.preview.steps = [];
+			angular.forEach(data[0].steps, function(value, key) {
+				var arr = [];
+				var ind = 0;
+				$scope.$storage.api.responses.preview.steps[stepInd] = {};
+				$scope.$storage.api.responses.preview.steps[stepInd].step = value.step;
+				angular.forEach(value.ingredients, function(ing, index) {
+					arr[ind] = {};
+					// console.log(steps);
+					arr[ind].name = ing.name;
+					arr[ind].image = ing.image;
+					arr[ind].id = ing.id;
+					ind++;
+				});
+				$scope.$storage.api.responses.preview.steps[stepInd].ingredients = arr;
+				stepInd++;
+			});
+			console.log($scope.$storage.api.responses.preview);
 		}).error(function(data, status) {
 			// Handle HTTP error
 		}).finally(function() {
@@ -99,7 +163,6 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, $f
 		console.log('getRecipeInfo');
 		console.log(id);
 		console.log(name);
-		$scope.summaryModalLink = 'home/modalForNormal.html';
 		$http({
 			url : $scope.$storage.api.baseUrl + id + '/information?includeNutrition=true',
 			headers : {
@@ -191,7 +254,6 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, $f
 	};
 
 	// Yummly
-	// http://api.yummly.com/v1/api/recipes?_app_id=d695baf7&_app_key=4d32ff3ecd9fedb69326f94ad62d1d5a&q=suya+pepper
 
 	$scope.$storage.api.yummlyBaseUrl = 'http://api.yummly.com/v1/api/recipes?_app_id=d695baf7&_app_key=4d32ff3ecd9fedb69326f94ad62d1d5a&q=';
 	$scope.searchWithPhrase = function(str) {
@@ -199,10 +261,7 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, $f
 		str = str.split(' ').join('+');
 		console.log(str);
 		$http({
-			url : $scope.$storage.api.yummlyBaseUrl + str.match(/\S+/g) || [],
-			// headers : {
-				// 'X-Mashape-Authorization' : '4ZN4cDI4J9mshHSMwb0APK9NGjJEp1rbTaAjsnEPWabILxb9nl'
-			// },
+			url : $scope.$storage.api.yummlyBaseUrl + str.match(/\S+/g) || [] + '&requirePictures=true',
 			method : 'GET',
 			dataType : 'application/json',
 		}).success(function(data) {
@@ -218,4 +277,28 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, $f
 			// Catch and handle exceptions from success/error/finally functions
 		});
 	};
+
+	$scope.getYummlyRecipe = function(id, name) {
+		console.log('getYummlyRecipe');
+		console.log(id);
+		console.log(name);
+		$http({
+			url : 'http://api.yummly.com/v1/api/recipe/' + id + '?_app_id=d695baf7&_app_key=4d32ff3ecd9fedb69326f94ad62d1d5a',
+			method : 'GET',
+			dataType : 'application/json',
+		}).success(function(data) {
+			console.log('got....');
+			console.log(data);
+			$scope.$storage.api.responses.preview = data;
+			$scope.$storage.api.responses.preview.recipeName = name;
+		}).error(function(data, status) {
+			// Handle HTTP error
+		}).finally(function() {
+			// Execute logic independent of success/error
+		}).catch(function(error) {
+			// Catch and handle exceptions from success/error/finally functions
+		});
+
+	}
+	// http://api.yummly.com/v1/api/recipe/recipe-id?_app_id=YOUR_ID&_app_key=YOUR_APP_KEY
 }])
