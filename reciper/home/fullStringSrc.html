@@ -1,61 +1,59 @@
 <!-- Full String search -->
-<div class="row">
-	<form role="form">
-		<br />
-		<div class="form-group center-block">
-			<div class="col-md-6 col-sm-12">
+<form role="form">
+	<br />
+	<div class="form-group center-block">
+		<div class="col-md-6 col-sm-12">
+			<p >
+				What kind of meal would you like.
+			</p>
+			<input  class="form-control "  placeholder="Required. Others are optional.eg african, chinese, japanese, korean, vietnamese, thai, indian, british, irish, french, italian, mexican, spanish, middle eastern, jewish, american, cajun, southern, greek, german, nordic, eastern european, caribbean, latin american" type="text"
+			ng-model="$storage.api.questions.fullStr.kind" ng-required="true" autofocus="autofocus">
+		</div >
+		<div class="col-md-6 col-sm-12">
+			<p >
+				What kind of diet are you on
+			</p>
+			<input  class="form-control "  placeholder="pescetarian, lacto vegetarian, ovo vegetarian, vegan, vegetarian" type="text"
+			ng-model="$storage.api.questions.fullStr.diet" ng-required="true" autofocus="autofocus">
+		</div>
+		<a  href="" ng-click="moreOptions=!moreOptions"  class="text-center center-block row">More Options </a>
+		<div ng-show="moreOptions">
+			<div  class="col-md-6 col-sm-12">
 				<p >
-					What kind of meal would you like.
+					What items would you like to exclude from your recipe
 				</p>
-				<input  class="form-control "  placeholder="Required. Others are optional.eg african, chinese, japanese, korean, vietnamese, thai, indian, british, irish, french, italian, mexican, spanish, middle eastern, jewish, american, cajun, southern, greek, german, nordic, eastern european, caribbean, latin american" type="text"
-				ng-model="$storage.api.questions.fullStr.kind" ng-required="true" autofocus="autofocus">
-			</div >
-			<div class="col-md-6 col-sm-12">
-				<p >
-					What kind of diet are you on
-				</p>
-				<input  class="form-control "  placeholder="pescetarian, lacto vegetarian, ovo vegetarian, vegan, vegetarian" type="text"
-				ng-model="$storage.api.questions.fullStr.diet" ng-required="true" autofocus="autofocus">
+				<input  class="form-control "  placeholder="dairy, egg, gluten, peanut, sesame, seafood, shellfish, soy, sulfite, tree nut, wheat" type="text"
+				ng-model="$storage.api.questions.fullStr.exclude" ng-required="true" autofocus="autofocus">
 			</div>
-			<a  href="" ng-click="moreOptions=!moreOptions"  class="text-center center-block row">More Options </a>
-			<div ng-show="moreOptions">
-				<div  class="col-md-6 col-sm-12">
-					<p >
-						What items would you like to exclude from your recipe
-					</p>
-					<input  class="form-control "  placeholder="dairy, egg, gluten, peanut, sesame, seafood, shellfish, soy, sulfite, tree nut, wheat" type="text"
-					ng-model="$storage.api.questions.fullStr.exclude" ng-required="true" autofocus="autofocus">
-				</div>
-				<div  class="col-md-6 col-sm-12">
-					<p >
-						What are you intolerant to
-					</p>
-					<input  class="form-control "  placeholder="" type="text"
-					ng-model="$storage.api.questions.fullStr.allergic" ng-required="true" autofocus="autofocus">
-				</div>
+			<div  class="col-md-6 col-sm-12">
+				<p >
+					What are you intolerant to
+				</p>
+				<input  class="form-control "  placeholder="" type="text"
+				ng-model="$storage.api.questions.fullStr.allergic" ng-required="true" autofocus="autofocus">
 			</div>
 		</div>
-		<div class="form-group col-md-12  col-xs-12 text-right">
-			<button ng-model="btnText" type="button" ng-show="true" ng-disabled="$storage.api.questions.fullStr.length<1 || $storage.api.questions.fullStr == undefined"
-			class="btn btn-primary " ng-click="searchRecipes($storage.api.questions.fullStr);">
-				See Recipes
-			</button>
-		</div>
-		<p class="clearfix"></p>
-	</form>
-	<div class="panel" >
-		<div class="panel-body">
-			<div class="row">
-				<div id="foodContainer" ng-repeat="recipe in $storage.api.responses.fullStrAnswer.results" class="col-xs-6 col-md-4 text-center center-block"
-				style="height:400px;">
-					<a  href="" data-toggle="modal" data-target="#recipeDetailModal" ng-click="getAnalyzedRecipe(recipe.id, recipe.title)">
-					<div class="row">
-						<img class="img-responsive center-block text-center" src="{{$storage.api.responses.fullStrAnswer.baseUri + recipe.imageUrls}}" width="50%"/>
-						<p>
-							{{recipe.title}}
-						</p>
-					</div> </a>
-				</div>
+	</div>
+	<div class="form-group col-md-12  col-xs-12 text-right">
+		<button ng-model="btnText" type="button" ng-show="true" ng-disabled="$storage.api.questions.fullStr.length<1 || $storage.api.questions.fullStr == undefined"
+		class="btn btn-primary " ng-click="searchRecipes($storage.api.questions.fullStr);">
+			See Recipes
+		</button>
+	</div>
+	<p class="clearfix"></p>
+</form>
+<div class="panel" >
+	<div class="panel-body">
+		<div class="row">
+			<div id="foodContainer" ng-repeat="recipe in $storage.api.responses.fullStrAnswer.results" class="col-xs-6 col-md-4 text-center center-block"
+			style="height:400px;">
+				<a  href="" data-toggle="modal" data-target="#recipeDetailModal" ng-click="getAnalyzedRecipe(recipe.id, recipe.title)">
+				<div class="row">
+					<img class="img-responsive center-block text-center" src="{{$storage.api.responses.fullStrAnswer.baseUri + recipe.imageUrls}}" width="50%"/>
+					<p>
+						{{recipe.title}}
+					</p>
+				</div> </a>
 			</div>
 		</div>
 	</div>

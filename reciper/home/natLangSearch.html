@@ -1,26 +1,26 @@
 <!-- Test natural language search -->
-<div class="row">
-	<form role="form">
-		<br />
-		<div class="form-group center-block">
-			<p >Ask nutrition related  question, in natural language.</p>
-			<input  class="form-control "  placeholder="How much calories in egg?" type="text"
-			ng-model="$storage.api.questions.natLang" ng-required="true" autofocus="autofocus">
-		</div>
-		<div class="form-group text-right">
-			<button ng-model="btnText" type="button" ng-show="true" ng-disabled="$storage.api.questions.natLang.length<1 || $storage.api.questions.natLang == undefined"
-			class="btn btn-primary " ng-click="getQuickAnswer($storage.api.questions.natLang);showAnswer=!showAnswer;">
-				Ask Me
-			</button>
-		</div>
-		<p class="clearfix"></p>
-	</form>
-	<div class="panel " >
-		<div class="panel-body text-center">
-			<img class="img-responsive center-block text-center" src="{{$storage.api.responses.natLangAnswer.image}}" />
-			<p>
-				{{$storage.api.responses.natLangAnswer.answer}}
-			</p>
-		</div>
+<form role="form">
+	<br />
+	<div class="form-group center-block">
+		<p >
+			Ask nutrition related  question, in natural language.
+		</p>
+		<input  class="form-control "  placeholder="How much calories in egg?" type="text"
+		ng-model="$storage.api.questions.natLang" ng-required="true" autofocus="autofocus">
+	</div>
+	<div class="form-group text-right">
+		<button ng-model="btnText" type="button" ng-show="true" ng-disabled="$storage.api.questions.natLang.length<1 || $storage.api.questions.natLang == undefined"
+		class="btn btn-primary " ng-click="getQuickAnswer($storage.api.questions.natLang);showAnswer=!showAnswer;">
+			Ask Me
+		</button>
+	</div>
+	<p class="clearfix"></p>
+</form>
+<div class="panel " >
+	<div class="panel-body text-center">
+		<img class="img-responsive center-block text-center" src="{{$storage.api.responses.natLangAnswer.image}}" />
+		<p>
+			{{$storage.api.responses.natLangAnswer.answer}}
+		</p>
 	</div>
 </div>

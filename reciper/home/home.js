@@ -189,4 +189,33 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, $f
 			// Catch and handle exceptions from success/error/finally functions
 		});
 	};
+
+	// Yummly
+	// http://api.yummly.com/v1/api/recipes?_app_id=d695baf7&_app_key=4d32ff3ecd9fedb69326f94ad62d1d5a&q=suya+pepper
+
+	$scope.$storage.api.yummlyBaseUrl = 'http://api.yummly.com/v1/api/recipes?_app_id=d695baf7&_app_key=4d32ff3ecd9fedb69326f94ad62d1d5a&q=';
+	$scope.searchWithPhrase = function(str) {
+		console.log(str);
+		str = str.split(' ').join('+');
+		console.log(str);
+		$http({
+			url : $scope.$storage.api.yummlyBaseUrl + str.match(/\S+/g) || [],
+			// headers : {
+				// 'X-Mashape-Authorization' : '4ZN4cDI4J9mshHSMwb0APK9NGjJEp1rbTaAjsnEPWabILxb9nl'
+			// },
+			method : 'GET',
+			dataType : 'application/json',
+		}).success(function(data) {
+			console.log('got....');
+			console.log(data);
+			$scope.$storage.api.responses.searchAnswer = data;
+			$scope.$storage.api.questions.search = "";
+		}).error(function(data, status) {
+			// Handle HTTP error
+		}).finally(function() {
+			// Execute logic independent of success/error
+		}).catch(function(error) {
+			// Catch and handle exceptions from success/error/finally functions
+		});
+	};
 }])
