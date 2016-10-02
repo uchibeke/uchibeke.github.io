@@ -18,6 +18,6 @@ function($routeProvider) {
 		templateUrl : 'views/about.html',
 		controller : 'ListController'
 	}).otherwise({
-		redirectTo : '/home'
+		redirectTo : '/about'
 	});
 }]);
