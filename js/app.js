@@ -17,6 +17,9 @@ function($routeProvider) {
 	}).when('/about', {
 		templateUrl : 'views/about.html',
 		controller : 'ListController'
+	}).when('/resume', {
+		templateUrl : 'views/resume.pdf',
+		controller : 'ListController'
 	}).otherwise({
 		redirectTo : '/about'
 	});
