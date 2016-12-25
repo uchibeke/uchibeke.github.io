@@ -15,6 +15,7 @@ function($scope, $http, $timeout, $location, $route) {
 
 	$scope.lifeStyle = r.imageAssets.lifeStyle;
 	$scope.about = r.imageAssets.about;
+	shuffle($scope.lifeStyle.images);
 
 	$scope.gallery = {};
 	$scope.gallery.currentArrInGallery = [];
