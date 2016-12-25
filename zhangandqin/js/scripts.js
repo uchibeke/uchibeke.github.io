@@ -85,7 +85,7 @@ function gotoRight(id) {
 	document.getElementById("linkAudio").play();
 	$("#" + id).animate({
 		scrollLeft : target
-	}, imageAssets.lifeStyle.images.length  * 1500);
+	}, imageAssets.lifeStyle.images.length  * 2000);
 }
 
 // Opera 8.0+

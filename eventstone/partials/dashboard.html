@@ -21,13 +21,15 @@
 		<div ng-repeat="item in $storage.guestsList  | filter:dashSearch" class="col-lg-2 col-md-3 col-sm-4 col-xs-6 text-center guestInDash"  ng-style="($index % 2 == 0) ? {'border' : '1px solid #EEEEEE'} : {'border' : '1px solid #D3DCF2'}">
 			<p  class="">
 				<a style="position: absolute; right:5px; top:5px;;" href="" ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"   data-toggle="tooltip" title="Remove a guest"><span class="glyphicon glyphicon-remove "></span></a>
-				{{item.ticketNumber}}
+				{{item.id}}
 				<br />
 				<span class="text-muted"> {{item.guestStatus ? item.guestStatus : 'Not Checked-in'}}</span>
 			</p>
 		</div>
 	</div>
 
+
+<!--
 	<div class="modal fade" id="confirmModal" role="dialog">
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
@@ -50,4 +52,5 @@
 			</div>
 		</div>
 	</div>
+-->
 </section>

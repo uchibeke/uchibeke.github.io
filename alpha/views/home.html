@@ -1,0 +1,19 @@
+<section data-lastmodifiedby="uchi" id="">
+	<div class="row center-block chat" id="chatBox">
+		<div ng-repeat="chatItem in data.convo">
+			<p class="bubble" ng-class="{'me' : chatItem.type == 'q' , 'you' : chatItem.type == 'a'}">
+				{{chatItem.text}}
+			</p>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+		<div>
+			<p class="bubble me">
+				{{view.showing.q}}
+			</p>
+			<p id="responses" class=" center-block">
+				<a class="btn btn-default" id="option"  ng-repeat="option in view.showing.opts" ng-click="actions.updateConvo(option)" > {{option}}</a>
+			</p>
+		</div>
+	</div>
+</section>
