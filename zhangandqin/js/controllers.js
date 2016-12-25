@@ -43,8 +43,8 @@ function($scope, $http, $timeout, $location, $route) {
 	$scope.winHeight = windowH;
 
 	$scope.imageItemWidth = galleryItemSize + "px";
-	$scope.bigImageHeight = ($scope.winHeight - 130) + "px";
-	$scope.modalImageHeight = ($scope.winHeight - 80) + "px";
+	$scope.bigImageHeight = ($scope.winHeight - 150) + "px";
+	$scope.modalImageHeight = ($scope.winHeight - 100) + "px";
 
 	$scope.goToPage = function(path) {
 		if ($location.path(path)) {
@@ -93,7 +93,7 @@ function($scope, $http, $timeout, $location, $route) {
 			audio.play();
 			$("#" + id).animate({
 				scrollLeft : target
-			}, $scope.lifeStyle.images.length * 2000);
+			}, $scope.lifeStyle.images.length * 3500, 'linear');
 		} else {
 			audio.pause();
 			$("#" + id).stop();

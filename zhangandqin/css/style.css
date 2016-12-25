@@ -56,7 +56,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body, #contactModal * {
 	-webkit-print-color-adjust: exact !important;
 	print-color-adjust: exact !important;
-	background: #1E1E1E !important;
+	background: #262626 !important;
 	color: #ddc993 !important;
 	font-family: 'Roboto', sans-serif;
 }
@@ -158,7 +158,7 @@ a, button {
 }
 
 #gal-container {
-	background: #262626;
+	background: #262626 ;
 }
 .gallery-container {
 	white-space: nowrap;
@@ -170,7 +170,7 @@ a, button {
 	position: relative;
 	display: inline-block;
 	margin: 20px 20px;
-	box-shadow: 2px 2px 4px #ddc993;
+	box-shadow: 2px 2px 4px black;
 	border-top-right-radius: 4px;
 	width: auto;
 	vertical-align: bottom;
@@ -192,7 +192,7 @@ a, button {
 	padding: 0px !important;
 }
 .previewImg {
-	box-shadow: 2px 2px 4px #bbb;
+	box-shadow: 2px 2px 4px black;
 	border-top-right-radius: 4px;
 }
 .nav-l {
