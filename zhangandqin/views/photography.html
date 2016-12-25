@@ -1,0 +1,19 @@
+<div ng-include="'views/nav.html'" ></div>
+<section class="topPage " id="">
+	<div class="panel panel-default" style="border: 0">
+
+		<div class="row-fluid center-block" >
+			<div class="col-xs-12 center-block" id="gal-container">
+				<div class="gallery-container center-block" id="galDiv">
+					<img ng-repeat="image in lifeStyle.images" src="{{image}}" class="gallery-item" style="height:{{bigImageHeight}}"
+					ng-click="setPreviewImage(image, lifeStyle.images)" data-toggle="modal" data-target="#previewModal" />
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div ng-include="'views/previewModal.html'" ></div>
+<audio controls id="linkAudio" hidden="">
+	<source src="cyndiChao.mp3" type="audio/mpeg">
+	Your browser does not support the audio element.
+</audio>

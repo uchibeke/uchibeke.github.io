@@ -1,0 +1,27 @@
+<div class="modal fade" id="previewModal" role="dialog">
+	<div class="modal-dialog  modal-lg">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal" style="padding-right: 15px;padding-top: 5px;">
+				&times;
+			</button>
+			<br />
+			<div class="modal-body center-block text-center">
+				<img src="{{gallery.previewImage}}" class="previewImg" style="height: {{modalImageHeight}}"/>
+				<p class="text-center">
+					{{gallery.positionInfo}}
+				</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">
+					Close
+				</button>
+			</div>
+		</div>
+		<div >
+			<a href="" id="galBtnL" ng-click="gallery.advance('-')" ng-class="{'disabled' : gallery.disableBackWard }"
+			class=""> <i class="fa fa-angle-left fa-4x" aria-hidden="true"></i></a>
+			<a href="" id="galBtnR" ng-click="gallery.advance('+')" ng-class="{'disabled' : gallery.disableForward }"
+			class=""> <i class="fa fa-angle-right fa-4x" aria-hidden="true"></i></a>
+		</div>
+	</div>
+</div>

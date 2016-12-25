@@ -1,0 +1,17 @@
+[
+	{
+		"itemName": "lifeStyle",
+		"path": "assets/portfolio/photos/lifestyle",
+		"numOfItems": "92",
+		"imgType": "jpeg",
+		"firstItem": 0,
+		"lastItem": 92
+	}, {
+		"itemName": "about",
+		"path": "assets/portfolio/photos/about",
+		"numOfItems": "19",
+		"imgType": "jpg",
+		"firstItem": 0,
+		"lastItem": 19
+	}
+]

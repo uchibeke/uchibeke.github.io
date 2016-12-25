@@ -1,0 +1,22 @@
+<div ng-include="'views/nav.html'" ></div>
+<section class="topPage " id="">
+	<br />
+	<div id="aboutContainer"></div>
+	<div id="aboutImages" class="text-center">
+		<div class="aboutItem"  ng-repeat="image in lifeStyle.images" style="width: {{imageItemWidth}};">
+			<img src="{{image}}"
+			ng-click="setPreviewImage(image, about.images)" data-toggle="modal" data-target="#previewModal" />
+		</div>
+	</div>
+	<div class="text-section">
+		<p>
+			Photography is like an art to me, a medium that I use to capture people’s
+			point of view and express their emotions and thoughts precisely.
+		</p>
+		<p>
+			I immortalize these moments so that it can be shared and remembered.
+		</p>
+	</div>
+	<div id="aboutContainer"></div>
+</section>
+<div ng-include="'views/previewModal.html'" ></div>

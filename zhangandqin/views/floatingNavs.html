@@ -1,0 +1,48 @@
+<div>
+	<div id="photography">
+		<a  ng-href="#!/photography" class=" bordered">Photography</a>
+	</div>
+	<div id="videography">
+		<a  ng-href="#!/videography" class=" bordered">Videography</a>
+	</div>
+</div>
+<style>
+	#photography {
+		height: 20px;
+		width: 20px;
+		bottom: 50px;
+	}
+
+	#videography {
+		height: 100px;
+		width: 100px;
+		bottom: 180px;
+	}
+
+	#photography, #videography {
+		z-index: 999;
+		transform: rotate(-90deg);
+		-webkit-transform: rotate(-90deg);
+		-moz-transform: rotate(-90deg);
+		-o-transform: rotate(-90deg);
+		filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+		left: 0;
+		position: fixed;
+	}
+
+	#photography a {
+		display: block;
+		height: 40px;
+		width: 130px;
+		padding: 8px 15px;
+		text-decoration: none;
+	}
+
+	#videography a {
+		display: block;
+		height: 40px;
+		width: 130px;
+		padding: 8px 15px;
+		text-decoration: none;
+	}
+</style>
