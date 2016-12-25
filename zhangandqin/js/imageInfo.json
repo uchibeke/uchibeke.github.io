@@ -2,10 +2,10 @@
 	{
 		"itemName": "lifeStyle",
 		"path": "assets/portfolio/photos/lifestyle",
-		"numOfItems": "74",
+		"numOfItems": "76",
 		"imgType": "jpeg",
 		"firstItem": 0,
-		"lastItem": 74
+		"lastItem": 76
 	}, {
 		"itemName": "about",
 		"path": "assets/portfolio/photos/about",

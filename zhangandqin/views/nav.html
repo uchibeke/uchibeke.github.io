@@ -1,21 +1,12 @@
 <nav class="navbar navbar-fixed-top">
 	<div class="container-fluid">
-		<div class="navbar-header" >
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
-			<div id="" class="row text-center nav-wrapper">
-				<a class="pull-left nav-l"  ng-href="#!/home"> <i class="glyphicon glyphicon-home " aria-hidden="true"></i> </a>
-				<!-- <a class="pull-left nav-l"  ng-href="#!/photoLifestyle"> <span class=""></span> Lifestyle</a> -->
-				<a class="" id="contactBtn"  data-toggle="modal" data-target="#contactModal" href=""><i class="glyphicon glyphicon-play " aria-hidden="true"></i></a>
-				<!-- <a class="pull-right nav-r"  ng-href="#!/photoInvestment"> <span class=""></span> Investment</a> -->
-				<a class="pull-right nav-r" onclick="gotoRight('galDiv')"> Scroll</a>
-				<a class="pull-right nav-r"  ng-click="goToPage('/about')" href=""> <i class="glyphicon glyphicon-picture " aria-hidden="true"></i></a>
-			</div>
+		<div id="" class="row text-center nav-wrapper">
+			<a class="pull-left nav-l"  ng-href="#!/home"> <i class="glyphicon glyphicon-home " aria-hidden="true"></i> </a>
+			<!-- <a class="pull-left nav-l"  ng-href="#!/photoLifestyle"> <span class=""></span> Lifestyle</a> -->
+			<a class="" id="contactBtn"  data-toggle="modal" data-target="#contactModal" href=""><i class="glyphicon glyphicon-play " aria-hidden="true"></i></a>
+			<!-- <a class="pull-right nav-r"  ng-href="#!/photoInvestment"> <span class=""></span> Investment</a> -->
+			<!-- <a class="pull-right nav-r" onclick="gotoRight('galDiv')"> Scroll</a> -->
+			<a class="pull-right nav-r"  ng-click="goToPage('/about')" href=""> <i class="glyphicon glyphicon-picture " aria-hidden="true"></i></a>
 		</div>
 </nav>
 <div ng-include="'views/contact.html'" ></div>
