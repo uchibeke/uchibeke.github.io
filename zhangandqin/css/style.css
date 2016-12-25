@@ -99,13 +99,13 @@ body, #contactModal * {
 }
 
 #homeBtnDiv {
-	top:0;
-	left:0;
-	height:100%;
-	position:fixed;
-	min-width:100%;
+	top: 0;
+	left: 0;
+	height: 100%;
+	position: fixed;
+	min-width: 100%;
 	background: rgba(38,38,38,0.5);
-	padding-top:30%;
+	padding-top: 30%;
 }
 #homeBtnDiv a {
 	border-radius: 40px 5px 40px 5px;
@@ -146,7 +146,6 @@ a, button {
 
 .topPage {
 	margin-top: 50px;
-	margin-bottom: 50px;
 }
 
 .navbar, p, a, div {
@@ -158,7 +157,7 @@ a, button {
 }
 
 #gal-container {
-	background: #262626 ;
+	background: #262626;
 }
 .gallery-container {
 	white-space: nowrap;
@@ -170,11 +169,14 @@ a, button {
 	position: relative;
 	display: inline-block;
 	margin: 20px 20px;
-	box-shadow: 2px 2px 4px black;
+	/*box-shadow: 2px 2px 4px black;*/
+	box-shadow: 1px 1px 3px 1px black;
 	border-top-right-radius: 4px;
 	width: auto;
 	vertical-align: bottom;
 	cursor: zoom-in;
+	border: 10px solid #fff;
+	border-bottom: 45px solid #fff;
 }
 
 #previewModal * {
@@ -201,15 +203,9 @@ a, button {
 .nav-r {
 	padding-left: 2%;
 }
-/*.navbar-collapse * {
- display:block;
- }*/
-.icon-bar {
-	background: #ddc993;
-}
 .nav-wrapper {
-	padding-left: 1.3%;
-	padding-right: 1.3%;
+	padding-left: 30px;
+	padding-right: 30px;
 	padding-top: 5px;
 }
 .nav-wrapper a {
@@ -219,7 +215,7 @@ a, button {
 
 #contactBtn {
 	border-radius: 0px 0px 180px 180px;
-	font-size: 20px;
+	font-size: 30px;
 	padding: 20px;
 	background-color: transparent;
 	color: #ddc993 !important;

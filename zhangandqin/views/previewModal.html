@@ -1,19 +1,19 @@
 <div class="modal fade" id="previewModal" role="dialog">
 	<div class="modal-dialog  modal-lg">
 		<div class="modal-content">
-			<button type="button" class="close" data-dismiss="modal" style="padding-right: 15px;padding-top: 5px;">
+			<button type="button" class="close" data-dismiss="modal" style="padding-right: 15px;padding-top: 5px;"
+			ng-click="togglePlay('galDiv', true);">
 				&times;
 			</button>
 			<br />
 			<div class="modal-body center-block text-center">
 				<img src="{{gallery.previewImage}}" class="previewImg" style="height: {{modalImageHeight}}"/>
-				<p class="text-center">
-					{{gallery.positionInfo}}
-				</p>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">
-					Close
+				<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="togglePlay('galDiv', true);">
+					{{texts.close.en}}
+					<br />
+					{{texts.close.ch}}
 				</button>
 			</div>
 		</div>

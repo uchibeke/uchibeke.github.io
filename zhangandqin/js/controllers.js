@@ -44,8 +44,8 @@ function($scope, $http, $timeout, $location, $route) {
 	$scope.winHeight = windowH;
 
 	$scope.imageItemWidth = galleryItemSize + "px";
-	$scope.bigImageHeight = ($scope.winHeight - 150) + "px";
-	$scope.modalImageHeight = ($scope.winHeight - 100) + "px";
+	$scope.bigImageHeight = ($scope.winHeight - 130) + "px";
+	$scope.modalImageHeight = ($scope.winHeight - 80) + "px";
 
 	$scope.goToPage = function(path) {
 		if ($location.path(path)) {
@@ -53,11 +53,6 @@ function($scope, $http, $timeout, $location, $route) {
 				location.reload();
 			}
 		}
-
-		// $timeout(function() {
-		// otherService.updateTestService('Mellow Yellow')
-		// console.log('update with timeout fired')
-		// }, 3000);
 	};
 
 	$scope.gallery.advance = function(direction) {
@@ -85,20 +80,19 @@ function($scope, $http, $timeout, $location, $route) {
 	};
 
 	$scope.musicPaused = true;
-	$scope.togglePlay = function(id) {
+	$scope.togglePlay = function(id, play) {
 		var div = document.getElementById(id);
 		var target = div.scrollWidth - div.clientWidth;
 		var audio = document.getElementById("linkAudio");
-		$("#" + id).scrollLeft = 0;
-		if (audio.paused) {
-			audio.play();
+		console.log(audio.paused);
+		if (audio.paused && play == true) {
 			$("#" + id).animate({
 				scrollLeft : target
-			}, $scope.lifeStyle.images.length * 3500, 'linear');
+			}, $scope.lifeStyle.images.length * 3300, 'linear');
+			audio.play();
 		} else {
-			audio.pause();
 			$("#" + id).stop();
-			;
+			audio.pause();
 		}
 		$scope.musicPaused = document.getElementById("linkAudio").paused;
 	};
