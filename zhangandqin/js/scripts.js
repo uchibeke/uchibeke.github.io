@@ -74,20 +74,6 @@ $.fn.masonryImagesReveal = function($items) {
 
 	return this;
 };
-
-function gotoRight(id) {
-	var div = document.getElementById(id);
-	var target = div.scrollWidth - div.clientWidth;
-	div.scrollLeft = 0;
-	// $("#" + id).scrollLeft($("#" + id).scrollLeft() + target);
-	console.log(imageAssets.lifeStyle.images.length);
-
-	document.getElementById("linkAudio").play();
-	$("#" + id).animate({
-		scrollLeft : target
-	}, imageAssets.lifeStyle.images.length  * 2000);
-}
-
 // Opera 8.0+
 var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
 // Firefox 1.0+

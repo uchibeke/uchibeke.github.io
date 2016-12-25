@@ -5,7 +5,7 @@
 		<div class="row-fluid center-block" >
 			<div class="col-xs-12 center-block" id="gal-container">
 				<div class="gallery-container center-block" id="galDiv">
-					<img ng-repeat="image in lifeStyle.images" src="{{image}}" class="gallery-item" style="height:{{bigImageHeight}}"
+					<img id="idFromPath(image)" ng-repeat="image in lifeStyle.images" src="{{image}}" class="gallery-item" style="height:{{bigImageHeight}}"
 					ng-click="setPreviewImage(image, lifeStyle.images)" data-toggle="modal" data-target="#previewModal" />
 				</div>
 			</div>

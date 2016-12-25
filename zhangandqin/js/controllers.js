@@ -82,4 +82,33 @@ function($scope, $http, $timeout, $location, $route) {
 		}
 		$scope.gallery.positionInfo = $scope.gallery.currentViewingIndex + 1 + " of " + $scope.gallery.currentArrInGallery.length;
 	};
+
+	$scope.musicPaused = true;
+	$scope.togglePlay = function(id) {
+		var div = document.getElementById(id);
+		var target = div.scrollWidth - div.clientWidth;
+		var audio = document.getElementById("linkAudio");
+		$("#" + id).scrollLeft = 0;
+		if (audio.paused) {
+			audio.play();
+			$("#" + id).animate({
+				scrollLeft : target
+			}, $scope.lifeStyle.images.length * 2000);
+		} else {
+			audio.pause();
+			$("#" + id).stop();
+			;
+		}
+		$scope.musicPaused = document.getElementById("linkAudio").paused;
+	};
+
+	$scope.idFromPath = function(str) {
+		return "ls" + str.split('/')[str.split('/').length - 1];
+	};
+	$scope.goToPhotos = function(path) {
+		$location.path(path);
+		$timeout(function() {
+			$scope.togglePlay('galDiv');
+		}, 3000);
+	};
 }]);

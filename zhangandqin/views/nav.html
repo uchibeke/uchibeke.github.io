@@ -3,10 +3,10 @@
 		<div id="" class="row text-center nav-wrapper">
 			<a class="pull-left nav-l"  ng-href="#!/home"> <i class="glyphicon glyphicon-home " aria-hidden="true"></i> </a>
 			<!-- <a class="pull-left nav-l"  ng-href="#!/photoLifestyle"> <span class=""></span> Lifestyle</a> -->
-			<a class="" id="contactBtn"  data-toggle="modal" data-target="#contactModal" href=""><i class="glyphicon glyphicon-play " aria-hidden="true"></i></a>
+			<a   ng-href="#!/photography" id="contactBtn"  ng-click="togglePlay('galDiv');">
+				<i class="glyphicon glyphicon-play" ng-show="musicPaused"></i><i class="fa fa-circle-o-notch fa-spin" ng-show="!musicPaused"></i></a>
 			<!-- <a class="pull-right nav-r"  ng-href="#!/photoInvestment"> <span class=""></span> Investment</a> -->
-			<!-- <a class="pull-right nav-r" onclick="gotoRight('galDiv')"> Scroll</a> -->
-			<a class="pull-right nav-r"  ng-click="goToPage('/about')" href=""> <i class="glyphicon glyphicon-picture " aria-hidden="true"></i></a>
+			<a class="pull-right nav-r"  ng-click="goToPage('/about')" href=""> <i class="glyphicon glyphicon-picture "></i></a>
 		</div>
 </nav>
 <div ng-include="'views/contact.html'" ></div>
