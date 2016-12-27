@@ -23,7 +23,7 @@ function($routeProvider) {
 	}).when('/tickets', {
 		templateUrl : 'partials/design/makeTicket.html',
 		controller : 'TicketController'
-	}).when('/nameBadge', {
+	}).when('/namebadge', {
 		templateUrl : 'partials/design/makeNameBadge.html',
 		controller : 'TicketController'
 	}).when('/aboutconf', {

@@ -1,12 +1,12 @@
 <!-- Simon : How do I add name of group organizing event -->
 <!-- Megan: Name badge. Synch accross devices -->
 <div ng-include="'partials/nav.html'"></div>
-<section class="guestinfo uofs-section container-fluid animated slideInRight" id="badgePage">
+<section class="guestinfo  container-fluid animated slideInRight pg" id="badgePage">
 	<div class="hideOnPrint" ng-hide="printSet">
 		<div class="back_div pull-left ">
-			<a type="button" class="btn btn-default btn-xs" ng-href="#/populate"> <span class="uofs-icon uofs-icon-chevron-left"></span> </a></a>
+			<a type="button" class="btn btn-default btn-xs" ng-href="#!/populate"> <span class="glyphicon glyphicon-chevron-left"></span> </a></a>
 		</div>
-		<h1 class="text-center uofs-page-title"><a>BADGE DESIGNER</a></h1>
+		<h1 class="text-center"><a>BADGE DESIGNER</a></h1>
 		<p>
 			Design name badges by uploading the logo of the event and up to
 			4 logos event sponsors. Names of attendees will be added automatically.
@@ -87,7 +87,7 @@
 						</button>
 					</div>
 					<div class="center-block col-md-6">
-						<a type="button" class="btn btn-primary btn-xs btn-block" ng-href="#/populate">Manage Guests</a>
+						<a type="button" class="btn btn-primary btn-xs btn-block" ng-href="#!/populate">Manage Guests</a>
 					</div>
 				</div>
 				<div class=" center-block row text-justify text-muted">
@@ -117,7 +117,7 @@
 				<div class="tab-content " id="widget">
 					<div class=" tab-pane active center-block text-center backNFront" id="layout1" >
 						<div class="badeContainer">
-							<div class="row nameBadge center-block text-center" ng-style="previewStyle()">
+							<div class="row nameBadge center-block text-center" ng-attr-style="{{previewStyle()}}">
 								<div class=" badgeRow1" style="text-align: left;">
 									<div class=" " ng-show="toUpload">
 										<img ng-src="{{picFile | ngfDataUrl}}" width="40%" class=""/>
@@ -152,7 +152,7 @@
 						<!-- Badge back -->
 						<div class="badgeBack">
 							<div class="badeContainer">
-								<div class="row nameBadge center-block text-center" ng-style="previewStyle()">
+								<div class="row nameBadge center-block text-center" ng-attr-style="{{previewStyle()}}">
 									<div class=" badgeRow1" style="text-align: left;">
 										<div class=" " ng-show="toUpload">
 											<img ng-src="{{picFile | ngfDataUrl}}" width="40%" class=""/>
@@ -187,16 +187,16 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-2 col-xs-12 ">
+			<!-- <div class="col-md-2 col-xs-12 ">
 				<div class="">
 					<div class="col-md-6 col-xs-6 pull-right">
 						<h2 class="text-center row">Fill</h2>
 						<br />
 						<div class="text-center row ticketColors">
-							<div class="styleBtns cf" ng-repeat="item in $storage.style ">
-								<a ng-click="ticketBackground(item.backgroundColor)">
+							<div class="styleBtns cf" ng-repeat="item in $storage.style | orderBy:'-' ">
+								<a ng-click="ticketBackground(item.hex)">
 								<div type="button" class="btn  btn-xs "
-								ng-style="textBtnStyle(item.backgroundColor)"
+								ng-attr-style="textBtnStyle(item.hex)"
 								style="">
 									&nbsp;
 								</div> </a>
@@ -210,7 +210,6 @@
 							<button  type="button" class="btn btn-xs btn-primary " ng-click="ticketBackground(userFillColor)">
 								Ok
 							</button>
-							<!-- Use your own color. Enter color name or code -->
 
 						</div>
 					</div>
@@ -219,9 +218,9 @@
 						<br />
 						<div class="text-center row ticketColors">
 							<div class="styleBtns_Txt cf" ng-repeat="item in $storage.style ">
-								<a ng-click="ticketTxtColor(item.color);">
+								<a ng-click="ticketTxtColor(item.hex);">
 								<div type="button" class="btn  btn-xs "
-								ng-style="textBtnStyle(item.color)"
+								ng-attr-style="textBtnStyle(item.hex)"
 								style="">
 									&nbsp;
 								</div> </a>
@@ -229,7 +228,6 @@
 						</div>
 						<br />
 						<div class="text-center row">
-							<!-- Use your own color. Enter color name or code -->
 							<input ng-model="userTextColor" class="row text-center" style="width: 100%;" placeholder="color"
 							/>
 							<br />
@@ -239,7 +237,60 @@
 						</div>
 					</div>
 				</div>
+			</div> -->
+			
+			<!-- /// -->
+			
+			
+			<div class="col-md-2 col-xs-12 text-center center-block" >
+				<a href="" ng-click="showTextColor=!showTextColor" ng-show="showTextColor"><i class="text-center fa fa-toggle-off text-bold" > </i> </i></a>
+				<a href="" ng-click="showTextColor=!showTextColor" ng-show="!showTextColor"><i class="text-center fa fa-toggle-on text-bold" > </i></a>
+				<div class="col-sm-12  pull-right" ng-hide="showTextColor">
+					<div class="text-center row ticketColors">
+						<div class="styleBtns cf" ng-repeat="item in $storage.style | orderBy:'-' ">
+							<a ng-click="ticketBackground(item.hex)">
+							<div type="button" class="btn  btn-xs "
+							ng-style="textBtnStyle(item.hex)"
+							style="">
+								&nbsp;
+							</div> </a>
+						</div>
+					</div >
+					<br />
+					<div class="text-center row">
+						<input ng-model="userFillColor" class="row text-center" style="width: 100%;" placeholder="color"
+						/>
+						<br />
+						<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketBackground(userFillColor)">
+							Ok
+						</button>
+
+					</div>
+				</div>
+				<div class="col-sm-12 pull-right" ng-show="showTextColor">
+					<div class="text-center row ticketColors">
+						<div class="styleBtns_Txt cf" ng-repeat="item in $storage.style">
+							<a ng-click="ticketTxtColor(item.hex);">
+							<div type="button" class="btn btn-xs "
+							ng-style="textBtnStyle(item.hex)"
+							style="">
+								&nbsp;
+							</div> </a>
+						</div>
+					</div>
+					<br />
+					<div class="text-center row">
+						<input ng-model="userTextColor" class="row text-center" style="width: 100%;" placeholder="color"
+						/>
+						<br />
+						<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketTxtColor(userTextColor)">
+							Ok
+						</button>
+					</div>
+				</div>
 			</div>
+			
+			<!--  -->
 		</div>
 		<div class="row">
 			<br />
@@ -261,7 +312,7 @@
 		<div class="pull-left ">
 			<button   type="button" class="btn btn-default  btn-xs" ng-show="printSet"
 			ng-click="printSet=false;($storage.sampleView) = false">
-				<span class="uofs-icon uofs-icon-chevron-left"></span>
+				<span class="glyphicon glyphicon-chevron-left"></span>
 			</button>
 		</div>
 		<div class="pull-right " >
@@ -276,7 +327,7 @@
 			ng-repeat="item in $storage.guestsList" >
 				<div class=" tab-pane active center-block text-center backNFront" id="layout1" >
 					<div class="badeContainer nameBadgePrinting">
-						<div class="row nameBadge center-block text-center" ng-style="previewStyle()">
+						<div class="row nameBadge center-block text-center" ng-attr-style="{{previewStyle()}}">
 							<div class=" badgeRow1" style="text-align: left;">
 								<div class=" " ng-show="toUpload">
 									<img ng-src="{{picFile | ngfDataUrl}}" width="40%" class="img-responsive"/>
@@ -312,7 +363,7 @@
 					<!-- Badge back -->
 					<div class="badgeBack">
 						<div class="badeContainer nameBadgePrinting">
-							<div class="row nameBadge center-block text-center " ng-style="previewStyle()">
+							<div class="row nameBadge center-block text-center " ng-attr-style="{{previewStyle()}}">
 								<div class=" badgeRow1" style="text-align: left;">
 									<div class=" " ng-show="toUpload">
 										<img ng-src="{{picFile | ngfDataUrl}}" width="40%" class="img-responsive"/>

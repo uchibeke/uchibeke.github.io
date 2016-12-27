@@ -1,10 +1,10 @@
 <div ng-include="'partials/nav_party.html'"></div>
 <!-- Avery paper. Fit 6 per page. Design and just print -->
-<section class="guestinfo uofs-section container-fluid" id="populatePage">
+<section class="guestinfo  container-fluid pg" id="populatePage">
 	<!-- <div class="back_div pull-left ">
-	<a type="button" class="btn btn-default btn-xs" ng-href="#/home"> <span class="glyphicon glyphicon-menu-left"></span> </a></a>
+	<a type="button" class="btn btn-default btn-xs" ng-href="#!/home"> <span class="glyphicon glyphicon-menu-left"></span> </a></a>
 	</div> -->
-	<h1 class="text-center uofs-page-title"><a>New Event</a></h1>
+	<h1 class="text-center "><a>New Event</a></h1>
 	<!-- <h4 class="text-center "><a>{{$storage.eventName}}</a></h4> -->
 	<div class="populate-name " style="top: 50%;" ng-show="!showAddTickNum">
 		<div class=" center-block col-xs-12">
@@ -50,12 +50,12 @@
 				<!-- <div class="form-group col-md-12  col-xs-12 text-center" ng-show="tDesign || $storage.guestsList.length>0">
 				<hr />
 				<br />
-				<a type="button" class="btn btn-primary  "  ng-href="#/tickets"><span class="glyphicon glyphicon-edit"></span> Design Tickets </a>
+				<a type="button" class="btn btn-primary  "  ng-href="#!/tickets"><span class="glyphicon glyphicon-edit"></span> Design Tickets </a>
 				</div> -->
 			</form>
 		</div>
 		<div class="forwardCenterArr ">
-			<a  class="" ng-href="#/dashboard"  href=""> <span class="glyphicon glyphicon-menu-right"></span> </a> </a>
+			<a  class="" ng-href="#!/dashboard"  href=""> <span class="glyphicon glyphicon-menu-right"></span> </a> </a>
 		</div>
 		<p></p>
 		<div class="row text-center center-block" ng-show="(tDesign || $storage.guestsList.length>0)" ng-hide="guestAddFeedback">

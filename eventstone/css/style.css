@@ -78,17 +78,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 	z-index: 10;
 }
 
-/*.searchBar {
- width: 100%;
- }*/
 .dataField {
 	width: 100%;
 }
 
-.guestlist li {
+.guestLive {
 	margin: 0;
 	padding: 10px 10px 10px;
-	border-bottom: 1px dotted black;
+	border-bottom: 1px solid #EEEEEE;
 }
 
 .guestlist a {
@@ -749,4 +746,9 @@ body {
 	/*-moz-border-radius: 50px 0px 90px 0px;*/
 	/*-webkit-border-radius: 50px 0px 90px 0px;*/
 	border: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+.pg {
+	padding-top:70px;
+
 }

@@ -2,7 +2,6 @@
 	margin-top: 3px !important;
 	margin-bottom: 0px !important;
 	font-family: 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
-	/*width: 132px !important;*/
 	display: block !important;
 	print-color-adjust: exact !important;
 	-webkit-print-color-adjust: exact !important;
@@ -12,9 +11,7 @@
 	margin-top: 3px !important;
 	margin-bottom: 0px !important;
 	border-style: solid;
-	/*border-right: medium solid #363942;*/
 	border-left: medium solid #363942;
-	/*width: 352px !important;*/
 	display: block !important;
 	print-color-adjust: exact !important;
 	-webkit-print-color-adjust: exact !important;
@@ -25,15 +22,10 @@
 	margin-top: 3px !important;
 	margin-bottom: 0px !important;
 	font-family: 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
-	/*width: 44px !important;*/
 }
 .centerDiv {
 	font-family: 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
 	width: 500px !important;
-}
-
-.centerDiv_1 {
-	/*width: 117px !important;*/
 }
 
 .centerDiv_2 {
@@ -41,10 +33,6 @@
 	border-style: solid !important;
 	border-right: thin solid #363942 !important;
 	border-left: thin solid #363942 !important;
-}
-
-.centerDiv_3 {
-	/*width: 60px !important;*/
 }
 
 .eventDets {
@@ -96,7 +84,6 @@
 	border-style: solid;
 	border: thin dashed red;
 	font-family: 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
-	color: #191970;
 	text-align: center;
 	padding-top: 5px;
 }

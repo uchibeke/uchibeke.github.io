@@ -1,4 +1,4 @@
-<section onload="startTime()" class="guestpage container-fluid uofs-section  " id="livePage" ng-mouseover="hide_logo=true;">
+<section onload="startTime()" class="guestpage container-fluid pg " id="livePage" ng-mouseover="hide_logo=true;">
 
 	<div class="row text-center text-info center-block" ng-show="firstLiveScreen">
 		<p ng-show="firstLiveScreen">
@@ -17,7 +17,7 @@
 	</div>
 	<div class="row" ng-show="secondLiveScreen" >
 		<form class="search center-block row text-center form">
-			<h1 class="text-center uofs-page-title"><a>{{($storage.eventName).toUpperCase()}}</a></h1>
+			<h1 class="text-center">{{($storage.eventName).toUpperCase()}}</h1>
 			<br class="clearfix"/>
 			<div class="row">
 
@@ -30,19 +30,19 @@
 				</p>
 			</div>
 		</form>
-		<ul class="guestlist row" ng-hide="visualize()" >
-			<li class="guestLive cf" ng-repeat="item in $storage.guestsList | filter:guestSearch">
-				<span  class=" text-left col-lg-2 col-md-2 col-sm-2 liveGList" ng-repeat="a in item"> {{a ? a : 'Not Checked-in'}}
-					<br />
-				</span>
-				<div class="row">
+		<div class="guestlist" ng-hide="visualize()" >
+			<div class="guestLive clearfix" ng-repeat="item in $storage.guestsList | filter:guestSearch">
+				<div class="cl-xs-10">
+					<span  class="text-left col-xs-2 liveGList" ng-repeat="a in item"> {{a ? a : 'Not Checked-in'}} </span>
+				</div>
+				<div class="col-xs-2 pull-right">
 					<button  type="button" ng-show="item.guestStatus == false"
 					class="btn btn-primary checkInBtn  btn-danger pull-right" ng-click="checkedIn($storage.guestsList.indexOf(item));">
 						Check-In
 					</button>
 				</div>
-			</li>
-		</ul>
+			</div>
+		</div>
 	</div>
 	<button  type="button" ng-show="addNewGuestOption"
 	class="btn btn-default" ng-click="showAddField=!showAddField">
@@ -70,10 +70,10 @@
 	<br />
 	<div id="txt" class="text-center " style="font-size: 80px;"></div>
 	<div class="back_div pull-left ">
-		<a type="button" class="btn btn-default btn-xs" ng-href="#/dashboard"> <span class="glyphicon glyphicon-blackboard"></span></a>
+		<a type="button" class="btn btn-default btn-xs" ng-href="#!/dashboard"> <span class="glyphicon glyphicon-blackboard"></span></a>
 	</div>
 	<div class="pull-right" style="font-size: 25px;">
-		<a type="button" class="" ng-href="#/aboutparty" target="_blank"> <i class="uofs-icon uofs-icon-help"></i></a>
+		<a type="button" class="" ng-href="#!/aboutparty" target="_blank"> <i class="glyphicon glyphicon-question-sign"></i></a>
 	</div>
 </section>
 

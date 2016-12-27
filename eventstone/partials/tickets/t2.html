@@ -1,23 +1,23 @@
 <br />
-<div class="row text-center ticket2 center-block" ng-style="previewStyle()">
+<div class="row text-center ticket2 center-block" ng-attr-style="{{previewStyle()}}">
 	<div class="col-md-2 col-lg-2 col-xs-2 ticket2Col1 text-center center-block">
 		<span class="ticketGName">{{$storage.guestsList[0].ticketNumber}}</span>
 		<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
 		src="{{barcodeSrc($storage.guestsList[0].ticketNumber,$storage.ticketBgColor,$storage.ticketText)}}">
-		<p class=" text-center userInfo" style="font-size: xx-small; " ng-style="previewStyle()" >
+		<p class=" text-center userInfo" style="font-size: xx-small; " ng-attr-style="{{previewStyle()}}" >
 			{{$storage.ageInfo}}
 		</p>
-		<span class="ticketP text-center" ng-style="previewStyle()">{{$storage.ticket[0].ticketPrice | currency }}</span>
+		<span class="ticketP text-center" ng-attr-style="{{previewStyle()}}">{{$storage.ticket[0].ticketPrice | currency }}</span>
 		<br />
 		<span  class="securityEncoding">{{$storage.secEncoding }}</span>
 	</div>
 	<div class="col-md-10 col-lg-10 col-xs-10 ticket2Col2  text-center center-block">
-		<h2 class="text-center ticket2Title pull-right" ng-style="previewStyle()"  > {{$storage.eventName}} </h2>
+		<h2 class="text-center ticket2Title pull-right" ng-attr-style="{{previewStyle()}}"  > {{$storage.eventName}} </h2>
 		<a class="clearfix"></a>
 		<div class="row centerDiv2">
-			<h5 class="text-left ticket2Venue" ng-style="previewStyle()"  > Venue:&nbsp;<span class="underline">{{$storage.ticket[0].eventVenue}}</span></h5>
-			<h5 class="text-left ticket2Date" ng-style="previewStyle()"  > Date:&nbsp;&nbsp;&nbsp;&nbsp;<span class="underline">{{$storage.ticket[0].eventDate}} {{$storage.ticket[0].eventTime}}</span></h5>
-			<p class=" text-left userInfo2" ng-style="previewStyle()" >
+			<h5 class="text-left ticket2Venue" ng-attr-style="{{previewStyle()}}"  > Venue:&nbsp;<span class="underline">{{$storage.ticket[0].eventVenue}}</span></h5>
+			<h5 class="text-left ticket2Date" ng-attr-style="{{previewStyle()}}"  > Date:&nbsp;&nbsp;&nbsp;&nbsp;<span class="underline">{{$storage.ticket[0].eventDate}} {{$storage.ticket[0].eventTime}}</span></h5>
+			<p class=" text-left userInfo2" ng-attr-style="{{previewStyle()}}" >
 				{{$storage.otherTicketInfo}}
 			</p>
 		</div>
