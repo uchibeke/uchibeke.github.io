@@ -1,17 +1,18 @@
 <div ng-include="'partials/nav.html'"></div>
 <section class="guestpage container-fluid pg " id="guestListPage">
 	<div class=" pull-left" >
-		<a class="btn btn-default btn-xs" type="button" ng-href="#!/populate"> <span class="uofs-icon uofs-icon-chevron-left"></span> </a>
+		<a class="btn btn-default btn-xs" type="button" ng-href="#!/dashboard"> <span class="fa fa-tachometer"></span> Dashboard</a>
 	</div>
+	<div class="">
+		<p style="" class=" pull-right">
+			<button class="btn btn-primary btn-xs pull-right" ng-click="eventSummary = !eventSummary;">
+				<span ng-show="!eventSummary">View summary</span><span ng-show="eventSummary">Hide Summary</span>
+			</button>
+		</p>
+	</div>
+	<div class="clearfix"></div>
 	<div class="guestlist row  text-center center-block" >
 		<div class="row">
-			<div class="">
-				<p style="" class="col-xs-12 col-md-2 pull-right">
-					<button class="btn btn-primary btn-xs pull-right" ng-click="eventSummary = !eventSummary;">
-						<span ng-show="!eventSummary">View summary</span><span ng-show="eventSummary">Hide Summary</span>
-					</button>
-				</p>
-			</div>
 			<div class="  panel panel-default" data-toggle="buttons" style="padding-bottom: 2%;"
 			ng-show="eventSummary">
 				<div class="panel-body">
@@ -40,49 +41,31 @@
 					<br />
 					<div class="row text-center " >
 						<span class="col-lg-4 col-md-4 col-sm-4">{{$storage.guestsList.length}} total</span>
-						<!-- <br /> -->
 						<span class="col-lg-4 col-md-4 col-sm-4 text-success">{{checkIns()}} checked-in</span>
-						<!-- <br /> -->
 						<span class="col-lg-4 col-md-4 col-sm-4 text-warning">{{noCheckIns()}} not checked-in</span>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<form class="search  text-center form col-xs-12 col-md-10 pull-left">
-				<input ng-model="guestSearch" placeholder="Search for a ticket number or name"
-				autofocus="autofocus" class="searchBar form-control gListSearch center center-block" >
-			</form>
-			<p style="" class="col-xs-12 col-md-2 pull-right">
-				<button class="btn btn-primary btn-xs" ng-click="printGuestList()">
-					Print List
-				</button>
-				<button  ng-model="btnText" type="button" class="btn btn-warning btn-xs"
-				ng-show="$storage.guestsList.length > 0" ng-click="deleteStored()">
-					Remove All
-				</button>
-			</p>
+		<a class="btn btn-primary btn-lg pull-left " ng-click="exportData('toPrint', 'xls')"><span class="glyphicon glyphicon-save"></span></a>
+		<div class="clearfix"></div>
+		<div id="toPrint">
+			<h1>{{$storage.eventName }}</h1>
+			<div class="row text-center " >
+				<span class="col-lg-4 col-md-4 col-sm-4">{{$storage.guestsList.length}} total</span>
+				<span class="col-lg-4 col-md-4 col-sm-4 text-success">{{checkIns()}} checked-in</span>
+				<span class="col-lg-4 col-md-4 col-sm-4 text-warning">{{noCheckIns()}} not checked-in</span>
+			</div>
+			<br />
+			<table class="table table-responsive table-bordered text-left table-condensed" >
+				<tbody>
+					<tr ng-repeat="item in $storage.guestsList" class="toPrintTr">
+						<td ng-repeat="a in limitDisplay(item, 15) track by $index" ng-hide="a == undefined || item[0] == '-'">{{ a ? a : "Not Checked In" }}</td>
+						<td ng-show="item[0] == '-'">{{item.id}}</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
-		<table class="table table-responsive table-hover table-striped table-bordered table-condensed" >
-			<tbody>
-				<tr ng-repeat="item in $storage.guestsList | filter:guestSearch">
-					<td ><a href="" ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"><span class="glyphicon glyphicon-remove"></span></td>
-					<td ng-repeat="a in item">{{a ? a : 'Not Checked-in'}}</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<div class="row">
-		<p class="row text-center " ng-show="$storage.guestsList.length != $storage.backUpGuestList.length">
-			<span ng-show="listreplace"> Did you remove all your guest? You can restore it from back up.
-				<button type="button" class="btn btn-primary btn-xs " ng-click="replaceList()">
-					Restore from Back Up
-				</button></span>
-			<span ng-show="!listreplace">This would remove all current guests. Are you sure?
-				<button type="button" class="btn btn-primary btn-xs " ng-click="replaceList(); restoreFromBackUp()">
-					Yes. Replace.
-				</button></span>
-		</p>
 	</div>
 </section>
 

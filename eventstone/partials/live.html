@@ -4,7 +4,7 @@
 		<p ng-show="firstLiveScreen">
 			On next page, enter a ticket number or name and click <b>check in</b>.
 		</p>
-		<h3>Would you want to add new people to the list during checking?</h3>
+		<h3>Would you want to add new people to the list during checkin?</h3>
 		<div class="row btn-group-lg">
 			<div class=" text-center center-block ">
 				<a type="button" class="btn btn-default "
@@ -71,10 +71,13 @@
 	<br />
 	<div id="txt" class="text-center " style="font-size: 80px;"></div>
 	<div class="back_div pull-left ">
-		<a type="button" class="btn btn-default btn-xs" ng-href="#!/dashboard"> <span class="glyphicon glyphicon-blackboard"></span></a>
+		<a type="button" class="btn btn-default btn-xs" ng-href="#!/dashboard"> <span class="fa fa-tachometer"></span></a>
 	</div>
 	<div class="pull-right" style="font-size: 25px;">
-		<a type="button" class="" ng-href="#!/aboutparty" target="_blank"> <i class="glyphicon glyphicon-question-sign"></i></a>
+		<a type="button" class="" ng-href="#!/aboutparty" target="_blank" ng-show="$storage.eventType == 'ticket'"> <i class="glyphicon glyphicon-question-sign"></i></a>
+	</div>
+	<div class="pull-right" style="font-size: 25px;">
+		<a type="button" class="" ng-href="#!/aboutconf" target="_blank" ng-show="$storage.eventType == 'list'"> <i class="glyphicon glyphicon-question-sign"></i></a>
 	</div>
 </section>
 

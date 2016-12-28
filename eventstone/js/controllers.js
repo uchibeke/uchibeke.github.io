@@ -173,7 +173,6 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		var rows = dataFieldExcel ? dataFieldExcel.split('\n') : $scope.dataFieldExcel.split('\n');
 		var obj = [];
 		for (var i = 0; i < rows.length; i++) {
-			console.log(rows[i]);
 			var arr = rows[i].split("\t");
 			obj.push(processRow(arr));
 		}
@@ -201,13 +200,23 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 
 
 	$scope.limitDisplay = function(item, lim) {
+		for (var i = 0; i < lim; i++) {
+			item[i] = item[i] ? item[i] : "-";
+		}
 		if (item.length != undefined && length > 0) {
 			return item;
 		} else {
-			item.length = 7;
+			// 30 because a list will always be less than 30 fields
+			item.length = 10;
 			item = Array.prototype.slice.call(item, 0, lim);
 			return item;
 		}
+	};
+	$scope.handleNull = function(item) {
+		for (var i = 0; i < item.length; i++) {
+			item[i] = item[i] ? item[i] : "-";
+		}
+		return item;
 	};
 
 	$scope.checkedIn = function(x) {
@@ -338,10 +347,20 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		return totReg;
 	};
 
-	$scope.exportData = function(name) {
-		var blob = new Blob([document.getElementById('exportable').innerHTML], {
-			type : "application.vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+	$scope.exportData = function(id, ext, name) {
+		var types = {
+			pdf : "application/pdf",
+			word : "",
+			xls : "application.vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8",
+			txt : "text/plain",
+			png : "image/png",
+			jpeg : "image/jpeg",
+			gif : "image/gif"
+
+		};
+		var blob = new Blob([document.getElementById(id).innerHTML], {
+			type : types[ext] ? types[ext] + ";charset=utf-8" : types.pdf + ";charset=utf-8"
 		});
-		saveAs(blob, $scope.$storage.eventName + "-" + $scope.$storage.eventType + "-event.xls");
+		saveAs(blob, name ? name : $scope.$storage.eventName + "-" + $scope.$storage.eventType + "-event" + "." + ext);
 	};
 }]);

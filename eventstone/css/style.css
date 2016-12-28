@@ -659,3 +659,9 @@ body {
 	margin-top:5px !important;
 	
 }
+.toPrintTr {
+	line-height: 35px;
+	font-size: 11pt;
+	margin-top:5px !important;
+	padding 0;
+}
