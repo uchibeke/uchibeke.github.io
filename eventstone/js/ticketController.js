@@ -3,12 +3,12 @@ var ticketControllers = angular.module('ticketControllers', ['ngStorage', 'ngSan
 ticketControllers.controller('TicketController', ['$rootScope', '$scope', '$http', '$localStorage', '$sce', 'Upload', '$timeout', 'analytics', '$firebaseObject', '$firebaseArray', '$firebaseAuth', 'shareDataService',
 function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analytics, $firebaseObject, $firebaseArray, $firebaseAuth, shareDataService) {
 	
-	delete $scope.$storage.style;
+	// delete $scope.$storage.style;
 	$http.get('js/crayola.json').then(function(result) {
 		var xx = result.data;
 				
 		$http.get('js/styles.json').then(function(result2) {
-			$scope.$storage.style = Object.assign(xx, result2.data);
+			$scope.$storage.style = result2.data.concat(xx).concat(manyColors);
 		}, function(error) {
 			console.log(error);
 		}).finally(function() {
@@ -24,7 +24,6 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 	$http.get('js/ticketVariants.json').then(function(result) {
 		$scope.ticketVariants = result.data;
 	}, function(result) {
-		console.log(result);
 	}).finally(function() {
 		console.log("finally finished repos");
 	});

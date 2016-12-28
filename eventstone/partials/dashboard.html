@@ -1,33 +1,36 @@
 <div ng-include="'partials/nav.html'"></div>
 <section class="container-fluid pg " id="dashboardPage" style="left: 0;">
-	<div class="row text-center center-block">
-		<div ng-repeat="item in $storage.allEvents" class=" col-xs-4 text-center" >
-			<a   style="width:100%;" href="" class="btn btn-lg" type="button" ng-click="setEvent(item.eventName)" ng-style="$storage.allEvents[$storage.allEvents.indexOf(item)].eventName == $storage.eventName && {'border':'1px solid #F50057','outline':'0'}" > {{item.eventName}}</a>
+	<div class="row text-left">
+		<div ng-repeat="item in $storage.allEvents" class="col-md-4 col-sm-6 col-xs-12" >
+			<a   style="width:100%;text-align: left" href="" class="btn btn-lg" type="button" ng-click="setEvent(item.eventName, item.eventType)" ng-style="$storage.allEvents[$storage.allEvents.indexOf(item)].eventName == $storage.eventName && {'border':'1px solid #F50057','outline':'0'}" > {{item.eventName}}</a>
 			<!-- <a style="position: absolute; left:20px; top:3px;" href="#!/tickets" ng-show="$storage.allEvents[$storage.allEvents.indexOf(item)].eventName == $storage.eventName"><span class="fa fa-ticket text-muted"></span></a>
 			<a style="position: absolute; right:20px; top:3px;" ng-href="#!/newevent"   data-toggle="tooltip" title="Edit Event" ng-show="$storage.allEvents[$storage.allEvents.indexOf(item)].eventName == $storage.eventName"><span class="glyphicon glyphicon-edit text-muted"></span></a> -->
 			<a style="position: absolute; right:20px; bottom:0px;" href=""  data-toggle="modal" data-target="#confirmModal" ng-show="$storage.allEvents[$storage.allEvents.indexOf(item)].eventName == $storage.eventName"><span class="glyphicon glyphicon-remove text-muted"></span></a>
 		</div>
-		<div  class="col-lg-4 col-sm-4 col-xs-4 text-center" >
-			<a  style="width:100%;" href="" class="btn btn-lg" type="button" ng-href="#!/newevent"   data-toggle="tooltip" title="Add new Event"><span class="glyphicon glyphicon-plus "> </span>  New Event </a>
+		<div  class="col-xs-12" >
+			<a  style="width:100%;text-align: left;font-size: 40px;" href="" class="btn btn-lg" type="button" ng-href="#!/new"   data-toggle="tooltip" title="Add new Event"><span class="glyphicon glyphicon-plus-sign "> </span> </a>
 		</div>
 	</div>
 	<br />
-	<div class="row">
+	<div class="" ng-hide="$storage.allEvents == undefined || $storage.allEvents.length < 1">
 		<div class="btn-group-justified">
-			<a class="btn btn-lg" href="#!/tickets"><span class="fa fa-ticket"> Make Ticket</span></a>
-			<a class="btn btn-lg" href="#!/newevent"><span class="fa fa-edit"> Change Event Details</span></a>
+			<a class="btn btn-lg" href="#!/tickets" ng-show="$storage.eventType == 'ticket'"><span class="fa fa-ticket"
+			> Design Ticket</span></a>
+			<a class="btn btn-lg" href="#!/namebadge" ng-show="$storage.eventType == 'list'"><span class="fa fa-ticket"
+			> Design Namebadge</span></a>
+			<!-- <a class="btn btn-lg" href="#!/newevent"><span class="fa fa-edit"> Change Event Details</span></a> -->
+			<a class="btn btn-lg" href="#!/live"><span class="glyphicon glyphicon-play">Start Event</span></a>
 		</div>
-	</div>
-	<div class="row" >
-		<form class=" text-center form col-xs-12 center-block">
+		<br />
+		<form class="text-center form col-xs-12">
 			<input ng-model="dashSearch" placeholder="Search for a ticket number or name"
-			autofocus="autofocus" class=" form-control center center-block" >
+			autofocus="autofocus" class=" form-control" >
 		</form>
 		<p class="clearfix"></p>
 		<div ng-repeat="item in $storage.guestsList  | filter:dashSearch" class="col-lg-2 col-md-3 col-sm-4 col-xs-6 text-center guestInDash"  ng-style="($index % 2 == 0) ? {'border' : '1px solid #EEEEEE'} : {'border' : '1px solid #D3DCF2'}">
-			<p  class="">
-				<a style="position: absolute; right:5px; top:5px;;" href="" ng-click="removeElement($storage.guestsList, $storage.guestsList.indexOf(item))"   data-toggle="tooltip" title="Remove a guest"><span class="glyphicon glyphicon-remove "></span></a>
-				{{item.ticketNumber}}
+			<p  class="text-left">
+				<!-- <a style="position: absolute; right:5px; top:5px;;" href="" ng-click="removeElement(item)"   data-toggle="tooltip" title="Remove a guest"><span class="glyphicon glyphicon-remove "></span></a> -->
+				{{item.id}}
 				<br />
 				<span class="text-muted"> {{item.guestStatus ? item.guestStatus : 'Not Checked-in'}}</span>
 			</p>

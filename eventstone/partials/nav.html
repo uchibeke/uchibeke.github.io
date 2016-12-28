@@ -1,9 +1,11 @@
-
 <div id="" class="navHome">
 	<a class="" href="#" data-toggle="tooltip" title="Go Home" > <i class="glyphicon glyphicon-home"></i>
 </div>
-<div  class="navHelp">
+<div ng-show="$storage.eventType == 'ticket'"  class="navHelp">
 	<a class="" ng-href="#!/aboutparty" data-toggle="tooltip" title="Go to help page"  > <i class="glyphicon glyphicon-info-sign"></i> </a>
+</div>
+<div  ng-show="$storage.eventType == 'list'" class="navHelp">
+	<a class="" ng-href="#!/aboutconf" data-toggle="tooltip" title="Go to help page"  > <i class="glyphicon glyphicon-info-sign"></i> </a>
 </div>
 <div  class="navLive">
 	<a type="" ng-href="#!/live" class="" ng-click="hide_logo=true;"  data-toggle="tooltip" title="Go live with you event" > <span class="glyphicon glyphicon-play"> </span> </a>
@@ -12,6 +14,5 @@
 	<a type="" ng-href="#!/dashboard" class="" ng-click="hide_logo=true;"  data-toggle="tooltip" title="Dashboard to see all your events" > <span class="fa fa-tachometer"> </span> </a>
 </div>
 <div  class="navlogin">
-
-	<a type="" ng-href="#!/login" style="color: #E294A9"  data-toggle="tooltip" title="Login/Logout"><img src="{{$storage.user.signInUser.photoURL}}" width="50px" class="img-circle img-responsive"/> <span class=""> </span> </a>
+	<a type="" ng-href="#!/login" style="color: #E294A9;font-size: 50px"  data-toggle="tooltip" title="Login/Logout"> <span class="glyphicon glyphicon-user"> </span> </a>
 </div>

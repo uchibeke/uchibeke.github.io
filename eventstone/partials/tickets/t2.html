@@ -1,9 +1,9 @@
 <br />
 <div class="row text-center ticket2 center-block" ng-attr-style="{{previewStyle()}}">
 	<div class="col-md-2 col-lg-2 col-xs-2 ticket2Col1 text-center center-block">
-		<span class="ticketGName">{{$storage.guestsList[0].ticketNumber}}</span>
+		<span class="ticketGName">{{$storage.guestsList[0].id}}</span>
 		<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
-		src="{{barcodeSrc($storage.guestsList[0].ticketNumber,$storage.ticketBgColor,$storage.ticketText)}}">
+		src="{{barcodeSrc($storage.guestsList[0].id,$storage.ticketBgColor,$storage.ticketText)}}">
 		<p class=" text-center userInfo" style="font-size: xx-small; " ng-attr-style="{{previewStyle()}}" >
 			{{$storage.ageInfo}}
 		</p>

@@ -7,17 +7,17 @@
 					<b class="text-muted"> Login to get started </b>
 					<br class="clearfix" />
 					<div class="form-group col-xs-4">
-						<button type="submit" class="btn btn-primary loginBtn" ng-click="login('facebook')" >
+						<button type="submit" class="btn btn-primary loginBtn btn-lg" ng-click="login('facebook')" >
 							<i class="fa fa-facebook-official" ></i>
 						</button>
 					</div>
 					<div class="form-group col-xs-4">
-						<button type="submit" class="btn btn-primary loginBtn" ng-click="login('google')">
+						<button type="submit" class="btn btn-primary loginBtn btn-lg" ng-click="login('google')">
 							<i class="fa fa-google" ></i>
 						</button>
 					</div>
 					<div class="form-group col-xs-4">
-						<button type="submit" class="btn btn-primary loginBtn" ng-click="login('twitter')">
+						<button type="submit" class="btn btn-primary loginBtn btn-lg" ng-click="login('twitter')">
 							<i class="fa fa-twitter" ></i>
 						</button>
 					</div>
@@ -30,8 +30,8 @@
 				<p></p>
 			</form>
 			<form class="form text-center center-block" ng-hide="$storage.user == null">
-				<div class="row center-block text-center">
-					<img src="{{$storage.user.signInUser.photoURL}}" class=" img-responsive"/>
+				<div class="row">
+					<img src="{{$storage.user.signInUser.photoURL}}" class=" img-responsive center-block"/>
 					<p>
 						{{$storage.user.signInUser.displayName}}
 						<br />
@@ -51,8 +51,8 @@
 			<source src="images/people.mp4" type="video/webm">
 			<source src="images/people.mp4" type="video/mp4">
 		</video>
-		<div class="row text-center center-block" id="home_logo">
-			<a ng-href="#!/home"><img  src="images/evewhytelogo_spaced.png" class="img-responsive"  /></a>
+		<div class="row" id="home_logo">
+			<a ng-href="#!/home"><img  src="images/evewhytelogo_spaced.png" class="img-responsive center-block" /></a>
 		</div>
 	</div>
 </div>

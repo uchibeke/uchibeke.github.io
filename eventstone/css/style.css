@@ -331,6 +331,12 @@ form .progress {
 .liveGList {
 	display: inline-block !important;
 	font-size: 12pt !important;
+	word-break: break-all;
+	position: relative;
+	width: 100%;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
 }
 
 .hrInList {
@@ -344,17 +350,7 @@ form .progress {
 	page-break-inside: avoid !important;
 }
 
-.home_center #home_party, .home_center #home_conf {
-	/*font-size: 30px;*/
-	/*display: flex;
-	 justify-content: center;
-	 align-items: center;*/
-
-}
-
 .home_center a:hover {
-	transform: scale(1.05) !important;
-	transition: 0.5s ease !important;
 	z-index: 10000;
 }
 
@@ -402,15 +398,14 @@ a {
 	text-decoration: none
 }
 .btn-primary:focus, .btn-primary:hover, .btn-default:focus, .btn-default:hover, .btn-warning:focus, .btn-warning:hover {
-	background-color: black !important;
-	border: thin solid black !important;
-	text-decoration: underline;
+	background-color: #F50057 !important;
+	border: 2px solid #fff !important;
 }
 
 .btn-primary, .btn-default {
 	color: white !important;
 	background-color: #F50057 !important;
-	border: thin solid #F50057 !important;
+	border: 1px solid #F50057 !important;
 }
 
 #home_welcome {
@@ -423,7 +418,6 @@ a {
 	top: 0 !important;
 	bottom: 0 !important;
 	border: none !important;
-	/*background: rgba(255, 255, 255, 0.6) !important;*/
 	color: gray !important;
 	font-size: 1.3em;
 }
@@ -443,41 +437,6 @@ a {
 #homeInput {
 	background: #F5F5F5;
 	z-index: 100000000;
-	/*color:white;*/
-}
-
-#home_party {
-	color: black !important;
-	background-repeat: no-repeat !important;
-	background-position: center center !important;
-	background-size: cover !important;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	top: 50%;
-	height: 50% !important;
-	padding: 2%;
-	-moz-transition: all .3s linear;
-	-webkit-transition: all .3s linear;
-	-ms-transition: all .3s linear;
-	-o-transition: all .3s linear;
-	transition: all .3s linear;
-	border-radius: 0 100% 0 0;
-}
-
-#home_party_btn {
-	position: fixed;
-	top: 60% !important;
-	right: 15px;
-	/*right: 0% !important;*/
-	width: 300px !important;
-	color: white !important;
-	background-color: rgba(245, 0, 87, 1) !important;!important;
-	border: thin solid #F50057 !important;
-	min-height: 150px;
-	padding: 10px;
-	text-align: left;
-	float: none;
 }
 
 #home_buttons {
@@ -494,26 +453,6 @@ a {
 	filter: blur(3px) invert(100%);
 }
 
-#home_party_btn:focus, #home_party_btn:hover {
-	/*background-color: black !important;*/
-	/*border: thin solid black !important;*/
-	/*text-decoration: none;*/
-}
-
-#home_party div, #home_conf div {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: #F5E1EA;
-	border: thin solid #F50057 !important;
-}
-
-#home_party div:hover, #home_conf div:hover {
-	background: #F50057;
-	color: #F5F5F5;
-}
 
 .newPrev:hover {
 	color: #F5F5F5 !important;
@@ -521,26 +460,6 @@ a {
 
 #partyPrev, #confPrev, .newPrev {
 	color: #F50057 !important;
-}
-
-#home_conf {
-	color: black !important;
-	background-image: url("../images/home4.jpg") !important;
-	background-repeat: no-repeat !important;
-	background-position: center center !important;
-	background-size: cover !important;
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	top: 50%;
-	height: 50% !important;
-	padding: 2%;
-	-moz-transition: all .3s linear;
-	-webkit-transition: all .3s linear;
-	-ms-transition: all .3s linear;
-	-o-transition: all .3s linear;
-	transition: all .3s linear;
-	border-radius: 100% 0 0 0;
 }
 
 .home_description {
@@ -611,21 +530,6 @@ body {
 	transform: translateX(-50%) translateY(-50%);
 	background-size: cover;
 	transition: 1s opacity;
-}
-
-#bg_grayed {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	height: auto;
-	transform: translateX(-50%) translateY(-50%);
-	background-size: cover;
-	transition: 1s opacity;
-	background: rgba(0, 0, 0, 0.5) !important;
-	z-index: -10;
 }
 
 #login_bg_grayed {
@@ -709,7 +613,7 @@ body {
 }
 
 .navHome, .navHelp, .navLive, .navGList, .navDashboard, .navlogin {
-	font-size: 20px;
+	font-size: 25px;
 }
 /*Regular (2.125" x 5.5"), Large (2.8" x 5.5"), and Jumbo (2.75" x 8.5") Other (3.5 x 8.5) New (2 x 6)*/
 /*https://www.behance.net/gallery/37596627/Wine-Art-Mixer-Ticket-Template 3.25 × 7.25 */
@@ -735,20 +639,23 @@ body {
 	z-index: 100000;
 }
 #loginInto {
-	color:  rgba(255, 255, 255, 1) !important;
+	color: rgba(255, 255, 255, 1) !important;
 	font-size: 20px;
 	height: 100px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background: rgba(0, 0, 0, 0.5) !important;
-	/*border-radius: 50px 0px 90px 0px;*/
-	/*-moz-border-radius: 50px 0px 90px 0px;*/
-	/*-webkit-border-radius: 50px 0px 90px 0px;*/
 	border: 1px solid rgba(0, 0, 0, 0.7);
 }
 
 .pg {
-	padding-top:70px;
+	padding-top: 70px;
+}
 
+.liveTr {
+	line-height: 35px;
+	font-size: 12pt;
+	margin-top:5px !important;
+	
 }

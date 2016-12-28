@@ -2,9 +2,9 @@
 
 	<div class="row text-center text-info center-block" ng-show="firstLiveScreen">
 		<p ng-show="firstLiveScreen">
-			When guests come to your event, enter their ticket number or name and click <b>check in</b> to check in the guest.
+			On next page, enter a ticket number or name and click <b>check in</b>.
 		</p>
-		<h3>Would you like to be able to add a new/unregistered guest to your guestlist during the event?</h3>
+		<h3>Would you want to add new people to the list during checking?</h3>
 		<div class="row btn-group-lg">
 			<div class=" text-center center-block ">
 				<a type="button" class="btn btn-default "
@@ -30,18 +30,19 @@
 				</p>
 			</div>
 		</form>
-		<div class="guestlist" ng-hide="visualize()" >
-			<div class="guestLive clearfix" ng-repeat="item in $storage.guestsList | filter:guestSearch">
-				<div class="cl-xs-10">
-					<span  class="text-left col-xs-2 liveGList" ng-repeat="a in item"> {{a ? a : 'Not Checked-in'}} </span>
-				</div>
-				<div class="col-xs-2 pull-right">
+		<div class="guestlist" ng-hide="visualize()">
+			<br />
+			<table class="table table-responsive table-hover text-left" >
+				<tr ng-repeat="item in $storage.guestsList | filter:guestSearch" class="liveTr">
+					<td class="">
 					<button  type="button" ng-show="item.guestStatus == false"
 					class="btn btn-primary checkInBtn  btn-danger pull-right" ng-click="checkedIn($storage.guestsList.indexOf(item));">
 						Check-In
-					</button>
-				</div>
-			</div>
+					</button></td>
+					<td ng-repeat="a in limitDisplay(item, 6) track by $index" ng-hide="a == false">{{ a ? a : "" }}</td>
+					<td ng-show="item[0] == undefined">{{item.id}}</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 	<button  type="button" ng-show="addNewGuestOption"
@@ -58,7 +59,7 @@
 		<div class=" col-lg-3 col-md-3" >
 			<button  type="button"
 			class="btn btn-primary"
-			ng-click="submitUserInput(userRegInfo);userRegInfo = '';checkedIn($storage.guestsList.length-1);liveMsgStatus=true;liveMsg();">
+			ng-click="checkInSingle(userRegInfo);liveMsgStatus=true;liveMsg();">
 				Add and Check in
 			</button>
 		</div>

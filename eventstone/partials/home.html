@@ -1,20 +1,18 @@
-<section class=" jumbotron text-center "
+<section class=" text-center "
 style="position:fixed;top:0;left:0;right:0;bottom:0;height:100%;overflow: hidden;">
 	<div class="" id="home_bg">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 "
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 jumbotron"
 		id="home_welcome">
-			<div class="text-center row center-block container-fluid" >
-				<br />
-				<h1 class="text-center"> Make it happen </h1>
-				<h1 class="text-center"> Own your event </h1>
+			<div class="text-center row center-block" style="margin-top: 180px" >
+				<h1 class="text-center"> EveWhyte </h1>
+				<h2 class="text-center">Make it happen . Own your event </h2>
 			</div>
+			<video  autoplay loop muted id="bgvid" preload="auto"
+			autoplay=""  aria-hidden="true" role="presentation">
+				<source src="images/people.mp4" type="video/webm">
+				<source src="images/people.mp4" type="video/mp4">
+			</video>
 		</div>
-		<video  autoplay loop muted  poster="images/people.jpeg" id="bgvid" preload="auto"
-		autoplay=""  aria-hidden="true" role="presentation">
-			<source src="images/people.mp4" type="video/webm">
-			<source src="images/people.mp4" type="video/mp4">
-		</video>
-		<div  id="bg_grayed"></div>
 		<div class=" center-block text-center row home_center" >
 			<div class="" id="home_buttons">
 				<a type="button" class="btn btn-primary btn-lg"  ng-href="#!/login" ng-show="!$storage.user"
@@ -24,9 +22,6 @@ style="position:fixed;top:0;left:0;right:0;bottom:0;height:100%;overflow: hidden
 				data-toggle="tooltip" title="Your dashboard has all your events"
 				data-placement="top"> Go to Dashboard </a>
 			</div>
-		</div>
-		<div class="row text-center center-block" id="home_logo">
-			<img  src="images/evewhytelogo_spaced.png" class="img-responsive"  />
 		</div>
 	</div>
 </section>

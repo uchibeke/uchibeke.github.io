@@ -4,9 +4,9 @@
 		<div style="width: 50%;" class="center center-block text-center" ng-show="toUpload">
 			<img ng-src="{{croppedDataUrl}}" width="100%" class=""/>
 		</div>
-		<span class="ticketGName">{{$storage.guestsList[0].ticketNumber}}</span>
+		<span class="ticketGName">{{$storage.guestsList[0].id}}</span>
 		<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
-		src="{{barcodeSrc($storage.guestsList[0].ticketNumber,$storage.ticketBgColor,$storage.ticketText)}}">
+		src="{{barcodeSrc($storage.guestsList[0].id,$storage.ticketBgColor,$storage.ticketText)}}">
 		<p class=" text-center userInfo"  ng-attr-style="{{previewStyle()}}" >
 			{{$storage.ageInfo}}
 		</p>

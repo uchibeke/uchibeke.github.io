@@ -10,9 +10,9 @@
 	ng-repeat="item in $storage.guestsList" >
 		<div class="row text-center ticket2 center-block" ng-attr-style="{{previewStyle()}}">
 			<div class="col-md-2 col-lg-2 col-xs-2 ticket2Col1 text-center center-block">
-				<span class="ticketGName">{{item.ticketNumber}}</span>
+				<span class="ticketGName">{{item.id}}</span>
 				<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
-				src="{{barcodeSrc(item.ticketNumber,$storage.ticketBgColor,$storage.ticketText)}}">
+				src="{{barcodeSrc(item.id,$storage.ticketBgColor,$storage.ticketText)}}">
 				<p class=" text-center userInfo" style="font-size: xx-small; " ng-attr-style="{{previewStyle()}}" >
 					{{$storage.ageInfo}}
 				</p>

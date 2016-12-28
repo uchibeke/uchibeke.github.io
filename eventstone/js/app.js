@@ -47,6 +47,9 @@ function($routeProvider) {
 	}).when('/register', {
 		templateUrl : 'partials/register.html',
 		controller : 'LoginController'
+	}).when('/new', {
+		templateUrl : 'partials/setup/new.html',
+		controller : 'MainController'
 	}).otherwise({
 		redirectTo : '/home'
 	});
