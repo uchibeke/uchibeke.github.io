@@ -67,8 +67,8 @@
 				</div>
 			</div>
 			<div class="col-sm-1 col-xs-12 text-center center-block" >
-				<a href="" ng-click="showTextColor=!showTextColor" ng-show="showTextColor"><i class="text-center fa fa-toggle-off text-bold" > </i> </i></a>
-				<a href="" ng-click="showTextColor=!showTextColor" ng-show="!showTextColor"><i class="text-center fa fa-toggle-on text-bold" > </i></a>
+				<a href="" ng-click="showTextColor=!showTextColor" ng-show="showTextColor" style="font-size: 40px"><i class="fa fa-toggle-off " > </i> </i></a>
+				<a href="" ng-click="showTextColor=!showTextColor" ng-show="!showTextColor" style="font-size: 40px" ><i class="fa fa-toggle-on" > </i></a>
 				<div class="col-sm-12  pull-right" ng-hide="showTextColor">
 					<div class="text-center row ticketColors">
 						<div class="styleBtns cf" ng-repeat="item in $storage.style | orderBy:'-' ">

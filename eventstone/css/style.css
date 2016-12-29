@@ -453,7 +453,6 @@ a {
 	filter: blur(3px) invert(100%);
 }
 
-
 .newPrev:hover {
 	color: #F5F5F5 !important;
 }
@@ -582,14 +581,14 @@ body {
 }
 
 .navHelp {
-	top: 130px;
+	top: 160px;
 	right: 5px;
 	position: fixed;
 	z-index: 100000;
 }
 
 .navLive {
-	top: 90px;
+	top: 110px;
 	right: 5px;
 	position: fixed;
 	z-index: 100000;
@@ -599,7 +598,7 @@ body {
 }
 
 .navDashboard {
-	top: 50px;
+	top: 60px;
 	right: 5px;
 	position: fixed;
 	z-index: 100000;
@@ -613,7 +612,7 @@ body {
 }
 
 .navHome, .navHelp, .navLive, .navGList, .navDashboard, .navlogin {
-	font-size: 25px;
+	font-size: 30px;
 }
 /*Regular (2.125" x 5.5"), Large (2.8" x 5.5"), and Jumbo (2.75" x 8.5") Other (3.5 x 8.5) New (2 x 6)*/
 /*https://www.behance.net/gallery/37596627/Wine-Art-Mixer-Ticket-Template 3.25 × 7.25 */
@@ -656,12 +655,17 @@ body {
 .liveTr {
 	line-height: 35px;
 	font-size: 12pt;
-	margin-top:5px !important;
-	
+	margin-top: 5px !important;
 }
 .toPrintTr {
 	line-height: 35px;
 	font-size: 11pt;
-	margin-top:5px !important;
-	padding 0;
+	margin-top: 5px !important;padding 0;
+}
+
+.highlight {
+	padding: 0px 5px 0px 5px;;
+	border: 1px solid blue;
+	/*border-bottom: 1px solid blue;
+	border-top: 1px solid blue;*/
 }

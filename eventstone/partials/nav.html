@@ -1,18 +1,23 @@
-<div id="" class="navHome">
-	<a class="" href="#" data-toggle="tooltip" title="Go Home" > <i class="glyphicon glyphicon-home"></i>
+<div id="" class="navHome" ng-class="{'highlight' : selectedPage == 'home'}">
+	<a class="" href="#" data-toggle="tooltip" title="Go Home"
+	ng-click="selectedPage = 'home';"> <i class="glyphicon glyphicon-home"></i>
 </div>
-<div ng-show="$storage.eventType == 'ticket'"  class="navHelp">
-	<a class="" ng-href="#!/aboutparty" data-toggle="tooltip" title="Go to help page"  > <i class="glyphicon glyphicon-info-sign"></i> </a>
+<div ng-show="$storage.eventType == 'ticket'"  class="navHelp" ng-class="{'highlight' : selectedPage == 'about'}">
+	<a class="" ng-href="#!/aboutparty" data-toggle="tooltip" title="Go to help page"
+	ng-click="selectedPage = 'about';"> <i class="glyphicon glyphicon-info-sign"></i> </a>
 </div>
-<div  ng-show="$storage.eventType == 'list'" class="navHelp">
-	<a class="" ng-href="#!/aboutconf" data-toggle="tooltip" title="Go to help page"  > <i class="glyphicon glyphicon-info-sign"></i> </a>
+<div  ng-show="$storage.eventType == 'list'" class="navHelp" ng-class="{'highlight' : selectedPage == 'about'}">
+	<a class="" ng-href="#!/aboutconf" data-toggle="tooltip" title="Go to help page"
+	ng-click="selectedPage = 'about';"> <i class="glyphicon glyphicon-info-sign"></i> </a>
 </div>
-<div  class="navLive">
-	<a type="" ng-href="#!/live" class="" ng-click="hide_logo=true;"  data-toggle="tooltip" title="Go live with you event" > <span class="glyphicon glyphicon-play"> </span> </a>
+<div  class="navLive" ng-class="{'highlight' : selectedPage == 'live'}">
+	<a type="" ng-href="#!/live" class="" ng-click="hide_logo=true;selectedPage = 'live';"  data-toggle="tooltip" title="Go live with you event" > <span class="glyphicon glyphicon-play"> </span> </a>
 </div>
-<div  class="navDashboard">
-	<a type="" ng-href="#!/dashboard" class="" ng-click="hide_logo=true;"  data-toggle="tooltip" title="Dashboard to see all your events" > <span class="fa fa-tachometer"> </span> </a>
+<div  class="navDashboard" ng-class="{'highlight' : selectedPage == 'dash'}">
+	<a type="" ng-href="#!/dashboard" class="" ng-click="hide_logo=true;selectedPage = 'dash';"  data-toggle="tooltip" title="Dashboard to see all your events" > <span class="fa fa-tachometer"> </span> </a>
 </div>
-<div  class="navlogin">
-	<a type="" ng-href="#!/login" style="color: #E294A9;font-size: 50px"  data-toggle="tooltip" title="Login/Logout"> <span class="glyphicon glyphicon-user"> </span> </a>
+<div  class="navlogin" ng-class="{'highlight' : selectedPage == 'login'}">
+	<a type="" ng-href="#!/login" style="color: #E294A9;font-size: 40px"  data-toggle="tooltip" title="Login/Logout"
+
+	ng-click="selectedPage = 'login';"> <span class="glyphicon glyphicon-user"> </span> </a>
 </div>

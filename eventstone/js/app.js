@@ -66,7 +66,8 @@ function($rootScope, $location, $firebaseAuth, $localStorage, shareDataService) 
 		var isAuth = $firebaseAuth().$getAuth();
 		if ($rootScope.$storage.hasOwnProperty('user') && $rootScope.$storage.user.hasOwnProperty('token') && $rootScope.$storage.user.token != undefined) {
 			$location.path(currRoute.originalPath);
-			console.log('ALLOW');
+			$rootScope.selectedPage = highlightedNav[$location.path()] ? highlightedNav[$location.path()] : "";
+			console.log($rootScope.selectedPage);
 		} else {
 			console.log('DENY ');
 			if (currRoute.originalPath == '/login') {
@@ -78,3 +79,12 @@ function($rootScope, $location, $firebaseAuth, $localStorage, shareDataService) 
 		shareDataService.setProperty('signedInUser', firebase.auth().currentUser);
 	});
 }]);
+
+var highlightedNav = {
+	'/' : 'home',
+	'/login' : 'login',
+	'/new' : 'new',
+	'/dashboard' : 'dash',
+	'/live' : 'live',
+	'/about' : 'about',
+};

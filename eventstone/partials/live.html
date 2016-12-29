@@ -16,16 +16,16 @@
 		<br />
 	</div>
 	<div class="row" ng-show="secondLiveScreen" >
-		<form class="search center-block row text-center form">
+		<form class="search center-block row text-left form">
 			<h1 class="text-center">{{($storage.eventName).toUpperCase()}}</h1>
-			<br class="clearfix"/>
-			<div class="row">
-
+			<div class="col-xs-12 col-sm-8">
+				<label>Search to checkin</label>
+				<input ng-model="guestSearch" placeholder="Enter ticket number or name" class="form-control" autofocus>
 			</div>
-			<input ng-model="guestSearch" placeholder="Type ticket number, name, NSID or other info here to check-in an attendee"
-			class=" form-control " autofocus>
-			<div ng-show="visualize()" class="alert">
-				<p  class=" text-center center-block" >
+			<div ng-show="visualize()" class="col-xs-12 col-sm-4">
+				<p  class=" text-left center-block" >
+					<br />
+					<br />
 					{{instruction}}...
 				</p>
 			</div>
@@ -36,48 +36,49 @@
 				<tr ng-repeat="item in $storage.guestsList | filter:guestSearch" class="liveTr">
 					<td class="">
 					<button  type="button" ng-show="item.guestStatus == false"
-					class="btn btn-primary checkInBtn  btn-danger pull-right" ng-click="checkedIn($storage.guestsList.indexOf(item));">
+					class="btn btn-primary checkInBtn  btn-danger pull-right btn-lg" ng-click="checkedIn($storage.guestsList.indexOf(item));">
 						Check-In
 					</button></td>
-					<td ng-repeat="a in limitDisplay(item, 6) track by $index" ng-hide="a == false">{{ a ? a : "" }}</td>
-					<td ng-show="item[0] == undefined">{{item.id}}</td>
+					<td ng-repeat="a in limitDisplay(item, 6) track by $index" ng-show="a != undefined && item[0] != '-'">{{ a ? a : "Not Checked In" }}</td>
+					<td ng-show="item[0] == '-'">{{item.id}}</td>
+					<td>{{item.guestStatus ? item.guestStatus : "No Show" }}</td>
 				</tr>
 			</table>
 		</div>
 	</div>
+	<br />
+	<hr />
+	<br />
 	<button  type="button" ng-show="addNewGuestOption"
-	class="btn btn-default" ng-click="showAddField=!showAddField">
-		Add New Attendee
+	class="btn btn-default pull-right btn-xs" ng-click="showAddField=!showAddField">
+		<span class="glyphicon glyphicon-plus"></span> New Person to List
 	</button>
 	<br />
-	<div class="row text-center text-info center-block" ng-show="addNewGuestOption && showAddField">
+	<div class="row text-left text-info center-block" ng-show="addNewGuestOption && showAddField">
 		<br />
-		<div class=" col-lg-4 col-md-4" >
+		<div class=" col-xs-4" >
 			<input placeholder="Enter your name, NSID or other info and click register"
 			class=" form-control" ng-model="userRegInfo">
 		</div>
-		<div class=" col-lg-3 col-md-3" >
+		<div class=" col-xs-3" >
 			<button  type="button"
 			class="btn btn-primary"
 			ng-click="checkInSingle(userRegInfo);liveMsgStatus=true;liveMsg();">
 				Add and Check in
 			</button>
 		</div>
-		<div class=" col-lg-5 col-md-5" ng-show="liveMsgStatus">
+		<div class=" col-xs-5" ng-show="liveMsgStatus">
 			<h3> {{$storage.guestsList[$storage.guestsList.length-1][0]}} - {{$storage.guestsList[$storage.guestsList.length-1].guestStatus}}</h3>
 		</div>
 		<br />
 	</div>
 	<br />
 	<div id="txt" class="text-center " style="font-size: 80px;"></div>
-	<div class="back_div pull-left ">
-		<a type="button" class="btn btn-default btn-xs" ng-href="#!/dashboard"> <span class="fa fa-tachometer"></span></a>
+	<div class="pull-left">
+		<a type="button" class="btn btn-default" ng-href="#!/guestList"> <i class="fa fa-bar-chart"></i></a>
 	</div>
-	<div class="pull-right" style="font-size: 25px;">
-		<a type="button" class="" ng-href="#!/aboutparty" target="_blank" ng-show="$storage.eventType == 'ticket'"> <i class="glyphicon glyphicon-question-sign"></i></a>
-	</div>
-	<div class="pull-right" style="font-size: 25px;">
-		<a type="button" class="" ng-href="#!/aboutconf" target="_blank" ng-show="$storage.eventType == 'list'"> <i class="glyphicon glyphicon-question-sign"></i></a>
+	<div class="pull-right ">
+		<a type="button" class="btn btn-default" ng-href="#!/dashboard"> <span class="fa fa-tachometer"></span></a>
 	</div>
 </section>
 

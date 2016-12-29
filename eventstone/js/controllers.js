@@ -93,8 +93,6 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 
 	};
 
-	console.log($scope.$storage.eventType);
-
 	var user,
 	    allRef,
 	    ref,
