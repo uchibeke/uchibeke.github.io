@@ -1,0 +1,76 @@
+/*B1*/
+
+.b1Outer {
+	border: 1px solid black;
+	background: #2c57a9;
+	width: 3in;
+	height: 4in;
+	font-size: 3.5 rem;
+	text-align: center;
+	color: white;
+	display: inline-block;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+}
+.b1Tag {
+	padding-bottom: 0.2in;
+	width: 100%;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+}
+.b1Header {
+	font-weight: bold;
+	padding: 10px 0 0 0;
+}
+
+.b1Tag p, .b1Tag footer {
+	font-weight: normal;
+	margin: -5px 0 10px 0;
+	padding: 0;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+}
+.b1Main {
+	background: white;
+	height: 2.8in;
+	font-size: 18px;
+	padding: 0.6in 5px 0px 5px;
+}
+.name, .b1Main:first-line {
+	font-weight: bold;
+	font-size: 35px;
+	margin-bottom: 1rem;
+}
+.b1Tag footer {
+	margin: 10px 0 2rem;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+}
+
+.b1Main .company {
+	font-size: 15px;
+}
+
+/*#b1TagPreview .b1Outer{
+ -webkit-transform: rotate(90deg) !important;
+ -moz-transform: rotate(90deg) !important;
+ -o-transform: rotate(90deg) !important;
+ -ms-transform: rotate(90deg) !important;
+ transform: rotate(90deg) !important;
+ }*/
+/*
+@page #printableBadge {
+	size: 8.27in 11.69in;
+	margin: .5in .0in .5in .0in;
+	mso-header-margin: .0in;
+	mso-footer-margin: .0in;
+	mso-paper-source: 0;
+}*/

@@ -15,6 +15,8 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		guestsList : $scope.guests
 	});
 
+	var ss = $scope.$storage;
+
 	$scope.hide_logo = false;
 
 	// function to set the default data
@@ -24,8 +26,6 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 	};
 	var numb = 0;
 	$scope.hey = "___";
-
-	$scope.$storage.x = '';
 
 	// List of all user events
 	$scope.visualize = function() {
@@ -40,18 +40,16 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		field = '';
 	};
 
-	$scope.$storage.xx = "";
-
-	$scope.$storage.options = {
+	ss.options = {
 	};
-	$scope.$storage.options.hideCheckin = [];
+	ss.options.hideCheckin = [];
 
 	$scope.deleteStored = function() {
-		if (!(angular.equals($scope.$storage.guestsList, $scope.guests))) {
-			$scope.$storage.backUpGuestList = [];
-			$scope.$storage.backUpGuestList = $scope.$storage.guestsList;
-			$scope.$storage.guestsList = [];
-			$scope.$storage.guestsList = $scope.guests;
+		if (!(angular.equals(ss.guestsList, $scope.guests))) {
+			ss.backUpGuestList = [];
+			ss.backUpGuestList = ss.guestsList;
+			ss.guestsList = [];
+			ss.guestsList = $scope.guests;
 		}
 	};
 
@@ -84,12 +82,12 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 
 
 	$scope.setEvent = function(eventName, type) {
-		$scope.$storage.eventName = eventName;
-		$scope.$storage.eventType = type;
-		guestRef = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/guests/");
-		$scope.$storage.guestsList = $firebaseArray(guestRef);
-		eventRef = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/");
-		$scope.$storage.currentEvent = $firebaseArray(eventRef);
+		ss.eventName = eventName;
+		ss.eventType = type;
+		guestRef = firebase.database().ref().child("/users/" + user.uid + "/" + ss.eventName + "/guests/");
+		ss.guestsList = $firebaseArray(guestRef);
+		eventRef = firebase.database().ref().child("/users/" + user.uid + "/" + ss.eventName + "/");
+		ss.currentEvent = $firebaseArray(eventRef);
 
 	};
 
@@ -100,23 +98,23 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 	if (firebase.auth().currentUser) {
 		user = firebase.auth().currentUser;
 		allRef = firebase.database().ref().child("/users/" + user.uid + "/");
-		$scope.$storage.allEvents = $firebaseArray(allRef);
+		ss.allEvents = $firebaseArray(allRef);
 
-		ref = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/");
-		$scope.$storage.currentEvent = $firebaseArray(ref);
+		ref = firebase.database().ref().child("/users/" + user.uid + "/" + ss.eventName + "/");
+		ss.currentEvent = $firebaseArray(ref);
 
-		guestRef = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/guests");
-		$scope.$storage.guestsList = $firebaseArray(guestRef);
+		guestRef = firebase.database().ref().child("/users/" + user.uid + "/" + ss.eventName + "/guests");
+		ss.guestsList = $firebaseArray(guestRef);
 
 	}
 
 	function ticketOp() {
-		if ($scope.$storage.totalTickets.length <= 0) {
+		if (ss.totalTickets.length <= 0) {
 			alert("You must enter the number of tickets to generate");
 		} else {
 			var numbDigits = 4;
 			var obj = [];
-			for (var i = 0; i < $scope.$storage.totalTickets; i++) {
+			for (var i = 0; i < ss.totalTickets; i++) {
 				var element = {};
 				var firstNum = "";
 				element.guestStatus = false;
@@ -126,13 +124,13 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 				element.id = (stringGen(3) + "" + firstNum + stringGen(3)).toUpperCase();
 				obj.push(element);
 			}
-			$scope.$storage.guestsList = Object.assign([], obj);
-			guestRef = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/guests");
-			guestRef.set($scope.$storage.guestsList);
-			ref = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/");
-			ref.child("/eventName/").set($scope.$storage.eventName);
-			ref.child("/eventType/").set($scope.$storage.eventType);
-			$scope.$storage.totalTickets = '';
+			ss.guestsList = Object.assign([], obj);
+			guestRef = firebase.database().ref().child("/users/" + user.uid + "/" + ss.eventName + "/guests");
+			guestRef.set(ss.guestsList);
+			ref = firebase.database().ref().child("/users/" + user.uid + "/" + ss.eventName + "/");
+			ref.child("/eventName/").set(ss.eventName);
+			ref.child("/eventType/").set(ss.eventType);
+			ss.totalTickets = '';
 		}
 	};
 
@@ -151,7 +149,7 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 	};
 
 	$scope.deleteEvent = function(eventName) {
-		ref = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "");
+		ref = firebase.database().ref().child("/users/" + user.uid + "/" + ss.eventName + "");
 		var list = $firebaseArray(ref);
 		var item = list[eventName];
 		var obj = $firebaseObject(ref);
@@ -174,17 +172,17 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 			var arr = rows[i].split("\t");
 			obj.push(processRow(arr));
 		}
-		$scope.$storage.guestsList = Object.assign([], obj);
-		$scope.$storage.showExcelList = true;
+		ss.guestsList = Object.assign([], obj);
+		ss.showExcelList = true;
 
-		guestRef = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/guests");
-		guestRef.set($scope.$storage.guestsList);
-		ref = firebase.database().ref().child("/users/" + user.uid + "/" + $scope.$storage.eventName + "/");
-		ref.child("/eventName/").set($scope.$storage.eventName);
-		ref.child("/eventType/").set($scope.$storage.eventType);
+		guestRef = firebase.database().ref().child("/users/" + user.uid + "/" + ss.eventName + "/guests");
+		guestRef.set(ss.guestsList);
+		ref = firebase.database().ref().child("/users/" + user.uid + "/" + ss.eventName + "/");
+		ref.child("/eventName/").set(ss.eventName);
+		ref.child("/eventType/").set(ss.eventType);
 	};
 
-	$scope.$storage.eventType = $scope.$storage.eventType ? $scope.$storage.eventType : "ticket";
+	ss.eventType = ss.eventType ? ss.eventType : "ticket";
 
 	function processRow(row) {
 		var item = {};
@@ -218,12 +216,12 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 	};
 
 	$scope.checkedIn = function(x) {
-		if (!($scope.$storage.guestsList[x].guestStatus)) {
+		if (!(ss.guestsList[x].guestStatus)) {
 			var d = new Date();
 			var ds = d.toLocaleTimeString();
-			$scope.$storage.guestsList[x].guestStatus = "" + ds;
+			ss.guestsList[x].guestStatus = "" + ds;
 			var toPush = {
-				guestStatus : $scope.$storage.guestsList[x].guestStatus,
+				guestStatus : ss.guestsList[x].guestStatus,
 			};
 			guestRef.child(x + "/").update(toPush);
 		}
@@ -231,11 +229,11 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 
 	$scope.removeElement = function(item) {
 
-		$scope.$storage.guestsList = $firebaseArray(guestRef);
-		// var item = $scope.$storage.guestsList[idx];
-		console.log($scope.$storage.guestsList);
+		ss.guestsList = $firebaseArray(guestRef);
+		// var item = ss.guestsList[idx];
+		console.log(ss.guestsList);
 		console.log(item);
-		$scope.$storage.guestsList.$remove(item).then(function(guestRef) {
+		ss.guestsList.$remove(item).then(function(guestRef) {
 			guestRef.key === item.$id;
 			// true
 			console.log(guestRef.key === item.$id);
@@ -248,12 +246,13 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		for (var i = 0; i < itemToAdd.length; i++) {
 			el[i] = (itemToAdd[i]);
 		}
+		$scope.userRegInfo = "";
 		var d = new Date();
 		var ds = d.toLocaleTimeString();
 		el.guestStatus = "" + ds;
 		el.id = el[0];
-		$scope.$storage.guestsList = $firebaseArray(guestRef);
-		$scope.$storage.guestsList.$add(el).then(function(guestRef) {
+		ss.guestsList = $firebaseArray(guestRef);
+		ss.guestsList.$add(el).then(function(guestRef) {
 			var id = guestRef.key;
 			console.log("added record with id " + id);
 			theList.$indexFor(id);
@@ -278,9 +277,9 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 	$scope.addByPasting = true;
 
 	$scope.restoreFromBackUp = function() {
-		if ($scope.$storage.backUpGuestList.length > 0) {
-			$scope.$storage.guestsList = [];
-			$scope.$storage.guestsList = $scope.$storage.backUpGuestList;
+		if (ss.backUpGuestList.length > 0) {
+			ss.guestsList = [];
+			ss.guestsList = ss.backUpGuestList;
 		}
 	};
 
@@ -318,8 +317,8 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 
 	$scope.checkIns = function() {
 		var checkIns = 0;
-		for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
-			if (($scope.$storage.guestsList[i].guestStatus) != false) {
+		for (var i = 0; i < ss.guestsList.length; i++) {
+			if ((ss.guestsList[i].guestStatus) != false) {
 				checkIns = checkIns + 1;
 			}
 		}
@@ -327,17 +326,17 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 	};
 
 	$scope.noCheckIns = function() {
-		return $scope.$storage.guestsList.length - $scope.checkIns();
+		return ss.guestsList.length - $scope.checkIns();
 	};
 
 	$scope.sessionTotal = function(sess, column) {
 		var totReg = 0;
 		var col = column - 1;
-		for (var i = 0; i < $scope.$storage.guestsList.length; i++) {
-			if ( typeof $scope.$storage.guestsList[i][col] === 'undefined') {
+		for (var i = 0; i < ss.guestsList.length; i++) {
+			if ( typeof ss.guestsList[i][col] === 'undefined') {
 				return 0;
 			} else {
-				if ((($scope.$storage.guestsList[i][col]).toLowerCase().replace(/\W+/g, " ")).indexOf(sess.toLowerCase().replace(/\W+/g, " ")) > -1) {
+				if (((ss.guestsList[i][col]).toLowerCase().replace(/\W+/g, " ")).indexOf(sess.toLowerCase().replace(/\W+/g, " ")) > -1) {
 					totReg = totReg + 1;
 				}
 			}
@@ -359,6 +358,6 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		var blob = new Blob([document.getElementById(id).innerHTML], {
 			type : types[ext] ? types[ext] + ";charset=utf-8" : types.pdf + ";charset=utf-8"
 		});
-		saveAs(blob, name ? name : $scope.$storage.eventName + "-" + $scope.$storage.eventType + "-event" + "." + ext);
+		saveAs(blob, name ? name : ss.eventName + "-" + ss.eventType + "-event" + "." + ext);
 	};
 }]);

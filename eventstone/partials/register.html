@@ -30,3 +30,144 @@
 		</div>
 	</form>
 </div>
+
+<!-- Old Badge -->
+
+<div class="badeContainer">
+	<div class="row nameBadge center-block text-center" ng-attr-style="{{previewStyle()}}">
+		<div class=" badgeRow1" style="text-align: left;">
+			<div class=" " ng-show="toUpload">
+				<img ng-src="{{picFile | ngfDataUrl}}" width="40%" class=""/>
+			</div>
+		</div>
+		<div class="col-md-12 col-lg-12 col-xs-12 badgeRow2  text-center center-block">
+			<span class="badgeGName">{{$storage.guestsList[$storage.guestsList.length-1][0]}}</span>
+			<br />
+			<span class="">{{guestRole}}</span>
+		</div>
+		<div class="col-md-12 col-lg-12 col-xs-12 badgeRow3 center-block" style="padding-top: 5px;">
+			<div class="  row" >
+				<div class="col-md-3 col-lg-3 col-xs-3 sponsorLogo " ng-show="toUpload"></div>
+				<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload">
+					<img ng-src="{{image1 | ngfDataUrl}}" width="100%" class=""/>
+				</div>
+				<div class="col-md-2 col-lg-2 col-xs-2  sponsorLogo " ng-show="toUpload">
+					<img ng-src="{{image2 | ngfDataUrl}}" width="100%" class=""/>
+				</div>
+				<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload">
+					<img ng-src="{{image3 | ngfDataUrl}}" width="100%" class=""/>
+				</div>
+				<div class="col-md-2 col-lg-2 col-xs-2sponsorLogo " ng-show="toUpload">
+					<img ng-src="{{image4 | ngfDataUrl}}" width="100%" class=""/>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="badeContainer">
+	<div class="row nameBadge center-block text-center" ng-attr-style="{{previewStyle()}}">
+		<div class=" badgeRow1" style="text-align: left;">
+			<div class=" " ng-show="toUpload">
+				<img ng-src="{{picFile | ngfDataUrl}}" width="40%" class=""/>
+			</div>
+		</div>
+		<div class="col-md-12 col-lg-12 col-xs-12 badgeRow2  text-center center-block">
+			<span class="badgeGName">{{$storage.guestsList[$storage.guestsList.length-1][0]}}</span>
+			<br />
+			<span class="">{{guestRole}}</span>
+		</div>
+		<div class="col-md-12 col-lg-12 col-xs-12 badgeRow3 center-block" style="padding-top: 5px;">
+			<div class="  row" >
+				<div class="col-md-3 col-lg-3 col-xs-3 sponsorLogo " ng-show="toUpload"></div>
+				<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload">
+					<img ng-src="{{image1 | ngfDataUrl}}" width="100%" class=""/>
+				</div>
+				<div class="col-md-2 col-lg-2 col-xs-2  sponsorLogo " ng-show="toUpload">
+					<img ng-src="{{image2 | ngfDataUrl}}" width="100%" class=""/>
+				</div>
+				<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload">
+					<img ng-src="{{image3 | ngfDataUrl}}" width="100%" class=""/>
+				</div>
+				<div class="col-md-2 col-lg-2 col-xs-2sponsorLogo " ng-show="toUpload">
+					<img ng-src="{{image4 | ngfDataUrl}}" width="100%" class=""/>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Old badge preview -->
+
+<div class=" tab-pane active center-block text-center backNFront" id="layout1" >
+	<div class="badeContainer nameBadgePrinting">
+		<div class="row nameBadge center-block text-center" ng-attr-style="{{previewStyle()}}">
+			<div class=" badgeRow1" style="text-align: left;">
+				<div class=" " ng-show="toUpload">
+					<img ng-src="{{picFile | ngfDataUrl}}" width="40%" class="img-responsive"/>
+				</div>
+			</div>
+			<br />
+			<div class="col-md-12 col-lg-12 col-xs-12 badgeRow2  text-center center-block">
+				<span class="badgeGName">{{item[0]}}</span>
+				<br />
+				<span class="">{{guestRole}}</span>
+			</div>
+			<div class="col-md-12 col-lg-12 col-xs-12 badgeRow3 center-block" style="padding-top: 5px;">
+				<div class="  row" >
+					<div class="col-md-3 col-lg-3 col-xs-3 sponsorLogo " ng-show="toUpload" style="width: 25%">
+						<span style="width: 100%;color: white"></span>
+					</div>
+					<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload" style="width: 16.6666666667%">
+						<img ng-src="{{image1 | ngfDataUrl}}" class="img-responsive barcodeIMG"/>
+					</div>
+					<div class="col-md-2 col-lg-2 col-xs-2  sponsorLogo " ng-show="toUpload" style="width: 16.6666666667%">
+						<img ng-src="{{image2 | ngfDataUrl}}"  class="img-responsive barcodeIMG"/>
+					</div>
+					<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload" style="width: 16.6666666667%">
+						<img ng-src="{{image3 | ngfDataUrl}}"  class="img-responsive barcodeIMG"/>
+					</div>
+					<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload" style="width: 16.6666666667%">
+						<img ng-src="{{image4 | ngfDataUrl}}" class="img-responsive barcodeIMG"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Badge back -->
+	<div class="badgeBack">
+		<div class="badeContainer nameBadgePrinting">
+			<div class="row nameBadge center-block text-center " ng-attr-style="{{previewStyle()}}">
+				<div class=" badgeRow1" style="text-align: left;">
+					<div class=" " ng-show="toUpload">
+						<img ng-src="{{picFile | ngfDataUrl}}" width="40%" class="img-responsive"/>
+					</div>
+				</div>
+				<br />
+				<div class="col-md-12 col-lg-12 col-xs-12 badgeRow2  text-center center-block">
+					<span class="badgeGName">{{item[0]}}</span>
+					<br />
+					<span class="">{{guestRole}}</span>
+				</div>
+				<div class="col-md-12 col-lg-12 col-xs-12 badgeRow3 center-block" style="padding-top: 5px;">
+					<div class="  row" >
+						<div class="col-md-3 col-lg-3 col-xs-3 sponsorLogo " ng-show="toUpload" style="width: 25%">
+							<span style="width: 100%;color: white"></span>
+						</div>
+						<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload" style="width: 16.6666666667%">
+							<img ng-src="{{image1 | ngfDataUrl}}" class="img-responsive barcodeIMG"/>
+						</div>
+						<div class="col-md-2 col-lg-2 col-xs-2  sponsorLogo " ng-show="toUpload" style="width: 16.6666666667%">
+							<img ng-src="{{image2 | ngfDataUrl}}"  class="img-responsive barcodeIMG"/>
+						</div>
+						<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload" style="width: 16.6666666667%">
+							<img ng-src="{{image3 | ngfDataUrl}}"  class="img-responsive barcodeIMG"/>
+						</div>
+						<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload" style="width: 16.6666666667%">
+							<img ng-src="{{image4 | ngfDataUrl}}" class="img-responsive barcodeIMG"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

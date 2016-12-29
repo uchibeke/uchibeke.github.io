@@ -64,7 +64,7 @@ function($rootScope, $location, $firebaseAuth, $localStorage, shareDataService) 
 		if ($rootScope.$storage.hasOwnProperty('user') && $rootScope.$storage.user.hasOwnProperty('token') && $rootScope.$storage.user.token != undefined) {
 			$location.path(currRoute.originalPath);
 			$rootScope.selectedPage = highlightedNav[$location.path()] ? highlightedNav[$location.path()] : "";
-			console.log($rootScope.selectedPage);
+			// console.log($rootScope.selectedPage);
 		} else {
 			console.log('DENY ');
 			if (currRoute.originalPath == '/login') {

@@ -231,8 +231,8 @@ form .progress {
 }
 .nameBadge {
 	page-break-inside: avoid !important;
-	width: 3.85in !important;
-	height: 3.1in !important;
+	width: 4in !important;
+	height: 2.9in !important;
 	border-style: solid;
 	border: thin solid #005A31;
 	font-family: 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
@@ -246,8 +246,8 @@ form .progress {
 
 .badeContainer {
 	page-break-inside: avoid !important;
-	width: 3.95in !important;
-	height: 3.2in !important;
+	width: 4in !important;
+	height: 3in !important;
 	border: thin solid #005A31;
 	border-radius: 15px;
 	display: inline-block !important;
@@ -649,7 +649,7 @@ body {
 }
 
 .pg {
-	padding-top: 70px;
+	padding-top: 60px;
 }
 
 .liveTr {

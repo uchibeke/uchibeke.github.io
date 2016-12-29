@@ -1,0 +1,27 @@
+<div class="b1Tag" id="b1TagPreview" ng-repeat="guest in $storage.guestsList" style="display: inline;padding-bottom: 0in;">
+	<div class="b1Outer" ng-attr-style="{{previewStyle()}}">
+		<div class="b1Header" ng-attr-style="{{previewStyle()}}">
+			<p ng-attr-style="{{previewStyle()}}">
+				{{$storage.eventName}}
+			</p>
+		</div>
+		<div class="b1Main" ng-attr-style="{{previewStyleInverse()}}">
+			<content class="name" ng-attr-style="{{previewStyleInverse()}}">
+				{{guest[$storage.options.badge.fNameCol -1]}}  {{guest[$storage.options.badge.lNameCol -1]}}
+			</content>
+			<br />
+			<content class="role" ng-attr-style="{{previewStyleInverse()}}">
+				{{guest[$storage.options.badge.titleCol -1]}}
+			</content>
+			<br />
+			<content class="company" ng-attr-style="{{previewStyleInverse()}}">
+				{{guest[$storage.options.badge.companyCol -1]}}
+			</content>
+		</div>
+		<footer ng-attr-style="{{previewStyle()}}">
+			{{$storage.options.badge.firstTxt}}
+			<br>
+			{{$storage.options.badge.secondTxt}}
+		</footer>
+	</div>
+</div>

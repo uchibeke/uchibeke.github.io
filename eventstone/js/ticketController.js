@@ -3,12 +3,18 @@ var ticketControllers = angular.module('ticketControllers', ['ngStorage', 'ngSan
 ticketControllers.controller('TicketController', ['$rootScope', '$scope', '$http', '$localStorage', '$sce', 'Upload', '$timeout', 'analytics', '$firebaseObject', '$firebaseArray', '$firebaseAuth', 'shareDataService',
 function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analytics, $firebaseObject, $firebaseArray, $firebaseAuth, shareDataService) {
 	
-	// delete $scope.$storage.style;
-	$http.get('js/crayola.json').then(function(result) {
+	
+	$scope.$storage = $localStorage.$default({
+		ticket : $scope.ticketdata,
+	});
+	
+	var ss = $scope.$storage;
+	
+	$http.get('js/resources/crayola.json').then(function(result) {
 		var xx = result.data;
 				
-		$http.get('js/styles.json').then(function(result2) {
-			$scope.$storage.style = result2.data.concat(xx).concat(manyColors);
+		$http.get('js/resources/styles.json').then(function(result2) {
+			ss.style = result2.data.concat(xx).concat(manyColors);
 		}, function(error) {
 			console.log(error);
 		}).finally(function() {
@@ -21,17 +27,13 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 	});
 	
 	
-	$http.get('js/ticketVariants.json').then(function(result) {
+	$http.get('js/resources/ticketVariants.json').then(function(result) {
 		$scope.ticketVariants = result.data;
 	}, function(result) {
 	}).finally(function() {
 		console.log("finally finished repos");
 	});
 
-
-	$scope.$storage = $localStorage.$default({
-		ticket : $scope.ticketdata,
-	});
 
 	$scope.ticketOrder = 'ticketTitle';
 	$scope.ticketSearch = '';
@@ -58,7 +60,7 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 	};
 
 	$scope.showTicket = function(ind) {
-		for (var i; i < $scope.$storage.length; i++) {
+		for (var i; i < ss.length; i++) {
 			if (i == ind) {
 				$scope.show = true;
 			} else {
@@ -68,19 +70,23 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 	};
 
 	$scope.ticketBackground = function(ind) {
-		$scope.$storage.ticketText = $scope.$storage.ticketText;
-		$scope.$storage.ticketBgColor = ind;
-		$scope.userFillColor = $scope.$storage.ticketBgColor;
+		ss.ticketText = ss.ticketText;
+		ss.ticketBgColor = ind;
+		$scope.userFillColor = ss.ticketBgColor;
 	};
 
 	$scope.ticketTxtColor = function(ind) {
-		$scope.$storage.ticketBgColor = $scope.$storage.ticketBgColor;
-		$scope.$storage.ticketText = ind;
-		$scope.userTextColor = $scope.$storage.ticketText;
+		ss.ticketBgColor = ss.ticketBgColor;
+		ss.ticketText = ind;
+		$scope.userTextColor = ss.ticketText;
 	}
 
 	$scope.previewStyle = function() {
-		return "background-color: " +  $scope.$storage.ticketBgColor + "!important;" + "color: " + $scope.$storage.ticketText + "!important;";
+		return "background-color: " +  ss.ticketBgColor + "!important;" + "color: " + ss.ticketText + "!important;";
+	}
+
+	$scope.previewStyleInverse = function() {
+		return "color: " +  ss.ticketBgColor + "!important;" + "background-color: " + ss.ticketText + "!important;";
 	}
 	var ticketColorFilter = function(givenCol) {
 		var col = givenCol;
@@ -109,7 +115,7 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 		return final;
 	};
 
-	$scope.$storage.sampleView = false;
+	ss.sampleView = false;
 
 	$scope.textBtnStyle = function(bg) {
 		return {
@@ -148,23 +154,26 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 	// and add it to each printed ticket.
 	$.get("http://ipinfo.io", function(r) {
 		var d = new Date().toLocaleDateString();
-		$scope.$storage.secEncoding = r.ip + "|" + d;
+		ss.secEncoding = r.ip + "|" + d;
 	}, "jsonp");
 
 	$scope.guestRole = "Participant";
 
-	$scope.$storage.user.styles = {};
-	if ($scope.$storage.user.styles.selectedTicFormat == undefined && $scope.$storage.user.styles.selectedTicFormatPre == undefined) {
-		$scope.$storage.user.styles.selectedTicFormat = 'partials/tickets/t1.html';
-		$scope.$storage.user.styles.selectedTicFormatPre = 'partials/tickets/t1Preview.html';
+	ss.user.styles = {};
+	if (ss.user.styles.selectedTicFormat == undefined && ss.user.styles.selectedTicFormatPre == undefined) {
+		ss.user.styles.selectedTicFormat = 'partials/tickets/t1.html';
+		ss.user.styles.selectedTicFormatPre = 'partials/tickets/t1Preview.html';
 	}
-	$scope.setTicketFormat = function(index) {
-		var ticketFormats = {
-			'formats' : ['partials/tickets/t1.html', 'partials/tickets/t2.html'],
-			'preview' : ['partials/tickets/t1Preview.html', 'partials/tickets/t2Preview.html']
-		};
-		$scope.$storage.user.styles.selectedTicFormat = ticketFormats.formats[index];
-		$scope.$storage.user.styles.selectedTicFormatPre = ticketFormats.preview[index];
+	
+	ss.user.styles.ticketFormats = {
+		'formats' : ['partials/tickets/t1.html', 'partials/tickets/t2.html'],
+		'preview' : ['partials/tickets/t1Preview.html', 'partials/tickets/t2Preview.html']
 	};
+	$scope.setTicketFormat = function(index) {
+		ss.user.styles.selectedTicFormat = ss.user.styles.ticketFormats.formats[index];
+		ss.user.styles.selectedTicFormatPre = ss.user.styles.ticketFormats.preview[index];
+	};
+	
+	namebadgeOps($rootScope, $scope, $http,  $localStorage);
 }]);
 
