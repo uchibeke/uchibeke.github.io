@@ -7,14 +7,9 @@
 			<a type="button" class="btn btn-default btn-xs" ng-href="#!/dashboard"> <span class="fa fa-tachometer"></span> </a></a>
 		</div>
 		<h1 class="text-center">BADGE DESIGNER</h1>
-		<p>
-			Design name badges by uploading the logo of the event and up to
-			4 logos event sponsors. Names of attendees will be added automatically.
-		</p>
 		<div class="row dataFieldContainer  center-block ">
-			<div class="col-md-4 col-xs-12 pull-left ticketContent">
-				<h2 class="text-center">Content</h2>
-				<br />
+			<div class="col-sm-3 col-xs-12 pull-left ticketContent">
+				<h3 class="text-center">Content</h3>
 				<div >
 					<form role="form ">
 						<div class=" " >
@@ -90,162 +85,13 @@
 						<a type="button" class="btn btn-primary btn-xs btn-block" ng-href="#!/populate">Manage Guests</a>
 					</div>
 				</div>
-				<div class=" center-block row text-justify text-muted">
-					<br />
-					<ul class="list-group">
-						<li class="list-group-item">
-							You can use any background or text for this badge.
-						</li>
-						<li class="list-group-item">
-							Get color names <a href="http://www.w3schools.com/html/html_colornames.asp" target="_blank">Here</a>.
-						</li>
-						<li class="list-group-item">
-							Mix colors with <a href="http://www.w3schools.com/tags/ref_colormixer.asp" target="_blank">this Color Mixer</a>
-							then copy the hex value.
-						</li>
-						<li class="list-group-item">
-							Please include a '#' before the 6 digit color value for hex values.
-						</li>
-						<li class="list-group-item">
-							Type/paste a color name or hex value (eg #000ABC) in the 'color' field and click "Ok".
-						</li>
-					</ul>
-				</div>
 			</div>
-			<div class="col-md-6 col-xs-12 ticketPreview">
-				<h2 class="text-center row center-block">Preview</h2>
-				<div class="tab-content " id="widget">
-					<div class=" tab-pane active center-block text-center backNFront" id="layout1" >
-						<div class="badeContainer">
-							<div class="row nameBadge center-block text-center" ng-attr-style="{{previewStyle()}}">
-								<div class=" badgeRow1" style="text-align: left;">
-									<div class=" " ng-show="toUpload">
-										<img ng-src="{{picFile | ngfDataUrl}}" width="40%" class=""/>
-									</div>
-								</div>
-								<br />
-								<div class="col-md-12 col-lg-12 col-xs-12 badgeRow2  text-center center-block">
-									<span class="badgeGName">{{$storage.guestsList[$storage.guestsList.length-1][0]}}</span>
-									<br />
-									<span class="">{{guestRole}}</span>
-								</div>
-								<div class="col-md-12 col-lg-12 col-xs-12 badgeRow3 center-block" style="padding-top: 5px;">
-									<div class="  row" >
-										<div class="col-md-3 col-lg-3 col-xs-3 sponsorLogo " ng-show="toUpload"></div>
-										<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload">
-											<img ng-src="{{image1 | ngfDataUrl}}" width="100%" class=""/>
-										</div>
-										<div class="col-md-2 col-lg-2 col-xs-2  sponsorLogo " ng-show="toUpload">
-											<img ng-src="{{image2 | ngfDataUrl}}" width="100%" class=""/>
-										</div>
-										<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload">
-											<img ng-src="{{image3 | ngfDataUrl}}" width="100%" class=""/>
-										</div>
-										<div class="col-md-2 col-lg-2 col-xs-2sponsorLogo " ng-show="toUpload">
-											<img ng-src="{{image4 | ngfDataUrl}}" width="100%" class=""/>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- <hr /> -->
-						<!-- Badge back -->
-						<div class="badgeBack">
-							<div class="badeContainer">
-								<div class="row nameBadge center-block text-center" ng-attr-style="{{previewStyle()}}">
-									<div class=" badgeRow1" style="text-align: left;">
-										<div class=" " ng-show="toUpload">
-											<img ng-src="{{picFile | ngfDataUrl}}" width="40%" class=""/>
-										</div>
-									</div>
-									<br />
-									<div class="col-md-12 col-lg-12 col-xs-12 badgeRow2  text-center center-block">
-										<span class="badgeGName">{{$storage.guestsList[$storage.guestsList.length-1][0]}}</span>
-										<br />
-										<span class="">{{guestRole}}</span>
-									</div>
-									<div class="col-md-12 col-lg-12 col-xs-12 badgeRow3 center-block" style="padding-top: 5px;">
-										<div class="  row" >
-											<div class="col-md-3 col-lg-3 col-xs-3 sponsorLogo " ng-show="toUpload"></div>
-											<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload">
-												<img ng-src="{{image1 | ngfDataUrl}}" width="100%" class=""/>
-											</div>
-											<div class="col-md-2 col-lg-2 col-xs-2  sponsorLogo " ng-show="toUpload">
-												<img ng-src="{{image2 | ngfDataUrl}}" width="100%" class=""/>
-											</div>
-											<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload">
-												<img ng-src="{{image3 | ngfDataUrl}}" width="100%" class=""/>
-											</div>
-											<div class="col-md-2 col-lg-2 col-xs-2sponsorLogo " ng-show="toUpload">
-												<img ng-src="{{image4 | ngfDataUrl}}" width="100%" class=""/>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- <div class="col-md-2 col-xs-12 ">
-				<div class="">
-					<div class="col-md-6 col-xs-6 pull-right">
-						<h2 class="text-center row">Fill</h2>
-						<br />
-						<div class="text-center row ticketColors">
-							<div class="styleBtns cf" ng-repeat="item in $storage.style | orderBy:'-' ">
-								<a ng-click="ticketBackground(item.hex)">
-								<div type="button" class="btn  btn-xs "
-								ng-attr-style="textBtnStyle(item.hex)"
-								style="">
-									&nbsp;
-								</div> </a>
-							</div>
-						</div >
-						<br />
-						<div class="text-center row">
-							<input ng-model="userFillColor" class="row text-center" style="width: 100%;" placeholder="color"
-							/>
-							<br />
-							<button  type="button" class="btn btn-xs btn-primary " ng-click="ticketBackground(userFillColor)">
-								Ok
-							</button>
-
-						</div>
-					</div>
-					<div class="col-md-6 col-xs-6 pull-right">
-						<h2 class="text-center row">Text</h2>
-						<br />
-						<div class="text-center row ticketColors">
-							<div class="styleBtns_Txt cf" ng-repeat="item in $storage.style ">
-								<a ng-click="ticketTxtColor(item.hex);">
-								<div type="button" class="btn  btn-xs "
-								ng-attr-style="textBtnStyle(item.hex)"
-								style="">
-									&nbsp;
-								</div> </a>
-							</div>
-						</div>
-						<br />
-						<div class="text-center row">
-							<input ng-model="userTextColor" class="row text-center" style="width: 100%;" placeholder="color"
-							/>
-							<br />
-							<button  type="button" class="btn  btn-xs btn-primary " ng-click="ticketTxtColor(userTextColor)">
-								Ok
-							</button>
-						</div>
-					</div>
-				</div>
-			</div> -->
-			
 			<!-- /// -->
-			
-			
-			<div class="col-md-2 col-xs-12 text-center center-block" >
-				<a href="" ng-click="showTextColor=!showTextColor" ng-show="showTextColor"><i class="text-center fa fa-toggle-off text-bold" > </i> </i></a>
-				<a href="" ng-click="showTextColor=!showTextColor" ng-show="!showTextColor"><i class="text-center fa fa-toggle-on text-bold" > </i></a>
-				<div class="col-sm-12  pull-right" ng-hide="showTextColor">
+
+			<div class="col-sm-1 col-xs-12 text-center center-block" >
+				<a href="" ng-click="showTextColor=!showTextColor" ng-show="showTextColor" style="font-size: 40px"><i class="fa fa-toggle-off text-bold" > </i> </i></a>
+				<a href="" ng-click="showTextColor=!showTextColor" ng-show="!showTextColor" style="font-size: 40px"><i class="fa fa-toggle-on text-bold" > </i></a>
+				<div class="col-sm-12" ng-hide="showTextColor">
 					<div class="text-center row ticketColors">
 						<div class="styleBtns cf" ng-repeat="item in $storage.style | orderBy:'-' ">
 							<a ng-click="ticketBackground(item.hex)">
@@ -267,7 +113,7 @@
 
 					</div>
 				</div>
-				<div class="col-sm-12 pull-right" ng-show="showTextColor">
+				<div class="col-sm-12" ng-show="showTextColor">
 					<div class="text-center row ticketColors">
 						<div class="styleBtns_Txt cf" ng-repeat="item in $storage.style">
 							<a ng-click="ticketTxtColor(item.hex);">
@@ -289,23 +135,110 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<!--  -->
+			<div class="col-sm-8 col-xs-12 ticketPreview">
+				<h3 class="text-center row center-block">Preview</h3>
+				<div class="row text-center center-block">
+					<div class="badeContainer">
+						<div class="row nameBadge center-block text-center" ng-attr-style="{{previewStyle()}}">
+							<div class=" badgeRow1" style="text-align: left;">
+								<div class=" " ng-show="toUpload">
+									<img ng-src="{{picFile | ngfDataUrl}}" width="40%" class=""/>
+								</div>
+							</div>
+							<div class="col-md-12 col-lg-12 col-xs-12 badgeRow2  text-center center-block">
+								<span class="badgeGName">{{$storage.guestsList[$storage.guestsList.length-1][0]}}</span>
+								<br />
+								<span class="">{{guestRole}}</span>
+							</div>
+							<div class="col-md-12 col-lg-12 col-xs-12 badgeRow3 center-block" style="padding-top: 5px;">
+								<div class="  row" >
+									<div class="col-md-3 col-lg-3 col-xs-3 sponsorLogo " ng-show="toUpload"></div>
+									<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload">
+										<img ng-src="{{image1 | ngfDataUrl}}" width="100%" class=""/>
+									</div>
+									<div class="col-md-2 col-lg-2 col-xs-2  sponsorLogo " ng-show="toUpload">
+										<img ng-src="{{image2 | ngfDataUrl}}" width="100%" class=""/>
+									</div>
+									<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload">
+										<img ng-src="{{image3 | ngfDataUrl}}" width="100%" class=""/>
+									</div>
+									<div class="col-md-2 col-lg-2 col-xs-2sponsorLogo " ng-show="toUpload">
+										<img ng-src="{{image4 | ngfDataUrl}}" width="100%" class=""/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- <hr /> -->
+					<!-- Badge back -->
+					<!-- <div class="badgeBack"> -->
+					<div class="badeContainer">
+						<div class="row nameBadge center-block text-center" ng-attr-style="{{previewStyle()}}">
+							<div class=" badgeRow1" style="text-align: left;">
+								<div class=" " ng-show="toUpload">
+									<img ng-src="{{picFile | ngfDataUrl}}" width="40%" class=""/>
+								</div>
+							</div>
+							<div class="col-md-12 col-lg-12 col-xs-12 badgeRow2  text-center center-block">
+								<span class="badgeGName">{{$storage.guestsList[$storage.guestsList.length-1][0]}}</span>
+								<br />
+								<span class="">{{guestRole}}</span>
+							</div>
+							<div class="col-md-12 col-lg-12 col-xs-12 badgeRow3 center-block" style="padding-top: 5px;">
+								<div class="  row" >
+									<div class="col-md-3 col-lg-3 col-xs-3 sponsorLogo " ng-show="toUpload"></div>
+									<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload">
+										<img ng-src="{{image1 | ngfDataUrl}}" width="100%" class=""/>
+									</div>
+									<div class="col-md-2 col-lg-2 col-xs-2  sponsorLogo " ng-show="toUpload">
+										<img ng-src="{{image2 | ngfDataUrl}}" width="100%" class=""/>
+									</div>
+									<div class="col-md-2 col-lg-2 col-xs-2 sponsorLogo " ng-show="toUpload">
+										<img ng-src="{{image3 | ngfDataUrl}}" width="100%" class=""/>
+									</div>
+									<div class="col-md-2 col-lg-2 col-xs-2sponsorLogo " ng-show="toUpload">
+										<img ng-src="{{image4 | ngfDataUrl}}" width="100%" class=""/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- </div> -->
+				<!-- </div> -->
+				<div class="clearfix">
+					<div class=" center-block row text-justify text-muted">
+						<br />
+						<ul class="list-group">
+							<li class="list-group-item">
+								You can use any background or font color for this namebadge.
+							</li>
+							<li class="list-group-item">
+								Enter color name (red), hex value (#EEEEEE) or rgba or rgba (rgb(255,0,0)) value and click "Ok".
+								Add '#' before the 6 digit hex value.
+							</li>
+							<li class="list-group-item">
+								Get color names from <a href="http://www.w3schools.com/html/html_colornames.asp" target="_blank">W3Schools</a> and
+								mix colors with <a href="http://www.w3schools.com/tags/ref_colormixer.asp" target="_blank">W3Schools Color Mixer</a>
+								then copy the hex value.
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+
 		</div>
 		<div class="row">
-			<br />
-			<div class="pull-left ">
-				<button   type="button" class="btn btn-primary  btn-xs " ng-click="printSet=true;($storage.sampleView) = true">
-					Print preview
-				</button>
-			</div>
-			<div class="pull-right" ng-hide="($storage.sampleView)">
-				<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = true"> Preview all Badges &raquo;</a>
-			</div>
-			<div class="pull-right" ng-hide="(!($storage.sampleView))==true">
-				<a type="button" class="btn btn-primary  btn-xs " ng-click="($storage.sampleView) = false"
-				>Hide all Badges &raquo;</a>
-			</div>
+			<button   type="button" class=" pull-left btn btn-primary  btn-xs " ng-click="printSet=true;($storage.sampleView) = true">
+				Print preview
+			</button>
+			<a ng-hide="($storage.sampleView)" type="button" class="btn btn-primary  btn-xs pull-right" ng-click="($storage.sampleView) = true"> Preview all Badges &raquo;</a>
+
+			<a ng-hide="(!($storage.sampleView))==true" type="button" class="btn btn-primary  btn-xs pull-right" ng-click="($storage.sampleView) = false"
+			>Hide all Badges &raquo;</a>
 		</div>
 	</div>
 	<div  ng-show="($storage.sampleView)" class="center-block text-center" >

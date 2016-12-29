@@ -2,10 +2,7 @@ var myApp = angular.module('myApp', ['ngRoute', 'mainControllers', 'ticketContro
 
 myApp.config(['$routeProvider',
 function($routeProvider) {
-	$routeProvider.when('/list', {
-		templateUrl : 'partials/list.html',
-		controller : 'MainController'
-	}).when('/populate', {
+	$routeProvider.when('/populate', {
 		templateUrl : 'partials/setup/populate.html',
 		controller : 'MainController'
 	}).when('/newevent', {

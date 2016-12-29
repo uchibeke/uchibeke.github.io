@@ -5,11 +5,10 @@
 			<a type="button" class="btn btn-default btn-xs" ng-href="#!/dashboard"> <span class="fa fa-tachometer"></span> </a>
 		</div>
 		<h1 class="text-center">TICKET DESIGNER</h1>
-		<h4 class="text-center"><a>{{$storage.eventName}}</a></h4>
+		<h4 class="text-center">{{$storage.eventName}}</h4>
 		<div class="row dataFieldContainer  center-block ">
 			<div class="col-sm-4 col-xs-12 pull-left ticketContent">
-				<h2 class="text-center">Content</h2>
-				<br />
+				<h3 class="text-center">Content</h3>
 				<div >
 					<form role="form ">
 						<div class="form-group">
@@ -69,7 +68,7 @@
 			<div class="col-sm-1 col-xs-12 text-center center-block" >
 				<a href="" ng-click="showTextColor=!showTextColor" ng-show="showTextColor" style="font-size: 40px"><i class="fa fa-toggle-off " > </i> </i></a>
 				<a href="" ng-click="showTextColor=!showTextColor" ng-show="!showTextColor" style="font-size: 40px" ><i class="fa fa-toggle-on" > </i></a>
-				<div class="col-sm-12  pull-right" ng-hide="showTextColor">
+				<div class="col-sm-12" ng-hide="showTextColor">
 					<div class="text-center row ticketColors">
 						<div class="styleBtns cf" ng-repeat="item in $storage.style | orderBy:'-' ">
 							<a ng-click="ticketBackground(item.hex)">
@@ -91,7 +90,7 @@
 
 					</div>
 				</div>
-				<div class="col-sm-12 pull-right" ng-show="showTextColor">
+				<div class="col-sm-12" ng-show="showTextColor">
 					<div class="text-center row ticketColors">
 						<div class="styleBtns_Txt cf" ng-repeat="item in $storage.style">
 							<a ng-click="ticketTxtColor(item.hex);">
