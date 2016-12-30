@@ -401,6 +401,9 @@ a {
 	background-color: #F50057 !important;
 	border: 2px solid #fff !important;
 }
+.btn:focus, .btn:hover{
+	outline:0 !important;
+}
 
 .btn-primary, .btn-default {
 	color: white !important;

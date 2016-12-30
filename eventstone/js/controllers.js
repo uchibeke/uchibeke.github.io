@@ -243,8 +243,8 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 	$scope.checkInSingle = function(i) {
 		var el = [];
 		var itemToAdd = i.split(" ");
-		for (var i = 0; i < itemToAdd.length; i++) {
-			el[i] = (itemToAdd[i]);
+		for (var i = 0; i < ss.guestsList[0].length; i++) {
+			el[i] = itemToAdd[i] ? itemToAdd[i] : "-";
 		}
 		$scope.userRegInfo = "";
 		var d = new Date();
@@ -255,7 +255,7 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 		ss.guestsList.$add(el).then(function(guestRef) {
 			var id = guestRef.key;
 			console.log("added record with id " + id);
-			theList.$indexFor(id);
+			ss.guestsList.$indexFor(id);
 		});
 
 	};
@@ -308,10 +308,12 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 	// Live screen check in message
 	$scope.liveMsgStatus = false;
 	$scope.liveMsg = function() {
-		var theTime = 5000;
+		var theTime = 10000;
 		$timeout(function() {
-			$scope.liveMsgStatus = false;
-			$scope.showAddField = false;
+			if ($scope.userRegInfo.length < 1) {
+				$scope.liveMsgStatus = false;
+				$scope.showAddField = false;
+			}
 		}, theTime);
 	};
 
