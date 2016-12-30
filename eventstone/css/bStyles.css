@@ -13,6 +13,7 @@
 	-webkit-print-color-adjust: exact !important;
 	-moz-print-color-adjust: exact !important;
 	page-break-inside: avoid !important;
+	font-family: 'Noto Sans', sans-serif;
 }
 .b1Tag {
 	padding-bottom: 0.2in;
@@ -23,14 +24,17 @@
 	page-break-inside: avoid !important;
 }
 .b1Header {
+	font-family: 'Noto Sans', sans-serif;
 	font-weight: bold;
 	padding: 10px 0 0 0;
+	font-size: 20px;
 }
 
 .b1Tag p, .b1Tag footer {
 	font-weight: normal;
 	margin: -5px 0 10px 0;
 	padding: 0;
+	font-family: 'Noto Sans', sans-serif;
 	print-color-adjust: exact !important;
 	-webkit-print-color-adjust: exact !important;
 	-moz-print-color-adjust: exact !important;
@@ -41,6 +45,7 @@
 	height: 2.8in;
 	font-size: 18px;
 	padding: 0.6in 5px 0px 5px;
+	font-family: 'Noto Sans', sans-serif;
 }
 .name, .b1Main:first-line {
 	font-weight: bold;
@@ -67,10 +72,13 @@
  transform: rotate(90deg) !important;
  }*/
 /*
-@page #printableBadge {
-	size: 8.27in 11.69in;
-	margin: .5in .0in .5in .0in;
-	mso-header-margin: .0in;
-	mso-footer-margin: .0in;
-	mso-paper-source: 0;
-}*/
+ @page #printableBadge {
+ size: 8.27in 11.69in;
+ margin: .5in .0in .5in .0in;
+ mso-header-margin: .0in;
+ mso-footer-margin: .0in;
+ mso-paper-source: 0;
+ }*/
+
+/*B2*/
+
