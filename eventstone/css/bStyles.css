@@ -64,21 +64,54 @@
 	font-size: 15px;
 }
 
-/*#b1TagPreview .b1Outer{
- -webkit-transform: rotate(90deg) !important;
- -moz-transform: rotate(90deg) !important;
- -o-transform: rotate(90deg) !important;
- -ms-transform: rotate(90deg) !important;
- transform: rotate(90deg) !important;
- }*/
-/*
- @page #printableBadge {
- size: 8.27in 11.69in;
- margin: .5in .0in .5in .0in;
- mso-header-margin: .0in;
- mso-footer-margin: .0in;
- mso-paper-source: 0;
- }*/
-
 /*B2*/
 
+.b2Tag {
+	border-radius: 20px;
+	padding: 1px;
+	position: relative;
+	height: 3in;
+	width: 4in;
+	align: center;
+	border: 1px solid #EEEEEE;
+	display: inline-block;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;
+	font-family: 'Noto Sans', sans-serif;
+}
+.b2Name {
+	font-size: 30px;
+	border: solid;
+	height: 1.5in;
+	width: 3.6in;
+	text-align: middle;
+	margin: 0.2in !important;
+	border: 1px solid #EEEEEE;
+}
+.b2Header {
+	font-size: 40px;
+	border: none;
+	padding: 1px;
+	color: #FFF;
+	text-align: center;
+	height: 0.5in;
+	width: 3.9in;
+	align: top;
+	margin-bottom: 15px;
+}
+.B2Hello {
+	margin-top:15px;
+	font-size: 55px;
+	font-weight: bold;
+	border: none;
+	margin-bottom: 10px;
+	color: #FFF;
+	text-align: center;
+	height: 0.4in;
+	width: 3.9in;
+	align: top;
+}
+
+/*B3*/

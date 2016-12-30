@@ -1,4 +1,4 @@
-var ticketControllers = angular.module('ticketControllers', ['ngStorage', 'ngSanitize', 'ngFileUpload', 'ngImgCrop']);
+var ticketControllers = angular.module('ticketControllers', ['ngStorage', 'ngSanitize', 'ngFileUpload', 'ngImgCrop', 'slick']);
 
 ticketControllers.controller('TicketController', ['$rootScope', '$scope', '$http', '$localStorage', '$sce', 'Upload', '$timeout', 'analytics', '$firebaseObject', '$firebaseArray', '$firebaseAuth', 'shareDataService',
 function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analytics, $firebaseObject, $firebaseArray, $firebaseAuth, shareDataService) {
@@ -169,9 +169,15 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 		'formats' : ['partials/tickets/t1.html', 'partials/tickets/t2.html'],
 		'preview' : ['partials/tickets/t1Preview.html', 'partials/tickets/t2Preview.html']
 	};
-	$scope.setTicketFormat = function(index) {
-		ss.user.styles.selectedTicFormat = ss.user.styles.ticketFormats.formats[index];
-		ss.user.styles.selectedTicFormatPre = ss.user.styles.ticketFormats.preview[index];
+	
+	// Limit number of badges and tickets to 10 because of the way this works
+	ss.user.styles.selectedInd = function() {
+		var num = undefined;
+		if ($('.choices').find('.slick-active')[1] != undefined) {
+			num = Number($('.choices').find('.slick-active')[1].getAttribute('id').slice(-1));
+			// console.log(num);
+		}
+		return num;
 	};
 	
 	namebadgeOps($rootScope, $scope, $http,  $localStorage);

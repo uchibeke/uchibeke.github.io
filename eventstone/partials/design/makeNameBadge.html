@@ -14,8 +14,8 @@
 					Change the numbers below
 					<form role="form ">
 						<!-- <div class=" " >
-							<label>Upload event Logo/Image? </label>
-							<input type="checkbox" ng-model="toUpload">
+						<label>Upload event Logo/Image? </label>
+						<input type="checkbox" ng-model="toUpload">
 						</div> -->
 						<div class="form-group">
 							<input class="form-control"  placeholder="First Name column no" type="text"
@@ -46,72 +46,67 @@
 							ng-model="$storage.options.badge.secondTxt">
 						</div>
 						<!-- <div class="form-group text-justify " ng-show="toUpload">
-							<button ngf-select ng-model="picFile" accept="image/*">
-								Select Picture and crop
-							</button>
-							<div ngf-drop ng-model="picFile" ngf-pattern="image/*"
-							class=""></div>
+						<button ngf-select ng-model="picFile" accept="image/*">
+						Select Picture and crop
+						</button>
+						<div ngf-drop ng-model="picFile" ngf-pattern="image/*"
+						class=""></div>
 						</div>
 						<div class="">
-							<label>Upload sponsor 1 logo </label>
-							<input type="checkbox" ng-model="toUpload1">
+						<label>Upload sponsor 1 logo </label>
+						<input type="checkbox" ng-model="toUpload1">
 						</div>
 						<div class="form-group text-justify " ng-show="toUpload1">
-							<button ngf-select ng-model="image1" accept="image/*">
-								Select Picture
-							</button>
-							<div ngf-drop ng-model="image1" ngf-pattern="image/*"
-							class=""></div>
+						<button ngf-select ng-model="image1" accept="image/*">
+						Select Picture
+						</button>
+						<div ngf-drop ng-model="image1" ngf-pattern="image/*"
+						class=""></div>
 						</div>
 						<div class=" ">
-							<label>Upload sponsor 2 logo </label>
-							<input type="checkbox" ng-model="toUpload2">
+						<label>Upload sponsor 2 logo </label>
+						<input type="checkbox" ng-model="toUpload2">
 						</div>
 						<div class="form-group text-justify " ng-show="toUpload2">
-							<button ngf-select ng-model="image2" accept="image/*">
-								Select Picture
-							</button>
-							<div ngf-drop ng-model="image2" ngf-pattern="image/*"
-							class=""></div>
+						<button ngf-select ng-model="image2" accept="image/*">
+						Select Picture
+						</button>
+						<div ngf-drop ng-model="image2" ngf-pattern="image/*"
+						class=""></div>
 						</div>
 						<div class=" ">
-							<label>Upload sponsor 3 logo </label>
-							<input type="checkbox" ng-model="toUpload3">
+						<label>Upload sponsor 3 logo </label>
+						<input type="checkbox" ng-model="toUpload3">
 						</div>
 						<div class="form-group text-justify " ng-show="toUpload3">
-							<button ngf-select ng-model="image3" accept="image/*">
-								Select Picture
-							</button>
-							<div ngf-drop ng-model="image3" ngf-pattern="image/*"
-							class=""></div>
+						<button ngf-select ng-model="image3" accept="image/*">
+						Select Picture
+						</button>
+						<div ngf-drop ng-model="image3" ngf-pattern="image/*"
+						class=""></div>
 						</div>
 						<div class=" ">
-							<label>Upload sponsor 4 logo </label>
-							<input type="checkbox" ng-model="toUpload4">
+						<label>Upload sponsor 4 logo </label>
+						<input type="checkbox" ng-model="toUpload4">
 						</div>
 						<div class="form-group text-justify " ng-show="toUpload4">
-							<button ngf-select ng-model="image4" accept="image/*">
-								Select Picture
-							</button>
-							<div ngf-drop ng-model="image4" ngf-pattern="image/*"
-							class=""></div>
+						<button ngf-select ng-model="image4" accept="image/*">
+						Select Picture
+						</button>
+						<div ngf-drop ng-model="image4" ngf-pattern="image/*"
+						class=""></div>
 						</div> -->
 					</form>
 				</div>
 				<div class=" center-block row text-center">
-					<br />
-					<div class="center-block col-md-6">
-						<button   type="button" class="btn btn-primary btn-xs btn-block"
+					<div class="center-block">
+						<button   type="button" class="btn btn-info btn-lg center-block"
 						ng-click="printSet=true;($storage.sampleView) = true;">
-							Print Setup
+							<span class="glyphicon glyphicon-print"></span>
 						</button>
 					</div>
-					<!-- <div class="center-block col-md-6">
-					<a type="button" class="btn btn-primary btn-xs btn-block" ng-href="#!/populate">Manage Guests</a>
-					</div> -->
 				</div>
 			</div>
-			<!-- /// -->
 
 			<div class="col-sm-1 col-xs-12 text-center center-block" >
 				<a href="" ng-click="showTextColor=!showTextColor" ng-show="showTextColor" style="font-size: 40px"><i class="fa fa-toggle-off text-bold" > </i> </i></a>
@@ -164,8 +159,12 @@
 			<!--  -->
 			<div class="col-sm-8 col-xs-12 ticketPreview">
 				<h3 class="text-center row center-block">Preview</h3>
-				<div class="row text-center center-block">
-					<div ng-include="'partials/badges/b1.html'"></div>
+				<div class="row">
+					<slick autoplaySpeed="500" fade="true" dots="true" infinite="true" arrows="true" class="choices">
+						<div ng-repeat="format in $storage.user.styles.badgeFormats.formats ">
+							<div ng-include="format"></div>
+						</div>
+					</slick>
 				</div>
 				<div class="clearfix">
 					<div class=" center-block row text-justify text-muted">
@@ -184,19 +183,9 @@
 							</li>
 						</ul>
 					</div>
-
 				</div>
 			</div>
 
-		</div>
-		<div class="row">
-			<button   type="button" class=" pull-left btn btn-primary  btn-xs " ng-click="printSet=true;($storage.sampleView) = true">
-				Print preview
-			</button>
-			<a ng-hide="($storage.sampleView)" type="button" class="btn btn-primary  btn-xs pull-right" ng-click="($storage.sampleView) = true"> Preview all Badges &raquo;</a>
-
-			<a ng-hide="(!($storage.sampleView))==true" type="button" class="btn btn-primary  btn-xs pull-right" ng-click="($storage.sampleView) = false"
-			>Hide all Badges &raquo;</a>
 		</div>
 	</div>
 	<div  ng-show="($storage.sampleView)" class="center-block text-center" >
@@ -211,11 +200,16 @@
 			ng-click="printBadges()">
 				Print
 			</button>
+		</div><h2>{{$storage.eventName}}</h2>
+		<div  class="text-center center-block">
+			You are about to print a total of {{$storage.guestsList.length}} badges.
+			<br />
+			<span class="text-danger text-bold">IN THE NEXT PRINT DIALOGUE BOX, MAKE SURE TO CHECK 'PRINT BACKGROUND COLORS' and 'PRINT BACKGROUND IMAGES'</span>
 		</div>
-		<h2>Showing name badge for {{$storage.guestsList.length}} guests. </h2>
 		<div id="printableBadge" class="text-center center-block">
+			<h4  class="text-center center-block">{{$storage.eventName}} badges designed and generated at http://eventstion.io </h4>
 			<div class="previewTickets  center-block text-center" style="width: 8in;">
-				<div ng-include="'partials/badges/b1Preview.html'"></div>
+				<div ng-include="$storage.user.styles.badgeFormats.preview[$storage.user.styles.selectedInd()]"></div>
 			</div>
 		</div>
 	</div>

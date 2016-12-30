@@ -36,17 +36,19 @@
 			<a class="btn btn-primary btn-lg pull-left " ng-click="exportData('toPrint', 'xls')"><span class="glyphicon glyphicon-save"></span></a>
 			<div class="clearfix"></div>
 			<div class="row" >
-				<p class="col-lg-4 col-md-4 col-sm-4">
+				<h3 class="col-xs-3">
 					{{$storage.guestsList.length}} total
-				</p>
-				<p class="col-lg-4 col-md-4 col-sm-4 text-success">
-					{{checkIns()}} checked-in
-				</p>
-				<p class="col-lg-4 col-md-4 col-sm-4 text-warning">
-					{{noCheckIns()}} not checked-in
-				</p>
+				</h3>
+				<h3 class="col-xs-3 text-success">
+					{{checkIns()}} attended
+				</h3>
+				<h3 class="col-xs-3 text-warning">
+					{{noCheckIns()}} no show
+				</h3>
+				<h3 class="col-xs-3 text-warning">
+					{{checkIns()/noCheckIns() * 100 | number:0}}% attened
+				</h3>
 			</div>
-			<br />
 			<table class="table table-responsive table-bordered text-left table-condensed" >
 				<tbody>
 					<tr ng-repeat="item in $storage.guestsList" class="toPrintTr">

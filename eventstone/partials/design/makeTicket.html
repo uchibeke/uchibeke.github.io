@@ -40,6 +40,7 @@
 							ng-model="$storage.otherTicketInfo" ng-style="$storage.otherTicketInfo.length>=70 && {'border': '2px dotted red'}">
 							{{$storage.otherTicketInfo.length}} of 70 characters
 						</div>
+
 						<!-- <div class="checkbox">
 						<label>
 						<input type="checkbox" ng-model="toUpload">
@@ -63,6 +64,14 @@
 						</div>
 						</div> -->
 					</form>
+				</div>
+				<div class=" center-block row text-center">
+					<div class="center-block">
+						<button   type="button" class="btn btn-info btn-lg center-block"
+						ng-click="printSet=true;($storage.sampleView) = true;">
+							<span class="glyphicon glyphicon-print"></span>
+						</button>
+					</div>
 				</div>
 			</div>
 			<div class="col-sm-1 col-xs-12 text-center center-block" >
@@ -113,19 +122,15 @@
 				</div>
 			</div>
 			<div class="col-sm-7 col-xs-12 ticketPreview">
-				<div class="btn-group">
-					<button  type="button" href="" ng-click="setTicketFormat(0)" class="btn btn-info">
-						Style 1
-					</button>
-					<button  type="button" href="" ng-click="setTicketFormat(1)" class="btn btn-info">
-						Style 2
-					</button>
+				<div class="row">
+					<slick  autoplaySpeed="500" fade="true" dots="true" infinite="true" arrows="true"  class="choices">
+						<div ng-repeat="format in $storage.user.styles.ticketFormats.formats ">
+							<div ng-include="format"></div>
+						</div>
+					</slick>
 				</div>
-				<button   type="button" class="btn btn-info btn-md pull-right "
-				ng-click="printSet=true;($storage.sampleView) = true;">
-					<span class="glyphicon glyphicon-print"></span>
-				</button>
-				<div ng-include="$storage.user.styles.selectedTicFormat"></div>
+				{{$storage.user.styles.badgeFormats.preview[$storage.user.styles.selectedInd()]}}
+				<div ng-include="'partials/tickets/colorInfo.html'" class="clearfix"></div>
 			</div>
 		</div>
 	</div>
@@ -141,9 +146,19 @@
 			ng-click="printTickets()">
 				<span class="glyphicon glyphicon-print"></span>
 			</button>
+		</div><h2>{{$storage.eventName}}</h2>
+		<div  class="text-center center-block">
+			You are about to print a total of {{$storage.guestsList.length}} tickets.
+			<br />
+			<span class="text-danger text-bold">IN THE NEXT PRINT DIALOGUE BOX, MAKE SURE TO CHECK 'PRINT BACKGROUND COLORS' and 'PRINT BACKGROUND IMAGES'</span>
 		</div>
 
-		<div ng-include="$storage.user.styles.selectedTicFormatPre"></div>
+		<div id="printable" class="text-center center-block">
+			<h4  class="text-center center-block">{{$storage.eventName}} tickets designed and generated at http://eventstion.io </h4>
+			<div class="previewTickets  center-block text-center" style="width: 8in;">
+				<div ng-include="$storage.user.styles.ticketFormats.preview[$storage.user.styles.selectedInd()]"></div>
+			</div>
+		</div>
 	</div>
 	<div>
 		<button ng-hide="true" onclick="localStorage.clear();">

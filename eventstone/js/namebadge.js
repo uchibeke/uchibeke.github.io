@@ -2,8 +2,6 @@ function namebadgeOps($rootScope, $scope, $http, $localStorage) {
 
 	var ss = $scope.$storage;
 
-	console.log(ss);
-
 	ss.options.badge = {};
 
 	ss.options.badge.fNameCol = 1;
@@ -39,6 +37,23 @@ function namebadgeOps($rootScope, $scope, $http, $localStorage) {
 		
 		popupWin.document.write(top + printContents + bottom);
 		popupWin.document.close();
+	};
+	
+	
+	
+	if (ss.user.styles.selectedBFormat == undefined && ss.user.styles.selectedBFormatPre == undefined) {
+		ss.user.styles.selectedBFormat = 'partials/badges/b1.html';
+		ss.user.styles.selectedBFormatPre = 'partials/badges/b1Preview.html';
+	}
+	
+	ss.user.styles.badgeFormats = {
+		'formats' : ['partials/badges/b1.html', 'partials/badges/b2.html'],
+		'preview' : ['partials/badges/b1Preview.html', 'partials/badges/b2Preview.html']
+	};
+	
+	$scope.setBadgeFormat = function(index) {
+		ss.user.styles.selectedBFormat = ss.user.styles.badgeFormats.formats[index];
+		ss.user.styles.selectedBFormatPre = ss.user.styles.badgeFormats.preview[index];
 	};
 	
 	

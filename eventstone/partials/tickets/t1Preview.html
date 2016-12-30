@@ -1,45 +1,36 @@
-<h2>{{$storage.eventName}}</h2>
-<div  class="text-center center-block">
-	You are about to print a total of {{$storage.guestsList.length}} tickets.
-	<br />
-	<span class="text-danger text-bold">IN THE NEXT PRINT DIALOGUE BOX, MAKE SURE TO CHECK 'PRINT BACKGROUND COLORS' and 'PRINT BACKGROUND IMAGES'</span>
-</div>
-<div id="printable" class="text-center center-block">
-	<h4  class="text-center center-block">{{$storage.eventName}} Tickets designed and generated at http://eventstion.io </h4>
-	<div class="previewTickets  center-block text-center"
-	ng-repeat="item in $storage.guestsList" >
-		<div class="row text-center ticket center-block" ng-attr-style="{{previewStyle()}}">
-			<div class="col-md-3 col-lg-3 col-xs-3 ticketCol1 text-center center-block">
-				<div style="width: 50%;" class="center center-block text-center" ng-show="toUpload">
-					<img ng-src="{{croppedDataUrl}}" width="100%" class=""/>
-				</div>
-				<span class="ticketGName">{{item.id}}</span>
-				<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
-				src="{{barcodeSrc(item.id,$storage.ticketBgColor,$storage.ticketText)}}">
-				<p class="text-center userInfo" style="font-size: xx-small; " ng-attr-style="{{previewStyle()}}" >
-					{{$storage.ageInfo}}
-				</p>
+<div class="previewTickets  center-block text-center"
+ng-repeat="item in $storage.guestsList" >
+	<div class="row text-center ticket center-block" ng-attr-style="{{previewStyle()}}">
+		<div class="col-md-3 col-lg-3 col-xs-3 ticketCol1 text-center center-block">
+			<div style="width: 50%;" class="center center-block text-center" ng-show="toUpload">
+				<img ng-src="{{croppedDataUrl}}" width="100%" class=""/>
 			</div>
-			<div class="col-md-9 col-lg-9 col-xs-9 ticketCol2  text-center center-block">
-				<h2 class="text-center ticketTitle" ng-attr-style="{{previewStyle()}}"  > {{$storage.eventName}} </h2>
-				<h5 class="text-center ticketVenue" ng-attr-style="{{previewStyle()}}"  > {{$storage.ticket[0].eventVenue}} </h5>
-				<div class="row centerDiv">
-					<div class="col-md-4 col-lg-4 col-xs-4 text-center center-block centerDiv_1">
-						<span>{{$storage.ticket[0].eventDate}} {{$storage.ticket[0].eventTime}}</span>
-						<br />
-						<span class="ticketP text-center" ng-attr-style="{{previewStyle()}}">{{$storage.ticket[0].ticketPrice | currency }}</span>
-						<br />
-						<span  class="securityEncoding">{{$storage.secEncoding }}</span>
+			<span class="ticketGName"  ng-attr-style="{{previewStyle()}}">{{item.id}}</span>
+			<img alt="Add guest to see barcode" class="img-responsive barcodeIMG"
+			src="{{barcodeSrc(item.id,$storage.ticketBgColor,$storage.ticketText)}}">
+			<p class="text-center userInfo" style="font-size: xx-small; " ng-attr-style="{{previewStyle()}}" >
+				{{$storage.ageInfo}}
+			</p>
+		</div>
+		<div class="col-md-9 col-lg-9 col-xs-9 ticketCol2  text-center center-block">
+			<h2 class="text-center ticketTitle" ng-attr-style="{{previewStyle()}}"  > {{$storage.eventName}} </h2>
+			<h5 class="text-center ticketVenue" ng-attr-style="{{previewStyle()}}"  > {{$storage.ticket[0].eventVenue}} </h5>
+			<div class="row centerDiv">
+				<div class="col-md-4 col-lg-4 col-xs-4 text-center center-block centerDiv_1">
+					<span ng-attr-style="{{previewStyle()}}">{{$storage.ticket[0].eventDate}} {{$storage.ticket[0].eventTime}}</span>
+					<br />
+					<span ng-attr-style="{{previewStyle()}}" class="ticketP text-center" ng-attr-style="{{previewStyle()}}">{{$storage.ticket[0].ticketPrice | currency }}</span>
+					<br />
+					<span ng-attr-style="{{previewStyle()}}"  class="securityEncoding">{{$storage.secEncoding }}</span>
 
-					</div>
-					<div class="col-md-4 col-lg-4 col-xs-4 text-center centerDiv_2">
-						<h3 ng-attr-style="{{previewStyle()}}">Admit One</h3>
-					</div>
-					<div class="col-md-4 col-lg-4 col-xs-4  centerDiv_3"  >
-						<p class=" text-left userInfo" style="font-size: xx-small; " ng-attr-style="{{previewStyle()}}" >
-							{{$storage.otherTicketInfo}}
-						</p>
-					</div>
+				</div>
+				<div class="col-md-4 col-lg-4 col-xs-4 text-center centerDiv_2">
+					<h3 ng-attr-style="{{previewStyle()}}">Admit One</h3>
+				</div>
+				<div class="col-md-4 col-lg-4 col-xs-4  centerDiv_3"  >
+					<p class=" text-left userInfo" style="font-size: xx-small; " ng-attr-style="{{previewStyle()}}" >
+						{{$storage.otherTicketInfo}}
+					</p>
 				</div>
 			</div>
 		</div>
