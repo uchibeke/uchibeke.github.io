@@ -52,6 +52,7 @@
 	font-weight: bold;
 	font-size: 35px;
 	margin-bottom: 1rem;
+	color: #2c57a9;
 }
 .b1Tag footer {
 	margin: 10px 0 2rem;
@@ -63,6 +64,7 @@
 
 .b1Main .company {
 	font-size: 15px;
+	color: #2c57a9;
 }
 
 /*B2*/
@@ -95,7 +97,7 @@
 	font-size: 40px;
 	border: none;
 	padding: 1px;
-	color: #FFF;
+	color: #dbaf81;
 	height: 0.5in;
 	width: 3.075in;
 	align: top;
@@ -107,7 +109,7 @@
 	font-size: 50px;
 	font-weight: bold;
 	border: none;
-	color: #FFF;
+	color: #dbaf81;
 	height: 0.6875in;
 	width: 3.075in;
 	align: top;
@@ -116,7 +118,7 @@
 /*B3*/
 
 #b3Tag {
-	background-color: #6fa9e0;
+	background-color: #404040;
 	width: 3.5in;
 	height: 2in;
 	color: blue;
@@ -134,7 +136,7 @@
 }
 
 #b3Tag h1 {
-	color: #416f9a;
+	color: #dbaf81;
 	font-family: 'Lobster', cursive;
 	font-size: 0.5in;
 	margin-top: 20px;
@@ -144,18 +146,18 @@
 }
 
 #b3Tag h1:hover {
-	color: #275784;
+	color: #dbaf81;
 }
 
 #b3Tag h2 {
-	color: #416f9a;
+	color: #dbaf81;
 	font-family: 'Noto Sans', sans-serif;
 	font-size: 20px;
 	padding:0px 5px 0px 5px;
 }
 
 #b3Tag p {
-	color: #416f9a;
+	color: #dbaf81;
 	font-family: 'Noto Sans', sans-serif;
 	font-size: 18px;
 	border-radius: 20px;
