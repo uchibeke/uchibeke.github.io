@@ -47,8 +47,8 @@ function namebadgeOps($rootScope, $scope, $http, $localStorage) {
 	}
 	
 	ss.user.styles.badgeFormats = {
-		'formats' : ['partials/badges/b1.html', 'partials/badges/b2.html'],
-		'preview' : ['partials/badges/b1Preview.html', 'partials/badges/b2Preview.html']
+		'formats' : ['partials/badges/b3.html', 'partials/badges/b2.html', 'partials/badges/b1.html'],
+		'preview' : ['partials/badges/b3Preview.html', 'partials/badges/b2Preview.html', 'partials/badges/b1Preview.html']
 	};
 	
 	$scope.setBadgeFormat = function(index) {

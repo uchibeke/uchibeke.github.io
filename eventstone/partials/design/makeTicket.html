@@ -129,7 +129,6 @@
 						</div>
 					</slick>
 				</div>
-				{{$storage.user.styles.badgeFormats.preview[$storage.user.styles.selectedInd()]}}
 				<div ng-include="'partials/tickets/colorInfo.html'" class="clearfix"></div>
 			</div>
 		</div>
@@ -141,8 +140,8 @@
 				<span class="glyphicon glyphicon-chevron-left "></span>
 			</button>
 		</div>
-		<div class="pull-right" >
-			<button   type="button" class="btn btn-default  btn-lg" ng-show="printSet"
+		<div class="pull-right"  style="padding-right: 30px;">
+			<button   type="button" class="btn btn-info btn-lg" ng-show="printSet"
 			ng-click="printTickets()">
 				<span class="glyphicon glyphicon-print"></span>
 			</button>
@@ -155,7 +154,7 @@
 
 		<div id="printable" class="text-center center-block">
 			<h4  class="text-center center-block">{{$storage.eventName}} tickets designed and generated at http://eventstion.io </h4>
-			<div class="previewTickets  center-block text-center" style="width: 8in;">
+			<div class="previewTickets  center-block text-center" style="width: 8.5in;">
 				<div ng-include="$storage.user.styles.ticketFormats.preview[$storage.user.styles.selectedInd()]"></div>
 			</div>
 		</div>

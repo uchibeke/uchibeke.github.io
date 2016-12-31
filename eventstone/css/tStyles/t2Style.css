@@ -68,7 +68,7 @@
 	width: 6.5in !important;
 	height: 2.125in !important;
 	border-style: solid;
-	border: thin dashed red;
+	border: 1px solid #EEEEEE;
 	font-family: 'Sanchez', 'Exo 2', 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
 	color: #191970;
 	text-align: center;

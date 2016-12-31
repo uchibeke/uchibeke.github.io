@@ -1,3 +1,4 @@
+/*T1*/
 .ticketCol1 {
 	margin-top: 3px !important;
 	margin-bottom: 0px !important;
@@ -75,15 +76,18 @@
 }
 
 .ticket {
+	width: 6.5in !important;
+	height: 2in !important;
+	border-style: solid;
+	border: 1px solid #EEEEEE;
+	font-family: 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
+	text-align: center;
+	padding-top: 5px;
 	print-color-adjust: exact !important;
 	-webkit-print-color-adjust: exact !important;
 	-moz-print-color-adjust: exact !important;
 	page-break-inside: avoid !important;
-	width: 6.5in !important;
-	height: 2in !important;
-	border-style: solid;
-	border: thin dashed red;
-	font-family: 'Roboto Condensed', 'Candal', monospace, sans-serif !important;
-	text-align: center;
-	padding-top: 5px;
 }
+
+/*T3*/
+

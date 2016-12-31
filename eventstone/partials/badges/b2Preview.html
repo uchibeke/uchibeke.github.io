@@ -1,5 +1,5 @@
-<center id="b1TagPreview" ng-repeat="guest in $storage.guestsList" style="display: inline;padding-bottom: 0in;">
-	<div class="b2Tag text-center center-block text-center"  ng-attr-style="{{previewStyleInverse()}}">
+<center id="b2TagPreview" ng-repeat="guest in $storage.guestsList" style="display: inline;padding-bottom: 0in;">
+	<div id="b2Tag" class="b2Tag text-center center-block"  ng-attr-style="{{previewStyleInverse()}}">
 		<div class="B2Hello"  ng-attr-style="{{previewStyleInverse()}}">
 			HELLO
 		</div>
@@ -7,8 +7,7 @@
 			my name is
 		</div>
 		<p class="b2Name" ng-attr-style="{{previewStyle()}}">
-			<br>
-			{{guest[$storage.options.badge.fNameCol -1]}}  {{guest[$storage.options.badge.lNameCol -1]}}
+			{{guest[$storage.options.badge.fNameCol -1]}}
 		</p>
 	</div>
 </center>

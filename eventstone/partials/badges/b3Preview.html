@@ -1,0 +1,10 @@
+<center  id="b3TagPreview" ng-repeat="guest in $storage.guestsList" style="display: inline;padding-bottom: 0in;">
+	<div id="b3Tag" class="b3Tag text-center center-block"  ng-attr-style="{{previewStyleInverse()}}">
+		<h1 ng-attr-style="{{previewStyle()}}"> {{guest[$storage.options.badge.fNameCol -1]}}</h1>
+		<h2 ng-attr-style="{{previewStyleInverse()}}">{{guest[$storage.options.badge.titleCol -1]}}</h2>
+		<p ng-attr-style="{{previewStyleInverse()}}">
+			{{guest[$storage.options.badge.companyCol -1]}} 
+			<!-- | {{guest[$storage.options.badge.companyCol -1]}} -->
+		</p>
+	</div>
+</center>

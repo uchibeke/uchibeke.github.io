@@ -166,8 +166,8 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 	}
 	
 	ss.user.styles.ticketFormats = {
-		'formats' : ['partials/tickets/t1.html', 'partials/tickets/t2.html'],
-		'preview' : ['partials/tickets/t1Preview.html', 'partials/tickets/t2Preview.html']
+		'formats' : ['partials/tickets/t1.html', 'partials/tickets/t2.html', 'partials/tickets/t3.html'],
+		'preview' : ['partials/tickets/t1Preview.html', 'partials/tickets/t2Preview.html', 'partials/tickets/t3Preview.html']
 	};
 	
 	// Limit number of badges and tickets to 10 because of the way this works

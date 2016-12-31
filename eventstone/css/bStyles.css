@@ -14,6 +14,7 @@
 	-moz-print-color-adjust: exact !important;
 	page-break-inside: avoid !important;
 	font-family: 'Noto Sans', sans-serif;
+	margin-top:5px;
 }
 .b1Tag {
 	padding-bottom: 0.2in;
@@ -26,7 +27,7 @@
 .b1Header {
 	font-family: 'Noto Sans', sans-serif;
 	font-weight: bold;
-	padding: 10px 0 0 0;
+	padding-top: 15px;
 	font-size: 20px;
 }
 
@@ -66,12 +67,12 @@
 
 /*B2*/
 
-.b2Tag {
+#b2Tag {
 	border-radius: 20px;
 	padding: 1px;
 	position: relative;
-	height: 3in;
-	width: 4in;
+	height: 2.6875in;
+	width: 3.375in;
 	align: center;
 	border: 1px solid #EEEEEE;
 	display: inline-block;
@@ -82,12 +83,12 @@
 	font-family: 'Noto Sans', sans-serif;
 }
 .b2Name {
-	font-size: 30px;
+	font-size: 50px;
+	padding-top:15px;
 	border: solid;
-	height: 1.5in;
-	width: 3.6in;
-	text-align: middle;
-	margin: 0.2in !important;
+	height: 1.15in;
+	width: 3.075in;
+	margin: 0.15in !important;
 	border: 1px solid #EEEEEE;
 }
 .b2Header {
@@ -95,23 +96,67 @@
 	border: none;
 	padding: 1px;
 	color: #FFF;
-	text-align: center;
 	height: 0.5in;
-	width: 3.9in;
+	width: 3.075in;
 	align: top;
-	margin-bottom: 15px;
+	margin-bottom: 5px;
+	margin-top: -10px;
 }
 .B2Hello {
-	margin-top:15px;
-	font-size: 55px;
+	margin-top: 15px;
+	font-size: 50px;
 	font-weight: bold;
 	border: none;
-	margin-bottom: 10px;
 	color: #FFF;
-	text-align: center;
-	height: 0.4in;
-	width: 3.9in;
+	height: 0.6875in;
+	width: 3.075in;
 	align: top;
 }
 
 /*B3*/
+
+#b3Tag {
+	background-color: #6fa9e0;
+	width: 3.5in;
+	height: 2in;
+	color: blue;
+	align: center;
+	border-radius: 20px;
+	border: 1px solid #EEEEEE;
+	position: relative;
+	display: inline-block;
+	print-color-adjust: exact !important;
+	-webkit-print-color-adjust: exact !important;
+	-moz-print-color-adjust: exact !important;
+	page-break-inside: avoid !important;    
+	vertical-align: top;
+
+}
+
+#b3Tag h1 {
+	color: #416f9a;
+	font-family: 'Lobster', cursive;
+	font-size: 0.5in;
+	margin-top: 20px;
+	margin-bottom: -5px;
+	padding-top:5px;
+	padding-bottom:15px;
+}
+
+#b3Tag h1:hover {
+	color: #275784;
+}
+
+#b3Tag h2 {
+	color: #416f9a;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 20px;
+	padding:0px 5px 0px 5px;
+}
+
+#b3Tag p {
+	color: #416f9a;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 18px;
+	border-radius: 20px;
+}
