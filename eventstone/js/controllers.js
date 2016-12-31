@@ -368,9 +368,9 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 	ss.user.print = ss.user.print ? ss.user.print : {};
 
 	ss.user.print.BNumPerPg = 6;
-	ss.user.print.BToPrint = {};
-	ss.user.print.BNextToPrint = {};
-	ss.user.print.BLastPrinted = {};
+	ss.user.print.BToPrint = [];
+	ss.user.print.BNextToPrint = [];
+	ss.user.print.BLastPrinted = [];
 
 	$scope.addToPrintQ = function(el, customSelection) {
 		if (customSelection) {

@@ -1,4 +1,4 @@
-<center id="b2TagPreview" ng-repeat="guest in $storage.user.print.BToPrint" style="display: inline;padding-bottom: 0in;">
+<center id="b2TagPreview" ng-repeat="guest in $storage.user.print.BToPrint | orderBy:'0'" style="display: inline;padding-bottom: 0in;">
 	<div id="b2Tag" class="b2Tag text-center center-block"  ng-attr-style="{{previewStyleInverse()}}">
 		<div class="B2Hello"  ng-attr-style="{{previewStyleInverse()}}">
 			HELLO

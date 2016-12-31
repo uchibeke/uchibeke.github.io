@@ -1,4 +1,4 @@
-<div class="b1Tag" id="b1TagPreview" ng-repeat="guest in $storage.user.print.BToPrint" style="display: inline;padding-bottom: 0in;">
+<div class="b1Tag" id="b1TagPreview" ng-repeat="guest in $storage.user.print.BToPrint | orderBy:'0'" style="display: inline;padding-bottom: 0in;">
 	<div class="b1Outer" ng-attr-style="{{previewStyle()}}">
 		<div class="b1Header" ng-attr-style="{{previewStyle()}}">
 			<p ng-attr-style="{{previewStyle()}}">
