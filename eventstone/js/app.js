@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'mainControllers', 'ticketControllers', 'loginControllers', 'analytics', 'firebase']);
+var myApp = angular.module('myApp', ['ngRoute', 'mainControllers', 'ticketControllers', 'loginControllers', 'analytics', 'firebase', 'ngAnimate']);
 
 myApp.config(['$routeProvider',
 function($routeProvider) {

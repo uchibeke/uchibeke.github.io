@@ -7,4 +7,12 @@
 			<!-- | {{guest[$storage.options.badge.companyCol -1]}} -->
 		</p>
 	</div>
+	<div id="b3Tag" class="b3Tag text-center center-block"  ng-attr-style="{{previewStyleInverse()}}" ng-show="printDoubleSided">
+		<h1 ng-attr-style="{{previewStyle()}}"> {{guest[$storage.options.badge.fNameCol -1]}}</h1>
+		<h2 ng-attr-style="{{previewStyleInverse()}}">{{guest[$storage.options.badge.titleCol -1]}}</h2>
+		<p ng-attr-style="{{previewStyleInverse()}}">
+			{{guest[$storage.options.badge.companyCol -1]}} 
+			<!-- | {{guest[$storage.options.badge.companyCol -1]}} -->
+		</p>
+	</div>
 </center>
