@@ -13,7 +13,6 @@ function namebadgeOps($rootScope, $scope, $http, $localStorage) {
 	ss.options.badge.secondTxt = "Learn how to make yours at eventstone.io"; 
 	
 	$scope.printBadges = function() {
-		console.log("Called");
 		var printContents = document.getElementById("printableBadge").innerHTML;
 		var popupWin = window.open('', '_blank', 'width=1700,height=2200');
 		popupWin.document.open();
@@ -51,10 +50,9 @@ function namebadgeOps($rootScope, $scope, $http, $localStorage) {
 		'preview' : ['partials/badges/b3Preview.html', 'partials/badges/b2Preview.html', 'partials/badges/b1Preview.html']
 	};
 	
-	$scope.setBadgeFormat = function(index) {
-		ss.user.styles.selectedBFormat = ss.user.styles.badgeFormats.formats[index];
-		ss.user.styles.selectedBFormatPre = ss.user.styles.badgeFormats.preview[index];
-	};
+	
+	
+	
 	
 	
 

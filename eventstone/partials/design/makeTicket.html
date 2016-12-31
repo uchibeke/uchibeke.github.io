@@ -68,7 +68,7 @@
 				<div class=" center-block row text-center">
 					<div class="center-block">
 						<button   type="button" class="btn btn-info btn-lg center-block"
-						ng-click="printSet=true;($storage.sampleView) = true;">
+						ng-click="$storage.user.styles.setSelectedInd();printSet=true;($storage.sampleView) = true;">
 							<span class="glyphicon glyphicon-print"></span>
 						</button>
 					</div>
@@ -155,7 +155,7 @@
 		<div id="printable" class="text-center center-block">
 			<h4  class="text-center center-block">{{$storage.eventName}} tickets designed and generated at http://eventstion.io </h4>
 			<div class="previewTickets  center-block text-center" style="width: 8.5in;">
-				<div ng-include="$storage.user.styles.ticketFormats.preview[$storage.user.styles.selectedInd()]"></div>
+				<div ng-include="$storage.user.styles.ticketFormats.preview[$storage.user.styles.selectedInd]"></div>
 			</div>
 		</div>
 	</div>

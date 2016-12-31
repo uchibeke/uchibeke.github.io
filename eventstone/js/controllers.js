@@ -11,9 +11,10 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 	// To store the string from user input
 	$scope.dataField = '';
 	$scope.listBtnText = 'Add';
-	$scope.$storage = $localStorage.$default({
-		guestsList : $scope.guests
-	});
+	$scope.$storage = $localStorage;
+	// $scope.$storage = $localStorage.$default({
+		// guestsList : $scope.guests
+	// });
 
 	var ss = $scope.$storage;
 
@@ -361,5 +362,38 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 			type : types[ext] ? types[ext] + ";charset=utf-8" : types.pdf + ";charset=utf-8"
 		});
 		saveAs(blob, name ? name : ss.eventName + "-" + ss.eventType + "-event" + "." + ext);
+	};
+
+	ss.user = ss.user ? ss.user : {};
+	ss.user.print = ss.user.print ? ss.user.print : {};
+
+	ss.user.print.BNumPerPg = 6;
+	ss.user.print.BToPrint = {};
+	ss.user.print.BNextToPrint = {};
+	ss.user.print.BLastPrinted = {};
+
+	$scope.addToPrintQ = function(el, customSelection) {
+		if (customSelection) {
+			ss.user.print.BNextToPrint.push(el);
+		} else if (ss.user.print.BNextToPrint.length < ss.user.print.BNumPerPg) {
+			ss.user.print.BNextToPrint.push(el);
+		} else {
+			ss.user.print.BNextToPrint.shift().push(el);
+		}
+	};
+
+	$scope.clearAfterPrint = function() {
+		ss.user.print.BLastPrinted = ss.user.print.BNextToPrint;
+		ss.user.print.BNextToPrint = {};
+	};
+
+	ss.user.print = ss.user.print != undefined ? ss.user.print : {};
+
+	$scope.setListToPrint = function(list) {
+		if (list.constructor === Array) {
+			ss.user.print.BToPrint = list;
+		} else {
+			ss.user.print.BToPrint = [list];
+		}
 	};
 }]);

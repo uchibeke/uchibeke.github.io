@@ -157,9 +157,7 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 		ss.secEncoding = r.ip + "|" + d;
 	}, "jsonp");
 
-	$scope.guestRole = "Participant";
-
-	ss.user.styles = {};
+	ss.user.styles = ss.user.styles != undefined ? ss.user.styles : {};
 	if (ss.user.styles.selectedTicFormat == undefined && ss.user.styles.selectedTicFormatPre == undefined) {
 		ss.user.styles.selectedTicFormat = 'partials/tickets/t1.html';
 		ss.user.styles.selectedTicFormatPre = 'partials/tickets/t1Preview.html';
@@ -170,15 +168,23 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 		'preview' : ['partials/tickets/t1Preview.html', 'partials/tickets/t2Preview.html', 'partials/tickets/t3Preview.html']
 	};
 	
+	
 	// Limit number of badges and tickets to 10 because of the way this works
-	ss.user.styles.selectedInd = function() {
-		var num = undefined;
+	ss.user.styles.setSelectedInd = function() {
+		ss.user.styles.selectedInd = undefined;
 		if ($('.choices').find('.slick-active')[1] != undefined) {
-			num = Number($('.choices').find('.slick-active')[1].getAttribute('id').slice(-1));
-			// console.log(num);
+			ss.user.styles.selectedInd  = Number($('.choices').find('.slick-active')[1].getAttribute('id').slice(-1));
 		}
-		return num;
 	};
+
+	$scope.setListToPrint = function(list) {
+		if (list.constructor === Array) {
+			ss.user.print.BToPrint = list;
+		} else {
+			ss.user.print.BToPrint = [list];
+		}
+	};
+	
 	
 	namebadgeOps($rootScope, $scope, $http,  $localStorage);
 }]);

@@ -100,10 +100,13 @@
 				</div>
 				<div class=" center-block row text-center">
 					<div class="center-block">
-						<button   type="button" class="btn btn-info btn-lg center-block"
+						<!-- <button   type="button" class="btn btn-info btn-lg center-block"
 						ng-click="printSet=true;($storage.sampleView) = true;">
-							<span class="glyphicon glyphicon-print"></span>
-						</button>
+						<span class="glyphicon glyphicon-print"></span>
+						</button> -->
+						<a   type="button" class="btn btn-default btn-lg"
+						ng-click="setListToPrint($storage.guestsList);$storage.user.styles.setSelectedInd();printSet=!printSet;"
+						> <span class="glyphicon glyphicon-print"></span> </a>
 					</div>
 				</div>
 			</div>
@@ -187,31 +190,15 @@
 			</div>
 
 		</div>
-	</div>
-	<div  ng-show="($storage.sampleView)" class="center-block text-center" >
+	</div >
+	<div ng-hide="!printSet">
 		<div class="pull-left ">
-			<button   type="button" class="btn btn-default  btn-xs" ng-show="printSet"
-			ng-click="printSet=false;($storage.sampleView) = false">
+			<button   type="button" class="btn btn-default  btn-xs"
+			ng-click="printSet=!printSet;">
 				<span class="glyphicon glyphicon-chevron-left"></span>
 			</button>
 		</div>
-		<div class="pull-right "  style="padding-right: 30px;" >
-			<button   type="button" class="btn btn-info  btn-lg" ng-show="printSet"
-			ng-click="printBadges()">
-				<span class="glyphicon glyphicon-print"></span>
-			</button>
-		</div><h2>{{$storage.eventName}}</h2>
-		<div  class="text-center center-block">
-			You are about to print a total of {{$storage.guestsList.length}} badges.
-			<br />
-			<span class="text-danger text-bold">IN THE NEXT PRINT DIALOGUE BOX, MAKE SURE TO CHECK 'PRINT BACKGROUND COLORS' and 'PRINT BACKGROUND IMAGES'</span>
-		</div>
-		<div id="printableBadge" class="text-center center-block">
-			<h4  class="text-center center-block">{{$storage.eventName}} badges designed and generated at http://eventstion.io </h4>
-			<div class="previewTickets  center-block text-center" style="width: 8.5in;">
-				<div ng-include="$storage.user.styles.badgeFormats.preview[$storage.user.styles.selectedInd()]"></div>
-			</div>
-		</div>
+		<div ng-include="'partials/badges/bPrint.html'"></div>
 	</div>
 	<div>
 		<button ng-hide="true" ng-click="$storage.$reset({ })">

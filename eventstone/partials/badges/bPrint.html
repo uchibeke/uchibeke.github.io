@@ -1,0 +1,19 @@
+<div class="center-block text-center" >
+	<div class="pull-right "  style="padding-right: 30px;" >
+		<button   type="button" class="btn btn-info  btn-lg"
+		ng-click="printBadges()">
+			<span class="glyphicon glyphicon-print"></span>
+		</button>
+	</div><h2>{{$storage.eventName}}</h2>
+	<div  class="text-center center-block">
+		You are about to print a total of {{$storage.user.print.BToPrint.length}} badges.
+		<br />
+		<span class="text-danger text-bold">IN THE NEXT PRINT DIALOGUE BOX, MAKE SURE TO CHECK 'PRINT BACKGROUND COLORS' and 'PRINT BACKGROUND IMAGES'</span>
+	</div>
+	<div id="printableBadge" class="text-center center-block">
+		<h4  class="text-center center-block">{{$storage.eventName}} badges designed and generated at http://eventstion.io </h4>
+		<div class="previewTickets  center-block text-center" style="width: 8.5in;">
+			<div ng-include="$storage.user.styles.badgeFormats.preview[$storage.user.styles.selectedInd]"></div>
+		</div>
+	</div>
+</div>
