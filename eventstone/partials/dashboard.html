@@ -30,7 +30,7 @@
 		<p class="clearfix"></p>
 		<div ng-repeat="item in $storage.guestsList  | filter:dashSearch" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 text-center guestInDash"  ng-style="($index % 2 == 0) ? {'border' : '1px solid #EEEEEE'} : {'border' : '1px solid #D3DCF2'}">
 			<p  class="text-left">
-				{{item.id}} {{item[1]}}
+				<span style="font-weight: bold;">{{item.id}} {{item[1]}}</span>
 				<br />
 				<span class="text-muted"> {{item.guestStatus ? item.guestStatus : 'No Show'}}</span>
 			</p>
