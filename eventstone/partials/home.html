@@ -4,8 +4,8 @@ style="position:fixed;top:0;left:0;right:0;bottom:0;height:100%;overflow: hidden
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 jumbotron"
 		id="home_welcome">
 			<div class="text-center row center-block" style="margin-top: 130px" >
-				<h1 class="text-center"> EveWhyte </h1>
-				<h2 class="text-center">Make it happen . Own your event </h2>
+				<h2 class="text-center"> EveWhyte </h2>
+				<h1 class="text-center">{{$storage.lan.home.welcome}} </h1>
 			</div>
 			<video  autoplay loop muted id="bgvid" preload="auto"
 			autoplay=""  aria-hidden="true" role="presentation">
@@ -17,11 +17,19 @@ style="position:fixed;top:0;left:0;right:0;bottom:0;height:100%;overflow: hidden
 			<div class="" id="home_buttons">
 				<a type="button" class="btn btn-primary btn-lg"  ng-href="#!/login" ng-show="!$storage.user.token"
 				data-toggle="tooltip" title="Go to your profile"
-				data-placement="top"> Get Started </a>
+				data-placement="top"> {{$storage.lan.home.gStarted}} </a>
 				<a type="button" class="btn btn-primary btn-lg"  ng-href="#!/dashboard" ng-show="$storage.user.token"
 				data-toggle="tooltip" title="Your dashboard has all your events"
-				data-placement="top"> Go to Dashboard </a>
+				data-placement="top"> {{$storage.lan.home.dBoard}} </a>
+			</div>
+			<div class="row" style="margin-top: 300px;"  id="homePg">
+				<slick autoplay="true" autoplaySpeed="2000" fade="true" infinite="true" arrows="true" class="choices">
+					<div ng-repeat="why in $storage.lan.home.whyUse ">
+						<h1 style="padding-top: 20px;color: #fff;" >{{why}}</h1>
+					</div>
+				</slick>
 			</div>
 		</div>
 	</div>
 </section>
+<div ng-include="'partials/lan.html'"></div>

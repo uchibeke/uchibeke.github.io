@@ -4,7 +4,7 @@
 		<div class="col-sm-10 col-sm-offset-1"  style="padding-top: 120px;color: white;">
 			<form class="form center-block " ng-show="!$storage.user.token">
 				<div class="row text-center">
-					<b class="text-muted"> Login to get started </b>
+					<b class="text-muted"> {{$storage.lan.home.logInInfo}} </b>
 					<br class="clearfix" />
 					<div class="form-group col-xs-4">
 						<button type="submit" class="btn btn-primary loginBtn btn-lg" ng-click="login('facebook')" >
@@ -22,12 +22,6 @@
 						</button>
 					</div>
 				</div>
-				<div class="row " class="loginDiv">
-					<div id="loginInto" class="col-sm-4 text-center" ng-repeat="item in evewhyteBenefits">
-						{{item}}
-					</div>
-				</div>
-				<p></p>
 			</form>
 			<form class="form text-center center-block" ng-show="$storage.user.token">
 				<div class="row">
@@ -40,9 +34,9 @@
 				</div>
 				<div class="form-group">
 					<button type="submit" class="btn btn-primary loginBtn" ng-click="logOut()">
-						<i class="fa fa-sign-out" ></i> Logout
+						<i class="fa fa-sign-out" ></i> {{$storage.lan.home.logOut}}
 					</button>
-					<a ng-href="#!/dashboard" class="btn btn-primary " type="button"> <i class="fa fa-tachometer" ></i> Dashboard </a>
+					<a ng-href="#!/dashboard" class="btn btn-primary " type="button"> <i class="fa fa-tachometer" ></i> {{$storage.lan.home.dBoard}} </a>
 				</div>
 			</form>
 		</div>
@@ -51,8 +45,9 @@
 			<source src="images/people.mp4" type="video/webm">
 			<source src="images/people.mp4" type="video/mp4">
 		</video>
-		<div class="row" id="home_logo">
+		<!-- <div class="row" id="home_logo">
 			<a ng-href="#!/home"><img  src="images/evewhytelogo_spaced.png" class="img-responsive center-block" /></a>
-		</div>
+		</div> -->
 	</div>
 </div>
+<div ng-include="'partials/lan.html'"></div>

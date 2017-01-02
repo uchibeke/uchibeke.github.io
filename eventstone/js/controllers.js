@@ -396,4 +396,10 @@ function($rootScope, $scope, $http, $localStorage, $timeout, $interval, $sce, an
 			ss.user.print.BToPrint = [list];
 		}
 	};
+	
+	$scope.changeLan = function (lan) {
+		console.log("lan");
+		$rootScope.$storage.lan = lan;
+		location.reload();
+	};
 }]);

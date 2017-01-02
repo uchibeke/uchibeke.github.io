@@ -674,6 +674,9 @@ body {
 }
 
 .slick-arrow {
+	-webkit-filter: invert() !important;
+	-moz-filter: invert() !important;
+	-ms-filter: invert() !important;
 	filter: invert() !important;
 	margin: 20px;
 	z-index: 100;

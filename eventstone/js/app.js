@@ -59,6 +59,13 @@ function($rootScope, $location, $firebaseAuth, $localStorage, shareDataService) 
 	$rootScope.$storage = $localStorage.$default({
 		g : $rootScope.guests
 	});
+	
+	$rootScope.$storage.en = en;
+	$rootScope.$storage.ch = ch;
+	
+
+
+	$rootScope.$storage.lan = $rootScope.$storage.lan ? $rootScope.$storage.lan : en;
 	$rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
 		var isAuth = $firebaseAuth().$getAuth();
 		if ($rootScope.$storage.hasOwnProperty('user') && $rootScope.$storage.user.hasOwnProperty('token') && $rootScope.$storage.user.token != undefined) {

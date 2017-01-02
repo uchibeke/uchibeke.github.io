@@ -185,6 +185,12 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 		}
 	};
 	
+	$scope.changeLan = function (lan) {
+		console.log("lan");
+		$rootScope.$storage.lan = lan;
+		location.reload();
+	};
+	
 	
 	namebadgeOps($rootScope, $scope, $http,  $localStorage);
 }]);
