@@ -6,12 +6,12 @@
 		<div class=" pull-left ">
 			<a type="button" class="btn btn-default btn-xs" ng-href="#!/dashboard"> <span class="fa fa-tachometer"></span> </a></a>
 		</div>
-		<h1 class="text-center">BADGE DESIGNER</h1>
+		<h1 class="text-center">{{$storage.lan.nameBadge.title}}</h1>
 		<div class="row dataFieldContainer  center-block ">
 			<div class="col-sm-3 col-xs-12 pull-left ticketContent">
-				<h3 class="text-center">Content</h3>
+				<h3 class="text-center">{{$storage.lan.nameBadge.content}}</h3>
 				<div >
-					Change the numbers below
+					{{$storage.lan.nameBadge.chg}}
 					<form role="form ">
 						<!-- <div class=" " >
 						<label>Upload event Logo/Image? </label>
@@ -127,7 +127,7 @@
 						/>
 						<br />
 						<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketBackground(userFillColor)">
-							Ok
+							{{$storage.lan.nameBadge.enter}}
 						</button>
 
 					</div>
@@ -149,7 +149,7 @@
 						/>
 						<br />
 						<button  type="button" class="btn btn-primary btn-xs " ng-click="ticketTxtColor(userTextColor)">
-							Ok
+							{{$storage.lan.nameBadge.enter}}
 						</button>
 					</div>
 				</div>
@@ -157,7 +157,7 @@
 
 			<!--  -->
 			<div class="col-sm-8 col-xs-12 ticketPreview">
-				<h3 class="text-center row center-block">Preview</h3>
+				<h3 class="text-center row center-block">{{$storage.lan.nameBadge.preview}}</h3>
 				<div class="row">
 					<slick autoplaySpeed="500" fade="true" dots="true" infinite="true" arrows="true" class="choices">
 						<div ng-repeat="format in $storage.user.styles.badgeFormats.formats ">

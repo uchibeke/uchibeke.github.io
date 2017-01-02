@@ -7,22 +7,24 @@
 	</div>
 	<h2>{{$storage.eventName}}</h2>
 	<div  class="text-center center-block">
-		You are about to print a total of {{$storage.user.print.BToPrint.length}} badges.
+		<p class="text-center">
+			{{$storage.lan.nameBadge.totNum}}  {{$storage.user.print.BToPrint.length}}
+		</p>
 		<br />
-		<span class="text-danger text-bold">IN THE NEXT PRINT DIALOGUE BOX, MAKE SURE TO CHECK 'PRINT BACKGROUND COLORS' and 'PRINT BACKGROUND IMAGES'</span>
+		<span class="text-danger text-bold">{{$storage.lan.nameBadge.cAndI}}</span>
 	</div>
 	<div class="row ">
 		<button   type="button" class="btn btn-default"  ng-click="printDoubleSided = !printDoubleSided"
 		ng-hide="printDoubleSided">
-			Print Double Sided
+			{{$storage.lan.nameBadge.dSided}}
 		</button>
 		<button   type="button" class="btn  btn-default" ng-click="printDoubleSided = !printDoubleSided"
 		ng-hide="!printDoubleSided">
-			Print Single Sided
+			{{$storage.lan.nameBadge.sSided}}
 		</button>
 	</div>
 	<div id="printableBadge" class="text-center center-block">
-		<h4  class="text-center center-block">{{$storage.eventName}} badges designed and generated at http://eventstion.io </h4>
+		<h4  class="text-center center-block">{{$storage.eventName}}  {{$storage.lan.nameBadge.genAt}}  http://eventstion.io </h4>
 		<div class="previewTickets  center-block text-center" style="width: 8.5in;">
 			<div ng-include="$storage.user.styles.badgeFormats.preview[$storage.user.styles.selectedInd]"></div>
 		</div>
