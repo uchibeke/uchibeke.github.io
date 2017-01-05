@@ -444,7 +444,7 @@ a {
 
 #home_buttons {
 	position: fixed;
-	top: 60% !important;
+	bottom: 50px !important;
 	width: 100%;
 	float: none;
 }
