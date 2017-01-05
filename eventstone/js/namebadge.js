@@ -2,7 +2,8 @@ function namebadgeOps($rootScope, $scope, $http, $localStorage) {
 
 	var ss = $scope.$storage;
 
-	ss.options.badge = {};
+	ss.options = ss.options ? ss.options : {};
+	ss.options.badge = ss.options.badge ? ss.options.badge : {};
 
 	ss.options.badge.fNameCol = 1;
 	ss.options.badge.lNameCol = 2;

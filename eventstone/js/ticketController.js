@@ -157,6 +157,7 @@ function($rootScope, $scope, $http, $localStorage, $sce, Upload, $timeout, analy
 		ss.secEncoding = r.ip + "|" + d;
 	}, "jsonp");
 
+	ss.user = ss.user != undefined ? ss.user : {};
 	ss.user.styles = ss.user.styles != undefined ? ss.user.styles : {};
 	if (ss.user.styles.selectedTicFormat == undefined && ss.user.styles.selectedTicFormatPre == undefined) {
 		ss.user.styles.selectedTicFormat = 'partials/tickets/t1.html';
