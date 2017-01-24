@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'guestControllers','analytics']);
+var myApp = angular.module('myApp', ['ngRoute', 'guestControllers', 'analytics']);
 
 myApp.config(['$routeProvider',
 function($routeProvider) {
@@ -22,5 +22,17 @@ function($routeProvider) {
 		controller : 'ListController'
 	}).otherwise({
 		redirectTo : '/about'
+	});
+}]);
+myApp.run(['$rootScope', '$location',
+function($rootScope, $location) {
+
+	$rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
+		if (currRoute.originalPath == '/about') {
+			$rootScope.tog = 1;
+		} else if (currRoute.originalPath == '/home') {
+			$rootScope.tog = 2;
+		} else {
+		}
 	});
 }]);
