@@ -5,7 +5,7 @@ function($routeProvider) {
 	$routeProvider.when('/eventstone', {
 		templateUrl : 'views/projEventstone.html',
 		controller : 'ListController'
-	}).when('/home', {
+	}).when('/portfolio', {
 		templateUrl : 'views/home.html',
 		controller : 'ListController'
 	}).when('/tranxi', {
