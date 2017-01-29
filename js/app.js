@@ -30,7 +30,7 @@ function($rootScope, $location) {
 	$rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
 		if (currRoute.originalPath == '/about') {
 			$rootScope.tog = 1;
-		} else if (currRoute.originalPath == '/home') {
+		} else if (currRoute.originalPath == '/portfolio') {
 			$rootScope.tog = 2;
 		} else {
 		}
