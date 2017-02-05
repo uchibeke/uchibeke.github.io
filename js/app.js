@@ -32,6 +32,6 @@ function($rootScope, $location) {
 			$rootScope.tog = 1;
 		} else {
 			$rootScope.tog = 2;
-		} 
+		}
 	});
 }]);
