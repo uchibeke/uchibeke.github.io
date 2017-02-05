@@ -5,7 +5,7 @@ function($routeProvider) {
 	$routeProvider.when('/eventstone', {
 		templateUrl : 'views/projEventstone.html',
 		controller : 'ListController'
-	}).when('/home', {
+	}).when('/portfolio', {
 		templateUrl : 'views/home.html',
 		controller : 'ListController'
 	}).when('/tranxi', {
@@ -30,9 +30,8 @@ function($rootScope, $location) {
 	$rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
 		if (currRoute.originalPath == '/about') {
 			$rootScope.tog = 1;
-		} else if (currRoute.originalPath == '/home') {
-			$rootScope.tog = 2;
 		} else {
+			$rootScope.tog = 2;
 		}
 	});
 }]);
