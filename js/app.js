@@ -2,35 +2,35 @@ var myApp = angular.module('myApp', ['ngRoute', 'guestControllers', 'analytics']
 
 myApp.config(['$routeProvider',
 function($routeProvider) {
-	$routeProvider.when('/eventstone', {
+	$routeProvider.when('/eventstone/', {
 		templateUrl : 'views/projEventstone.html',
 		controller : 'ListController'
-	}).when('/portfolio', {
+	}).when('/portfolio/', {
 		templateUrl : 'views/home.html',
 		controller : 'ListController'
-	}).when('/tranxi', {
+	}).when('/tranxi/', {
 		templateUrl : 'views/projTranxi.html',
 		controller : 'ListController'
-	}).when('/onFarm', {
+	}).when('/onFarm/', {
 		templateUrl : 'views/projOnFarm.html',
 		controller : 'ListController'
-	}).when('/about', {
+	}).when('/about/', {
 		templateUrl : 'views/about.html',
 		controller : 'ListController'
-	}).when('/resume', {
+	}).when('/resume/', {
 		templateUrl : 'views/resume.html',
 		controller : 'ListController'
 	}).otherwise({
-		redirectTo : '/about'
+		redirectTo : '/about/'
 	});
 }]);
 myApp.run(['$rootScope', '$location',
 function($rootScope, $location) {
 
 	$rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
-		if (currRoute.originalPath == '/about') {
+		if (currRoute.originalPath == '/about/') {
 			$rootScope.tog = 1;
-		} else {
+		} else if (currRoute.originalPath == '/portfolio/') {
 			$rootScope.tog = 2;
 		}
 	});

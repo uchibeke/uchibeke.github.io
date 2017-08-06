@@ -1,0 +1,56 @@
+[
+    {
+        "title": "Madeincanada",
+        "intro": "I started madeincanada.design to bring projects I worked on here in Canada to Africa where I am originally from. My work is a sum of all my experiences and it's always satisfying to share what I do with people in Canada and in Africa.",
+        "summary": "I believe that Canada has a lot to offer to the world. Some of the world's brightest mind studied here and Canada is still training top talent. With madeincanada, my aim is to sell the skills I have gained while studying in Canada to Africa with a view of encouraging other prospective international students to chose Canada.",
+        "role": "I worked on this 100%. It's a continuous project I will keep updating and playing with.",
+        "exec": "I designed a rest api backend service for madeincanada. This allows me to use the same endpoint for all the stuff I build under madeincanada. A microservices architecture also allows me to change the backend without needing to change anything in the frontend.",
+        "challenge": "So far, I have been able to complete two components of madeincanada. The 'People' feature is a exclusize league if newly wed Nigerian couples who have done outstandingly in their chosen profession. The 'wedding' product offers custom wedding invitations designed by the couple on madeincanada weddings.",
+        "result": "Finished madeincanada Weddings and madeincanada people.",
+        "url": "http://madeincanada.design",
+        "pathToAssets": "images/portfolio/madeincanada"
+    },
+    {
+        "title": "Calcreator",
+        "intro": "I was commisioned with the task of building a tool that helps a hotel and restuarant in China design, generate and print calendars for guests. Calendars had to look lavish and include a photo of the guest, process had to be simple and calendar had to fit different paper sizes. ",
+        "summary": "I believe that restuarants should be able to waoh their clients with simple acts of kindness. This is why I agreed to make calCreator.",
+        "role": "This was a solo project. I talked to the owner of the hotel and restaurant with help translation from my girlfriend. I also made some samples and shared them with the business and then proceeded to code and test my designs",
+        "exec": "I designed this tool and also an integration with wechat. Calendar has a qr code which when scanned with wechat shows a unique wechat mini sit with the current deal the hotel is offering.",
+        "challenge": "There was language barrier. I do not speak or write mandarin or cantonese so that was a huge challenge. Additionally, I had to learn about chinese culture expecially the meaning of different colors and symbols. This allowed me to use colors and symbols that were known to be positive in the culture.",
+        "result": "App is being used in the restaurant and customers are very happy to get a calendar with a photo of them when they are leaving the hotel.",
+        "url": "http://calcreator.me",
+        "pathToAssets": "images/portfolio/calcreator"
+    },{
+        "title": "Eventstone",
+        "intro": "I made Evenstone because I strongly believe that people should be able to do something meaningful and unique with the limited resources they have.",
+        "summary": "I believe that people should be able to do something meaningful and unique with the limited resources that they have. I also believe that we should be able to restrict access to the information about the things we do, like the events we organize, and the people we do it with, like the guests who attend our events. That is one reason why I made Eventstone.",
+        "role": "Eventstone is an independent project. I worked on all the design and implementation. I, however, talked to a lot of prospective users to get their insight and then I tailored my focus to their need.",
+        "exec": "I implemeted Eventstone for both mobile and desktop platforms. I made wireframes, prototypes and design specs. This all started with simple white board sketches. Next, I did the coding. For the coding of Eventstone, I planned out and designed algorithms that were efficient for the purposes that they serve. An example of this is the algorithm that formats names copied from multiple columns of an excel file into first and last name and title an and adds them as elements, one at a time, to the guest list.",
+        "challenge": "Provide a system that will save time and empower event organizers especially those organizing small events while also protecting the data of guests by only storing guest list details in Event Organizer's device. At events, I notice guests waiting in line to be checked in from a list on paper or, on rare occasions, a document on a computer. The process takes time and, I imagine, it must be stressful for some guests.",
+        "result": "Eventstone is currently being used in my university by student groups. I am looking forward to continuing to work on Eventstone in my free time so that it cen be used for free by more University Students in Canada.",
+        "url": "http://eventstone.io",
+        "pathToAssets": "images/portfolio/eventstone"
+    },
+    {
+        "title": "Onfarm",
+        "intro": "Farmers value firsthand feedback from their peers about crop varieties they wish to grow. Inspired by the Sasktachewan Seed Guide, Onfarm aims to help farmers get direct feedback from their peers in all parts of the world.",
+        "summary": " Our motivation for making Onfarm is to make the seed selection process easier, faster, and more flexbible for Farmers. Each year, farmers have to select crop varieties that they will plant. This can be a tedious process. Our goal is to simplify the process while also allowing farmers to get feedback about crops from their peers.",
+        "role": "Onfarm is a project we designed for the 2016 Emerging Agriculture Hackathon in Saskatoon, Canada. My role involved making sense of the data from a JSON file and displaying this data in a meaningful way in a UI that I designed. I also designed the user experience and flow for all the pages in th app.",
+        "exec": "We got a lot of invaluable insights from, Danny, an experienced farmer we met at the Hackathon. One thing we learned was that the Sask Seed Guide, a 108 page book and PDF document, which we originally wanted to make into a webapp was only used once or twice a year. By talking with Danny, we also learned that farmers were always willing to help each other and were mostly truthful when talking about how well or poorly a particular seed variety did for them.",
+        "challenge": "As a team, we did not have any farming background. We were able to get some useful advice from other people who had farming experience. We also faced technical challenges while presenting the Idea and the Demo. We were unable to show the app because my laptop could not connect to the Projector. The lesson I learned was that I should try out the equipments well in advance before my presentation.",
+        "result": "For Onfarm, we won the Rookie Award.",
+        "url": "http://uchibeke.github.io/onfarm",
+        "pathToAssets": "images/portfolio/onfarm"
+    },
+    {
+        "title": "Tranxi",
+        "intro": "When I was a boy growing up in Nigeria, my father introduced me via a record to classical music. I loved it, yet, I also loved Jungle Language, a cyphered language. Tranxi is inspired by my experience and my desire to inspire others.",
+        "summary": "Tranxi is inspired by Jungle Language, a language we often resorted to as high school kids in Port harcourt, Nigeria, were I was born. We did this to conceal what we are talking about. In the most basic sense of Jungle language, the vowels are mapped to numbers: a = 1, e = 2, i = 3, o = 4, and u = 5. Each of the consonants, on the other hand, remain as is, however, an 'a' is appended to each of them: B becomes Ba, C becomes Ca, D becomes Da, F becomes Fa ... and Z becomes Za. 'Love' is 'La4Va2.'",
+        "role": "Tranxi is an independent project. I worked on all the design and implementation. Because the inspiration for Tranxi was from personal experience, I drew knowledge from that experience in the implemenation of Tranxi.",
+        "exec": "I and implemeted Tranxi by first focusing on the translation functionality. After I was sure everything worked great, I then focused on the UI. I tested Tranxi at in different versions of different modern browser and it works great. I have also tested it as a native app on android and it also works great. Tranxi is in the Google play store",
+        "challenge": "Provide a  hybrid App that allows users to map English alphabets to one or more letters/numbers/symbols of any existing language supported on the user’s device. App should be able to translate user input to the defined ‘language’ in real time.",
+        "result": "Tranxi is currently in the Google play store. I will have to refine it for it to be useful to a wider audience.",
+        "url": "https://play.google.com/store/apps/details?id=com.uchibeke.tranxi",
+        "pathToAssets": "images/portfolio/tranxi"
+    }
+]
