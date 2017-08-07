@@ -1,3 +1,5 @@
+<input type="checkbox" name="toggle" id="toggle" />
+<label for="toggle"></label>
 <section class="portfolioPage row"  ng-show="!data.loadedProj">
 	<div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="proj in data.portfolioItems"
 	ng-click="actions.selectProj($index);actions.scrollTo('body')">
@@ -47,7 +49,7 @@
 				<div class="caption">
 					<h1> Rush Hour</h1>
 					<p>
-						Get like 1000 cups coffees now. I'm sure you don't wanna wait in this line tomorrow
+						Get like 1,198 cups coffees. I'm sure you don't wanna wait in this line for tomorrow's coffee
 					</p>
 				</div>
 			</figure>
@@ -60,15 +62,15 @@
 <!-- ////////////////////  ////////////////////  ////////////////////  ////////////////////  //////////////////// -->
 
 <section class="portfolioPage " id="" ng-show="data.loadedProj">
-	<a class="btn btn-xs btn-default" href="#/portfolio" target="_self"
-	style="position: fixed; left:15px;top:70px;color: #FF4912 !important;">Back </a>
+	<a class="btn btn-sm btn-default pull-left" href="#/portfolio" target="_self"
+	style="background: #dd6149 !important;color: white !important">  projects </a>
 	<h1 class="text-center center-block">{{data.selectedProj.title}}</h1>
 	<div class="panel panel-default">
 		<div class="panel-body portfolioPageMain ">
 			<div class="portfolioTexts">
 				<p>
-				{{data.selectedProj.summary}} 
-				<a  class="extern_link seeDetails" href="{{data.selectedProj.url}}" target="_blank"> try it out.</a>
+					{{data.selectedProj.summary}}
+					<a  class="extern_link seeDetails" href="{{data.selectedProj.url}}" target="_blank"> try it out.</a>
 				</p>
 			</div>
 			<img src="{{data.selectedProj.pathToAssets + '/main.png'}}" width="100%" class="center-block text-center" />
@@ -109,8 +111,8 @@
 			<div class="portfolioTexts">
 				<h3 >Results</h3>
 				<p>
-					{{data.selectedProj.result}} 
-				<a  class="extern_link seeDetails" href="{{data.selectedProj.url}}" target="_blank"> try it out.</a>
+					{{data.selectedProj.result}}
+					<a  class="extern_link seeDetails" href="{{data.selectedProj.url}}" target="_blank"> try it out.</a>
 				</p>
 			</div>
 		</div>
@@ -118,3 +120,7 @@
 </section>
 
 <div ng-include="'views/footer.html'"></div>
+
+<div class="message">
+	<div ng-include="'views/about.html'"></div>
+</div>

@@ -84,7 +84,8 @@ body {
 }
 
 .portfolioPageMain {
-    background: #E8E8E8 !important;
+    background: #E8EFF2 !important;
+    color: #313649 !important;
 }
 
 a {
@@ -92,7 +93,7 @@ a {
 }
 
 .portfolioPageAlt {
-    background: #313649;
+    background: #313649 !important;
     color: #E8EFF2 !important;
 }
 
@@ -469,5 +470,74 @@ figure a{
   width: 100%;
   height: 100%;
 }
+
+/*Profile*/
+
+.message {
+	background: #313649 !important;
+    color: #E8EFF2 !important;
+position: absolute;
+top: -200px;
+left: 0;
+width: 100%;
+height: 200px;
+padding: 20px;
+transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+overflow:scroll !important;
+box-sizing: border-box;
+  
+}
+
+
+#toggle {
+  position:absolute;
+  appearance:none;
+  cursor:pointer;
+  left:-100%;
+  top:-100%;
+}
+
+#toggle + label {
+  position:absolute;
+  cursor:pointer;
+  /*padding:10px;*/
+  background: #313649;
+width: 100px;
+border-radius: 3px;
+padding: 8px 10px;
+color: #FFF;
+line-height:20px;
+font-size:12px;
+text-align:center;
+-webkit-font-smoothing: antialiased;
+cursor: pointer;
+  margin:20px 00px;
+  transition:all 500ms ease;
+}
+#toggle + label:after {
+  content:"about me" 
+}
+
+.portfolioPage {
+transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  padding-top:5em;
+}
+
+#toggle:checked ~ .message {
+  top: 0;
+}
+
+#toggle:checked ~ .portfolioPage {
+  margin-top: 200px;
+}
+
+#toggle:checked + label {
+  background:#dd6149;
+}
+
+#toggle:checked + label:after {
+  content:"X"
+}
+
 
 
