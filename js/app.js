@@ -8,6 +8,9 @@ function($routeProvider) {
 	}).when('/about/', {
 		templateUrl : 'views/about.html',
 		controller : 'ListController'
+	}).when('/blog/', {
+		templateUrl : 'views/blog.html',
+		controller : 'ListController'
 	}).otherwise({
 		redirectTo : '/portfolio/'
 	});
