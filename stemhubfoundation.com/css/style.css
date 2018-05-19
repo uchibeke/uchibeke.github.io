@@ -83,7 +83,7 @@
 }
 
 .carousel .background.c {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/stemhub5.jpeg");
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/stemhub6.jpeg");
   overflow: hidden;
   background-size: cover;
   background-position: center;
@@ -545,4 +545,10 @@ footer .glyphicon {
     opacity: 1;
     -webkit-transform: translateY(0%);
   }
+}
+
+.btn:hover {
+  text-decoration: none !important;
+  font-weight: 800;
+  transition: font 0.5s ease;
 }
