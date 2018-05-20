@@ -7,9 +7,10 @@
 <url> <loc>https://stemhubfoundation.com/blog/2018/05/07/planning.html</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://stemhubfoundation.com/blog/2018/04/27/research.html</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://stemhubfoundation.com/blog/2018/04/26/failed.html</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://stemhubfoundation.com/docs/why.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://stemhubfoundation.com/docs/why.html" /> </url>
 <url> <loc>https://stemhubfoundation.com/docs/culture.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://stemhubfoundation.com/docs/culture.html" /> </url>
 <url> <loc>https://stemhubfoundation.com/docs/get-involved.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://stemhubfoundation.com/docs/get-involved.html" /> </url>
+<url> <loc>https://stemhubfoundation.com/docs/meet-us.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://stemhubfoundation.com/docs/meet-us.html" /> </url>
 <url> <loc>https://stemhubfoundation.com/docs/stemming.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://stemhubfoundation.com/docs/stemming.html" /> </url>
+<url> <loc>https://stemhubfoundation.com/docs/stemspires.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://stemhubfoundation.com/docs/stemspires.html" /> </url>
 <url> <loc>https://stemhubfoundation.com/docs/stemstars.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://stemhubfoundation.com/docs/stemstars.html" /> </url>
 </urlset>

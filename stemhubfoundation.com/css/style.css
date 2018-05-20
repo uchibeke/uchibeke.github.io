@@ -69,21 +69,21 @@
 }
 
 .carousel .background.a {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/stemhub1.jpeg");  
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/stemhub6.jpeg");  
   overflow: hidden;
   background-size: cover;
   background-position: center;
 }
 
 .carousel .background.b {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/stemhub2.jpeg");
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/stemhub1.jpeg");
   overflow: hidden;
   background-size: cover;
   background-position: center;
 }
 
 .carousel .background.c {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/stemhub6.jpeg");
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/stemhub2.jpeg");
   overflow: hidden;
   background-size: cover;
   background-position: center;
@@ -547,8 +547,9 @@ footer .glyphicon {
   }
 }
 
-.btn:hover {
+.btn:hover,.fixedHeaderContainer a:hover {
   text-decoration: none !important;
   font-weight: 800;
   transition: font 0.5s ease;
 }
+
