@@ -1,0 +1,127 @@
+<input type="checkbox" name="toggle" id="toggle" />
+<label for="toggle" class="btn btn-md"></label>
+<!-- <a ng-href="#/blog/" class="btn btn-md pull-right" style="margin-top: 18px;background: #313649;color: #FFF !important;">blog</a> -->
+<section class="portfolioPage row"  ng-show="!data.loadedProj">
+	<div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="proj in data.portfolioItems"
+	ng-click="actions.selectProj($index);actions.scrollTo('body')">
+		<div class="card">
+			<figure class="front">
+				<img src="{{proj.pathToAssets + '/home.png'}}" alt="front">
+				<div class="caption">
+					<h1 > {{proj.title}}</h1>
+					<p>
+						{{proj.intro}}
+					</p>
+					<a >See details</a>
+				</div>
+			</figure>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-4" ng-click="actions.scrollTo('body')">
+		<div class="card">
+			<figure class="front">
+				<img src="images/icon2.ico" alt="front">
+				<div class="caption">
+					<h1 > Patient Racoon</h1>
+					<p>
+						You gotta come back for me. I'm busy opening garbage bins
+					</p>
+				</div>
+			</figure>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-4" ng-click="actions.scrollTo('body')">
+		<div class="card">
+			<figure class="front">
+				<img src="images/icon2.ico" alt="front">
+				<div class="caption">
+					<h1> Sneaky Snail</h1>
+					<p>
+						Take a chill pill friend. You know I need more time to get there. Be up soon
+					</p>
+				</div>
+			</figure>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-4" ng-click="actions.scrollTo('body')">
+		<div class="card">
+			<figure class="front">
+				<img src="images/icon2.ico" alt="front">
+				<div class="caption">
+					<h1> Rush Hour</h1>
+					<p>
+						Get like 1,198 cups coffees. I'm sure you don't wanna wait in this line for tomorrow's coffee
+					</p>
+				</div>
+			</figure>
+		</div>
+	</div>
+</section>
+
+<!-- ////////////////////  ////////////////////  ////////////////////  ////////////////////  //////////////////// -->
+<!-- ////////////////////  ////////////////////  ////////////////////  ////////////////////  //////////////////// -->
+<!-- ////////////////////  ////////////////////  ////////////////////  ////////////////////  //////////////////// -->
+
+<section class="portfolioPage " id="" ng-show="data.loadedProj">
+	<a class="btn btn-sm btn-default pull-left" href="#/portfolio" target="_self"
+	style="background: #dd6149 !important;color: white !important">  projects </a>
+	<h1 class="text-center center-block">{{data.selectedProj.title}}</h1>
+	<div class="panel panel-default">
+		<div class="panel-body portfolioPageMain ">
+			<div class="portfolioTexts">
+				<p>
+					{{data.selectedProj.summary}}
+					<a  class="extern_link seeDetails" href="{{data.selectedProj.url}}" target="_blank"> try it out.</a>
+				</p>
+			</div>
+			<img src="{{data.selectedProj.pathToAssets + '/main.png'}}" width="100%" class="center-block text-center" />
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body text-justify center-block portfolioPageAlt">
+			<div class="portfolioTexts">
+				<h3 class="">MY ROLE</h3>
+				<p>
+					{{data.selectedProj.role}}
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body text-justify center-block portfolioPageMain ">
+			<div class="portfolioTexts">
+				<h3 >Design and Execution</h3>
+				<p>
+					{{data.selectedProj.exec}}
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body center-block portfolioPageAlt">
+			<div class="portfolioTexts">
+				<h3 class="">THE CHALLENGE</h3>
+				<p >
+					{{data.selectedProj.challenge}}
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body center-block portfolioPageMain">
+			<div class="portfolioTexts">
+				<h3 >Results</h3>
+				<p>
+					{{data.selectedProj.result}}
+					<a  class="extern_link seeDetails" href="{{data.selectedProj.url}}" target="_blank"> try it out.</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div ng-include="'views/footer.html'"></div>
+
+<div class="message">
+	<div ng-include="'views/about.html'"></div>
+</div>
