@@ -90,16 +90,17 @@ guestControllers.controller("ListController", [
                   rawImgSrc.endsWith("jpeg")
                 ) {
                   var src = rawImgSrc; //item.content.substring(srcStart, srcEnd); // Extract just the URL
-				  output += '<a target="_blank" href="' + item.link + '">';
-				  output += '<div class="col-sm-6 col-md-4 col-xs-12">';
-				  output += '<div class="blog-post"><header>';
-				  output +=
-					'<h6 class="date">' +
-					(new Date(item.publishedDate).toLocaleDateString(
-					  "en-US",
-					  dateOptions
-					) || "") +
-					"</h6>";
+                  output += '<a target="_blank" href="' + item.link + '">';
+                  output += '<div class="col-sm-6 col-md-4 col-xs-12">';
+                  output += '<div class="blog-post"><header>';
+                  dt =
+                    '<h6 class="date">' +
+                    (new Date(item.publishedDate).toLocaleDateString(
+                      "en-US",
+                      dateOptions
+                    ) || "") +
+                    "</h6>";
+                  output += dt.indexOf(',') > -1 ? dt : '';
                   output +=
                     '<div class="blog-element"><img class="img-responsive" src="' +
                     src +
