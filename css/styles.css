@@ -1,0 +1,151 @@
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+body {
+  margin: 0;
+}
+
+/* Reflect text */
+
+/* .responsivemobile {
+  display: inline-block;
+  width: 100%;
+  font-family: "Helvetica Neue", "Arial";
+  font-size: 3em;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+} */
+
+.portfolioPage h1 {
+  color: #364e65;
+  text-transform: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* TEXT-REFLECT CSS */
+
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+.portfolioPage {
+  font-family: "Oswald";
+  background-color: #313649;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
+  width: 100vw;
+}
+
+.portfolioPage .wrapper {
+  padding-top: 150px;
+  text-align: center;
+}
+
+.portfolioPage .title {
+  font: 700 52pt "Oswald";
+  padding: 0;
+  margin: 0;
+  max-width: 760px;
+  margin: 0 auto;
+  letter-spacing: 2px;
+}
+
+.knockout {
+  width: 760px;
+  display: block;
+  height: 150px;
+  overflow: hidden;
+}
+
+.knockout {
+  fill: rgba(255, 255, 255, 1);
+}
+
+.content {
+  background-color: #fff;
+  margin: 0 auto;
+  max-width: 760px;
+}
+
+.innertext {
+  padding: 25px 50px 50px 50px;
+  text-align: left;
+}
+
+tspan {
+  text-transform: uppercase;
+}
+
+.responsivedesktop {
+  display: block;
+}
+
+.responsivetablet,
+.responsivemobile {
+  display: none;
+}
+
+@media all and (max-width: 768px) {
+  .responsivetablet {
+    display: block;
+  }
+
+  .responsivedesktop {
+    display: none;
+  }
+
+  .portfolioPage .title {
+    font-size: 45px;
+    max-width: 80%;
+  }
+
+  .content {
+    max-width: 80%;
+  }
+
+  .knockout {
+    height: 200px;
+  }
+
+  .knockout,
+  .wrapper {
+    width: 100%;
+  }
+
+  .innertext {
+    padding: 0 25px 25px 25px;
+  }
+}
+
+@media all and (max-width: 540px) {
+  .responsivetablet {
+    display: none;
+  }
+
+  .responsivemobile {
+    display: block;
+  }
+
+  .portfolioPage .title {
+    font-size: 30px;
+    min-width: 320px;
+    max-width: 80%;
+  }
+
+  .knockout {
+    height: 140px;
+  }
+
+  .content {
+    min-width: 320px;
+    max-width: 80%;
+  }
+
+  .innertext {
+    padding-top: 0px;
+  }
+}

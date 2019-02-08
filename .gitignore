@@ -3,3 +3,4 @@ uchi_me.key
 \./*.*
 .idea/workspace.xml
 \.idea/*
+**/.DS_Store

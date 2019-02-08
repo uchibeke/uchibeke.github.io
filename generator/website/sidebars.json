@@ -1,0 +1,8 @@
+{
+  "Company": {
+    "Lush Plans": ["careers"],
+    "Business Jobs": ["marketing-intern"],
+    "Design Jobs": ["designer", "design-intern"],
+    "Engineering Jobs": ["fullstack-developer-2", "fullstack-developer-1"]
+  }
+}
