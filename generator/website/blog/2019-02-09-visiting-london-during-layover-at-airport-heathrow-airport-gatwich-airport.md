@@ -78,12 +78,12 @@ I already mentioned that I spent around \$100. Here’s how it went down:
 ---
 
 <p float="left">
-  <img src="https://cdn-images-1.medium.com/max/800/1*t-G52u7727V_h5O9FtETYw.jpeg" width="33%" />
-  <img src="https://cdn-images-1.medium.com/max/800/1*0Iso7z0cqe0jq7zzzGr9OQ.jpeg" width="33%" /> 
-  <img src="https://cdn-images-1.medium.com/max/800/1*zcKr1iroPpKLKnuFocaKSA.jpeg" width="33%" />
-  <img src="https://cdn-images-1.medium.com/max/800/1*D7ZOyDsf3A1znq3l6rwqow.jpeg" width="33%" />
-  <img src="https://cdn-images-1.medium.com/max/800/1*m-m9_iSZTFsqsiGLYR-Ujw.jpeg" width="33%" /> 
-  <img src="https://cdn-images-1.medium.com/max/800/1*T5KGHDUgy8sf-Wg8XBRp_g.jpeg" width="33%" />
+  <img src="https://cdn-images-1.medium.com/max/800/1*t-G52u7727V_h5O9FtETYw.jpeg" width="49%" />
+  <img src="https://cdn-images-1.medium.com/max/800/1*0Iso7z0cqe0jq7zzzGr9OQ.jpeg" width="49%" /> 
+  <img src="https://cdn-images-1.medium.com/max/800/1*zcKr1iroPpKLKnuFocaKSA.jpeg" width="49%" />
+  <img src="https://cdn-images-1.medium.com/max/800/1*D7ZOyDsf3A1znq3l6rwqow.jpeg" width="49%" />
+  <img src="https://cdn-images-1.medium.com/max/800/1*m-m9_iSZTFsqsiGLYR-Ujw.jpeg" width="49%" /> 
+  <img src="https://cdn-images-1.medium.com/max/800/1*T5KGHDUgy8sf-Wg8XBRp_g.jpeg" width="49%" />
 <span class="figcaption_hack">Sights of London and Westminster</span>
 </p>
 
@@ -164,9 +164,9 @@ Everyone I talked to went above and beyond to help out. I will definitely want
 to visit again.
 
 <p float="left">
-  <img src="https://cdn-images-1.medium.com/max/800/1*vMCd7aMI4OQeq-J_qZMmlA.jpeg" width="33%" />
-  <img src="https://cdn-images-1.medium.com/max/800/1*yFEII2x_zPQkKVvDiNYROw.jpeg" width="33%" /> 
-  <img src="https://cdn-images-1.medium.com/max/800/1*ZVgMxnk_u8SM0tAQzxuz2g.jpeg" width="33%" />
+  <img src="https://cdn-images-1.medium.com/max/800/1*vMCd7aMI4OQeq-J_qZMmlA.jpeg" width="49%" />
+  <img src="https://cdn-images-1.medium.com/max/800/1*yFEII2x_zPQkKVvDiNYROw.jpeg" width="49%" /> 
+  <img src="https://cdn-images-1.medium.com/max/800/1*ZVgMxnk_u8SM0tAQzxuz2g.jpeg" width="49%" />
 <span class="figcaption_hack">At Trafalgar Square, London Cruise Jetty, and the London River</span>
 </p>
 
