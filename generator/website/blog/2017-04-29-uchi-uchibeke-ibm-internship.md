@@ -12,9 +12,12 @@ These were not astray from my path: they stayed closely on my way. Prior to the
 day, I’ve driven more than 3,000 km from Saskatoon to Toronto, had arguments
 along the way, and rented a place.
 
-![](https://cdn-images-1.medium.com/max/1600/1*jgvdBGdAFvufJlziIGSOmw.gif)
-
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/1600/1*jgvdBGdAFvufJlziIGSOmw.gif" width="70%" />
+  <br>
 <span class="figcaption_hack">Intern Blue Mountain trip</span>
+</p>
+
 <!--truncate-->
 
 On the morning of the day, the date I dared not to be late, I woke up and ate
@@ -24,7 +27,7 @@ to services and tools and setting up was commonplace on my first week. Without
 much breaking a DA prefixed with an N, I’ll relate a tale of my year at IBM
 starting in may.
 
-*****
+---
 
 ### The Internship Program
 
@@ -48,7 +51,7 @@ something I will recommend to anyone. While each Intern’s experience will diff
 depending on their team and how well they reached out to people, the actual
 internship program is designed to be challenging, fun and rewarding.
 
-*****
+---
 
 ### Work
 
@@ -68,13 +71,15 @@ developed and released by me and other interns in my team. This tool is
 currently being used by other teams and has resulted in almost 20% increase in
 test success rate.
 
-*****
+---
 
 ### Team & environment
 
-![](https://cdn-images-1.medium.com/max/1600/1*KlS_3NwoKwvdU1t1GrRRzQ.gif)
-
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/1600/1*KlS_3NwoKwvdU1t1GrRRzQ.gif" width="70%" />
+  <br>
 <span class="figcaption_hack">Hackathon project at Princeton University</span>
+</p>
 
 I’ll rate my team and teammates 100%. One of the reasons why I enjoyed the
 things I worked on and my time at IBM are the people I worked with. My Manager,
@@ -89,15 +94,19 @@ Hussain](https://www.linkedin.com/in/alisaleemh/) every day. We also played
 Foosball, tried new restaurants, attended Hackathons in the US, and went to
 meetups together.
 
-*****
+---
 
 ### Fun
 
-![](https://cdn-images-1.medium.com/max/1600/1*7a0Hl4o6awm8zv-_hYHtyA.jpeg)
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/1600/1*7a0Hl4o6awm8zv-_hYHtyA.jpeg" width="70%" />
+  <br>
+</p>
 
 The IBM Future Blue program is a student led program that enhances the
 internship experience at IBM. Through Future Blue, activities like Ski trips at
 Blue Mountains, Movies Nights, Party Nights, Escape Room visits and an Intern
 Day were organized. These were super fun and made the internship a 100. 10/10,
 I’ll recommend.
-______
+
+---

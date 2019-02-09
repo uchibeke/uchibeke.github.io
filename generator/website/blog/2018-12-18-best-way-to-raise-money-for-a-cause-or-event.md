@@ -10,13 +10,16 @@ Although we raised more than $16,000 in prizes for [NaijaHacks
 had almost canceled the Hackathon because we failed when we first started
 fundraising. We first raised $0. Nothing.
 
-![](https://cdn-images-1.medium.com/max/1600/1*0QfZIZOih894gnt1y_HbAA.png)
-<span class="figcaption_hack">Photo by [Darius
-Bashar](https://unsplash.com/photos/3KYviZ-qG7M?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-on
-[Unsplash](https://unsplash.com/search/photos/surprise?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)</span>
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/1600/1*0QfZIZOih894gnt1y_HbAA.png" width="49%" />
+  <br>
+  Photo by <a href="https://unsplash.com/photos/3KYviZ-qG7M?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Darius Bashar</a>
+  on<a href="https://unsplash.com/search/photos/surprise?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTextt">Unsplash</a>
+</p>
 
 <!--truncate-->
+
+---
 
 We were initially sending [sponsorship
 packages/proposals](https://naijahacks.com/res/NaijaHacks_Partner_Pack_2.pdf) to
@@ -26,8 +29,11 @@ of the team members. This was the first edition and honestly, we had not done
 anything like this before. We almost gave up. We almost canceled the Hackathon.
 We almost accepted that NaijaHacks will not work out.
 
-![](https://cdn-images-1.medium.com/max/1600/1*Vr0vbvsh3D3bYL1z6v5BMQ.jpeg)
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/1600/1*Vr0vbvsh3D3bYL1z6v5BMQ.jpeg" width="96%" />
+  <br>
 <span class="figcaption_hack">Some NaijaHacks participants</span>
+</p>
 
 But we did not give up. We took a step back and went back to the drawing board.
 We decided to take a more data-driven holistic approach to fund-raising.
@@ -47,16 +53,19 @@ to sponsors. We said something like “Hey @sponsor, we are organizing NaijaHack
 2018 in Oct. The scope is 500 hackers, 50% women, lots of prizes and swags.
 
 > Will you like to sponsor [The Prize that sponsor already provided at another
+>
 > > hackathon]
 
 OR
 
 > Will you like to sponsor [With subscription/service/credit that sponsor provided
+>
 > > to another hackathon]
 
 OR
 
 > Will you like to sponsor [With Swag that sponsor provided at another
+>
 > > hackathon].”
 
 With this formula and by mentioning the Sponsor, some of them replied with the
@@ -74,23 +83,18 @@ looking forward to taking NaijaHacks to an additional African country in 2019.
 We are super excited about this and looking forward to sharing more details in
 the coming months.
 
-![](https://cdn-images-1.medium.com/max/800/1*-Zx_IuHqFSAdLSMjl34lNA.jpeg)
-
-![](https://cdn-images-1.medium.com/max/800/1*NdShZp52UmE6rNbqAPXV2w.jpeg)
-
-![](https://cdn-images-1.medium.com/max/800/1*GbF9vZW9TIKo0vyIeK5zlQ.jpeg)
-
-![](https://cdn-images-1.medium.com/max/800/1*fGl2A1yjmRCCpgepD9kDfw.jpeg)
-
-![](https://cdn-images-1.medium.com/max/800/1*G8f_JYCgWJzwYE3vV8mtHQ.jpeg)
-
-![](https://cdn-images-1.medium.com/max/800/1*3CVP2MChbTLmMebfJu9G_g.jpeg)
-
-![](https://cdn-images-1.medium.com/max/1200/1*NGaFBsx36h9R67Sx88iWJQ.jpeg)
-
-![](https://cdn-images-1.medium.com/max/1200/1*QIXl-fDcgpryUUMssaRH2Q.jpeg)
+<p float="left">
+  <img src="https://cdn-images-1.medium.com/max/800/1*-Zx_IuHqFSAdLSMjl34lNA.jpeg" width="33%" />
+  <img src="https://cdn-images-1.medium.com/max/800/1*NdShZp52UmE6rNbqAPXV2w.jpeg" width="33%" /> 
+  <img src="https://cdn-images-1.medium.com/max/800/1*GbF9vZW9TIKo0vyIeK5zlQ.jpeg" width="33%" />
+  <img src="https://cdn-images-1.medium.com/max/800/1*fGl2A1yjmRCCpgepD9kDfw.jpeg" width="33%" />
+  <img src="https://cdn-images-1.medium.com/max/800/1*G8f_JYCgWJzwYE3vV8mtHQ.jpeg" width="33%" /> 
+  <img src="https://cdn-images-1.medium.com/max/800/1*3CVP2MChbTLmMebfJu9G_g.jpeg" width="33%" />
+  <img src="https://cdn-images-1.medium.com/max/1200/1*NGaFBsx36h9R67Sx88iWJQ.jpeg" width="49%" /> 
+  <img src="https://cdn-images-1.medium.com/max/1200/1*QIXl-fDcgpryUUMssaRH2Q.jpeg" width="49%" />
 <span class="figcaption_hack">[#NaijaHacks2018](https://twitter.com/search?f=tweets&vertical=default&q=#naijahacks2018&src=typd)
 Demo day</span>
+</p>
 
 - [Hackathons](https://medium.com/tag/hackathons?source=post)
 - [Technology](https://medium.com/tag/technology?source=post)

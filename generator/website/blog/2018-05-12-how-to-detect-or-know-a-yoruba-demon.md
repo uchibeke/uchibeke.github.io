@@ -5,6 +5,8 @@ authorURL: https://lushplans.com/about.html
 authorFBID: 100000091163010
 ---
 
+### _This article was written for a tool I built for a marketing stunt for Lush Plans_
+
 Ladies! Queens! The scope has changed, be aware, be very aware!
 
 ![](https://cdn-images-1.medium.com/max/1600/1*OYQwpiqQ7f3k09L3ViYSiw.jpeg)
@@ -15,7 +17,9 @@ Most young Nigerian adults in this generation must be aware of the popular term
 charismatic, well-off men from the South-Western part of Nigeria who have made
 it their pre-occupations to break the hearts of young ladies, thereby
 facilitating sad love stories, irresistible gossip and blog/thread content.
+
 <!--truncate-->
+
 The expression set face on the internet in 2015 and since then, many Yoruba men
 who meet the criteria by executing certain actions have been regarded as Yoruba
 demons. Acts such as: ignoring phone calls, leaving messages read and
@@ -30,7 +34,6 @@ subsequently discover his actual agenda.
 
 ![](https://cdn-images-1.medium.com/max/1200/1*APFuXwRh9t6M5ShCsd2Y_w.jpeg)
 <span class="figcaption_hack">Photo by Ben White on Unsplash</span>
-
 
 Now, you might be wondering: how do these ladies fall for these ‘very obvious’
 schemes. That’s what makes the men demons, my dear. They offer you hot and cold
@@ -70,7 +73,6 @@ deliver quite inarguably accurate results.
 ![](https://cdn-images-1.medium.com/max/1600/1*o0AgeceDbDf8tvgZu5Vx0w.png)
 <span class="figcaption_hack">Some Questions from the Yoruba Demon Detector</span>
 
-
 Check now at
 [www.lushplans.com/yorubademon](http://www.lushplans.com/yorubademon)
 
@@ -78,6 +80,8 @@ As the popular phrase goes: Nothing is black and white.
 
 However, don’t be deceived. There are Yoruba demons out there waiting to devour.
 
-![](https://cdn-images-1.medium.com/max/1600/1*LPLNZT7hjCIl9k2u5TzgwA.png)
-
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/1600/1*LPLNZT7hjCIl9k2u5TzgwA.png" width="49%" />
+  <br>
 <span class="figcaption_hack">Some Questions from the Yoruba Demon Detector</span>
+</p>

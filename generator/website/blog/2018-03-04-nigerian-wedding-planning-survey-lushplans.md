@@ -5,14 +5,16 @@ authorURL: https://uchi.uchibeke.com
 authorFBID: 100006518800911
 ---
 
-
 We wanted to understand the Nigerian Wedding Industry and people’s experience so
 we did a huge survey. Ultimately, we wanted the survey to inform our decision as
 to develop a platform for making the stressful process of wedding planning
 fulfilling.
 
-![](https://cdn-images-1.medium.com/max/1600/1*pzbcUbyYIhCoChI3R4nRLQ.png)
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/1600/1*pzbcUbyYIhCoChI3R4nRLQ.png" width="100%" />
+  <br>
 <span class="figcaption_hack">The Wedding Survey by Lush Plans</span>
+</p>
 <!--truncate-->
 
 ### The Wedding Survey Structure
@@ -20,9 +22,9 @@ fulfilling.
 After weeks of research and tweaking, we decided on a structure. The wedding
 survey was structured into 3 sections:
 
-* For people who have experience planning a wedding.
-* For people who have assisted or played a part in someone’s wedding plan.
-* For people who have never been involved in wedding planning.
+- For people who have experience planning a wedding.
+- For people who have assisted or played a part in someone’s wedding plan.
+- For people who have never been involved in wedding planning.
 
 Users get redirected to a page with tailor-made questions based on their
 response to the question, “Have you ever planned a wedding?”
@@ -35,18 +37,17 @@ With the Wedding survey, we pursued 5 goals:
 1.  To learn how people find wedding vendors
 1.  To understand the biggest challenges of planning a wedding
 1.  To learn how different methods of invitation affect people’s attendance at the
-wedding.
+    wedding.
 1.  To get the average time people need to make their wedding plans.
 
 ### Demographics Summary
 
-* 83% were single
-* 71% of the response was from people between the ages of 20 to 30 years.
-* 66% have never planned a wedding
-* 61% of respondents were males.
-* 22% has planned a wedding, and
-* 12% partially helped to plan a wedding.
-
+- 83% were single
+- 71% of the response was from people between the ages of 20 to 30 years.
+- 66% have never planned a wedding
+- 61% of respondents were males.
+- 22% has planned a wedding, and
+- 12% partially helped to plan a wedding.
 
 ### Survey Results
 
@@ -78,9 +79,9 @@ With regards to how people like to invite guests, two additional figures caught
 our attention:
 
 1.  After Printed Invitation, SMS, Phone call, and a Social media direct message
-(DM) were the next highest rated options.
+    (DM) were the next highest rated options.
 1.  Most of the married couples who said they will no longer use printed invitations
-opted to use sms and phone calls to invite guests to their wedding.
+    opted to use sms and phone calls to invite guests to their wedding.
 
 **How do people who are planning a wedding find wedding vendors?**
 
@@ -133,14 +134,14 @@ website.
 
 1.  People prefer to use Printed Invitations then SMS.
 1.  Experienced Married people who used printed invitations for their weddings
-recommend other methods like like SMS.
+    recommend other methods like like SMS.
 1.  People who have never planned weddings are looking to use Printed invitations
-for their weddings.
+    for their weddings.
 1.  SMS, Phone Call, and Social Media direct message are the top three new methods
-people will invite guests to their wedding.
+    people will invite guests to their wedding.
 1.  Majority of people will attend a wedding even if they do not get invited with
-printed invitation.
+    printed invitation.
 1.  People are willing to use an app that will help them plan their weddings.
 1.  People do not primarily find Vendors online
-______
 
+---

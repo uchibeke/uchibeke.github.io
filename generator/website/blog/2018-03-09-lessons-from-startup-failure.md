@@ -16,6 +16,7 @@ Instagram](https://www.instagram.com/p/BgqdERCgiAH/) said it is “… it is
 extremely hard to keep up with everything”.
 
 ![](https://cdn-images-1.medium.com/max/2600/1*VtY5JhPzWnyt7bj33tD0Nw.png)
+
 <!--truncate-->
 
 ### IV League
@@ -32,9 +33,6 @@ started building a web application to do exactly this. I successfully built the
 core functionality which included picking an invitation style, customizing the
 colour, adding your message and a live preview of your changes, as shown below.
 I, however, was not satisfied with what I had built and I knew I could do more.
-
-![](https://cdn-images-1.medium.com/max/1600/1*FRFe0ojmcSdYQjrNqxgoiA.gif)
-<span class="figcaption_hack">Initial App: design and preview wedding invitation</span>
 
 ### Idea Refinement
 
@@ -55,9 +53,6 @@ many more features. This platform will be completely online and will require
 little to no human intervention to run. I loved this and I kept adding features
 like the ability to find vendors based on your budget and a guest RSVP feature.
 
-![](https://cdn-images-1.medium.com/max/1600/1*hj94VBElvHL4D2UUMXOiDg.gif)
-<span class="figcaption_hack">Current state: Create wedding, manage guests and invite guests</span>
-
 Although I was happy with the way things were coming along, I realized that more
 needed to be done. It was becoming serious business and I needed to bring in
 something important that I was missing — people with skills to complement mine
@@ -68,8 +63,11 @@ way, we are hiring so [email me](mailto:uchi@lushplans.com) with some details
 about yourself and why you want to [work with us at Lush
 Plans](https://lushplans.com/).
 
-![](https://cdn-images-1.medium.com/max/1600/1*kcSrtlIgyqxkrSgxbqq_8A.gif)
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/1600/1*kcSrtlIgyqxkrSgxbqq_8A.gif" width="49%" />
+  <br>
 <span class="figcaption_hack">Personalized Invitation on wedding guest’s phone</span>
+</p>
 
 I am very excited about the new things I learn everyday about wedding and
 Nigerian weddings, specifically. I truly believe that the wedding planning and

@@ -13,8 +13,7 @@ Additionally, it’s hard to admit that I am biased because I have also
 experienced bias myself and admitting that I am also biased is clouded by the
 few negative experiences I have had with a few bad apples.
 
-> I found the talk to be very interesting because Rebecca did not only focus on
-> Racial and Gender Bias.
+` I found the talk to be very interesting because Rebecca did not only focus on Racial and Gender Bias.`
 
 At [Collision Conference](https://collisionconf.com/) in New Orleans, I had the
 privilege of listening to the talk _Diversity, coding & bias in AI_ by [Rebecca

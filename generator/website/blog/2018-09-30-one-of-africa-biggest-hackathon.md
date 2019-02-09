@@ -11,7 +11,9 @@ generation of Nigerian innovators to use technology to create solutions for
 their communities using technologies like Blockchain, Artificial Intelligence
 and many more.
 
-![](https://cdn-images-1.medium.com/max/2000/1*cYaAh_3csb88f2As3RBhhQ.jpeg)
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/2000/1*cYaAh_3csb88f2As3RBhhQ.jpeg" width="70%" />
+</p>
 
 <!--truncate-->
 
@@ -30,7 +32,9 @@ Government, .TECH, IvoryMark, STEMHub Foundation are providing funding to make
 the 2018 event possible. Other sponsors are providing facilities, products,
 prizes, staff and other items to support.
 
-![](https://cdn-images-1.medium.com/max/1600/1*hlzFKOZhE90COGSN5BjqRA.png)
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/1600/1*hlzFKOZhE90COGSN5BjqRA.png" width="70%" />
+</p>
 
 The scope of the 2018 NaijaHacks Hackathon is:
 
@@ -41,7 +45,9 @@ The scope of the 2018 NaijaHacks Hackathon is:
 - Millions of Naira in Prizes
 - Biggest Nigerian Hackathon
 
-![](https://cdn-images-1.medium.com/max/1600/1*ECuSlC2COqGIdMcroAqM-g.jpeg)
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/1600/1*ECuSlC2COqGIdMcroAqM-g.jpeg" width="70%" />
+</p>
 
 The 2018 NaijaHacks Hackathon will start online on October 18, 2018, with a
 world-class team of mentors from UK, USA, Canada, Singapore, and Nigeria. During

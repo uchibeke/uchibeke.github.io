@@ -82,7 +82,10 @@ move your blog posts from medium to your blog.
 
 The title should be the title of your medium post
 
-![](https://cdn-images-1.medium.com/max/1200/1*HpUg8CNadeR0S_EF9dAxcw.png)
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/1200/1*HpUg8CNadeR0S_EF9dAxcw.png" width="49%" />
+  <br>
+</p>
 
 - Next, using chrome, open the medium post you want to move over. Make sure to
   scroll to the bottom to ensure all images are loaded.
