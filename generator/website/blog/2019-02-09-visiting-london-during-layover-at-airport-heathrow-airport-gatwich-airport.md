@@ -107,10 +107,7 @@ went down.
 - **Officer:** What are you going to do there?
 - **Me:** I work there.
 
-`
-Another officer comes to the desk. Scans my passport to check if it’s genuine.
-I smile.
-`
+`Another officer comes to the desk. Scans my passport to check if it’s genuine. I smile.`
 
 - **Officer:** So you checked your bags already and you don’t need to go through
   immigration since you leave from Heathrow?
@@ -131,11 +128,7 @@ I smile.
 - **Officer:** Have you been to the UK before?
 - **Me:** No
 
-`
-Looks through my passport. Examines scans of multiple visits to the US, Canada,
-Nigeria, and other countries. Realizes I have the larger 64-page passport as
-opposed to the regular 32 pages one.
-`
+`Looks through my passport. Examines scans of multiple visits to the US, Canada, Nigeria, and other countries. Realizes I have the larger 64-page passport as opposed to the regular 32 pages one.`
 
 `Completes and signs my landing card, stamps passport and hands them to me.`
 
@@ -165,9 +158,8 @@ to visit again.
 
 <p float="left">
   <img src="https://cdn-images-1.medium.com/max/800/1*vMCd7aMI4OQeq-J_qZMmlA.jpeg" width="49%" />
-  <img src="https://cdn-images-1.medium.com/max/800/1*yFEII2x_zPQkKVvDiNYROw.jpeg" width="49%" /> 
   <img src="https://cdn-images-1.medium.com/max/800/1*ZVgMxnk_u8SM0tAQzxuz2g.jpeg" width="49%" />
-<span class="figcaption_hack">At Trafalgar Square, London Cruise Jetty, and the London River</span>
+<span class="figcaption_hack">At Trafalgar Square, and the London River</span>
 </p>
 
 ### Uchi’s Recommendations
