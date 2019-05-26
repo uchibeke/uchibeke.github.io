@@ -6,7 +6,7 @@
     "publish-gh-pages": "docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
-    "push": "npm run build && mv build/uchi.uchibeke.com/sitemap.xml build/uchi.uchibeke.com/sitemap_old.xml && cp -r build/uchi.uchibeke.com/* ../../ && cp static/css/styles.css ../../css/",
+    "push": "npm run build && cp -r build/uchi.uchibeke.com/* ../../ && cp static/css/styles.css ../../css/",
     "rename-version": "docusaurus-rename-version"
   },
   "devDependencies": {

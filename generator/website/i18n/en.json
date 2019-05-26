@@ -4,12 +4,19 @@
     "next": "Next",
     "previous": "Previous",
     "tagline": "Working hard rach day to become a better person",
-    "Home": "Home",
-    "Blog": "Blog",
-    "Lush Plans": "Lush Plans",
-    "Business Jobs": "Business Jobs",
-    "Design Jobs": "Design Jobs",
-    "Engineering Jobs": "Engineering Jobs"
+    "docs": {},
+    "links": {
+      "Home": "Home",
+      "Now": "Now",
+      "Blog": "Blog",
+      "Bio": "Bio"
+    },
+    "categories": {
+      "Lush Plans": "Lush Plans",
+      "Business Jobs": "Business Jobs",
+      "Design Jobs": "Design Jobs",
+      "Engineering Jobs": "Engineering Jobs"
+    }
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",

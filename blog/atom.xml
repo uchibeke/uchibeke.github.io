@@ -2,12 +2,33 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://uchi.uchibeke.com//blog</id>
     <title>Uchi Uchibeke | Founder, Developer, Speaker and Mentor Blog</title>
-    <updated>2019-02-09T06:00:00Z</updated>
+    <updated>2019-05-25T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://uchi.uchibeke.com//blog"/>
     <subtitle>The best place to stay up-to-date with the latest Uchi Uchibeke | Founder, Developer, Speaker and Mentor news and events.</subtitle>
     <logo>https://uchi.uchibeke.com//img/logo_transparent.png</logo>
     <rights>Copyright © 2019 Uchi Uchibeke</rights>
+    <entry>
+        <title type="html"><![CDATA[Hackathon judging - was NaijaHacks 2018 fair?]]></title>
+        <id>https://uchi.uchibeke.com//blog/2019/05/25/hackathon-judging-was-naijahacks.html</id>
+        <link href="https://uchi.uchibeke.com//blog/2019/05/25/hackathon-judging-was-naijahacks.html">
+        </link>
+        <updated>2019-05-25T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<p>For a Hackathon, the selection process should be free, fair, and transparent.
+Everyone should have a fair chance to pitch and be heard. Additionally, the
+details and reasons for the winnings should be shared with all participants.
+Sadly, for NaijaHacks 2018, we were not clear or open enough about the Judging
+process and winning criteria. We did not communicate exactly how the teams were
+selected and we failed to livestream the results or highlight the criteria to
+participants in realtime on demo day. For this, we take responsibility and we
+will better for NaijaHacks 2019.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1200/1*gSmAr3vMjnkAdQGf_N7I4A.png" alt=""></p>
+]]></summary>
+        <author>
+            <name>Uchi Uchibeke</name>
+            <uri>https://uchi.uchibeke.com</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Visiting London during a layover at the Airport. Heathrow stopover.]]></title>
         <id>https://uchi.uchibeke.com//blog/2019/02/09/visiting-london-during-layover-at-airport-heathrow-airport-gatwich-airport.html</id>
@@ -157,7 +178,7 @@ on
         <link href="https://uchi.uchibeke.com//blog/2018/05/12/how-to-detect-or-know-a-yoruba-demon.html">
         </link>
         <updated>2018-05-12T06:00:00Z</updated>
-        <summary type="html"><![CDATA[<h3><a class="anchor" aria-hidden="true" id="this-article-was-written-for-a-tool-i-built-for-a-marketing-stunt-for-lush-plans"></a><a href="#this-article-was-written-for-a-tool-i-built-for-a-marketing-stunt-for-lush-plans" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>This article was written for a tool I built for a marketing stunt for Lush Plans</em></h3>
+        <summary type="html"><![CDATA[<h3><a class="anchor" aria-hidden="true" id="_this-article-was-written-for-a-tool-i-built-for-a-marketing-stunt-for-lush-plans_"></a><a href="#_this-article-was-written-for-a-tool-i-built-for-a-marketing-stunt-for-lush-plans_" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>This article was written for a tool I built for a marketing stunt for Lush Plans</em></h3>
 <p>Ladies! Queens! The scope has changed, be aware, be very aware!</p>
 <p><img src="https://cdn-images-1.medium.com/max/1600/1*OYQwpiqQ7f3k09L3ViYSiw.jpeg" alt="">
 <span class="figcaption_hack">Photo by Jeremy Bishop on Unsplash</span></p>

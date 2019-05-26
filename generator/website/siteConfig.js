@@ -22,15 +22,10 @@ const siteConfig = {
   projectName: "uchi.uchibeke.com",
   organizationName: "uchibeke",
   headerLinks: [
-    // {doc: 'doc4', label: 'API'},
-    // { href: "https://lushplans.com/", label: "Home" },
     { href: "/", label: "Home" },
-    // { page: "about", label: "About" },
-    { blog: true, label: "Blog" }
-    // { doc: "careers", label: "Careers" }
-    // { href: "culture", label: "Careers" },
-    // {page: 'help', label: 'Help'},
-    // {page: 'career', label: 'Career page'},
+    { href: "/now", label: "Now" },
+    { blog: true, label: "Blog" },
+    { href: "https://www.linkedin.com/in/nickku/", label: "Bio" }
   ],
 
   // If you have users set above, you add it here:
