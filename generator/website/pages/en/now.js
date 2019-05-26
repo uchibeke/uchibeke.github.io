@@ -93,9 +93,9 @@ const Now = props => {
     </Container>
   );
 };
-Now.title = "Uchi's focus on at this point in his life";
+Now.title = "Uchi's focus at this point in his life";
 Now.description =
-  "This page highlights what I am currently working on, reading, listening to, and learning. It also show where I have travelled to ";
+  "This page highlights what Uchi is currently working on, reading, listening to, and learning. It also shows where he has recently travelled to ";
 
 module.exports = Now;
 
@@ -120,11 +120,11 @@ const quarters = [
                 </a>
               </li>
               <li>
-                Asking the tought questions about long term goals, direction and
+                Asking the tough questions about long term goals, direction and
                 plans
               </li>
               <li>
-                Mentoring the Bio-remote team, one of the winners from{" "}
+                Mentoring the Bio-remote team, one of the winners of{" "}
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
