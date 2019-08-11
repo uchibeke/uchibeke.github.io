@@ -142,7 +142,7 @@ const quarters = [
                 >
                   Company
                 </a>{" "}
-                and team and now working a a Blockchain digital identity
+                and team and now working on a Blockchain digital identity
                 network.
               </li>
               <li>
