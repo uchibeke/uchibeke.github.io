@@ -25,7 +25,7 @@ const Now = props => {
       <div style={{ marginTop: "50px" }}>
         <figure style={{ maxWidth: "700px" }}>
           <img
-            src="https://cdn-images-1.medium.com/max/2600/1*WEjosLr_zss71HvJHZneew.jpeg"
+            src="https://uchi.uchibeke.com/"
             width="100%"
           />
           <figcaption style={{ fontSize: "10pt", color: "grey" }}>
@@ -42,8 +42,8 @@ const Now = props => {
         <br />
         <br />
         <p>
-          This year, I’m finding myself, figuring out what I really want to be
-          known for and learning to be more patient.
+          This year, focusing on long term goals, investing in the Blockchain
+          space and learning to be more patient.
         </p>
         <p>
           I’m{" "}
@@ -62,7 +62,7 @@ const Now = props => {
           >
             ISTP
           </a>
-          . Here’s what I’m up to{" "}
+          . Here’s what{" "}
           {quarters.map((q, i) => (
             <span key={i}>
               <a
@@ -72,9 +72,11 @@ const Now = props => {
                   console.log("uchi");
                 }}
               >
-                {i === 0 ? " this quarter " : ` ${q.name} `}{" "}
+                {i === 0
+                  ? " I’m up to this quarter "
+                  : ` was up to in ${q.name} `}{" "}
               </a>
-              \
+              ||
             </span>
           ))}
         </p>
@@ -83,16 +85,17 @@ const Now = props => {
         return (
           <div id={currentQuarter.name}>
             <br />
+            <hr />
             <h2>{currentQuarter.name}</h2>
             {currentQuarter.details.map(sData => (
               <Section {...sData} key={sData.title} />
             ))}
             <br />
-            <hr />
           </div>
         );
       })}
-      Updated Saturday, August 10, 2019. Inspired by
+      <hr />
+      Updated Saturday, August 22, 2019. Inspired by
       <a
         target="_blank"
         rel="noopener noreferrer"
@@ -101,6 +104,7 @@ const Now = props => {
         {" "}
         Zim Ugochukwu
       </a>
+      .
       <hr />
       <br />
     </Container>
@@ -121,7 +125,7 @@ const quarters = [
         body: (
           <div>
             <ul style={{ paddingLeft: "80px" }}>
-              <li>Building a fundsharing platform.</li>
+              <li>Building a machine learning-powered fundsharing platform.</li>
               <li>
                 Planning{" "}
                 <a
