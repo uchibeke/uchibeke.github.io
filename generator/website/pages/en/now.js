@@ -25,17 +25,17 @@ const Now = props => {
       <div style={{ marginTop: "50px" }}>
         <figure style={{ maxWidth: "700px" }}>
           <img
-            src="https://uchi.uchibeke.com/"
+            src="https://uchi.uchibeke.com/img/expo.png"
             width="100%"
           />
           <figcaption style={{ fontSize: "10pt", color: "grey" }}>
-            Map of my{" "}
+            Speaking about Blockchain at{" "}
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="/blog/2019/02/09/visiting-london-during-layover-at-airport-heathrow-airport-gatwich-airport"
+              href="#"
             >
-              one day trip to London
+             RBC's Amp Expo
             </a>
           </figcaption>
         </figure>
